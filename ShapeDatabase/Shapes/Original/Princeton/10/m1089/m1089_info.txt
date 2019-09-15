@@ -1,0 +1,14 @@
+mid: 1089
+url: http://www.geometrek.com/web3d/deepmatrix/world/beachbar/palm.wrl
+ref_url: http://www.geometrek.com/web3d/deepmatrix/world/beachbar/
+format: wrl 
+pid: 17295
+polygons: 264
+connected_components: 7
+average_dihedral_angle: 0.586802
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.578353, ymax = 0.975, zmax = 0.559279
+avg_depth: 1.238670
+center: (0.317911,0.729276,0.282610)
+scale: 0.557887
+principle_axes: (-0.109879,0.993943,-0.002178), (0.531086,0.056858,-0.845408), (0.840163,0.094050,0.534116)
+principle_values: (0.086060,0.006773,0.005398)

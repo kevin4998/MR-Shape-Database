@@ -1,0 +1,14 @@
+mid: 580
+url: http://evlweb.eecs.uic.edu/marek/VRML/idesk/glasses.wrl
+ref_url: http://evlweb.eecs.uic.edu/marek/VRML/vrml.html
+format: wrl 
+pid: 21052
+polygons: 4155
+connected_components: 10
+average_dihedral_angle: 0.237306
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.971418, ymax = 0.975, zmax = 0.840856
+avg_depth: 1.133263
+center: (0.501913,0.299806,0.422073)
+scale: 0.920218
+principle_axes: (0.999906,-0.003059,-0.013397), (-0.007092,-0.949924,-0.312402), (0.011771,-0.312467,0.949856)
+principle_values: (0.120173,0.078621,0.034699)

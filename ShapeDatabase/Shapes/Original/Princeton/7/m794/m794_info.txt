@@ -1,0 +1,14 @@
+mid: 794
+url: http://mowat.virtualave.net/chair4.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26886
+polygons: 1232
+connected_components: 12
+average_dihedral_angle: 0.561531
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.706179, ymax = 0.975, zmax = 0.674053
+avg_depth: 1.223505
+center: (0.365383,0.522962,0.323882)
+scale: 0.614990
+principle_axes: (-0.000235,-0.898030,0.439935), (-1.000000,0.000025,-0.000485), (0.000425,-0.439935,-0.898030)
+principle_values: (0.065887,0.027047,0.016225)

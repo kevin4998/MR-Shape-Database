@@ -1,0 +1,14 @@
+mid: 1482
+url: http://cepcairo.bizland.com/free/Harley.zip
+ref_url: 
+format: xthreexds 
+pid: 47165
+polygons: 29064
+connected_components: 802
+average_dihedral_angle: 0.558882
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.330779, zmax = 0.591614
+avg_depth: 3.063980
+center: (0.507915,0.177807,0.210436)
+scale: 0.472935
+principle_axes: (-0.994724,-0.000286,0.102587), (-0.102586,0.005939,-0.994706), (0.000325,0.999982,0.005937)
+principle_values: (0.058276,0.007803,0.001802)

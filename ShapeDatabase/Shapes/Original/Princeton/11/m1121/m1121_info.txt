@@ -1,0 +1,14 @@
+mid: 1121
+url: http://fraktali.849pm.com/programs/dxf/Doppeld.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27178
+polygons: 1913
+connected_components: 15
+average_dihedral_angle: 0.395114
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.792248, ymax = 0.975, zmax = 0.328749
+avg_depth: 1.361742
+center: (0.286080,0.499308,0.131389)
+scale: 0.500271
+principle_axes: (-0.000251,0.999970,0.007768), (-0.999507,-0.000007,-0.031409), (0.031408,0.007772,-0.999476)
+principle_values: (0.042870,0.025939,0.006143)

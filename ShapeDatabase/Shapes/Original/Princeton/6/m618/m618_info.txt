@@ -1,0 +1,14 @@
+mid: 618
+url: http://64.198.60.83/baument/Models/lamppost1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25524
+polygons: 3232
+connected_components: 5
+average_dihedral_angle: 0.434769
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.134223, ymax = 0.975, zmax = 0.134222
+avg_depth: 1.416802
+center: (0.080496,0.442311,0.079602)
+scale: 0.585181
+principle_axes: (-0.001084,-0.999999,-0.000013), (0.956550,-0.001041,0.291566), (0.291566,-0.000304,-0.956551)
+principle_values: (0.103340,0.000366,0.000366)

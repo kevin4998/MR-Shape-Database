@@ -1,0 +1,14 @@
+mid: 1309
+url: http://fraktali.849pm.com/programs/dxf/cobra.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27463
+polygons: 3460
+connected_components: 331
+average_dihedral_angle: 1.18498
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.262523, zmax = 0.652485
+avg_depth: 1.332148
+center: (0.593525,0.154329,0.339108)
+scale: 0.434949
+principle_axes: (0.986091,-0.006163,-0.166091), (0.164251,-0.116683,0.979493), (-0.025416,-0.993150,-0.114047)
+principle_values: (0.051887,0.005755,0.005269)

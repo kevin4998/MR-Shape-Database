@@ -1,0 +1,14 @@
+mid: 1709
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/2001-old/vberezin/Hw4/realdoor8.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/2001-old/vberezin/Hw4/?D=D
+format: wrl 
+pid: 44644
+polygons: 18
+connected_components: 2
+average_dihedral_angle: 1.05502
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0373238, ymax = 0.975, zmax = 0.528047
+avg_depth: 1.000000
+center: (0.031900,0.484120,0.285347)
+scale: 0.536546
+principle_axes: (-0.000596,-0.999956,-0.009352), (0.005279,-0.009355,0.999942), (0.999986,-0.000547,-0.005284)
+principle_values: (0.069067,0.016945,0.000016)

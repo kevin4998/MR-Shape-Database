@@ -1,0 +1,14 @@
+mid: 598
+url: http://fraktali.849pm.com/programs/dxf/UHR.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27377
+polygons: 1148
+connected_components: 49
+average_dihedral_angle: 0.86394
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.688575, ymax = 0.474289, zmax = 0.975
+avg_depth: 1.925873
+center: (0.368708,0.239941,0.493184)
+scale: 0.773188
+principle_axes: (-0.203668,0.001031,0.979040), (-0.979030,0.004227,-0.203670), (0.004348,0.999991,-0.000149)
+principle_values: (0.105573,0.043950,0.005964)

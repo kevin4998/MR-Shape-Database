@@ -1,0 +1,14 @@
+mid: 320
+url: ftp://avalon.viewpoint.com/pub/objects/characters/face2_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47239
+polygons: 1447
+connected_components: 3
+average_dihedral_angle: 0.343437
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.650042, ymax = 0.975, zmax = 0.459979
+avg_depth: 1.103496
+center: (0.336756,0.531450,0.281589)
+scale: 0.646008
+principle_axes: (-0.006275,0.999306,-0.036723), (0.999547,0.007348,0.029171), (-0.029421,0.036523,0.998900)
+principle_values: (0.064590,0.040588,0.009112)

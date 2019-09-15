@@ -1,0 +1,14 @@
+mid: 701
+url: http://cepcairo.bizland.com/free/Swrd_brd.zip
+ref_url: 
+format: xthreexds 
+pid: 47280
+polygons: 1900
+connected_components: 1
+average_dihedral_angle: 0.297239
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0440466, ymax = 0.30701, zmax = 0.975
+avg_depth: 1.054559
+center: (0.034523,0.166005,0.459278)
+scale: 0.427464
+principle_axes: (0.000000,-0.000000,-1.000000), (-0.000000,-1.000000,0.000000), (1.000000,-0.000000,0.000000)
+principle_values: (0.058689,0.001404,0.000017)

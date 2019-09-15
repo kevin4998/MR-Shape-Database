@@ -1,0 +1,14 @@
+mid: 74
+url: http://telias.free.fr/zipsz/models_low_poly/dolphin_t.zip
+ref_url: 
+format: xthreexds 
+pid: 47867
+polygons: 336
+connected_components: 3
+average_dihedral_angle: 0.793217
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.354455, ymax = 0.321596, zmax = 0.975
+avg_depth: 1.066436
+center: (0.185865,0.153258,0.582537)
+scale: 0.425244
+principle_axes: (-0.002828,0.032193,0.999478), (0.143809,-0.989079,0.032265), (0.989601,0.143825,-0.001833)
+principle_values: (0.053421,0.002824,0.002399)

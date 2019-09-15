@@ -1,0 +1,14 @@
+mid: 1106
+url: http://www.amazing3d.com/free/wrnch3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47646
+polygons: 4076
+connected_components: 73
+average_dihedral_angle: 0.483597
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.296053, zmax = 0.0823785
+avg_depth: 2.180147
+center: (0.475035,0.163097,0.053317)
+scale: 0.482554
+principle_axes: (-0.999499,-0.031638,0.000504), (0.031638,-0.999499,0.000285), (0.000494,0.000301,1.000000)
+principle_values: (0.071928,0.002265,0.000068)

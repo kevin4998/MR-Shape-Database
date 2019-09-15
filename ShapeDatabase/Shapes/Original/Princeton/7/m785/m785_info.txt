@@ -1,0 +1,14 @@
+mid: 785
+url: http://www.3dcafe.com/models/stool2.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: 3ds 
+pid: 28444
+polygons: 1788
+connected_components: 9
+average_dihedral_angle: 0.467088
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.569607, ymax = 0.975, zmax = 0.569607
+avg_depth: 1.237444
+center: (0.294159,0.703261,0.296555)
+scale: 0.681464
+principle_axes: (0.010142,0.999948,0.001213), (0.999948,-0.010144,0.001075), (0.001087,0.001202,-0.999999)
+principle_values: (0.084570,0.023509,0.022832)

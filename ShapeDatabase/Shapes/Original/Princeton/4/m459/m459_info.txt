@@ -1,0 +1,14 @@
+mid: 459
+url: http://ednet.gsfc.nasa.gov/Mathews/Objects/house.wrl
+ref_url: http://ednet.gsfc.nasa.gov/Mathews/Objects/off2vrml.html
+format: wrl 
+pid: 1613
+polygons: 16
+connected_components: 1
+average_dihedral_angle: 1.46608
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.658333, ymax = 0.658333, zmax = 0.975
+avg_depth: 1.000000
+center: (0.341667,0.281212,0.500000)
+scale: 0.891139
+principle_axes: (0.000000,-0.000000,1.000000), (1.000000,0.000002,-0.000000), (0.000002,-1.000000,-0.000000)
+principle_values: (0.110761,0.050747,0.044072)

@@ -1,0 +1,14 @@
+mid: 1677
+url: http://www.cs.iupui.edu/~y5wang/group/flag_pole/flag_move.wrl
+ref_url: http://www.cs.iupui.edu/~y5wang/group/group.html
+format: wrl 
+pid: 44482
+polygons: 290
+connected_components: 5
+average_dihedral_angle: 0.676194
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.441352, ymax = 0.975, zmax = 0.124611
+avg_depth: 1.046055
+center: (0.266038,0.454903,0.055098)
+scale: 0.681859
+principle_axes: (0.198138,-0.977172,-0.076655), (0.950747,0.210620,-0.227421), (-0.238374,0.027819,-0.970775)
+principle_values: (0.128321,0.003611,0.000498)

@@ -1,0 +1,14 @@
+mid: 930
+url: http://philliphansel.com/gallery/urn_stand.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3459
+polygons: 978
+connected_components: 6
+average_dihedral_angle: 0.723991
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.641081, ymax = 0.975, zmax = 0.641081
+avg_depth: 1.406382
+center: (0.332363,0.636898,0.334358)
+scale: 0.785782
+principle_axes: (0.009893,0.999950,-0.001745), (-0.999876,0.009914,0.012238), (-0.012255,-0.001624,-0.999924)
+principle_values: (0.136989,0.018102,0.016624)

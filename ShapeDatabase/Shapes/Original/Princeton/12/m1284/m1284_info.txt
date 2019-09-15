@@ -1,0 +1,14 @@
+mid: 1284
+url: http://www.mece.ualberta.ca/Courses/mec265/vrprojects/aircraft/aero_a.wrl
+ref_url: http://www.mece.ualberta.ca/Courses/mec265/vrprojects.htm
+format: wrl 
+pid: 8320
+polygons: 11608
+connected_components: 24
+average_dihedral_angle: 0.600602
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.44402, ymax = 0.165302, zmax = 0.975
+avg_depth: 1.447954
+center: (0.144541,0.112254,0.499990)
+scale: 0.308305
+principle_axes: (0.000029,-0.000002,1.000000), (-0.999656,-0.026231,0.000029), (-0.026231,0.999656,0.000003)
+principle_values: (0.034854,0.004707,0.000432)

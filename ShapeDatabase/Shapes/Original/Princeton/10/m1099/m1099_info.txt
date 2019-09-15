@@ -1,0 +1,14 @@
+mid: 1099
+url: http://www.ocnus.com/models/Tools/shovel.wrl.gz
+ref_url: http://www.ocnus.com/models/Tools/
+format: wrl 
+pid: 17915
+polygons: 600
+connected_components: 3
+average_dihedral_angle: 0.513349
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.384703, ymax = 0.975, zmax = 0.0837566
+avg_depth: 1.079818
+center: (0.204368,0.277773,0.038602)
+scale: 0.422387
+principle_axes: (0.000380,-0.999912,-0.013255), (0.999999,0.000396,-0.001179), (-0.001184,0.013255,-0.999911)
+principle_values: (0.056861,0.009644,0.000167)

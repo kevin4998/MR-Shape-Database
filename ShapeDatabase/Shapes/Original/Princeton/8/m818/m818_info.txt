@@ -1,0 +1,14 @@
+mid: 818
+url: http://www.3dcafe.com/models/chairv01.wrl
+ref_url: http://www.3dcafe.com/asp/househld.asp
+format: wrl 
+pid: 40268
+polygons: 120
+connected_components: 9
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.707366, ymax = 0.975, zmax = 0.707366
+avg_depth: 1.287183
+center: (0.390975,0.520586,0.426225)
+scale: 0.642693
+principle_axes: (-0.237470,-0.782813,-0.575163), (0.924292,0.000052,-0.381687), (-0.298819,0.622257,-0.723535)
+principle_values: (0.060192,0.035889,0.023147)

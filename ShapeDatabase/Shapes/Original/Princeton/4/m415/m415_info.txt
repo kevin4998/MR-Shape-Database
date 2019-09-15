@@ -1,0 +1,14 @@
+mid: 415
+url: http://www.geocities.com/BourbonStreet/1855/shrinetourvrml2_gz.wrl
+ref_url: http://www.geocities.com/BourbonStreet/1855/shrine.html
+format: wrl 
+pid: 11895
+polygons: 966
+connected_components: 64
+average_dihedral_angle: 1.08691
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.695588, ymax = 0.460882, zmax = 0.975
+avg_depth: 2.862844
+center: (0.365363,0.217049,0.366298)
+scale: 0.562589
+principle_axes: (-0.624493,0.018940,-0.780801), (0.781005,0.023131,-0.624096), (0.006241,-0.999553,-0.029237)
+principle_values: (0.031845,0.029146,0.024795)

@@ -1,0 +1,14 @@
+mid: 843
+url: http://www.hammerve.com/NewHome/FreeStuff/Vrml/couch.wrl.gz
+ref_url: 
+format: wrl 
+pid: 47841
+polygons: 15128
+connected_components: 33
+average_dihedral_angle: 0.18254
+bounding_box: xmin = 0.103243, ymin = 0.111906, zmin = 0.025, xmax = 0.511488, ymax = 0.48559, zmax = 0.975
+avg_depth: 2.702181
+center: (0.295422,0.258969,0.495728)
+scale: 0.589572
+principle_axes: (-0.004863,0.006757,0.999965), (0.764829,-0.644182,0.008072), (0.644215,0.764842,-0.002035)
+principle_values: (0.078555,0.015799,0.006228)

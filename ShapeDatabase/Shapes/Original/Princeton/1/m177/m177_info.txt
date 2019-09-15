@@ -1,0 +1,14 @@
+mid: 177
+url: http://www.lucia.it/vrml/gallery/grassone.wrl
+ref_url: http://www.lucia.it/vrml/p_gallery_e.html
+format: wrl 
+pid: 8811
+polygons: 185
+connected_components: 10
+average_dihedral_angle: 1.00881
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.380033, ymax = 0.975, zmax = 0.333153
+avg_depth: 1.456750
+center: (0.215858,0.478612,0.169348)
+scale: 0.476248
+principle_axes: (0.024854,-0.997298,0.069131), (0.923187,-0.003635,-0.384335), (-0.383548,-0.073373,-0.920602)
+principle_values: (0.057999,0.008858,0.003289)

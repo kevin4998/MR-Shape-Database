@@ -1,0 +1,14 @@
+mid: 1580
+url: http://www.rccad.com/Gallery/Vrml/lokom.wrl
+ref_url: http://www.rccad.com/Gallery_NonFlying.htm
+format: wrl 
+pid: 33416
+polygons: 2568
+connected_components: 9
+average_dihedral_angle: 0.48164
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.402336, zmax = 0.380885
+avg_depth: 4.080723
+center: (0.533213,0.213674,0.161383)
+scale: 0.508255
+principle_axes: (0.997903,-0.000042,0.064721), (-0.000041,0.999999,0.001286), (0.064721,0.001286,-0.997903)
+principle_values: (0.062688,0.007648,0.006136)

@@ -1,0 +1,14 @@
+mid: 515
+url: http://www.israel-discount-bank.co.il/VRML/mailBox.wrl
+ref_url: http://www.israel-discount-bank.co.il/VRML/theGrid.wrl
+format: wrl 
+pid: 16284
+polygons: 168
+connected_components: 7
+average_dihedral_angle: 1.35979
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.511633, ymax = 0.975, zmax = 0.279311
+avg_depth: 1.698764
+center: (0.237972,0.605792,0.144417)
+scale: 0.467383
+principle_axes: (-0.330241,0.943330,0.032687), (-0.943866,-0.330313,-0.003343), (0.007643,-0.031956,0.999460)
+principle_values: (0.032335,0.024249,0.006085)

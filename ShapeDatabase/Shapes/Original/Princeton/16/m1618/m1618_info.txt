@@ -1,0 +1,14 @@
+mid: 1618
+url: http://www.3dcafe.com/models/skateb.zip
+ref_url: http://www.3dcafe.com/asp/toy_pics.asp
+format: 3ds 
+pid: 29252
+polygons: 46784
+connected_components: 124
+average_dihedral_angle: 0.532123
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.309295, ymax = 0.170892, zmax = 0.975
+avg_depth: 1.467053
+center: (0.167306,0.081458,0.500936)
+scale: 0.507344
+principle_axes: (-0.001907,-0.002092,0.999996), (-0.999993,-0.003209,-0.001913), (0.003213,-0.999993,-0.002086)
+principle_values: (0.066205,0.006117,0.000907)

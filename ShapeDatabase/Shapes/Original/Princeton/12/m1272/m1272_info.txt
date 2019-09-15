@@ -1,0 +1,14 @@
+mid: 1272
+url: http://rusf.ru/lukian/vrml/a_korel/plane.wrl
+ref_url: http://rusf.ru/lukian/vrml.htm
+format: wrl 
+pid: 19199
+polygons: 11580
+connected_components: 387
+average_dihedral_angle: 1.0687
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.71711, ymax = 0.975, zmax = 0.140802
+avg_depth: 1.502495
+center: (0.254970,0.499670,0.115791)
+scale: 0.508098
+principle_axes: (0.000197,-1.000000,-0.000033), (-0.999271,-0.000196,-0.038167), (-0.038167,-0.000040,0.999271)
+principle_values: (0.046468,0.034737,0.000532)

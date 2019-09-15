@@ -1,0 +1,14 @@
+mid: 1338
+url: http://amber.rc.arizona.edu/lw/objects/lod_samp.zip
+ref_url: http://amber.rc.arizona.edu/lw/lod.html
+format: lwo 
+pid: 25752
+polygons: 16960
+connected_components: 2
+average_dihedral_angle: 0.144926
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.933058, ymax = 0.975, zmax = 0.937901
+avg_depth: 1.263870
+center: (0.479405,0.596086,0.481231)
+scale: 0.860995
+principle_axes: (0.011413,-0.003997,-0.999927), (0.999913,-0.006640,0.011440), (0.006685,0.999970,-0.003921)
+principle_values: (0.064197,0.064178,0.057703)

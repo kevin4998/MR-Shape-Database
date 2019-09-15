@@ -1,0 +1,14 @@
+mid: 249
+url: http://cepcairo.bizland.com/free/Fireman.zip
+ref_url: 
+format: xthreexds 
+pid: 47132
+polygons: 15874
+connected_components: 55
+average_dihedral_angle: 0.258404
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.731246, ymax = 0.975, zmax = 0.304967
+avg_depth: 1.556275
+center: (0.377264,0.539110,0.171307)
+scale: 0.506281
+principle_axes: (0.000693,0.999996,0.002917), (-0.999998,0.000687,0.002126), (0.002124,-0.002918,0.999993)
+principle_values: (0.063183,0.011847,0.002884)

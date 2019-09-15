@@ -1,0 +1,14 @@
+mid: 1430
+url: http://www.worldwar1.com/vrml/objects/wiesbadn.wrl
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1717
+polygons: 1032
+connected_components: 64
+average_dihedral_angle: 0.958247
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.367111, zmax = 0.138905
+avg_depth: 1.894186
+center: (0.496863,0.055149,0.081953)
+scale: 0.388829
+principle_axes: (-0.999839,0.017952,0.000004), (-0.017952,-0.999839,-0.000012), (-0.000003,0.000012,-1.000000)
+principle_values: (0.048638,0.001262,0.000847)

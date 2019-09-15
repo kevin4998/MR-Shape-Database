@@ -1,0 +1,14 @@
+mid: 432
+url: http://www.dcs.ed.ac.uk/home/objects/vrml/AniHouse.wrl.gz
+ref_url: http://www.dcs.ed.ac.uk/home/objects/vrml/?D=D
+format: 
+pid: 31301
+polygons: 1207
+connected_components: 38
+average_dihedral_angle: 1.2768
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.329799, zmax = 0.956643
+avg_depth: 1.638277
+center: (0.492227,0.113563,0.474031)
+scale: 0.492017
+principle_axes: (-0.155885,-0.079250,0.984591), (-0.986248,0.067891,-0.150683), (-0.054904,-0.994540,-0.088743)
+principle_values: (0.032647,0.028353,0.009763)

@@ -1,0 +1,14 @@
+mid: 1224
+url: http://www.rccad.com/Gallery/Vrml/concordeL.wrl
+ref_url: http://www.rccad.com/Gallery_DeltaJets.htm
+format: wrl 
+pid: 33093
+polygons: 944
+connected_components: 8
+average_dihedral_angle: 0.217452
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.436667, zmax = 0.164967
+avg_depth: 1.406542
+center: (0.611687,0.230860,0.058363)
+scale: 0.335160
+principle_axes: (0.999914,-0.000280,0.013106), (0.000284,1.000000,-0.000339), (0.013106,-0.000343,-0.999914)
+principle_values: (0.031821,0.004979,0.000371)

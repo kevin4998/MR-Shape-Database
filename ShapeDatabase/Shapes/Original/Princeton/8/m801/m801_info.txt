@@ -1,0 +1,14 @@
+mid: 801
+url: http://deep.sitenest.net/freemodels/office/3dm-execchr.zip
+ref_url: 
+format: xthreexds 
+pid: 47929
+polygons: 16268
+connected_components: 27
+average_dihedral_angle: 0.34842
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.469361, ymax = 0.975, zmax = 0.54502
+avg_depth: 2.049991
+center: (0.254073,0.508882,0.211103)
+scale: 0.549277
+principle_axes: (0.004605,-0.901181,0.433419), (-0.999810,0.004059,0.019062), (-0.018938,-0.433425,-0.900991)
+principle_values: (0.063992,0.013835,0.011247)

@@ -1,0 +1,14 @@
+mid: 293
+url: http://ligwww.epfl.ch/~fua/faces/wrl/Fua.init.wrl
+ref_url: http://ligwww.epfl.ch/~fua/faces/index.html
+format: wrl 
+pid: 13507
+polygons: 1794
+connected_components: 3
+average_dihedral_angle: 0.337242
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.754268, ymax = 0.975, zmax = 0.731551
+avg_depth: 1.057199
+center: (0.381060,0.478552,0.439729)
+scale: 0.661418
+principle_axes: (0.029441,-0.982009,-0.186525), (0.999037,0.022836,0.037465), (-0.032532,-0.187448,0.981736)
+principle_values: (0.050938,0.040345,0.025450)

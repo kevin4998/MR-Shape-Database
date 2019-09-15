@@ -1,0 +1,14 @@
+mid: 1367
+url: http://www.3dcafe.com/models/excel2.zip
+ref_url: http://www.3dcafe.com/asp/sci_pics.asp
+format: lwo 
+pid: 28247
+polygons: 51359
+connected_components: 420
+average_dihedral_angle: 0.4111
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.396733, ymax = 0.173487, zmax = 0.975
+avg_depth: 1.755414
+center: (0.210966,0.115081,0.486566)
+scale: 0.469010
+principle_axes: (0.001337,0.013013,0.999914), (-0.999998,0.001130,0.001322), (0.001113,0.999915,-0.013015)
+principle_values: (0.059050,0.008590,0.001118)

@@ -1,0 +1,14 @@
+mid: 773
+url: ftp://avalon.viewpoint.com/pub/objects/architecture/furniture/compdesk_lwo.zip
+ref_url: 
+format: lwo 
+pid: 47097
+polygons: 204
+connected_components: 17
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.833371, ymax = 0.860534, zmax = 0.975
+avg_depth: 1.795778
+center: (0.472630,0.449086,0.467929)
+scale: 0.724025
+principle_axes: (0.472910,0.755988,0.452590), (-0.411160,-0.264964,0.872205), (0.779297,-0.598561,0.185528)
+principle_values: (0.072298,0.066246,0.010952)

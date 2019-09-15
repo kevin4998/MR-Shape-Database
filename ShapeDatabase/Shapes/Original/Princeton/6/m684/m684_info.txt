@@ -1,0 +1,14 @@
+mid: 684
+url: http://www.3dcafe.com/models/brow.zip
+ref_url: 
+format: xthreexds 
+pid: 47708
+polygons: 55745
+connected_components: 72
+average_dihedral_angle: 0.358688
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.520892, zmax = 0.330532
+avg_depth: 1.985053
+center: (0.673797,0.400489,0.118311)
+scale: 0.313993
+principle_axes: (-0.999336,-0.034002,0.013117), (-0.036436,0.939953,-0.339355), (-0.000791,-0.339607,-0.940567)
+principle_values: (0.026261,0.007689,0.002604)

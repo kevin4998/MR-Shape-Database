@@ -1,0 +1,14 @@
+mid: 134
+url: http://www.spazz3d.com/samples/mm.wrl
+ref_url: http://www.spazz3d.com/samples.html
+format: wrl 
+pid: 2104
+polygons: 3615
+connected_components: 29
+average_dihedral_angle: 0.51154
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.237936, ymax = 0.975, zmax = 0.184611
+avg_depth: 1.681751
+center: (0.126740,0.575380,0.111834)
+scale: 0.425639
+principle_axes: (-0.004713,-0.999837,-0.017456), (-0.999911,0.004929,-0.012376), (-0.012460,-0.017396,0.999771)
+principle_values: (0.057654,0.002568,0.000823)

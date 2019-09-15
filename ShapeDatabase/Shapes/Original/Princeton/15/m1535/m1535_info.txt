@@ -1,0 +1,14 @@
+mid: 1535
+url: http://www.3dcafe.com/models/57chevy.zip
+ref_url: 
+format: xthreexds 
+pid: 46760
+polygons: 29304
+connected_components: 38
+average_dihedral_angle: 0.44017
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.373905, ymax = 0.290989, zmax = 0.975
+avg_depth: 1.931247
+center: (0.199975,0.136220,0.514870)
+scale: 0.511659
+principle_axes: (-0.001341,-0.007649,-0.999970), (0.999993,0.003419,-0.001367), (0.003429,-0.999965,0.007644)
+principle_values: (0.063606,0.012205,0.003113)

@@ -1,0 +1,14 @@
+mid: 827
+url: http://www.dis.uniroma1.it/~massacci/InformaticaGrafica/esonero2/Esempi/chair.wrl
+ref_url: http://www.dis.uniroma1.it/~massacci/InformaticaGrafica/esonero2/Esempi/
+format: wrl 
+pid: 5280
+polygons: 132
+connected_components: 11
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.463793, ymax = 0.975, zmax = 0.389385
+avg_depth: 1.202893
+center: (0.275905,0.528657,0.207193)
+scale: 0.558108
+principle_axes: (-0.405509,-0.914091,0.000001), (0.000004,-0.000000,1.000000), (0.914091,-0.405509,-0.000004)
+principle_values: (0.071696,0.013057,0.009335)

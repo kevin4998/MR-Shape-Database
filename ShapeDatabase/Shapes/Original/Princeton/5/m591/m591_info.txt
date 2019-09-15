@@ -1,0 +1,14 @@
+mid: 591
+url: http://www.bergen.org/Present/TechnologyHighSchool/vrmls/microscope2.wrl
+ref_url: http://www.bergen.org/Present/TechnologyHighSchool/vrmls/
+format: wrl 
+pid: 4523
+polygons: 6381
+connected_components: 22
+average_dihedral_angle: 0.891846
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.538759, ymax = 0.975, zmax = 0.565938
+avg_depth: 1.742515
+center: (0.303834,0.451855,0.333935)
+scale: 0.550573
+principle_axes: (-0.341585,-0.883343,-0.320974), (0.911718,-0.228505,-0.341401), (0.228230,-0.409256,0.883414)
+principle_values: (0.076786,0.009263,0.003126)

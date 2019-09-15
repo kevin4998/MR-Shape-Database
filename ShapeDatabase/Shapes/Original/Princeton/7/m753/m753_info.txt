@@ -1,0 +1,14 @@
+mid: 753
+url: http://www.eecs.tulane.edu/www/graphics/gallery/saavedra.wrl
+ref_url: http://www.eecs.tulane.edu/www/graphics/gallery/
+format: wrl 
+pid: 11310
+polygons: 2105
+connected_components: 14
+average_dihedral_angle: 0.396127
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.374504, ymax = 0.975, zmax = 0.372891
+avg_depth: 1.863384
+center: (0.203061,0.647273,0.204019)
+scale: 0.383245
+principle_axes: (0.031449,-0.999272,-0.021619), (0.266597,-0.012459,0.963727), (-0.963295,-0.036072,0.266011)
+principle_values: (0.031449,0.007298,0.006004)

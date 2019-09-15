@@ -1,0 +1,14 @@
+mid: 758
+url: http://www.eecs.tulane.edu/www/graphics/gallery/morrow.wrl
+ref_url: http://www.eecs.tulane.edu/www/graphics/gallery/
+format: wrl 
+pid: 11309
+polygons: 400
+connected_components: 191
+average_dihedral_angle: 0.458358
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.405423, ymax = 0.975, zmax = 0.425
+avg_depth: 1.985629
+center: (0.215242,0.698993,0.225000)
+scale: 0.428246
+principle_axes: (0.000407,-1.000000,-0.000000), (-0.999977,-0.000407,0.006724), (0.006724,0.000003,0.999977)
+principle_values: (0.031606,0.010343,0.010343)

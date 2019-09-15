@@ -1,0 +1,14 @@
+mid: 1069
+url: http://www.3dcafe.com/models/cherry01.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 29067
+polygons: 17436
+connected_components: 1015
+average_dihedral_angle: 0.337244
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.907191, ymax = 0.975, zmax = 0.969888
+avg_depth: 1.142087
+center: (0.478407,0.610925,0.464993)
+scale: 0.622010
+principle_axes: (0.690031,0.359280,0.628311), (-0.564270,-0.276613,0.777872), (-0.453273,0.891293,-0.011859)
+principle_values: (0.047673,0.033311,0.025656)

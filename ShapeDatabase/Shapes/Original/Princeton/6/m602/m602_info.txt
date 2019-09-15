@@ -1,0 +1,14 @@
+mid: 602
+url: http://www.amazing3d.com/free/watch3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47636
+polygons: 10766
+connected_components: 10
+average_dihedral_angle: 0.480765
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.427609, ymax = 0.975, zmax = 0.59325
+avg_depth: 1.489508
+center: (0.217381,0.501948,0.455936)
+scale: 0.606236
+principle_axes: (0.000340,0.993065,0.117563), (0.004318,-0.117564,0.993056), (-0.999991,-0.000170,0.004328)
+principle_values: (0.078987,0.025475,0.007257)

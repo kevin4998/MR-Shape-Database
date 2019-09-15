@@ -1,0 +1,14 @@
+mid: 1616
+url: http://www.3dspline.com/3ds_meshes/skateboard.zip
+ref_url: 
+format: 3ds 
+pid: 25115
+polygons: 16820
+connected_components: 40
+average_dihedral_angle: 0.361615
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.195068, zmax = 0.342236
+avg_depth: 2.175968
+center: (0.491354,0.144154,0.180576)
+scale: 0.499076
+principle_axes: (0.999986,0.005140,0.000823), (-0.000709,-0.022090,0.999756), (-0.005157,0.999743,0.022086)
+principle_values: (0.063608,0.006644,0.001786)

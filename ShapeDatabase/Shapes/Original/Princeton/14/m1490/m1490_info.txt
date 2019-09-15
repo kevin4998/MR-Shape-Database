@@ -1,0 +1,14 @@
+mid: 1490
+url: http://fraktali.849pm.com/programs/dxf/JEEP.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27153
+polygons: 5566
+connected_components: 72
+average_dihedral_angle: 0.787999
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.516427, zmax = 0.427501
+avg_depth: 1.523502
+center: (0.500348,0.274826,0.257225)
+scale: 0.639858
+principle_axes: (0.999493,-0.025524,-0.019041), (0.025099,0.999438,-0.022229), (0.019598,0.021740,0.999572)
+principle_values: (0.086382,0.020913,0.007114)

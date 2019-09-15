@@ -1,0 +1,14 @@
+mid: 431
+url: http://www.3dcafe.com/models/house4.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27853
+polygons: 1275
+connected_components: 126
+average_dihedral_angle: 1.4528
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.165267, zmax = 0.482454
+avg_depth: 1.358562
+center: (0.486074,0.046918,0.247236)
+scale: 0.519343
+principle_axes: (-0.999842,0.004029,0.017325), (-0.017224,0.023852,-0.999567), (-0.004441,-0.999707,-0.023779)
+principle_values: (0.062040,0.017892,0.001187)

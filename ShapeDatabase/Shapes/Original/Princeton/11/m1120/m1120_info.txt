@@ -1,0 +1,14 @@
+mid: 1120
+url: http://www.3dcafe.com/models/biwing.zip
+ref_url: http://www.3dcafe.com/asp/air_pic.asp
+format: xthreexds 
+pid: 26497
+polygons: 129881
+connected_components: 423
+average_dihedral_angle: 0.367993
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.370037, zmax = 0.889139
+avg_depth: 2.792620
+center: (0.500009,0.190789,0.556443)
+scale: 0.551530
+principle_axes: (0.999998,0.000173,-0.001882), (0.001889,-0.115560,0.993299), (-0.000046,-0.993300,-0.115560)
+principle_values: (0.058822,0.031262,0.003096)

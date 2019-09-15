@@ -1,0 +1,14 @@
+mid: 61
+url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/obj/tuna2.wrl
+ref_url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/ocean.wrl
+format: wrl 
+pid: 14885
+polygons: 338
+connected_components: 9
+average_dihedral_angle: 0.452925
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.18743, ymax = 0.443396, zmax = 0.975
+avg_depth: 1.094809
+center: (0.107909,0.207349,0.607634)
+scale: 0.410328
+principle_axes: (-0.024890,0.005449,0.999675), (0.020076,-0.999781,0.005950), (0.999489,0.020218,0.024775)
+principle_values: (0.045595,0.005108,0.001997)

@@ -1,0 +1,14 @@
+mid: 1329
+url: http://www.maui.net/~fractal/helicopter.wrl
+ref_url: http://www.maui.net/~fractal/
+format: wrl 
+pid: 6252
+polygons: 1243
+connected_components: 14
+average_dihedral_angle: 0.44537
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.787129, ymax = 0.574544, zmax = 0.975
+avg_depth: 1.488598
+center: (0.408500,0.351711,0.440295)
+scale: 0.529566
+principle_axes: (-0.055759,-0.046456,-0.997363), (0.959213,0.274768,-0.066424), (-0.277129,0.960388,-0.029241)
+principle_values: (0.039389,0.019974,0.019091)

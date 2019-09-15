@@ -1,0 +1,14 @@
+mid: 634
+url: http://www.amazing3d.com/free/a3bss3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 46768
+polygons: 2253
+connected_components: 41
+average_dihedral_angle: 0.656746
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.0798252, zmax = 0.327198
+avg_depth: 1.233762
+center: (0.664164,0.049607,0.176184)
+scale: 0.433759
+principle_axes: (0.999713,-0.011059,-0.021243), (-0.021208,0.003298,-0.999770), (0.011127,0.999933,0.003063)
+principle_values: (0.060545,0.005114,0.000290)

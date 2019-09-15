@@ -1,0 +1,14 @@
+mid: 767
+url: http://64.198.60.83/baument/Models/curveDesk.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 26419
+polygons: 5188
+connected_components: 40
+average_dihedral_angle: 1.03094
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.603727, zmax = 0.472989
+avg_depth: 2.089896
+center: (0.499923,0.351367,0.241804)
+scale: 0.594247
+principle_axes: (0.999966,0.005865,-0.005779), (-0.007917,0.877824,-0.478917), (0.002264,0.478947,0.877841)
+principle_values: (0.070403,0.023881,0.006814)

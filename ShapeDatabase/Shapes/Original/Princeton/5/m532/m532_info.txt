@@ -1,0 +1,14 @@
+mid: 532
+url: http://fraktali.849pm.com/programs/dxf/VASE.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27227
+polygons: 480
+connected_components: 6
+average_dihedral_angle: 0.81298
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.42287, ymax = 0.42287, zmax = 0.975
+avg_depth: 1.174872
+center: (0.223935,0.223935,0.562043)
+scale: 0.559247
+principle_axes: (0.000000,0.000000,1.000000), (0.544127,-0.839003,0.000000), (0.839003,0.544127,-0.000000)
+principle_values: (0.072544,0.009260,0.009260)

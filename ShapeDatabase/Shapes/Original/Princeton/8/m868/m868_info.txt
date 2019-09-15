@@ -1,0 +1,14 @@
+mid: 868
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1999/arcolman/Hw3/bookcase1.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1999/arcolman/Hw3/?D=D
+format: wrl 
+pid: 42895
+polygons: 180
+connected_components: 13
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.387727, ymax = 0.975, zmax = 0.197727
+avg_depth: 1.673107
+center: (0.206363,0.504552,0.111364)
+scale: 0.577831
+principle_axes: (-0.000000,1.000000,-0.000000), (-1.000000,-0.000000,0.000000), (0.000000,0.000000,1.000000)
+principle_values: (0.073851,0.020158,0.003435)

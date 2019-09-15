@@ -1,0 +1,14 @@
+mid: 135
+url: http://mowat.virtualave.net/msshtstd.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26498
+polygons: 919
+connected_components: 6
+average_dihedral_angle: 0.538439
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.296721, ymax = 0.975, zmax = 0.268929
+avg_depth: 1.262318
+center: (0.161758,0.519923,0.088504)
+scale: 0.458927
+principle_axes: (0.005677,0.999876,-0.014688), (-0.992335,0.003820,-0.123518), (0.123447,-0.015276,-0.992234)
+principle_values: (0.061641,0.004339,0.001545)

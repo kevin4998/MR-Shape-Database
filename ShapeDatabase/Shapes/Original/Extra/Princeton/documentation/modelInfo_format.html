@@ -1,0 +1,59 @@
+<html>
+<title>Model Info</title>
+<h1>Model Info</h1>
+<body>
+
+
+
+The info file for each model is stored in <code>m[$modelId]_info.txt</code> within
+the model directory. Each line of the file has a field and a value.<br>
+<ul>
+<li><b>mid</b> The model id for this model.
+<li><b>url</b> The url where this model was downloaded. 
+<li><b>ref_url</b> The url for the referring web page.  This may be blank 
+            if we found the url for the model directly.
+<li><b>format</b> The original format for the model before conversion to ply.  
+            wrl, 3ds, etc.	
+<li><b>pid</b> An identifier included for historical purposes.
+<li><b>polygons</b> The number of polygons in the model, not
+necessarily triangulated.
+<li><b>connected_components</b> The number of connected components in
+the model.
+<li><b>average_dihedral_angle</b> The average dihedral angle weighted
+by the edge length.
+<li><b>bounding_box</b> The axis aligned bounding box of the model, specifying min
+and max values for the x, y, and z axes.
+<li><b>avg_depth</b> The average pixel depth complexity when the model is rendered with
+parallel projection from viewpoints at the vertices of an icosahedron.
+<li><b>center</b> The center of mass.
+<li><b>scale</b> The average distance from all points on the surfaces
+of all polygons to the center of mass.
+<li><b>principle_axes</b> The eigenvectors of the covariance matrix
+obtained by integrating the quadratic polynomials
+x<sub>i</sub>*x<sub>j</sub> with all x<sub>i</sub> in {x, y, z}, over
+all points on the surfaces of all polynomials.
+<li><b>principle_values</b> The eigenvalues associated with the
+principle axes.
+</ul>
+<br>
+<br>
+Below is an example:<p>
+mid: 789<br>
+url: http://www.amazing3d.com/free/stool3ds.zip<br>
+ref_url:<br>
+format: xthreexds<br>
+pid: 47610<br>
+polygons: 4808<br>
+connected_components: 9<br>
+average_dihedral_angle: 0.337324<br>
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.511587, ymax =
+0.975, zmax = 0.513989<br>
+avg_depth: 1.259353<br>
+center: (0.267756,0.637098,0.269959)<br>
+scale: 0.639414<br>
+principle_axes: (0.001593,0.999999,-0.000106), (0.002350,0.000102,0.999997), (-0.999996,0.001593,0.002350)<br>
+principle_values: (0.084827,0.015384,0.015294)<br>
+
+
+</body>
+</html>

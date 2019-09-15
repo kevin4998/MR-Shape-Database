@@ -1,0 +1,14 @@
+mid: 1358
+url: http://www.3dcafe.com/models/enterpr2.zip
+ref_url: http://www.3dcafe.com/asp/sci_pics.asp
+format: xthreexds 
+pid: 25721
+polygons: 1989
+connected_components: 134
+average_dihedral_angle: 0.356775
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.45472, ymax = 0.230642, zmax = 0.975
+avg_depth: 1.334700
+center: (0.240481,0.158042,0.582291)
+scale: 0.448332
+principle_axes: (-0.002589,0.000337,0.999997), (0.999994,-0.002207,0.002590), (0.002208,0.999998,-0.000331)
+principle_values: (0.050032,0.010112,0.002272)

@@ -1,0 +1,14 @@
+mid: 238
+url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/tux_man.wrl
+ref_url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/
+format: wrl 
+pid: 46683
+polygons: 880
+connected_components: 20
+average_dihedral_angle: 0.538774
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.900705, ymax = 0.975, zmax = 0.201636
+avg_depth: 1.334130
+center: (0.461346,0.546660,0.105081)
+scale: 0.501636
+principle_axes: (-0.008213,0.999688,-0.023590), (0.999964,0.008164,-0.002191), (0.001997,0.023607,0.999719)
+principle_values: (0.063306,0.017160,0.001012)

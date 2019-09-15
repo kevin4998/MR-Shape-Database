@@ -1,0 +1,14 @@
+mid: 796
+url: http://www.marlinstudios.com/files/furn/furnfree13ds.zip
+ref_url: http://www.marlinstudios.com/samples/sampfurn.htm
+format: xthreexds 
+pid: 29879
+polygons: 24253
+connected_components: 22
+average_dihedral_angle: 0.401946
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.710365, ymax = 0.975, zmax = 0.691944
+avg_depth: 1.822440
+center: (0.368946,0.482845,0.426091)
+scale: 0.558825
+principle_axes: (0.002030,-0.893621,-0.448818), (0.999955,-0.002342,0.009186), (-0.009260,-0.448816,0.893576)
+principle_values: (0.054362,0.023538,0.016513)

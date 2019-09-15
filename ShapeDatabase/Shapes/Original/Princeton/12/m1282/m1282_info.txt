@@ -1,0 +1,14 @@
+mid: 1282
+url: http://www.rccad.com/Gallery/Vrml/Superglider.wrl
+ref_url: http://www.rccad.com/Gallery_Gliders.htm
+format: wrl 
+pid: 5548
+polygons: 608
+connected_components: 4
+average_dihedral_angle: 0.233563
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.689896, ymax = 0.975, zmax = 0.126465
+avg_depth: 1.054030
+center: (0.284041,0.500000,0.063008)
+scale: 0.484142
+principle_axes: (0.000000,-1.000000,0.000000), (-0.999788,-0.000000,-0.020584), (0.020584,-0.000000,-0.999788)
+principle_values: (0.050285,0.024274,0.000246)

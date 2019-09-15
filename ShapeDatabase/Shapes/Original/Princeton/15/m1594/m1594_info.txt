@@ -1,0 +1,14 @@
+mid: 1594
+url: http://www.activamente.com.mx/vrml/demos/ajedrez/AJEDREZ.WRL
+ref_url: http://www.activamente.com.mx/vrml/demos.html
+format: wrl 
+pid: 2922
+polygons: 24718
+connected_components: 178
+average_dihedral_angle: 0.346425
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.140781, zmax = 0.975
+avg_depth: 1.374463
+center: (0.500090,0.039047,0.500173)
+scale: 0.795808
+principle_axes: (0.000236,0.000156,1.000000), (1.000000,0.000059,-0.000236), (0.000059,-1.000000,0.000156)
+principle_values: (0.098470,0.074858,0.000590)

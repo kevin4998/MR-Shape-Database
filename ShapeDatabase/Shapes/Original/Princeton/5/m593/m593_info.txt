@@ -1,0 +1,14 @@
+mid: 593
+url: http://www.avatara.com/avatars/hourglas2.wrl
+ref_url: http://www.avatara.com/avatars/avatars4_list.html
+format: wrl 
+pid: 17063
+polygons: 1352
+connected_components: 6
+average_dihedral_angle: 0.450241
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.608854, ymax = 0.975, zmax = 0.638542
+avg_depth: 1.727429
+center: (0.315257,0.500837,0.333294)
+scale: 0.814149
+principle_axes: (0.000258,1.000000,0.000104), (-0.810092,0.000270,-0.586303), (0.586303,-0.000067,-0.810092)
+principle_values: (0.139932,0.019913,0.019051)

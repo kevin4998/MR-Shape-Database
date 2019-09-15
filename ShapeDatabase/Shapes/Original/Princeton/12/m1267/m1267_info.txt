@@ -1,0 +1,14 @@
+mid: 1267
+url: http://www.rccad.com/Gallery/Vrml/FieselerV1.wrl
+ref_url: http://www.rccad.com/Gallery_Exotic14.htm
+format: wrl 
+pid: 1070
+polygons: 335
+connected_components: 34
+average_dihedral_angle: 0.524698
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.906445, zmax = 0.188165
+avg_depth: 1.162183
+center: (0.528906,0.465940,0.082764)
+scale: 0.471313
+principle_axes: (-0.997929,0.002624,-0.064268), (0.002636,0.999997,-0.000106), (0.064268,-0.000275,-0.997933)
+principle_values: (0.038267,0.029374,0.000867)

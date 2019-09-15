@@ -1,0 +1,14 @@
+mid: 36
+url: http://www.fh-nuertingen.de/~garden/avatars/threepack.ZIP
+ref_url: http://www.fh-nuertingen.de/~garden/avatars/
+format: wrl 
+pid: 34896
+polygons: 2531
+connected_components: 18
+average_dihedral_angle: 0.432033
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.944541, ymax = 0.808922, zmax = 0.975
+avg_depth: 1.383626
+center: (0.537115,0.344177,0.512677)
+scale: 0.529583
+principle_axes: (0.047679,-0.123896,-0.991149), (0.998726,0.022344,0.045250), (0.016540,-0.992044,0.124804)
+principle_values: (0.044466,0.018151,0.015228)

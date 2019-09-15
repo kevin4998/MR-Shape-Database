@@ -1,0 +1,14 @@
+mid: 1669
+url: http://web.webstore.fr/alpix/vrml/models/tictac.wrl
+ref_url: http://web.webstore.fr/alpix/vrml/models/
+format: wrl 
+pid: 9344
+polygons: 1229
+connected_components: 13
+average_dihedral_angle: 0.545589
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.82303, ymax = 0.975, zmax = 0.823035
+avg_depth: 1.219221
+center: (0.424014,0.392030,0.424014)
+scale: 1.014863
+principle_axes: (-0.000003,-1.000000,-0.000002), (-1.000000,0.000003,-0.000004), (0.000004,0.000002,-1.000000)
+principle_values: (0.110443,0.098473,0.081933)

@@ -1,0 +1,14 @@
+mid: 835
+url: http://www.ma.iup.edu/courses/ls499/south/nwsofa.wrl
+ref_url: http://www.ma.iup.edu/courses/ls499/south/
+format: wrl 
+pid: 7145
+polygons: 390
+connected_components: 13
+average_dihedral_angle: 0.764831
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.440625, zmax = 0.416873
+avg_depth: 1.620002
+center: (0.499859,0.219738,0.202469)
+scale: 0.612184
+principle_axes: (-1.000000,0.000509,-0.000208), (0.000384,0.374318,-0.927300), (0.000394,0.927300,0.374318)
+principle_values: (0.085862,0.015652,0.005623)

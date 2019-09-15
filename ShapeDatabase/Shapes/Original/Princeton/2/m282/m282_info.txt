@@ -1,0 +1,14 @@
+mid: 282
+url: http://cepcairo.bizland.com/free/Sea_trtl.zip
+ref_url: 
+format: xthreexds 
+pid: 47216
+polygons: 3587
+connected_components: 8
+average_dihedral_angle: 0.292423
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.443306, zmax = 0.929981
+avg_depth: 1.134030
+center: (0.499990,0.227898,0.483744)
+scale: 0.578245
+principle_axes: (-0.000174,-0.028012,0.999608), (1.000000,0.000049,0.000176), (0.000054,-0.999608,-0.028012)
+principle_values: (0.052375,0.032797,0.008577)

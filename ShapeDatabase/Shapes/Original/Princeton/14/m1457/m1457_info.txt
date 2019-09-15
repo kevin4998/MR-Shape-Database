@@ -1,0 +1,14 @@
+mid: 1457
+url: http://www.3dmodelz.com/Free/Vehicles-free/dls/Ship-1.zip
+ref_url: 
+format: xthreexds 
+pid: 48008
+polygons: 4485
+connected_components: 12
+average_dihedral_angle: 0.594952
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.375197, ymax = 0.59733, zmax = 0.975
+avg_depth: 1.577301
+center: (0.201654,0.247684,0.467204)
+scale: 0.501848
+principle_axes: (-0.005698,0.168387,0.985704), (-0.019462,-0.985552,0.168249), (-0.999794,0.018225,-0.008893)
+principle_values: (0.051886,0.015934,0.005002)

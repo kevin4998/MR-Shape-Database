@@ -1,0 +1,14 @@
+mid: 1077
+url: http://web.synapse-dev.fr/selibel/3D/Arbre.wrl
+ref_url: http://web.synapse-dev.fr/selibel/Page2.htm
+format: wrl 
+pid: 20372
+polygons: 1471
+connected_components: 48
+average_dihedral_angle: 0.792733
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.698488, ymax = 0.975, zmax = 0.715327
+avg_depth: 1.409417
+center: (0.345178,0.537757,0.359323)
+scale: 0.559426
+principle_axes: (0.113290,0.984409,0.134549), (0.687907,-0.175428,0.704279), (0.716902,0.012770,-0.697057)
+principle_values: (0.051954,0.022372,0.015702)

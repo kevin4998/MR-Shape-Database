@@ -1,0 +1,14 @@
+mid: 1596
+url: http://sunsite.unc.edu/maggot/vrml/multi.wrl
+ref_url: http://www.dlib.org/dlib/february96/02knott.html
+format: wrl 
+pid: 316
+polygons: 33047
+connected_components: 163
+average_dihedral_angle: 0.810376
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.559374, ymax = 0.151249, zmax = 0.975
+avg_depth: 2.712345
+center: (0.292247,0.042885,0.500619)
+scale: 0.566303
+principle_axes: (-0.003689,-0.001211,0.999992), (0.999993,-0.000387,0.003689), (-0.000383,-0.999999,-0.001212)
+principle_values: (0.070521,0.022308,0.000233)

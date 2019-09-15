@@ -1,0 +1,14 @@
+mid: 1384
+url: http://www.3dcafe.com/models/fsaucer.zip
+ref_url: http://www.3dcafe.com/asp/sci_pics.asp
+format: dxf 
+pid: 29109
+polygons: 7460
+connected_components: 79
+average_dihedral_angle: 0.437642
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.956241, ymax = 0.195205, zmax = 0.975
+avg_depth: 2.687059
+center: (0.488760,0.108174,0.503407)
+scale: 0.379869
+principle_axes: (-0.147591,0.000007,-0.989049), (-0.989049,-0.000016,0.147591), (0.000014,-1.000000,-0.000009)
+principle_values: (0.021473,0.021006,0.001490)

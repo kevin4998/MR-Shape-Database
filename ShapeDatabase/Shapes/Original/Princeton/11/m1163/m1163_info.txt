@@ -1,0 +1,14 @@
+mid: 1163
+url: http://hiwaay.net/~crispen/worlds/avatar/plane.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7650
+polygons: 2778
+connected_components: 757
+average_dihedral_angle: 1.19873
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.931034, ymax = 0.302749, zmax = 0.975
+avg_depth: 1.471165
+center: (0.468982,0.107169,0.485355)
+scale: 0.438350
+principle_axes: (0.036853,-0.090381,0.995225), (0.999302,-0.002817,-0.037260), (-0.006171,-0.995903,-0.090215)
+principle_values: (0.040346,0.019608,0.001207)

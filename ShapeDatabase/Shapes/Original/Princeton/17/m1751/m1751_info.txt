@@ -1,0 +1,14 @@
+mid: 1751
+url: http://www.3dcafe.com/models/umbrbech.zip
+ref_url: http://www.3dcafe.com/asp/gnrl_pic.asp
+format: 3ds 
+pid: 27952
+polygons: 284
+connected_components: 25
+average_dihedral_angle: 1.1572
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.742153, ymax = 0.975, zmax = 0.742153
+avg_depth: 1.150704
+center: (0.383576,0.783651,0.383576)
+scale: 0.474539
+principle_axes: (-0.730716,-0.000000,0.682682), (0.682682,-0.000000,0.730716), (-0.000000,1.000000,0.000000)
+principle_values: (0.024672,0.024672,0.015526)

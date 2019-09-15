@@ -1,0 +1,14 @@
+mid: 1119
+url: http://mowat.virtualave.net/pbipl1gl.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26432
+polygons: 1550
+connected_components: 32
+average_dihedral_angle: 0.991278
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.379325, zmax = 0.815271
+avg_depth: 1.388593
+center: (0.500014,0.230115,0.273190)
+scale: 0.532881
+principle_axes: (0.999997,0.000765,0.002152), (0.002177,-0.034106,-0.999416), (0.000691,-0.999418,0.034107)
+principle_values: (0.046857,0.033051,0.007289)

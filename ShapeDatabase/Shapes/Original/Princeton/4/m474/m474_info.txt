@@ -1,0 +1,14 @@
+mid: 474
+url: http://64.198.60.83/baument/Models/tent2.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 26250
+polygons: 2670
+connected_components: 13
+average_dihedral_angle: 0.594328
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.968491, ymax = 0.829063, zmax = 0.975
+avg_depth: 1.155919
+center: (0.496110,0.529857,0.503760)
+scale: 0.751193
+principle_axes: (0.001129,0.007602,0.999970), (-0.999999,-0.000868,0.001136), (0.000877,-0.999971,0.007601)
+principle_values: (0.072862,0.072771,0.011018)

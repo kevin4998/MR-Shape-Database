@@ -1,0 +1,14 @@
+mid: 1187
+url: http://ciel.me.cmu.edu/soji/aircraft/rafale.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 911
+polygons: 596
+connected_components: 1
+average_dihedral_angle: 0.609722
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.658333, ymax = 0.26859, zmax = 0.975
+avg_depth: 1.106900
+center: (0.341662,0.083189,0.616442)
+scale: 0.425058
+principle_axes: (0.000049,0.023579,0.999722), (-1.000000,-0.000004,0.000050), (0.000005,-0.999722,0.023579)
+principle_values: (0.039798,0.014151,0.001397)

@@ -1,0 +1,14 @@
+mid: 787
+url: http://www.3dcafe.com/models/dinerstl.zip
+ref_url: http://www.3dcafe.com/asp/hou2_pic.asp
+format: lwo 
+pid: 28540
+polygons: 2678
+connected_components: 10
+average_dihedral_angle: 0.591767
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.572806, ymax = 0.975, zmax = 0.572806
+avg_depth: 1.408346
+center: (0.298903,0.737385,0.298903)
+scale: 0.576988
+principle_axes: (0.000000,1.000000,0.000000), (-0.675360,-0.000000,0.737488), (0.737488,-0.000000,0.675360)
+principle_values: (0.070178,0.014954,0.014954)

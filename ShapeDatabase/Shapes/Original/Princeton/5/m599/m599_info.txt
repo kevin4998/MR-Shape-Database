@@ -1,0 +1,14 @@
+mid: 599
+url: http://fraktali.849pm.com/programs/dxf/ARMBANDUHR.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27677
+polygons: 4500
+connected_components: 74
+average_dihedral_angle: 0.92206
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.394633, ymax = 0.975, zmax = 0.543276
+avg_depth: 1.671249
+center: (0.200914,0.494072,0.233327)
+scale: 0.696271
+principle_axes: (-0.004831,-0.997587,-0.069257), (-0.001111,0.069263,-0.997598), (0.999988,-0.004743,-0.001442)
+principle_values: (0.088888,0.036206,0.006020)

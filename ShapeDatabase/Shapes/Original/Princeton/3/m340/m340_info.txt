@@ -1,0 +1,14 @@
+mid: 340
+url: http://evlweb.eecs.uic.edu/pape/vrml/CAVE/eye/HeadSceneHi.wrl
+ref_url: http://evlweb.eecs.uic.edu/pape/vrml/CAVE/
+format: wrl 
+pid: 113
+polygons: 2790
+connected_components: 1
+average_dihedral_angle: 0.393337
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.899009, ymax = 0.975, zmax = 0.948445
+avg_depth: 1.138964
+center: (0.456670,0.513795,0.464823)
+scale: 0.884854
+principle_axes: (0.051882,-0.806340,-0.589173), (-0.088027,-0.591364,0.801586), (-0.994766,0.010275,-0.101661)
+principle_values: (0.081332,0.063637,0.054014)

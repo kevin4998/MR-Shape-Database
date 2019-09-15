@@ -1,0 +1,14 @@
+mid: 1341
+url: http://mowat.virtualave.net/lghtblb1.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26558
+polygons: 824
+connected_components: 4
+average_dihedral_angle: 0.53126
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.379575, ymax = 0.975, zmax = 0.379575
+avg_depth: 1.069470
+center: (0.202293,0.650238,0.202288)
+scale: 0.490481
+principle_axes: (-0.000000,1.000000,-0.000000), (-1.000000,-0.000000,0.000223), (0.000223,0.000000,1.000000)
+principle_values: (0.060814,0.008096,0.008090)

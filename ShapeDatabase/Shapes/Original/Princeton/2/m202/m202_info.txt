@@ -1,0 +1,14 @@
+mid: 202
+url: http://www.dcs.ed.ac.uk/home/objects/vrml/cubeMan.wrl.gz
+ref_url: http://www.dcs.ed.ac.uk/home/objects/vrml/?D=D
+format: 
+pid: 31724
+polygons: 228
+connected_components: 19
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.295623, ymax = 0.975, zmax = 0.225712
+avg_depth: 1.606576
+center: (0.160311,0.520016,0.093844)
+scale: 0.463713
+principle_axes: (0.000000,0.999324,-0.036762), (1.000000,-0.000000,-0.000000), (-0.000000,-0.036762,-0.999324)
+principle_values: (0.067337,0.004144,0.001003)

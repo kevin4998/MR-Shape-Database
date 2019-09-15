@@ -1,0 +1,14 @@
+mid: 212
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Hanim/Bodies/mrlVrml/mrl.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Hanim/Bodies/mrlVrml/?D=A
+format: wrl 
+pid: 45962
+polygons: 2576
+connected_components: 1
+average_dihedral_angle: 0.437506
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.556397, ymax = 0.975, zmax = 0.183177
+avg_depth: 1.176851
+center: (0.285634,0.489488,0.104334)
+scale: 0.480060
+principle_axes: (0.030316,0.999213,0.025593), (-0.999540,0.030278,0.001897), (0.001121,-0.025638,0.999671)
+principle_values: (0.060588,0.008744,0.001707)

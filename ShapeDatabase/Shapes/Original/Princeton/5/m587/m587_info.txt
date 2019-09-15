@@ -1,0 +1,14 @@
+mid: 587
+url: http://www.ocnus.com/models/Tools/microscope.wrl.gz
+ref_url: http://www.ocnus.com/models/Tools/
+format: wrl 
+pid: 17905
+polygons: 8240
+connected_components: 44
+average_dihedral_angle: 0.761982
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.743971, ymax = 0.975, zmax = 0.744031
+avg_depth: 1.633882
+center: (0.386255,0.290588,0.380477)
+scale: 0.579737
+principle_axes: (0.331407,-0.943420,0.011360), (0.942967,0.330800,-0.037204), (0.031341,0.023042,0.999243)
+principle_values: (0.061470,0.023361,0.016691)

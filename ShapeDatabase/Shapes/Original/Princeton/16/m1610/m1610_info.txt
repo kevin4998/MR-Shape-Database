@@ -1,0 +1,14 @@
+mid: 1610
+url: http://www.oesi.com/oesi/Showcase/VRML/chess/pawn_white.wrl
+ref_url: http://www.oesi.com/oesi/Showcase/VRML/chess/pawn.htm
+format: wrl 
+pid: 8371
+polygons: 12192
+connected_components: 7
+average_dihedral_angle: 0.287368
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.646138, ymax = 0.975, zmax = 0.645819
+avg_depth: 1.276345
+center: (0.335577,0.354309,0.335426)
+scale: 0.681966
+principle_axes: (-0.000012,-1.000000,0.000080), (0.107869,-0.000081,-0.994165), (0.994165,-0.000004,0.107869)
+principle_values: (0.088282,0.021100,0.021097)

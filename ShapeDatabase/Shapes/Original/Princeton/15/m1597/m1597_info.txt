@@ -1,0 +1,14 @@
+mid: 1597
+url: http://deep.sitenest.net/freemodels/accessary/3dm-chesset1.zip
+ref_url: 
+format: xthreexds 
+pid: 48204
+polygons: 22448
+connected_components: 931
+average_dihedral_angle: 0.847861
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.331215, zmax = 0.975
+avg_depth: 1.607372
+center: (0.502537,0.055687,0.497157)
+scale: 0.728332
+principle_axes: (-0.048860,0.000235,-0.998806), (0.998800,0.003227,-0.048859), (0.003212,-0.999995,-0.000392)
+principle_values: (0.077963,0.066756,0.002873)

@@ -1,0 +1,14 @@
+mid: 817
+url: http://tecfa.unige.ch/vrml/objects/3Name3D/06char42.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/3Name3D/
+format: wrl 
+pid: 3672
+polygons: 688
+connected_components: 12
+average_dihedral_angle: 0.76895
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.496386, ymax = 0.975, zmax = 0.559485
+avg_depth: 1.402335
+center: (0.261023,0.494851,0.261773)
+scale: 0.642043
+principle_axes: (-0.000363,-0.862830,0.505493), (-0.999900,0.007464,0.012022), (0.014146,0.505438,0.862747)
+principle_values: (0.058428,0.030866,0.027422)

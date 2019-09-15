@@ -1,0 +1,14 @@
+mid: 644
+url: http://www.3dcafe.com/models/piano.zip
+ref_url: http://www.electricfunstuff.com/jgdc/resources/terrain1.zip
+format: xthreexds 
+pid: 28457
+polygons: 39589
+connected_components: 178
+average_dihedral_angle: 0.345708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.575796, ymax = 0.657836, zmax = 0.975
+avg_depth: 1.621779
+center: (0.268282,0.356887,0.523949)
+scale: 0.599987
+principle_axes: (0.226100,-0.255759,0.939929), (-0.964726,-0.192367,0.179721), (-0.134846,0.947408,0.290231)
+principle_values: (0.067592,0.021760,0.010576)

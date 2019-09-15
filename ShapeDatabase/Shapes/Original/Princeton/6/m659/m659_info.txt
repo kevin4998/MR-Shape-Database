@@ -1,0 +1,14 @@
+mid: 659
+url: http://www2.iicm.edu/pistol/pistol.wrl
+ref_url: http://www2.iicm.edu/pistol?hyperwave=action%3Dplain.action
+format: wrl 
+pid: 40488
+polygons: 2291
+connected_components: 10
+average_dihedral_angle: 0.320629
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.497961, zmax = 0.165304
+avg_depth: 1.378841
+center: (0.520950,0.329481,0.090891)
+scale: 0.519508
+principle_axes: (0.918558,-0.395280,-0.002089), (-0.393458,-0.914806,0.091216), (-0.037967,-0.082966,-0.995829)
+principle_values: (0.086827,0.003109,0.000568)

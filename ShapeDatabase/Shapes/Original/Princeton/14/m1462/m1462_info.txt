@@ -1,0 +1,14 @@
+mid: 1462
+url: http://cepcairo.bizland.com/free/Vik_ship.zip
+ref_url: 
+format: xthreexds 
+pid: 47335
+polygons: 9500
+connected_components: 51
+average_dihedral_angle: 0.466677
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.548358, ymax = 0.524952, zmax = 0.975
+avg_depth: 1.522277
+center: (0.285568,0.163243,0.485438)
+scale: 0.464532
+principle_axes: (-0.002992,0.203695,0.979030), (0.024126,-0.978735,0.203707), (0.999704,0.024229,-0.001986)
+principle_values: (0.035830,0.016702,0.009996)

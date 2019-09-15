@@ -1,0 +1,14 @@
+mid: 666
+url: ftp://avalon.viewpoint.com/pub/objects/military/other/357_magnum_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 48506
+polygons: 26860
+connected_components: 29
+average_dihedral_angle: 0.287067
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.69407, zmax = 0.267973
+avg_depth: 2.576906
+center: (0.508677,0.425381,0.148022)
+scale: 0.547763
+principle_axes: (-0.835840,0.548967,-0.002466), (0.548967,0.835844,0.000626), (-0.002405,0.000830,0.999997)
+principle_values: (0.079032,0.011105,0.001845)

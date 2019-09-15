@@ -1,0 +1,14 @@
+mid: 737
+url: http://64.198.60.83/baument/Models/tire2.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25542
+polygons: 7110
+connected_components: 391
+average_dihedral_angle: 1.21841
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.539529, ymax = 0.975, zmax = 0.974961
+avg_depth: 3.407545
+center: (0.277779,0.511055,0.501960)
+scale: 0.832396
+principle_axes: (-0.000532,0.998828,0.048407), (0.000203,-0.048407,0.998828), (-1.000000,-0.000541,0.000177)
+principle_values: (0.082316,0.078081,0.021886)

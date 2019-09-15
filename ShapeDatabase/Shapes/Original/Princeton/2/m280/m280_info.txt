@@ -1,0 +1,14 @@
+mid: 280
+url: http://fraktali.849pm.com/programs/dxf/cow_004.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27183
+polygons: 5504
+connected_components: 12
+average_dihedral_angle: 0.352816
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.761276, ymax = 0.975, zmax = 0.209958
+avg_depth: 1.091550
+center: (0.389479,0.443503,0.129180)
+scale: 0.526996
+principle_axes: (-0.002334,-0.999981,0.005737), (0.999997,-0.002329,0.000887), (-0.000874,0.005739,0.999983)
+principle_values: (0.051650,0.025240,0.001941)

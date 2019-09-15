@@ -1,0 +1,14 @@
+mid: 163
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Opal/opal.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Opal/?D=D
+format: wrl 
+pid: 42268
+polygons: 208
+connected_components: 3
+average_dihedral_angle: 0.590653
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.29804, ymax = 0.975, zmax = 0.194092
+avg_depth: 1.052868
+center: (0.161594,0.501338,0.090833)
+scale: 0.480113
+principle_axes: (0.001840,0.999900,-0.014043), (-0.999778,0.001545,-0.021024), (0.021000,-0.014079,-0.999680)
+principle_values: (0.067060,0.003797,0.001699)

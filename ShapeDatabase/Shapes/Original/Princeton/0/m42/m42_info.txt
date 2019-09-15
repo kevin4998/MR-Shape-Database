@@ -1,0 +1,14 @@
+mid: 42
+url: http://telias.free.fr/zipsz/models_low_poly/bird_t.zip
+ref_url: 
+format: xthreexds 
+pid: 47856
+polygons: 265
+connected_components: 30
+average_dihedral_angle: 1.1503
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.210109, zmax = 0.497043
+avg_depth: 1.161391
+center: (0.498373,0.186892,0.293129)
+scale: 0.353629
+principle_axes: (0.999874,-0.005182,-0.015029), (0.015393,0.079299,0.996732), (0.003973,0.996837,-0.079369)
+principle_values: (0.035435,0.006463,0.000679)

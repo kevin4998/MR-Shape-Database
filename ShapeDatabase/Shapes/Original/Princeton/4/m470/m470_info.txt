@@ -1,0 +1,14 @@
+mid: 470
+url: http://www.3dcafe.com/models/lighth.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27844
+polygons: 28566
+connected_components: 89
+average_dihedral_angle: 0.738236
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.191721, ymax = 0.659424, zmax = 0.975
+avg_depth: 1.436299
+center: (0.108252,0.408908,0.769560)
+scale: 0.577233
+principle_axes: (0.000257,-0.542884,0.839808), (-0.000561,-0.839808,-0.542884), (-1.000000,0.000332,0.000520)
+principle_values: (0.074921,0.027441,0.001365)

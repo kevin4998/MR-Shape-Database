@@ -1,0 +1,82 @@
+#
+# Application name 
+#
+
+NAME=offviewer
+
+
+
+#
+# List of source files.
+#
+
+SRCS=$(NAME).cpp 
+
+
+
+#
+# Compile targets
+#
+
+OBJS=$(SRCS:.cpp=.o) 
+
+
+
+#
+# Debug compile options
+#
+
+CC=CC
+CFLAGS=-g
+OPT_CFLAGS=
+
+LDFLAGS=-g
+OPT_LDFLAGS=
+
+
+#
+# Executable
+#
+
+EXE = $(NAME)
+
+
+
+#
+# Libraries
+#
+
+OPENGL_LIBS=-lglut -lGLU -lGL -lXext -lX11
+STD_LIBS =-lm
+LIBS=$(OPENGL_LIBS) $(STD_LIBS)
+
+
+
+#
+# Make targets
+#
+
+$(EXE):	    $(OBJS)
+	    $(CC) -o $(EXE) $(OBJS) $(LIBS)
+
+opt:
+	    $(MAKE) $(EXE) "CFLAGS=$(OPT_CFLAGS)" "LDFLAGS=$(OPT_LDFLAGS)"
+
+clean:
+	    rm *.o $(EXE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

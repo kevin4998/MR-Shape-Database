@@ -1,0 +1,14 @@
+mid: 1059
+url: http://mowat.virtualave.net/highcrwn.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26633
+polygons: 1916
+connected_components: 167
+average_dihedral_angle: 0.578286
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.761366, ymax = 0.975, zmax = 0.626671
+avg_depth: 2.092435
+center: (0.363435,0.593844,0.290159)
+scale: 0.512404
+principle_axes: (0.171808,0.980011,-0.100298), (0.593494,-0.184230,-0.783469), (-0.786286,0.075080,-0.613283)
+principle_values: (0.058705,0.013499,0.007312)

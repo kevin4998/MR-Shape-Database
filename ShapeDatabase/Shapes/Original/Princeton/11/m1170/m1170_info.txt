@@ -1,0 +1,14 @@
+mid: 1170
+url: http://www.3dspline.com/3ds_meshes/big_f14_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 25178
+polygons: 7591
+connected_components: 326
+average_dihedral_angle: 0.697187
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.563428, ymax = 0.241123, zmax = 0.975
+avg_depth: 2.272407
+center: (0.294230,0.104084,0.387348)
+scale: 0.417945
+principle_axes: (0.000244,-0.021191,-0.999775), (1.000000,-0.000140,0.000247), (0.000146,0.999775,-0.021191)
+principle_values: (0.044095,0.008963,0.000835)

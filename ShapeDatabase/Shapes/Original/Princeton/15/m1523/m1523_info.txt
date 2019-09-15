@@ -1,0 +1,14 @@
+mid: 1523
+url: http://www.frontiernet.net/~imaging/shout3d/models/83_camaro.wrl
+ref_url: http://www.frontiernet.net/~imaging/games_with_java3d.html
+format: wrl 
+pid: 30912
+polygons: 3640
+connected_components: 5
+average_dihedral_angle: 0.495734
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.354228, zmax = 0.42955
+avg_depth: 1.304001
+center: (0.494570,0.190834,0.229950)
+scale: 0.573303
+principle_axes: (-0.999596,0.026452,-0.010374), (-0.000083,0.362406,0.932020), (-0.028414,-0.931645,0.362257)
+principle_values: (0.073578,0.014574,0.003893)

@@ -1,0 +1,14 @@
+mid: 692
+url: http://64.198.60.83/baument/Models/sword1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25404
+polygons: 12652
+connected_components: 5283
+average_dihedral_angle: 0.506336
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.17573, ymax = 0.975, zmax = 0.0964355
+avg_depth: 1.382959
+center: (0.100663,0.315376,0.060464)
+scale: 0.323328
+principle_axes: (-0.000602,-0.999999,0.001392), (1.000000,-0.000602,-0.000060), (0.000060,0.001392,0.999999)
+principle_values: (0.039434,0.000574,0.000077)

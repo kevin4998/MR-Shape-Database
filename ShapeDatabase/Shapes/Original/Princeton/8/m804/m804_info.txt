@@ -1,0 +1,14 @@
+mid: 804
+url: http://www.forwarddesign.com/objects/house/Offchair.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: lwo 
+pid: 25349
+polygons: 552
+connected_components: 15
+average_dihedral_angle: 1.02983
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.702184, ymax = 0.975, zmax = 0.669041
+avg_depth: 1.278165
+center: (0.363592,0.436509,0.382703)
+scale: 0.612464
+principle_axes: (0.000000,-0.918276,-0.395941), (-0.000010,-0.395941,0.918276), (1.000000,-0.000004,0.000010)
+principle_values: (0.073401,0.019315,0.016762)

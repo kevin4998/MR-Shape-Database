@@ -1,0 +1,14 @@
+mid: 717
+url: http://www.cepegypt.com/Sword.zip
+ref_url: 
+format: xthreexds 
+pid: 47006
+polygons: 37283
+connected_components: 73
+average_dihedral_angle: 0.265212
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.16253, ymax = 0.0537022, zmax = 0.975
+avg_depth: 1.133595
+center: (0.094543,0.039081,0.404172)
+scale: 0.478289
+principle_axes: (0.001900,0.000232,-0.999998), (-0.999998,-0.000121,-0.001900), (0.000122,-1.000000,-0.000232)
+principle_values: (0.073319,0.000263,0.000018)

@@ -1,0 +1,14 @@
+mid: 1138
+url: http://www.rccad.com/Gallery/Vrml/Ultimate.wrl
+ref_url: http://www.rccad.com/Gallery_Full9.htm
+format: wrl 
+pid: 38637
+polygons: 3586
+connected_components: 151
+average_dihedral_angle: 0.333772
+bounding_box: xmin = 0.0524947, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.907034, zmax = 0.377887
+avg_depth: 1.802805
+center: (0.495384,0.465313,0.206364)
+scale: 0.490783
+principle_axes: (-0.999316,-0.034728,0.012710), (0.034722,-0.999397,-0.000666), (-0.012725,0.000225,-0.999919)
+principle_values: (0.038934,0.030123,0.005005)

@@ -1,0 +1,14 @@
+mid: 1589
+url: http://www.geocities.com/BourbonStreet/1855/chess.wrl
+ref_url: http://www.geocities.com/BourbonStreet/1855/shrine.html
+format: wrl 
+pid: 11915
+polygons: 7223
+connected_components: 31
+average_dihedral_angle: 0.974873
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.970478, ymax = 0.251514, zmax = 0.975
+avg_depth: 1.259372
+center: (0.497956,0.049255,0.407202)
+scale: 0.754373
+principle_axes: (-0.006197,0.062924,-0.997999), (-0.999981,-0.000304,0.006190), (-0.000086,-0.998018,-0.062924)
+principle_values: (0.083706,0.074742,0.001241)

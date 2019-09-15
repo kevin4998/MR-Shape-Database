@@ -1,0 +1,14 @@
+mid: 197
+url: http://www.3dcafe.com/models/child12y.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: 3ds 
+pid: 27084
+polygons: 3012
+connected_components: 56
+average_dihedral_angle: 0.457629
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.185681, ymax = 0.975, zmax = 0.296899
+avg_depth: 1.308256
+center: (0.130496,0.521298,0.161759)
+scale: 0.434133
+principle_axes: (0.008011,0.999903,0.011418), (-0.011048,0.011506,-0.999873), (0.999907,-0.007884,-0.011139)
+principle_values: (0.058399,0.004084,0.000746)

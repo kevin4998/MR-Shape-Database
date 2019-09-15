@@ -1,0 +1,14 @@
+mid: 1394
+url: http://mars.jpl.nasa.gov/mgs/movpics/mgs_vrml/MGS_ans.wrl
+ref_url: http://mars.jpl.nasa.gov/mgs/movpics/mgs_vrml/mgs_vrml.html
+format: wrl 
+pid: 7819
+polygons: 19698
+connected_components: 210
+average_dihedral_angle: 0.452641
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.342809, ymax = 0.975, zmax = 0.281286
+avg_depth: 2.093071
+center: (0.163675,0.500245,0.127335)
+scale: 0.361293
+principle_axes: (0.001011,-0.999999,-0.000654), (-0.958670,-0.001156,0.284517), (-0.284517,0.000340,-0.958671)
+principle_values: (0.038971,0.005634,0.002945)

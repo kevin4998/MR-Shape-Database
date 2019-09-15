@@ -1,0 +1,14 @@
+mid: 99
+url: http://www.3dcafe.com/models/pig.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: xthreexds 
+pid: 27351
+polygons: 2888
+connected_components: 3
+average_dihedral_angle: 0.389292
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.337893, ymax = 0.511845, zmax = 0.975
+avg_depth: 1.121117
+center: (0.181652,0.298710,0.450269)
+scale: 0.576422
+principle_axes: (-0.012868,0.051504,0.998590), (-0.002520,-0.998671,0.051475), (0.999914,-0.001854,0.012981)
+principle_values: (0.074428,0.013234,0.007858)

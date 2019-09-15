@@ -1,0 +1,14 @@
+mid: 267
+url: http://fraktali.849pm.com/programs/dxf/TRexDEMO.obj.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27229
+polygons: 7774
+connected_components: 100
+average_dihedral_angle: 0.415214
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.25099, zmax = 0.483743
+avg_depth: 1.619487
+center: (0.406162,0.138067,0.261183)
+scale: 0.396976
+principle_axes: (0.924170,0.009046,0.381873), (0.381532,0.026581,-0.923974), (0.018509,-0.999606,-0.021114)
+principle_values: (0.040722,0.007496,0.002697)

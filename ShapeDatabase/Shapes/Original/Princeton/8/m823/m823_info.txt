@@ -1,0 +1,14 @@
+mid: 823
+url: http://www.refraction.com/vrml/chair.wrl
+ref_url: http://www.refraction.com/vrml/gallery.shtml
+format: wrl 
+pid: 2587
+polygons: 812
+connected_components: 21
+average_dihedral_angle: 1.2628
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.642458, ymax = 0.975, zmax = 0.547596
+avg_depth: 1.313269
+center: (0.392631,0.491234,0.286298)
+scale: 0.620536
+principle_axes: (-0.672626,-0.739982,0.000006), (-0.000013,0.000004,-1.000000), (-0.739982,0.672626,0.000012)
+principle_values: (0.057326,0.033944,0.022996)

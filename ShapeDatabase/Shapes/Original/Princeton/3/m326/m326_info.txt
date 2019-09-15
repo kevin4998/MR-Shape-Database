@@ -1,0 +1,14 @@
+mid: 326
+url: http://www.3dcafe.com/models/man_hand.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27140
+polygons: 2828
+connected_components: 16
+average_dihedral_angle: 0.320984
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.426691, ymax = 0.975, zmax = 0.525357
+avg_depth: 1.313225
+center: (0.208278,0.475285,0.238449)
+scale: 0.533121
+principle_axes: (0.188643,-0.981718,0.025351), (-0.395865,-0.099641,-0.912887), (0.898724,0.162174,-0.407425)
+principle_values: (0.059530,0.016562,0.005137)

@@ -1,0 +1,14 @@
+mid: 951
+url: http://www.prism.gatech.edu/~gt2041c/vrml/bed.wrl
+ref_url: http://www.prism.gatech.edu/~gt2041c/vrml/
+format: wrl 
+pid: 5921
+polygons: 572
+connected_components: 11
+average_dihedral_angle: 0.553521
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.797947, ymax = 0.536752, zmax = 0.975
+avg_depth: 1.271842
+center: (0.411898,0.292008,0.397236)
+scale: 0.796891
+principle_axes: (-0.000498,0.084788,-0.996399), (1.000000,-0.000161,-0.000514), (0.000204,0.996399,0.084787)
+principle_values: (0.107158,0.064660,0.005116)

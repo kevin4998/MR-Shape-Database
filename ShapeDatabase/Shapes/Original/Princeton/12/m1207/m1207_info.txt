@@ -1,0 +1,14 @@
+mid: 1207
+url: http://www.geocities.com/BourbonStreet/3752/bomber.wrl
+ref_url: http://www.geocities.com/BourbonStreet/3752/3stchc.wrl
+format: wrl 
+pid: 14912
+polygons: 669
+connected_components: 30
+average_dihedral_angle: 0.968947
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.14863, zmax = 0.382877
+avg_depth: 1.563455
+center: (0.708318,0.065242,0.205963)
+scale: 0.330920
+principle_axes: (0.999708,0.024125,-0.001281), (0.001342,-0.002486,0.999996), (0.024121,-0.999706,-0.002517)
+principle_values: (0.034882,0.003649,0.000600)

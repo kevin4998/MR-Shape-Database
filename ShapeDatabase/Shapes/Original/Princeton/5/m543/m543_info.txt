@@ -1,0 +1,14 @@
+mid: 543
+url: http://www.amazing3d.com/free/pottdxfpc.zip
+ref_url: 
+format: dxf 
+pid: 47458
+polygons: 1196
+connected_components: 2
+average_dihedral_angle: 0.361429
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.890313, ymax = 0.975, zmax = 0.890697
+avg_depth: 1.853791
+center: (0.456306,0.488515,0.461263)
+scale: 0.903740
+principle_axes: (-0.001079,0.999955,0.009388), (-0.321621,-0.009236,0.946823), (0.946868,-0.001998,0.321617)
+principle_values: (0.078921,0.063398,0.063263)

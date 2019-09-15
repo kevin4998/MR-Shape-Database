@@ -1,0 +1,14 @@
+mid: 1113
+url: http://www.amazing3d.com/free/a3scrw3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 46912
+polygons: 4076
+connected_components: 13
+average_dihedral_angle: 0.781423
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.134803, ymax = 0.125273, zmax = 0.975
+avg_depth: 1.253227
+center: (0.084908,0.075278,0.314653)
+scale: 0.330927
+principle_axes: (-0.035121,0.001204,-0.999382), (-0.977089,0.210003,0.034591), (-0.209915,-0.977700,0.006199)
+principle_values: (0.045321,0.000761,0.000752)

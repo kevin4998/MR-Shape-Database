@@ -1,0 +1,14 @@
+mid: 1258
+url: ftp://avalon.viewpoint.com/pub/objects/military/planes/f15_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47436
+polygons: 3588
+connected_components: 441
+average_dihedral_angle: 0.895733
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.697772, ymax = 0.283484, zmax = 0.975
+avg_depth: 1.383577
+center: (0.361532,0.125218,0.382669)
+scale: 0.446873
+principle_axes: (0.000801,0.029825,-0.999555), (-1.000000,-0.000010,-0.000802), (-0.000034,0.999555,0.029825)
+principle_values: (0.045294,0.013788,0.001275)

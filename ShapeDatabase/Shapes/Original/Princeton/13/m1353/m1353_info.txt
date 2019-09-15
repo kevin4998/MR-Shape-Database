@@ -1,0 +1,14 @@
+mid: 1353
+url: http://www.pagendarm.de/trapp/personal/vrml/ncc1701b.wrl
+ref_url: http://www.pagendarm.de/trapp/personal/index.html
+format: wrl 
+pid: 1192
+polygons: 4147
+connected_components: 19
+average_dihedral_angle: 0.61801
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.489988, ymax = 0.975, zmax = 0.336106
+avg_depth: 1.390693
+center: (0.255861,0.519773,0.176646)
+scale: 0.486699
+principle_axes: (0.016325,0.983045,0.182635), (-0.999862,0.016622,-0.000095), (0.003129,0.182608,-0.983181)
+principle_values: (0.054694,0.014672,0.002792)

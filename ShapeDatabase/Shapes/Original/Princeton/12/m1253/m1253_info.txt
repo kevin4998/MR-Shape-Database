@@ -1,0 +1,14 @@
+mid: 1253
+url: http://www.rccad.com/Gallery/Vrml/Su-34.wrl
+ref_url: 
+format: wrl 
+pid: 46906
+polygons: 476
+connected_components: 10
+average_dihedral_angle: 0.559061
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.715337, zmax = 0.231058
+avg_depth: 1.708217
+center: (0.604692,0.370133,0.079992)
+scale: 0.381927
+principle_axes: (0.999991,-0.000104,-0.004355), (0.000103,1.000000,-0.000191), (-0.004355,-0.000191,-0.999990)
+principle_values: (0.034490,0.010869,0.000700)

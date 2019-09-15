@@ -1,0 +1,14 @@
+mid: 1370
+url: ftp://avalon.viewpoint.com/pub/objects/space/StarTrek/enter-pf_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47694
+polygons: 3401
+connected_components: 119
+average_dihedral_angle: 0.657319
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.432507, ymax = 0.256189, zmax = 0.975
+avg_depth: 1.193459
+center: (0.228747,0.176398,0.558093)
+scale: 0.489439
+principle_axes: (-0.000012,-0.050707,0.998714), (-1.000000,-0.000073,-0.000015), (-0.000073,0.998714,0.050707)
+principle_values: (0.058606,0.012163,0.002883)

@@ -1,0 +1,14 @@
+mid: 594
+url: http://members.tripod.com/~xen45/obj1.zip
+ref_url: http://members.tripod.com/~xen45/dl.htm
+format: dxf 
+pid: 25109
+polygons: 9070
+connected_components: 317
+average_dihedral_angle: 0.725483
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.47026, ymax = 0.975, zmax = 0.47026
+avg_depth: 2.679065
+center: (0.247318,0.481714,0.247714)
+scale: 0.714152
+principle_axes: (0.000047,-1.000000,0.000071), (-1.000000,-0.000047,0.000441), (0.000441,0.000071,1.000000)
+principle_values: (0.114702,0.012319,0.012146)

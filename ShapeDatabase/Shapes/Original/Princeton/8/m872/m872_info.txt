@@ -1,0 +1,14 @@
+mid: 872
+url: http://www.ocnus.com/models/Furniture/coffee_table.wrl.gz
+ref_url: http://www.ocnus.com/models/Furniture/
+format: wrl 
+pid: 17775
+polygons: 4413
+connected_components: 10
+average_dihedral_angle: 1.0886
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.369962, zmax = 0.447246
+avg_depth: 1.398441
+center: (0.500441,0.326123,0.236896)
+scale: 0.663972
+principle_axes: (-0.999996,0.000294,0.002719), (-0.002719,0.002039,-0.999994), (0.000299,0.999998,0.002038)
+principle_values: (0.099792,0.021654,0.004924)

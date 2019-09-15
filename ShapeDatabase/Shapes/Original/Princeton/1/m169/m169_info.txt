@@ -1,0 +1,14 @@
+mid: 169
+url: http://philliphansel.com/avatars/femath.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6018
+polygons: 2001
+connected_components: 22
+average_dihedral_angle: 0.49439
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.3181, ymax = 0.975, zmax = 0.190571
+avg_depth: 1.508284
+center: (0.171465,0.532170,0.107018)
+scale: 0.458275
+principle_axes: (-0.000341,0.999480,0.032258), (-1.000000,-0.000339,-0.000058), (0.000047,0.032258,-0.999480)
+principle_values: (0.062889,0.004085,0.001129)

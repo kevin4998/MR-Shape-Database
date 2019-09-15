@@ -1,0 +1,14 @@
+mid: 1585
+url: http://www.geocities.com/area51/cavern/7565/caboos.wrl
+ref_url: http://www.geocities.com/Area51/Cavern/7565/vrml.htm
+format: wrl 
+pid: 454
+polygons: 10241
+connected_components: 149
+average_dihedral_angle: 1.08673
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.302303, ymax = 0.399059, zmax = 0.975
+avg_depth: 3.159104
+center: (0.162688,0.219009,0.490111)
+scale: 0.526903
+principle_axes: (0.019464,0.040354,-0.998996), (-0.290865,0.956196,0.032958), (0.956566,0.289932,0.030349)
+principle_values: (0.062615,0.009300,0.007717)

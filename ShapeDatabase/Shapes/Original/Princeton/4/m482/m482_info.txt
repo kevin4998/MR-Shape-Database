@@ -1,0 +1,14 @@
+mid: 482
+url: http://www.ocnus.com/models/Food/ketchup.wrl.gz
+ref_url: http://www.ocnus.com/models/Food/
+format: wrl 
+pid: 17766
+polygons: 950
+connected_components: 6
+average_dihedral_angle: 0.40828
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.289643, ymax = 0.975, zmax = 0.292987
+avg_depth: 1.198108
+center: (0.157321,0.446448,0.169101)
+scale: 0.574654
+principle_axes: (0.000000,-0.999569,0.029365), (-0.000000,0.029365,0.999569), (-1.000000,-0.000000,-0.000000)
+principle_values: (0.082777,0.006872,0.006321)

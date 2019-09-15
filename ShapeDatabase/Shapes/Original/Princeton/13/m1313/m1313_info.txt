@@ -1,0 +1,14 @@
+mid: 1313
+url: http://www.rccad.com/Gallery/Vrml/Bell-216.wrl
+ref_url: http://www.rccad.com/Gallery_Helicopters.htm
+format: wrl 
+pid: 33161
+polygons: 2952
+connected_components: 11
+average_dihedral_angle: 0.454169
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.813506, ymax = 0.975, zmax = 0.29115
+avg_depth: 2.427109
+center: (0.316688,0.499923,0.146864)
+scale: 0.324068
+principle_axes: (-0.987439,0.002024,-0.157990), (0.001870,0.999998,0.001120), (0.157992,0.000811,-0.987440)
+principle_values: (0.029574,0.005963,0.002411)

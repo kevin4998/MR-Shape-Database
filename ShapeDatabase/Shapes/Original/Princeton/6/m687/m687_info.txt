@@ -1,0 +1,14 @@
+mid: 687
+url: http://www.avatara.com/avatars/sword2.wrl
+ref_url: http://www.avatara.com/avatars/avatars4_list.html
+format: wrl 
+pid: 17069
+polygons: 1504
+connected_components: 5
+average_dihedral_angle: 0.324096
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.459071, ymax = 0.975, zmax = 0.11228
+avg_depth: 1.119865
+center: (0.208256,0.660524,0.069126)
+scale: 0.484270
+principle_axes: (-0.367143,0.930163,0.001721), (0.930164,0.367143,0.000168), (0.000476,-0.001662,0.999999)
+principle_values: (0.073588,0.001173,0.000224)

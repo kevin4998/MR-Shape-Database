@@ -1,0 +1,14 @@
+mid: 1088
+url: http://lonewolf.tierranet.com/download/tree5.zip
+ref_url: http://lonewolf.tierranet.com/archives.html
+format: dxf 
+pid: 25221
+polygons: 41005
+connected_components: 2752
+average_dihedral_angle: 0.640682
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.564231, ymax = 0.975, zmax = 0.691487
+avg_depth: 1.363819
+center: (0.263231,0.429060,0.395893)
+scale: 0.434886
+principle_axes: (0.011711,-0.995690,-0.092001), (0.158995,0.092690,-0.982919), (0.987210,-0.003117,0.159395)
+principle_values: (0.029392,0.016192,0.009218)

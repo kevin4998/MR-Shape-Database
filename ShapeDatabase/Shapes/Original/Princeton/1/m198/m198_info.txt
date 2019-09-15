@@ -1,0 +1,14 @@
+mid: 198
+url: http://www.3dcafe.com/models/monica.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: 3ds 
+pid: 27233
+polygons: 19582
+connected_components: 9985
+average_dihedral_angle: 0.493326
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.406444, ymax = 0.975, zmax = 0.357811
+avg_depth: 3.938055
+center: (0.189684,0.546870,0.175343)
+scale: 0.447512
+principle_axes: (-0.002835,0.999379,0.035132), (0.940665,-0.009256,0.339209), (0.339324,0.034009,-0.940055)
+principle_values: (0.055181,0.005705,0.003538)

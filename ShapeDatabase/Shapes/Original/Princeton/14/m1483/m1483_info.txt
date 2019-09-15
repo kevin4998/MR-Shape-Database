@@ -1,0 +1,14 @@
+mid: 1483
+url: http://www.mece.ualberta.ca/Courses/mec265/vrprojects/motorcycle/cycle_a.wrl
+ref_url: http://www.mece.ualberta.ca/Courses/mec265/vrprojects.htm
+format: wrl 
+pid: 8346
+polygons: 90616
+connected_components: 97
+average_dihedral_angle: 0.569011
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.347864, ymax = 0.546594, zmax = 0.975
+avg_depth: 2.479359
+center: (0.183300,0.258230,0.528937)
+scale: 0.542915
+principle_axes: (0.016928,0.085795,0.996169), (0.001066,-0.996313,0.085789), (-0.999856,0.000391,0.016957)
+principle_values: (0.069927,0.012359,0.004451)

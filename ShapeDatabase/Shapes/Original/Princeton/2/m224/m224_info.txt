@@ -1,0 +1,14 @@
+mid: 224
+url: http://www.3dcafe.com/models/noma.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: lwo 
+pid: 27026
+polygons: 19219
+connected_components: 140
+average_dihedral_angle: 0.26242
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.954548, zmax = 0.198281
+avg_depth: 1.173144
+center: (0.500269,0.581053,0.107761)
+scale: 0.510737
+principle_axes: (0.000218,0.999657,-0.026179), (0.999996,-0.000147,0.002727), (0.002722,-0.026179,-0.999654)
+principle_values: (0.063943,0.016720,0.001535)

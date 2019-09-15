@@ -1,0 +1,14 @@
+mid: 1706
+url: http://www.ddj.com/ftp/1996/1996.07/vrml.zip/DOORARCH.WRL
+ref_url: http://www.ddj.com/ftp/1996/1996.07/vrml.zip/
+format: wrl 
+pid: 3789
+polygons: 29
+connected_components: 3
+average_dihedral_angle: 1.21049
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.5, ymax = 0.975, zmax = 0.0566667
+avg_depth: 1.029744
+center: (0.268558,0.473242,0.026656)
+scale: 0.535844
+principle_axes: (0.002634,-0.999996,-0.000742), (0.999989,0.002631,0.003951), (0.003949,0.000753,-0.999992)
+principle_values: (0.065859,0.018185,0.000006)

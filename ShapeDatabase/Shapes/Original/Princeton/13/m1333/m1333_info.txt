@@ -1,0 +1,14 @@
+mid: 1333
+url: http://ciel.me.cmu.edu/soji/aircraft/uh60j.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 923
+polygons: 900
+connected_components: 13
+average_dihedral_angle: 0.613837
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.815941, ymax = 0.273015, zmax = 0.975
+avg_depth: 1.192471
+center: (0.420937,0.177860,0.452910)
+scale: 0.510864
+principle_axes: (-0.013589,-0.001060,-0.999907), (-0.999908,0.000222,0.013589), (0.000208,0.999999,-0.001063)
+principle_values: (0.044498,0.029353,0.001856)

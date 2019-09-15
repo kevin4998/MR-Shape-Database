@@ -1,0 +1,14 @@
+mid: 222
+url: http://www.3dcafe.com/models/abom.zip
+ref_url: http://www.3dcafe.com/asp/horo_pic.asp
+format: xthreexds 
+pid: 26893
+polygons: 34584
+connected_components: 13
+average_dihedral_angle: 0.383669
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.963345, zmax = 0.223364
+avg_depth: 1.258717
+center: (0.500000,0.562079,0.118297)
+scale: 0.560674
+principle_axes: (-0.000010,0.999739,0.022850), (1.000000,0.000011,-0.000002), (-0.000003,0.022850,-0.999739)
+principle_values: (0.067991,0.026460,0.002242)

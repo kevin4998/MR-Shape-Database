@@ -1,0 +1,14 @@
+mid: 1269
+url: http://www.rccad.com/Gallery/Vrml/Calpol.wrl
+ref_url: http://www.rccad.com/Gallery_Gliders3.htm
+format: wrl 
+pid: 17365
+polygons: 272
+connected_components: 8
+average_dihedral_angle: 0.593116
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.528319, ymax = 0.975, zmax = 0.102679
+avg_depth: 1.036074
+center: (0.219504,0.500003,0.043951)
+scale: 0.454317
+principle_axes: (-0.000005,1.000000,-0.000000), (-0.999976,-0.000005,-0.006992), (0.006992,-0.000000,-0.999976)
+principle_values: (0.052817,0.013194,0.000079)

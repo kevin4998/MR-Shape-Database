@@ -1,0 +1,14 @@
+mid: 1689
+url: http://www.3dcafe.com/models/austral.zip
+ref_url: http://www.3dcafe.com/asp/geo_pic.asp
+format: lwo 
+pid: 28139
+polygons: 624
+connected_components: 3
+average_dihedral_angle: 0.732531
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.877535, zmax = 0.113539
+avg_depth: 1.194255
+center: (0.531826,0.465842,0.069270)
+scale: 0.606231
+principle_axes: (0.996332,-0.085568,-0.000000), (-0.085568,-0.996332,0.000000), (-0.000000,-0.000000,-1.000000)
+principle_values: (0.066226,0.035643,0.001606)

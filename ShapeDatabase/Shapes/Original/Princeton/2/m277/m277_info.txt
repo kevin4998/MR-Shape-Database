@@ -1,0 +1,14 @@
+mid: 277
+url: http://www.soho-cyberscan.com/3dfiles/turtle.wrl
+ref_url: http://www.soho-cyberscan.com/turtle.htm
+format: wrl 
+pid: 11375
+polygons: 874
+connected_components: 1
+average_dihedral_angle: 0.356812
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.276023, zmax = 0.755672
+avg_depth: 1.047233
+center: (0.458010,0.128494,0.384930)
+scale: 0.552251
+principle_axes: (0.999130,0.030883,0.028029), (0.028407,-0.011869,-0.999526), (0.030536,-0.999453,0.012736)
+principle_values: (0.049557,0.030270,0.003961)

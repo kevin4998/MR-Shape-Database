@@ -1,0 +1,14 @@
+mid: 129
+url: http://www.ocnus.com/models/Jack/human5.wrl.gz
+ref_url: http://www.ocnus.com/models/Jack/
+format: wrl 
+pid: 17831
+polygons: 8364
+connected_components: 5069
+average_dihedral_angle: 0.966098
+bounding_box: xmin = 0.025, ymin = 0.0296203, zmin = 0.025, xmax = 0.272453, ymax = 0.975, zmax = 0.205935
+avg_depth: 5.980698
+center: (0.148850,0.549692,0.091175)
+scale: 0.381910
+principle_axes: (-0.000137,0.999529,-0.030679), (0.999998,0.000202,0.002105), (0.002110,-0.030679,-0.999527)
+principle_values: (0.050792,0.002690,0.000641)

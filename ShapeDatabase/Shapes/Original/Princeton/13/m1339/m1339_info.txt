@@ -1,0 +1,14 @@
+mid: 1339
+url: http://mowat.virtualave.net/litebulb.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26547
+polygons: 6173
+connected_components: 732
+average_dihedral_angle: 1.76246
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.607072, ymax = 0.975, zmax = 0.626812
+avg_depth: 2.151428
+center: (0.315089,0.567432,0.325991)
+scale: 0.653841
+principle_axes: (0.007823,0.999969,-0.001265), (-0.000353,-0.001262,-0.999999), (-0.999969,0.007823,0.000343)
+principle_values: (0.062902,0.024884,0.023718)

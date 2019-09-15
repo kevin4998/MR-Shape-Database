@@ -1,0 +1,14 @@
+mid: 1653
+url: http://www.webscape.com/Atlanta/VRML/DowntownNorth.wrl
+ref_url: http://www.webscape.com/Worlds/atlanta.html
+format: wrl 
+pid: 20381
+polygons: 35805
+connected_components: 2730
+average_dihedral_angle: 1.10814
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.493371, ymax = 0.122517, zmax = 0.975
+avg_depth: 1.440261
+center: (0.212228,0.048776,0.552104)
+scale: 0.564746
+principle_axes: (-0.065572,0.002983,0.997843), (-0.997678,0.018265,-0.065615), (-0.018421,-0.999829,0.001778)
+principle_values: (0.081184,0.014048,0.000112)

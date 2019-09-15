@@ -1,0 +1,14 @@
+mid: 861
+url: http://mowat.virtualave.net/bookshl2.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26937
+polygons: 232
+connected_components: 17
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.910624, zmax = 0.176864
+avg_depth: 1.804777
+center: (0.510996,0.491230,0.100570)
+scale: 0.776084
+principle_axes: (0.996281,-0.086164,0.000174), (-0.086165,-0.996279,0.001933), (-0.000007,0.001941,0.999998)
+principle_values: (0.094089,0.073980,0.002362)

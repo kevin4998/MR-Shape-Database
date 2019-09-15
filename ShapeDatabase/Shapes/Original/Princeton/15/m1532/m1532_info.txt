@@ -1,0 +1,14 @@
+mid: 1532
+url: http://www.inside3d.com/ghoul/3dm/car/car.wrl
+ref_url: http://www.inside3d.com/ghoul/3dm/3dm.html
+format: wrl 
+pid: 8667
+polygons: 134
+connected_components: 13
+average_dihedral_angle: 0.66369
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.452245, ymax = 0.396482, zmax = 0.975
+avg_depth: 1.229834
+center: (0.240780,0.199071,0.515065)
+scale: 0.663382
+principle_axes: (-0.003530,0.033363,0.999437), (0.999994,-0.000516,0.003549), (-0.000634,-0.999443,0.033361)
+principle_values: (0.084645,0.023808,0.009909)

@@ -1,0 +1,14 @@
+mid: 903
+url: http://fraktali.849pm.com/programs/wrl/object/Playground.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31429
+polygons: 60
+connected_components: 3
+average_dihedral_angle: 1.57079
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.25027, zmax = 0.236167
+avg_depth: 1.121813
+center: (0.565688,0.219356,0.130586)
+scale: 0.523910
+principle_axes: (-0.998433,0.055966,0.000052), (-0.000051,0.000028,-1.000000), (0.055966,0.998433,0.000025)
+principle_values: (0.080456,0.004767,0.002570)

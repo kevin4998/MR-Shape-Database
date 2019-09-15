@@ -1,0 +1,14 @@
+mid: 1116
+url: http://www.3dcafe.com/models/smldrvrs.zip
+ref_url: http://www.3dcafe.com/asp/ind_pic.asp
+format: lwo 
+pid: 28750
+polygons: 2234
+connected_components: 82
+average_dihedral_angle: 0.631306
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.121029, ymax = 0.975, zmax = 0.108164
+avg_depth: 1.474126
+center: (0.073015,0.629190,0.066582)
+scale: 0.434547
+principle_axes: (-0.000000,1.000000,0.000000), (0.000175,-0.000000,1.000000), (-1.000000,-0.000000,0.000175)
+principle_values: (0.063067,0.000321,0.000320)

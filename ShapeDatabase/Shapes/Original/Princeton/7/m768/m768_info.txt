@@ -1,0 +1,14 @@
+mid: 768
+url: http://mowat.virtualave.net/desk.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26817
+polygons: 1158
+connected_components: 12
+average_dihedral_angle: 1.49804
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.945769, zmax = 0.420986
+avg_depth: 1.541528
+center: (0.550774,0.547095,0.175756)
+scale: 0.784623
+principle_axes: (0.999759,-0.008214,0.020361), (-0.012072,-0.980270,0.197294), (0.018338,-0.197492,-0.980133)
+principle_values: (0.114921,0.056205,0.009425)

@@ -1,0 +1,14 @@
+mid: 1501
+url: http://deep.sitenest.net/freemodels/transport/3dm-4by4.zip
+ref_url: 
+format: xthreexds 
+pid: 48448
+polygons: 47613
+connected_components: 67
+average_dihedral_angle: 0.291186
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.535999, ymax = 0.428273, zmax = 0.975
+avg_depth: 2.639383
+center: (0.277863,0.229131,0.541781)
+scale: 0.610527
+principle_axes: (-0.000872,0.024994,0.999687), (1.000000,-0.000386,0.000882), (-0.000408,-0.999688,0.024994)
+principle_values: (0.080059,0.020680,0.006209)

@@ -1,0 +1,14 @@
+mid: 1572
+url: http://www.fantastic.ukart.com/53dmodels/auto/bigtruck/semi3ds.zip
+ref_url: http://www.fantasticarts.com/3dmodels/auto/bigtruck.htm
+format: 3ds 
+pid: 27670
+polygons: 18340
+connected_components: 97
+average_dihedral_angle: 0.458801
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.186122, ymax = 0.265523, zmax = 0.975
+avg_depth: 1.512417
+center: (0.105238,0.135094,0.465736)
+scale: 0.556036
+principle_axes: (-0.002161,-0.033087,0.999450), (0.007725,-0.999423,-0.033069), (-0.999968,-0.007650,-0.002415)
+principle_values: (0.082620,0.005289,0.003310)

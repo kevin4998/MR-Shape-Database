@@ -1,0 +1,14 @@
+mid: 600
+url: http://www.3dcafe.com/models/watch2.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 28183
+polygons: 59640
+connected_components: 323
+average_dihedral_angle: 0.470113
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.491873, ymax = 0.766707, zmax = 0.975
+avg_depth: 2.112387
+center: (0.257366,0.558081,0.468191)
+scale: 0.691275
+principle_axes: (0.002678,0.399560,0.916703), (-0.002105,0.916707,-0.399556), (-0.999994,-0.000860,0.003296)
+principle_values: (0.067505,0.058112,0.009740)

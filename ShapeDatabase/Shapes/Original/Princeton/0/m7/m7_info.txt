@@ -1,0 +1,14 @@
+mid: 7
+url: http://www.dform.com/projects/space/vrml/hornet.wrl
+ref_url: http://www.inx.de/~hg/worlds.htm
+format: wrl 
+pid: 2839
+polygons: 506
+connected_components: 6
+average_dihedral_angle: 0.619784
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.570829, ymax = 0.577454, zmax = 0.975
+avg_depth: 1.185525
+center: (0.298326,0.391498,0.522515)
+scale: 0.555767
+principle_axes: (-0.007416,0.213241,0.976971), (0.999948,-0.005275,0.008742), (0.007017,0.976985,-0.213191)
+principle_values: (0.070818,0.012819,0.007788)

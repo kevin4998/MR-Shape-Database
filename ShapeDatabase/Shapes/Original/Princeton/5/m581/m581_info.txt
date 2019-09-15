@@ -1,0 +1,14 @@
+mid: 581
+url: http://mowat.virtualave.net/sunglass.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26109
+polygons: 868
+connected_components: 211
+average_dihedral_angle: 1.39757
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.268712, zmax = 0.880277
+avg_depth: 2.589682
+center: (0.499783,0.172795,0.749078)
+scale: 0.717164
+principle_axes: (-0.999999,0.000153,-0.001040), (-0.001045,-0.039712,0.999211), (0.000112,0.999211,0.039712)
+principle_values: (0.101483,0.051349,0.004428)

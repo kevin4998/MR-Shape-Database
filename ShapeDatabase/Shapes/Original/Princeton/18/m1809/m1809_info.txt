@@ -1,0 +1,14 @@
+mid: 1809
+url: http://deep.sitenest.net/freemodels/bathroom/3dm-sink.zip
+ref_url: 
+format: xthreexds 
+pid: 46925
+polygons: 26946
+connected_components: 86
+average_dihedral_angle: 0.174789
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.442015, zmax = 0.742363
+avg_depth: 1.262280
+center: (0.499460,0.159828,0.331533)
+scale: 0.687974
+principle_axes: (-0.999993,0.001850,-0.003226), (0.003337,0.063496,-0.997977), (-0.001641,-0.997980,-0.063502)
+principle_values: (0.068591,0.047461,0.009986)

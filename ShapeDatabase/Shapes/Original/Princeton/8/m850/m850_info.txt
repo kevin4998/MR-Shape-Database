@@ -1,0 +1,14 @@
+mid: 850
+url: http://eureka.lucia.it/vrml/zip/airlab.zip
+ref_url: http://eureka.lucia.it/vrml/m_worlds5.html
+format: wrl 
+pid: 34134
+polygons: 300
+connected_components: 21
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.78355, zmax = 0.198028
+avg_depth: 2.449431
+center: (0.500085,0.390142,0.083378)
+scale: 0.770871
+principle_axes: (-1.000000,0.000688,-0.000009), (0.000688,0.999997,-0.002291), (0.000007,-0.002291,-0.999997)
+principle_values: (0.087943,0.072466,0.002907)

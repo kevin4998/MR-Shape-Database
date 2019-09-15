@@ -1,0 +1,14 @@
+mid: 1233
+url: http://ciel.me.cmu.edu/soji/aircraft/av8b.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 869
+polygons: 516
+connected_components: 27
+average_dihedral_angle: 0.740943
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.5125, ymax = 0.2625, zmax = 0.975
+avg_depth: 1.204188
+center: (0.268753,0.103418,0.571994)
+scale: 0.429081
+principle_axes: (0.000007,-0.090281,-0.995916), (-1.000000,0.000024,-0.000009), (0.000025,0.995916,-0.090281)
+principle_values: (0.050699,0.005643,0.001313)

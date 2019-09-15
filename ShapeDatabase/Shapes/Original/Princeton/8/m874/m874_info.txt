@@ -1,0 +1,14 @@
+mid: 874
+url: http://www.forwarddesign.com/objects/house/Coftable.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: lwo 
+pid: 25389
+polygons: 88
+connected_components: 7
+average_dihedral_angle: 1.39377
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.355804, zmax = 0.432143
+avg_depth: 1.578209
+center: (0.500000,0.247491,0.228572)
+scale: 0.637800
+principle_axes: (1.000000,0.000000,0.000000), (-0.000000,-0.000000,1.000000), (-0.000000,1.000000,0.000000)
+principle_values: (0.090386,0.016325,0.008893)

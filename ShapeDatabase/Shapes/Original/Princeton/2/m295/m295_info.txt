@@ -1,0 +1,14 @@
+mid: 295
+url: http://www.ocnus.com/models/People/face.wrl.gz
+ref_url: http://www.ocnus.com/models/People/
+format: wrl 
+pid: 17880
+polygons: 896
+connected_components: 3
+average_dihedral_angle: 0.579149
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.673538, ymax = 0.975, zmax = 0.409959
+avg_depth: 1.127355
+center: (0.346665,0.512036,0.223425)
+scale: 0.551328
+principle_axes: (-0.011677,0.999691,0.021943), (0.999813,0.011334,0.015662), (-0.015408,-0.022122,0.999637)
+principle_values: (0.055363,0.023287,0.006965)

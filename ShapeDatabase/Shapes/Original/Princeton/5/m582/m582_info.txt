@@ -1,0 +1,14 @@
+mid: 582
+url: http://mowat.virtualave.net/raybans.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26333
+polygons: 848
+connected_components: 194
+average_dihedral_angle: 3.14155
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.312275, zmax = 0.960613
+avg_depth: 1.899848
+center: (0.500390,0.204149,0.754109)
+scale: 0.789256
+principle_axes: (-0.007001,-0.068941,0.997596), (0.999975,-0.001757,0.006896), (0.001278,0.997619,0.068951)
+principle_values: (0.085911,0.078235,0.005638)

@@ -1,0 +1,14 @@
+mid: 1748
+url: http://www.geometrek.com/web3d/deepmatrix/world/beachbar/sunshade.wrl
+ref_url: http://www.geometrek.com/web3d/deepmatrix/world/beachbar/
+format: wrl 
+pid: 17296
+polygons: 60
+connected_components: 2
+average_dihedral_angle: 1.36104
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.88, zmax = 0.928504
+avg_depth: 1.024299
+center: (0.500000,0.755310,0.476752)
+scale: 0.630559
+principle_axes: (-0.012895,-0.000000,-0.999917), (-0.999917,-0.000000,0.012895), (0.000000,-1.000000,0.000000)
+principle_values: (0.049908,0.049908,0.010373)

@@ -1,0 +1,14 @@
+mid: 1100
+url: http://www.buckrogers.demon.co.uk/3d/shovel.zip
+ref_url: http://www.yahoo.com/Computers_and_Internet/Internet/World_Wide_Web/Virtual_Reality_Modeling_Language__VRML_/
+format: obj 
+pid: 25130
+polygons: 452
+connected_components: 3
+average_dihedral_angle: 0.511728
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.239158, ymax = 0.975, zmax = 0.201019
+avg_depth: 1.101789
+center: (0.130467,0.319774,0.142488)
+scale: 0.473552
+principle_axes: (0.002876,-0.994925,-0.100577), (-0.999965,-0.003657,0.007581), (0.007911,-0.100551,0.994900)
+principle_values: (0.077697,0.003039,0.001559)

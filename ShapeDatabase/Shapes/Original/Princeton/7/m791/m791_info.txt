@@ -1,0 +1,14 @@
+mid: 791
+url: http://deep.sitenest.net/freemodels/office/3dm-stool2.zip
+ref_url: 
+format: xthreexds 
+pid: 48077
+polygons: 4508
+connected_components: 17
+average_dihedral_angle: 0.534378
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.510951, ymax = 0.975, zmax = 0.510897
+avg_depth: 1.699548
+center: (0.268179,0.693432,0.269148)
+scale: 0.712536
+principle_axes: (-0.001879,0.999998,-0.000201), (-0.000444,0.000200,1.000000), (0.999998,0.001879,0.000443)
+principle_values: (0.068960,0.035455,0.034587)

@@ -1,0 +1,14 @@
+mid: 571
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/katat/tv.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/katat/?D=A
+format: wrl 
+pid: 46047
+polygons: 192
+connected_components: 12
+average_dihedral_angle: 1.49695
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.894374, ymax = 0.975, zmax = 0.781789
+avg_depth: 2.559615
+center: (0.459687,0.413163,0.448335)
+scale: 0.767889
+principle_axes: (1.000000,0.000001,-0.000000), (0.000001,-0.995158,-0.098289), (-0.000000,0.098289,-0.995158)
+principle_values: (0.079988,0.048784,0.025375)

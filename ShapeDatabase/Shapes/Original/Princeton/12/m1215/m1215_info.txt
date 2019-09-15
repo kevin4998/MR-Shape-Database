@@ -1,0 +1,14 @@
+mid: 1215
+url: http://mowat.virtualave.net/pf22a1s.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26397
+polygons: 308
+connected_components: 3
+average_dihedral_angle: 0.69996
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.24166, ymax = 0.694913, zmax = 0.975
+avg_depth: 1.112862
+center: (0.090455,0.360319,0.625192)
+scale: 0.456357
+principle_axes: (0.051156,0.001696,0.998689), (-0.000149,0.999999,-0.001691), (-0.998691,-0.000063,0.051156)
+principle_values: (0.042929,0.017916,0.001124)

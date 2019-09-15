@@ -1,0 +1,14 @@
+mid: 942
+url: http://matrix.netsoc.tcd.ie/~laura/vrml/floor3/table.wrl
+ref_url: http://matrix.netsoc.tcd.ie/~laura/vrml/floor3/
+format: wrl 
+pid: 5830
+polygons: 300
+connected_components: 25
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.513095, zmax = 0.975
+avg_depth: 1.279776
+center: (0.500000,0.359654,0.500000)
+scale: 0.686966
+principle_axes: (0.714341,-0.000000,-0.699798), (0.699798,-0.000001,0.714341), (-0.000001,-1.000000,-0.000001)
+principle_values: (0.053362,0.053362,0.020676)

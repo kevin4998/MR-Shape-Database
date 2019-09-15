@@ -1,0 +1,14 @@
+mid: 1591
+url: http://www.ocnus.com/models/Chess/chessboard.wrl.gz
+ref_url: http://www.ocnus.com/models/Chess/
+format: wrl 
+pid: 17706
+polygons: 14472
+connected_components: 45
+average_dihedral_angle: 0.663648
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.974998, ymax = 0.266023, zmax = 0.975
+avg_depth: 1.780117
+center: (0.499937,0.057289,0.500000)
+scale: 0.790023
+principle_axes: (0.002146,-0.000000,0.999998), (-0.999998,0.000170,0.002146), (-0.000170,-1.000000,0.000000)
+principle_values: (0.091560,0.080266,0.001133)

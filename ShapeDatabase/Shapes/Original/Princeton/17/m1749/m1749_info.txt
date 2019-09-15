@@ -1,0 +1,14 @@
+mid: 1749
+url: http://mowat.virtualave.net/umbrella.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 25930
+polygons: 3012
+connected_components: 218
+average_dihedral_angle: 1.9243
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.854341, ymax = 0.975, zmax = 0.854341
+avg_depth: 1.283415
+center: (0.440501,0.751881,0.439670)
+scale: 0.621141
+principle_axes: (0.999843,-0.017701,0.000001), (0.000001,0.000000,-1.000000), (0.017701,0.999843,0.000000)
+principle_values: (0.045706,0.045591,0.013563)

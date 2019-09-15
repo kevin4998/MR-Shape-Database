@@ -1,0 +1,14 @@
+mid: 976
+url: http://mowat.virtualave.net/rose2.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26275
+polygons: 1889
+connected_components: 192
+average_dihedral_angle: 0.300539
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.747674, ymax = 0.975, zmax = 0.708802
+avg_depth: 1.640973
+center: (0.401952,0.707249,0.354796)
+scale: 0.444327
+principle_axes: (-0.038296,0.998927,0.026033), (-0.218452,-0.033791,0.975262), (-0.975096,-0.031662,-0.219512)
+principle_values: (0.028653,0.017170,0.012929)

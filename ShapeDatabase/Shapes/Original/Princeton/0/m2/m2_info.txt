@@ -1,0 +1,14 @@
+mid: 2
+url: http://www.ento.vt.edu/%7Esharov/3d/ant.wrl
+ref_url: http://ousdmail.ousd.k12.ca.us/~oraclenc/zompopas/resources.html
+format: wrl 
+pid: 487
+polygons: 6667
+connected_components: 61
+average_dihedral_angle: 0.526523
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.61683, ymax = 0.515443, zmax = 0.975
+avg_depth: 1.327785
+center: (0.321017,0.265989,0.415965)
+scale: 0.451309
+principle_axes: (0.000540,-0.190662,-0.981656), (0.999999,0.001101,0.000337), (-0.001016,0.981655,-0.190663)
+principle_values: (0.048892,0.011626,0.004511)

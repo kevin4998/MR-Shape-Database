@@ -1,0 +1,14 @@
+mid: 1389
+url: http://mowat.virtualave.net/hubble.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26627
+polygons: 1140
+connected_components: 38
+average_dihedral_angle: 1.66937
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.604465, zmax = 0.850806
+avg_depth: 1.878616
+center: (0.499842,0.302177,0.455400)
+scale: 0.573289
+principle_axes: (-0.044798,-0.312581,0.948834), (0.998996,-0.014025,0.042545), (-0.000009,-0.949788,-0.312895)
+principle_values: (0.045325,0.045178,0.009299)

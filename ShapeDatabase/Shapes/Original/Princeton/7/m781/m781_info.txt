@@ -1,0 +1,14 @@
+mid: 781
+url: http://tecfa.unige.ch/vrml/objects/furniture/thewoodenbench.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/furniture/
+format: wrl 
+pid: 3645
+polygons: 508
+connected_components: 39
+average_dihedral_angle: 1.40585
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.640582, zmax = 0.442837
+avg_depth: 1.310736
+center: (0.502810,0.350282,0.264925)
+scale: 0.668073
+principle_axes: (-0.999996,0.002003,0.001959), (-0.002798,-0.677439,-0.735573), (0.000146,0.735576,-0.677442)
+principle_values: (0.095213,0.023532,0.008866)

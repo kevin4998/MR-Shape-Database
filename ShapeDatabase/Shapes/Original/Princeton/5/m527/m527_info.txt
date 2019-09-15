@@ -1,0 +1,14 @@
+mid: 527
+url: http://arctic.st.usm.edu/~shundley/vrml/extrusion.wrl
+ref_url: http://arctic.st.usm.edu/~shundley/vrml
+format: wrl 
+pid: 11593
+polygons: 348
+connected_components: 1
+average_dihedral_angle: 0.428284
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.975, zmax = 0.975
+avg_depth: 1.008971
+center: (0.500000,0.399983,0.500000)
+scale: 0.949353
+principle_axes: (0.000000,-1.000000,-0.000000), (-0.146235,-0.000000,0.989250), (-0.989250,-0.000000,-0.146235)
+principle_values: (0.101715,0.064332,0.064332)

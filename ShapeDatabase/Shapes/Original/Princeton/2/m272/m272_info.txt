@@ -1,0 +1,14 @@
+mid: 272
+url: http://cepcairo.bizland.com/free/T_rex.zip
+ref_url: 
+format: xthreexds 
+pid: 47288
+polygons: 9039
+connected_components: 53
+average_dihedral_angle: 0.376541
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.20865, ymax = 0.373605, zmax = 0.975
+avg_depth: 1.135985
+center: (0.116797,0.234799,0.616998)
+scale: 0.380802
+principle_axes: (0.000000,-0.181631,-0.983367), (0.000031,0.983367,-0.181631), (-1.000000,0.000030,-0.000006)
+principle_values: (0.041305,0.005015,0.001675)

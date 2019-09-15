@@ -1,0 +1,14 @@
+mid: 1303
+url: http://www.geometrek.com/members/kapiti/objects/chop.wrl
+ref_url: http://home.t-online.de/home/kiwano6/models.htm
+format: wrl 
+pid: 1748
+polygons: 401
+connected_components: 22
+average_dihedral_angle: 0.752204
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.332926, zmax = 0.703571
+avg_depth: 1.693743
+center: (0.391192,0.233727,0.364276)
+scale: 0.462938
+principle_axes: (-0.998157,-0.060679,-0.000161), (0.000205,-0.000709,-1.000000), (-0.060679,0.998157,-0.000720)
+principle_values: (0.036327,0.017336,0.008942)

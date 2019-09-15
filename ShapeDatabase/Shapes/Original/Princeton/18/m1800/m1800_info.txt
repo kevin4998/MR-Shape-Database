@@ -1,0 +1,14 @@
+mid: 1800
+url: http://www.stonecarver.com/VRML/tudor.wrl
+ref_url: http://www.stonecarver.com/ironcad.html
+format: wrl 
+pid: 9139
+polygons: 1418
+connected_components: 6
+average_dihedral_angle: 0.908728
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.871198, zmax = 0.651906
+avg_depth: 1.270432
+center: (0.506759,0.285028,0.216552)
+scale: 0.753965
+principle_axes: (0.038775,-0.946174,0.321326), (0.999184,0.033075,-0.023179), (-0.011304,-0.321963,-0.946685)
+principle_values: (0.077672,0.071233,0.015122)

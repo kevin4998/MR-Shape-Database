@@ -1,0 +1,14 @@
+mid: 1804
+url: http://fraktali.849pm.com/programs/wrl/SlotMachine.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32554
+polygons: 778
+connected_components: 8
+average_dihedral_angle: 1.01694
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.707524, ymax = 0.975, zmax = 0.484762
+avg_depth: 1.955684
+center: (0.291011,0.521369,0.236305)
+scale: 0.627820
+principle_axes: (0.040234,0.992069,-0.119083), (0.998879,-0.036959,0.029588), (-0.024952,0.120140,0.992443)
+principle_values: (0.065305,0.027549,0.018766)

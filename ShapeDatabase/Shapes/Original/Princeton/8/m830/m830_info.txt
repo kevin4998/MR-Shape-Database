@@ -1,0 +1,14 @@
+mid: 830
+url: http://www.refraction.com/vrml/sofa.wrl
+ref_url: http://www.refraction.com/vrml/gallery.shtml
+format: wrl 
+pid: 2590
+polygons: 420
+connected_components: 14
+average_dihedral_angle: 1.31376
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.439982, ymax = 0.256592, zmax = 0.975
+avg_depth: 2.285073
+center: (0.219112,0.117086,0.500000)
+scale: 0.597737
+principle_axes: (-0.000000,0.000000,-1.000000), (-0.999384,0.035085,0.000000), (0.035085,0.999384,0.000000)
+principle_values: (0.087519,0.014386,0.001946)

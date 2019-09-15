@@ -1,0 +1,14 @@
+mid: 792
+url: http://64.198.60.83/baument/Models/officechair1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25350
+polygons: 4782
+connected_components: 13
+average_dihedral_angle: 0.748935
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.639445, ymax = 0.975, zmax = 0.777606
+avg_depth: 1.260342
+center: (0.243731,0.466492,0.235936)
+scale: 0.569037
+principle_axes: (0.036988,-0.866016,0.498646), (-0.999316,-0.031876,0.018766), (-0.000357,-0.498999,-0.866603)
+principle_values: (0.065139,0.016975,0.011502)

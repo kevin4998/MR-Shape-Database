@@ -1,0 +1,14 @@
+mid: 1426
+url: http://www.3dheaven.net/Modelle/military/Mbmp.zip
+ref_url: 
+format: xthreexds 
+pid: 47949
+polygons: 53728
+connected_components: 57
+average_dihedral_angle: 0.91962
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.480347, ymax = 0.390943, zmax = 0.975
+avg_depth: 2.332967
+center: (0.253359,0.144441,0.463541)
+scale: 0.563619
+principle_axes: (0.001910,-0.014445,-0.999894), (-0.999988,-0.004528,-0.001845), (-0.004501,0.999885,-0.014453)
+principle_values: (0.059842,0.024434,0.004925)

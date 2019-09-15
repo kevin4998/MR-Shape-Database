@@ -1,0 +1,14 @@
+mid: 807
+url: http://www.iua.upf.es/~npares/docencia/vrml/lod/lod1.wrl
+ref_url: http://www.iua.upf.es/~npares/docencia/vrml/lod/lod.htm
+format: wrl 
+pid: 12227
+polygons: 184
+connected_components: 6
+average_dihedral_angle: 1.309
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.405, ymax = 0.975, zmax = 0.403838
+avg_depth: 1.243533
+center: (0.215000,0.549612,0.148155)
+scale: 0.588198
+principle_axes: (-0.000000,-0.948092,0.317995), (-1.000000,0.000000,-0.000001), (0.000001,-0.317995,-0.948092)
+principle_values: (0.068958,0.018700,0.012912)

@@ -1,0 +1,14 @@
+mid: 1619
+url: http://fraktali.849pm.com/programs/wrl/object/Sports.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31408
+polygons: 1588
+connected_components: 9
+average_dihedral_angle: 0.403189
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.349268, ymax = 0.221259, zmax = 0.975
+avg_depth: 1.171986
+center: (0.187182,0.137000,0.492189)
+scale: 0.499382
+principle_axes: (0.000022,-0.010639,-0.999943), (1.000000,-0.000473,0.000027), (0.000473,0.999943,-0.010639)
+principle_values: (0.063895,0.007468,0.001447)

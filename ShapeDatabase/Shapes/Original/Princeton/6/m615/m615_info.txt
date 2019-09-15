@@ -1,0 +1,14 @@
+mid: 615
+url: http://deep.sitenest.net/freemodels/accessary/3dm-anglmp1.zip
+ref_url: 
+format: xthreexds 
+pid: 48177
+polygons: 5410
+connected_components: 9
+average_dihedral_angle: 0.51701
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.863495, ymax = 0.747334, zmax = 0.975
+avg_depth: 1.972563
+center: (0.264565,0.387119,0.728452)
+scale: 0.555994
+principle_axes: (-0.456194,0.742606,0.490330), (-0.492136,-0.669613,0.556256), (0.741410,0.012452,0.670937)
+principle_values: (0.076046,0.013476,0.002594)

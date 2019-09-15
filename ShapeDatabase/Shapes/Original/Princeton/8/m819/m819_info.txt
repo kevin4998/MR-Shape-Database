@@ -1,0 +1,14 @@
+mid: 819
+url: http://tecfa.unige.ch/vrml/objects/acuris/Chair.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/acuris/?D=A
+format: wrl 
+pid: 46448
+polygons: 664
+connected_components: 13
+average_dihedral_angle: 0.976356
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.483371, ymax = 0.975, zmax = 0.505608
+avg_depth: 1.204569
+center: (0.254249,0.435426,0.229917)
+scale: 0.582682
+principle_axes: (-0.000310,-0.846020,0.533151), (-1.000000,0.000744,0.000600), (0.000904,0.533150,0.846020)
+principle_values: (0.056384,0.025951,0.016865)

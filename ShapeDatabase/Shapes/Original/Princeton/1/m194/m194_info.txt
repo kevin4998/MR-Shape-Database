@@ -1,0 +1,14 @@
+mid: 194
+url: http://www.3dcafe.com/models/woman1.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: 3ds 
+pid: 26995
+polygons: 3460
+connected_components: 56
+average_dihedral_angle: 0.435517
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.237304, ymax = 0.975, zmax = 0.396532
+avg_depth: 1.437254
+center: (0.157545,0.511891,0.210631)
+scale: 0.444884
+principle_axes: (0.015168,0.999826,0.010884), (-0.006401,-0.010788,0.999921), (0.999864,-0.015237,0.006236)
+principle_values: (0.055998,0.006356,0.001463)

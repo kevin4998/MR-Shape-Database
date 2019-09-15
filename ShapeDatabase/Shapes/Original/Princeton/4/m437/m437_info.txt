@@ -1,0 +1,14 @@
+mid: 437
+url: http://www.engin.umich.edu/class/eng477/projectsf99/FIRE/FIRE.wrl
+ref_url: http://www.engin.umich.edu/class/eng477/projectsf99/
+format: wrl 
+pid: 10466
+polygons: 77387
+connected_components: 1347
+average_dihedral_angle: 0.437659
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.554956, zmax = 0.540663
+avg_depth: 4.067185
+center: (0.491249,0.216945,0.290841)
+scale: 0.677387
+principle_axes: (-0.999027,-0.035437,0.026266), (0.026135,0.004136,0.999650), (-0.035533,0.999363,-0.003206)
+principle_values: (0.085192,0.026181,0.017920)

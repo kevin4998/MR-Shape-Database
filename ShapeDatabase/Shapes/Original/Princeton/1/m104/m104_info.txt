@@ -1,0 +1,14 @@
+mid: 104
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/didemoto/Hw3/hw3a.wrl
+ref_url: http://www.afit.af.mil/Schools/EN/ENG/LABS/GRAPHICS/annobib/annobib.medvr.html
+format: wrl 
+pid: 38062
+polygons: 462
+connected_components: 1
+average_dihedral_angle: 0.665897
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.781594, zmax = 0.282277
+avg_depth: 1.129434
+center: (0.502025,0.432557,0.154016)
+scale: 0.578996
+principle_axes: (0.927694,0.373310,0.004922), (-0.373130,0.927531,-0.021456), (-0.012575,0.018068,0.999758)
+principle_values: (0.068549,0.023347,0.003943)

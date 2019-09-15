@@ -1,0 +1,14 @@
+mid: 1711
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/victor/door_left.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/victor/?D=A
+format: wrl 
+pid: 46091
+polygons: 132
+connected_components: 12
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.32038, ymax = 0.975, zmax = 0.104125
+avg_depth: 1.415231
+center: (0.168920,0.538328,0.074927)
+scale: 0.528468
+principle_axes: (-0.013174,0.998339,-0.056078), (-0.999913,-0.013140,0.000979), (-0.000241,-0.056086,-0.998426)
+principle_values: (0.075990,0.009942,0.000204)

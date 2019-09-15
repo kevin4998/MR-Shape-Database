@@ -1,0 +1,14 @@
+mid: 638
+url: http://pages.infinit.net/redgyboy/guitare.wrl
+ref_url: http://www.ocnus.com/models/UserLinks.html
+format: wrl 
+pid: 17982
+polygons: 7584
+connected_components: 45
+average_dihedral_angle: 0.84933
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.304849, ymax = 0.975, zmax = 0.116494
+avg_depth: 1.790252
+center: (0.164942,0.313156,0.067973)
+scale: 0.394540
+principle_axes: (-0.000067,-0.999127,-0.041780), (-1.000000,0.000072,-0.000130), (-0.000133,-0.041780,0.999127)
+principle_values: (0.048433,0.005727,0.000900)

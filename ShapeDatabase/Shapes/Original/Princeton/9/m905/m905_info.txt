@@ -1,0 +1,14 @@
+mid: 905
+url: http://coli.lili.uni-bielefeld.de/~milde/java3d/examples/roboter.zip
+ref_url: http://www.robotic.de/Joerg.Vogel/Vrml/lib.html
+format: wrl 
+pid: 32597
+polygons: 68
+connected_components: 7
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.84105, zmax = 0.975
+avg_depth: 1.152258
+center: (0.502002,0.767325,0.498159)
+scale: 0.901710
+principle_axes: (-0.677073,0.000254,-0.735915), (-0.735888,0.008426,0.677051), (0.006373,0.999964,-0.005518)
+principle_values: (0.104979,0.103226,0.026839)

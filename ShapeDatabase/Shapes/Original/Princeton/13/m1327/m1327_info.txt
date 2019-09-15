@@ -1,0 +1,14 @@
+mid: 1327
+url: http://www.topedge.com/panels/aircraft/hangar/vrml/bellrang/bellrg-a.wrl
+ref_url: http://www.topedge.com/panels/aircraft/hangar/yaaphavr.html
+format: wrl 
+pid: 5516
+polygons: 14167
+connected_components: 53
+average_dihedral_angle: 0.437623
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.762712, ymax = 0.975, zmax = 0.312559
+avg_depth: 1.119504
+center: (0.393631,0.369442,0.163490)
+scale: 0.428938
+principle_axes: (0.072424,-0.988313,-0.134136), (0.921792,0.014972,0.387395), (0.380859,0.151702,-0.912103)
+principle_values: (0.051918,0.005911,0.004678)

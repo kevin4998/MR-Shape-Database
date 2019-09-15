@@ -1,0 +1,14 @@
+mid: 269
+url: http://www.softy3d.com/models/trex-3ds.zip
+ref_url: http://www.softy3d.com/es/galeria.htm
+format: xthreexds 
+pid: 28843
+polygons: 33988
+connected_components: 1
+average_dihedral_angle: 0.12414
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.245091, ymax = 0.975, zmax = 0.465414
+avg_depth: 1.155235
+center: (0.135518,0.589633,0.215967)
+scale: 0.412794
+principle_axes: (0.001403,-0.962272,0.272085), (0.005439,-0.272073,-0.962261), (-0.999984,-0.002830,-0.004852)
+principle_values: (0.042850,0.007199,0.002451)

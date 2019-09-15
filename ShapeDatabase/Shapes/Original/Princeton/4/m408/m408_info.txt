@@ -1,0 +1,14 @@
+mid: 408
+url: http://www.miv.t.u-tokyo.ac.jp/~ishizuka/cg-class99/vrml/96922.wrl
+ref_url: http://www.miv.t.u-tokyo.ac.jp/~ishizuka/cg-class99/vrml/
+format: wrl 
+pid: 6725
+polygons: 2405
+connected_components: 31
+average_dihedral_angle: 0.583907
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.644812, ymax = 0.592935, zmax = 0.975
+avg_depth: 2.413084
+center: (0.335019,0.258583,0.470586)
+scale: 0.644683
+principle_axes: (0.000118,0.144459,-0.989511), (1.000000,-0.000014,0.000117), (-0.000003,0.989511,0.144459)
+principle_values: (0.069249,0.033174,0.014863)

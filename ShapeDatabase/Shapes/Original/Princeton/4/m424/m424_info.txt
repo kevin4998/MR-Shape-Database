@@ -1,0 +1,14 @@
+mid: 424
+url: http://www.engr.siu.edu/tech/rong/vrml/v8.wrl
+ref_url: http://www.engr.siu.edu/tech/rong/html/gm0.htm
+format: wrl 
+pid: 11670
+polygons: 3957
+connected_components: 1
+average_dihedral_angle: 0.779979
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.245289, zmax = 0.404323
+avg_depth: 1.498233
+center: (0.500003,0.171928,0.219528)
+scale: 0.584271
+principle_axes: (-1.000000,-0.000001,-0.000006), (0.000006,0.023121,-0.999733), (-0.000001,0.999733,0.023121)
+principle_values: (0.086576,0.010786,0.003870)

@@ -1,0 +1,14 @@
+mid: 1675
+url: http://fraktali.849pm.com/programs/wrl/object/Street.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31396
+polygons: 52
+connected_components: 3
+average_dihedral_angle: 1.25664
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.318634, ymax = 0.975, zmax = 0.0449922
+avg_depth: 1.063292
+center: (0.171819,0.716509,0.040899)
+scale: 0.372381
+principle_axes: (0.000007,0.999889,0.014879), (-1.000000,0.000007,-0.000003), (-0.000003,-0.014879,0.999889)
+principle_values: (0.051749,0.004045,0.000026)

@@ -1,0 +1,14 @@
+mid: 1472
+url: http://www.avatara.com/avatars/bike2.wrl
+ref_url: http://www.avatara.com/avatars/avatars2_list.html
+format: wrl 
+pid: 17012
+polygons: 846
+connected_components: 30
+average_dihedral_angle: 0.81841
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.406458, ymax = 0.566816, zmax = 0.975
+avg_depth: 1.260251
+center: (0.215033,0.299891,0.504158)
+scale: 0.520381
+principle_axes: (0.001593,-0.181284,-0.983429), (0.008056,-0.983396,0.181291), (-0.999966,-0.008211,-0.000106)
+principle_values: (0.057085,0.022525,0.001480)

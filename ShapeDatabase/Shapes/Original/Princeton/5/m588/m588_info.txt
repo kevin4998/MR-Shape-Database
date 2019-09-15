@@ -1,0 +1,14 @@
+mid: 588
+url: http://www.3dcafe.com/models/ms2.zip
+ref_url: http://www.3dcafe.com/asp/gnrl_pic.asp
+format: xthreexds 
+pid: 27974
+polygons: 6599
+connected_components: 36
+average_dihedral_angle: 0.842885
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.739038, ymax = 0.975, zmax = 0.725741
+avg_depth: 2.135203
+center: (0.421760,0.331186,0.382471)
+scale: 0.620633
+principle_axes: (0.084868,-0.996368,-0.006981), (0.995695,0.084544,0.038002), (-0.037273,-0.010177,0.999253)
+principle_values: (0.068067,0.028753,0.014121)

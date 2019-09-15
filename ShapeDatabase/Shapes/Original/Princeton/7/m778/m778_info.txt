@@ -1,0 +1,14 @@
+mid: 778
+url: http://mowat.virtualave.net/parkbnch.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26443
+polygons: 90
+connected_components: 4
+average_dihedral_angle: 1.45913
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.545599, ymax = 0.800831, zmax = 0.975
+avg_depth: 1.683904
+center: (0.330876,0.351990,0.500000)
+scale: 0.740108
+principle_axes: (0.000000,0.000000,-1.000000), (-0.657069,-0.753830,-0.000000), (-0.753830,0.657069,0.000000)
+principle_values: (0.080514,0.055922,0.017452)

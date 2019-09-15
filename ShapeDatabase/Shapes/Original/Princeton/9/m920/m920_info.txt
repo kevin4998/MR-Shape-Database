@@ -1,0 +1,14 @@
+mid: 920
+url: http://people.a2000.nl/jblaaubo/wrl/Tafel.wrl
+ref_url: http://people.a2000.nl/jblaaubo/page1.html
+format: wrl 
+pid: 9256
+polygons: 736
+connected_components: 11
+average_dihedral_angle: 0.537496
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.975, zmax = 0.676806
+avg_depth: 1.165356
+center: (0.500000,0.500000,0.588062)
+scale: 0.827174
+principle_axes: (-0.933764,0.357888,0.000000), (0.357888,0.933764,-0.000000), (0.000000,0.000000,1.000000)
+principle_values: (0.082501,0.082501,0.023137)

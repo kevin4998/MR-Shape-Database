@@ -1,0 +1,14 @@
+mid: 1429
+url: http://www.worldwar1.com/vrml/objects/chester.wrl
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1714
+polygons: 1039
+connected_components: 100
+average_dihedral_angle: 0.961564
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.301662, zmax = 0.13238
+avg_depth: 1.729877
+center: (0.482862,0.051856,0.082370)
+scale: 0.396373
+principle_axes: (-0.999659,0.026125,0.000607), (0.002903,0.134140,-0.990958), (0.025970,0.990618,0.134170)
+principle_values: (0.051092,0.000932,0.000652)

@@ -1,0 +1,14 @@
+mid: 1307
+url: http://www.3dcafe.com/models/hind24h.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 26092
+polygons: 34708
+connected_components: 118
+average_dihedral_angle: 0.589138
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.753955, ymax = 0.336938, zmax = 0.975
+avg_depth: 1.622934
+center: (0.376302,0.146945,0.554060)
+scale: 0.389629
+principle_axes: (0.009334,0.114032,-0.993433), (0.999940,0.004592,0.009922), (0.005693,-0.993466,-0.113983)
+principle_values: (0.038620,0.007988,0.003204)

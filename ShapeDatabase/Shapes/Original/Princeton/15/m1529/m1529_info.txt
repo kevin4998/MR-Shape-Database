@@ -1,0 +1,14 @@
+mid: 1529
+url: http://www.amazing3d.com/free/shdw3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47544
+polygons: 7412
+connected_components: 57
+average_dihedral_angle: 0.507305
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.428029, ymax = 0.332668, zmax = 0.975
+avg_depth: 1.489660
+center: (0.226687,0.152351,0.498929)
+scale: 0.614594
+principle_axes: (0.000036,0.038194,-0.999270), (1.000000,0.000731,0.000064), (0.000733,-0.999270,-0.038194)
+principle_values: (0.080499,0.017678,0.005681)

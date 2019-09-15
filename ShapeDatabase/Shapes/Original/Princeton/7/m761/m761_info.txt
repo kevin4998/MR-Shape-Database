@@ -1,0 +1,14 @@
+mid: 761
+url: http://www.cosc.canterbury.ac.nz/teaching/classes/cosc415/Worlds/icecream/icecream2.wrl
+ref_url: http://www.cosc.canterbury.ac.nz/teaching/classes/cosc415/Worlds/
+format: wrl 
+pid: 6616
+polygons: 210
+connected_components: 2
+average_dihedral_angle: 0.467597
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.567857, ymax = 0.975, zmax = 0.567857
+avg_depth: 1.362271
+center: (0.296429,0.585824,0.296423)
+scale: 0.540601
+principle_axes: (0.000001,-1.000000,-0.000045), (-0.999960,-0.000001,0.008966), (0.008966,-0.000045,0.999960)
+principle_values: (0.038390,0.020289,0.020289)

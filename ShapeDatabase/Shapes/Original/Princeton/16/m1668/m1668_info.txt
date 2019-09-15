@@ -1,0 +1,14 @@
+mid: 1668
+url: http://www.lucia.it/vrml/joust/terza/mondi/moto/moto.wrl
+ref_url: http://www.lucia.it/vrml/joust/terza/gir3/gir3.html
+format: wrl 
+pid: 33385
+polygons: 5266
+connected_components: 51
+average_dihedral_angle: 0.601287
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.620762, zmax = 0.591387
+avg_depth: 1.421023
+center: (0.480173,0.201639,0.307952)
+scale: 0.668096
+principle_axes: (0.999699,0.024514,-0.000037), (0.024514,-0.999695,0.002934), (-0.000035,0.002934,0.999996)
+principle_values: (0.056358,0.038613,0.028232)

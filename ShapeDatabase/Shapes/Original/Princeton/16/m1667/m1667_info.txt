@@ -1,0 +1,14 @@
+mid: 1667
+url: http://fly.hiwaay.net:8000/~crispen/vrmlworks/balls.wrl
+ref_url: http://fly.hiwaay.net:8000/~crispen/vrmlworks/worlds.html
+format: wrl 
+pid: 27
+polygons: 1001
+connected_components: 11
+average_dihedral_angle: 0.457012
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.90541, zmax = 0.216878
+avg_depth: 1.185046
+center: (0.500000,0.288846,0.120939)
+scale: 0.734076
+principle_axes: (-0.000003,-1.000000,0.000000), (-1.000000,0.000003,0.000000), (-0.000000,-0.000000,-1.000000)
+principle_values: (0.080743,0.074245,0.001960)

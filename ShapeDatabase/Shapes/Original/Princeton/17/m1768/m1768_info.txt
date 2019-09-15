@@ -1,0 +1,14 @@
+mid: 1768
+url: http://mowat.virtualave.net/amiga.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 27019
+polygons: 6365
+connected_components: 353
+average_dihedral_angle: 0.864483
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.755085, ymax = 0.975, zmax = 0.639211
+avg_depth: 1.982054
+center: (0.387906,0.377844,0.328708)
+scale: 0.742800
+principle_axes: (-0.015063,-0.985995,-0.166094), (0.999844,-0.013318,-0.011617), (-0.009243,0.166243,-0.986042)
+principle_values: (0.073295,0.047125,0.036800)

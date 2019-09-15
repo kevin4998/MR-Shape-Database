@@ -1,0 +1,14 @@
+mid: 977
+url: http://64.198.60.83/baument/Models/Beplnt54.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 26389
+polygons: 3044
+connected_components: 13
+average_dihedral_angle: 0.632997
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.570625, ymax = 0.975, zmax = 0.651253
+avg_depth: 1.400078
+center: (0.304477,0.382143,0.328118)
+scale: 0.513074
+principle_axes: (-0.103879,-0.994557,-0.008134), (-0.301017,0.039233,-0.952811), (-0.947944,0.096529,0.303454)
+principle_values: (0.070584,0.008127,0.007435)

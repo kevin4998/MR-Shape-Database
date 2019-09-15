@@ -1,0 +1,14 @@
+mid: 988
+url: http://cepcairo.bizland.com/free/Rose1.zip
+ref_url: 
+format: xthreexds 
+pid: 48275
+polygons: 6000
+connected_components: 34
+average_dihedral_angle: 0.567456
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.272186, ymax = 0.975, zmax = 0.242736
+avg_depth: 3.243270
+center: (0.126552,0.841657,0.137523)
+scale: 0.213389
+principle_axes: (-0.057479,0.997910,0.029514), (0.508465,0.054703,-0.859343), (-0.859162,-0.034387,-0.510547)
+principle_values: (0.022421,0.001307,0.001290)

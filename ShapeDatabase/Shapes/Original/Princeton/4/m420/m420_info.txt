@@ -1,0 +1,14 @@
+mid: 420
+url: http://vase.essex.ac.uk/demos/temple/temple.wrl
+ref_url: http://privatewww.essex.ac.uk/~scottj/
+format: wrl 
+pid: 944
+polygons: 12960
+connected_components: 246
+average_dihedral_angle: 1.0756
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.66475, ymax = 0.403287, zmax = 0.975
+avg_depth: 2.963480
+center: (0.344875,0.197393,0.460221)
+scale: 0.690834
+principle_axes: (0.000006,-0.006826,0.999977), (-0.999999,0.001226,0.000014), (0.001226,0.999976,0.006826)
+principle_values: (0.075539,0.040179,0.014969)

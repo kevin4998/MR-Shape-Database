@@ -1,0 +1,14 @@
+mid: 1421
+url: http://www.rccad.com/Gallery/Vrml/tank.wrl
+ref_url: 
+format: wrl 
+pid: 46928
+polygons: 4188
+connected_components: 42
+average_dihedral_angle: 0.550271
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.613077, zmax = 0.563567
+avg_depth: 1.939693
+center: (0.496933,0.319444,0.197592)
+scale: 0.609274
+principle_axes: (-0.999500,-0.002193,-0.031541), (-0.002194,0.999998,0.000003), (-0.031541,-0.000072,0.999502)
+principle_values: (0.061438,0.033304,0.007651)

@@ -1,0 +1,14 @@
+mid: 1103
+url: http://fraktali.849pm.com/programs/wrl/Shovel.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32675
+polygons: 330
+connected_components: 6
+average_dihedral_angle: 0.635587
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.198528, ymax = 0.975, zmax = 0.0714806
+avg_depth: 1.093346
+center: (0.111784,0.478924,0.052578)
+scale: 0.583885
+principle_axes: (-0.000096,-0.999897,0.014355), (1.000000,-0.000096,0.000005), (-0.000003,0.014355,0.999897)
+principle_values: (0.100287,0.001645,0.000163)

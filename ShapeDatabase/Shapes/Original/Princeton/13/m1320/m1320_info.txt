@@ -1,0 +1,14 @@
+mid: 1320
+url: http://www.3dheaven.net/Modelle/aircraft/bell.zip
+ref_url: 
+format: xthreexds 
+pid: 46763
+polygons: 14166
+connected_components: 43
+average_dihedral_angle: 0.437228
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.762713, ymax = 0.312566, zmax = 0.975
+avg_depth: 1.133955
+center: (0.393617,0.163495,0.630558)
+scale: 0.426425
+principle_axes: (0.072421,-0.134142,0.988312), (0.921670,0.387687,-0.014918), (0.381155,-0.911978,-0.151712)
+principle_values: (0.051918,0.005911,0.004678)

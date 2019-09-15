@@ -1,0 +1,14 @@
+mid: 1013
+url: http://www.3dcafe.com/models/plant02_s.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: xthreexds 
+pid: 28969
+polygons: 7424
+connected_components: 328
+average_dihedral_angle: 0.463205
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.904141, ymax = 0.890785, zmax = 0.975
+avg_depth: 2.491452
+center: (0.479420,0.471968,0.491644)
+scale: 0.451913
+principle_axes: (0.005717,0.998279,0.058371), (-0.861668,-0.024703,0.506871), (-0.507440,0.053194,-0.860043)
+principle_values: (0.029329,0.017906,0.013209)

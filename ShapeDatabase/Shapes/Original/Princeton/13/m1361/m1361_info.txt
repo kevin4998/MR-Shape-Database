@@ -1,0 +1,14 @@
+mid: 1361
+url: http://www.dcs.ed.ac.uk/home/objects/utils/convert/dxfs3.zip
+ref_url: http://found.cs.nyu.edu/MRL/behaviour/behaviour.html
+format: dxf 
+pid: 27244
+polygons: 2008
+connected_components: 8
+average_dihedral_angle: 0.256372
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.841756, ymax = 0.21772, zmax = 0.975
+avg_depth: 1.153263
+center: (0.430157,0.138947,0.451059)
+scale: 0.575405
+principle_axes: (0.034436,0.139253,-0.989658), (-0.999406,0.003593,-0.034270), (-0.001217,0.990250,0.139294)
+principle_values: (0.065096,0.031889,0.001148)

@@ -1,0 +1,14 @@
+mid: 275
+url: http://www.softy3d.com/models/diplo-3ds.zip
+ref_url: http://www.softy3d.com/es/galeria.htm
+format: 3ds 
+pid: 28845
+polygons: 41168
+connected_components: 1
+average_dihedral_angle: 0.0929704
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.219559, ymax = 0.975, zmax = 0.492804
+avg_depth: 1.121073
+center: (0.122709,0.547993,0.326070)
+scale: 0.399139
+principle_axes: (0.000066,0.923679,-0.383166), (0.004508,-0.383163,-0.923670), (-0.999990,-0.001666,-0.004190)
+principle_values: (0.042848,0.006161,0.001930)

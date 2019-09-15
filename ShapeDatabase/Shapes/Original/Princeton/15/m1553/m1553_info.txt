@@ -1,0 +1,14 @@
+mid: 1553
+url: http://www.matrasport.dk/Gallery1/Vrml/3Dmurena2.wrl
+ref_url: http://www.matrasport.dk/Gallery1/Vrml/
+format: wrl 
+pid: 8286
+polygons: 1915
+connected_components: 55
+average_dihedral_angle: 0.738803
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.301501, zmax = 0.472796
+avg_depth: 1.115928
+center: (0.532536,0.182701,0.248712)
+scale: 0.616204
+principle_axes: (0.998995,0.044819,0.000056), (0.000045,0.000253,-1.000000), (-0.044819,0.998995,0.000251)
+principle_values: (0.078689,0.021496,0.004699)

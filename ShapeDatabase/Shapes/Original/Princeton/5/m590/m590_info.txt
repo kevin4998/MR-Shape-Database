@@ -1,0 +1,14 @@
+mid: 590
+url: http://www.3dcafe.com/models/microscope.zip
+ref_url: http://www.3dcafe.com/asp/gnrl_pic.asp
+format: lwo 
+pid: 27978
+polygons: 8024
+connected_components: 45
+average_dihedral_angle: 0.55884
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.453444, ymax = 0.975, zmax = 0.338917
+avg_depth: 1.642187
+center: (0.231268,0.361116,0.181661)
+scale: 0.465454
+principle_axes: (0.179935,-0.983675,-0.002533), (-0.983563,-0.179953,0.014860), (0.015073,0.000182,0.999886)
+principle_values: (0.056403,0.007458,0.002993)

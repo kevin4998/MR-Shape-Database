@@ -1,0 +1,14 @@
+mid: 1764
+url: http://home.mira.net/~margaret/vrml/laptop.wrl
+ref_url: http://home.mira.net/~margaret/vrml.htm
+format: wrl 
+pid: 9003
+polygons: 1092
+connected_components: 18
+average_dihedral_angle: 1.42529
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.750843, zmax = 0.897328
+avg_depth: 1.982054
+center: (0.496014,0.226133,0.403195)
+scale: 0.823481
+principle_axes: (-0.999930,-0.010140,-0.006060), (-0.000487,0.547954,-0.836508), (-0.011803,0.836447,0.547921)
+principle_values: (0.087050,0.072924,0.028035)

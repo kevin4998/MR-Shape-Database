@@ -1,0 +1,69 @@
+#
+# Application name 
+#
+
+NAME=bestMatch
+
+
+
+#
+# List of source files.
+#
+
+CCSRCS=bestMatch.cpp PSBClaParse.cpp
+
+
+
+#
+# Compile targets
+#
+
+OBJS=$(CCSRCS:.cpp=.obj) 
+
+
+
+#
+# Debug compile options
+#
+
+CFLAGS=-I. -Zi /TP
+OPT_CFLAGS=-I. -Ox -DNDEBUG 
+
+LDFLAGS=-Zi
+OPT_LDFLAGS=-Ox
+
+
+#
+# Executable
+#
+
+EXE = $(NAME).exe
+
+
+
+#
+# Make targets
+#
+
+$(EXE):	    $(OBJS)
+	    $(CC) -o $(EXE) $(OBJS)
+
+opt:
+	    $(MAKE) $(EXE) "CFLAGS=$(OPT_CFLAGS)" "LDFLAGS=$(OPT_LDFLAGS)"
+
+clean:
+	    del *.obj *.pdb $(EXE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+mid: 1752
+url: http://www.3dcafe.com/models/umbrella.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: 3ds 
+pid: 28189
+polygons: 1644
+connected_components: 14
+average_dihedral_angle: 0.137057
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.854341, ymax = 0.975, zmax = 0.854341
+avg_depth: 1.033387
+center: (0.441283,0.740545,0.439670)
+scale: 0.632140
+principle_axes: (0.999025,-0.044149,0.000002), (0.000002,0.000000,-1.000000), (0.044149,0.999025,0.000000)
+principle_values: (0.044529,0.044278,0.019891)

@@ -1,0 +1,14 @@
+mid: 716
+url: http://telias.free.fr/zipsz/models_wav/greek_sword.zip
+ref_url: 
+format: obj 
+pid: 47936
+polygons: 9573
+connected_components: 6
+average_dihedral_angle: 0.471309
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.210778, ymax = 0.0956977, zmax = 0.975
+avg_depth: 1.149043
+center: (0.117729,0.059570,0.433059)
+scale: 0.513974
+principle_axes: (0.000420,0.001927,-0.999998), (-1.000000,-0.000310,-0.000421), (0.000311,-0.999998,-0.001926)
+principle_values: (0.078887,0.001084,0.000040)

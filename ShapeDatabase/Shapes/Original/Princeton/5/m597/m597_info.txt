@@ -1,0 +1,14 @@
+mid: 597
+url: http://www.igs.net/~mascott/vrml/isrs/worlds/hourglass.wrl
+ref_url: http://www.igs.net/~mascott/vrml/isrs/pages/hourglass.htm
+format: wrl 
+pid: 42866
+polygons: 660
+connected_components: 10
+average_dihedral_angle: 0.714613
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.938462, ymax = 0.975, zmax = 0.893754
+avg_depth: 1.541916
+center: (0.481731,0.498004,0.459372)
+scale: 0.886657
+principle_axes: (-0.000000,1.000000,0.000004), (-0.017994,0.000004,-0.999838), (0.999838,0.000000,-0.017994)
+principle_values: (0.142693,0.039485,0.039485)

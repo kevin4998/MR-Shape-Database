@@ -1,0 +1,14 @@
+mid: 386
+url: http://www.lucia.it/vrml/worlds/castello/castello.wrl
+ref_url: http://www.lucia.it/vrml/m_worlds4_e.html
+format: wrl 
+pid: 33524
+polygons: 1008
+connected_components: 14
+average_dihedral_angle: 1.48358
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.950794, ymax = 0.975, zmax = 0.940744
+avg_depth: 1.411371
+center: (0.494154,0.332969,0.483167)
+scale: 1.017732
+principle_axes: (0.999219,-0.007678,0.038762), (-0.038764,-0.000029,0.999248), (-0.007671,-0.999971,-0.000327)
+principle_values: (0.111743,0.109278,0.048573)

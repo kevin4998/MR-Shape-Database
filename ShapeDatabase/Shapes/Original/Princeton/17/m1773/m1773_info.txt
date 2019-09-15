@@ -1,0 +1,14 @@
+mid: 1773
+url: http://homepages.enterprise.net/adrianslade/computer.wrl.gz
+ref_url: http://homepages.enterprise.net/adrianslade/
+format: wrl 
+pid: 1000
+polygons: 4217
+connected_components: 83
+average_dihedral_angle: 0.715809
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.477648, zmax = 0.724189
+avg_depth: 1.982054
+center: (0.415459,0.189338,0.363626)
+scale: 0.638439
+principle_axes: (0.995293,-0.079009,0.056113), (0.077224,0.296831,-0.951802), (-0.058545,-0.951656,-0.301536)
+principle_values: (0.061911,0.030621,0.018076)

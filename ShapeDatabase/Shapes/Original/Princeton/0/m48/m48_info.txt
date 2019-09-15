@@ -1,0 +1,14 @@
+mid: 48
+url: http://www.avatara.com/avatars/duck2.wrl
+ref_url: http://www.avatara.com/avatars/avatars3_list.html
+format: wrl 
+pid: 17037
+polygons: 824
+connected_components: 1
+average_dihedral_angle: 0.271338
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.488025, ymax = 0.456093, zmax = 0.975
+avg_depth: 1.040064
+center: (0.257184,0.191296,0.546613)
+scale: 0.529640
+principle_axes: (-0.022408,0.207513,0.977976), (0.999403,-0.021089,0.027374), (0.026305,0.978005,-0.206916)
+principle_values: (0.054610,0.015330,0.008211)

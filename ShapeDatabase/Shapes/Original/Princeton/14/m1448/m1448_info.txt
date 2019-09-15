@@ -1,0 +1,14 @@
+mid: 1448
+url: http://www.avatara.com/avatars/sail2.wrl
+ref_url: http://www.avatara.com/avatars/avatars2_list.html
+format: wrl 
+pid: 17027
+polygons: 328
+connected_components: 6
+average_dihedral_angle: 0.417749
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.186087, ymax = 0.975, zmax = 0.681739
+avg_depth: 1.375444
+center: (0.102324,0.329685,0.330104)
+scale: 0.457193
+principle_axes: (0.012142,-0.977547,-0.210367), (-0.000774,0.210373,-0.977621), (-0.999926,-0.012033,-0.001798)
+principle_values: (0.041542,0.020021,0.000962)

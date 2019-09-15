@@ -1,0 +1,14 @@
+mid: 360
+url: http://www.eot.ahpcc.unm.edu/Training/technology/vr_workshop/Our_worlds/worlds6-23/My%20Worlds12/justin1.wrl
+ref_url: http://www.eot.ahpcc.unm.edu/Training/technology/vr_workshop/Our_worlds/default.htm
+format: wrl 
+pid: 3556
+polygons: 536
+connected_components: 1
+average_dihedral_angle: 0.416231
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.745789, ymax = 0.975, zmax = 0.884689
+avg_depth: 1.033972
+center: (0.385326,0.512800,0.454268)
+scale: 0.801962
+principle_axes: (-0.001450,0.946898,-0.321531), (-0.001199,0.321530,0.946899), (-0.999998,-0.001758,-0.000669)
+principle_values: (0.072331,0.052544,0.038085)

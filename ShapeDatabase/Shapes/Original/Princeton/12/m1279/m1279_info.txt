@@ -1,0 +1,14 @@
+mid: 1279
+url: http://www.rccad.com/Gallery/Vrml/Tailfirst.wrl
+ref_url: 
+format: wrl 
+pid: 46926
+polygons: 1204
+connected_components: 14
+average_dihedral_angle: 0.395893
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.455168, ymax = 0.975, zmax = 0.160655
+avg_depth: 1.218950
+center: (0.305011,0.500076,0.071218)
+scale: 0.384607
+principle_axes: (-0.000147,1.000000,-0.000029), (0.994827,0.000149,0.101583), (0.101583,-0.000014,-0.994827)
+principle_values: (0.043989,0.009976,0.000252)

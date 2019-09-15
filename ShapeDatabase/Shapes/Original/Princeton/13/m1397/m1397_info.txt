@@ -1,0 +1,14 @@
+mid: 1397
+url: http://www.3dcafe.com/models/shuttle3.zip
+ref_url: http://www.3dcafe.com/asp/air_pic.asp
+format: lwo 
+pid: 25794
+polygons: 18674
+connected_components: 462
+average_dihedral_angle: 0.32903
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.724406, ymax = 0.399195, zmax = 0.975
+avg_depth: 1.368259
+center: (0.374801,0.090502,0.359783)
+scale: 0.497661
+principle_axes: (-0.000400,0.064958,-0.997888), (-1.000000,-0.000820,0.000348), (0.000796,-0.997888,-0.064958)
+principle_values: (0.055081,0.013964,0.005162)

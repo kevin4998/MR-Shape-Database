@@ -1,0 +1,14 @@
+mid: 822
+url: http://www.ocnus.com/models/Furniture/thonchar.wrl.gz
+ref_url: http://www.ocnus.com/models/Furniture/
+format: wrl 
+pid: 17790
+polygons: 1906
+connected_components: 7
+average_dihedral_angle: 0.498965
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.497961, ymax = 0.975, zmax = 0.528479
+avg_depth: 1.527169
+center: (0.261479,0.502976,0.276816)
+scale: 0.456140
+principle_axes: (0.000020,-0.926571,0.376120), (1.000000,0.000041,0.000047), (-0.000059,0.376120,0.926571)
+principle_values: (0.036529,0.016256,0.014789)

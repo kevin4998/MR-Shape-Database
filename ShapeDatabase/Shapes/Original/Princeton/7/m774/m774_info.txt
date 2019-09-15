@@ -1,0 +1,14 @@
+mid: 774
+url: http://ednet.gsfc.nasa.gov/Mathews/Objects/bench.wrl
+ref_url: http://ednet.gsfc.nasa.gov/Mathews/Objects/off2vrml.html
+format: wrl 
+pid: 1615
+polygons: 448
+connected_components: 20
+average_dihedral_angle: 1.2163
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.975, zmax = 0.500001
+avg_depth: 1.322709
+center: (0.501054,0.532275,0.275152)
+scale: 0.796582
+principle_axes: (0.999986,0.000544,-0.005214), (-0.001644,-0.911862,-0.410495), (-0.004978,0.410497,-0.911848)
+principle_values: (0.112047,0.058128,0.010521)

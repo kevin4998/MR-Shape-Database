@@ -1,0 +1,14 @@
+mid: 806
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1999/arcolman/Hw4/chair.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1999/arcolman/Hw4/?D=D
+format: wrl 
+pid: 42915
+polygons: 912
+connected_components: 10
+average_dihedral_angle: 0.516307
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.358289, ymax = 0.975, zmax = 0.411545
+avg_depth: 1.185828
+center: (0.191644,0.446712,0.232229)
+scale: 0.551161
+principle_axes: (0.000000,0.976149,0.217100), (-0.000300,-0.217100,0.976149), (1.000000,-0.000065,0.000293)
+principle_values: (0.080763,0.006254,0.006247)

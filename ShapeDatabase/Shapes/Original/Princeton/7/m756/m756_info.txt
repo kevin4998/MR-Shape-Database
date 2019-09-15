@@ -1,0 +1,14 @@
+mid: 756
+url: http://www.eecs.tulane.edu/www/graphics/gallery/thompson.wrl
+ref_url: http://www.eecs.tulane.edu/www/graphics/gallery/
+format: wrl 
+pid: 11312
+polygons: 600
+connected_components: 5
+average_dihedral_angle: 0.428267
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.430442, ymax = 0.975, zmax = 0.304412
+avg_depth: 1.385937
+center: (0.228176,0.699827,0.165107)
+scale: 0.411924
+principle_axes: (-0.002095,0.999997,-0.001612), (0.999924,0.002114,0.012160), (-0.012164,0.001587,0.999925)
+principle_values: (0.039904,0.008132,0.005389)

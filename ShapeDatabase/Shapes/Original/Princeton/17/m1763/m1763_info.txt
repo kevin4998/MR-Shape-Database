@@ -1,0 +1,14 @@
+mid: 1763
+url: http://www.3dcafe.com/models/handset.zip
+ref_url: http://www.3dcafe.com/asp/ind_pic.asp
+format: 3ds 
+pid: 28796
+polygons: 1060
+connected_components: 18
+average_dihedral_angle: 0.268686
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.269102, ymax = 0.975, zmax = 0.313777
+avg_depth: 1.982054
+center: (0.124367,0.596243,0.111243)
+scale: 0.452891
+principle_axes: (0.083910,-0.995641,-0.040713), (-0.716304,-0.031864,-0.697060), (0.692725,0.087654,-0.715856)
+principle_values: (0.062014,0.004330,0.001424)

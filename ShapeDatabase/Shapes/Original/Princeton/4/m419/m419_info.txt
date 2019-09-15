@@ -1,0 +1,14 @@
+mid: 419
+url: http://www.ocnus.com/models/Buildings/simpletemple.wrl.gz
+ref_url: http://www.ocnus.com/models/Buildings/
+format: wrl 
+pid: 17683
+polygons: 196
+connected_components: 7
+average_dihedral_angle: 1.33466
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.53341, zmax = 0.5416
+avg_depth: 1.720076
+center: (0.493401,0.185434,0.276963)
+scale: 0.661144
+principle_axes: (-0.999574,0.029049,0.002816), (-0.029175,-0.997142,-0.069688), (-0.000784,0.069741,-0.997565)
+principle_values: (0.068468,0.030316,0.019316)

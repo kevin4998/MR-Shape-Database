@@ -1,0 +1,14 @@
+mid: 363
+url: http://ligwww.epfl.ch/~fua/faces/wrl/FuaSpock.wrl
+ref_url: http://ligwww.epfl.ch/~fua/
+format: wrl 
+pid: 715
+polygons: 3604
+connected_components: 9
+average_dihedral_angle: 0.301682
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.713112, ymax = 0.975, zmax = 0.895097
+avg_depth: 1.243045
+center: (0.353786,0.528854,0.460488)
+scale: 0.746995
+principle_axes: (-0.056101,-0.768325,0.637597), (0.144023,0.625696,0.766656), (-0.987983,0.134838,0.075554)
+principle_values: (0.072316,0.039350,0.034182)

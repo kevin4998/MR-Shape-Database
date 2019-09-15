@@ -1,0 +1,14 @@
+mid: 204
+url: http://philliphansel.com/avatars/leprechaun.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3477
+polygons: 2338
+connected_components: 59
+average_dihedral_angle: 0.68772
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.340756, ymax = 0.975, zmax = 0.353742
+avg_depth: 1.902221
+center: (0.187992,0.532536,0.113336)
+scale: 0.483867
+principle_axes: (-0.013211,0.999912,0.001028), (0.999804,0.013224,-0.014701), (-0.014713,0.000834,-0.999891)
+principle_values: (0.065821,0.005538,0.001678)

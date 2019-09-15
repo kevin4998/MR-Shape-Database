@@ -1,0 +1,14 @@
+mid: 1249
+url: http://www.forwarddesign.com/objects/vehicles/Shuttle.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: lwo 
+pid: 25460
+polygons: 616
+connected_components: 1
+average_dihedral_angle: 0.573189
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.630429, zmax = 0.381167
+avg_depth: 1.129136
+center: (0.612295,0.327712,0.094705)
+scale: 0.476359
+principle_axes: (0.999283,0.000134,0.037864), (0.000130,-1.000000,0.000112), (0.037864,-0.000107,-0.999283)
+principle_values: (0.052000,0.010489,0.004531)

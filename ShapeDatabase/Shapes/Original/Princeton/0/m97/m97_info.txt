@@ -1,0 +1,14 @@
+mid: 97
+url: http://cepcairo.bizland.com/free/Leopard.zip
+ref_url: 
+format: xthreexds 
+pid: 48366
+polygons: 7083
+connected_components: 13
+average_dihedral_angle: 0.303899
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.280377, ymax = 0.543507, zmax = 0.975
+avg_depth: 1.114101
+center: (0.152689,0.333138,0.503844)
+scale: 0.530797
+principle_axes: (0.000003,0.226934,0.973910), (-0.000004,0.973910,-0.226934), (1.000000,0.000003,-0.000004)
+principle_values: (0.058610,0.017025,0.004640)

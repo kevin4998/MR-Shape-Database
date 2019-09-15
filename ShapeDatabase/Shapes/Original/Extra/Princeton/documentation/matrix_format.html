@@ -1,0 +1,19 @@
+<html><title>
+Distance Matrix Format (.matrix)
+</title>
+<body>
+<h1>Distance Matrix Format (.matrix)</h1>
+
+The distance matrix represents the the dissimilarity of all pairs of
+models in the database.  For N models, the matrix is a sequence of N
+by N floating point numbers in binary format, where the number at
+position i*N+j represents the distance between models i and j.  A
+value of zero indicates that the descriptors are identical, and larger
+values indicate greater dissimilarity between the 3D models.  All
+distance values should be positive and can be arbitrarily large.
+<p>
+Free example <a href="http://shape.cs.princeton.edu/benchmark/util.html">software</a> is provided for parsing matrix files.
+
+
+</body>
+</html>

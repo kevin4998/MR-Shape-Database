@@ -1,0 +1,14 @@
+mid: 116
+url: http://cepcairo.bizland.com/free/Skeleton.zip
+ref_url: 
+format: xthreexds 
+pid: 47231
+polygons: 51956
+connected_components: 241
+average_dihedral_angle: 0.336181
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.299498, ymax = 0.975, zmax = 0.18297
+avg_depth: 1.454775
+center: (0.162209,0.568651,0.087210)
+scale: 0.469375
+principle_axes: (-0.000171,0.999625,0.027392), (-1.000000,-0.000159,-0.000416), (0.000412,0.027392,-0.999625)
+principle_values: (0.070956,0.003954,0.000900)

@@ -1,0 +1,14 @@
+mid: 337
+url: http://cepcairo.bizland.com/free/L_arm1.zip
+ref_url: 
+format: xthreexds 
+pid: 48395
+polygons: 3846
+connected_components: 1
+average_dihedral_angle: 0.216081
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.245675, ymax = 0.179601, zmax = 0.975
+avg_depth: 1.041519
+center: (0.163448,0.107636,0.462657)
+scale: 0.521592
+principle_axes: (0.026920,-0.018905,-0.999459), (0.997124,0.071367,0.025507), (0.070846,-0.997271,0.020772)
+principle_values: (0.078467,0.002141,0.001366)

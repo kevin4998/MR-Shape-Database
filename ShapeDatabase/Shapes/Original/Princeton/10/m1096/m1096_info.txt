@@ -1,0 +1,14 @@
+mid: 1096
+url: http://www.cable.com/wrl/palm.wrl
+ref_url: http://www.cable.com/wrl/
+format: wrl 
+pid: 6225
+polygons: 1376
+connected_components: 6
+average_dihedral_angle: 0.245427
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.565825, ymax = 0.975, zmax = 0.563253
+avg_depth: 1.036620
+center: (0.260206,0.568831,0.261283)
+scale: 0.645362
+principle_axes: (0.248423,0.921758,0.297739), (-0.968597,0.233112,0.086483), (-0.010310,0.309873,-0.950722)
+principle_values: (0.101795,0.009662,0.008387)

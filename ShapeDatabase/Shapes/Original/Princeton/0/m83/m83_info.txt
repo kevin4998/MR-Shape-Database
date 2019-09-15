@@ -1,0 +1,14 @@
+mid: 83
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1998/pgerstma/Hw2/coily.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1998/pgerstma/Hw2/?D=D
+format: wrl 
+pid: 42693
+polygons: 154
+connected_components: 8
+average_dihedral_angle: 1.05196
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.712854, ymax = 0.975, zmax = 0.706513
+avg_depth: 1.253583
+center: (0.390162,0.573024,0.372853)
+scale: 0.665171
+principle_axes: (0.338646,0.936919,-0.086616), (-0.204990,0.163309,0.965044), (-0.918313,0.309053,-0.247363)
+principle_values: (0.065141,0.027067,0.024065)

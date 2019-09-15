@@ -1,0 +1,14 @@
+mid: 119
+url: http://mowat.virtualave.net/wlfrmstd.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 25856
+polygons: 837
+connected_components: 5
+average_dihedral_angle: 0.576609
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.275279, ymax = 0.975, zmax = 0.216721
+avg_depth: 1.254498
+center: (0.152175,0.537121,0.091448)
+scale: 0.451998
+principle_axes: (-0.003734,0.999678,-0.025085), (-0.999925,-0.003441,0.011748), (-0.011658,-0.025127,-0.999616)
+principle_values: (0.058437,0.003532,0.001469)

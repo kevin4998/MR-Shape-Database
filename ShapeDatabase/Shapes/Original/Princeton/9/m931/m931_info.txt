@@ -1,0 +1,14 @@
+mid: 931
+url: http://violet.csa.iisc.ernet.in/Resources/examples/Stool01.wrl
+ref_url: http://violet.csa.iisc.ernet.in/Resources/examples/
+format: wrl 
+pid: 5859
+polygons: 88
+connected_components: 5
+average_dihedral_angle: 1.44996
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.811207, ymax = 0.975, zmax = 0.772727
+avg_depth: 1.145182
+center: (0.418103,0.715991,0.398864)
+scale: 0.858591
+principle_axes: (0.000000,1.000000,-0.000000), (0.999891,-0.000000,0.014747), (-0.014747,0.000000,0.999891)
+principle_values: (0.090137,0.054665,0.054665)

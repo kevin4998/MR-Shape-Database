@@ -1,0 +1,14 @@
+mid: 185
+url: http://www.avatara.com/avatars/man2.wrl
+ref_url: http://www.avatara.com/avatars/avatars3_list.html
+format: wrl 
+pid: 17044
+polygons: 919
+connected_components: 5
+average_dihedral_angle: 0.548949
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.297162, ymax = 0.975, zmax = 0.304865
+avg_depth: 1.249438
+center: (0.162859,0.525304,0.175152)
+scale: 0.452552
+principle_axes: (-0.002851,0.999478,0.032174), (0.994485,-0.000539,0.104881), (0.104844,0.032295,-0.993964)
+principle_values: (0.059516,0.004191,0.001601)

@@ -1,0 +1,14 @@
+mid: 143
+url: http://www.3dcafe.com/models/captain.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: lwo 
+pid: 26959
+polygons: 10817
+connected_components: 157
+average_dihedral_angle: 0.482456
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.408698, ymax = 0.975, zmax = 0.189718
+avg_depth: 1.548850
+center: (0.222118,0.547638,0.098644)
+scale: 0.450030
+principle_axes: (-0.007440,0.999812,0.017892), (-0.999947,-0.007565,0.006924), (0.007058,-0.017839,0.999816)
+principle_values: (0.054213,0.007091,0.001285)

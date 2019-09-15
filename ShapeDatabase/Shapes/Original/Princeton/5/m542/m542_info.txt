@@ -1,0 +1,14 @@
+mid: 542
+url: http://telias.free.fr/zipsz/models_low_poly/greek_vase.zip
+ref_url: 
+format: xthreexds 
+pid: 47870
+polygons: 572
+connected_components: 3
+average_dihedral_angle: 0.493716
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.642246, ymax = 0.938592, zmax = 0.975
+avg_depth: 1.529920
+center: (0.333331,0.534195,0.499186)
+scale: 0.702465
+principle_axes: (0.000322,1.000000,0.000448), (0.000407,0.000447,-1.000000), (1.000000,-0.000322,0.000407)
+principle_values: (0.069742,0.033502,0.027978)

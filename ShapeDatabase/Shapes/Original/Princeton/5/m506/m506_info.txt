@@ -1,0 +1,14 @@
+mid: 506
+url: http://homepage.mac.com/woodland/archives/kocher1.zip
+ref_url: http://www1.udn.ne.jp/~woodland/landscape/model/
+format: obj 
+pid: 25008
+polygons: 17597
+connected_components: 75
+average_dihedral_angle: 0.17095
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.389901, zmax = 0.682684
+avg_depth: 1.587934
+center: (0.385230,0.164708,0.353805)
+scale: 0.636454
+principle_axes: (-0.998939,-0.046053,0.000271), (0.000275,-0.000080,1.000000), (0.046053,-0.998939,-0.000093)
+principle_values: (0.051107,0.038995,0.014532)

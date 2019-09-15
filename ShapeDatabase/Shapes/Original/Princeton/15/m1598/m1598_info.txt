@@ -1,0 +1,14 @@
+mid: 1598
+url: http://mowat.virtualave.net/bishop.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26961
+polygons: 2360
+connected_components: 59
+average_dihedral_angle: 0.704639
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.443287, ymax = 0.975, zmax = 0.443287
+avg_depth: 1.415184
+center: (0.234144,0.331538,0.234144)
+scale: 0.589610
+principle_axes: (-0.000000,-1.000000,-0.000000), (0.042327,-0.000000,0.999104), (0.999104,-0.000000,-0.042327)
+principle_values: (0.084017,0.008493,0.008493)

@@ -1,0 +1,14 @@
+mid: 665
+url: http://cepcairo.bizland.com/free/Luger.zip
+ref_url: 
+format: xthreexds 
+pid: 48405
+polygons: 3500
+connected_components: 5
+average_dihedral_angle: 0.676318
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.184942, ymax = 0.685913, zmax = 0.975
+avg_depth: 1.186664
+center: (0.103447,0.456281,0.366786)
+scale: 0.566381
+principle_axes: (0.000301,-0.385070,-0.922887), (-0.001937,-0.922886,0.385069), (0.999998,-0.001672,0.001024)
+principle_values: (0.069641,0.025447,0.002158)

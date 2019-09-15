@@ -1,0 +1,14 @@
+mid: 1645
+url: http://www.3dcafe.com/../models/tractor1.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: lwo 
+pid: 30486
+polygons: 1734
+connected_components: 1
+average_dihedral_angle: 0.353291
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.427193, ymax = 0.975, zmax = 0.0915678
+avg_depth: 1.234183
+center: (0.241342,0.476980,0.076753)
+scale: 0.569458
+principle_axes: (-0.110345,0.993876,-0.005900), (-0.993893,-0.110342,0.000903), (0.000247,0.005963,0.999982)
+principle_values: (0.070861,0.021243,0.000093)

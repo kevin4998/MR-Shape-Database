@@ -1,0 +1,14 @@
+mid: 1210
+url: http://www.3dspline.com/3ds_meshes/cruiser_3ds.zip
+ref_url: 
+format: 3ds 
+pid: 25132
+polygons: 1145
+connected_components: 8
+average_dihedral_angle: 0.854397
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.67786, ymax = 0.225975, zmax = 0.975
+avg_depth: 1.526013
+center: (0.351987,0.074417,0.333689)
+scale: 0.473080
+principle_axes: (0.001408,0.038345,-0.999264), (0.999997,0.001799,0.001479), (0.001854,-0.999263,-0.038343)
+principle_values: (0.045908,0.018624,0.001181)

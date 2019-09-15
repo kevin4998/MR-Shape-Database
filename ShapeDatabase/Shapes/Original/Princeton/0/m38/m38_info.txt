@@ -1,0 +1,14 @@
+mid: 38
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/mderksen/Hw2/vulture.wrl
+ref_url: http://www.cosmosoftware.com/products/worlds/
+format: wrl 
+pid: 40257
+polygons: 930
+connected_components: 1
+average_dihedral_angle: 0.716342
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.260681, zmax = 0.292609
+avg_depth: 1.076139
+center: (0.500000,0.142261,0.161759)
+scale: 0.384183
+principle_axes: (1.000000,-0.000000,0.000000), (0.000000,0.720416,-0.693543), (-0.000000,0.693543,0.720416)
+principle_values: (0.046375,0.003283,0.000394)

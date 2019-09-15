@@ -1,0 +1,14 @@
+mid: 800
+url: http://www.amazing3d.com/free/chairdxfpc.zip
+ref_url: 
+format: dxf 
+pid: 47229
+polygons: 190
+connected_components: 8
+average_dihedral_angle: 1.02058
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.727778, ymax = 0.975, zmax = 0.727778
+avg_depth: 1.211630
+center: (0.352094,0.486285,0.350281)
+scale: 0.605835
+principle_axes: (0.349093,-0.878010,0.327464), (0.688361,0.003157,-0.725361), (-0.635841,-0.478632,-0.605490)
+principle_values: (0.061892,0.026852,0.016315)

@@ -1,0 +1,14 @@
+mid: 1110
+url: http://www.3dcafe.com/models/hammer.zip
+ref_url: http://www.3dcafe.com/asp/ind_pic.asp
+format: 3ds 
+pid: 28374
+polygons: 1687
+connected_components: 3
+average_dihedral_angle: 0.408281
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.146727, ymax = 0.975, zmax = 0.392835
+avg_depth: 1.098968
+center: (0.085904,0.545718,0.208690)
+scale: 0.583916
+principle_axes: (-0.000145,-0.999960,0.008956), (0.000177,0.008956,0.999960), (-1.000000,0.000146,0.000175)
+principle_values: (0.097629,0.004565,0.001125)

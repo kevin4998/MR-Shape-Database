@@ -1,0 +1,14 @@
+mid: 993
+url: http://64.198.60.83/baument/Models/pyramidshowcase.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 26196
+polygons: 320
+connected_components: 17
+average_dihedral_angle: 1.13739
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.293021, ymax = 0.975, zmax = 0.225939
+avg_depth: 1.342726
+center: (0.150167,0.396678,0.124988)
+scale: 0.464621
+principle_axes: (0.184135,-0.982898,0.002236), (-0.982673,-0.184141,-0.021100), (0.021151,0.001688,-0.999775)
+principle_values: (0.063737,0.002922,0.002192)

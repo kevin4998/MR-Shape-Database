@@ -1,0 +1,14 @@
+mid: 1168
+url: http://ciel.me.cmu.edu/soji/aircraft/f15dj_agg3.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 891
+polygons: 1106
+connected_components: 37
+average_dihedral_angle: 1.13677
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.651374, ymax = 0.244231, zmax = 0.975
+avg_depth: 1.154320
+center: (0.338218,0.079124,0.632894)
+scale: 0.437092
+principle_axes: (0.000274,0.030063,0.999548), (1.000000,-0.000083,-0.000272), (0.000075,0.999548,-0.030063)
+principle_values: (0.044625,0.012465,0.001182)

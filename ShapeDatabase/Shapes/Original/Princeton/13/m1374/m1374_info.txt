@@ -1,0 +1,14 @@
+mid: 1374
+url: http://www.cube3.com/starbase/free/ncc1701e.wrl
+ref_url: http://www.geocities.com/Area51/Vault/2147/holo.html
+format: wrl 
+pid: 946
+polygons: 15517
+connected_components: 40
+average_dihedral_angle: 0.379627
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.382934, ymax = 0.975, zmax = 0.163539
+avg_depth: 2.925260
+center: (0.203462,0.606744,0.115377)
+scale: 0.409118
+principle_axes: (0.003750,0.999203,-0.039728), (-0.999993,0.003719,-0.000830), (-0.000681,0.039731,0.999210)
+principle_values: (0.049676,0.006584,0.000534)

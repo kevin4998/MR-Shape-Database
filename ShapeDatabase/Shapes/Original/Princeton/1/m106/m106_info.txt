@@ -1,0 +1,14 @@
+mid: 106
+url: http://telias.free.fr/zipsz/models_low_poly/horse.zip
+ref_url: 
+format: xthreexds 
+pid: 47876
+polygons: 690
+connected_components: 3
+average_dihedral_angle: 0.667152
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.21348, ymax = 0.65884, zmax = 0.975
+avg_depth: 1.099982
+center: (0.123265,0.362203,0.569444)
+scale: 0.484380
+principle_axes: (0.019246,0.216517,0.976089), (-0.008984,0.976268,-0.216380), (0.999774,0.004604,-0.020734)
+principle_values: (0.052879,0.015822,0.002501)

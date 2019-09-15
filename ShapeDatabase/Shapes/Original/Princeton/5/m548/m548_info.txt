@@ -1,0 +1,14 @@
+mid: 548
+url: http://tcc.iz.net/~jeffs/vrmLab/Warehouse/office/monitor.wrl
+ref_url: http://tcc.iz.net/~jeffs/vrmLab/Warehouse/sets/SetOne.wrl
+format: wrl 
+pid: 14771
+polygons: 104
+connected_components: 5
+average_dihedral_angle: 1.51888
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.763889, ymax = 0.975, zmax = 0.922222
+avg_depth: 1.814061
+center: (0.394444,0.456265,0.548822)
+scale: 0.892299
+principle_axes: (0.000000,0.833508,0.552508), (-0.000000,-0.552508,0.833508), (-1.000000,0.000000,-0.000000)
+principle_values: (0.111578,0.052977,0.049420)

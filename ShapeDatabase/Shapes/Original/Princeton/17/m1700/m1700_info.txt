@@ -1,0 +1,14 @@
+mid: 1700
+url: http://philliphansel.com/gallery/treasure_chest.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3457
+polygons: 3318
+connected_components: 43
+average_dihedral_angle: 0.750797
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.652123, zmax = 0.673455
+avg_depth: 2.052467
+center: (0.493851,0.369457,0.348585)
+scale: 0.736043
+principle_axes: (0.999995,0.000009,0.003111), (0.003104,0.064332,-0.997924), (-0.000209,0.997929,0.064332)
+principle_values: (0.085142,0.033833,0.027886)

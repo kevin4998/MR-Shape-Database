@@ -1,0 +1,14 @@
+mid: 1321
+url: http://www.amazing3d.com/free/nwsheli3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47374
+polygons: 5138
+connected_components: 71
+average_dihedral_angle: 0.587063
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.658962, ymax = 0.279761, zmax = 0.975
+avg_depth: 1.374313
+center: (0.346081,0.162167,0.490863)
+scale: 0.445361
+principle_axes: (0.002375,-0.017120,0.999851), (0.999987,-0.004458,-0.002451), (-0.004500,-0.999843,-0.017109)
+principle_values: (0.055247,0.003671,0.003300)

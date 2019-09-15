@@ -1,0 +1,14 @@
+mid: 1434
+url: http://www.geocities.com/ResearchTriangle/2298/carrier.wrl
+ref_url: http://www.spazz3d.com/samples.html
+format: wrl 
+pid: 2095
+polygons: 1077
+connected_components: 29
+average_dihedral_angle: 1.11198
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.47232, ymax = 0.276558, zmax = 0.975
+avg_depth: 1.819129
+center: (0.221502,0.123134,0.540557)
+scale: 0.465545
+principle_axes: (0.270596,0.008689,-0.962654), (-0.961952,-0.036795,-0.270730), (-0.037773,0.999285,-0.001598)
+principle_values: (0.057024,0.007460,0.001493)

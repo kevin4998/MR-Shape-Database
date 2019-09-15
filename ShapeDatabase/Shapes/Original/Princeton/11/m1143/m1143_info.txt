@@ -1,0 +1,14 @@
+mid: 1143
+url: http://www.rccad.com/Gallery/Vrml/FlyerIII.wrl
+ref_url: 
+format: wrl 
+pid: 47931
+polygons: 6574
+connected_components: 70
+average_dihedral_angle: 0.410123
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.504495, ymax = 0.975, zmax = 0.209713
+avg_depth: 2.468572
+center: (0.268035,0.500019,0.126967)
+scale: 0.463334
+principle_axes: (0.000015,-1.000000,0.000006), (0.996310,0.000015,0.085825), (0.085825,-0.000005,-0.996310)
+principle_values: (0.053997,0.006955,0.004382)

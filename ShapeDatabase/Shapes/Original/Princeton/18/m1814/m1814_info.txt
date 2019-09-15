@@ -1,0 +1,14 @@
+mid: 1814
+url: ftp://avalon.viewpoint.com/pub/objects/misc/updish_obj.zip
+ref_url: 
+format: obj 
+pid: 47669
+polygons: 1756
+connected_components: 12
+average_dihedral_angle: 0.256418
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.815095, ymax = 0.975, zmax = 0.974997
+avg_depth: 1.446648
+center: (0.362316,0.483985,0.501453)
+scale: 0.660076
+principle_axes: (-0.140578,-0.726562,-0.672567), (-0.055813,-0.672417,0.738065), (0.988495,-0.141294,-0.053975)
+principle_values: (0.047906,0.046447,0.026071)

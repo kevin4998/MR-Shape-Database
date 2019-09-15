@@ -1,0 +1,14 @@
+mid: 551
+url: http://www.ocnus.com/models/SGI/sgimonitor.wrl.gz
+ref_url: http://www.ocnus.com/models/SGI/
+format: wrl 
+pid: 17898
+polygons: 3712
+connected_components: 266
+average_dihedral_angle: 0.439094
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.967461, ymax = 0.924777, zmax = 0.975
+avg_depth: 1.171896
+center: (0.503419,0.501673,0.610226)
+scale: 0.955578
+principle_axes: (0.983221,-0.182265,0.007465), (-0.180278,-0.977124,-0.112824), (-0.027858,-0.109585,0.993587)
+principle_values: (0.084913,0.078922,0.071787)

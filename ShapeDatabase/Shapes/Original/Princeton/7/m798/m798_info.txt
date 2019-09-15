@@ -1,0 +1,14 @@
+mid: 798
+url: http://tecfa.unige.ch/vrml/objects/3Name3D/02chair2.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/3Name3D/
+format: wrl 
+pid: 3664
+polygons: 599
+connected_components: 24
+average_dihedral_angle: 0.766354
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.596759, ymax = 0.975, zmax = 0.647338
+avg_depth: 1.365126
+center: (0.309991,0.534139,0.289429)
+scale: 0.595801
+principle_axes: (-0.004602,-0.870831,0.491562), (0.999986,-0.005312,-0.000047), (-0.002652,-0.491554,-0.870843)
+principle_values: (0.063261,0.023703,0.015555)

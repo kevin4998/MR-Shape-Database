@@ -1,0 +1,14 @@
+mid: 518
+url: http://64.198.60.83/baument/Models/mailbox.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25330
+polygons: 2220
+connected_components: 12
+average_dihedral_angle: 1.13187
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.193612, ymax = 0.975, zmax = 0.38539
+avg_depth: 1.665930
+center: (0.111949,0.735919,0.209137)
+scale: 0.416999
+principle_axes: (-0.005914,0.999928,0.010433), (0.003917,-0.010410,0.999938), (0.999975,0.005955,-0.003855)
+principle_values: (0.048342,0.010280,0.002966)

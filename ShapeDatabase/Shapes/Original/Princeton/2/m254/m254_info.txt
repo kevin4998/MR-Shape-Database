@@ -1,0 +1,14 @@
+mid: 254
+url: http://cepcairo.bizland.com/free/P_female.zip
+ref_url: 
+format: xthreexds 
+pid: 47979
+polygons: 31221
+connected_components: 96
+average_dihedral_angle: 0.250677
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.674155, ymax = 0.975, zmax = 0.169338
+avg_depth: 1.441627
+center: (0.349545,0.567673,0.083412)
+scale: 0.464888
+principle_axes: (0.000151,0.999791,0.020458), (-1.000000,0.000151,0.000021), (-0.000018,0.020458,-0.999791)
+principle_values: (0.058676,0.008448,0.000910)

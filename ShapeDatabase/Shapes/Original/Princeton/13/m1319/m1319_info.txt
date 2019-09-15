@@ -1,0 +1,14 @@
+mid: 1319
+url: http://www.rccad.com/Gallery/Vrml/bell.wrl
+ref_url: http://www.rccad.com/Gallery_Helicopters1.htm
+format: wrl 
+pid: 34080
+polygons: 1004
+connected_components: 13
+average_dihedral_angle: 0.289728
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.687735, ymax = 0.975, zmax = 0.178555
+avg_depth: 1.149402
+center: (0.246083,0.499935,0.111851)
+scale: 0.333051
+principle_axes: (-0.997886,0.029617,-0.057853), (0.029562,0.999561,0.001809), (0.057881,0.000095,-0.998323)
+principle_values: (0.019440,0.018546,0.002437)

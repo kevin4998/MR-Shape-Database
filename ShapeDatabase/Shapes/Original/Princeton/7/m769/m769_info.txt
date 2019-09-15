@@ -1,0 +1,14 @@
+mid: 769
+url: http://www.digitalanimators.com/Images/3dmodels/ComputerDesk.zip
+ref_url: http://www.digitalanimators.com/HTM/Resources/3dModels/Replica.htm
+format: lwo 
+pid: 28557
+polygons: 704
+connected_components: 13
+average_dihedral_angle: 0.821845
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.688535, ymax = 0.975, zmax = 0.406247
+avg_depth: 1.798231
+center: (0.387691,0.497375,0.159533)
+scale: 0.646381
+principle_axes: (0.891038,-0.440908,0.107943), (-0.453710,-0.872447,0.181615), (0.014099,-0.210801,-0.977427)
+principle_values: (0.059207,0.050948,0.010259)

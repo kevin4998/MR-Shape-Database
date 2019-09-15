@@ -1,0 +1,14 @@
+mid: 1290
+url: http://www.rccad.com/Gallery/Vrml/jet-2-eng-4%20(mo).wrl
+ref_url: http://www.rccad.com/Gallery_MultiFuselages1.htm
+format: wrl 
+pid: 38592
+polygons: 372
+connected_components: 9
+average_dihedral_angle: 0.494516
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.480234, ymax = 0.975, zmax = 0.132589
+avg_depth: 1.227365
+center: (0.210995,0.500009,0.051639)
+scale: 0.448287
+principle_axes: (-0.000040,1.000000,0.000002), (-0.999944,-0.000040,-0.010541), (0.010541,0.000002,-0.999944)
+principle_values: (0.044078,0.016247,0.000173)

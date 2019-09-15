@@ -1,0 +1,14 @@
+mid: 1758
+url: http://www3.airnet.ne.jp/~sundiver/VRML/snow8.wrl
+ref_url: http://www3.airnet.ne.jp/~sundiver/vrml.html
+format: wrl 
+pid: 9823
+polygons: 1520
+connected_components: 7
+average_dihedral_angle: 0.245609
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.573656, ymax = 0.975, zmax = 0.573656
+avg_depth: 1.982054
+center: (0.303826,0.442657,0.296203)
+scale: 0.568231
+principle_axes: (0.017575,0.999234,-0.034975), (0.987651,-0.011903,0.156220), (0.155684,-0.037289,-0.987103)
+principle_values: (0.051926,0.018287,0.017374)

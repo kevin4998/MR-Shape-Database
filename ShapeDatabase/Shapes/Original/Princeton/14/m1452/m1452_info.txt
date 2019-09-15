@@ -1,0 +1,14 @@
+mid: 1452
+url: http://www.dataship.com/vrml/iacc_2.wrl
+ref_url: http://www.dataship.com/vrml/vrml_index.html
+format: wrl 
+pid: 9525
+polygons: 1452
+connected_components: 6
+average_dihedral_angle: 0.218863
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.603552, ymax = 0.975, zmax = 0.158593
+avg_depth: 1.030575
+center: (0.322624,0.335283,0.105604)
+scale: 0.448006
+principle_axes: (-0.045215,-0.998801,-0.018760), (0.998961,-0.045312,0.004794), (-0.005638,-0.018523,0.999813)
+principle_values: (0.048707,0.012610,0.000718)

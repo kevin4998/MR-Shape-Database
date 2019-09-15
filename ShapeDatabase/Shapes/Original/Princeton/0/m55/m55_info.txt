@@ -1,0 +1,14 @@
+mid: 55
+url: http://homepage2.nifty.com/~mr_trout/models/sakuraMasuP1_obj.zip
+ref_url: http://www1.udn.ne.jp/~woodland/landscape/model/
+format: obj 
+pid: 25102
+polygons: 37531
+connected_components: 154
+average_dihedral_angle: 0.0750675
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.18151, ymax = 0.380146, zmax = 0.975
+avg_depth: 1.164361
+center: (0.088917,0.203389,0.551946)
+scale: 0.446610
+principle_axes: (0.051632,-0.052538,0.997283), (-0.027362,-0.998315,-0.051176), (-0.998291,0.024645,0.052982)
+principle_values: (0.056983,0.004406,0.001213)

@@ -1,0 +1,14 @@
+mid: 873
+url: http://www.etl.go.jp/etl/robotics/Projects/Humanoid/vrml/escher.wrl
+ref_url: http://www.etl.go.jp/etl/robotics/Projects/Humanoid/escher.html
+format: wrl 
+pid: 2507
+polygons: 1206
+connected_components: 34
+average_dihedral_angle: 1.30216
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.678125, ymax = 0.580156, zmax = 0.975
+avg_depth: 1.156453
+center: (0.351565,0.426650,0.475012)
+scale: 0.676834
+principle_axes: (0.000009,0.017703,-0.999843), (-1.000000,-0.000001,-0.000009), (-0.000002,0.999843,0.017703)
+principle_values: (0.086971,0.038009,0.007349)

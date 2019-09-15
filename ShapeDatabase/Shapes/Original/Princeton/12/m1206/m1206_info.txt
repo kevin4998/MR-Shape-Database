@@ -1,0 +1,14 @@
+mid: 1206
+url: http://private.freepage.de/flodietrich/f1000.wrl
+ref_url: http://private.freepage.de/flodietrich/arc.html
+format: wrl 
+pid: 11806
+polygons: 134
+connected_components: 14
+average_dihedral_angle: 1.54913
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.836818, ymax = 0.255303, zmax = 0.859848
+avg_depth: 1.153959
+center: (0.430925,0.076262,0.325130)
+scale: 0.412282
+principle_axes: (0.000143,0.025621,-0.999672), (-1.000000,-0.000055,-0.000144), (0.000058,-0.999672,-0.025621)
+principle_values: (0.033234,0.017285,0.000938)

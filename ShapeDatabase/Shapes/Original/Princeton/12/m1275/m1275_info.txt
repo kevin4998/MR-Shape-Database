@@ -1,0 +1,14 @@
+mid: 1275
+url: http://www.rccad.com/Gallery/Vrml/cessnaliketrainer.wrl
+ref_url: http://www.rccad.com/Gallery_Classic9.htm
+format: wrl 
+pid: 33649
+polygons: 272
+connected_components: 6
+average_dihedral_angle: 0.442751
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.55428, ymax = 0.975, zmax = 0.176995
+avg_depth: 1.105566
+center: (0.257188,0.500011,0.122479)
+scale: 0.430329
+principle_axes: (-0.000046,1.000000,-0.000000), (-0.994304,-0.000045,0.106583), (0.106583,0.000005,0.994304)
+principle_values: (0.043894,0.014002,0.001243)

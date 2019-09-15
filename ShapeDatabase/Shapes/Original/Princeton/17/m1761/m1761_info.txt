@@ -1,0 +1,14 @@
+mid: 1761
+url: http://mowat.virtualave.net/fone2.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26733
+polygons: 744
+connected_components: 150
+average_dihedral_angle: 0.322788
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.373454, zmax = 0.445591
+avg_depth: 1.982054
+center: (0.460994,0.189624,0.216499)
+scale: 0.597621
+principle_axes: (-0.967836,-0.125994,0.217760), (0.229668,-0.089149,0.969178), (0.102697,-0.988017,-0.115219)
+principle_values: (0.090689,0.008499,0.004861)

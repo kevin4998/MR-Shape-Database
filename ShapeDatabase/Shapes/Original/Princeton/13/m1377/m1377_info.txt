@@ -1,0 +1,14 @@
+mid: 1377
+url: http://www.ultradrive.com/files/FPassaro_Vree_3ds.zip
+ref_url: http://www.ultradrive.com/b5_3d_index.htm
+format: 3ds 
+pid: 25151
+polygons: 205083
+connected_components: 1871
+average_dihedral_angle: 0.309818
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.237034, zmax = 0.974997
+avg_depth: 6.622649
+center: (0.499193,0.116156,0.500283)
+scale: 0.539771
+principle_axes: (0.999983,-0.000072,-0.005837), (0.005837,-0.000004,0.999983), (0.000072,1.000000,0.000004)
+principle_values: (0.041319,0.041257,0.001207)

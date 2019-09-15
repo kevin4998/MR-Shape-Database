@@ -1,0 +1,14 @@
+mid: 1398
+url: http://cepcairo.bizland.com/free/Buran2.zip
+ref_url: 
+format: xthreexds 
+pid: 46953
+polygons: 8748
+connected_components: 15
+average_dihedral_angle: 0.43095
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.695832, ymax = 0.510434, zmax = 0.975
+avg_depth: 1.808587
+center: (0.360478,0.159812,0.409741)
+scale: 0.472587
+principle_axes: (-0.000886,0.024426,-0.999701), (0.999999,-0.000812,-0.000906), (-0.000834,-0.999701,-0.024425)
+principle_values: (0.053728,0.010293,0.004361)

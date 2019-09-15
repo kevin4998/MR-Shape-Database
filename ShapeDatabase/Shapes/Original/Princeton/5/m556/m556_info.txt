@@ -1,0 +1,14 @@
+mid: 556
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/furniture/monitor.wrl
+ref_url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/furniture/?D=D
+format: wrl 
+pid: 35806
+polygons: 164
+connected_components: 6
+average_dihedral_angle: 1.3375
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.816667, ymax = 0.975, zmax = 0.77792
+avg_depth: 1.455539
+center: (0.419648,0.472966,0.453007)
+scale: 0.898542
+principle_axes: (-0.000975,-0.994622,-0.103566), (-0.999872,-0.000686,0.016006), (0.015991,-0.103568,0.994494)
+principle_values: (0.099445,0.064786,0.047749)

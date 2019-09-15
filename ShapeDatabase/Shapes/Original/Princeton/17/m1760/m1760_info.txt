@@ -1,0 +1,14 @@
+mid: 1760
+url: http://www.cis.upenn.edu/~pito/images/phone8.9.11.fixed.smooth.wrl.gz
+ref_url: http://www.cis.upenn.edu/~pito/object-gallery.html
+format: wrl 
+pid: 10626
+polygons: 24600
+connected_components: 1
+average_dihedral_angle: 0.0559502
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.341071, zmax = 0.869801
+avg_depth: 1.982054
+center: (0.540923,0.158450,0.493407)
+scale: 0.712348
+principle_axes: (0.781102,-0.002285,-0.624400), (0.586374,-0.340973,0.734781), (0.214582,0.940070,0.264995)
+principle_values: (0.126786,0.010105,0.007582)

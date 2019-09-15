@@ -1,0 +1,14 @@
+mid: 789
+url: http://www.amazing3d.com/free/stool3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47610
+polygons: 4808
+connected_components: 9
+average_dihedral_angle: 0.337324
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.511587, ymax = 0.975, zmax = 0.513989
+avg_depth: 1.259353
+center: (0.267756,0.637098,0.269959)
+scale: 0.639414
+principle_axes: (0.001593,0.999999,-0.000106), (0.002350,0.000102,0.999997), (-0.999996,0.001593,0.002350)
+principle_values: (0.084827,0.015384,0.015294)

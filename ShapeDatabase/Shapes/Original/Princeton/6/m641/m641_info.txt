@@ -1,0 +1,14 @@
+mid: 641
+url: http://cepcairo.bizland.com/free/Acoustic.zip
+ref_url: 
+format: xthreexds 
+pid: 48310
+polygons: 3600
+connected_components: 17
+average_dihedral_angle: 0.72873
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.33061, ymax = 0.1199, zmax = 0.975
+avg_depth: 1.922115
+center: (0.177955,0.074263,0.682313)
+scale: 0.411363
+principle_axes: (0.000095,-0.041594,0.999135), (-1.000000,0.000213,0.000104), (0.000217,0.999135,0.041594)
+principle_values: (0.048949,0.005881,0.001238)

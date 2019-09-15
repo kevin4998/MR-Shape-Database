@@ -1,0 +1,14 @@
+mid: 353
+url: http://www.coolfun.com/dxfhead.zip
+ref_url: http://www.coolfun.com/html/organica.html
+format: dxf 
+pid: 27842
+polygons: 15788
+connected_components: 1
+average_dihedral_angle: 0.156757
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.699801, ymax = 0.975, zmax = 0.854086
+avg_depth: 1.036311
+center: (0.363074,0.526649,0.406949)
+scale: 0.786041
+principle_axes: (-0.016521,0.993683,0.111000), (-0.015307,0.110751,-0.993730), (-0.999746,-0.018117,0.013380)
+principle_values: (0.071078,0.052778,0.033908)

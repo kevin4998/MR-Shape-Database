@@ -1,0 +1,14 @@
+mid: 1328
+url: http://www.anomalies.net/ident/vrml/hin_wrl.wrl
+ref_url: http://www.anomalies.net/ident/vrml/
+format: wrl 
+pid: 5857
+polygons: 6448
+connected_components: 5
+average_dihedral_angle: 0.631643
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.318917, zmax = 0.789381
+avg_depth: 1.287983
+center: (0.483388,0.149076,0.407232)
+scale: 0.382636
+principle_axes: (-0.995406,-0.094963,-0.012164), (-0.012668,0.004708,0.999909), (0.094897,-0.995470,0.005889)
+principle_values: (0.035685,0.010020,0.003446)

@@ -1,0 +1,14 @@
+mid: 783
+url: http://www.3dcafe.com/models/bench_v.wrl
+ref_url: http://www.3dcafe.com/asp/househld.asp
+format: wrl 
+pid: 38294
+polygons: 120
+connected_components: 7
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.476364, zmax = 0.607607
+avg_depth: 1.228347
+center: (0.512007,0.280633,0.345383)
+scale: 0.601662
+principle_axes: (0.924302,-0.000000,-0.381661), (-0.270648,-0.705077,-0.655451), (-0.269101,0.709131,-0.651704)
+principle_values: (0.091179,0.011577,0.003900)

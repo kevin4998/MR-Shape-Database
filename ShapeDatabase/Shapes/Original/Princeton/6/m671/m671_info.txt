@@ -1,0 +1,14 @@
+mid: 671
+url: http://www.episteme.com/vrml/simple_worlds/gun.wrl
+ref_url: http://www.episteme.com/vrml/simple_worlds/worlds.html
+format: wrl 
+pid: 9179
+polygons: 2302
+connected_components: 18
+average_dihedral_angle: 0.967066
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0754248, ymax = 0.237805, zmax = 0.975
+avg_depth: 1.348262
+center: (0.050229,0.147330,0.415924)
+scale: 0.338283
+principle_axes: (-0.000070,-0.031282,-0.999511), (-0.000112,-0.999511,0.031282), (-1.000000,0.000114,0.000067)
+principle_values: (0.043029,0.001585,0.000117)

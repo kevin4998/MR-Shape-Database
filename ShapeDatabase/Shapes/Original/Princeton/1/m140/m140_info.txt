@@ -1,0 +1,14 @@
+mid: 140
+url: http://www.3dcafe.com/models/android3.zip
+ref_url: http://www.3dcafe.com/asp/sci_pics.asp
+format: xthreexds 
+pid: 26861
+polygons: 18110
+connected_components: 1
+average_dihedral_angle: 0.270809
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.39729, ymax = 0.221536, zmax = 0.975
+avg_depth: 1.226566
+center: (0.216681,0.117254,0.465791)
+scale: 0.471983
+principle_axes: (-0.001365,-0.048281,-0.998833), (0.999141,0.041313,-0.003362), (-0.041427,0.997979,-0.048183)
+principle_values: (0.058777,0.007867,0.001591)

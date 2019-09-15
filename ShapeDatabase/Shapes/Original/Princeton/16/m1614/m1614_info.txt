@@ -1,0 +1,14 @@
+mid: 1614
+url: http://www.3dcafe.com/avatar/chess3.wrl
+ref_url: http://www.3dcafe.com/asp/vrml.asp
+format: wrl 
+pid: 631
+polygons: 776
+connected_components: 1
+average_dihedral_angle: 0.535665
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.437937, ymax = 0.975, zmax = 0.437937
+avg_depth: 1.061339
+center: (0.230964,0.435947,0.231298)
+scale: 0.675884
+principle_axes: (-0.000836,-1.000000,-0.000415), (0.920078,-0.000932,0.391734), (0.391734,0.000054,-0.920078)
+principle_values: (0.115115,0.008866,0.008828)

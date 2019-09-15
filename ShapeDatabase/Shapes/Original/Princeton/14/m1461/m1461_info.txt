@@ -1,0 +1,14 @@
+mid: 1461
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2001/jgladden/Hw2/vikingShip.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2001/jgladden/Hw2/?D=D
+format: wrl 
+pid: 43825
+polygons: 23024
+connected_components: 2876
+average_dihedral_angle: 0.179739
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.718676, ymax = 0.513399, zmax = 0.975
+avg_depth: 1.967864
+center: (0.371279,0.116150,0.501628)
+scale: 0.485187
+principle_axes: (0.000051,0.001042,0.999999), (0.043455,-0.999055,0.001039), (0.999055,0.043455,-0.000096)
+principle_values: (0.053521,0.009541,0.007596)

@@ -1,0 +1,14 @@
+mid: 1095
+url: http://w1.520.telia.com/~u52015187/downloads/palm.zip
+ref_url: 
+format: xthreexds 
+pid: 47891
+polygons: 1445
+connected_components: 191
+average_dihedral_angle: 0.671198
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.965689, ymax = 0.975, zmax = 0.951578
+avg_depth: 1.146168
+center: (0.495086,0.659559,0.511398)
+scale: 0.656876
+principle_axes: (-0.013207,0.997670,-0.066929), (0.756686,-0.033783,-0.652905), (-0.653645,-0.059267,-0.754477)
+principle_values: (0.067953,0.031247,0.030259)

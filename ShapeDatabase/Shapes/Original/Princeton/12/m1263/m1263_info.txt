@@ -1,0 +1,14 @@
+mid: 1263
+url: http://www.rccad.com/Gallery/Vrml/A-10K.wrl
+ref_url: 
+format: wrl 
+pid: 47984
+polygons: 2092
+connected_components: 15
+average_dihedral_angle: 0.288152
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.918087, zmax = 0.273664
+avg_depth: 1.655318
+center: (0.667753,0.471526,0.083153)
+scale: 0.441029
+principle_axes: (0.997084,0.000141,0.076306), (0.000138,-1.000000,0.000045), (0.076306,-0.000034,-0.997084)
+principle_values: (0.038099,0.019594,0.001659)

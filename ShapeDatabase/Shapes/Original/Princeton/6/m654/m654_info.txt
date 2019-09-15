@@ -1,0 +1,14 @@
+mid: 654
+url: http://64.198.60.83/baument/Models/colt45.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25445
+polygons: 2088
+connected_components: 11
+average_dihedral_angle: 1.13665
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.555676, zmax = 0.114499
+avg_depth: 1.998381
+center: (0.579449,0.365202,0.066361)
+scale: 0.559990
+principle_axes: (0.913328,-0.407224,-0.000184), (-0.407224,-0.913328,0.000808), (-0.000497,-0.000663,-1.000000)
+principle_values: (0.077867,0.014501,0.000862)

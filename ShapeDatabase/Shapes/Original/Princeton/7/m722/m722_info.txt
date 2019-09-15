@@ -1,0 +1,14 @@
+mid: 722
+url: http://www.3dcafe.com/models/sword2.zip
+ref_url: 
+format: xthreexds 
+pid: 47455
+polygons: 1520
+connected_components: 5
+average_dihedral_angle: 0.376509
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0931506, ymax = 0.174508, zmax = 0.975
+avg_depth: 1.108296
+center: (0.058580,0.098174,0.626767)
+scale: 0.431808
+principle_axes: (-0.002298,0.004493,0.999987), (-0.000045,-0.999990,0.004493), (-0.999997,0.000035,-0.002298)
+principle_values: (0.059432,0.000625,0.000124)

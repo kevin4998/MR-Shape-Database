@@ -1,0 +1,14 @@
+mid: 846
+url: http://www.3dcafe.com/models/wallunit.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 28428
+polygons: 2098
+connected_components: 27
+average_dihedral_angle: 0.646439
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.551, ymax = 0.975, zmax = 0.267805
+avg_depth: 2.328605
+center: (0.281737,0.486899,0.152369)
+scale: 0.625086
+principle_axes: (0.025501,-0.999632,0.009273), (0.998815,0.025093,-0.041697), (0.041449,0.010325,0.999087)
+principle_values: (0.079807,0.026711,0.005513)

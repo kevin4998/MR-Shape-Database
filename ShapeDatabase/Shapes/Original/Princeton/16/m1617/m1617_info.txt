@@ -1,0 +1,14 @@
+mid: 1617
+url: http://64.198.60.83/baument/Models/skateboard1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 25671
+polygons: 1788
+connected_components: 9
+average_dihedral_angle: 0.989661
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.118741, zmax = 0.294091
+avg_depth: 1.143972
+center: (0.486219,0.099111,0.161263)
+scale: 0.490385
+principle_axes: (-0.999997,0.002483,-0.000237), (0.000271,0.013814,-0.999905), (0.002480,0.999901,0.013815)
+principle_values: (0.065995,0.005070,0.000548)

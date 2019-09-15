@@ -1,0 +1,14 @@
+mid: 754
+url: http://www.eecs.tulane.edu/www/graphics/gallery/swalm.wrl
+ref_url: http://www.eecs.tulane.edu/www/graphics/gallery/
+format: wrl 
+pid: 11311
+polygons: 1252
+connected_components: 208
+average_dihedral_angle: 0.462718
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.355047, ymax = 0.975, zmax = 0.372032
+avg_depth: 1.254732
+center: (0.190171,0.517327,0.200272)
+scale: 0.537750
+principle_axes: (-0.003559,0.999993,0.001409), (-0.507101,-0.003019,0.861882), (0.861880,0.002353,0.507108)
+principle_values: (0.066387,0.008101,0.007980)

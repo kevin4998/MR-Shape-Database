@@ -1,0 +1,14 @@
+mid: 1198
+url: http://mowat.virtualave.net/psu27k1s.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26349
+polygons: 462
+connected_components: 12
+average_dihedral_angle: 0.88424
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.664898, ymax = 0.239022, zmax = 0.975
+avg_depth: 1.151555
+center: (0.345113,0.075844,0.406668)
+scale: 0.423073
+principle_axes: (-0.001024,0.002987,-0.999995), (0.999987,-0.004990,-0.001038), (-0.004993,-0.999983,-0.002982)
+principle_values: (0.039755,0.013277,0.001134)

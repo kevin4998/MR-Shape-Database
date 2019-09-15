@@ -1,0 +1,14 @@
+mid: 820
+url: http://www.episteme.com/vrml/simple_worlds/simple1.wrl
+ref_url: http://www.episteme.com/vrml/simple_worlds/worlds.html
+format: wrl 
+pid: 9166
+polygons: 208
+connected_components: 10
+average_dihedral_angle: 1.47583
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.557, ymax = 0.975, zmax = 0.5665
+avg_depth: 1.280603
+center: (0.291000,0.478992,0.250179)
+scale: 0.648754
+principle_axes: (-0.000000,-0.804403,0.594084), (-1.000000,-0.000000,-0.000000), (-0.000000,0.594084,0.804403)
+principle_values: (0.062926,0.036493,0.021069)

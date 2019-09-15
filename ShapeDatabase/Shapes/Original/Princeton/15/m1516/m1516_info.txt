@@ -1,0 +1,14 @@
+mid: 1516
+url: http://www.ocnus.com/models/Vehicles/camaro3.wrl.gz
+ref_url: http://www.ocnus.com/models/Vehicles/
+format: wrl 
+pid: 17956
+polygons: 24863
+connected_components: 220
+average_dihedral_angle: 0.602196
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.422411, ymax = 0.975, zmax = 0.288768
+avg_depth: 2.300531
+center: (0.224865,0.535414,0.139647)
+scale: 0.549182
+principle_axes: (-0.000401,0.999457,0.032937), (1.000000,0.000410,-0.000274), (-0.000288,0.032937,-0.999457)
+principle_values: (0.066388,0.014974,0.004453)

@@ -1,0 +1,14 @@
+mid: 1117
+url: http://www.3dcafe.com/../models/knife1.zip
+ref_url: http://www.3dcafe.com/../asp/weapons.asp
+format: 3ds 
+pid: 30611
+polygons: 3424
+connected_components: 4
+average_dihedral_angle: 0.254261
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.270945, ymax = 0.113904, zmax = 0.975
+avg_depth: 1.179015
+center: (0.148880,0.071117,0.555594)
+scale: 0.391978
+principle_axes: (0.005765,0.000348,-0.999983), (0.999964,0.006300,0.005767), (0.006302,-0.999980,-0.000312)
+principle_values: (0.055017,0.001381,0.000426)

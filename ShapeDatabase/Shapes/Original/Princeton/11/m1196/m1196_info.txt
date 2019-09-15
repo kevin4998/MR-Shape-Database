@@ -1,0 +1,14 @@
+mid: 1196
+url: http://members.chello.nl/~w.bergmans/VRML/su-27.wrl
+ref_url: http://iaehv.nl/users/wbergmns/jetvrml.htm
+format: wrl 
+pid: 7853
+polygons: 804
+connected_components: 15
+average_dihedral_angle: 0.475398
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.676429, zmax = 0.228142
+avg_depth: 1.638283
+center: (0.617674,0.350715,0.077212)
+scale: 0.382104
+principle_axes: (0.999976,-0.000005,-0.006969), (-0.000005,-1.000000,-0.000009), (-0.006969,0.000009,-0.999976)
+principle_values: (0.034267,0.011538,0.000743)

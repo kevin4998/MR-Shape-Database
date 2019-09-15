@@ -1,0 +1,14 @@
+mid: 841
+url: http://sampl.eng.ohio-state.edu/~sampl/data/3DDB/Models/USF/mkwb.09/mkwb.09.wrl
+ref_url: http://sampl.eng.ohio-state.edu/~sampl/data/3DDB/Models/USF/index.html
+format: wrl 
+pid: 39367
+polygons: 68
+connected_components: 1
+average_dihedral_angle: 1.81041
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.658333, ymax = 0.975, zmax = 0.341667
+avg_depth: 1.389298
+center: (0.380646,0.529788,0.133560)
+scale: 0.705792
+principle_axes: (0.018640,0.998988,0.040932), (0.930181,-0.032339,0.365673), (0.366627,0.031258,-0.929843)
+principle_values: (0.104422,0.025749,0.012451)

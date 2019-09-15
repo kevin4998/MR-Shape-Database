@@ -1,0 +1,14 @@
+mid: 1615
+url: http://www.ocnus.com/models/DXF/skateboard.wrl.gz
+ref_url: http://www.ocnus.com/models/DXF/
+format: wrl 
+pid: 17757
+polygons: 22842
+connected_components: 157
+average_dihedral_angle: 0.271594
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.339846, ymax = 0.186543, zmax = 0.975
+avg_depth: 2.106037
+center: (0.182219,0.120940,0.497545)
+scale: 0.522942
+principle_axes: (-0.000047,-0.007708,-0.999970), (0.999998,0.002042,-0.000063), (-0.002042,0.999968,-0.007707)
+principle_values: (0.072516,0.006841,0.001165)

@@ -1,0 +1,14 @@
+mid: 1549
+url: http://www.3dheaven.net/Modelle/cars/batmobile.zip
+ref_url: 
+format: xthreexds 
+pid: 46881
+polygons: 1416
+connected_components: 422
+average_dihedral_angle: 1.72608
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.35448, ymax = 0.200722, zmax = 0.975
+avg_depth: 2.569745
+center: (0.189766,0.106619,0.529525)
+scale: 0.565663
+principle_axes: (0.000022,0.030361,0.999539), (1.000000,0.000275,-0.000030), (-0.000276,0.999539,-0.030361)
+principle_values: (0.076709,0.011402,0.001979)

@@ -1,0 +1,14 @@
+mid: 1565
+url: http://www.ocnus.com/models/DXF/covered_wagon.wrl.gz
+ref_url: http://www.ocnus.com/models/DXF/
+format: wrl 
+pid: 17726
+polygons: 14948
+connected_components: 170
+average_dihedral_angle: 0.452184
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.943344, ymax = 0.884505, zmax = 0.975
+avg_depth: 1.527456
+center: (0.415373,0.448138,0.449239)
+scale: 0.615033
+principle_axes: (0.697337,0.517961,0.495416), (-0.087314,-0.624667,0.775994), (-0.711405,0.584386,0.390378)
+principle_values: (0.064017,0.025807,0.012667)

@@ -1,0 +1,14 @@
+mid: 524
+url: http://www.3dcafe.com/models/propane.zip
+ref_url: http://www.3dcafe.com/asp/ind_pic.asp
+format: xthreexds 
+pid: 28756
+polygons: 4830
+connected_components: 20
+average_dihedral_angle: 0.408163
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.693611, ymax = 0.975, zmax = 0.69361
+avg_depth: 2.331042
+center: (0.357710,0.419288,0.359612)
+scale: 0.747662
+principle_axes: (-0.026061,0.999657,-0.002724), (-0.999041,-0.026141,-0.035127), (-0.035186,0.001806,0.999379)
+principle_values: (0.075273,0.033892,0.032984)

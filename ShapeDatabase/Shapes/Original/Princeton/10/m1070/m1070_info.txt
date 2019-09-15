@@ -1,0 +1,14 @@
+mid: 1070
+url: http://www.3dcafe.com/models/cherry02.zip
+ref_url: http://www.3dcafe.com/asp/plants.asp
+format: 3ds 
+pid: 29066
+polygons: 1134
+connected_components: 65
+average_dihedral_angle: 0.563436
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.314703, ymax = 0.975, zmax = 0.427371
+avg_depth: 1.179768
+center: (0.194039,0.531330,0.226787)
+scale: 0.446326
+principle_axes: (-0.041000,0.999114,-0.009545), (0.014710,0.010155,0.999840), (0.999051,0.040853,-0.015114)
+principle_values: (0.053180,0.006332,0.002331)

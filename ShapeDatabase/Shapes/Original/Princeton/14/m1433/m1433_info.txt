@@ -1,0 +1,14 @@
+mid: 1433
+url: http://www.worldwar1.com/vrml/objects/scharnhs.wrl
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1720
+polygons: 1227
+connected_components: 61
+average_dihedral_angle: 0.992806
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.313262, zmax = 0.195429
+avg_depth: 1.723742
+center: (0.494713,0.064231,0.110215)
+scale: 0.395661
+principle_axes: (-0.999789,0.020553,0.000000), (-0.000000,0.000004,-1.000000), (0.020553,0.999789,0.000004)
+principle_values: (0.048982,0.001479,0.001270)

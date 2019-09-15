@@ -1,0 +1,74 @@
+<html><title> Classification File Format</title>
+<body>
+<h1><u>Classification File Format</u></h1>
+
+Classification files are provided in the classification folder. 
+Each classification file lists classes and models within each class.  
+The classification contains a subset of the models in the database.  
+There are a variety of ways to group the models, and we have 
+provided a few useful views on the model database.
+<p>
+<h3><u>The Princeton Shape Benchmark Classification Format</u></h3>
+<code>
+PSB Version_Num<br>
+numClasses numModels<br>
+<br>
+className parentClassName numModelsInClass<br>
+one model identifier per line.<br>
+</code>
+<p>
+This is the basic description for the classification format for 
+version 1.  Future classification formats will have a higher 
+version number.  <p>
+
+There can be arbitrary whitespace in the file, but tokens cannot 
+contain whitespace. <p> 
+
+A parent class name of 0 (zero) indicates the root level of the 
+hierarchy, and all parent classes must be defined before subclasses.  
+After the line listing the class, the parent class, and the number 
+of models, the model identifiers are specified.  <p>
+
+Class names must be unique.<p>
+
+Comments are not allowed in the file.<p>
+
+We provide <a href = "http://shape.cs.princeton.edu/benchmark/util.html">free example software</a> for parsing classification files.
+<p>
+Below is an example .cla file:<p>
+
+PSB 1<br>
+5 17<br>
+<br>
+aircraft 0 4<br>
+1119<br>
+1121<br>
+1123<br>
+1125<br>
+<br>
+animal 0 0<br>
+<br>
+quadruped animal 0<br>
+<br>
+dog quadruped 7<br>
+86<br>
+87<br>
+88<br>
+89<br>
+90<br>
+91<br>
+92<br>
+<br>
+horse quadruped 6<br>
+103<br>
+104<br>
+105<br>
+106<br>
+107<br>
+108<br>
+
+
+
+
+</body></html>
+ 

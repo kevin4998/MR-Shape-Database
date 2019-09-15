@@ -1,0 +1,14 @@
+mid: 1243
+url: http://ciel.me.cmu.edu/soji/aircraft/mig29.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 908
+polygons: 596
+connected_components: 7
+average_dihedral_angle: 0.591397
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.67727, ymax = 0.24856, zmax = 0.975
+avg_depth: 1.193413
+center: (0.351158,0.091827,0.629618)
+scale: 0.415180
+principle_axes: (-0.000044,0.013764,0.999905), (1.000000,0.000346,0.000039), (0.000345,-0.999905,0.013764)
+principle_values: (0.038590,0.013433,0.001110)

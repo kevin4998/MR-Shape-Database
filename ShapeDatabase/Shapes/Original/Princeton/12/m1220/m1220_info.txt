@@ -1,0 +1,14 @@
+mid: 1220
+url: http://mowat.virtualave.net/pb1l.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26437
+polygons: 862
+connected_components: 3
+average_dihedral_angle: 0.542342
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.67343, ymax = 0.231674, zmax = 0.975
+avg_depth: 1.208483
+center: (0.349258,0.080634,0.615210)
+scale: 0.411739
+principle_axes: (-0.000072,0.051268,0.998685), (-1.000000,-0.000156,-0.000064), (0.000152,-0.998685,0.051268)
+principle_values: (0.041946,0.012437,0.000952)

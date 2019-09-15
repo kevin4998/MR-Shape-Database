@@ -1,0 +1,14 @@
+mid: 120
+url: http://mowat.virtualave.net/wsshtwlk.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 25832
+polygons: 870
+connected_components: 5
+average_dihedral_angle: 0.550776
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.272396, ymax = 0.975, zmax = 0.222875
+avg_depth: 1.275771
+center: (0.145985,0.532873,0.119612)
+scale: 0.440940
+principle_axes: (-0.003803,0.999944,0.009834), (0.999827,0.003623,0.018249), (0.018213,0.009902,-0.999785)
+principle_values: (0.058566,0.003565,0.001125)

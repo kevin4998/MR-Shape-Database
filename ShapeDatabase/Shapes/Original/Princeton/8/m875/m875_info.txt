@@ -1,0 +1,14 @@
+mid: 875
+url: http://mowat.virtualave.net/tblflw.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26045
+polygons: 744
+connected_components: 52
+average_dihedral_angle: 1.58279
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.263804, zmax = 0.384483
+avg_depth: 1.708131
+center: (0.500000,0.195710,0.204725)
+scale: 0.515884
+principle_axes: (-1.000000,-0.000000,0.000348), (0.000348,0.000490,1.000000), (-0.000000,1.000000,-0.000490)
+principle_values: (0.063958,0.008023,0.005352)

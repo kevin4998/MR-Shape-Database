@@ -1,0 +1,14 @@
+mid: 206
+url: http://www.atom.co.jp/vrml2/coral/world/english/obj/divers2T.wrl
+ref_url: http://www.atom.co.jp/vrml2/coral/world/english/obj/
+format: wrl 
+pid: 3880
+polygons: 6102
+connected_components: 371
+average_dihedral_angle: 0.47768
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.283789, ymax = 0.260718, zmax = 0.975
+avg_depth: 1.750617
+center: (0.162403,0.159785,0.570820)
+scale: 0.417739
+principle_axes: (-0.001402,-0.033508,0.999437), (0.999670,0.025603,0.002261), (-0.025664,0.999110,0.033461)
+principle_values: (0.053943,0.003040,0.001683)

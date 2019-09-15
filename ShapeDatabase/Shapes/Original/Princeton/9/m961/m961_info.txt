@@ -1,0 +1,14 @@
+mid: 961
+url: http://amber.rc.arizona.edu/lw/objects/mesquitetree.zip
+ref_url: http://amber.rc.arizona.edu/modeling.html
+format: lwo 
+pid: 25635
+polygons: 9427
+connected_components: 425
+average_dihedral_angle: 1.05981
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.593275, zmax = 0.892779
+avg_depth: 5.751047
+center: (0.437460,0.351653,0.481774)
+scale: 0.542879
+principle_axes: (0.661578,0.065149,-0.747041), (-0.747711,0.132952,-0.650578), (0.056937,0.988979,0.136671)
+principle_values: (0.051495,0.022133,0.008519)

@@ -1,0 +1,14 @@
+mid: 779
+url: http://www.3dcafe.com/models/bench.zip
+ref_url: http://www.3dcafe.com/asp/hou1_pic.asp
+format: xthreexds 
+pid: 27823
+polygons: 1268
+connected_components: 13
+average_dihedral_angle: 0.560625
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.369958, zmax = 0.24294
+avg_depth: 1.216102
+center: (0.500740,0.237785,0.112049)
+scale: 0.548107
+principle_axes: (-1.000000,0.000804,-0.000312), (0.000765,0.659649,-0.751573), (0.000399,0.751573,0.659650)
+principle_values: (0.080346,0.007287,0.001663)

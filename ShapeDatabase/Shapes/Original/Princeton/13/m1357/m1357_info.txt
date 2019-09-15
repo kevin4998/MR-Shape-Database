@@ -1,0 +1,14 @@
+mid: 1357
+url: http://www.forwarddesign.com/objects/vehicles/Ingram.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: lwo 
+pid: 25466
+polygons: 32216
+connected_components: 1269
+average_dihedral_angle: 3.14082
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.167978, zmax = 0.424339
+avg_depth: 2.738389
+center: (0.443182,0.121635,0.224736)
+scale: 0.447321
+principle_axes: (-0.999879,0.015525,-0.000527), (0.000519,-0.000511,-1.000000), (0.015525,0.999879,-0.000503)
+principle_values: (0.053977,0.009371,0.000649)

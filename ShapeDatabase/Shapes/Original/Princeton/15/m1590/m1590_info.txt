@@ -1,0 +1,14 @@
+mid: 1590
+url: http://www.connix.com/~dennis/vrml/brillh.wrl
+ref_url: http://www.connix.com/~dennis/dennis.htm
+format: wrl 
+pid: 1659
+polygons: 14804
+connected_components: 253
+average_dihedral_angle: 0.419779
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.261313, zmax = 0.975
+avg_depth: 1.534247
+center: (0.502475,0.048626,0.504239)
+scale: 0.748520
+principle_axes: (-0.178645,0.006074,0.983895), (0.983914,0.001208,0.178641), (0.000103,-0.999981,0.006192)
+principle_values: (0.081524,0.075197,0.001002)

@@ -1,0 +1,14 @@
+mid: 1477
+url: http://deep.sitenest.net/freemodels/transport/3dm-bike.zip
+ref_url: 
+format: xthreexds 
+pid: 48456
+polygons: 44727
+connected_components: 235
+average_dihedral_angle: 0.579664
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.616046, zmax = 0.376031
+avg_depth: 1.639488
+center: (0.502746,0.278065,0.204292)
+scale: 0.550929
+principle_axes: (-0.985054,-0.172053,0.008173), (0.172232,-0.984492,0.033351), (-0.002309,-0.034260,-0.999410)
+principle_values: (0.065620,0.021718,0.001162)

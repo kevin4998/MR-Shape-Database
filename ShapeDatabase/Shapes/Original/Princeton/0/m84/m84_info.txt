@@ -1,0 +1,14 @@
+mid: 84
+url: http://cepcairo.bizland.com/free/Rattler.zip
+ref_url: 
+format: xthreexds 
+pid: 48241
+polygons: 5263
+connected_components: 10
+average_dihedral_angle: 0.229734
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0777835, ymax = 0.0683238, zmax = 0.975
+avg_depth: 1.034154
+center: (0.051392,0.044454,0.578708)
+scale: 0.429885
+principle_axes: (-0.000001,0.010589,0.999944), (1.000000,-0.000005,0.000001), (-0.000005,-0.999944,0.010589)
+principle_values: (0.063058,0.000199,0.000154)

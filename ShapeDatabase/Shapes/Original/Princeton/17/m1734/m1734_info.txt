@@ -1,0 +1,14 @@
+mid: 1734
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/buildings/stairs.wrl
+ref_url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/buildings/?D=D
+format: wrl 
+pid: 35757
+polygons: 216
+connected_components: 1
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.236111, ymax = 0.785, zmax = 0.975
+avg_depth: 1.219081
+center: (0.130556,0.405000,0.500000)
+scale: 0.641057
+principle_axes: (-0.000000,-0.624321,0.781168), (-1.000000,0.000000,0.000000), (-0.000000,-0.781168,-0.624321)
+principle_values: (0.123332,0.004457,0.000344)

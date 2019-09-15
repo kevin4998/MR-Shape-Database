@@ -1,0 +1,14 @@
+mid: 808
+url: http://mowat.virtualave.net/patchair.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26444
+polygons: 1344
+connected_components: 9
+average_dihedral_angle: 0.204169
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.550853, ymax = 0.975, zmax = 0.624579
+avg_depth: 1.107827
+center: (0.286790,0.553723,0.235469)
+scale: 0.631790
+principle_axes: (-0.001502,-0.798032,0.602614), (0.999855,0.009018,0.014434), (-0.016953,0.602548,0.797903)
+principle_values: (0.075030,0.020771,0.015800)

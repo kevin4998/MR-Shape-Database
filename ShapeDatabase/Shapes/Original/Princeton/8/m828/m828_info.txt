@@ -1,0 +1,14 @@
+mid: 828
+url: http://www.hammerve.com/NewHome/FreeStuff/Vrml/kitchen_chair.wrl.gz
+ref_url: 
+format: wrl 
+pid: 47897
+polygons: 1378
+connected_components: 12
+average_dihedral_angle: 0.533653
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.508981, ymax = 0.975, zmax = 0.470436
+avg_depth: 1.213305
+center: (0.269222,0.465321,0.292664)
+scale: 0.542431
+principle_axes: (0.003857,-0.930730,-0.365687), (-0.997576,0.021827,-0.066077), (-0.069482,-0.365055,0.928389)
+principle_values: (0.053913,0.021514,0.012625)

@@ -1,0 +1,14 @@
+mid: 200
+url: http://fraktali.849pm.com/programs/dxf/ANDROID.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27827
+polygons: 2547
+connected_components: 58
+average_dihedral_angle: 0.919399
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.339247, ymax = 0.235966, zmax = 0.975
+avg_depth: 1.781185
+center: (0.182054,0.166263,0.447017)
+scale: 0.462342
+principle_axes: (-0.000110,0.018848,-0.999822), (-1.000000,-0.000541,0.000100), (-0.000539,0.999822,0.018848)
+principle_values: (0.062473,0.006041,0.001190)

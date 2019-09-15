@@ -1,0 +1,14 @@
+mid: 1291
+url: http://www.rccad.com/Gallery/Vrml/BiplaneII.wrl
+ref_url: 
+format: wrl 
+pid: 48033
+polygons: 444
+connected_components: 30
+average_dihedral_angle: 0.413707
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.612934, ymax = 0.975, zmax = 0.185769
+avg_depth: 1.285784
+center: (0.296504,0.500052,0.102986)
+scale: 0.450922
+principle_axes: (-0.000298,1.000000,-0.000043), (-0.998897,-0.000296,0.046955), (0.046955,0.000057,0.998897)
+principle_values: (0.038150,0.020200,0.001686)

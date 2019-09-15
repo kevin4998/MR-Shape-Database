@@ -1,0 +1,14 @@
+mid: 289
+url: http://cepcairo.bizland.com/free/Brain.zip
+ref_url: 
+format: xthreexds 
+pid: 46927
+polygons: 5218
+connected_components: 14
+average_dihedral_angle: 0.317495
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.60705, ymax = 0.975, zmax = 0.905765
+avg_depth: 1.726109
+center: (0.316272,0.630066,0.417024)
+scale: 0.624911
+principle_axes: (-0.010564,-0.503210,-0.864100), (-0.032326,-0.863524,0.503270), (0.999422,-0.033250,0.007145)
+principle_values: (0.053833,0.030449,0.019662)

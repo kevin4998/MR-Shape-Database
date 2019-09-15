@@ -1,0 +1,14 @@
+mid: 782
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/furniture/bench.wrl
+ref_url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/furniture/?D=D
+format: wrl 
+pid: 35917
+polygons: 46
+connected_components: 4
+average_dihedral_angle: 1.43432
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.42384, zmax = 0.347871
+avg_depth: 1.168435
+center: (0.499972,0.250479,0.150773)
+scale: 0.628236
+principle_axes: (1.000000,0.000050,-0.000029), (-0.000057,0.777930,-0.628351), (-0.000008,0.628351,0.777930)
+principle_values: (0.090253,0.015605,0.004611)

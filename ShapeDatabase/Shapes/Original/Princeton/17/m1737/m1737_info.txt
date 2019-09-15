@@ -1,0 +1,14 @@
+mid: 1737
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/katat/big_steps.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/katat/?D=A
+format: wrl 
+pid: 46029
+polygons: 29988
+connected_components: 714
+average_dihedral_angle: 1.47918
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.291952, ymax = 0.741871, zmax = 0.975
+avg_depth: 9.710711
+center: (0.172792,0.392078,0.494143)
+scale: 0.618929
+principle_axes: (-0.000138,-0.592820,0.805335), (-0.999999,-0.000876,-0.000816), (-0.001189,0.805335,0.592819)
+principle_values: (0.113793,0.004860,0.000369)

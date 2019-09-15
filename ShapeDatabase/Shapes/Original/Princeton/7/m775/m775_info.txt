@@ -1,0 +1,14 @@
+mid: 775
+url: http://www.ocnus.com/models/Furniture/parkbench.wrl.gz
+ref_url: http://www.ocnus.com/models/Furniture/
+format: wrl 
+pid: 17786
+polygons: 961
+connected_components: 41
+average_dihedral_angle: 1.35963
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.618064, zmax = 0.39682
+avg_depth: 1.400245
+center: (0.500529,0.311517,0.178001)
+scale: 0.682101
+principle_axes: (1.000000,-0.000272,0.000173), (-0.000319,-0.753131,0.657871), (0.000049,0.657871,0.753131)
+principle_values: (0.104343,0.022443,0.007004)

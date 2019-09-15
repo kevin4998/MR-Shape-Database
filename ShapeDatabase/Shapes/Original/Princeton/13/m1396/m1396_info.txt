@@ -1,0 +1,14 @@
+mid: 1396
+url: http://liftoff.msfc.nasa.gov/vr/shuttle.wrl
+ref_url: http://liftoff.msfc.nasa.gov/vr/vr.html
+format: wrl 
+pid: 1273
+polygons: 2476
+connected_components: 21
+average_dihedral_angle: 0.386372
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.639568, ymax = 0.975, zmax = 0.389394
+avg_depth: 1.698540
+center: (0.329498,0.577931,0.084242)
+scale: 0.447714
+principle_axes: (0.000599,0.996089,0.088350), (-0.999941,-0.000366,0.010901), (-0.010891,0.088351,-0.996030)
+principle_values: (0.049539,0.007993,0.003676)

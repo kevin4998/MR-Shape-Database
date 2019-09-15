@@ -1,0 +1,14 @@
+mid: 842
+url: http://www.amazing3d.com/free/sofa1dxfpc.zip
+ref_url: 
+format: dxf 
+pid: 47576
+polygons: 2263
+connected_components: 21
+average_dihedral_angle: 0.462697
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.284253, zmax = 0.321744
+avg_depth: 1.330084
+center: (0.577941,0.142181,0.150487)
+scale: 0.512551
+principle_axes: (-0.999732,-0.010689,0.020532), (-0.022394,0.222095,-0.974768), (-0.005859,0.974966,0.222275)
+principle_values: (0.062199,0.010216,0.004508)

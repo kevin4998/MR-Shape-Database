@@ -1,0 +1,14 @@
+mid: 1302
+url: http://www.avatara.com/avatars/chopper2.wrl
+ref_url: http://www.avatara.com/avatars/avatars2_list.html
+format: wrl 
+pid: 17018
+polygons: 1882
+connected_components: 29
+average_dihedral_angle: 0.607935
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.211885, ymax = 0.289754, zmax = 0.975
+avg_depth: 1.144386
+center: (0.117847,0.159783,0.502438)
+scale: 0.362523
+principle_axes: (0.004567,-0.091843,0.995763), (0.001914,-0.995771,-0.091852), (-0.999988,-0.002326,0.004372)
+principle_values: (0.038464,0.004597,0.001223)

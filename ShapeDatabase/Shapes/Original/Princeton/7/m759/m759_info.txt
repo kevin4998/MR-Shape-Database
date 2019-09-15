@@ -1,0 +1,14 @@
+mid: 759
+url: http://ligwww.epfl.ch/~babski/StandardBody/body/nana.tar.gz
+ref_url: http://ligwww.epfl.ch/~babski/StandardBody/
+format: wrl 
+pid: 31480
+polygons: 232
+connected_components: 1
+average_dihedral_angle: 0.335429
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.342942, ymax = 0.975, zmax = 0.363979
+avg_depth: 1.000920
+center: (0.168598,0.557953,0.176517)
+scale: 0.562348
+principle_axes: (0.033296,0.997788,0.057528), (-0.054971,0.059301,-0.996725), (-0.997933,0.030025,0.056824)
+principle_values: (0.072301,0.009608,0.008014)

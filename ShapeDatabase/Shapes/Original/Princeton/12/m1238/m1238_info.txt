@@ -1,0 +1,14 @@
+mid: 1238
+url: http://ciel.me.cmu.edu/soji/aircraft/kfir.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 905
+polygons: 396
+connected_components: 3
+average_dihedral_angle: 0.762348
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.507877, ymax = 0.247735, zmax = 0.975
+avg_depth: 1.087658
+center: (0.266447,0.089876,0.638888)
+scale: 0.367546
+principle_axes: (-0.000070,0.016529,0.999863), (1.000000,0.000032,0.000070), (0.000031,-0.999863,0.016529)
+principle_values: (0.034334,0.006925,0.001325)

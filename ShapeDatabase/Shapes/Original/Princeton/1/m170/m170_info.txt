@@ -1,0 +1,14 @@
+mid: 170
+url: http://cs1.cs.nyu.edu/wanghua/project/wrl/alien.wrl
+ref_url: http://cs1.cs.nyu.edu/wanghua/project/wrl/
+format: wrl 
+pid: 5886
+polygons: 32042
+connected_components: 16
+average_dihedral_angle: 0.219928
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.350225, ymax = 0.975, zmax = 0.152937
+avg_depth: 1.553450
+center: (0.187614,0.511721,0.098001)
+scale: 0.411884
+principle_axes: (0.000009,-0.999869,0.016157), (1.000000,0.000009,0.000014), (-0.000014,0.016157,0.999869)
+principle_values: (0.055666,0.003884,0.000967)

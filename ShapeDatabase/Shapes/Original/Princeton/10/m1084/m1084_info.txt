@@ -1,0 +1,14 @@
+mid: 1084
+url: http://www.3dcafe.com/models/pine01.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 28976
+polygons: 29426
+connected_components: 4766
+average_dihedral_angle: 1.00727
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.405609, ymax = 0.975, zmax = 0.410051
+avg_depth: 4.195083
+center: (0.219356,0.484310,0.223041)
+scale: 0.308834
+principle_axes: (-0.060552,-0.995180,-0.077140), (0.681827,-0.097680,0.724962), (-0.729003,-0.008698,0.684456)
+principle_values: (0.013608,0.008896,0.005086)

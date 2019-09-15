@@ -1,0 +1,14 @@
+mid: 105
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/Blissful_Farm/animal/horseWalkVRML.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/Blissful_Farm/animal/?D=A
+format: wrl 
+pid: 46133
+polygons: 260
+connected_components: 4
+average_dihedral_angle: 0.655386
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.269551, ymax = 0.975, zmax = 0.946481
+avg_depth: 1.171193
+center: (0.147098,0.467307,0.451275)
+scale: 0.575539
+principle_axes: (-0.000653,-0.643642,-0.765327), (0.002525,0.765323,-0.643641), (-0.999997,0.002353,-0.001126)
+principle_values: (0.066506,0.024870,0.004278)

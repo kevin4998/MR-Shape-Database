@@ -1,0 +1,14 @@
+mid: 1104
+url: http://www.amazing3d.com/free/shovl3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47547
+polygons: 708
+connected_components: 4
+average_dihedral_angle: 0.816732
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.278994, ymax = 0.975, zmax = 0.0737935
+avg_depth: 1.086896
+center: (0.155142,0.420845,0.051214)
+scale: 0.549780
+principle_axes: (-0.002309,-0.999817,0.019007), (0.999848,-0.002636,-0.017232), (0.017279,0.018964,0.999671)
+principle_values: (0.091505,0.002314,0.000106)

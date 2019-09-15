@@ -1,0 +1,14 @@
+mid: 601
+url: http://www.3dcafe.com/models/omega.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 28260
+polygons: 16036
+connected_components: 206
+average_dihedral_angle: 0.748561
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.934922, zmax = 0.956235
+avg_depth: 1.963346
+center: (0.328613,0.536616,0.395363)
+scale: 0.811157
+principle_axes: (-0.045160,0.554512,-0.830949), (0.030322,-0.830654,-0.555963), (-0.998519,-0.050303,0.020699)
+principle_values: (0.091137,0.069928,0.015791)

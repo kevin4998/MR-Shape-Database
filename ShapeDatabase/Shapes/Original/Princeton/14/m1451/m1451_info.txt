@@ -1,0 +1,14 @@
+mid: 1451
+url: http://cepcairo.bizland.com/free/Sailboat.zip
+ref_url: 
+format: xthreexds 
+pid: 47203
+polygons: 1498
+connected_components: 9
+average_dihedral_angle: 0.824771
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.181495, ymax = 0.975, zmax = 0.691454
+avg_depth: 1.088226
+center: (0.103248,0.432399,0.339447)
+scale: 0.456163
+principle_axes: (-0.000052,-0.998215,-0.059715), (0.000013,0.059715,-0.998215), (-1.000000,0.000053,-0.000010)
+principle_values: (0.040396,0.019498,0.000604)

@@ -1,0 +1,14 @@
+mid: 1604
+url: http://www.cs.technion.ac.il/~cs236606/vrml/knight.wrl
+ref_url: http://www.cs.technion.ac.il/~cs236606/vrml/
+format: wrl 
+pid: 4754
+polygons: 419
+connected_components: 2
+average_dihedral_angle: 0.571426
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.414079, ymax = 0.975, zmax = 0.414079
+avg_depth: 1.132435
+center: (0.219804,0.386892,0.224865)
+scale: 0.556134
+principle_axes: (-0.001987,-0.999915,-0.012859), (0.013990,-0.012886,0.999819), (0.999900,-0.001807,-0.014015)
+principle_values: (0.077214,0.009223,0.006971)

@@ -1,0 +1,14 @@
+mid: 1512
+url: http://www.rccad.com/Gallery/Vrml/ferrari20006.wrl
+ref_url: http://www.rccad.com/Gallery_Full11.htm
+format: wrl 
+pid: 34618
+polygons: 11468
+connected_components: 108
+average_dihedral_angle: 0.407591
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.0861211, xmax = 0.975, ymax = 0.37961, zmax = 0.308885
+avg_depth: 3.165461
+center: (0.615535,0.201792,0.153349)
+scale: 0.464971
+principle_axes: (0.999841,0.001296,0.017768), (0.001306,-0.999999,-0.000573), (-0.017767,-0.000596,0.999842)
+principle_values: (0.061134,0.007104,0.001811)

@@ -1,0 +1,14 @@
+mid: 1630
+url: http://fraktali.849pm.com/programs/wrl/object/Character.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32099
+polygons: 1120
+connected_components: 1
+average_dihedral_angle: 0.434056
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.892071, ymax = 0.447202, zmax = 0.975
+avg_depth: 1.151152
+center: (0.462545,0.153681,0.506300)
+scale: 0.620363
+principle_axes: (-0.057335,0.023455,-0.998079), (0.997997,-0.025426,-0.057928), (-0.026736,-0.999402,-0.021951)
+principle_values: (0.051364,0.040448,0.011779)

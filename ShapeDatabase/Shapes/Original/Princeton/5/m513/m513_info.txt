@@ -1,0 +1,14 @@
+mid: 513
+url: ftp://avalon.viewpoint.com/pub/objects/misc/washtub2_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47671
+polygons: 35488
+connected_components: 6
+average_dihedral_angle: 0.320785
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.505807, zmax = 0.746564
+avg_depth: 1.642607
+center: (0.475357,0.226058,0.383842)
+scale: 0.732902
+principle_axes: (-0.999763,0.011595,-0.018431), (0.018432,0.000004,-0.999830), (-0.011593,-0.999933,-0.000218)
+principle_values: (0.072824,0.042649,0.023261)

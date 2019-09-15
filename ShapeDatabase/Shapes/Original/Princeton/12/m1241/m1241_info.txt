@@ -1,0 +1,14 @@
+mid: 1241
+url: http://www.robotgroup.org/lubbock/vrml/Ye-366M.wrl
+ref_url: http://www.robotgroup.org/lubbock/vrml/
+format: wrl 
+pid: 9070
+polygons: 720
+connected_components: 12
+average_dihedral_angle: 0.549059
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.703854, zmax = 0.263759
+avg_depth: 1.503358
+center: (0.623586,0.364454,0.077812)
+scale: 0.464004
+principle_axes: (0.999760,-0.000198,0.021888), (0.000196,1.000000,0.000126), (0.021888,0.000122,-0.999760)
+principle_values: (0.050435,0.013118,0.001251)

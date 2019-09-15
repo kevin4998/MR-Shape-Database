@@ -1,0 +1,14 @@
+mid: 72
+url: http://www.atom.co.jp/vrml2/coral/world/english/obj/dolphinsT.wrl
+ref_url: http://www.atom.co.jp/vrml2/coral/world/english/obj/
+format: wrl 
+pid: 3881
+polygons: 590
+connected_components: 10
+average_dihedral_angle: 0.643479
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.456203, ymax = 0.262828, zmax = 0.975
+avg_depth: 1.338990
+center: (0.240629,0.103097,0.532935)
+scale: 0.398219
+principle_axes: (-0.000145,-0.018026,0.999838), (0.999995,0.003262,0.000204), (0.003265,-0.999832,-0.018025)
+principle_values: (0.046725,0.003373,0.002150)

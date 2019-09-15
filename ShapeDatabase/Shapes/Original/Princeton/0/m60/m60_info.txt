@@ -1,0 +1,14 @@
+mid: 60
+url: http://cepcairo.bizland.com/free/Lm_bass.zip
+ref_url: 
+format: xthreexds 
+pid: 48403
+polygons: 3208
+connected_components: 1
+average_dihedral_angle: 0.286606
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.348674, ymax = 0.407675, zmax = 0.975
+avg_depth: 1.104354
+center: (0.186837,0.214721,0.541617)
+scale: 0.452318
+principle_axes: (0.000002,-0.002404,0.999997), (0.000011,-0.999997,-0.002404), (1.000000,0.000011,-0.000002)
+principle_values: (0.053871,0.006559,0.001751)

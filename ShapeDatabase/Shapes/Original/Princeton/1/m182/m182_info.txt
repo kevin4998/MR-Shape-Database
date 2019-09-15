@@ -1,0 +1,14 @@
+mid: 182
+url: http://www.cis.upenn.edu/~beitler/vrml/human/yt/002/yt_002cp.wrl
+ref_url: http://www.cis.upenn.edu/~beitler/hanim1.0/
+format: wrl 
+pid: 8873
+polygons: 22190
+connected_components: 21
+average_dihedral_angle: 0.305327
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.393436, ymax = 0.975, zmax = 0.166457
+avg_depth: 1.724093
+center: (0.209138,0.576010,0.089706)
+scale: 0.439679
+principle_axes: (-0.000422,0.999991,0.004293), (1.000000,0.000422,0.000146), (0.000144,0.004293,-0.999991)
+principle_values: (0.060594,0.004105,0.000939)

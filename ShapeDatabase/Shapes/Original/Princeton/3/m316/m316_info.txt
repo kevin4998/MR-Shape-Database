@@ -1,0 +1,14 @@
+mid: 316
+url: http://www.dcs.gla.ac.uk/~jc/Photos/VRML/jc.wrl
+ref_url: http://www.dcs.gla.ac.uk/~jc/Photos/Photos.html
+format: wrl 
+pid: 9478
+polygons: 6668
+connected_components: 3
+average_dihedral_angle: 0.185908
+bounding_box: xmin = 0.0643243, ymin = 0.057929, zmin = 0.0397353, xmax = 0.63602, ymax = 0.754353, zmax = 0.957421
+avg_depth: 1.100704
+center: (0.403971,0.416902,0.442381)
+scale: 0.505716
+principle_axes: (0.062862,0.587507,-0.806773), (0.683504,-0.614385,-0.394149), (-0.727235,-0.526656,-0.440185)
+principle_values: (0.034605,0.025971,0.009147)

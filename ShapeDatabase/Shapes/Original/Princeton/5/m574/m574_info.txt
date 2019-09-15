@@ -1,0 +1,14 @@
+mid: 574
+url: http://mowat.virtualave.net/chip4.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26870
+polygons: 82
+connected_components: 18
+average_dihedral_angle: 0.3101
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.938336, ymax = 0.409105, zmax = 0.975
+avg_depth: 1.671111
+center: (0.479749,0.312072,0.500464)
+scale: 0.783525
+principle_axes: (0.999223,-0.000653,-0.039397), (0.039399,0.001997,0.999222), (-0.000573,-0.999998,0.002021)
+principle_values: (0.084439,0.078245,0.006523)

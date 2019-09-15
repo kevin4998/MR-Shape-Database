@@ -1,0 +1,14 @@
+mid: 77
+url: http://www.3dcafe.com/models/shark5.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: xthreexds 
+pid: 27313
+polygons: 23022
+connected_components: 35
+average_dihedral_angle: 0.248407
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.407994, zmax = 0.611203
+avg_depth: 1.476240
+center: (0.489963,0.150222,0.339676)
+scale: 0.455263
+principle_axes: (0.937758,-0.080383,-0.337857), (0.325108,-0.138908,0.935419), (-0.122123,-0.987038,-0.104129)
+principle_values: (0.060322,0.004504,0.003306)

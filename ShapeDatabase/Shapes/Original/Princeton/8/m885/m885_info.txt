@@ -1,0 +1,14 @@
+mid: 885
+url: http://www.3dcafe.com/models/tablef.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 28439
+polygons: 408
+connected_components: 74
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.388674, zmax = 0.500002
+avg_depth: 1.440414
+center: (0.500002,0.311861,0.254349)
+scale: 0.696705
+principle_axes: (1.000000,-0.000002,-0.000000), (-0.000000,-0.197481,-0.980307), (0.000001,0.980307,-0.197481)
+principle_values: (0.102177,0.020507,0.011762)

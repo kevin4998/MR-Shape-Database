@@ -1,0 +1,14 @@
+mid: 521
+url: http://64.198.60.83/baument/Models/bulktank1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25509
+polygons: 9507
+connected_components: 221
+average_dihedral_angle: 0.777749
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.892724, zmax = 0.970436
+avg_depth: 1.162127
+center: (0.508999,0.473091,0.490489)
+scale: 0.936173
+principle_axes: (0.147738,0.452963,0.879203), (0.987464,-0.017608,-0.156858), (0.055570,-0.891355,0.449886)
+principle_values: (0.083142,0.079783,0.058745)

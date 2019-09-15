@@ -1,0 +1,14 @@
+mid: 1128
+url: http://www.rccad.com/Gallery/Vrml/Rons2nd.wrl
+ref_url: http://www.rccad.com/Gallery_BiPlanes1.htm
+format: wrl 
+pid: 33711
+polygons: 1232
+connected_components: 8
+average_dihedral_angle: 0.353616
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.967087, zmax = 0.241951
+avg_depth: 1.312848
+center: (0.515787,0.496048,0.106502)
+scale: 0.529129
+principle_axes: (0.000057,1.000000,0.000013), (-0.999946,0.000057,0.010397), (0.010397,-0.000014,0.999946)
+principle_values: (0.046057,0.032149,0.003705)

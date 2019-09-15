@@ -1,0 +1,14 @@
+mid: 344
+url: http://www.research.att.com/projects/AnimatedHead/natalie.wrl
+ref_url: http://www.research.att.com/projects/AnimatedHead/kat.html
+format: wrl 
+pid: 11704
+polygons: 3564
+connected_components: 50
+average_dihedral_angle: 0.340365
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.565271, ymax = 0.764697, zmax = 0.975
+avg_depth: 1.258965
+center: (0.295580,0.409564,0.539587)
+scale: 0.659125
+principle_axes: (-0.002871,-0.093399,0.995625), (-0.002821,-0.995624,-0.093407), (0.999992,-0.003077,0.002595)
+principle_values: (0.059376,0.033035,0.020201)

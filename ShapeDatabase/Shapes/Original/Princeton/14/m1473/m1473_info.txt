@@ -1,0 +1,14 @@
+mid: 1473
+url: http://www.downtube.com/animbike.wrl
+ref_url: http://vrml.nethome.com.cn/
+format: wrl 
+pid: 1867
+polygons: 4448
+connected_components: 144
+average_dihedral_angle: 0.742879
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.557643, zmax = 0.314071
+avg_depth: 1.483181
+center: (0.507604,0.286754,0.172627)
+scale: 0.517823
+principle_axes: (-0.996820,-0.079617,0.003397), (0.079668,-0.996638,0.019121), (-0.001863,-0.019331,-0.999811)
+principle_values: (0.058347,0.019690,0.000818)

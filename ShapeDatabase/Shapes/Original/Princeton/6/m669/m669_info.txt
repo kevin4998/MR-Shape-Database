@@ -1,0 +1,14 @@
+mid: 669
+url: http://www.worldwar1.com/vrml/objects/gew98.wrl.gz
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1708
+polygons: 1832
+connected_components: 35
+average_dihedral_angle: 0.715899
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.10005, ymax = 0.164887, zmax = 0.975
+avg_depth: 1.963823
+center: (0.081946,0.121592,0.440889)
+scale: 0.409790
+principle_axes: (-0.001595,-0.062937,-0.998016), (-0.018150,0.997855,-0.062898), (-0.999834,-0.018014,0.002734)
+principle_values: (0.057493,0.000339,0.000093)

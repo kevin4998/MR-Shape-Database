@@ -1,0 +1,14 @@
+mid: 1442
+url: http://www.3dheaven.net/Modelle/watercraft/Tanker.zip
+ref_url: 
+format: xthreexds 
+pid: 48137
+polygons: 12554
+connected_components: 131
+average_dihedral_angle: 0.430972
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.164983, ymax = 0.305256, zmax = 0.975
+avg_depth: 1.299590
+center: (0.095150,0.111074,0.438987)
+scale: 0.511623
+principle_axes: (-0.000262,0.021232,-0.999775), (-0.003049,0.999770,0.021233), (0.999995,0.003053,-0.000198)
+principle_values: (0.074590,0.003162,0.002007)

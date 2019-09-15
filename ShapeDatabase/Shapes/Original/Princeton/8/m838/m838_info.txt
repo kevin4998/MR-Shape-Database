@@ -1,0 +1,14 @@
+mid: 838
+url: http://www.3dcafe.com/models/couch01.zip
+ref_url: http://www.3dcafe.com/asp/hou1_pic.asp
+format: xthreexds 
+pid: 28551
+polygons: 4292
+connected_components: 8
+average_dihedral_angle: 0.165508
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.494388, zmax = 0.462158
+avg_depth: 1.773068
+center: (0.501689,0.187681,0.231797)
+scale: 0.593943
+principle_axes: (-1.000000,0.000669,0.000526), (0.000014,-0.605381,0.795936), (-0.000851,-0.795935,-0.605381)
+principle_values: (0.074169,0.019949,0.007085)

@@ -1,0 +1,14 @@
+mid: 831
+url: http://www.3dcafe.com/models/sofa3.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: dxf 
+pid: 28180
+polygons: 900
+connected_components: 3
+average_dihedral_angle: 1.14519
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.423234, zmax = 0.389547
+avg_depth: 1.733401
+center: (0.500300,0.214006,0.232366)
+scale: 0.578364
+principle_axes: (0.999998,0.001077,0.001516), (-0.001840,0.452559,0.891733), (0.000275,-0.891734,0.452560)
+principle_values: (0.081819,0.013034,0.005065)

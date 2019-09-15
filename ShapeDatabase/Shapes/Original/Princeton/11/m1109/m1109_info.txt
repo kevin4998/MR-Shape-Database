@@ -1,0 +1,14 @@
+mid: 1109
+url: http://fraktali.849pm.com/programs/dxf/hammer.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27165
+polygons: 2891
+connected_components: 3
+average_dihedral_angle: 0.206969
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.5864, ymax = 0.975, zmax = 0.157179
+avg_depth: 1.239444
+center: (0.289954,0.662079,0.091650)
+scale: 0.564379
+principle_axes: (-0.005589,0.999981,0.002764), (0.999950,0.005566,0.008271), (0.008255,0.002810,-0.999962)
+principle_values: (0.085692,0.012530,0.001687)

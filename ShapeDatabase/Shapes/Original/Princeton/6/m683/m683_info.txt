@@ -1,0 +1,14 @@
+mid: 683
+url: http://www.3dheaven.net/Modelle/weapons/w_scout.zip
+ref_url: 
+format: xthreexds 
+pid: 47439
+polygons: 932
+connected_components: 17
+average_dihedral_angle: 0.587055
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.190799, ymax = 0.093371, zmax = 0.975
+avg_depth: 1.384800
+center: (0.108930,0.047045,0.397122)
+scale: 0.339488
+principle_axes: (-0.049032,0.001047,-0.998797), (0.998367,0.029410,-0.048980), (0.029323,-0.999567,-0.002487)
+principle_values: (0.043536,0.001111,0.000120)

@@ -1,0 +1,14 @@
+mid: 1724
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/victor/ltraindoor.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/victor/?D=A
+format: wrl 
+pid: 46096
+polygons: 252
+connected_components: 24
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.61576, ymax = 0.975, zmax = 0.104125
+avg_depth: 1.440278
+center: (0.315001,0.534421,0.075134)
+scale: 0.605981
+principle_axes: (-0.024585,0.998138,-0.055830), (0.999698,0.024541,-0.001467), (-0.000094,-0.055849,-0.998439)
+principle_values: (0.076332,0.032017,0.000205)

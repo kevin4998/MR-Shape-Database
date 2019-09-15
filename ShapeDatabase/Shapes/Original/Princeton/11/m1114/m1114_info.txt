@@ -1,0 +1,14 @@
+mid: 1114
+url: http://www.ocnus.com/models/Tools/phillips.wrl.gz
+ref_url: http://www.ocnus.com/models/Tools/
+format: wrl 
+pid: 17907
+polygons: 2356
+connected_components: 53
+average_dihedral_angle: 0.410121
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.118989, ymax = 0.975, zmax = 0.118989
+avg_depth: 1.068002
+center: (0.071995,0.362532,0.071995)
+scale: 0.467193
+principle_axes: (-0.000000,-1.000000,0.000000), (-0.949354,0.000000,-0.314209), (0.314209,-0.000000,-0.949354)
+principle_values: (0.075058,0.000452,0.000452)

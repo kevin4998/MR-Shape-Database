@@ -1,0 +1,14 @@
+mid: 1453
+url: http://www.3dcafe.com/../models/fdutch.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: 3ds 
+pid: 30584
+polygons: 15870
+connected_components: 17
+average_dihedral_angle: 0.164483
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.440089, ymax = 0.690945, zmax = 0.975
+avg_depth: 1.574017
+center: (0.228059,0.344653,0.405241)
+scale: 0.521737
+principle_axes: (0.001913,-0.110697,-0.993852), (0.022520,0.993607,-0.110627), (-0.999745,0.022170,-0.004394)
+principle_values: (0.039671,0.029912,0.007043)

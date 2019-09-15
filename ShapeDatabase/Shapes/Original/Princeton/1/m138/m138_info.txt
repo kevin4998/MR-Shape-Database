@@ -1,0 +1,14 @@
+mid: 138
+url: http://www.3dcafe.com/models/alien1-2.zip
+ref_url: http://www.3dcafe.com/asp/sci_pics.asp
+format: xthreexds 
+pid: 26872
+polygons: 14776
+connected_components: 1
+average_dihedral_angle: 0.239087
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.380387, ymax = 0.254112, zmax = 0.975
+avg_depth: 1.206290
+center: (0.200388,0.104546,0.466629)
+scale: 0.473219
+principle_axes: (0.003115,-0.012885,-0.999912), (-0.999268,-0.038162,-0.002622), (0.038124,-0.999189,0.012994)
+principle_values: (0.063169,0.006265,0.001539)

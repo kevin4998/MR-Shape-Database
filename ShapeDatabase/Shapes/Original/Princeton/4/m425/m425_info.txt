@@ -1,0 +1,14 @@
+mid: 425
+url: http://www.ocnus.com/models/DXF/bank.wrl.gz
+ref_url: http://www.ocnus.com/models/DXF/
+format: wrl 
+pid: 17719
+polygons: 5485
+connected_components: 908
+average_dihedral_angle: 1.37757
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.741395, ymax = 0.206004, zmax = 0.975
+avg_depth: 2.106006
+center: (0.345066,0.101753,0.629011)
+scale: 0.573153
+principle_axes: (-0.174185,0.043105,-0.983769), (-0.984637,-0.020039,0.173461), (0.012236,-0.998870,-0.045933)
+principle_values: (0.046289,0.043257,0.002572)

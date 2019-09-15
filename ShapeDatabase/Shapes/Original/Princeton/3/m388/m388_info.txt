@@ -1,0 +1,14 @@
+mid: 388
+url: http://tecfa.unige.ch/guides/vrml/examples/castle/castle.wrl
+ref_url: http://tronche.com/tidarque/gallery/
+format: wrl 
+pid: 7555
+polygons: 452
+connected_components: 60
+average_dihedral_angle: 1.50477
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.568536, zmax = 0.975
+avg_depth: 1.726800
+center: (0.500000,0.126327,0.500000)
+scale: 0.780025
+principle_axes: (1.000000,-0.000000,-0.000000), (-0.000000,-0.000002,-1.000000), (-0.000000,-1.000000,0.000002)
+principle_values: (0.080324,0.064258,0.017496)

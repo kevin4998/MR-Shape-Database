@@ -1,0 +1,14 @@
+mid: 1464
+url: http://www.3dcafe.com/models/uboat.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 28847
+polygons: 5534
+connected_components: 39
+average_dihedral_angle: 0.456269
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.19372, ymax = 0.342441, zmax = 0.975
+avg_depth: 1.141101
+center: (0.108707,0.135264,0.482894)
+scale: 0.375253
+principle_axes: (0.002131,-0.008344,-0.999963), (-0.025529,0.999639,-0.008396), (0.999672,0.025546,0.001917)
+principle_values: (0.048569,0.001158,0.000686)

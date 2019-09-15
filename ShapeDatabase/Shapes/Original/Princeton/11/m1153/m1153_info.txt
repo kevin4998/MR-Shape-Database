@@ -1,0 +1,14 @@
+mid: 1153
+url: http://mowat.virtualave.net/pa71l.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26453
+polygons: 1478
+connected_components: 1
+average_dihedral_angle: 0.487234
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.79127, ymax = 0.364467, zmax = 0.975
+avg_depth: 1.116919
+center: (0.407913,0.136713,0.429999)
+scale: 0.501754
+principle_axes: (0.000594,0.082199,-0.996616), (-0.999999,0.001013,-0.000512), (0.000967,0.996615,0.082199)
+principle_values: (0.057553,0.016854,0.002455)

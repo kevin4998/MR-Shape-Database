@@ -1,0 +1,14 @@
+mid: 909
+url: http://philliphansel.com/gallery/simple_table.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3453
+polygons: 3048
+connected_components: 6
+average_dihedral_angle: 0.749861
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.703571, ymax = 0.443779, zmax = 0.975
+avg_depth: 1.304251
+center: (0.364286,0.385274,0.500000)
+scale: 0.761924
+principle_axes: (-0.001009,0.000006,0.999999), (-0.999999,0.000028,-0.001009), (0.000028,1.000000,-0.000006)
+principle_values: (0.101366,0.053315,0.006491)

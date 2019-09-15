@@ -1,0 +1,14 @@
+mid: 589
+url: http://www.3dcafe.com/models/microscp.zip
+ref_url: http://www.3dcafe.com/asp/ind_pic.asp
+format: xthreexds 
+pid: 27977
+polygons: 4046
+connected_components: 89
+average_dihedral_angle: 1.09526
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.478463, ymax = 0.975, zmax = 0.654105
+avg_depth: 2.297441
+center: (0.250434,0.373246,0.351489)
+scale: 0.581181
+principle_axes: (-0.011659,-0.970048,-0.242634), (-0.000435,0.242656,-0.970112), (0.999932,-0.011205,-0.003251)
+principle_values: (0.070479,0.022451,0.008745)

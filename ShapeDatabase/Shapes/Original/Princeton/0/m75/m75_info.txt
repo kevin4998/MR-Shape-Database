@@ -1,0 +1,14 @@
+mid: 75
+url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/obj/shark.wrl
+ref_url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/ocean.wrl
+format: wrl 
+pid: 14883
+polygons: 512
+connected_components: 10
+average_dihedral_angle: 0.633566
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.538384, ymax = 0.299311, zmax = 0.975
+avg_depth: 1.240985
+center: (0.281554,0.106870,0.545655)
+scale: 0.396188
+principle_axes: (0.001466,-0.070102,0.997539), (-0.999994,0.002894,0.001673), (-0.003005,-0.997536,-0.070098)
+principle_values: (0.045698,0.003961,0.002929)

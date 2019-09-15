@@ -1,0 +1,14 @@
+mid: 1335
+url: http://ciel.me.cmu.edu/soji/aircraft/v107.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 925
+polygons: 626
+connected_components: 13
+average_dihedral_angle: 0.7893
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.631645, ymax = 0.277127, zmax = 0.975
+avg_depth: 1.271577
+center: (0.328322,0.197682,0.500743)
+scale: 0.475530
+principle_axes: (0.000001,-0.144357,-0.989526), (1.000000,-0.000000,0.000001), (0.000000,0.989526,-0.144357)
+principle_values: (0.049797,0.017863,0.001816)

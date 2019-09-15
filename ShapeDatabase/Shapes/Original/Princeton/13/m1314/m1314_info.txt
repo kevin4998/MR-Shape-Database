@@ -1,0 +1,14 @@
+mid: 1314
+url: http://www.rccad.com/Gallery/Vrml/defender.wrl
+ref_url: http://www.rccad.com/Gallery_Helicopters.htm
+format: wrl 
+pid: 33171
+polygons: 2996
+connected_components: 17
+average_dihedral_angle: 0.463813
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.767999, zmax = 0.391399
+avg_depth: 2.145375
+center: (0.355402,0.396360,0.212258)
+scale: 0.382747
+principle_axes: (-0.989354,0.002545,-0.145508), (0.002111,0.999993,0.003136), (-0.145515,-0.002796,0.989352)
+principle_values: (0.035843,0.007546,0.005634)

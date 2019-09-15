@@ -1,0 +1,14 @@
+mid: 802
+url: ftp://avalon.viewpoint.com/pub/objects/architecture/furniture/oplanchair_dxf.zip
+ref_url: 
+format: dxf 
+pid: 48455
+polygons: 206
+connected_components: 17
+average_dihedral_angle: 1.06081
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.685776, ymax = 0.975, zmax = 0.696138
+avg_depth: 1.302962
+center: (0.298789,0.576821,0.317271)
+scale: 0.615891
+principle_axes: (-0.231156,0.956679,-0.177008), (0.608586,0.000235,-0.793488), (-0.759072,-0.291145,-0.582276)
+principle_values: (0.069357,0.023542,0.015371)

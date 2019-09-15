@@ -1,0 +1,14 @@
+mid: 1352
+url: ftp://avalon.viewpoint.com/pub/objects/aircraft/other/blimp_obj.zip
+ref_url: 
+format: obj 
+pid: 48095
+polygons: 6348
+connected_components: 16
+average_dihedral_angle: 0.196732
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.376642, zmax = 0.332621
+avg_depth: 1.183110
+center: (0.526949,0.214035,0.178808)
+scale: 0.510075
+principle_axes: (-0.999933,-0.011583,0.000011), (-0.011583,0.999933,0.000055), (-0.000012,0.000055,-1.000000)
+principle_values: (0.057916,0.008538,0.007107)

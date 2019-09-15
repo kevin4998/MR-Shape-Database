@@ -1,0 +1,14 @@
+mid: 339
+url: http://cepcairo.bizland.com/free/R_arm2.zip
+ref_url: 
+format: xthreexds 
+pid: 48202
+polygons: 4466
+connected_components: 1
+average_dihedral_angle: 0.197593
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.190557, ymax = 0.134926, zmax = 0.975
+avg_depth: 1.032617
+center: (0.104077,0.087925,0.485741)
+scale: 0.476057
+principle_axes: (-0.028661,-0.014709,-0.999481), (-0.984713,0.172276,0.025702), (-0.171809,-0.984939,0.019422)
+principle_values: (0.069511,0.001132,0.000727)

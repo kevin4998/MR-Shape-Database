@@ -1,0 +1,14 @@
+mid: 757
+url: http://zombie.serv.com.au/vrml/studio/models/background.wrl
+ref_url: http://zombie.serv.com.au/vrml/studio/models/
+format: wrl 
+pid: 22020
+polygons: 256
+connected_components: 2
+average_dihedral_angle: 0.389917
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.536199, ymax = 0.975, zmax = 0.562506
+avg_depth: 1.198696
+center: (0.280599,0.566114,0.293753)
+scale: 0.582193
+principle_axes: (0.000000,1.000000,-0.000000), (-0.999069,0.000000,0.043152), (0.043152,0.000000,0.999069)
+principle_values: (0.058955,0.018113,0.018113)

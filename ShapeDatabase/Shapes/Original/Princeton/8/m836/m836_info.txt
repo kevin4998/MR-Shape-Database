@@ -1,0 +1,14 @@
+mid: 836
+url: http://mowat.virtualave.net/couch2.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26843
+polygons: 44
+connected_components: 1
+average_dihedral_angle: 1.54224
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.5, zmax = 0.5
+avg_depth: 1.100695
+center: (0.500000,0.261751,0.215219)
+scale: 0.746119
+principle_axes: (-1.000000,-0.000000,-0.000000), (-0.000000,0.371502,-0.928432), (-0.000000,0.928432,0.371502)
+principle_values: (0.106761,0.035897,0.011870)

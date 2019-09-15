@@ -1,0 +1,14 @@
+mid: 677
+url: http://www.3dcafe.com/../models/shotgun.zip
+ref_url: http://www.3dcafe.com/../asp/weapons.asp
+format: 3ds 
+pid: 30599
+polygons: 6623
+connected_components: 6
+average_dihedral_angle: 0.212818
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.147214, zmax = 0.0603323
+avg_depth: 1.782578
+center: (0.492139,0.113107,0.042664)
+scale: 0.425603
+principle_axes: (0.998600,0.052904,-0.000026), (-0.052904,0.998600,-0.000337), (0.000008,0.000338,1.000000)
+principle_values: (0.063088,0.000294,0.000099)

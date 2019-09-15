@@ -1,0 +1,14 @@
+mid: 750
+url: http://www.eecs.tulane.edu/www/graphics/gallery/chud.wrl
+ref_url: http://www.eecs.tulane.edu/www/graphics/gallery/
+format: wrl 
+pid: 11306
+polygons: 948
+connected_components: 6
+average_dihedral_angle: 0.387018
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.319523, ymax = 0.975, zmax = 0.312879
+avg_depth: 1.406069
+center: (0.161611,0.645501,0.170528)
+scale: 0.393704
+principle_axes: (-0.000309,0.999979,0.006497), (-0.552914,-0.005585,0.833220), (0.833239,-0.003335,0.552904)
+principle_values: (0.036689,0.005470,0.005273)

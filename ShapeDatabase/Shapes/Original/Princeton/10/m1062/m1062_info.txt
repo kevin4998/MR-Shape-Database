@@ -1,0 +1,14 @@
+mid: 1062
+url: http://mowat.virtualave.net/standard.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26158
+polygons: 692
+connected_components: 5
+average_dihedral_angle: 0.562085
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.597019, ymax = 0.904128, zmax = 0.975
+avg_depth: 1.736432
+center: (0.384815,0.458522,0.473702)
+scale: 0.528453
+principle_axes: (-0.229063,-0.786311,0.573799), (0.235620,-0.616731,-0.751083), (-0.944465,0.036846,-0.326541)
+principle_values: (0.045916,0.037059,0.003832)

@@ -1,0 +1,14 @@
+mid: 95
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/creatures/itiger1l.wrl
+ref_url: http://visinfo.zib.de/IRS_HTML/IRS_dqex.html
+format: wrl 
+pid: 35199
+polygons: 1908
+connected_components: 1
+average_dihedral_angle: 0.45147
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.254726, ymax = 0.413236, zmax = 0.975
+avg_depth: 1.154271
+center: (0.139878,0.237053,0.520098)
+scale: 0.469837
+principle_axes: (0.000137,0.166908,0.985972), (0.000192,0.985972,-0.166908), (1.000000,-0.000212,-0.000103)
+principle_values: (0.050901,0.010390,0.003146)

@@ -1,0 +1,14 @@
+mid: 228
+url: http://www.geocities.com/Paris/Tower/5121/superman.zip
+ref_url: http://www.geocities.com/Paris/Tower/5121/3d.html
+format: lwo 
+pid: 28309
+polygons: 33532
+connected_components: 3287
+average_dihedral_angle: 0.364152
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.956645, ymax = 0.975, zmax = 0.377678
+avg_depth: 2.745121
+center: (0.505588,0.390383,0.177738)
+scale: 0.581779
+principle_axes: (0.058610,-0.985319,-0.160346), (0.998251,0.059089,0.001785), (-0.007716,0.160170,-0.987059)
+principle_values: (0.069082,0.023863,0.003663)

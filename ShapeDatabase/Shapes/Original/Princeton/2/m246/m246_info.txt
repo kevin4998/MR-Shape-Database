@@ -1,0 +1,14 @@
+mid: 246
+url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/division_woman.wrl
+ref_url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/
+format: wrl 
+pid: 46690
+polygons: 886
+connected_components: 22
+average_dihedral_angle: 0.545145
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.793012, ymax = 0.975, zmax = 0.181295
+avg_depth: 1.278764
+center: (0.409108,0.557378,0.088319)
+scale: 0.505796
+principle_axes: (-0.014617,0.999477,-0.028833), (0.999884,0.014489,-0.004662), (-0.004242,-0.028898,-0.999573)
+principle_values: (0.069950,0.014156,0.000680)

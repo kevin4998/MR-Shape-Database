@@ -1,0 +1,14 @@
+mid: 1735
+url: http://tecfa.unige.ch/vrml/objects/3Name3D/09stair2.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/3Name3D/
+format: wrl 
+pid: 3680
+polygons: 1022
+connected_components: 20
+average_dihedral_angle: 1.40048
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.58469, ymax = 0.903811, zmax = 0.975
+avg_depth: 1.693948
+center: (0.304767,0.351283,0.493433)
+scale: 0.784556
+principle_axes: (0.000347,-0.478471,0.878103), (-1.000000,-0.000315,0.000223), (0.000170,-0.878103,-0.478471)
+principle_values: (0.124933,0.035714,0.015483)

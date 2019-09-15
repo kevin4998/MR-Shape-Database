@@ -1,0 +1,14 @@
+mid: 1237
+url: http://ciel.me.cmu.edu/soji/aircraft/f86blue.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 901
+polygons: 480
+connected_components: 27
+average_dihedral_angle: 0.641507
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.30889, zmax = 0.936937
+avg_depth: 1.087876
+center: (0.499977,0.084491,0.498047)
+scale: 0.502803
+principle_axes: (0.000812,-0.105422,-0.994427), (1.000000,0.000128,0.000803), (0.000043,-0.994428,0.105422)
+principle_values: (0.042285,0.032011,0.001957)

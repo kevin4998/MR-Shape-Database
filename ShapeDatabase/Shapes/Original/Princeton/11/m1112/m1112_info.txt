@@ -1,0 +1,14 @@
+mid: 1112
+url: ftp://avalon.viewpoint.com/pub/objects/misc/tools_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47664
+polygons: 621
+connected_components: 13
+average_dihedral_angle: 0.634001
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.431724, ymax = 0.975, zmax = 0.118437
+avg_depth: 1.562226
+center: (0.209290,0.637392,0.071975)
+scale: 0.583292
+principle_axes: (0.012694,0.999919,-0.000928), (-0.999918,0.012696,0.001938), (-0.001950,-0.000903,-0.999998)
+principle_values: (0.094795,0.005712,0.000527)

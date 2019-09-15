@@ -1,0 +1,14 @@
+mid: 1
+url: http://www.wavmixer.com/vrml/aunt.wrl
+ref_url: http://www.wavmixer.com/vrml/left.html
+format: wrl 
+pid: 4656
+polygons: 410
+connected_components: 19
+average_dihedral_angle: 0.787035
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.424855, ymax = 0.384845, zmax = 0.975
+avg_depth: 1.106299
+center: (0.226947,0.210102,0.417734)
+scale: 0.467100
+principle_axes: (-0.014775,0.000538,-0.999891), (0.999505,0.027777,-0.014754), (0.027766,-0.999614,-0.000948)
+principle_values: (0.055889,0.006482,0.003350)

@@ -1,0 +1,14 @@
+mid: 821
+url: http://www.ocnus.com/models/Furniture/berkeley.wrl.gz
+ref_url: http://www.ocnus.com/models/Furniture/
+format: wrl 
+pid: 17772
+polygons: 680
+connected_components: 15
+average_dihedral_angle: 0.645423
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.444242, ymax = 0.975, zmax = 0.397663
+avg_depth: 1.397391
+center: (0.170915,0.433874,0.211712)
+scale: 0.559270
+principle_axes: (0.349069,-0.937096,0.001396), (0.021707,0.009575,0.999719), (-0.936846,-0.348941,0.023684)
+principle_values: (0.059455,0.017612,0.015777)

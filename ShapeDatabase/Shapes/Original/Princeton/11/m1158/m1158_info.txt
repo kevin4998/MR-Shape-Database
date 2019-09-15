@@ -1,0 +1,14 @@
+mid: 1158
+url: http://www.blueneptune.com/~xmwang/MyVrml/circle_flight1.wrl
+ref_url: http://www.blueneptune.com/~xmwang/MyVrml/index.html
+format: wrl 
+pid: 398
+polygons: 608
+connected_components: 13
+average_dihedral_angle: 0.696701
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.908575, ymax = 0.453995, zmax = 0.975
+avg_depth: 1.359172
+center: (0.416165,0.234422,0.491972)
+scale: 0.464296
+principle_axes: (0.988766,-0.140407,0.051252), (0.000001,0.342898,0.939373), (-0.149469,-0.928820,0.339046)
+principle_values: (0.035910,0.024149,0.003460)

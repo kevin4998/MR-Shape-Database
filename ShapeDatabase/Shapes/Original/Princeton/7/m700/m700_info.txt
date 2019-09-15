@@ -1,0 +1,14 @@
+mid: 700
+url: http://www.3dcafe.com/avatar/sword.wrl
+ref_url: http://www.3dcafe.com/asp/vrml.asp
+format: wrl 
+pid: 669
+polygons: 1504
+connected_components: 5
+average_dihedral_angle: 0.324093
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.418371, ymax = 0.975, zmax = 0.0977337
+avg_depth: 1.087786
+center: (0.180877,0.627051,0.061899)
+scale: 0.463958
+principle_axes: (-0.366542,0.930399,0.002303), (0.930401,0.366543,0.000027), (0.000819,-0.002153,0.999997)
+principle_values: (0.068330,0.000720,0.000142)

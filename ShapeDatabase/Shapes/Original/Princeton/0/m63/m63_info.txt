@@ -1,0 +1,14 @@
+mid: 63
+url: http://www.geocities.com/TelevisionCity/8232/flou8.wrl
+ref_url: http://www.geocities.com/TelevisionCity/8232/
+format: wrl 
+pid: 82
+polygons: 1792
+connected_components: 78
+average_dihedral_angle: 0.312714
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.724541, zmax = 0.777238
+avg_depth: 1.346850
+center: (0.420024,0.316336,0.404447)
+scale: 0.591012
+principle_axes: (-0.919128,-0.393898,0.007010), (0.393959,-0.919028,0.013542), (0.001108,0.015209,0.999884)
+principle_values: (0.050415,0.023432,0.018132)

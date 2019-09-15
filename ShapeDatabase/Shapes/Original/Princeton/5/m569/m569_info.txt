@@ -1,0 +1,14 @@
+mid: 569
+url: http://tecfa.unige.ch/vrml/objects/3Name3D/03porttv.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/3Name3D/
+format: wrl 
+pid: 3667
+polygons: 475
+connected_components: 9
+average_dihedral_angle: 1.30169
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.832858, ymax = 0.644279, zmax = 0.975
+avg_depth: 1.143449
+center: (0.426387,0.295304,0.528444)
+scale: 0.941511
+principle_axes: (0.007249,-0.018679,0.999799), (-0.999954,0.006120,0.007365), (0.006256,0.999807,0.018634)
+principle_values: (0.109788,0.076825,0.041659)

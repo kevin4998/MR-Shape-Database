@@ -1,0 +1,14 @@
+mid: 1414
+url: http://www.3dspecial.com/images/tank+.zip
+ref_url: http://www.3dspecial.com/index.html
+format: dxf 
+pid: 25103
+polygons: 19743
+connected_components: 5087
+average_dihedral_angle: 1.22514
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.450984, ymax = 0.357538, zmax = 0.975
+avg_depth: 4.488293
+center: (0.260418,0.149671,0.381588)
+scale: 0.492424
+principle_axes: (-0.005692,0.004235,-0.999975), (0.996151,-0.087449,-0.006040), (0.087472,0.996160,0.003721)
+principle_values: (0.041018,0.019358,0.006389)

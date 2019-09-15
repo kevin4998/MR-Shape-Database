@@ -1,0 +1,14 @@
+mid: 484
+url: http://mowat.virtualave.net/twoliter.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 25944
+polygons: 888
+connected_components: 2
+average_dihedral_angle: 0.599164
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.288882, ymax = 0.975, zmax = 0.28906
+avg_depth: 1.335903
+center: (0.157611,0.431238,0.157030)
+scale: 0.537067
+principle_axes: (0.002161,-0.999998,-0.000001), (0.999997,0.002161,0.000733), (-0.000733,-0.000002,1.000000)
+principle_values: (0.071047,0.006567,0.006432)

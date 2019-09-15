@@ -1,0 +1,14 @@
+mid: 1707
+url: http://www.gvoon.de/artworlds/magazine/worlds/2.3.wrl
+ref_url: http://www.gvoon.de/artworlds/magazine/worlds/
+format: wrl 
+pid: 4163
+polygons: 894
+connected_components: 2
+average_dihedral_angle: 0.309946
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.545253, ymax = 0.975, zmax = 0.281945
+avg_depth: 1.057193
+center: (0.277440,0.503331,0.220332)
+scale: 0.529078
+principle_axes: (0.002633,0.999837,-0.017876), (-0.999976,0.002517,-0.006498), (-0.006452,0.017893,0.999819)
+principle_values: (0.063623,0.019937,0.001032)

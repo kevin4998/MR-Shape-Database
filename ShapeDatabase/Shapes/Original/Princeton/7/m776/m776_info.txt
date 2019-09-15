@@ -1,0 +1,14 @@
+mid: 776
+url: http://64.198.60.83/baument/Models/parkbench1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25514
+polygons: 1912
+connected_components: 3
+average_dihedral_angle: 1.21107
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.420835, zmax = 0.234905
+avg_depth: 1.201710
+center: (0.499881,0.177557,0.117144)
+scale: 0.572635
+principle_axes: (-1.000000,0.000156,0.000248), (0.000003,-0.841395,0.540421), (-0.000293,-0.540421,-0.841395)
+principle_values: (0.089207,0.009158,0.001765)

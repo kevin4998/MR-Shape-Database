@@ -1,0 +1,14 @@
+mid: 426
+url: http://www.eclipse3d.com/images/plan30.wrl
+ref_url: http://www.eclipse3d.com/sample.htm
+format: wrl 
+pid: 2576
+polygons: 7106
+connected_components: 146
+average_dihedral_angle: 1.00166
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.896862, ymax = 0.242551, zmax = 0.975
+avg_depth: 1.892301
+center: (0.417783,0.106175,0.414016)
+scale: 0.651213
+principle_axes: (0.706122,-0.007557,-0.708050), (-0.708090,-0.006899,-0.706089), (-0.000451,-0.999948,0.010223)
+principle_values: (0.093017,0.031146,0.002513)

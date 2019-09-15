@@ -1,0 +1,14 @@
+mid: 1105
+url: http://www.digitalanimators.com/Images/3dmodels/wrench.zip
+ref_url: http://www.digitalanimators.com/HTM/Resources/3dModels/Zygote.htm
+format: dxf 
+pid: 28573
+polygons: 3092
+connected_components: 4
+average_dihedral_angle: 0.422122
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.280984, zmax = 0.097571
+avg_depth: 1.299227
+center: (0.598600,0.176736,0.063200)
+scale: 0.494741
+principle_axes: (0.998204,-0.059899,-0.000798), (-0.059901,-0.998203,-0.001601), (-0.000700,0.001646,-0.999998)
+principle_values: (0.074297,0.002210,0.000204)

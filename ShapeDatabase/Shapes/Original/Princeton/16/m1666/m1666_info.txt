@@ -1,0 +1,14 @@
+mid: 1666
+url: http://gressly.com/systems/projects/balanceball/balanceball.wrl
+ref_url: http://gressly.com/systems/projects/balanceball/vrml.jsp
+format: wrl 
+pid: 11519
+polygons: 1599
+connected_components: 31
+average_dihedral_angle: 0.718888
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.777166, zmax = 0.484901
+avg_depth: 1.460442
+center: (0.482182,0.349923,0.245752)
+scale: 0.910212
+principle_axes: (-0.992493,-0.115664,0.039747), (0.116962,-0.992620,0.032028), (-0.035749,-0.036436,-0.998696)
+principle_values: (0.119907,0.082938,0.026237)

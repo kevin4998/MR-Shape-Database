@@ -1,0 +1,14 @@
+mid: 1251
+url: http://www.3dheaven.net/Modelle/aircraft/F15e.zip
+ref_url: 
+format: xthreexds 
+pid: 46797
+polygons: 2237
+connected_components: 240
+average_dihedral_angle: 0.563774
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.663453, ymax = 0.309501, zmax = 0.975
+avg_depth: 2.359843
+center: (0.345956,0.150562,0.320345)
+scale: 0.431879
+principle_axes: (0.004748,0.072053,-0.997390), (0.999969,0.005924,0.005188), (0.006283,-0.997383,-0.072023)
+principle_values: (0.043390,0.012879,0.001249)

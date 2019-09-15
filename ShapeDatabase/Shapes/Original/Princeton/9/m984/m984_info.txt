@@ -1,0 +1,14 @@
+mid: 984
+url: http://www.3dcafe.com/avatar/rose.wrl
+ref_url: http://www.3dcafe.com/asp/vrml.asp
+format: wrl 
+pid: 658
+polygons: 982
+connected_components: 37
+average_dihedral_angle: 0.266086
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.555368, ymax = 0.975, zmax = 0.403834
+avg_depth: 1.660317
+center: (0.320686,0.783428,0.187800)
+scale: 0.394916
+principle_axes: (0.039146,0.989064,0.142195), (0.983356,-0.063399,0.170270), (0.177423,0.133163,-0.975084)
+principle_values: (0.037758,0.007795,0.005267)

@@ -1,0 +1,14 @@
+mid: 1324
+url: ftp://avalon.viewpoint.com/pub/objects/modelBank/_h/Ka27_DXF.zip
+ref_url: 
+format: dxf 
+pid: 48589
+polygons: 98664
+connected_components: 334
+average_dihedral_angle: 0.504133
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.388764, zmax = 0.874996
+avg_depth: 1.643442
+center: (0.499893,0.209535,0.479548)
+scale: 0.421442
+principle_axes: (0.001249,0.005490,-0.999984), (-0.999996,-0.002518,-0.001263), (0.002525,-0.999982,-0.005487)
+principle_values: (0.034893,0.012112,0.008682)

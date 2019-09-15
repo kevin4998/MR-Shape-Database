@@ -1,0 +1,14 @@
+mid: 14
+url: http://www.geometrek.com/members/kapiti/avatars/b_fly.wrl
+ref_url: http://www.g3ds.com/web3d/avatars.html
+format: wrl 
+pid: 9739
+polygons: 1681
+connected_components: 13
+average_dihedral_angle: 0.495635
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.715939, zmax = 0.773575
+avg_depth: 1.059318
+center: (0.548612,0.339144,0.350286)
+scale: 0.499801
+principle_axes: (-0.638903,-0.332731,-0.693608), (-0.692072,0.642302,0.329369), (0.335915,0.690462,-0.640643)
+principle_values: (0.049742,0.028508,0.000495)

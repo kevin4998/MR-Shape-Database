@@ -1,0 +1,14 @@
+mid: 1111
+url: http://www.dcs.ed.ac.uk/home/objects/vrml/hammer.wrl.gz
+ref_url: http://www.dcs.ed.ac.uk/home/objects/vrml/?D=D
+format: 
+pid: 30941
+polygons: 1038
+connected_components: 2
+average_dihedral_angle: 0.484594
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.455275, ymax = 0.975, zmax = 0.160898
+avg_depth: 1.075113
+center: (0.201736,0.613138,0.089180)
+scale: 0.601535
+principle_axes: (0.045665,0.998939,0.005992), (-0.998804,0.045762,-0.017204), (-0.017460,-0.005199,0.999834)
+principle_values: (0.104649,0.006626,0.000906)

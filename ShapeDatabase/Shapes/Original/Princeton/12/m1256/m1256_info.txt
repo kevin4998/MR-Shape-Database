@@ -1,0 +1,14 @@
+mid: 1256
+url: ftp://avalon.viewpoint.com/pub/objects/space/spacefit_dxf.zip
+ref_url: 
+format: dxf 
+pid: 47685
+polygons: 18363
+connected_components: 818
+average_dihedral_angle: 0.532715
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.477636, ymax = 0.136758, zmax = 0.975
+avg_depth: 3.409694
+center: (0.250227,0.068197,0.574800)
+scale: 0.231059
+principle_axes: (0.004011,-0.055044,0.998476), (0.999991,0.001442,-0.003938), (0.001223,-0.998483,-0.055049)
+principle_values: (0.014991,0.003696,0.000335)

@@ -1,0 +1,14 @@
+mid: 1203
+url: http://www.anomalies.net/ident/vrml/flogger_wrl.wrl
+ref_url: http://www.anomalies.net/ident/vrml/
+format: wrl 
+pid: 5856
+polygons: 874
+connected_components: 2
+average_dihedral_angle: 0.58181
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.49208, ymax = 0.975, zmax = 0.278805
+avg_depth: 1.108577
+center: (0.258512,0.637312,0.127423)
+scale: 0.411934
+principle_axes: (-0.000172,0.998427,0.056071), (1.000000,0.000171,0.000022), (-0.000013,-0.056071,0.998427)
+principle_values: (0.046796,0.006853,0.001119)

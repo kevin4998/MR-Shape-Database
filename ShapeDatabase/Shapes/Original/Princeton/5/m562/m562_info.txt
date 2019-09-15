@@ -1,0 +1,14 @@
+mid: 562
+url: http://mowat.virtualave.net/tv.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 25946
+polygons: 556
+connected_components: 9
+average_dihedral_angle: 0.959834
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.723737, zmax = 0.625867
+avg_depth: 1.335794
+center: (0.499759,0.432686,0.370794)
+scale: 0.764810
+principle_axes: (-0.998741,-0.002047,-0.050114), (0.001231,0.997865,-0.065293), (0.050141,-0.065273,-0.996607)
+principle_values: (0.089365,0.037528,0.030418)

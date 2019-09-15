@@ -1,0 +1,14 @@
+mid: 1807
+url: http://deep.sitenest.net/freemodels/bathroom/3dm-bathub2.zip
+ref_url: 
+format: xthreexds 
+pid: 46873
+polygons: 11832
+connected_components: 8
+average_dihedral_angle: 0.2408
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.295862, zmax = 0.780007
+avg_depth: 1.417528
+center: (0.539617,0.116196,0.360831)
+scale: 0.652674
+principle_axes: (0.919254,-0.011113,0.393509), (-0.393634,-0.013162,0.919173), (-0.005036,-0.999852,-0.016474)
+principle_values: (0.074512,0.037432,0.005644)

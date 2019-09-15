@@ -1,0 +1,14 @@
+mid: 889
+url: http://www.3dcafe.com/models/leftovrs.zip
+ref_url: http://www.3dcafe.com/asp/industry.asp
+format: xthreexds 
+pid: 28774
+polygons: 1018
+connected_components: 3
+average_dihedral_angle: 0.636317
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.599306, ymax = 0.56505, zmax = 0.975
+avg_depth: 1.223841
+center: (0.313911,0.425565,0.500672)
+scale: 0.717098
+principle_axes: (-0.000041,0.001737,0.999998), (-0.642410,0.766360,-0.001357), (-0.766361,-0.642409,0.001084)
+principle_values: (0.084685,0.027451,0.026849)

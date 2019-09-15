@@ -1,0 +1,14 @@
+mid: 1276
+url: http://www.rccad.com/Gallery/Vrml/120-1.wrl
+ref_url: http://www.rccad.com/Gallery_Gliders2.htm
+format: wrl 
+pid: 36300
+polygons: 256
+connected_components: 9
+average_dihedral_angle: 0.583228
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.431339, ymax = 0.975, zmax = 0.107863
+avg_depth: 1.055624
+center: (0.190420,0.500003,0.042833)
+scale: 0.445932
+principle_axes: (-0.000004,1.000000,-0.000000), (-0.999909,-0.000004,-0.013502), (0.013502,-0.000000,-0.999909)
+principle_values: (0.057662,0.007406,0.000175)

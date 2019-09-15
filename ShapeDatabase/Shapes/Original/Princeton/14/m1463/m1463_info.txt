@@ -1,0 +1,14 @@
+mid: 1463
+url: http://www.ocnus.com/models/Military/la_class_sub.wrl.gz
+ref_url: http://www.ocnus.com/models/Military/
+format: wrl 
+pid: 17859
+polygons: 1236
+connected_components: 1
+average_dihedral_angle: 0.341428
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.164155, zmax = 0.12241
+avg_depth: 1.031997
+center: (0.492307,0.071150,0.073624)
+scale: 0.464015
+principle_axes: (-0.999956,0.009407,-0.000173), (0.009407,0.999956,0.000003), (0.000173,0.000002,-1.000000)
+principle_values: (0.067522,0.000974,0.000797)

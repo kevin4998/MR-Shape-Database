@@ -1,0 +1,14 @@
+mid: 936
+url: http://kakadu.eb-wolfbach.ch/web3d/tutorial_n/examples/table.wrl
+ref_url: http://kakadu.eb-wolfbach.ch/web3d/tutorial_n/slides/morn0100.htm
+format: wrl 
+pid: 34511
+polygons: 76
+connected_components: 4
+average_dihedral_angle: 1.428
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.4525, zmax = 0.928504
+avg_depth: 1.211647
+center: (0.500000,0.347870,0.476752)
+scale: 0.642140
+principle_axes: (0.005731,-0.000000,0.999984), (0.999984,0.000000,-0.005731), (-0.000000,1.000000,0.000000)
+principle_values: (0.042530,0.042530,0.027602)

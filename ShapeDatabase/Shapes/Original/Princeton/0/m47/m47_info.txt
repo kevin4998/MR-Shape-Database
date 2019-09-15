@@ -1,0 +1,14 @@
+mid: 47
+url: http://hiwaay.net/~crispen/worlds/avatar/gullbody.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7645
+polygons: 165
+connected_components: 6
+average_dihedral_angle: 0.605384
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.695803, ymax = 0.148154, zmax = 0.975
+avg_depth: 1.060952
+center: (0.416786,0.106535,0.500312)
+scale: 0.370621
+principle_axes: (-0.000258,0.001791,0.999998), (0.999227,0.039317,0.000187), (-0.039317,0.999225,-0.001800)
+principle_values: (0.030963,0.013449,0.000812)

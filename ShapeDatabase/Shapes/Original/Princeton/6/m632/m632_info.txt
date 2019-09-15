@@ -1,0 +1,14 @@
+mid: 632
+url: http://philliphansel.com/gallery/stratocaster.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3455
+polygons: 1934
+connected_components: 27
+average_dihedral_angle: 1.12365
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.36349, ymax = 0.975, zmax = 0.110594
+avg_depth: 1.644339
+center: (0.199755,0.332172,0.058185)
+scale: 0.365848
+principle_axes: (0.057510,-0.998027,-0.025190), (0.998209,0.057066,0.017977), (-0.016504,-0.026178,0.999521)
+principle_values: (0.042466,0.005061,0.000418)

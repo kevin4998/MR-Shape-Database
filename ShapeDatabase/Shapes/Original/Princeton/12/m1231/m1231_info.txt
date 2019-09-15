@@ -1,0 +1,14 @@
+mid: 1231
+url: http://hiwaay.net/~crispen/vrmlworks/essays/yf-23a.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7580
+polygons: 132
+connected_components: 3
+average_dihedral_angle: 1.25975
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.635711, ymax = 0.194645, zmax = 0.975
+avg_depth: 1.107466
+center: (0.329963,0.070078,0.375270)
+scale: 0.433263
+principle_axes: (-0.004131,-0.047085,0.998882), (0.999991,-0.000458,0.004114), (-0.000264,-0.998891,-0.047087)
+principle_values: (0.042405,0.014464,0.000715)

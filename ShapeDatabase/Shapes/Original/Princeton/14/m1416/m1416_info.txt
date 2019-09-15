@@ -1,0 +1,14 @@
+mid: 1416
+url: http://www.3dcafe.com/models/sabre.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 28827
+polygons: 20920
+connected_components: 319
+average_dihedral_angle: 0.688421
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.526648, ymax = 0.304728, zmax = 0.975
+avg_depth: 3.079762
+center: (0.277800,0.154617,0.562453)
+scale: 0.521636
+principle_axes: (0.034066,-0.035172,-0.998800), (0.999379,0.010186,0.033727), (0.008988,-0.999329,0.035498)
+principle_values: (0.043211,0.023517,0.006726)

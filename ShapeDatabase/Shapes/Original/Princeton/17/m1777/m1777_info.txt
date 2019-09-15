@@ -1,0 +1,14 @@
+mid: 1777
+url: http://tecfa.unige.ch/vrml/objects/acuris/Computer.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/acuris/?D=A
+format: wrl 
+pid: 46451
+polygons: 618
+connected_components: 7
+average_dihedral_angle: 1.09666
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.910416, ymax = 0.736516, zmax = 0.975
+avg_depth: 1.982054
+center: (0.360519,0.256967,0.432326)
+scale: 0.718402
+principle_axes: (-0.253389,0.602118,-0.757131), (-0.156428,-0.797877,-0.582171), (0.954633,0.029080,-0.296361)
+principle_values: (0.069435,0.040070,0.036007)

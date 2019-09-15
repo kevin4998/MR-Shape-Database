@@ -1,0 +1,14 @@
+mid: 799
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/USA_Gym/chair.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/USA_Gym/?D=D
+format: wrl 
+pid: 45825
+polygons: 1789
+connected_components: 22
+average_dihedral_angle: 0.731491
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.646329, ymax = 0.975, zmax = 0.688832
+avg_depth: 1.362780
+center: (0.333746,0.480515,0.325313)
+scale: 0.650841
+principle_axes: (0.014251,-0.788862,0.614406), (0.998997,-0.014858,-0.042248), (-0.042457,-0.614391,-0.787858)
+principle_values: (0.072848,0.027340,0.020614)

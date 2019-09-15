@@ -1,0 +1,14 @@
+mid: 972
+url: http://www.rcwalker.freeserve.co.uk/vrml_tree_exs/chrysanthemums.wrl
+ref_url: http://www.geom.umn.edu/~daeron/bin/legitlist.cgi
+format: wrl 
+pid: 9949
+polygons: 15625
+connected_components: 1398
+average_dihedral_angle: 0.623858
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.634839, zmax = 0.609769
+avg_depth: 3.793232
+center: (0.485201,0.423606,0.231107)
+scale: 0.568999
+principle_axes: (0.966947,-0.113543,-0.228302), (0.244702,0.664859,0.705751), (0.071656,-0.738289,0.670667)
+principle_values: (0.070165,0.012753,0.008151)

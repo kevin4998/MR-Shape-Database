@@ -1,0 +1,14 @@
+mid: 69
+url: http://www.atom.co.jp/vrml2/coral/world/english/obj/hammerHeadT.wrl
+ref_url: http://www.atom.co.jp/vrml2/coral/world/english/obj/
+format: wrl 
+pid: 3885
+polygons: 568
+connected_components: 19
+average_dihedral_angle: 0.595256
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.357325, ymax = 0.264776, zmax = 0.975
+avg_depth: 1.379823
+center: (0.190980,0.108655,0.605436)
+scale: 0.395282
+principle_axes: (0.000087,-0.060012,0.998198), (0.999999,0.001579,0.000008), (0.001577,-0.998196,-0.060012)
+principle_values: (0.047209,0.002648,0.002093)

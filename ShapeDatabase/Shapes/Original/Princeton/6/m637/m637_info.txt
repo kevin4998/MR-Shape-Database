@@ -1,0 +1,14 @@
+mid: 637
+url: ftp://avalon.viewpoint.com/pub/objects/misc/wkguitar_dxf.zip
+ref_url: 
+format: dxf 
+pid: 48585
+polygons: 16931
+connected_components: 100
+average_dihedral_angle: 0.716763
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.0821921, zmax = 0.312649
+avg_depth: 1.540066
+center: (0.590092,0.054349,0.170837)
+scale: 0.441411
+principle_axes: (0.999808,-0.011941,-0.015558), (0.015612,0.004414,0.999868), (0.011870,0.999919,-0.004600)
+principle_values: (0.062651,0.002732,0.000185)

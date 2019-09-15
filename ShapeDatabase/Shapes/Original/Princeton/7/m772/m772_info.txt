@@ -1,0 +1,14 @@
+mid: 772
+url: ftp://avalon.viewpoint.com/pub/objects/architecture/furniture/compdesk_dxf.zip
+ref_url: 
+format: dxf 
+pid: 47092
+polygons: 204
+connected_components: 17
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.833371, ymax = 0.975, zmax = 0.860534
+avg_depth: 1.748877
+center: (0.385741,0.532070,0.436448)
+scale: 0.722819
+principle_axes: (-0.472909,-0.452594,-0.755987), (0.411161,-0.872203,0.264968), (-0.779297,-0.185527,0.598562)
+principle_values: (0.072298,0.066246,0.010952)

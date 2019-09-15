@@ -1,0 +1,14 @@
+mid: 596
+url: http://tecfa.unige.ch/vrml/objects/furniture/sablier.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/furniture/
+format: wrl 
+pid: 3639
+polygons: 224
+connected_components: 8
+average_dihedral_angle: 1.3049
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.590476, ymax = 0.975, zmax = 0.590476
+avg_depth: 1.679968
+center: (0.307738,0.500000,0.307738)
+scale: 0.864450
+principle_axes: (0.000000,-1.000000,-0.000000), (-0.999160,0.000000,-0.040977), (-0.040977,-0.000000,0.999160)
+principle_values: (0.145912,0.026167,0.026167)

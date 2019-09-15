@@ -1,0 +1,14 @@
+mid: 1459
+url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/obj/ship.wrl
+ref_url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/ocean.wrl
+format: wrl 
+pid: 14893
+polygons: 531
+connected_components: 22
+average_dihedral_angle: 1.43788
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.664405, zmax = 0.42026
+avg_depth: 2.519713
+center: (0.424525,0.165723,0.217741)
+scale: 0.490237
+principle_axes: (0.994530,0.103098,0.016749), (-0.072985,0.571235,0.817535), (0.074719,-0.814286,0.575635)
+principle_values: (0.041516,0.013575,0.012304)

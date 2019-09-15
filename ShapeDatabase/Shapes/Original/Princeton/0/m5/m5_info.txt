@@ -1,0 +1,14 @@
+mid: 5
+url: http://www.ento.vt.edu/~sharov/3d/wasp.wrl
+ref_url: http://www.ento.vt.edu/~sharov/3d/virtual.html
+format: wrl 
+pid: 1674
+polygons: 8773
+connected_components: 145
+average_dihedral_angle: 0.543881
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.621308, ymax = 0.450884, zmax = 0.975
+avg_depth: 1.466642
+center: (0.313039,0.326534,0.407035)
+scale: 0.468399
+principle_axes: (-0.003201,0.060370,-0.998171), (-0.999981,-0.005520,0.002873), (-0.005336,0.998161,0.060386)
+principle_values: (0.041790,0.014500,0.009188)

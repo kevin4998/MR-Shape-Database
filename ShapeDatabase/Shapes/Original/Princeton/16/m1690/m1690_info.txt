@@ -1,0 +1,14 @@
+mid: 1690
+url: ftp://avalon.viewpoint.com/pub/objects/geography/australia_obj.zip
+ref_url: 
+format: obj 
+pid: 47394
+polygons: 422
+connected_components: 4
+average_dihedral_angle: 0.976582
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.617207, zmax = 0.145193
+avg_depth: 1.138689
+center: (0.448081,0.330769,0.102800)
+scale: 0.555641
+principle_axes: (-0.915435,0.401703,0.024747), (-0.402046,-0.915557,-0.010673), (0.018370,-0.019720,0.999637)
+principle_values: (0.076256,0.015907,0.001553)

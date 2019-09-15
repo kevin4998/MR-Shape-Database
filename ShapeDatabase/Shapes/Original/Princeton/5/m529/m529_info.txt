@@ -1,0 +1,14 @@
+mid: 529
+url: http://www.terravista.pt/aguaalto/4003/Links/oculada.WRL
+ref_url: http://www.terravista.pt/aguaalto/4003/
+format: wrl 
+pid: 266
+polygons: 3121
+connected_components: 3
+average_dihedral_angle: 0.225875
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.970642, ymax = 0.65045, zmax = 0.975
+avg_depth: 2.252393
+center: (0.498275,0.339838,0.579798)
+scale: 0.835466
+principle_axes: (0.998627,0.003063,0.052294), (-0.052382,0.066781,0.996392), (-0.000441,-0.997763,0.066849)
+principle_values: (0.077096,0.071454,0.032549)

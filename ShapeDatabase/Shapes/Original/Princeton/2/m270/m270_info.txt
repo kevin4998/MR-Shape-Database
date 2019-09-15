@@ -1,0 +1,14 @@
+mid: 270
+url: http://www.lsi.usp.br/~fmiranda/VRML/Igor.WRL
+ref_url: http://www.lsi.usp.br/~fmiranda/3D/
+format: wrl 
+pid: 9558
+polygons: 8368
+connected_components: 134
+average_dihedral_angle: 0.379322
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.734266, zmax = 0.460088
+avg_depth: 1.651035
+center: (0.390186,0.390374,0.242694)
+scale: 0.527541
+principle_axes: (0.753059,-0.657953,0.000898), (0.657951,0.753059,0.001771), (0.001841,0.000743,-0.999998)
+principle_values: (0.066294,0.012694,0.005510)

@@ -1,0 +1,14 @@
+mid: 237
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Objects/bod11.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Objects/?D=D
+format: wrl 
+pid: 42264
+polygons: 956
+connected_components: 1
+average_dihedral_angle: 0.526933
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.925512, ymax = 0.975, zmax = 0.15042
+avg_depth: 1.132617
+center: (0.475303,0.559656,0.084448)
+scale: 0.508176
+principle_axes: (0.000127,0.999810,0.019479), (1.000000,-0.000130,0.000155), (0.000158,0.019479,-0.999810)
+principle_values: (0.066645,0.014948,0.000768)

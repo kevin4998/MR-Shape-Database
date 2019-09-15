@@ -1,0 +1,14 @@
+mid: 662
+url: http://www.3dheaven.net/Modelle/weapons/w_fiveseven.zip
+ref_url: 
+format: xthreexds 
+pid: 47420
+polygons: 828
+connected_components: 19
+average_dihedral_angle: 0.984011
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.156909, zmax = 0.960369
+avg_depth: 2.081534
+center: (0.584287,0.081474,0.518812)
+scale: 0.599828
+principle_axes: (0.632533,-0.000598,-0.774533), (-0.774520,-0.006216,-0.632518), (-0.004437,0.999980,-0.004395)
+principle_values: (0.085999,0.022762,0.001310)

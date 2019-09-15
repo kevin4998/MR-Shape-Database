@@ -1,0 +1,14 @@
+mid: 1038
+url: http://www.amazing3d.com/free/plant13ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47387
+polygons: 12368
+connected_components: 167
+average_dihedral_angle: 1.03602
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.631702, ymax = 0.975, zmax = 0.257932
+avg_depth: 1.241442
+center: (0.355360,0.437280,0.144769)
+scale: 0.505938
+principle_axes: (-0.050539,0.998537,0.019240), (0.998681,0.050353,0.010050), (0.009067,0.019723,-0.999764)
+principle_values: (0.062948,0.010565,0.001284)

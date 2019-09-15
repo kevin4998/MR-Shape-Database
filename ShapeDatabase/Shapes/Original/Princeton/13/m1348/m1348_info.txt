@@ -1,0 +1,14 @@
+mid: 1348
+url: http://fraktali.849pm.com/programs/dxf/3ds/blimp3.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: 3ds 
+pid: 27039
+polygons: 1382
+connected_components: 8
+average_dihedral_angle: 0.212502
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.321693, ymax = 0.354958, zmax = 0.975
+avg_depth: 1.013277
+center: (0.168885,0.199552,0.479827)
+scale: 0.505787
+principle_axes: (0.001153,0.002038,-0.999997), (0.012605,0.999918,0.002053), (-0.999920,0.012607,-0.001128)
+principle_values: (0.062155,0.005819,0.005386)

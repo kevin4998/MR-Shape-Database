@@ -1,0 +1,14 @@
+mid: 882
+url: http://fraktali.849pm.com/programs/dxf/TISCH.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27099
+polygons: 1072
+connected_components: 9
+average_dihedral_angle: 1.06474
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.809783, zmax = 0.531445
+avg_depth: 1.119275
+center: (0.500635,0.418348,0.058860)
+scale: 0.723625
+principle_axes: (-1.000000,0.000117,-0.000725), (-0.000115,-0.999997,-0.002481), (0.000725,0.002481,-0.999997)
+principle_values: (0.083240,0.057024,0.006169)

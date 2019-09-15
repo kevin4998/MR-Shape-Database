@@ -1,0 +1,14 @@
+mid: 1065
+url: http://www.3dcafe.com/models/treethn2.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 28929
+polygons: 1610
+connected_components: 796
+average_dihedral_angle: 0.445091
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.538252, ymax = 0.975, zmax = 0.51987
+avg_depth: 1.592718
+center: (0.266986,0.690427,0.296950)
+scale: 0.415424
+principle_axes: (0.009998,0.998762,0.048736), (0.871157,-0.032627,0.489919), (-0.490902,-0.037558,0.870405)
+principle_values: (0.033687,0.013265,0.006655)

@@ -1,0 +1,14 @@
+mid: 1574
+url: ftp://avalon.viewpoint.com/pub/objects/military/vehicles/truck_obj.zip
+ref_url: 
+format: obj 
+pid: 47545
+polygons: 7402
+connected_components: 27
+average_dihedral_angle: 0.378857
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.418847, ymax = 0.460146, zmax = 0.975
+avg_depth: 2.112409
+center: (0.220914,0.216847,0.458749)
+scale: 0.567052
+principle_axes: (0.002947,0.040472,-0.999176), (-0.999709,0.024045,-0.001975), (-0.023945,-0.998891,-0.040531)
+principle_values: (0.069043,0.013656,0.010641)

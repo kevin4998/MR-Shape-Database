@@ -1,0 +1,14 @@
+mid: 1035
+url: http://www.hammerve.com/NewHome/FreeStuff/Vrml/house_plant.wrl.gz
+ref_url: 
+format: wrl 
+pid: 47877
+polygons: 3360
+connected_components: 6
+average_dihedral_angle: 0.223857
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.876645, ymax = 0.975, zmax = 0.750467
+avg_depth: 1.334800
+center: (0.474875,0.355622,0.384435)
+scale: 0.671138
+principle_axes: (0.681500,-0.717972,0.141682), (-0.479394,-0.291706,0.827701), (-0.552936,-0.632000,-0.542990)
+principle_values: (0.052904,0.038770,0.030516)

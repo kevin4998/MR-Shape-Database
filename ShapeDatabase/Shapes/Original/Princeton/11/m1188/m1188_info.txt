@@ -1,0 +1,14 @@
+mid: 1188
+url: http://mowat.virtualave.net/ppanmk1.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26364
+polygons: 538
+connected_components: 5
+average_dihedral_angle: 0.637084
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.787454, ymax = 0.27522, zmax = 0.975
+avg_depth: 1.199376
+center: (0.403474,0.086307,0.439622)
+scale: 0.422460
+principle_axes: (-0.002576,-0.045935,0.998941), (-0.999996,0.001015,-0.002532), (0.000898,0.998944,0.045938)
+principle_values: (0.039227,0.013663,0.001937)

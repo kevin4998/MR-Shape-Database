@@ -1,0 +1,14 @@
+mid: 595
+url: http://www.3dcafe.com/models/hourglas.zip
+ref_url: http://www.3dcafe.com/asp/hou2_pic.asp
+format: xthreexds 
+pid: 28497
+polygons: 38141
+connected_components: 10
+average_dihedral_angle: 0.122063
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.738049, ymax = 0.975, zmax = 0.738048
+avg_depth: 2.050628
+center: (0.382423,0.517757,0.381681)
+scale: 0.805241
+principle_axes: (-0.002003,0.999998,0.000495), (0.272143,0.001021,-0.962256), (0.962255,0.001793,0.272144)
+principle_values: (0.122828,0.028218,0.027948)

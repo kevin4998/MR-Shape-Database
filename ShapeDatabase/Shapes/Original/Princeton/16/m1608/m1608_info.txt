@@ -1,0 +1,14 @@
+mid: 1608
+url: http://www.darwin3d.com/gamedev/gdm0200.zip
+ref_url: http://www.darwin3d.com/gdm2000.htm
+format: obj 
+pid: 29319
+polygons: 480
+connected_components: 1
+average_dihedral_angle: 0.606104
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.825, ymax = 0.975, zmax = 0.825
+avg_depth: 1.210260
+center: (0.425000,0.368973,0.425000)
+scale: 0.777275
+principle_axes: (-0.000000,-1.000000,-0.000000), (0.703629,-0.000000,-0.710567), (-0.710567,0.000000,-0.703629)
+principle_values: (0.112194,0.028155,0.028155)

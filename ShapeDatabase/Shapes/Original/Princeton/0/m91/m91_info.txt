@@ -1,0 +1,14 @@
+mid: 91
+url: http://cepcairo.bizland.com/free/Chichma.zip
+ref_url: 
+format: xthreexds 
+pid: 46998
+polygons: 3169
+connected_components: 3
+average_dihedral_angle: 0.419674
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.338336, ymax = 0.86107, zmax = 0.975
+avg_depth: 1.104878
+center: (0.181667,0.428709,0.526678)
+scale: 0.591019
+principle_axes: (0.000006,-0.602103,-0.798418), (-0.000007,0.798418,-0.602103), (-1.000000,-0.000010,-0.000000)
+principle_values: (0.077473,0.018750,0.007166)

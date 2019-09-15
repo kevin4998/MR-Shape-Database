@@ -1,0 +1,14 @@
+mid: 1784
+url: http://www.pdx3d.com/wrl/br_hawthorne.gz.wrl
+ref_url: http://www.pdx3d.com/bridges.htm
+format: wrl 
+pid: 2288
+polygons: 7017
+connected_components: 89
+average_dihedral_angle: 1.93288
+bounding_box: xmin = 1.44327e+006, ymin = 11.4, zmin = -680738, xmax = 1.44473e+006, ymax = 236.68, zmax = -680662
+avg_depth: 1.982054
+center: (1443978.038102,69.788933,-680700.124787)
+scale: 719.150757
+principle_axes: (-0.999789,0.020532,-0.000289), (-0.020534,-0.999750,0.008862), (0.000107,-0.008866,-0.999961)
+principle_values: (170063.781324,966.613301,280.248246)

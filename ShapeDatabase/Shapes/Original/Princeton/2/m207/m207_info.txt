@@ -1,0 +1,14 @@
+mid: 207
+url: http://www.atom.co.jp/vrml2/rikiya/jumpM.wrl
+ref_url: http://www.atom.co.jp/vrml2/rikiya/index.html
+format: wrl 
+pid: 38900
+polygons: 5926
+connected_components: 54
+average_dihedral_angle: 0.476275
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.354991, ymax = 0.975, zmax = 0.30667
+avg_depth: 1.849529
+center: (0.215914,0.516384,0.163710)
+scale: 0.450937
+principle_axes: (0.013409,0.997409,0.070683), (0.985489,-0.025145,0.167865), (0.169208,0.067407,-0.983273)
+principle_values: (0.060591,0.004258,0.002406)

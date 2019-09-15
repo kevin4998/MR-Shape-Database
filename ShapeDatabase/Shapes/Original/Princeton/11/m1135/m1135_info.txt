@@ -1,0 +1,14 @@
+mid: 1135
+url: http://www.rccad.com/Gallery/Vrml/winner.wrl
+ref_url: http://www.rccad.com/Gallery_Exotic14.htm
+format: wrl 
+pid: 1074
+polygons: 360
+connected_components: 36
+average_dihedral_angle: 0.801891
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.545907, ymax = 0.975, zmax = 0.181047
+avg_depth: 1.523176
+center: (0.279810,0.500004,0.104734)
+scale: 0.461143
+principle_axes: (-0.000013,1.000000,0.000009), (-0.996505,-0.000014,0.083528), (-0.083528,0.000008,-0.996505)
+principle_values: (0.053074,0.009411,0.002360)

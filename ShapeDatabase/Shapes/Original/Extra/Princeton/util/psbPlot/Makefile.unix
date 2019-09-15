@@ -1,0 +1,46 @@
+# Makefile
+
+# Global variables
+
+CC		= g++
+OUT_DIR        	= .
+INC_DIRS       	= -I.
+LIB_DIRS       	= -L.
+
+
+# Valid CFLAGS
+#
+#  -O    - Optimize
+#  -g    - Debugging information
+#  -Wall - All warnings
+
+#CFLAGS         = -O3 -Wall 
+CFLAGS  = -g -Wall
+
+# Objects
+
+OBJECTS        = PSBClaParse.o psbPlot.o
+COMMON_INCS    = 
+EXE						= psbPlot
+
+#################################################################
+#
+
+# Default Make option
+
+all: $(OBJECTS)
+	$(CC) $(CFLAGS) -o $(OUT_DIR)/$(EXE) $(OBJECTS)
+
+# Other
+
+$(OBJECTS): %.o: %.cpp
+	$(CC) -c $(CFLAGS) $< -o $@
+
+
+clean:
+	rm -f $(OBJECTS) $(EXE)
+
+#
+#################################################################
+
+

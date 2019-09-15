@@ -1,0 +1,14 @@
+mid: 445
+url: http://www.eclipse3d.com/images/house6.wrl
+ref_url: http://www.eclipse3d.com/sample.htm
+format: wrl 
+pid: 2579
+polygons: 3536
+connected_components: 127
+average_dihedral_angle: 1.28188
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.4126, zmax = 0.851975
+avg_depth: 1.810439
+center: (0.544197,0.201804,0.348753)
+scale: 0.710396
+principle_axes: (0.951483,0.011135,0.307501), (0.304387,0.112260,-0.945910), (-0.045052,0.993616,0.103424)
+principle_values: (0.086957,0.044923,0.008159)

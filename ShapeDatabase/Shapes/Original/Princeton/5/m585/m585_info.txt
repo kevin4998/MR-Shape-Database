@@ -1,0 +1,14 @@
+mid: 585
+url: http://www.3dcafe.com/models/sglass.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: dxf 
+pid: 27960
+polygons: 3416
+connected_components: 5
+average_dihedral_angle: 0.333128
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.921417, ymax = 0.30794, zmax = 0.975
+avg_depth: 1.158227
+center: (0.473207,0.187019,0.828055)
+scale: 0.693861
+principle_axes: (-1.000000,0.000001,0.000012), (0.000012,-0.006371,0.999980), (0.000001,0.999980,0.006371)
+principle_values: (0.081893,0.063865,0.006618)

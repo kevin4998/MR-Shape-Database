@@ -1,0 +1,14 @@
+mid: 1797
+url: http://www.stonecarver.com/VRML/fireplace.wrl
+ref_url: http://www.stonecarver.com/archwork.html
+format: wrl 
+pid: 19836
+polygons: 11756
+connected_components: 71
+average_dihedral_angle: 0.581467
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.785104, zmax = 0.81541
+avg_depth: 1.263143
+center: (0.499480,0.214123,0.231766)
+scale: 0.790992
+principle_axes: (0.000565,0.732034,-0.681268), (-1.000000,0.000049,-0.000777), (0.000535,-0.681268,-0.732034)
+principle_values: (0.084929,0.068979,0.025098)

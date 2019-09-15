@@ -1,0 +1,14 @@
+mid: 407
+url: http://content.schmoozer.net/Schmoozer/MitsuB/Halls/VRML/HexPortal.wrl
+ref_url: http://content.schmoozer.net/Schmoozer/MitsuB/Halls/VRML/
+format: wrl 
+pid: 4844
+polygons: 404
+connected_components: 19
+average_dihedral_angle: 1.43377
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.799381, ymax = 0.975, zmax = 0.756027
+avg_depth: 1.805918
+center: (0.412179,0.414289,0.389857)
+scale: 0.687189
+principle_axes: (-0.000102,0.999959,0.009103), (0.000037,0.009103,-0.999959), (-1.000000,-0.000102,-0.000038)
+principle_values: (0.052607,0.039500,0.030303)

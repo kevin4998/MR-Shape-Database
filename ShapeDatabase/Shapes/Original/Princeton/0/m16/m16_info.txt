@@ -1,0 +1,14 @@
+mid: 16
+url: http://www.ento.vt.edu/~sharov/3d/spider.wrl
+ref_url: http://www.ento.vt.edu/~sharov/3d/virtual.html
+format: wrl 
+pid: 1677
+polygons: 5162
+connected_components: 21
+average_dihedral_angle: 0.428369
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.270136, zmax = 0.718665
+avg_depth: 1.251588
+center: (0.393355,0.131730,0.371563)
+scale: 0.334253
+principle_axes: (-0.997867,-0.065260,0.001610), (-0.001470,-0.002196,-0.999997), (0.065263,-0.997866,0.002095)
+principle_values: (0.020568,0.012020,0.003680)

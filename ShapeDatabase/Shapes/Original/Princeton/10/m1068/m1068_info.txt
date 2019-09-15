@@ -1,0 +1,14 @@
+mid: 1068
+url: http://www.3dcafe.com/models/leaves.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 29006
+polygons: 1892
+connected_components: 165
+average_dihedral_angle: 0.550169
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.853683, zmax = 0.901006
+avg_depth: 1.803557
+center: (0.471203,0.544548,0.452553)
+scale: 0.591063
+principle_axes: (-0.473245,0.814564,-0.335447), (-0.760677,-0.569912,-0.310760), (0.444309,-0.108101,-0.889328)
+principle_values: (0.042790,0.033163,0.020157)

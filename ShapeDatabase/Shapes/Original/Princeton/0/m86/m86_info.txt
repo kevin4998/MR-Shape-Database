@@ -1,0 +1,14 @@
+mid: 86
+url: http://werple.net.au/~miriam/happydog.wrl
+ref_url: http://werple.net.au/~miriam/
+format: wrl 
+pid: 11932
+polygons: 245
+connected_components: 14
+average_dihedral_angle: 0.938302
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.18809, ymax = 0.627269, zmax = 0.975
+avg_depth: 1.276306
+center: (0.104714,0.317883,0.523538)
+scale: 0.429177
+principle_axes: (0.000570,0.374052,0.927407), (0.026684,0.927072,-0.373933), (-0.999644,0.024960,-0.009453)
+principle_values: (0.039897,0.014905,0.001712)

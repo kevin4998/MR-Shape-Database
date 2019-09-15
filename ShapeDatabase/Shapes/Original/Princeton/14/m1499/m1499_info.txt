@@ -1,0 +1,14 @@
+mid: 1499
+url: http://www.3dcafe.com/models/ttruck.zip
+ref_url: http://www.3dcafe.com/asp/toy_pics.asp
+format: xthreexds 
+pid: 29239
+polygons: 31813
+connected_components: 404
+average_dihedral_angle: 0.759926
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.382137, zmax = 0.521646
+avg_depth: 3.106002
+center: (0.459168,0.187540,0.273630)
+scale: 0.564462
+principle_axes: (0.998908,-0.046695,-0.001310), (0.001411,0.002125,0.999997), (0.046692,0.998907,-0.002189)
+principle_values: (0.065892,0.019450,0.005479)

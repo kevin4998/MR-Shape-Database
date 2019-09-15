@@ -1,0 +1,14 @@
+mid: 530
+url: http://mowat.virtualave.net/champagn.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26880
+polygons: 512
+connected_components: 1
+average_dihedral_angle: 0.332019
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.298542, zmax = 0.280546
+avg_depth: 1.001130
+center: (0.400686,0.161771,0.152773)
+scale: 0.529115
+principle_axes: (-1.000000,0.000000,0.000000), (0.000000,1.000000,-0.000000), (-0.000000,-0.000000,-1.000000)
+principle_values: (0.073560,0.006094,0.005487)

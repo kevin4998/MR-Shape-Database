@@ -1,0 +1,14 @@
+mid: 378
+url: http://www.3dcafe.com/models/hellskul.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: obj 
+pid: 27154
+polygons: 14208
+connected_components: 35
+average_dihedral_angle: 0.331064
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.596575, ymax = 0.809014, zmax = 0.975
+avg_depth: 1.334642
+center: (0.310723,0.369581,0.508537)
+scale: 0.697727
+principle_axes: (-0.000072,-0.448258,0.893904), (-0.002368,-0.893902,-0.448257), (-0.999997,0.002149,0.000997)
+principle_values: (0.070869,0.033341,0.026620)

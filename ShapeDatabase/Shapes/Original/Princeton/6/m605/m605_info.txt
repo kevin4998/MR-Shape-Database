@@ -1,0 +1,14 @@
+mid: 605
+url: http://www.forwarddesign.com/objects/house/Desklamp.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: lwo 
+pid: 25310
+polygons: 1300
+connected_components: 275
+average_dihedral_angle: 1.45551
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.502077, ymax = 0.975, zmax = 0.836867
+avg_depth: 1.250395
+center: (0.263526,0.539355,0.458736)
+scale: 0.780635
+principle_axes: (-0.000041,0.898085,0.439821), (1.000000,0.000041,0.000011), (-0.000008,0.439821,-0.898085)
+principle_values: (0.151871,0.012315,0.008916)

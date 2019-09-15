@@ -1,0 +1,14 @@
+mid: 1236
+url: http://ciel.me.cmu.edu/soji/aircraft/angels.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 899
+polygons: 828
+connected_components: 7
+average_dihedral_angle: 0.589349
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.662817, ymax = 0.218923, zmax = 0.975
+avg_depth: 1.140418
+center: (0.343907,0.080243,0.625451)
+scale: 0.426613
+principle_axes: (-0.000007,0.008896,0.999960), (-1.000000,0.000018,-0.000007), (-0.000018,-0.999960,0.008896)
+principle_values: (0.042748,0.013037,0.001100)

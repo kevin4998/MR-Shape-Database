@@ -1,0 +1,14 @@
+mid: 1419
+url: http://www.rccad.com/Gallery/Vrml/tankJ.wrl
+ref_url: http://www.rccad.com/Gallery_NonFlying2.htm
+format: wrl 
+pid: 34568
+polygons: 4420
+connected_components: 10
+average_dihedral_angle: 0.208971
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.503994, zmax = 0.284247
+avg_depth: 2.195074
+center: (0.522159,0.264505,0.108250)
+scale: 0.543439
+principle_axes: (1.000000,-0.000043,0.000483), (0.000043,1.000000,-0.000115), (0.000483,-0.000115,-1.000000)
+principle_values: (0.061546,0.022601,0.002414)

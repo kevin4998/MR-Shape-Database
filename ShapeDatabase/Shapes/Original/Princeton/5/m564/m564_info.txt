@@ -1,0 +1,14 @@
+mid: 564
+url: http://www.3dcafe.com/models/televisn.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 27912
+polygons: 3552
+connected_components: 21
+average_dihedral_angle: 0.170455
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.714424, ymax = 0.975, zmax = 0.50587
+avg_depth: 1.626803
+center: (0.378985,0.348143,0.259448)
+scale: 0.739908
+principle_axes: (-0.999980,0.006308,0.000696), (0.006327,0.999481,0.031601), (0.000496,-0.031605,0.999500)
+principle_values: (0.056656,0.053627,0.030544)

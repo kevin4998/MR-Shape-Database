@@ -1,0 +1,14 @@
+mid: 495
+url: http://www.ocnus.com/models/Household/martini.wrl.gz
+ref_url: http://www.ocnus.com/models/Household/
+format: wrl 
+pid: 17810
+polygons: 2750
+connected_components: 1
+average_dihedral_angle: 0.498334
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.743052, ymax = 0.975, zmax = 0.741634
+avg_depth: 1.185707
+center: (0.384025,0.617026,0.383317)
+scale: 0.774229
+principle_axes: (0.000000,1.000000,-0.000000), (-0.807480,0.000000,0.589894), (0.589894,0.000000,0.807480)
+principle_values: (0.122703,0.027229,0.027229)

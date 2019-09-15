@@ -1,0 +1,14 @@
+mid: 784
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/victor/chair.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/victor/?D=A
+format: wrl 
+pid: 46078
+polygons: 36
+connected_components: 3
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.38125, zmax = 0.277356
+avg_depth: 1.409885
+center: (0.500000,0.165741,0.117911)
+scale: 0.563859
+principle_axes: (1.000000,0.000000,-0.000000), (0.000000,-0.799445,0.600739), (0.000000,-0.600739,-0.799445)
+principle_values: (0.080779,0.011162,0.002962)

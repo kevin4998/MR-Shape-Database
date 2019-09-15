@@ -1,0 +1,14 @@
+mid: 1260
+url: ftp://avalon.viewpoint.com/pub/objects/military/planes/ta4_obj.zip
+ref_url: 
+format: obj 
+pid: 47480
+polygons: 14563
+connected_components: 648
+average_dihedral_angle: 0.360851
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.343613, zmax = 0.593564
+avg_depth: 1.635469
+center: (0.419560,0.134338,0.317291)
+scale: 0.413614
+principle_axes: (-0.998177,0.059550,0.009806), (-0.007852,0.032959,-0.999426), (-0.059839,-0.997681,-0.032431)
+principle_values: (0.039452,0.008862,0.002956)

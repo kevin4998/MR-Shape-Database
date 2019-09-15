@@ -1,0 +1,14 @@
+mid: 1050
+url: http://www.3dcafe.com/models/m_tree3.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 29000
+polygons: 4629
+connected_components: 446
+average_dihedral_angle: 0.483607
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.581102, ymax = 0.975, zmax = 0.54077
+avg_depth: 1.750592
+center: (0.295315,0.552158,0.261775)
+scale: 0.441348
+principle_axes: (0.058203,0.998179,-0.015817), (-0.080309,-0.011111,-0.996708), (-0.995069,0.059282,0.079516)
+principle_values: (0.033207,0.010953,0.009755)

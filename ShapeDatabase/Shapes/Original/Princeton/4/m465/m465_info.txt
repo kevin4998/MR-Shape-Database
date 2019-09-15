@@ -1,0 +1,14 @@
+mid: 465
+url: http://www.3dcafe.com/models/adcorphq.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27650
+polygons: 4363
+connected_components: 72
+average_dihedral_angle: 1.43636
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.21702, ymax = 0.975, zmax = 0.251523
+avg_depth: 5.172275
+center: (0.133491,0.473938,0.127026)
+scale: 0.507086
+principle_axes: (-0.001868,0.999995,0.002605), (0.421708,0.003150,-0.906726), (0.906730,0.000595,0.421712)
+principle_values: (0.070172,0.004190,0.002605)

@@ -1,0 +1,14 @@
+mid: 312
+url: http://cmp.felk.cvut.cz/cmp/demos/Brno/vrml/mod9.wrl
+ref_url: http://cmp.felk.cvut.cz/cmp/demos/Brno/models.html
+format: wrl 
+pid: 7992
+polygons: 4052
+connected_components: 478
+average_dihedral_angle: 0.136342
+bounding_box: xmin = 0.282969, ymin = 0.0639778, zmin = 0.338712, xmax = 0.812707, ymax = 0.77804, zmax = 0.696572
+avg_depth: 1.111879
+center: (0.511719,0.429518,0.546812)
+scale: 0.426113
+principle_axes: (0.013251,0.998629,-0.050640), (0.994962,-0.008136,0.099920), (-0.099371,0.051709,0.993706)
+principle_values: (0.031572,0.015831,0.003421)

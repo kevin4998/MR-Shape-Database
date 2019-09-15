@@ -1,0 +1,14 @@
+mid: 22
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/creatures/spider3.wrl
+ref_url: http://visinfo.zib.de/IRS_HTML/IRS_dqex.html
+format: wrl 
+pid: 35129
+polygons: 620
+connected_components: 12
+average_dihedral_angle: 0.63496
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.42875, zmax = 0.684062
+avg_depth: 1.256143
+center: (0.499989,0.261063,0.385762)
+scale: 0.465533
+principle_axes: (-1.000000,-0.000012,-0.000706), (-0.000706,0.041627,0.999133), (0.000017,0.999133,-0.041627)
+principle_values: (0.030692,0.026606,0.006687)

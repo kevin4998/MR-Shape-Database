@@ -1,0 +1,71 @@
+#
+# Application name 
+#
+
+NAME=printmatrix
+
+
+
+#
+# List of source files.
+#
+
+SRCS=$(NAME).cpp 
+
+
+
+#
+# Compile targets
+#
+
+OBJS=$(SRCS:.cpp=.o) 
+
+
+
+#
+# Debug compile options
+#
+
+CFLAGS=-g
+OPT_CFLAGS=
+
+LDFLAGS=-g
+OPT_LDFLAGS=
+
+
+#
+# Executable
+#
+
+EXE = $(NAME)
+
+
+
+#
+# Make targets
+#
+
+$(EXE):	    $(OBJS)
+	    $(CC) -o $(EXE) $(OBJS)
+
+opt:
+	    $(MAKE) $(EXE) "CFLAGS=$(OPT_CFLAGS)" "LDFLAGS=$(OPT_LDFLAGS)"
+
+clean:
+	    rm *.o $(EXE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

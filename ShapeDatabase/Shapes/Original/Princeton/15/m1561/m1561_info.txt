@@ -1,0 +1,14 @@
+mid: 1561
+url: http://cpni.com/velocity/wrl/Piston.wrl
+ref_url: http://cpni.com/velocity/MTM.htm
+format: wrl 
+pid: 468
+polygons: 558
+connected_components: 19
+average_dihedral_angle: 1.12549
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.523565, ymax = 0.500844, zmax = 0.975
+avg_depth: 1.463132
+center: (0.274939,0.215895,0.433303)
+scale: 0.568958
+principle_axes: (-0.000294,0.074443,0.997225), (0.999992,-0.003872,0.000584), (-0.003904,-0.997218,0.074441)
+principle_values: (0.060949,0.020662,0.009480)

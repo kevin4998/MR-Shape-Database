@@ -1,0 +1,14 @@
+mid: 193
+url: http://www.3dcafe.com/models/drac.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: 3ds 
+pid: 26803
+polygons: 17298
+connected_components: 223
+average_dihedral_angle: 0.26289
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.388658, ymax = 0.975, zmax = 0.519826
+avg_depth: 1.652866
+center: (0.167978,0.478325,0.226240)
+scale: 0.515011
+principle_axes: (0.030933,-0.999508,-0.005176), (-0.288171,-0.003959,-0.957571), (0.957079,0.031112,-0.288152)
+principle_values: (0.064782,0.008006,0.003861)

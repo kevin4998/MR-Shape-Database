@@ -1,0 +1,69 @@
+#
+# Application name 
+#
+
+NAME=ClaStats
+
+
+
+#
+# List of source files.
+#
+
+CCSRCS=ClaStats.c PSBClaParse.c
+
+
+
+#
+# Compile targets
+#
+
+OBJS=$(CCSRCS:.c=.obj) 
+
+
+
+#
+# Debug compile options
+#
+
+CFLAGS=-I. -Zi /TP
+OPT_CFLAGS=-I. -Ox -DNDEBUG 
+
+LDFLAGS=-Zi
+OPT_LDFLAGS=-Ox
+
+
+#
+# Executable
+#
+
+EXE = $(NAME).exe
+
+
+
+#
+# Make targets
+#
+
+$(EXE):	    $(OBJS)
+	    $(CC) -o $(EXE) $(OBJS)
+
+opt:
+	    $(MAKE) $(EXE) "CFLAGS=$(OPT_CFLAGS)" "LDFLAGS=$(OPT_LDFLAGS)"
+
+clean:
+	    del *.obj *.pdb $(EXE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

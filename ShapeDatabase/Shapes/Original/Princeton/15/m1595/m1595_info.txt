@@ -1,0 +1,14 @@
+mid: 1595
+url: http://www.3dcafe.com/models/chess5.zip
+ref_url: http://www.3dcafe.com/asp/toy_pics.asp
+format: 3ds 
+pid: 29286
+polygons: 121343
+connected_components: 220
+average_dihedral_angle: 0.190343
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.192279, zmax = 0.975
+avg_depth: 1.744673
+center: (0.497798,0.039458,0.493610)
+scale: 0.721026
+principle_axes: (0.565152,0.002982,-0.824981), (-0.824975,0.007335,-0.565122), (-0.004367,-0.999969,-0.006606)
+principle_values: (0.077955,0.069420,0.000526)

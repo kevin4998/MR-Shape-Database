@@ -1,0 +1,14 @@
+mid: 829
+url: http://www.ocnus.com/models/Furniture/couch.wrl.gz
+ref_url: http://www.ocnus.com/models/Furniture/
+format: wrl 
+pid: 17777
+polygons: 1032
+connected_components: 12
+average_dihedral_angle: 0.557728
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.321351, zmax = 0.357589
+avg_depth: 2.098811
+center: (0.498619,0.143719,0.156866)
+scale: 0.510211
+principle_axes: (-1.000000,-0.000245,-0.000629), (0.000461,0.433516,-0.901146), (0.000494,-0.901146,-0.433516)
+principle_values: (0.067275,0.008776,0.002189)

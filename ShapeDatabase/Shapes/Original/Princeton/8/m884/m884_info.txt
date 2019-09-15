@@ -1,0 +1,14 @@
+mid: 884
+url: http://www.3dcafe.com/models/sstool.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 28212
+polygons: 532
+connected_components: 6
+average_dihedral_angle: 1.10545
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.613048, ymax = 0.520197, zmax = 0.975
+avg_depth: 1.321714
+center: (0.324563,0.379982,0.499454)
+scale: 0.699287
+principle_axes: (0.002894,0.005294,0.999982), (0.132944,0.991108,-0.005631), (0.991119,-0.132958,-0.002164)
+principle_values: (0.082659,0.026658,0.021617)

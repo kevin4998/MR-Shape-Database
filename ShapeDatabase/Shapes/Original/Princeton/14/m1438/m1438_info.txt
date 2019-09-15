@@ -1,0 +1,14 @@
+mid: 1438
+url: http://www.engin.umich.edu/class/eng477/projectsf97/roro/vrml/index.wrl
+ref_url: http://www.engin.umich.edu/class/eng477/projectsf97/
+format: wrl 
+pid: 19068
+polygons: 2454
+connected_components: 32
+average_dihedral_angle: 0.473012
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.19299, zmax = 0.187891
+avg_depth: 2.219470
+center: (0.530484,0.101364,0.104559)
+scale: 0.465050
+principle_axes: (0.999401,-0.034573,-0.001771), (0.004955,0.193508,-0.981086), (0.034262,0.980489,0.193563)
+principle_values: (0.064509,0.002262,0.001346)

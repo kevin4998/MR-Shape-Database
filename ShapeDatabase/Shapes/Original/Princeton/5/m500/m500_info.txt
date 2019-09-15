@@ -1,0 +1,14 @@
+mid: 500
+url: http://fraktali.849pm.com/programs/dxf/GLASS1.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27434
+polygons: 138
+connected_components: 1
+average_dihedral_angle: 0.621967
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.95964, ymax = 0.896862, zmax = 0.975
+avg_depth: 1.081112
+center: (0.492320,0.460931,0.399053)
+scale: 0.912824
+principle_axes: (-0.000000,-0.000000,-1.000000), (-0.998167,0.060527,0.000000), (0.060527,0.998167,-0.000000)
+principle_values: (0.115006,0.053618,0.053194)

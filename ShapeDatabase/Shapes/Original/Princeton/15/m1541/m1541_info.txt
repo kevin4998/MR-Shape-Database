@@ -1,0 +1,14 @@
+mid: 1541
+url: http://www.3dcafe.com/../models/speed.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: xthreexds 
+pid: 30520
+polygons: 146629
+connected_components: 398
+average_dihedral_angle: 0.538169
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.466103, ymax = 0.254568, zmax = 0.975
+avg_depth: 3.092839
+center: (0.245351,0.123280,0.564381)
+scale: 0.561087
+principle_axes: (-0.004817,-0.019418,0.999800), (-0.999982,-0.003544,-0.004887), (0.003638,-0.999805,-0.019400)
+principle_values: (0.073258,0.015659,0.001727)

@@ -1,0 +1,14 @@
+mid: 1762
+url: http://fraktali.849pm.com/programs/dxf/SpeakerFON.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27112
+polygons: 1707
+connected_components: 34
+average_dihedral_angle: 0.2948
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.275663, ymax = 0.975, zmax = 0.269081
+avg_depth: 1.982054
+center: (0.150336,0.505523,0.132436)
+scale: 0.605049
+principle_axes: (0.000027,1.000000,0.000192), (-0.004471,0.000192,-0.999990), (0.999990,-0.000026,-0.004471)
+principle_values: (0.095297,0.005234,0.005058)

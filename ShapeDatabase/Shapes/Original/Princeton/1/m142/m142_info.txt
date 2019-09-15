@@ -1,0 +1,14 @@
+mid: 142
+url: http://www.3dcafe.com/models/frank.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 26946
+polygons: 16329
+connected_components: 749
+average_dihedral_angle: 0.617061
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.566178, ymax = 0.975, zmax = 0.185957
+avg_depth: 1.557527
+center: (0.286260,0.544330,0.097264)
+scale: 0.443567
+principle_axes: (0.014937,0.999738,0.017351), (0.999885,-0.014982,0.002464), (-0.002724,-0.017312,0.999846)
+principle_values: (0.047869,0.012078,0.001259)

@@ -1,0 +1,14 @@
+mid: 1635
+url: http://www.3dcafe.com/models/helm2.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: 3ds 
+pid: 28824
+polygons: 10190
+connected_components: 1
+average_dihedral_angle: 0.218269
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.844032, ymax = 0.698107, zmax = 0.975
+avg_depth: 1.343486
+center: (0.434524,0.384488,0.445491)
+scale: 0.781955
+principle_axes: (0.000226,-0.327703,-0.944781), (-1.000000,0.000371,-0.000368), (0.000471,0.944781,-0.327703)
+principle_values: (0.076250,0.056736,0.024916)

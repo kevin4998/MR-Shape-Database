@@ -1,0 +1,14 @@
+mid: 887
+url: http://www.digitalanimators.com/Images/3dmodels/EndTable.zip
+ref_url: http://www.digitalanimators.com/HTM/Resources/3dModels/Replica.htm
+format: lwo 
+pid: 28552
+polygons: 616
+connected_components: 16
+average_dihedral_angle: 1.29381
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.688021, zmax = 0.341667
+avg_depth: 1.573843
+center: (0.500000,0.473553,0.183772)
+scale: 0.630530
+principle_axes: (1.000000,-0.000000,-0.000000), (0.000000,0.999999,0.001526), (0.000000,-0.001526,0.999999)
+principle_values: (0.059391,0.041900,0.007711)

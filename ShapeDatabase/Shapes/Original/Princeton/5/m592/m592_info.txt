@@ -1,0 +1,14 @@
+mid: 592
+url: http://www.geocities.com/BourbonStreet/1855/hourglass_gz.wrl
+ref_url: http://www.geocities.com/BourbonStreet/1855/shrine.html
+format: wrl 
+pid: 11914
+polygons: 3720
+connected_components: 8
+average_dihedral_angle: 0.629635
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.566827, ymax = 0.975, zmax = 0.55761
+avg_depth: 1.614943
+center: (0.295946,0.484290,0.298814)
+scale: 0.738403
+principle_axes: (-0.001054,-0.999999,0.000334), (-0.479541,0.000213,-0.877520), (0.877519,-0.001085,-0.479541)
+principle_values: (0.117452,0.017099,0.016207)

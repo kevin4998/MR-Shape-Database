@@ -1,0 +1,14 @@
+mid: 1402
+url: http://www.3dcafe.com/models/tfighter.zip
+ref_url: http://www.3dcafe.com/asp/sci_pics.asp
+format: 3ds 
+pid: 25623
+polygons: 616
+connected_components: 109
+average_dihedral_angle: 1.30384
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.808583, ymax = 0.975, zmax = 0.811676
+avg_depth: 2.443690
+center: (0.416820,0.499438,0.418558)
+scale: 0.912476
+principle_axes: (-0.000024,0.000008,1.000000), (-0.001935,0.999998,-0.000008), (0.999998,0.001935,0.000024)
+principle_values: (0.125606,0.061695,0.031922)

@@ -1,0 +1,14 @@
+mid: 473
+url: http://www.geometrek.com/web3d/deepmatrix/world/beachbar/bar.wrl
+ref_url: http://www.geometrek.com/web3d/deepmatrix/world/beachbar/
+format: wrl 
+pid: 17290
+polygons: 216
+connected_components: 8
+average_dihedral_angle: 1.34856
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.398214, zmax = 0.928504
+avg_depth: 1.092320
+center: (0.500000,0.236268,0.479773)
+scale: 0.613104
+principle_axes: (-1.000000,0.000000,-0.000001), (-0.000001,-0.012318,0.999924), (0.000000,-0.999924,-0.012318)
+principle_values: (0.049320,0.048687,0.005186)

@@ -1,0 +1,14 @@
+mid: 463
+url: http://www.ocnus.com/models/Buildings/skyscrpr.wrl.gz
+ref_url: http://www.ocnus.com/models/Buildings/
+format: wrl 
+pid: 17684
+polygons: 3672
+connected_components: 88
+average_dihedral_angle: 1.43076
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.785029, ymax = 0.975, zmax = 0.574765
+avg_depth: 4.796660
+center: (0.405022,0.269654,0.299994)
+scale: 0.576558
+principle_axes: (1.000000,-0.000010,0.000000), (-0.000010,-1.000000,0.000797), (-0.000000,0.000797,1.000000)
+principle_values: (0.041303,0.038943,0.011800)

@@ -1,0 +1,14 @@
+mid: 507
+url: http://homepage.mac.com/woodland/archives/mugObj.zip
+ref_url: http://www1.udn.ne.jp/~woodland/landscape/model/
+format: obj 
+pid: 25024
+polygons: 6656
+connected_components: 34
+average_dihedral_angle: 0.205034
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.695043, zmax = 0.677239
+avg_depth: 1.625585
+center: (0.392592,0.315778,0.351001)
+scale: 0.742635
+principle_axes: (-0.993826,-0.110913,0.002745), (0.110913,-0.993830,-0.000314), (-0.002763,0.000007,-0.999996)
+principle_values: (0.059216,0.044567,0.039530)

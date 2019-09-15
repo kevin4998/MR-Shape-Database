@@ -1,0 +1,14 @@
+mid: 53
+url: http://homepage2.nifty.com/~mr_trout/models/yamameP2_obj.zip
+ref_url: http://www1.udn.ne.jp/~woodland/landscape/model/
+format: obj 
+pid: 25049
+polygons: 35270
+connected_components: 112
+average_dihedral_angle: 0.0791238
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.163371, ymax = 0.348761, zmax = 0.975
+avg_depth: 1.158853
+center: (0.104298,0.184244,0.555515)
+scale: 0.440390
+principle_axes: (-0.061895,-0.043093,0.997152), (0.026902,-0.998777,-0.041493), (0.997720,0.024257,0.062978)
+principle_values: (0.059400,0.003687,0.000917)

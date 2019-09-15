@@ -1,0 +1,14 @@
+mid: 567
+url: http://ftp.uni-erlangen.de/pub/amiga/aminet/gfx/3dobj/tvnoname.lha
+ref_url: http://ftp.uni-erlangen.de/pub/amiga/aminet/gfx/3dobj/
+format: lwo 
+pid: 28999
+polygons: 2040
+connected_components: 504
+average_dihedral_angle: 1.94154
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.685929, zmax = 0.490474
+avg_depth: 2.345700
+center: (0.500860,0.363649,0.303170)
+scale: 0.686759
+principle_axes: (0.999999,-0.001153,0.000420), (0.001213,0.979940,-0.199288), (-0.000182,0.199289,0.979941)
+principle_values: (0.069181,0.044094,0.012295)

@@ -1,0 +1,14 @@
+mid: 151
+url: http://fraktali.849pm.com/programs/dxf/BABEM.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27210
+polygons: 5954
+connected_components: 8
+average_dihedral_angle: 0.360287
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.298278, ymax = 0.975, zmax = 0.239721
+avg_depth: 1.435146
+center: (0.161643,0.557535,0.124426)
+scale: 0.456946
+principle_axes: (0.000025,0.999709,0.024127), (1.000000,-0.000024,-0.000055), (0.000055,-0.024127,0.999709)
+principle_values: (0.061945,0.003994,0.001777)

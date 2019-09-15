@@ -1,0 +1,14 @@
+mid: 1368
+url: http://www.csetter.demon.co.uk/IE3-HOME/3D/1701E/E-Beta.zip
+ref_url: http://www.csetter.demon.co.uk/IE3-HOME/3D/1701E/1701e.html
+format: lwo 
+pid: 30199
+polygons: 59746
+connected_components: 232
+average_dihedral_angle: 0.481471
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.360794, ymax = 0.136819, zmax = 0.975
+avg_depth: 1.721245
+center: (0.192406,0.096556,0.463149)
+scale: 0.448300
+principle_axes: (0.000658,0.004006,-0.999992), (-0.999996,0.002865,-0.000646), (-0.002862,-0.999988,-0.004008)
+principle_values: (0.054635,0.007921,0.000455)

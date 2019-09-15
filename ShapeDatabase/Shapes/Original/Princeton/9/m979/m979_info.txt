@@ -1,0 +1,14 @@
+mid: 979
+url: http://www.3dcafe.com/models/roses.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: xthreexds 
+pid: 28942
+polygons: 1070
+connected_components: 164
+average_dihedral_angle: 0.53692
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.480545, ymax = 0.975, zmax = 0.460652
+avg_depth: 1.812652
+center: (0.250240,0.601627,0.240284)
+scale: 0.469686
+principle_axes: (-0.006099,-0.998776,0.049092), (-0.408137,0.047304,0.911694), (-0.912900,-0.014476,-0.407926)
+principle_values: (0.051863,0.006046,0.005820)

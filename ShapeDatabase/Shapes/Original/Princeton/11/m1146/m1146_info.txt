@@ -1,0 +1,14 @@
+mid: 1146
+url: http://www.avatara.com/avatars/plane22.wrl
+ref_url: http://www.avatara.com/avatars/avatars2_list.html
+format: wrl 
+pid: 17026
+polygons: 3016
+connected_components: 40
+average_dihedral_angle: 0.649423
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.88836, ymax = 0.32216, zmax = 0.975
+avg_depth: 1.584542
+center: (0.456680,0.096639,0.464726)
+scale: 0.474090
+principle_axes: (-0.000000,-0.117764,0.993042), (-1.000000,-0.000001,-0.000000), (0.000001,-0.993042,-0.117764)
+principle_values: (0.050656,0.016499,0.001657)

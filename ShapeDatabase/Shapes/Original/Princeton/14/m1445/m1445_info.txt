@@ -1,0 +1,14 @@
+mid: 1445
+url: ftp://avalon.viewpoint.com/pub/objects/military/ships/USSNimitz_lwb.zip
+ref_url: 
+format: lw 
+pid: 47520
+polygons: 7029
+connected_components: 6
+average_dihedral_angle: 0.759253
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.153757, zmax = 0.244272
+avg_depth: 1.669024
+center: (0.464093,0.097952,0.134671)
+scale: 0.437182
+principle_axes: (-0.999864,0.001538,0.016445), (0.016477,0.024455,0.999565), (0.001136,0.999700,-0.024477)
+principle_values: (0.059338,0.002439,0.000737)

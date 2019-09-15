@@ -1,0 +1,14 @@
+mid: 803
+url: http://www.ocnus.com/models/DXF/chair-3d.wrl.gz
+ref_url: http://www.ocnus.com/models/DXF/
+format: wrl 
+pid: 17724
+polygons: 2481
+connected_components: 22
+average_dihedral_angle: 0.455144
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.570103, ymax = 0.975, zmax = 0.606811
+avg_depth: 1.809001
+center: (0.297970,0.511894,0.265517)
+scale: 0.553003
+principle_axes: (0.001277,-0.902666,0.430339), (0.010200,-0.430306,-0.902626), (-0.999947,-0.005542,-0.008658)
+principle_values: (0.063052,0.018545,0.014508)

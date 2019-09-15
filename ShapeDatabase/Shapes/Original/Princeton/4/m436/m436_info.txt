@@ -1,0 +1,14 @@
+mid: 436
+url: http://content.schmoozer.net/Schmoozer/MitsuB/Things/Buildings/VRML/BldgHouseSaltboxG-G.wrl
+ref_url: http://content.schmoozer.net/Schmoozer/MitsuB/Things/Buildings/VRML/
+format: wrl 
+pid: 4801
+polygons: 240
+connected_components: 32
+average_dihedral_angle: 1.31393
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.351567, zmax = 0.485656
+avg_depth: 1.414012
+center: (0.541671,0.165271,0.247113)
+scale: 0.584123
+principle_axes: (-0.998415,-0.050838,-0.024156), (-0.019588,-0.088501,0.995883), (-0.052766,0.994778,0.087365)
+principle_values: (0.081767,0.013129,0.005709)

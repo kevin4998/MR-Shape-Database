@@ -1,0 +1,14 @@
+mid: 315
+url: http://198.164.154.3/~vihvelit/cnc/images/FACEFINAL.WRL
+ref_url: http://198.164.154.3/~vihvelit/cnc/VRML.htm
+format: wrl 
+pid: 9746
+polygons: 5949
+connected_components: 1
+average_dihedral_angle: 0.119337
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.68587, ymax = 0.975, zmax = 0.335774
+avg_depth: 1.040868
+center: (0.355421,0.461950,0.152026)
+scale: 0.644544
+principle_axes: (-0.000044,-0.988683,0.150021), (-1.000000,0.000036,-0.000057), (0.000051,-0.150021,-0.988683)
+principle_values: (0.075963,0.037513,0.004791)

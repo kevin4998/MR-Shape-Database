@@ -1,0 +1,14 @@
+mid: 1346
+url: http://www.avatara.com/avatars/blimp2.wrl
+ref_url: http://www.avatara.com/avatars/avatars2_list.html
+format: wrl 
+pid: 17014
+polygons: 1375
+connected_components: 7
+average_dihedral_angle: 0.225769
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.322079, ymax = 0.354725, zmax = 0.975
+avg_depth: 1.013543
+center: (0.169070,0.199478,0.479767)
+scale: 0.501370
+principle_axes: (0.001209,0.001907,-0.999997), (0.013768,0.999903,0.001923), (-0.999904,0.013770,-0.001183)
+principle_values: (0.062245,0.005828,0.005395)

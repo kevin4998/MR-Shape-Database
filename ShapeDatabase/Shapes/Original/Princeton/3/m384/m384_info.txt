@@ -1,0 +1,14 @@
+mid: 384
+url: http://fraktali.849pm.com/programs/dxf/castle.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: xthreexds 
+pid: 27810
+polygons: 4686
+connected_components: 299
+average_dihedral_angle: 0.944286
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.289902, zmax = 0.871086
+avg_depth: 1.889246
+center: (0.522260,0.078593,0.433485)
+scale: 0.539834
+principle_axes: (0.998626,0.026007,-0.045497), (-0.046038,0.020588,-0.998728), (0.025037,-0.999450,-0.021757)
+principle_values: (0.046029,0.036822,0.002500)

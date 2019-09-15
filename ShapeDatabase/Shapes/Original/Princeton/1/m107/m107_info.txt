@@ -1,0 +1,14 @@
+mid: 107
+url: http://cepcairo.bizland.com/free/Horse.zip
+ref_url: 
+format: xthreexds 
+pid: 48380
+polygons: 6052
+connected_components: 3
+average_dihedral_angle: 0.294967
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.263878, ymax = 0.888063, zmax = 0.975
+avg_depth: 1.141261
+center: (0.144439,0.486656,0.447750)
+scale: 0.603058
+principle_axes: (0.000003,0.459968,0.887936), (-0.000004,0.887936,-0.459968), (1.000000,0.000002,-0.000005)
+principle_values: (0.076544,0.025977,0.004468)

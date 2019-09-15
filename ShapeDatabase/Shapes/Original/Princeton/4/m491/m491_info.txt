@@ -1,0 +1,14 @@
+mid: 491
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/jwoodrin/Hw6/ddremi/thorax.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/jwoodrin/Hw6/ddremi/?D=D
+format: wrl 
+pid: 41509
+polygons: 997
+connected_components: 3
+average_dihedral_angle: 0.186478
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.549945, ymax = 0.975, zmax = 0.465025
+avg_depth: 1.071133
+center: (0.287888,0.416601,0.238066)
+scale: 0.659060
+principle_axes: (-0.001156,-0.999925,0.012163), (-0.999925,0.001008,-0.012183), (-0.012169,0.012176,0.999852)
+principle_values: (0.084496,0.017888,0.015102)

@@ -1,0 +1,14 @@
+mid: 855
+url: http://www.cs.iupui.edu/~hpersson/floorplan.wrl
+ref_url: http://www.cs.iupui.edu/~hpersson/?D=A
+format: wrl 
+pid: 44466
+polygons: 44
+connected_components: 4
+average_dihedral_angle: 2.55254
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.816667, zmax = 0.5
+avg_depth: 1.829075
+center: (0.499052,0.405506,0.204824)
+scale: 0.823076
+principle_axes: (0.989888,-0.141752,-0.005232), (0.141840,0.988756,0.047369), (0.001541,0.047632,-0.998864)
+principle_values: (0.092760,0.072178,0.022192)

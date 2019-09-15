@@ -1,0 +1,14 @@
+mid: 1718
+url: http://www.3dcafe.com/models/oakdoor.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: 3ds 
+pid: 27735
+polygons: 4338
+connected_components: 151
+average_dihedral_angle: 0.58504
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.476846, ymax = 0.975, zmax = 0.120993
+avg_depth: 2.920820
+center: (0.247657,0.480419,0.073309)
+scale: 0.540042
+principle_axes: (0.001306,0.999999,0.000049), (0.999998,-0.001306,-0.001711), (0.001711,-0.000051,0.999999)
+principle_values: (0.075050,0.014210,0.000094)

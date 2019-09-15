@@ -1,0 +1,14 @@
+mid: 283
+url: http://amber.rc.arizona.edu/lw/objects/brain-h.zip
+ref_url: http://amber.rc.arizona.edu/modeling.html
+format: lwo 
+pid: 25646
+polygons: 35414
+connected_components: 22
+average_dihedral_angle: 0.500918
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.835767, ymax = 0.975, zmax = 0.963043
+avg_depth: 1.776628
+center: (0.430846,0.601584,0.518950)
+scale: 0.730343
+principle_axes: (0.080468,0.471710,-0.878074), (0.981345,0.116822,0.152690), (0.174604,-0.873980,-0.453510)
+principle_values: (0.056950,0.042554,0.039746)

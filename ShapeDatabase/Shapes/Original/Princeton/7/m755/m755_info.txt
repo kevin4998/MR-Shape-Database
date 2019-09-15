@@ -1,0 +1,14 @@
+mid: 755
+url: http://www.cosc.canterbury.ac.nz/teaching/classes/cosc415/Worlds/icecream/doublescoop.wrl
+ref_url: http://www.cosc.canterbury.ac.nz/teaching/classes/cosc415/Worlds/
+format: wrl 
+pid: 6620
+polygons: 400
+connected_components: 3
+average_dihedral_angle: 0.418918
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.326168, ymax = 0.975, zmax = 0.341667
+avg_depth: 1.394471
+center: (0.175584,0.652022,0.183331)
+scale: 0.406878
+principle_axes: (0.000000,1.000000,0.000011), (-0.999995,0.000000,-0.003242), (-0.003242,-0.000011,0.999995)
+principle_values: (0.036243,0.006428,0.006428)

@@ -1,0 +1,14 @@
+mid: 1644
+url: http://mowat.virtualave.net/ladder.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26577
+polygons: 1201
+connected_components: 27
+average_dihedral_angle: 1.25231
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.124707, ymax = 0.975, zmax = 0.0635169
+avg_depth: 1.266607
+center: (0.074667,0.498989,0.042767)
+scale: 0.433833
+principle_axes: (-0.000011,0.999630,-0.027218), (1.000000,0.000011,-0.000013), (-0.000013,-0.027218,-0.999630)
+principle_values: (0.064512,0.001645,0.000066)

@@ -1,0 +1,14 @@
+mid: 550
+url: http://www.ocnus.com/models/Machines/simpleMonitor.wrl.gz
+ref_url: http://www.ocnus.com/models/Machines/
+format: wrl 
+pid: 17848
+polygons: 96
+connected_components: 8
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.766143, zmax = 0.946794
+avg_depth: 1.858514
+center: (0.560767,0.384572,0.495335)
+scale: 0.767195
+principle_axes: (-0.471883,-0.856005,-0.211144), (0.409565,-0.000753,-0.912280), (0.780758,-0.516967,0.350945)
+principle_values: (0.058190,0.050283,0.048548)

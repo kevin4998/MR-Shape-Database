@@ -1,0 +1,14 @@
+mid: 944
+url: http://www.rdservice.de/German/produkte/VRCreator/library/Bedroom/Bed3.wrl
+ref_url: http://www.rdservice.de/German/produkte/VRCreator/library/Bedroom/bedroom.htm
+format: wrl 
+pid: 34084
+polygons: 164
+connected_components: 14
+average_dihedral_angle: 1.39626
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.480987, ymax = 0.468848, zmax = 0.975
+avg_depth: 1.494708
+center: (0.252984,0.246784,0.499982)
+scale: 0.674353
+principle_axes: (-0.000011,-0.000049,-1.000000), (1.000000,0.000033,-0.000011), (0.000033,-1.000000,0.000049)
+principle_values: (0.103003,0.023680,0.003992)

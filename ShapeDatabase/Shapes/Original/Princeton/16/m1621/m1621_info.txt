@@ -1,0 +1,14 @@
+mid: 1621
+url: http://www.avatara.com/avatars2/dragon.wrl
+ref_url: http://www.avatara.com/avatars2/avatars2_list.html
+format: wrl 
+pid: 17089
+polygons: 724
+connected_components: 19
+average_dihedral_angle: 0.919411
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.158112, zmax = 0.909956
+avg_depth: 1.215731
+center: (0.500022,0.119242,0.530731)
+scale: 0.389944
+principle_axes: (-1.000000,-0.000097,-0.000075), (0.000076,-0.011719,-0.999931), (-0.000096,0.999931,-0.011719)
+principle_values: (0.036333,0.013835,0.000595)

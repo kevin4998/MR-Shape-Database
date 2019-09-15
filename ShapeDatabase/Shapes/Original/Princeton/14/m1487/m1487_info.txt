@@ -1,0 +1,14 @@
+mid: 1487
+url: ftp://avalon.viewpoint.com/pub/objects/military/vehicles/hummer_obj.zip
+ref_url: 
+format: obj 
+pid: 47525
+polygons: 15436
+connected_components: 270
+average_dihedral_angle: 0.576251
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.479235, ymax = 0.398424, zmax = 0.975
+avg_depth: 2.144894
+center: (0.252118,0.233777,0.466343)
+scale: 0.632972
+principle_axes: (-0.000002,0.062198,-0.998064), (1.000000,0.000000,-0.000002), (-0.000000,-0.998064,-0.062198)
+principle_values: (0.075080,0.026416,0.010180)

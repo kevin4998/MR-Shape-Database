@@ -1,0 +1,14 @@
+mid: 108
+url: http://www.cs.utexas.edu/users/bajaj/graphics99/lecspdf/vrml/wrls/opt-horse.wrl
+ref_url: http://www.cs.utexas.edu/users/bajaj/graphics99/lecspdf/vrml/vrml.html
+format: wrl 
+pid: 9632
+polygons: 22258
+connected_components: 12
+average_dihedral_angle: 0.275534
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.907116, zmax = 0.282553
+avg_depth: 1.132773
+center: (0.558725,0.476397,0.160206)
+scale: 0.612611
+principle_axes: (0.845938,-0.533040,-0.016039), (0.532285,0.845812,-0.035699), (0.032595,0.021662,0.999234)
+principle_values: (0.076203,0.027969,0.004421)

@@ -1,0 +1,14 @@
+mid: 1765
+url: http://stekt.oulu.fi/multimedia/multimedia_97/MC_oulu/Mobile_Client_Proto.WRL
+ref_url: http://stekt.oulu.fi/multimedia/multimedia_97/MC_oulu/
+format: wrl 
+pid: 10611
+polygons: 30
+connected_components: 5
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.62896, ymax = 0.608372, zmax = 0.975
+avg_depth: 1.982054
+center: (0.327222,0.209246,0.421079)
+scale: 0.706861
+principle_axes: (-0.001010,0.524887,-0.851171), (-0.999999,-0.000708,0.000750), (-0.000209,0.851171,0.524888)
+principle_values: (0.096537,0.033563,0.008641)

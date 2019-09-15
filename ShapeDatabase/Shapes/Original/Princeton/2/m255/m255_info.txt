@@ -1,0 +1,14 @@
+mid: 255
+url: http://deep.sitenest.net/freemodels/character/3dm-female1.zip
+ref_url: 
+format: xthreexds 
+pid: 47002
+polygons: 35327
+connected_components: 1849
+average_dihedral_angle: 0.330008
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.945165, ymax = 0.975, zmax = 0.180198
+avg_depth: 2.027138
+center: (0.485220,0.559486,0.092078)
+scale: 0.522315
+principle_axes: (0.002157,0.999982,0.005643), (0.999997,-0.002163,0.001080), (0.001092,0.005641,-0.999983)
+principle_values: (0.070358,0.013847,0.001134)

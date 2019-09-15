@@ -1,0 +1,14 @@
+mid: 271
+url: http://www.3dcafe.com/models/deinonyc.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: xthreexds 
+pid: 27449
+polygons: 16564
+connected_components: 50
+average_dihedral_angle: 0.339435
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.440294, zmax = 0.182006
+avg_depth: 1.553723
+center: (0.676162,0.275607,0.103595)
+scale: 0.306941
+principle_axes: (-0.971162,-0.238419,-0.001143), (-0.238419,0.971162,-0.000395), (-0.001205,0.000111,0.999999)
+principle_values: (0.023759,0.005940,0.001424)

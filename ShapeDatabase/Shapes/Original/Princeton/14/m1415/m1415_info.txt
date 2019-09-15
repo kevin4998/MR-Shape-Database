@@ -1,0 +1,14 @@
+mid: 1415
+url: http://www.3dcafe.com/models/t80.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 28826
+polygons: 12561
+connected_components: 85
+average_dihedral_angle: 0.985777
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.369914, ymax = 0.295696, zmax = 0.975
+avg_depth: 3.239185
+center: (0.198225,0.135368,0.411334)
+scale: 0.427110
+principle_axes: (0.001593,0.035936,-0.999353), (0.999976,0.006650,0.001833), (-0.006711,0.999332,0.035924)
+principle_values: (0.037897,0.012000,0.003360)

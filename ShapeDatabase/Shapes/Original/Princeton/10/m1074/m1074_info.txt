@@ -1,0 +1,14 @@
+mid: 1074
+url: http://www.cs.reading.ac.uk/archive/cs/ug/ssu94021/models/tree.wrl
+ref_url: http://www.cs.reading.ac.uk/archive/cs/ug/ssu94021/models/
+format: wrl 
+pid: 5669
+polygons: 4806
+connected_components: 801
+average_dihedral_angle: 2.05425
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.532735, ymax = 0.975, zmax = 0.650614
+avg_depth: 1.605263
+center: (0.282512,0.580574,0.322392)
+scale: 0.415189
+principle_axes: (-0.156580,-0.970023,0.185842), (-0.025265,-0.184168,-0.982570), (0.987342,-0.158546,0.004329)
+principle_values: (0.025472,0.014332,0.009398)

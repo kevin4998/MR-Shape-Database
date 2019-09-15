@@ -1,0 +1,14 @@
+mid: 522
+url: http://64.198.60.83/baument/Models/iss1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25773
+polygons: 2648
+connected_components: 32
+average_dihedral_angle: 0.975228
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.490391, ymax = 0.482675, zmax = 0.975
+avg_depth: 1.160783
+center: (0.255227,0.250195,0.498988)
+scale: 0.674683
+principle_axes: (0.005094,-0.000887,-0.999987), (-0.983023,0.183408,-0.005171), (0.183410,0.983037,0.000063)
+principle_values: (0.081041,0.019454,0.018273)

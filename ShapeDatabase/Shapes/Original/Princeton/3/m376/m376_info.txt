@@ -1,0 +1,14 @@
+mid: 376
+url: http://www.avatara.com/avatars/skull12.wrl
+ref_url: http://www.avatara.com/avatars/avatars3_list.html
+format: wrl 
+pid: 17049
+polygons: 1243
+connected_components: 1
+average_dihedral_angle: 0.279794
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.951829, ymax = 0.975, zmax = 0.963414
+avg_depth: 1.031573
+center: (0.487478,0.540331,0.518128)
+scale: 0.940087
+principle_axes: (0.999516,-0.008042,0.030057), (-0.025264,-0.773594,0.633178), (-0.018160,0.633631,0.773423)
+principle_values: (0.096632,0.080970,0.051381)

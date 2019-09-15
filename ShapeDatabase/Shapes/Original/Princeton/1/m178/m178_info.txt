@@ -1,0 +1,14 @@
+mid: 178
+url: http://www.rpi.edu/~citrit/Article/man.wrl
+ref_url: http://www.rpi.edu/~citrit/Article/results.html
+format: wrl 
+pid: 8149
+polygons: 29202
+connected_components: 1
+average_dihedral_angle: 0.259265
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.342225, ymax = 0.975, zmax = 0.184695
+avg_depth: 1.214521
+center: (0.183618,0.507385,0.098019)
+scale: 0.472287
+principle_axes: (0.000045,0.999251,0.038685), (1.000000,-0.000044,-0.000033), (-0.000031,0.038685,-0.999251)
+principle_values: (0.062720,0.005924,0.001419)

@@ -1,0 +1,14 @@
+mid: 583
+url: http://fraktali.849pm.com/programs/dxf/SHADES.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27503
+polygons: 840
+connected_components: 7
+average_dihedral_angle: 0.8874
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.854915, zmax = 0.423188
+avg_depth: 1.155542
+center: (0.509331,0.113597,0.208147)
+scale: 0.635504
+principle_axes: (-0.997990,-0.062600,-0.009831), (0.063304,-0.978007,-0.198733), (-0.002826,0.198956,-0.980004)
+principle_values: (0.083650,0.030925,0.009553)

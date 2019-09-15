@@ -1,0 +1,14 @@
+mid: 365
+url: http://svr-www.eng.cam.ac.uk/~kykw2/demo3/ken.wrl
+ref_url: http://svr-www.eng.cam.ac.uk/~kykw2/research.html
+format: wrl 
+pid: 9401
+polygons: 35328
+connected_components: 1
+average_dihedral_angle: 0.0804688
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.823412, ymax = 0.975, zmax = 0.685598
+avg_depth: 1.021394
+center: (0.411972,0.543574,0.355843)
+scale: 0.755669
+principle_axes: (-0.287985,0.956877,0.038090), (-0.945838,-0.277989,-0.167670), (0.149851,0.084313,-0.985107)
+principle_values: (0.068042,0.042013,0.034832)

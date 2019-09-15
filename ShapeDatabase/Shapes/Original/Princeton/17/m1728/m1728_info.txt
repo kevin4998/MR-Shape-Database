@@ -1,0 +1,14 @@
+mid: 1728
+url: http://www.3dcafe.com/models/dbldoor.zip
+ref_url: http://www.3dcafe.com/asp/hou2_pic.asp
+format: 3ds 
+pid: 27804
+polygons: 3790
+connected_components: 16
+average_dihedral_angle: 0.501061
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.972989, zmax = 0.11953
+avg_depth: 1.110437
+center: (0.499167,0.532969,0.049857)
+scale: 0.709831
+principle_axes: (0.999997,0.002391,0.000053), (0.002391,-0.999978,-0.006157), (-0.000038,-0.006157,0.999981)
+principle_values: (0.075687,0.068293,0.000420)

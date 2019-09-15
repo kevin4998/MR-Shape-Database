@@ -1,0 +1,14 @@
+mid: 765
+url: http://fraktali.849pm.com/programs/wrl/object/Tables.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31365
+polygons: 1726
+connected_components: 30
+average_dihedral_angle: 0.77779
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.570742, zmax = 0.864273
+avg_depth: 1.424389
+center: (0.482372,0.425885,0.475168)
+scale: 0.623657
+principle_axes: (0.866014,0.000028,0.500020), (0.108879,0.975994,-0.188628), (-0.488022,0.217796,0.845222)
+principle_values: (0.070444,0.027075,0.012736)

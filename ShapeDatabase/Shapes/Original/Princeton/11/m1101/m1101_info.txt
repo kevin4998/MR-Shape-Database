@@ -1,0 +1,14 @@
+mid: 1101
+url: http://www.3dcafe.com/models/shovel.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 27959
+polygons: 262
+connected_components: 2
+average_dihedral_angle: 0.423055
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.228782, ymax = 0.975, zmax = 0.0543045
+avg_depth: 1.050125
+center: (0.126059,0.624705,0.041299)
+scale: 0.506337
+principle_axes: (0.003410,0.999977,0.005813), (-0.999619,0.003250,0.027424), (0.027405,-0.005905,0.999607)
+principle_values: (0.079927,0.001203,0.000075)

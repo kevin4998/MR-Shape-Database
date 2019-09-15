@@ -1,0 +1,14 @@
+mid: 1496
+url: http://www.maxnet.ru/aks/new_web/model_arch/Toyota-SR5-DXF.zip
+ref_url: http://www.maxnet.ru/aks/models_R.html
+format: dxf 
+pid: 25217
+polygons: 16736
+connected_components: 23
+average_dihedral_angle: 0.417334
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.374098, ymax = 0.356087, zmax = 0.975
+avg_depth: 1.507767
+center: (0.199547,0.186726,0.487621)
+scale: 0.575468
+principle_axes: (-0.000054,-0.005851,-0.999983), (-1.000000,0.000066,0.000054), (-0.000066,-0.999983,0.005851)
+principle_values: (0.079434,0.012271,0.004750)

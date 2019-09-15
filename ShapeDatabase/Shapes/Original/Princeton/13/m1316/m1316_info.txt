@@ -1,0 +1,14 @@
+mid: 1316
+url: http://www.rccad.com/Gallery/Vrml/Comanche.wrl
+ref_url: http://www.rccad.com/Gallery_Helicopters1.htm
+format: wrl 
+pid: 34063
+polygons: 682
+connected_components: 9
+average_dihedral_angle: 0.533015
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.580851, zmax = 0.258243
+avg_depth: 1.196554
+center: (0.496465,0.302964,0.130402)
+scale: 0.473247
+principle_axes: (-0.996508,0.000139,-0.083492), (0.000100,1.000000,0.000465), (0.083492,0.000455,-0.996508)
+principle_values: (0.063678,0.005055,0.003493)

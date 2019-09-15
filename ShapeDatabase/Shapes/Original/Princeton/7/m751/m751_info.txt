@@ -1,0 +1,14 @@
+mid: 751
+url: http://www.eecs.tulane.edu/www/graphics/gallery/harrison.wrl
+ref_url: http://www.eecs.tulane.edu/www/graphics/gallery/
+format: wrl 
+pid: 11307
+polygons: 2817
+connected_components: 33
+average_dihedral_angle: 0.536685
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.309448, ymax = 0.975, zmax = 0.306191
+avg_depth: 3.049777
+center: (0.161924,0.543818,0.169800)
+scale: 0.370385
+principle_axes: (-0.028526,0.999336,0.022649), (-0.782806,-0.036424,0.621199), (0.621612,-0.000010,0.783325)
+principle_values: (0.034376,0.004767,0.004121)

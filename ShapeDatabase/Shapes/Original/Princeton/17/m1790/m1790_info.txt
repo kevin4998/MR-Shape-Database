@@ -1,0 +1,14 @@
+mid: 1790
+url: http://fraktali.849pm.com/programs/dxf/3ds/Oldbook.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: 3ds 
+pid: 26928
+polygons: 2516
+connected_components: 7
+average_dihedral_angle: 0.551678
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.778529, ymax = 0.254478, zmax = 0.975
+avg_depth: 3.007620
+center: (0.400641,0.125919,0.499534)
+scale: 0.686394
+principle_axes: (-0.003547,-0.001802,-0.999992), (-0.999798,0.019810,0.003511), (0.019804,0.999802,-0.001872)
+principle_values: (0.079249,0.048145,0.005627)

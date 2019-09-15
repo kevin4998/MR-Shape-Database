@@ -1,0 +1,14 @@
+mid: 673
+url: http://www.3dcafe.com/../models/lazergun.zip
+ref_url: http://www.3dcafe.com/../asp/weapons.asp
+format: 3ds 
+pid: 30610
+polygons: 5958
+connected_components: 36
+average_dihedral_angle: 0.962064
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.528626, zmax = 0.164931
+avg_depth: 1.669958
+center: (0.391701,0.352871,0.095642)
+scale: 0.426271
+principle_axes: (-0.994723,-0.102571,0.002261), (0.102572,-0.994725,0.000548), (0.002193,0.000777,0.999997)
+principle_values: (0.045711,0.009647,0.001293)

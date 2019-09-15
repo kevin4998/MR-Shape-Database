@@ -1,0 +1,14 @@
+mid: 39
+url: http://www.rccad.com/Gallery/Vrml/RobinT.wrl
+ref_url: 
+format: wrl 
+pid: 46811
+polygons: 1156
+connected_components: 7
+average_dihedral_angle: 0.430171
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.883574, ymax = 0.975, zmax = 0.259557
+avg_depth: 1.231897
+center: (0.433816,0.499998,0.165791)
+scale: 0.419218
+principle_axes: (-0.991054,-0.000139,0.133458), (0.000136,-1.000000,-0.000030), (0.133458,-0.000012,0.991054)
+principle_values: (0.027332,0.025602,0.002159)

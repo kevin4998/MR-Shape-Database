@@ -1,0 +1,14 @@
+mid: 795
+url: http://www.philc.serveftp.net/files/freestuff/furniture1.zip
+ref_url: http://www.users.globalnet.co.uk/~pcooke/graphics/examples.htm
+format: dxf 
+pid: 29306
+polygons: 5984
+connected_components: 13
+average_dihedral_angle: 0.416127
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.394645, ymax = 0.975, zmax = 0.549344
+avg_depth: 2.240897
+center: (0.211465,0.483395,0.355905)
+scale: 0.549879
+principle_axes: (-0.001592,-0.909526,-0.415643), (0.181448,-0.409007,0.894310), (-0.983399,-0.073994,0.165683)
+principle_values: (0.067908,0.010436,0.010151)

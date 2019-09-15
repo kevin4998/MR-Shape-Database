@@ -1,0 +1,14 @@
+mid: 453
+url: ftp://avalon.viewpoint.com/pub/objects/architecture/buildings/grhouse2_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 46831
+polygons: 5116
+connected_components: 44
+average_dihedral_angle: 1.13845
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.825198, zmax = 0.739061
+avg_depth: 3.398506
+center: (0.507913,0.383723,0.409962)
+scale: 0.732157
+principle_axes: (-0.999286,0.031329,-0.021113), (0.036974,0.925814,-0.376168), (-0.007761,0.376680,0.926311)
+principle_values: (0.079823,0.034782,0.032859)

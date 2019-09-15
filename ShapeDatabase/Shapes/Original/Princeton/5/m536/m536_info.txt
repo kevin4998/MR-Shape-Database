@@ -1,0 +1,14 @@
+mid: 536
+url: http://sampl.eng.ohio-state.edu/~sampl/data/3DDB/Models/WSU/skin1/skin1.wrl
+ref_url: http://sampl.eng.ohio-state.edu/~sampl/data/3DDB/Models/WSU/index.html
+format: wrl 
+pid: 40373
+polygons: 9152
+connected_components: 1
+average_dihedral_angle: 0.102187
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.5, ymax = 0.5, zmax = 0.975
+avg_depth: 1.002020
+center: (0.262500,0.262500,0.438048)
+scale: 0.681746
+principle_axes: (-0.000000,0.000000,1.000000), (-0.993970,0.109652,-0.000000), (-0.109652,-0.993970,0.000000)
+principle_values: (0.097895,0.015345,0.015345)

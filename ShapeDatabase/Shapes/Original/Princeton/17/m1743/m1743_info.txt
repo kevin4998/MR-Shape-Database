@@ -1,0 +1,14 @@
+mid: 1743
+url: http://ligwww.epfl.ch/~babski/StandardBody/body/joe.tar.gz
+ref_url: http://ligwww.epfl.ch/~babski/StandardBody/
+format: wrl 
+pid: 31676
+polygons: 523
+connected_components: 2
+average_dihedral_angle: 0.460903
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.44333, ymax = 0.400549, zmax = 0.975
+avg_depth: 1.330454
+center: (0.251887,0.136475,0.464517)
+scale: 0.561458
+principle_axes: (0.136817,0.130881,-0.981912), (0.984770,0.089375,0.149129), (0.107276,-0.987361,-0.116659)
+principle_values: (0.068643,0.011120,0.009069)

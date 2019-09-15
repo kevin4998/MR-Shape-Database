@@ -1,0 +1,14 @@
+mid: 1579
+url: http://www.forwarddesign.com/objects/vehicles/Cablecar.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: obj 
+pid: 25471
+polygons: 13359
+connected_components: 284
+average_dihedral_angle: 0.782723
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.196099, ymax = 0.358128, zmax = 0.975
+avg_depth: 1.601222
+center: (0.109900,0.124466,0.496954)
+scale: 0.525531
+principle_axes: (-0.002749,0.001289,0.999995), (-0.999947,0.009918,-0.002762), (-0.009922,-0.999950,0.001261)
+principle_values: (0.070280,0.004787,0.003865)

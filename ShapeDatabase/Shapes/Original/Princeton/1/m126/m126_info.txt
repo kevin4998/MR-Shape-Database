@@ -1,0 +1,14 @@
+mid: 126
+url: http://web3d.berkom.de/vrml/chat/avatar.wrl
+ref_url: http://web3d.berkom.de/vrml/chat/chat1.wrl
+format: wrl 
+pid: 16822
+polygons: 1018
+connected_components: 16
+average_dihedral_angle: 0.628657
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.258991, ymax = 0.975, zmax = 0.174844
+avg_depth: 1.482690
+center: (0.142623,0.552984,0.092094)
+scale: 0.435951
+principle_axes: (-0.000666,0.999896,0.014436), (-0.999999,-0.000646,-0.001370), (0.001361,0.014437,-0.999895)
+principle_values: (0.059865,0.002242,0.000896)

@@ -1,0 +1,14 @@
+mid: 485
+url: http://mowat.virtualave.net/ketchup.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26590
+polygons: 936
+connected_components: 5
+average_dihedral_angle: 0.408319
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.289643, ymax = 0.975, zmax = 0.289643
+avg_depth: 1.122826
+center: (0.157321,0.468464,0.157321)
+scale: 0.588118
+principle_axes: (0.000000,-1.000000,0.000000), (0.664567,0.000000,0.747229), (-0.747229,-0.000000,0.664567)
+principle_values: (0.086762,0.006350,0.006350)

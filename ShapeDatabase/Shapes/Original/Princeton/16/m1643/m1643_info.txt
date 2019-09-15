@@ -1,0 +1,14 @@
+mid: 1643
+url: http://64.198.60.83/baument/Models/LADDERHOOK1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 25254
+polygons: 3544
+connected_components: 14
+average_dihedral_angle: 0.531446
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.210575, ymax = 0.975, zmax = 0.170081
+avg_depth: 1.307465
+center: (0.046854,0.521423,0.098013)
+scale: 0.534021
+principle_axes: (0.064779,0.997900,-0.000488), (-0.001736,0.000601,0.999998), (-0.997898,0.064778,-0.001771)
+principle_values: (0.085668,0.003253,0.001187)

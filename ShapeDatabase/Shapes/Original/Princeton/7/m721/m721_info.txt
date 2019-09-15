@@ -1,0 +1,14 @@
+mid: 721
+url: http://www.3dcafe.com/models/shrtswrd.zip
+ref_url: 
+format: xthreexds 
+pid: 47363
+polygons: 530
+connected_components: 5
+average_dihedral_angle: 0.920717
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.181399, ymax = 0.104182, zmax = 0.975
+avg_depth: 1.217031
+center: (0.099816,0.066467,0.659040)
+scale: 0.344530
+principle_axes: (0.000988,0.003733,0.999993), (-0.997536,-0.070138,0.001247), (-0.070142,0.997530,-0.003655)
+principle_values: (0.043688,0.000645,0.000420)

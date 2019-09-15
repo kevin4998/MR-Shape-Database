@@ -1,0 +1,14 @@
+mid: 1508
+url: http://www.fantastic.ukart.com/53dmodels/auto/f1motorcar.zip
+ref_url: http://www.fantasticarts.com/3dmodels/auto/F1Motorcar.htm
+format: dxf 
+pid: 27682
+polygons: 10492
+connected_components: 5270
+average_dihedral_angle: 0.855765
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.212635, zmax = 0.419927
+avg_depth: 3.101275
+center: (0.525185,0.087089,0.223912)
+scale: 0.542619
+principle_axes: (0.999245,0.038768,-0.002430), (0.002461,-0.000741,0.999997), (0.038766,-0.999248,-0.000836)
+principle_values: (0.076513,0.011121,0.001385)

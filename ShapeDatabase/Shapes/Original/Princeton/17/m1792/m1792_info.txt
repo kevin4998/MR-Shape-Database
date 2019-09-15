@@ -1,0 +1,14 @@
+mid: 1792
+url: http://www.elfworks.com/VRML/tapecase/tapecase.wrl
+ref_url: http://www.elfworks.com/VRML/vrml2.htm
+format: wrl 
+pid: 39064
+polygons: 132
+connected_components: 1
+average_dihedral_angle: 0.854594
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.783463, ymax = 0.975, zmax = 0.760584
+avg_depth: 1.039536
+center: (0.407038,0.499996,0.389887)
+scale: 0.705957
+principle_axes: (-0.189052,0.908504,-0.372667), (0.891797,-0.000013,-0.452435), (0.411044,0.417877,0.810199)
+principle_values: (0.097853,0.037890,0.003824)

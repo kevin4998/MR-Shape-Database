@@ -1,0 +1,14 @@
+mid: 922
+url: http://www.refraction.com/vrml/table.wrl
+ref_url: http://www.refraction.com/vrml/gallery.shtml
+format: wrl 
+pid: 2588
+polygons: 88
+connected_components: 5
+average_dihedral_angle: 1.44996
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.535625, zmax = 0.928504
+avg_depth: 1.125568
+center: (0.500000,0.434709,0.476752)
+scale: 0.711270
+principle_axes: (0.016690,0.000000,0.999861), (0.999861,-0.000000,-0.016690), (0.000000,1.000000,-0.000000)
+principle_values: (0.059244,0.059244,0.017970)

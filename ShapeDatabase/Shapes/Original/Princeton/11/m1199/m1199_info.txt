@@ -1,0 +1,14 @@
+mid: 1199
+url: http://www.seardel.co.za/vrml/models/jet/x29.wrl
+ref_url: http://www.seardel.co.za/wrls.html
+format: wrl 
+pid: 2024
+polygons: 1146
+connected_components: 10
+average_dihedral_angle: 0.465084
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.221184, zmax = 0.557698
+avg_depth: 1.260802
+center: (0.576232,0.067443,0.291348)
+scale: 0.404853
+principle_axes: (-0.999985,-0.005491,-0.000017), (0.000017,0.000002,-1.000000), (0.005491,-0.999985,-0.000002)
+principle_values: (0.042883,0.006869,0.000964)

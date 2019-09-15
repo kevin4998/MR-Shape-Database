@@ -1,0 +1,14 @@
+mid: 810
+url: http://www.3dcafe.com/models/chair05.zip
+ref_url: http://www.3dcafe.com/asp/hou1_pic.asp
+format: xthreexds 
+pid: 28602
+polygons: 1494
+connected_components: 14
+average_dihedral_angle: 0.677618
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.382957, ymax = 0.975, zmax = 0.399496
+avg_depth: 1.357983
+center: (0.154810,0.480401,0.214163)
+scale: 0.554927
+principle_axes: (0.271461,-0.962429,-0.006255), (0.007331,0.008566,-0.999936), (-0.962422,-0.271398,-0.009381)
+principle_values: (0.062489,0.016861,0.011893)

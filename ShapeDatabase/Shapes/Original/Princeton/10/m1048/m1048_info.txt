@@ -1,0 +1,14 @@
+mid: 1048
+url: http://www.3dcafe.com/models/maple01.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 28985
+polygons: 43530
+connected_components: 2024
+average_dihedral_angle: 0.163283
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.934383, ymax = 0.871798, zmax = 0.975
+avg_depth: 2.028059
+center: (0.468892,0.571607,0.467609)
+scale: 0.630283
+principle_axes: (0.725840,0.122189,0.676924), (-0.677662,-0.041833,0.734183), (0.118027,-0.991625,0.052438)
+principle_values: (0.055486,0.038874,0.012695)

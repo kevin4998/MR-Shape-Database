@@ -1,0 +1,14 @@
+mid: 1344
+url: http://www-vrl.umich.edu/~saha/eng477/vrml2/Balloon2.wrl
+ref_url: http://www-vrl.umich.edu/~saha/eng477/index.html
+format: wrl 
+pid: 45639
+polygons: 1930
+connected_components: 31
+average_dihedral_angle: 0.296355
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.674099, ymax = 0.975, zmax = 0.6741
+avg_depth: 1.001536
+center: (0.349557,0.653360,0.349542)
+scale: 0.666051
+principle_axes: (-0.000301,1.000000,0.000123), (0.999869,0.000302,-0.016184), (-0.016184,0.000118,-0.999869)
+principle_values: (0.047290,0.032594,0.032592)

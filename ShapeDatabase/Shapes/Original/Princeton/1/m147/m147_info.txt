@@ -1,0 +1,14 @@
+mid: 147
+url: http://mowat.virtualave.net/arte.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 27002
+polygons: 8559
+connected_components: 42
+average_dihedral_angle: 0.327434
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.355968, ymax = 0.975, zmax = 0.235159
+avg_depth: 1.526322
+center: (0.192913,0.530583,0.099281)
+scale: 0.440705
+principle_axes: (0.003316,0.999868,-0.015916), (0.998403,-0.002413,0.056440), (0.056394,-0.016077,-0.998279)
+principle_values: (0.053625,0.007225,0.001487)
