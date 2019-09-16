@@ -38,7 +38,7 @@ namespace ShapeDatabase.IO {
 		/// Initialises a new instance of of the <see cref="InvalidFormatException"/> class,
 		/// which specified that an invalid file format is used in its reader.
 		/// </summary>
-		protected InvalidFormatException()
+		public InvalidFormatException()
 			: this(NoArgMsg) { }
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace ShapeDatabase.IO {
 		/// which specified that an invalid file format is used in its reader.
 		/// </summary>
 		/// <param name="message"> The message to display to the user about the exception.</param>
-		protected InvalidFormatException(string message)
+		public InvalidFormatException(string message)
 			: base(message) { }
 
 		/// <summary>
@@ -59,7 +59,7 @@ namespace ShapeDatabase.IO {
 		/// parameter is not null, the current exception is raised in a catch block that
 		/// handles the inner exception.
 		/// </param>
-		protected InvalidFormatException(string message, Exception innerException)
+		public InvalidFormatException(string message, Exception innerException)
 			: base(message, innerException) { }
 
 		/// <summary>
