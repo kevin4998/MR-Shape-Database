@@ -8,23 +8,24 @@ namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow {
 
-		private int VertexArrayObject;
 		private KeyController keybinds;
+
+		private int VertexArrayObject;
 		public Shader shader;
 
 		int VertexBufferObject;
 		int ElementBufferObject;
 
 		float[] vertices = {
-			0.5f,  0.5f, 0.0f,  // top right
-			0.5f, -0.5f, 0.0f,  // bottom right
-			-0.5f, -0.5f, 0.0f,  // bottom left
-			-0.5f,  0.5f, 0.0f   // top left
+			0.5f,  0.5f, 0.0f,		// top right
+			0.5f, -0.5f, 0.0f,		// bottom right
+			-0.5f, -0.5f, 0.0f,		// bottom left
+			-0.5f,  0.5f, 0.0f		// top left
 		};
 
-		uint[] indices = {  // note that we start from 0!
-			0, 1, 3,   // first triangle
-			1, 2, 3    // second triangle
+		uint[] indices = {			// note that we start from 0!
+			0, 1, 3,				// first triangle
+			1, 2, 3					// second triangle
 		};
 
 		public Window(int width, int height, string title)
@@ -72,7 +73,6 @@ namespace ShapeDatabase.UI {
 			// 3. then set our vertex attributes pointers
 			GL.VertexAttribPointer(shader.GetAttribLocation("aPosition"), 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
 			GL.EnableVertexAttribArray(0);
-
 
 			base.OnLoad(e);
 		}

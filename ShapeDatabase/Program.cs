@@ -7,7 +7,6 @@ namespace ShapeDatabase {
 
             Controller controller = new Controller();
 
-			Console.WriteLine("Hello World!");
 		}
 	}
 }

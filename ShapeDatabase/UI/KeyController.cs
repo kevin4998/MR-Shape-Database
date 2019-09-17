@@ -1,8 +1,7 @@
 ﻿using OpenTK.Input;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace ShapeDatabase.UI {
 
@@ -11,14 +10,15 @@ namespace ShapeDatabase.UI {
 	/// This object will notify listeners when a specific key is pressed
 	/// so that its actions can be performed.
 	/// </summary>
+	[DebuggerDisplay("EventCount [Down:{DownKeybinds.Count}, Up:{UpKeybinds.Count}, Hold:{HoldKeybinds.Count}]")]
 	public class KeyController {
 
 		private IDictionary<Key, ICollection<Action>> DownKeybinds	{ get; }
 		private IDictionary<Key, ICollection<Action>> UpKeybinds	{ get; }
 		private IDictionary<Key, ICollection<Action>> HoldKeybinds	{ get; }
 
-		private HashSet<Key> activeKeys;
-		private HashSet<Key> onKeys;
+		private readonly HashSet<Key> activeKeys;
+		private readonly HashSet<Key> onKeys;
 
 
 		/// <summary>
@@ -38,7 +38,11 @@ namespace ShapeDatabase.UI {
 		/// The method to call when a change in Keyboard state has happened.
 		/// This state difference can be pressing a key or releasing one or many.
 		/// </summary>
+		/// <param name="input">The changed ButtonState of the board after pressing.</param>
+		/// <exception cref="ArgumentNullException">If the provided parameter is null.</exception>
 		public void OnKeyPress(KeyboardState input) {
+			if (input == null)
+				throw new ArgumentNullException(nameof(input));
 			if (!input.IsAnyKeyDown)
 				return;
 
@@ -73,16 +77,34 @@ namespace ShapeDatabase.UI {
 		/// Registers that if the specified button is pressed than the given action
 		/// should be performed.
 		/// </summary>
+		/// <param name="button">The button which will trigger the action.</param>
+		/// <param name="action">The operation which will be performed after that
+		/// specific button has been pressed. </param>
 		public void RegisterDown(Key button, Action action) {
 			DicAdd(DownKeybinds, button, action);
 			onKeys.Add(button);
 		}
 
+		/// <summary>
+		/// Registers that if the specified button is released than the given action
+		/// should be performed.
+		/// </summary>
+		/// <param name="button">The button which will trigger the action.</param>
+		/// <param name="action">The operation which will be performed after that
+		/// specific button has been released. </param>
 		public void RegisterUp(Key button, Action action) {
 			DicAdd(UpKeybinds, button, action);
 		}
 
+		/// <summary>
+		/// Registers that an action will keep happening when a specified
+		/// button is held down.
+		/// </summary>
+		/// <param name="button">The button which will trigger the action.</param>
+		/// <param name="action">The operation which will be performed as long as
+		/// s specific button is held down. </param>
 		public void RegisterHold(Key button, Action action) {
+			DicAdd(DownKeybinds, button, action);
 			DicAdd(HoldKeybinds, button, action);
 			onKeys.Add(button);
 		}
