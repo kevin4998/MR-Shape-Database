@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Shapes\Initial\" />
-    <Folder Include="Shapes\All\" />
-    <Folder Include="Shapes\Small\" />
+    <Folder Include="UI\" />
+    <Folder Include="Content\Shapes\All\" />
+    <Folder Include="Content\Shapes\Small\" />
   </ItemGroup>
 
   <ItemGroup>
