@@ -1,14 +1,16 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using OpenTK;
+using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.IO {
 
 	/// <summary>
 	/// A simpel reader implementation to convert OFF files into meshes.
 	/// </summary>
-	public class OFFReader : IReader<Tuple<float[], uint[]>> {
+	public class OFFReader : IReader<UnstructuredMesh> {
+
+		const string EX_END_STREAM = "Cannot read data from the end of the stream.";
 
 		const string EX_MISSING_VALUES = "Missing values! Expected 3 values for vertices, faces and edges but received:\"{0}\".";
 		const string EX_MISSING_VALUE = "Missing value for {0}.";
@@ -24,11 +26,11 @@ namespace ShapeDatabase.IO {
 
 		public OFFReader() { }
 
-		public Tuple<float[], uint[]> ConvertFile(StreamReader reader) {
+		public UnstructuredMesh ConvertFile(StreamReader reader) {
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
 			if (reader.EndOfStream)
-				return null;
+				throw new ArgumentException(EX_END_STREAM);
 
 
 			string line = reader.ReadLine().Trim();
@@ -94,12 +96,14 @@ namespace ShapeDatabase.IO {
 
 
 			// The end of the file should be reached so return the value.
-			return new Tuple<float[], uint[]>(vob, ebo);
+			return new UnstructuredMesh(vob, ebo);
 
 		}
 
-		public Task<Tuple<float[], uint[]>> ConvertFileAsync(StreamReader reader) {
+		public Task<UnstructuredMesh> ConvertFileAsync(StreamReader reader) {
 			return Task.Run(() => ConvertFile(reader));
 		}
+
 	}
+
 }
