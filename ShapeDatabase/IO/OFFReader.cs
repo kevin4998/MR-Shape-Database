@@ -8,7 +8,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A simpel reader implementation to convert OFF files into meshes.
 	/// </summary>
-	public class OFFReader : IReader<object> {
+	public class OFFReader : IReader<Tuple<float[], uint[]>> {
 
 		const string EX_MISSING_VALUES = "Missing values! Expected 3 values for vertices, faces and edges but received:\"{0}\".";
 		const string EX_MISSING_VALUE = "Missing value for {0}.";
@@ -16,16 +16,20 @@ namespace ShapeDatabase.IO {
 		const string EX_INVALID_COORD = "The current line does not give a right amount of coordinates: \'{0}\'.";
 		const string EX_MISSING_VERTEXCOUNT = "The current line does not correctly define the amount of vertices for this shape: \'{0}\'.";
 
+		const string EX_NON_TRIANGLE = "Only triangle shapes are supported.";
+		const string EX_NON_NUMBER = "Could not convert the number \'{0}\'.";
+
 		public string[] SupportedFormats { get; } = new string[] { "off" };
 
 
 		public OFFReader() { }
 
-		public object ConvertFile(StreamReader reader) {
+		public Tuple<float[], uint[]> ConvertFile(StreamReader reader) {
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
 			if (reader.EndOfStream)
 				return null;
+
 
 			string line = reader.ReadLine().Trim();
 			// The first line in .off files always start with OFF.
@@ -34,6 +38,7 @@ namespace ShapeDatabase.IO {
 				// This was not the right format, so show the problem to the user/dev.
 				throw new InvalidFormatException(line.ToLower(), string.Join(", ", SupportedFormats));
 			}
+
 
 			line = reader.ReadLine().Trim();
 			string[] values = line.Split(' ');
@@ -48,10 +53,11 @@ namespace ShapeDatabase.IO {
 			if (!int.TryParse(values[2], out int _/*edgeCount*/))
 				throw new InvalidFormatException(string.Format(EX_MISSING_VALUE, "edges"));
 
-			Vector3[] vob = new Vector3[vertexCount];
+
+			float[] vob = new float[vertexCount * 3];	// 3 dimensional space
 			// The third line and following define #vertices
 			// with their representative x, y and z coordinates.
-			for (int index = 0; index < vertexCount && !reader.EndOfStream; index++) {
+			for (int index = 0; index < vertexCount && !reader.EndOfStream; ) {
 				line = reader.ReadLine().Trim();
 				values = line.Split();
 
@@ -61,8 +67,11 @@ namespace ShapeDatabase.IO {
 					|| !float.TryParse(values[2], out float z))
 					throw new InvalidFormatException(string.Format(EX_INVALID_COORD, line));
 
-				vob[index] = new Vector3(x, y, z);
+				vob[index++] = x;
+				vob[index++] = y;
+				vob[index++] = z;
 			}
+
 
 			uint[] ebo = new uint[faceCount * 3];	// 3 because of triangles.
 			// The Fourth section defines the collection of faces.
@@ -75,17 +84,21 @@ namespace ShapeDatabase.IO {
 					|| values.Length != (vertices + 1))
 					throw new InvalidFormatException(string.Format(EX_MISSING_VERTEXCOUNT, line));
 
-				// TODO Handle other shapes than triangels
+				if (vertices != 3)
+					throw new NotImplementedException(EX_NON_TRIANGLE);
+
 				for (int indice = 1; indice <= vertices; indice++)
-					uint.TryParse(values[indice], out ebo[index++]);	// TODO Handel incorrect situation right.
+					if (!uint.TryParse(values[indice], out ebo[index++]))
+						throw new InvalidFormatException(string.Format(EX_NON_NUMBER, values[indice]));
 			}
 
+
 			// The end of the file should be reached so return the value.
-			return new Tuple<Vector3[], uint[]>(vob, ebo);
+			return new Tuple<float[], uint[]>(vob, ebo);
 
 		}
 
-		public Task<object> ConvertFileAsync(StreamReader reader) {
+		public Task<Tuple<float[], uint[]>> ConvertFileAsync(StreamReader reader) {
 			return Task.Run(() => ConvertFile(reader));
 		}
 	}
