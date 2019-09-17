@@ -6,9 +6,11 @@ namespace ShapeDatabase.IO {
 
 	/// <summary>
 	/// Describes a simple reader which given a file converts the data
-	/// into a mesh using an unstructured grid.
+	/// into a specified object format.
 	/// </summary>
-	public interface IReader {
+	/// <typeparam name="T">The object which will be converted from the file.
+	/// </typeparam>
+	public interface IReader<T> {
 
 		/// <summary>
 		/// A collection of formats which the given reader can convert.
@@ -16,27 +18,25 @@ namespace ShapeDatabase.IO {
 		string[] SupportedFormats { get; }
 
 		/// <summary>
-		/// Transforms the given file into a mesh with an unstructured grid.
+		/// Transforms the given file into an object on the current thread.
 		/// </summary>
-		/// <param name="reader">The file containing the mesh information.</param>
-		/// <returns>A mesh with an Unstructured Grid or null if it could not
-		/// be converted.</returns>
+		/// <param name="reader">The file containing the object data.</param>
+		/// <returns>An object containing all the retrieved data from the file.</returns>
 		/// <exception cref="ArgumentNullException">If the given reader does not exist.</exception>
 		/// <exception cref="InvalidFormatException">If a file was provided
 		/// which does not use one of the <see cref="SupportedFormats"/>-formats.</exception>
-		object ConvertFile(StreamReader reader);
+		T ConvertFile(StreamReader reader);
 
 		/// <summary>
-		/// Transforms the given file into a mesh with an unstructured grid.
+		/// Transforms the given file into an object.
 		/// This is done asynchronously.
 		/// </summary>
-		/// <param name="reader">The file containing the mesh information.</param>
-		/// <returns>A mesh with an Unstructured Grid or null if it could not
-		/// be converted.</returns>
+		/// <param name="reader">The file containing the object data.</param>
+		/// <returns>An object containing all the retrieved data from the file.</returns>
 		/// <exception cref="ArgumentNullException">If the given reader does not exist.</exception>
 		/// <exception cref="InvalidFormatException">If a file was provided
 		/// which does not use one of the <see cref="SupportedFormats"/>-formats.</exception>
-		Task<object> ConvertFileAsync(StreamReader reader);
+		Task<T> ConvertFileAsync(StreamReader reader);
 
 	}
 

@@ -8,7 +8,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A simpel reader implementation to convert OFF files into meshes.
 	/// </summary>
-	public class OFFReader : IReader {
+	public class OFFReader : IReader<object> {
 
 		const string EX_MISSING_VALUES = "Missing values! Expected 3 values for vertices, faces and edges but received:\"{0}\".";
 		const string EX_MISSING_VALUE = "Missing value for {0}.";
@@ -45,7 +45,7 @@ namespace ShapeDatabase.IO {
 				throw new InvalidFormatException(string.Format(EX_MISSING_VALUE, "vertices"));
 			if (!int.TryParse(values[1], out int faceCount))
 				throw new InvalidFormatException(string.Format(EX_MISSING_VALUE, "faces"));
-			if (!int.TryParse(values[2], out int edgeCount))
+			if (!int.TryParse(values[2], out int _/*edgeCount*/))
 				throw new InvalidFormatException(string.Format(EX_MISSING_VALUE, "edges"));
 
 			Vector3[] vob = new Vector3[vertexCount];
