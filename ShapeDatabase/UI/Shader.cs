@@ -162,7 +162,6 @@ namespace ShapeDatabase.UI
 		public void SetInt(string name, int data)
 		{
 			GL.UseProgram(Handle);
-			GL.Uniform1(_uniformLocations[name], data);
 		}
 
 		/// <summary>
