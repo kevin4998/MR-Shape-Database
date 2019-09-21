@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using CommandLine;
@@ -22,6 +21,7 @@ namespace ShapeDatabase {
 				.WithNotParsed(OnErrors)
 				.WithParsed(OnParsedValues);
 			Console.WriteLine("Done converting input!");
+			Console.WriteLine("Press any key to exit application.");
 			Console.ReadLine();
 		}
 

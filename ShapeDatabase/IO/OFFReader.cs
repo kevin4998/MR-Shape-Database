@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using ShapeDatabase.Shapes;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.IO {
 
@@ -61,6 +62,8 @@ namespace ShapeDatabase.IO {
 				throw new InvalidFormatException(string.Format(EX_MISSING_VALUE, "edges"));
 
 			uint max = vertexCount * 3;
+			float minValue = int.MaxValue;
+			float maxValue = int.MinValue;
 			float[] vob = new float[max];	// 3 dimensional space
 			// The third line and following define #vertices
 			// with their representative x, y and z coordinates.
@@ -73,6 +76,14 @@ namespace ShapeDatabase.IO {
 					|| !float.TryParse(values[1], numberStyle, culture, out float y)
 					|| !float.TryParse(values[2], numberStyle, culture, out float z))
 					throw new InvalidFormatException(string.Format(EX_INVALID_COORD, line));
+
+				minValue = Math.Min(minValue, x);
+				minValue = Math.Min(minValue, y);
+				minValue = Math.Min(minValue, z);
+
+				maxValue = Math.Max(maxValue, x);
+				maxValue = Math.Max(maxValue, y);
+				maxValue = Math.Max(maxValue, z);
 
 				vob[index++] = x;
 				vob[index++] = y;
@@ -102,7 +113,7 @@ namespace ShapeDatabase.IO {
 
 
 			// The end of the file should be reached so return the value.
-			return new UnstructuredMesh(vob, ebo);
+			return new UnstructuredMesh(vob.Normalise(minValue, maxValue), ebo);
 
 		}
 

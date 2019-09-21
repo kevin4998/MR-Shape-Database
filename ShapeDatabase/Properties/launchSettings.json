@@ -2,7 +2,7 @@
   "profiles": {
     "ShapeDatabase": {
       "commandName": "Project",
-      "commandLineArgs": "--directory \"Content/Shapes/Initial\""
+      "commandLineArgs": "--directory \"D:\\Users\\kevin\\Programs\\University\\Master\\Multimedia Retrieval\\MR-Shape-Database\\ShapeDatabase\\Content\\Shapes\\Original\""
     }
   }
 }
