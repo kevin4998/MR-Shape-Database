@@ -5,20 +5,12 @@ using OpenTK.Graphics.OpenGL4;
 using OpenTK.Input;
 
 namespace ShapeDatabase.UI {
-	// We now have a rotating rectangle but how can we make the view move based on the users input
-	// In this tutorial we will take a look at how you could implement a camera class
-	// and start responding to user input
-	// You can move to the camera class to see a lot of the new code added
-	// Otherwise you can move to Load to see how the camera is initialized
 
-	// In reality we can't move the camera but we actually move the rectangle
-	// I will explain this more in depth in the web version, however it pretty much gives us the same result
-	// as if i could move the view
 	public class Window : GameWindow
 	{
 		private readonly float[] _vertices =
 		{
-            // Position         Texture coordinates
+            // Position	Texture coordinates
              0.5f,  0.5f, 0.0f, 1.0f, 1.0f, // top right
              0.5f, -0.5f, 0.0f, 1.0f, 0.0f, // bottom right
             -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, // bottom left
@@ -36,10 +28,7 @@ namespace ShapeDatabase.UI {
 		private int _vertexArrayObject;
 
 		private Shader _shader;
-
-		// I have removed the view and projection matrices as we dont need them here anymore
-		// They can now be found in the new camera class
-
+		
 		// We need an instance of the new camera class so it can manage the view and projection matrix code
 		// We also need a boolean set to true to detect whether or not the mouse has been moved for the first time
 		// Finally we add the last position of the mouse so we can calculate the mouse offset easily
@@ -70,9 +59,6 @@ namespace ShapeDatabase.UI {
 			_shader = new Shader("UI/shader.vert", "UI/shader.frag");
 			_shader.Use();
 
-			_shader.SetInt("texture0", 0);
-			_shader.SetInt("texture1", 1);
-
 			_vertexArrayObject = GL.GenVertexArray();
 			GL.BindVertexArray(_vertexArrayObject);
 
@@ -83,11 +69,6 @@ namespace ShapeDatabase.UI {
 			var vertexLocation = _shader.GetAttribLocation("aPosition");
 			GL.EnableVertexAttribArray(vertexLocation);
 			GL.VertexAttribPointer(vertexLocation, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), 0);
-
-
-			var texCoordLocation = _shader.GetAttribLocation("aTexCoord");
-			GL.EnableVertexAttribArray(texCoordLocation);
-			GL.VertexAttribPointer(texCoordLocation, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), 3 * sizeof(float));
 
 			// We initialize the camera so that it is 3 units back from where the rectangle is
 			// and give it the proper aspect ratio
@@ -102,7 +83,8 @@ namespace ShapeDatabase.UI {
 
 		protected override void OnRenderFrame(FrameEventArgs e)
 		{
-			_time += 4.0 * e.Time;
+			// If outcommented, object will rotate over time.
+			//_time += 4.0 * e.Time;
 
 			GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 

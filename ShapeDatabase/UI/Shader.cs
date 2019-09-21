@@ -41,13 +41,11 @@ namespace ShapeDatabase.UI
 			// And then compile
 			CompileShader(vertexShader);
 
-
 			// We do the same for the fragment shader
 			shaderSource = LoadSource(fragPath);
 			var fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
 			GL.ShaderSource(fragmentShader, shaderSource);
 			CompileShader(fragmentShader);
-
 
 			// These two shaders must then be merged into a shader program, which can then be used by OpenGL.
 			// To do this, create a program...
