@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Globalization;
 
 namespace ShapeDatabase {
 	/// <summary>
@@ -12,7 +10,9 @@ namespace ShapeDatabase {
 		/// The location where all the shapes are definined.
 		/// These are the unmodified files as originally retrieved online.
 		/// </summary>
-		public static string ShapeLibraryDir { get; set; } = "/Shapes/Initial";
+		public static string ShapeLibraryDir { get; set; } = "Content/Shapes/Initial";
+
+		public static CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;
 
 	}
 }

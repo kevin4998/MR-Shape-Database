@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ShapeDatabase": {
+      "commandName": "Project",
+      "commandLineArgs": "--directory \"Content/Shapes/Initial\""
+    }
+  }
+}
