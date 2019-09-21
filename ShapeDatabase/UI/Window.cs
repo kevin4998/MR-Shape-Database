@@ -8,6 +8,24 @@ namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow
 	{
+		/*
+		8 6 12
+		 1.0  0.0 1.4142
+		 0.0  1.0 1.4142
+		-1.0  0.0 1.4142
+		 0.0 -1.0 1.4142
+		 1.0  0.0 0.0
+		 0.0  1.0 0.0
+		-1.0  0.0 0.0
+		 0.0 -1.0 0.0
+		4  0 1 2 3  255 0 0 #red
+		4  7 4 0 3  0 255 0 #green
+		4  4 5 1 0  0 0 255 #blue
+		4  5 6 2 1  0 255 0 
+		4  3 2 6 7  0 0 255
+		4  6 5 4 7  255 0 0
+		*/
+
 		// Here we now have added the normals of the vertices
 		// Remember to define the layouts to the VAO's
 		private readonly float[] _vertices =
@@ -55,8 +73,25 @@ namespace ShapeDatabase.UI {
 			-0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
 			-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
 		};
+
+		uint[] indices = {  // note that we start from 0!
+			0, 1, 2,	// first triangle
+			3, 4, 5,	// second triangle
+			6, 7, 8,	// etc.
+			9, 10, 11,
+			12, 13, 14,
+			15, 16, 17,
+			18, 19, 20,
+			21, 22, 23,
+			24, 25, 26,
+			27, 28, 29,
+			30, 31, 32,
+			33, 34, 35,
+		};
+
 		private readonly Vector3 _lightPos = new Vector3(1.2f, 1.0f, 2.0f);
 
+		private int _elementBufferObject;
 		private int _vertexBufferObject;
 		private int _vaoModel;
 		private int _vaoLamp;
@@ -111,11 +146,11 @@ namespace ShapeDatabase.UI {
 			positionLocation = _lampShader.GetAttribLocation("aPos");
 			GL.EnableVertexAttribArray(positionLocation);*/
 
-			// Also change the stride here as we now have 6 floats per vertex. Now we don't define the normal for the lamp VAO
-			// this is because it isn't used, it might seem like a waste to use the same VBO if they dont have the same data
-			// The two cubes still use the same position, and since the position is already in the graphics memory it is actually
-			// better to do it this way. Look through the web version for a much better understanding of this.
-			GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
+		// Also change the stride here as we now have 6 floats per vertex. Now we don't define the normal for the lamp VAO
+		// this is because it isn't used, it might seem like a waste to use the same VBO if they dont have the same data
+		// The two cubes still use the same position, and since the position is already in the graphics memory it is actually
+		// better to do it this way. Look through the web version for a much better understanding of this.
+		GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
 
 			_camera = new Camera(Vector3.UnitZ * 3, Width / (float)Height);
 
@@ -143,7 +178,11 @@ namespace ShapeDatabase.UI {
 			_lightingShader.SetVector3("lightPos", _lightPos);
 			_lightingShader.SetVector3("viewPos", _camera.Position);
 
-			GL.DrawArrays(PrimitiveType.Triangles, 0, 36);
+
+			_elementBufferObject = GL.GenBuffer();
+			GL.BindBuffer(BufferTarget.ElementArrayBuffer, _elementBufferObject);
+			GL.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(uint), indices, BufferUsageHint.StaticDraw);
+			GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);
 
 			GL.BindVertexArray(_vaoModel);
 
