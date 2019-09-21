@@ -36,7 +36,7 @@ namespace ShapeDatabase.UI {
 		private bool _firstMove = true;
 		private Vector2 _lastPos;
 
-		private double _time;
+		private double _angle;
 
 
 		public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) { }
@@ -83,8 +83,8 @@ namespace ShapeDatabase.UI {
 
 		protected override void OnRenderFrame(FrameEventArgs e)
 		{
-			// If outcommented, object will rotate over time.
-			//_time += 4.0 * e.Time;
+			//If outcommented, object will rotate over time.
+			//_angle += 4.0 * e.Time;
 
 			GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
@@ -92,7 +92,7 @@ namespace ShapeDatabase.UI {
 
 			_shader.Use();
 
-			var model = Matrix4.Identity * Matrix4.CreateRotationX((float)MathHelper.DegreesToRadians(_time));
+			var model = Matrix4.Identity * Matrix4.CreateRotationY((float)MathHelper.DegreesToRadians(_angle));
 			_shader.SetMatrix4("model", model);
 			_shader.SetMatrix4("view", _camera.GetViewMatrix());
 			_shader.SetMatrix4("projection", _camera.GetProjectionMatrix());
@@ -130,12 +130,17 @@ namespace ShapeDatabase.UI {
 				_camera.Position -= _camera.Right * cameraSpeed * (float)e.Time; // Left
 			if (input.IsKeyDown(Key.D))
 				_camera.Position += _camera.Right * cameraSpeed * (float)e.Time; // Right
+			if (input.IsKeyDown(Key.Q))     // Rotate Left
+				_angle -= 1.5;
+			if (input.IsKeyDown(Key.E))     // Rotate Right
+				_angle += 1.5;
 			if (input.IsKeyDown(Key.Space))
 				_camera.Position += _camera.Up * cameraSpeed * (float)e.Time; // Up 
 			if (input.IsKeyDown(Key.LShift))
 				_camera.Position -= _camera.Up * cameraSpeed * (float)e.Time; // Down
 
 			// Get the mouse state
+			/*
 			var mouse = Mouse.GetState();
 
 			if (_firstMove) // this bool variable is initially set to true
@@ -153,7 +158,7 @@ namespace ShapeDatabase.UI {
 				// Apply the camera pitch and yaw (we clamp the pitch in the camera class)
 				_camera.Yaw += deltaX * sensitivity;
 				_camera.Pitch -= deltaY * sensitivity; // reversed since y-coordinates range from bottom to top
-			}
+			}*/
 
 			base.OnUpdateFrame(e);
 		}
