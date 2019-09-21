@@ -8,36 +8,67 @@ namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow
 	{
+		// Here we now have added the normals of the vertices
+		// Remember to define the layouts to the VAO's
 		private readonly float[] _vertices =
 		{
-            // Position	Texture coordinates
-             0.5f,  0.5f, 0.0f, 1.0f, 1.0f, // top right
-             0.5f, -0.5f, 0.0f, 1.0f, 0.0f, // bottom right
-            -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, // bottom left
-            -0.5f,  0.5f, 0.0f, 0.0f, 1.0f  // top left 
-        };
+             // Position          Normal
+            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f, // Front face
+             0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+			 0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+			 0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+			-0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+			-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
 
-		private readonly uint[] _indices =
-		{
-			0, 1, 3,
-			1, 2, 3
+			-0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f, // Back face
+             0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+			 0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+			 0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+			-0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+			-0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+
+			-0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f, // Left face
+            -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+			-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+			-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+			-0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+			-0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+
+			 0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f, // Right face
+             0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+			 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+			 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+			 0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+			 0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+
+			-0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f, // Bottom face
+             0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+			 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+			 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+			-0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+			-0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+
+			-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f, // Top face
+             0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+			 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+			 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+			-0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+			-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
 		};
+		private readonly Vector3 _lightPos = new Vector3(1.2f, 1.0f, 2.0f);
 
-		private int _elementBufferObject;
 		private int _vertexBufferObject;
-		private int _vertexArrayObject;
+		private int _vaoModel;
+		private int _vaoLamp;
 
-		private Shader _shader;
-		
-		// We need an instance of the new camera class so it can manage the view and projection matrix code
-		// We also need a boolean set to true to detect whether or not the mouse has been moved for the first time
-		// Finally we add the last position of the mouse so we can calculate the mouse offset easily
+		private Shader _lampShader;
+		private Shader _lightingShader;
+
 		private Camera _camera;
 		private bool _firstMove = true;
 		private Vector2 _lastPos;
-
-		private double _angle;
-
+		private double _angleY;
+		private double _angleX;
 
 		public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) { }
 
@@ -52,29 +83,42 @@ namespace ShapeDatabase.UI {
 			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
 			GL.BufferData(BufferTarget.ArrayBuffer, _vertices.Length * sizeof(float), _vertices, BufferUsageHint.StaticDraw);
 
-			_elementBufferObject = GL.GenBuffer();
-			GL.BindBuffer(BufferTarget.ElementArrayBuffer, _elementBufferObject);
-			GL.BufferData(BufferTarget.ElementArrayBuffer, _indices.Length * sizeof(uint), _indices, BufferUsageHint.StaticDraw);
+			//_lampShader = new Shader("UI/shader.vert", "UI/shader.frag");
+			_lightingShader = new Shader("UI/shader.vert", "UI/lighting.frag");
+			
 
-			_shader = new Shader("UI/shader.vert", "UI/shader.frag");
-			_shader.Use();
+			_vaoModel = GL.GenVertexArray();
+			GL.BindVertexArray(_vaoModel);
 
-			_vertexArrayObject = GL.GenVertexArray();
-			GL.BindVertexArray(_vertexArrayObject);
+			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
 
-			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexArrayObject);
-			GL.BindBuffer(BufferTarget.ElementArrayBuffer, _elementBufferObject);
+			var positionLocation = _lightingShader.GetAttribLocation("aPos");
+			GL.EnableVertexAttribArray(positionLocation);
+			// Remember to change the stride as we now have 6 floats per vertex
+			GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
 
+			// We now need to define the layout of the normal so the shader can use it
+			var normalLocation = _lightingShader.GetAttribLocation("aNormal");
+			GL.EnableVertexAttribArray(normalLocation);
+			GL.VertexAttribPointer(normalLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
+			
+			/*
+			_vaoLamp = GL.GenVertexArray();
+			GL.BindVertexArray(_vaoLamp);
 
-			var vertexLocation = _shader.GetAttribLocation("aPosition");
-			GL.EnableVertexAttribArray(vertexLocation);
-			GL.VertexAttribPointer(vertexLocation, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), 0);
+			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
 
-			// We initialize the camera so that it is 3 units back from where the rectangle is
-			// and give it the proper aspect ratio
+			positionLocation = _lampShader.GetAttribLocation("aPos");
+			GL.EnableVertexAttribArray(positionLocation);*/
+
+			// Also change the stride here as we now have 6 floats per vertex. Now we don't define the normal for the lamp VAO
+			// this is because it isn't used, it might seem like a waste to use the same VBO if they dont have the same data
+			// The two cubes still use the same position, and since the position is already in the graphics memory it is actually
+			// better to do it this way. Look through the web version for a much better understanding of this.
+			GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
+
 			_camera = new Camera(Vector3.UnitZ * 3, Width / (float)Height);
 
-			// We make the mouse cursor invisible so we can have proper FPS-camera movement
 			CursorVisible = false;
 
 			base.OnLoad(e);
@@ -83,21 +127,38 @@ namespace ShapeDatabase.UI {
 
 		protected override void OnRenderFrame(FrameEventArgs e)
 		{
-			//If outcommented, object will rotate over time.
-			//_angle += 4.0 * e.Time;
-
 			GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-			GL.BindVertexArray(_vertexArrayObject);
+			GL.BindVertexArray(_vaoModel);
 
-			_shader.Use();
+			_lightingShader.Use();
 
-			var model = Matrix4.Identity * Matrix4.CreateRotationY((float)MathHelper.DegreesToRadians(_angle));
-			_shader.SetMatrix4("model", model);
-			_shader.SetMatrix4("view", _camera.GetViewMatrix());
-			_shader.SetMatrix4("projection", _camera.GetProjectionMatrix());
+			var model = Matrix4.Identity * Matrix4.CreateRotationY((float)MathHelper.DegreesToRadians(_angleY)) * Matrix4.CreateRotationX((float)MathHelper.DegreesToRadians(_angleX));
+			_lightingShader.SetMatrix4("model", model);
+			_lightingShader.SetMatrix4("view", _camera.GetViewMatrix());
+			_lightingShader.SetMatrix4("projection", _camera.GetProjectionMatrix());
 
-			GL.DrawElements(PrimitiveType.Triangles, _indices.Length, DrawElementsType.UnsignedInt, 0);
+			_lightingShader.SetVector3("objectColor", new Vector3(1.0f, 0.5f, 0.31f));
+			_lightingShader.SetVector3("lightColor", new Vector3(1.0f, 1.0f, 1.0f));
+			_lightingShader.SetVector3("lightPos", _lightPos);
+			_lightingShader.SetVector3("viewPos", _camera.Position);
+
+			GL.DrawArrays(PrimitiveType.Triangles, 0, 36);
+
+			GL.BindVertexArray(_vaoModel);
+
+			/*
+			_lampShader.Use();
+			
+			Matrix4 lampMatrix = Matrix4.Identity;
+			lampMatrix *= Matrix4.CreateScale(0.2f);
+			lampMatrix *= Matrix4.CreateTranslation(_lightPos);
+
+			_lampShader.SetMatrix4("model", lampMatrix);
+			_lampShader.SetMatrix4("view", _camera.GetViewMatrix());
+			_lampShader.SetMatrix4("projection", _camera.GetProjectionMatrix());
+
+			GL.DrawArrays(PrimitiveType.Triangles, 0, 36);*/
 
 			SwapBuffers();
 
@@ -107,7 +168,7 @@ namespace ShapeDatabase.UI {
 
 		protected override void OnUpdateFrame(FrameEventArgs e)
 		{
-			if (!Focused) // check to see if the window is focused
+			if (!Focused)
 			{
 				return;
 			}
@@ -130,46 +191,41 @@ namespace ShapeDatabase.UI {
 				_camera.Position -= _camera.Right * cameraSpeed * (float)e.Time; // Left
 			if (input.IsKeyDown(Key.D))
 				_camera.Position += _camera.Right * cameraSpeed * (float)e.Time; // Right
-			if (input.IsKeyDown(Key.Q))     // Rotate Left
-				_angle -= 1.5;
-			if (input.IsKeyDown(Key.E))     // Rotate Right
-				_angle += 1.5;
 			if (input.IsKeyDown(Key.Space))
 				_camera.Position += _camera.Up * cameraSpeed * (float)e.Time; // Up 
-			if (input.IsKeyDown(Key.LShift))
-				_camera.Position -= _camera.Up * cameraSpeed * (float)e.Time; // Down
+			if (input.IsKeyDown(Key.Left))		// Rotate Left
+				_angleY -= 1.5;
+			if (input.IsKeyDown(Key.Right))		// Rotate Right
+				_angleY += 1.5;
+			if (input.IsKeyDown(Key.Up))		// Rotate Up
+				_angleX -= 1.5;
+			if (input.IsKeyDown(Key.Down))		// Rotate Down
+				_angleX += 1.5;
 
-			// Get the mouse state
 			/*
 			var mouse = Mouse.GetState();
 
-			if (_firstMove) // this bool variable is initially set to true
+			if (_firstMove)
 			{
 				_lastPos = new Vector2(mouse.X, mouse.Y);
 				_firstMove = false;
 			}
 			else
 			{
-				// Calculate the offset of the mouse position
 				var deltaX = mouse.X - _lastPos.X;
 				var deltaY = mouse.Y - _lastPos.Y;
 				_lastPos = new Vector2(mouse.X, mouse.Y);
 
-				// Apply the camera pitch and yaw (we clamp the pitch in the camera class)
 				_camera.Yaw += deltaX * sensitivity;
-				_camera.Pitch -= deltaY * sensitivity; // reversed since y-coordinates range from bottom to top
+				_camera.Pitch -= deltaY * sensitivity;
 			}*/
 
 			base.OnUpdateFrame(e);
 		}
 
-
-		// This function's main purpose is to set the mouse position back to the center of the window
-		// every time the mouse has moved. So the cursor doesn't end up at the edge of the window where it cannot move
-		// further out
 		protected override void OnMouseMove(MouseMoveEventArgs e)
 		{
-			if (Focused) // check to see if the window is focused
+			if (Focused)
 			{
 				Mouse.SetPosition(X + Width / 2f, Y + Height / 2f);
 			}
@@ -177,9 +233,6 @@ namespace ShapeDatabase.UI {
 			base.OnMouseMove(e);
 		}
 
-
-		// In the mouse wheel function we manage all the zooming of the camera
-		// this is simply done by changing the FOV of the camera
 		protected override void OnMouseWheel(MouseWheelEventArgs e)
 		{
 			_camera.Fov -= e.DeltaPrecise;
@@ -190,7 +243,6 @@ namespace ShapeDatabase.UI {
 		protected override void OnResize(EventArgs e)
 		{
 			GL.Viewport(0, 0, Width, Height);
-			// We need to update the aspect ratio once the window has been resized
 			_camera.AspectRatio = Width / (float)Height;
 			base.OnResize(e);
 		}
@@ -203,9 +255,11 @@ namespace ShapeDatabase.UI {
 			GL.UseProgram(0);
 
 			GL.DeleteBuffer(_vertexBufferObject);
-			GL.DeleteVertexArray(_vertexArrayObject);
+			GL.DeleteVertexArray(_vaoModel);
+			GL.DeleteVertexArray(_vaoLamp);
 
-			GL.DeleteProgram(_shader.Handle);
+			//GL.DeleteProgram(_lampShader.Handle);
+			GL.DeleteProgram(_lightingShader.Handle);
 
 			base.OnUnload(e);
 		}

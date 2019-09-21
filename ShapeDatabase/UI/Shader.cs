@@ -15,19 +15,8 @@ namespace ShapeDatabase.UI
 
 		private readonly Dictionary<string, int> _uniformLocations;
 
-
-		// This is how you create a simple shader.
-		// Shaders are written in GLSL, which is a language very similar to C in its semantics.
-		// The GLSL source is compiled *at runtime*, so it can optimize itself for the graphics card it's currently being used on.
-		// A commented example of GLSL can be found in shader.vert
 		public Shader(string vertPath, string fragPath)
 		{
-			// There are several different types of shaders, but the only two you need for basic rendering are the vertex and fragment shaders.
-			// The vertex shader is responsible for moving around vertices, and uploading that data to the fragment shader.
-			//   The vertex shader won't be too important here, but they'll be more important later.
-			// The fragment shader is responsible for then converting the vertices to "fragments", which represent all the data OpenGL needs to draw a pixel.
-			//   The fragment shader is what we'll be using the most here.
-
 			// Load vertex shader and compile
 			// LoadSource is a simple function that just loads all text from the file whose path is given.
 			var shaderSource = LoadSource(vertPath);
