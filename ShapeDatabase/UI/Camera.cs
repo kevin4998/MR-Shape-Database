@@ -79,7 +79,7 @@ namespace ShapeDatabase.UI
 		}
 
 		public Camera Reset(Window window) {
-			Position = Vector3.UnitZ * 3;
+			Position = Vector3.UnitZ * 2;
 			AspectRatio = window.Width / (float) window.Height;
 			return this;
 		}

@@ -10,7 +10,6 @@ namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow
 	{
-
 		private IEnumerator<MeshEntry> enumerator =  CreateEnumerator();
 
 		private static IEnumerator<MeshEntry> CreateEnumerator() {
@@ -107,13 +106,12 @@ namespace ShapeDatabase.UI {
 			keybindings.RegisterHold(Key.Right, () => _angleY += 1.5);
 			keybindings.RegisterHold(Key.Up, () => _angleX -= 1.5);
 			keybindings.RegisterHold(Key.Down, () => _angleX += 1.5);
-
 		}
 
 		protected Vector3 GetNormal(Vector3[] verts)
 		{
 			if (verts.Length != 3)
-				throw new ArgumentException("Input should have 3 vertices");
+				throw new ArgumentException("Input should have 3 vertices.");
 
 			Vector3 v1 = verts[0];
 			Vector3 v2 = verts[1];
@@ -146,15 +144,10 @@ namespace ShapeDatabase.UI {
 			GL.EnableVertexAttribArray(normalLocation);
 			GL.VertexAttribPointer(normalLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
 
-			//GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
-
-			_camera = new Camera(Vector3.UnitZ * 3, Width / (float)Height);
-
-			CursorVisible = false;
+			_camera = new Camera(Vector3.UnitZ * 2, Width / (float)Height);
 
 			base.OnLoad(e);
 		}
-
 
 		protected override void OnRenderFrame(FrameEventArgs e)
 		{
@@ -174,14 +167,7 @@ namespace ShapeDatabase.UI {
 			_lightingShader.SetVector3("lightPos", _lightPos);
 			_lightingShader.SetVector3("viewPos", _camera.Position);
 
-			/*
-			_elementBufferObject = GL.GenBuffer();
-			GL.BindBuffer(BufferTarget.ElementArrayBuffer, _elementBufferObject);
-			GL.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(uint), indices, BufferUsageHint.StaticDraw);
-			GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);*/
-
 			GL.DrawArrays(PrimitiveType.Triangles, 0, _vertices.Length);
-
 			GL.BindVertexArray(_vaoModel);
 
 			SwapBuffers();
@@ -201,11 +187,6 @@ namespace ShapeDatabase.UI {
 
 		protected override void OnMouseMove(MouseMoveEventArgs e)
 		{
-			if (Focused)
-			{
-				Mouse.SetPosition(X + Width / 2f, Y + Height / 2f);
-			}
-
 			base.OnMouseMove(e);
 		}
 
@@ -243,6 +224,5 @@ namespace ShapeDatabase.UI {
 			Settings.DirectShutDown = true;
 			base.Exit();
 		}
-
 	}
 }
