@@ -11,7 +11,13 @@ namespace ShapeDatabase.UI {
 	public class Window : GameWindow
 	{
 
-		private IEnumerator<MeshEntry> enumerator = Settings.MeshLibrary.GetEnumerator();
+		private IEnumerator<MeshEntry> enumerator =  CreateEnumerator();
+
+		private static IEnumerator<MeshEntry> CreateEnumerator() {
+			IEnumerator<MeshEntry> enums = Settings.MeshLibrary.GetEnumerator();
+			enums.MoveNext();
+			return enums;
+		}
 
 		private UnstructuredMesh CurrentMesh {
 			get {
@@ -21,67 +27,7 @@ namespace ShapeDatabase.UI {
 
 		// Here we now have added the normals of the vertices
 		// Remember to define the layouts to the VAO's
-		private readonly float[] _vertices =
-		{
-             // Position          Normal
-            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f, // Front face
-             0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-			 0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-			 0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-			-0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-			-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-
-			-0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f, // Back face
-             0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-			 0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-			 0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-			-0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-			-0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-
-			-0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f, // Left face
-            -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-			-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-			-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-			-0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-			-0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-
-			 0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f, // Right face
-             0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-			 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-			 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-			 0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-			 0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-
-			-0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f, // Bottom face
-             0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-			 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-			 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-			-0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-			-0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-
-			-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f, // Top face
-             0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-			 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-			 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-			-0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-			-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
-		};
-
-		/*
-		uint[] indices = {		// note that we start from 0!
-			0, 1, 2,			// first triangle
-			3, 4, 5,			// second triangle
-			6, 7, 8,			// etc.
-			9, 10, 11,
-			12, 13, 14,
-			15, 16, 17,
-			18, 19, 20,
-			21, 22, 23,
-			24, 25, 26,
-			27, 28, 29,
-			30, 31, 32,
-			33, 34, 35,
-		};*/
+		private float[] _vertices;
 
 		private readonly Vector3 _lightPos = new Vector3(1.2f, 1.0f, 2.0f);
 
@@ -101,10 +47,30 @@ namespace ShapeDatabase.UI {
 			keybindings = new KeyController();
 			RegisterKeyBinds();
 
-			/*
-			Vector3[] test = new Vector3[3] { new Vector3(-0.5f, -0.5f, -0.5f), new Vector3(0.5f, 0.5f, -0.5f), new Vector3(0.5f, -0.5f, -0.5f) };
+			LoadMesh(CurrentMesh);
+		}
 
-			Vector3 result = GetNormal(test);*/
+		protected void LoadMesh(UnstructuredMesh mesh)
+		{
+			int totalVertices = mesh.Elements.Length;
+			_vertices = new float[totalVertices * 6];
+
+			for(int i = 0; i < totalVertices; i += 3)
+			{
+				Vector3[] TrianglePoints = new Vector3[3] {mesh.UnstructuredGrid[mesh.Elements[i]], mesh.UnstructuredGrid[mesh.Elements[i + 1]], mesh.UnstructuredGrid[mesh.Elements[i + 2]]};
+
+				Vector3 Normal = GetNormal(new Vector3[3] {TrianglePoints[0], TrianglePoints[1], TrianglePoints[2]});
+
+				for(int j = 0; j < 3; j++)
+				{
+					_vertices[(i * 6) + (j * 6)] = TrianglePoints[j].X;
+					_vertices[(i * 6) + (j * 6) + 1] = TrianglePoints[j].Y;
+					_vertices[(i * 6) + (j * 6) + 2] = TrianglePoints[j].Z;
+					_vertices[(i * 6) + (j * 6) + 3] = Normal.X;
+					_vertices[(i * 6) + (j * 6) + 4] = Normal.Y;
+					_vertices[(i * 6) + (j * 6) + 5] = Normal.Z;
+				}
+			}
 		}
 
 		protected virtual void RegisterKeyBinds() {
@@ -214,7 +180,7 @@ namespace ShapeDatabase.UI {
 			GL.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(uint), indices, BufferUsageHint.StaticDraw);
 			GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);*/
 
-			GL.DrawArrays(PrimitiveType.Triangles, 0, 36);
+			GL.DrawArrays(PrimitiveType.Triangles, 0, _vertices.Length);
 
 			GL.BindVertexArray(_vaoModel);
 

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using OpenTK;
+using System.Diagnostics;
 
 namespace ShapeDatabase.Shapes {
 
@@ -12,7 +13,7 @@ namespace ShapeDatabase.Shapes {
 		/// <summary>
 		/// An array defining all the points of the cells for this grid.
 		/// </summary>
-		public float[] UnstructuredGrid { get; }
+		public Vector3[] UnstructuredGrid { get; }
 		/// <summary>
 		/// An array specifying which point in the grid should be use to
 		/// define a shape. These shapes commonly consist of triangles.
@@ -26,7 +27,7 @@ namespace ShapeDatabase.Shapes {
 		/// for shapes.</param>
 		/// <param name="indices">A collection of references to points
 		/// on the grid to form triangles.</param>
-		public UnstructuredMesh(float[] grid, uint[] indices) {
+		public UnstructuredMesh(Vector3[] grid, uint[] indices) {
 			Debug.Assert(GridCondition(grid));
 			Debug.Assert(IndiceCondition(grid, indices));
 
@@ -34,20 +35,22 @@ namespace ShapeDatabase.Shapes {
 			Elements = indices;
 		}
 
-		#if DEBUG
+#if DEBUG
 
-		private static bool GridCondition(float[] grid) {
+		private static bool GridCondition(Vector3[] grid) {
 			// A grid contains the X, Y and Z coords to must be a multiple of 3.
-			if (grid.Length % 3 != 0 || grid.Length == 0)
+			if (grid.Length == 0)
 				return false;
 			// All points need to be in a -1,1 cube.
-			foreach (float variable in grid)
-				if (variable < -1 || variable > 1)
+			foreach (Vector3 variable in grid)
+				if (variable.X < -1 || variable.X > 1
+					|| variable.Y < -1 || variable.Y > 1
+					|| variable.Z < -1 || variable.Z > 1)
 					return false;
 			return true;
 		}
 
-		private static bool IndiceCondition(float[] grid, uint[] indices) {
+		private static bool IndiceCondition(Vector3[] grid, uint[] indices) {
 			// Extention of 3 as it contains triangles.
 			if (indices.Length % 3 != 0 || indices.Length == 0)
 				return false;
@@ -58,7 +61,7 @@ namespace ShapeDatabase.Shapes {
 			return true;
 		}
 
-		#endif
+#endif
 
 	}
 }

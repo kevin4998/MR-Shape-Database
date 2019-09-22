@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.Util;
+using OpenTK;
 
 namespace ShapeDatabase.IO {
 
@@ -61,13 +62,12 @@ namespace ShapeDatabase.IO {
 			if (!uint.TryParse(values[2], numberStyle, culture, out uint _/*edgeCount*/))
 				throw new InvalidFormatException(string.Format(EX_MISSING_VALUE, "edges"));
 
-			uint max = vertexCount * 3;
 			float minValue = int.MaxValue;
 			float maxValue = int.MinValue;
-			float[] vob = new float[max];	// 3 dimensional space
+			Vector3[] vob = new Vector3[vertexCount];	// 3 dimensional space
 			// The third line and following define #vertices
 			// with their representative x, y and z coordinates.
-			for (uint index = 0; index < max && !reader.EndOfStream; ) {
+			for (uint index = 0; index < vertexCount && !reader.EndOfStream; index++) {
 				line = reader.ReadLine().Trim();
 				values = line.Split();
 
@@ -85,13 +85,11 @@ namespace ShapeDatabase.IO {
 				maxValue = Math.Max(maxValue, y);
 				maxValue = Math.Max(maxValue, z);
 
-				vob[index++] = x;
-				vob[index++] = y;
-				vob[index++] = z;
+				vob[index] = new Vector3(x, y, z);
 			}
 
 
-			max = faceCount * 3; // 3 because of triangles
+			uint max = faceCount * 3; // 3 because of triangles
 			uint[] ebo = new uint[max];
 			// The Fourth section defines the collection of faces.
 			for (uint index = 0; index < max && !reader.EndOfStream; /* Index increment in code. */ ) {
