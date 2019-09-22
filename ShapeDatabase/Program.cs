@@ -25,6 +25,11 @@ namespace ShapeDatabase {
 			Console.ReadLine();
 		}
 
+		/// <summary>
+		/// Actions which will be performe don the converted Options
+		/// object.
+		/// </summary>
+		/// <param name="options">Parsed Command Line Argument Collection.</param>
 		static void OnParsedValues(Options options) {
 			Settings.Culture = CultureInfo.GetCultureInfo(options.Culture);
 
@@ -38,6 +43,12 @@ namespace ShapeDatabase {
 			Console.WriteLine("Done Processing Meshes.");
 		}
 
+		/// <summary>
+		/// Actions which will be performed on all the exceptions
+		/// generated when parsing text values.
+		/// </summary>
+		/// <param name="errors">A collection of generated errors
+		/// by the Parser package.</param>
 		static void OnErrors(IEnumerable<Error> errors) {
 			foreach (Error error in errors)
 				Console.WriteLine(error.ToString());
@@ -59,6 +70,10 @@ namespace ShapeDatabase {
 			HelpText = "The directories containing all the Shapes.")]
 		public IEnumerable<string> ShapeDirectories { get; set; }
 
+		/// <summary>
+		/// The culture in which the files were written.
+		/// Needed for the conversion process.
+		/// </summary>
 		[Option('c', "culture",
 			Required = false,
 			Default = "en",

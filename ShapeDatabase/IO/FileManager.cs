@@ -27,9 +27,15 @@ namespace ShapeDatabase.IO {
 		private readonly ISet<string> formats = new HashSet<string>();
 		private readonly IDictionary<string, IReader<UnstructuredMesh>> readers = new Dictionary<string, IReader<UnstructuredMesh>>();
 
+		/// <summary>
+		/// A collection of all the loaded meshes sturctured inside a library.
+		/// </summary>
 		public MeshLibrary ProcessedMeshes { get; } = new MeshLibrary();
 
 
+		/// <summary>
+		/// Creates a new manager responsible for loading files.
+		/// </summary>
 		public FileManager() {
 			foreach (IReader<UnstructuredMesh> reader in LocalReaders.Value)
 				AddReader(reader);

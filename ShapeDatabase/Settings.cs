@@ -12,6 +12,9 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static string ShapeLibraryDir { get; set; } = "Content/Shapes/Initial";
 
+		/// <summary>
+		/// The culture which is required for converting the shape files.
+		/// </summary>
 		public static CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;
 
 	}
