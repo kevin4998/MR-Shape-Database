@@ -8,7 +8,6 @@ using OpenTK.Graphics.OpenGL4;
 
 namespace ShapeDatabase.UI
 {
-	// A simple class meant to help create shaders.
 	public class Shader
 	{
 		public readonly int Handle;

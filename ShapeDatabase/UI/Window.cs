@@ -8,24 +8,6 @@ namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow
 	{
-		/*
-		8 6 12
-		 1.0  0.0 1.4142
-		 0.0  1.0 1.4142
-		-1.0  0.0 1.4142
-		 0.0 -1.0 1.4142
-		 1.0  0.0 0.0
-		 0.0  1.0 0.0
-		-1.0  0.0 0.0
-		 0.0 -1.0 0.0
-		4  0 1 2 3  255 0 0 #red
-		4  7 4 0 3  0 255 0 #green
-		4  4 5 1 0  0 0 255 #blue
-		4  5 6 2 1  0 255 0 
-		4  3 2 6 7  0 0 255
-		4  6 5 4 7  255 0 0
-		*/
-
 		// Here we now have added the normals of the vertices
 		// Remember to define the layouts to the VAO's
 		private readonly float[] _vertices =
@@ -74,10 +56,10 @@ namespace ShapeDatabase.UI {
 			-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
 		};
 
-		uint[] indices = {  // note that we start from 0!
-			0, 1, 2,	// first triangle
-			3, 4, 5,	// second triangle
-			6, 7, 8,	// etc.
+		uint[] indices = {		// note that we start from 0!
+			0, 1, 2,			// first triangle
+			3, 4, 5,			// second triangle
+			6, 7, 8,			// etc.
 			9, 10, 11,
 			12, 13, 14,
 			15, 16, 17,
@@ -96,17 +78,13 @@ namespace ShapeDatabase.UI {
 		private int _vaoModel;
 		private int _vaoLamp;
 
-		private Shader _lampShader;
 		private Shader _lightingShader;
 
 		private Camera _camera;
-		private bool _firstMove = true;
-		private Vector2 _lastPos;
 		private double _angleY;
 		private double _angleX;
 
 		public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) { }
-
 
 		protected override void OnLoad(EventArgs e)
 		{
@@ -118,10 +96,8 @@ namespace ShapeDatabase.UI {
 			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
 			GL.BufferData(BufferTarget.ArrayBuffer, _vertices.Length * sizeof(float), _vertices, BufferUsageHint.StaticDraw);
 
-			//_lampShader = new Shader("UI/shader.vert", "UI/shader.frag");
 			_lightingShader = new Shader("UI/shader.vert", "UI/lighting.frag");
 			
-
 			_vaoModel = GL.GenVertexArray();
 			GL.BindVertexArray(_vaoModel);
 
@@ -129,27 +105,13 @@ namespace ShapeDatabase.UI {
 
 			var positionLocation = _lightingShader.GetAttribLocation("aPos");
 			GL.EnableVertexAttribArray(positionLocation);
-			// Remember to change the stride as we now have 6 floats per vertex
+
 			GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
 
-			// We now need to define the layout of the normal so the shader can use it
 			var normalLocation = _lightingShader.GetAttribLocation("aNormal");
 			GL.EnableVertexAttribArray(normalLocation);
 			GL.VertexAttribPointer(normalLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
-			
-			/*
-			_vaoLamp = GL.GenVertexArray();
-			GL.BindVertexArray(_vaoLamp);
 
-			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
-
-			positionLocation = _lampShader.GetAttribLocation("aPos");
-			GL.EnableVertexAttribArray(positionLocation);*/
-
-		// Also change the stride here as we now have 6 floats per vertex. Now we don't define the normal for the lamp VAO
-		// this is because it isn't used, it might seem like a waste to use the same VBO if they dont have the same data
-		// The two cubes still use the same position, and since the position is already in the graphics memory it is actually
-		// better to do it this way. Look through the web version for a much better understanding of this.
 		GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
 
 			_camera = new Camera(Vector3.UnitZ * 3, Width / (float)Height);
@@ -178,26 +140,12 @@ namespace ShapeDatabase.UI {
 			_lightingShader.SetVector3("lightPos", _lightPos);
 			_lightingShader.SetVector3("viewPos", _camera.Position);
 
-
 			_elementBufferObject = GL.GenBuffer();
 			GL.BindBuffer(BufferTarget.ElementArrayBuffer, _elementBufferObject);
 			GL.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(uint), indices, BufferUsageHint.StaticDraw);
 			GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);
 
 			GL.BindVertexArray(_vaoModel);
-
-			/*
-			_lampShader.Use();
-			
-			Matrix4 lampMatrix = Matrix4.Identity;
-			lampMatrix *= Matrix4.CreateScale(0.2f);
-			lampMatrix *= Matrix4.CreateTranslation(_lightPos);
-
-			_lampShader.SetMatrix4("model", lampMatrix);
-			_lampShader.SetMatrix4("view", _camera.GetViewMatrix());
-			_lampShader.SetMatrix4("projection", _camera.GetProjectionMatrix());
-
-			GL.DrawArrays(PrimitiveType.Triangles, 0, 36);*/
 
 			SwapBuffers();
 
@@ -220,7 +168,6 @@ namespace ShapeDatabase.UI {
 			}
 
 			const float cameraSpeed = 1.5f;
-			const float sensitivity = 0.2f;
 
 			if (input.IsKeyDown(Key.W))
 				_camera.Position += _camera.Front * cameraSpeed * (float)e.Time; // Forward 
@@ -240,24 +187,6 @@ namespace ShapeDatabase.UI {
 				_angleX -= 1.5;
 			if (input.IsKeyDown(Key.Down))		// Rotate Down
 				_angleX += 1.5;
-
-			/*
-			var mouse = Mouse.GetState();
-
-			if (_firstMove)
-			{
-				_lastPos = new Vector2(mouse.X, mouse.Y);
-				_firstMove = false;
-			}
-			else
-			{
-				var deltaX = mouse.X - _lastPos.X;
-				var deltaY = mouse.Y - _lastPos.Y;
-				_lastPos = new Vector2(mouse.X, mouse.Y);
-
-				_camera.Yaw += deltaX * sensitivity;
-				_camera.Pitch -= deltaY * sensitivity;
-			}*/
 
 			base.OnUpdateFrame(e);
 		}
@@ -297,7 +226,6 @@ namespace ShapeDatabase.UI {
 			GL.DeleteVertexArray(_vaoModel);
 			GL.DeleteVertexArray(_vaoLamp);
 
-			//GL.DeleteProgram(_lampShader.Handle);
 			GL.DeleteProgram(_lightingShader.Handle);
 
 			base.OnUnload(e);
