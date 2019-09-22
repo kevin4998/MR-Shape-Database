@@ -5,6 +5,7 @@ using CommandLine;
 using CommandLine.Text;
 using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
+using ShapeDatabase.UI;
 
 namespace ShapeDatabase {
 	class Program {
@@ -21,6 +22,9 @@ namespace ShapeDatabase {
 				.WithNotParsed(OnErrors)
 				.WithParsed(OnParsedValues);
 			Console.WriteLine("Done converting input!");
+
+			Controller controller = new Controller();
+
 			Console.WriteLine("Press any key to exit application.");
 			Console.ReadLine();
 		}
