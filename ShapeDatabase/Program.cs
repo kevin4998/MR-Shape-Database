@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using CommandLine;
 using CommandLine.Text;
-using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
-using ShapeDatabase.UI;
 
 namespace ShapeDatabase {
 	class Program {
 
-		private static FileManager FileManager { get; set; }
-
 		static void Main(string[] args) {
 			Console.WriteLine("Starting up!");
-
-			FileManager = new FileManager();
 
 			Console.WriteLine("Starting converting input!");
 			Parser.Default.ParseArguments<Options>(args)
@@ -39,8 +33,8 @@ namespace ShapeDatabase {
 
 			Console.WriteLine("Start Processing Meshes.");
 			foreach (string dir in options.ShapeDirectories)
-				FileManager.AddDirectory(dir);
-			MeshLibrary meshes = FileManager.ProcessedMeshes;
+				Settings.FileManager.AddDirectory(dir);
+			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 			Console.WriteLine($"Shape Count:{meshes.Count}");
 			foreach (string name in meshes.Names)
 				Console.WriteLine($"\t- {name}");

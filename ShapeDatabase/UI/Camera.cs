@@ -78,6 +78,12 @@ namespace ShapeDatabase.UI
 			}
 		}
 
+		public Camera Reset(Window window) {
+			Position = Vector3.UnitZ * 3;
+			AspectRatio = window.Width / (float) window.Height;
+			return this;
+		}
+
 		// Get the view matrix using the amazing LookAt function described more in depth on the web tutorials
 		public Matrix4 GetViewMatrix()
 		{

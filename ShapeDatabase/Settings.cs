@@ -1,4 +1,6 @@
 ﻿using System.Globalization;
+using ShapeDatabase.IO;
+using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase {
 	/// <summary>
@@ -16,6 +18,16 @@ namespace ShapeDatabase {
 		/// The culture which is required for converting the shape files.
 		/// </summary>
 		public static CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;
+
+		/// <summary>
+		/// A global manager for all the files in this application.
+		/// </summary>
+		public static FileManager FileManager { get; set; } = new FileManager();
+
+		/// <summary>
+		/// A collection of all the loaded shapes by this application.
+		/// </summary>
+		public static MeshLibrary MeshLibrary => Settings.FileManager.ProcessedMeshes;
 
 	}
 }

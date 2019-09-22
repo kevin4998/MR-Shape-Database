@@ -8,6 +8,7 @@ namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow
 	{
+
 		// Here we now have added the normals of the vertices
 		// Remember to define the layouts to the VAO's
 		private readonly float[] _vertices =
@@ -56,6 +57,7 @@ namespace ShapeDatabase.UI {
 			-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
 		};
 
+		/*
 		uint[] indices = {		// note that we start from 0!
 			0, 1, 2,			// first triangle
 			3, 4, 5,			// second triangle
@@ -69,22 +71,69 @@ namespace ShapeDatabase.UI {
 			27, 28, 29,
 			30, 31, 32,
 			33, 34, 35,
-		};
+		};*/
 
 		private readonly Vector3 _lightPos = new Vector3(1.2f, 1.0f, 2.0f);
 
-		private int _elementBufferObject;
+		//private int _elementBufferObject;
 		private int _vertexBufferObject;
 		private int _vaoModel;
-		private int _vaoLamp;
 
 		private Shader _lightingShader;
 
+		private KeyController keybindings;
 		private Camera _camera;
 		private double _angleY;
 		private double _angleX;
 
-		public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) { }
+		public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) {
+
+			const float cameraSpeed = 1.5f;
+			keybindings = new KeyController();
+
+			keybindings.RegisterDown(Key.Escape, Exit);
+			keybindings.RegisterDown(Key.Space, // Reset
+				() => {
+					_camera.Reset(this);
+					_angleY = 0;
+					_angleX = 0;
+				});
+
+			keybindings.RegisterHold(Key.W,		// Forward
+				(FrameEventArgs e) => _camera.Position += _camera.Front * cameraSpeed * (float) e.Time );
+			keybindings.RegisterHold(Key.S,		// Backward
+				(FrameEventArgs e) => _camera.Position -= _camera.Front * cameraSpeed * (float) e.Time);
+			keybindings.RegisterHold(Key.A,		// Left
+				(FrameEventArgs e) => _camera.Position -= _camera.Right * cameraSpeed * (float) e.Time);
+			keybindings.RegisterHold(Key.D,		// Right
+				(FrameEventArgs e) => _camera.Position += _camera.Right * cameraSpeed * (float) e.Time);
+			keybindings.RegisterHold(Key.Q,     // Up
+				(FrameEventArgs e) => _camera.Position += _camera.Up * cameraSpeed * (float) e.Time);
+			keybindings.RegisterHold(Key.E,     // Down
+				(FrameEventArgs e) => _camera.Position -= _camera.Up * cameraSpeed * (float) e.Time);
+
+			keybindings.RegisterHold(Key.Left,	() => _angleY -= 1.5);
+			keybindings.RegisterHold(Key.Right, () => _angleY += 1.5);
+			keybindings.RegisterHold(Key.Up,	() => _angleX -= 1.5);
+			keybindings.RegisterHold(Key.Down,	() => _angleX += 1.5);
+
+			/*
+			Vector3[] test = new Vector3[3] { new Vector3(-0.5f, -0.5f, -0.5f), new Vector3(0.5f, 0.5f, -0.5f), new Vector3(0.5f, -0.5f, -0.5f) };
+
+			Vector3 result = GetNormal(test);*/
+		}
+
+		protected Vector3 GetNormal(Vector3[] verts)
+		{
+			if (verts.Length != 3)
+				throw new ArgumentException("Input should have 3 vertices");
+
+			Vector3 v1 = verts[0];
+			Vector3 v2 = verts[1];
+			Vector3 v3 = verts[2];
+			
+			return Vector3.Cross(v2 - v1, v3 - v1).Normalized();
+		}
 
 		protected override void OnLoad(EventArgs e)
 		{
@@ -100,19 +149,17 @@ namespace ShapeDatabase.UI {
 			
 			_vaoModel = GL.GenVertexArray();
 			GL.BindVertexArray(_vaoModel);
-
 			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
 
 			var positionLocation = _lightingShader.GetAttribLocation("aPos");
 			GL.EnableVertexAttribArray(positionLocation);
-
 			GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
 
 			var normalLocation = _lightingShader.GetAttribLocation("aNormal");
 			GL.EnableVertexAttribArray(normalLocation);
 			GL.VertexAttribPointer(normalLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
 
-		GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
+			//GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
 
 			_camera = new Camera(Vector3.UnitZ * 3, Width / (float)Height);
 
@@ -140,10 +187,13 @@ namespace ShapeDatabase.UI {
 			_lightingShader.SetVector3("lightPos", _lightPos);
 			_lightingShader.SetVector3("viewPos", _camera.Position);
 
+			/*
 			_elementBufferObject = GL.GenBuffer();
 			GL.BindBuffer(BufferTarget.ElementArrayBuffer, _elementBufferObject);
 			GL.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(uint), indices, BufferUsageHint.StaticDraw);
-			GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);
+			GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);*/
+
+			GL.DrawArrays(PrimitiveType.Triangles, 0, 36);
 
 			GL.BindVertexArray(_vaoModel);
 
@@ -156,38 +206,9 @@ namespace ShapeDatabase.UI {
 		protected override void OnUpdateFrame(FrameEventArgs e)
 		{
 			if (!Focused)
-			{
 				return;
-			}
 
-			var input = Keyboard.GetState();
-
-			if (input.IsKeyDown(Key.Escape))
-			{
-				Exit();
-			}
-
-			const float cameraSpeed = 1.5f;
-
-			if (input.IsKeyDown(Key.W))
-				_camera.Position += _camera.Front * cameraSpeed * (float)e.Time; // Forward 
-			if (input.IsKeyDown(Key.S))
-				_camera.Position -= _camera.Front * cameraSpeed * (float)e.Time; // Backwards
-			if (input.IsKeyDown(Key.A))
-				_camera.Position -= _camera.Right * cameraSpeed * (float)e.Time; // Left
-			if (input.IsKeyDown(Key.D))
-				_camera.Position += _camera.Right * cameraSpeed * (float)e.Time; // Right
-			if (input.IsKeyDown(Key.Space))
-				_camera.Position += _camera.Up * cameraSpeed * (float)e.Time; // Up 
-			if (input.IsKeyDown(Key.Left))		// Rotate Left
-				_angleY -= 1.5;
-			if (input.IsKeyDown(Key.Right))		// Rotate Right
-				_angleY += 1.5;
-			if (input.IsKeyDown(Key.Up))		// Rotate Up
-				_angleX -= 1.5;
-			if (input.IsKeyDown(Key.Down))		// Rotate Down
-				_angleX += 1.5;
-
+			keybindings.OnKeyPress(Keyboard.GetState(), e);
 			base.OnUpdateFrame(e);
 		}
 
@@ -224,7 +245,6 @@ namespace ShapeDatabase.UI {
 
 			GL.DeleteBuffer(_vertexBufferObject);
 			GL.DeleteVertexArray(_vaoModel);
-			GL.DeleteVertexArray(_vaoLamp);
 
 			GL.DeleteProgram(_lightingShader.Handle);
 
