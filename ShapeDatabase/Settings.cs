@@ -20,6 +20,21 @@ namespace ShapeDatabase {
 		public static CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;
 
 		/// <summary>
+		/// If Debug messages should be visible in the console.
+		/// </summary>
+		public static bool ShowDebug { get; set; } = false;
+
+		/// <summary>
+		/// Describes if the application should be active.
+		/// </summary>
+		public static bool Active { get; set; } = true;
+
+		/// <summary>
+		/// Describes if all the functionality of the application should cease at once.
+		/// </summary>
+		public static bool DirectShutDown { get; set; } = false;
+
+		/// <summary>
 		/// A global manager for all the files in this application.
 		/// </summary>
 		public static FileManager FileManager { get; set; } = new FileManager();

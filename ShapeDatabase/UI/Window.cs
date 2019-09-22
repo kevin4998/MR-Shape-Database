@@ -1,13 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Input;
+using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow
 	{
+
+		private IEnumerator<MeshEntry> enumerator = Settings.MeshLibrary.GetEnumerator();
+
+		private UnstructuredMesh CurrentMesh {
+			get {
+				return enumerator.Current.Mesh;
+			}
+		}
 
 		// Here we now have added the normals of the vertices
 		// Remember to define the layouts to the VAO's
@@ -88,9 +98,20 @@ namespace ShapeDatabase.UI {
 
 		public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) {
 
-			const float cameraSpeed = 1.5f;
 			keybindings = new KeyController();
+			RegisterKeyBinds();
 
+			/*
+			Vector3[] test = new Vector3[3] { new Vector3(-0.5f, -0.5f, -0.5f), new Vector3(0.5f, 0.5f, -0.5f), new Vector3(0.5f, -0.5f, -0.5f) };
+
+			Vector3 result = GetNormal(test);*/
+		}
+
+		protected virtual void RegisterKeyBinds() {
+
+			const float cameraSpeed = 1.5f;
+
+			// Application Management
 			keybindings.RegisterDown(Key.Escape, Exit);
 			keybindings.RegisterDown(Key.Space, // Reset
 				() => {
@@ -98,29 +119,29 @@ namespace ShapeDatabase.UI {
 					_angleY = 0;
 					_angleX = 0;
 				});
+			keybindings.RegisterDown(Key.Plus,  // Next Image
+				() => enumerator.MoveNext());
 
-			keybindings.RegisterHold(Key.W,		// Forward
-				(FrameEventArgs e) => _camera.Position += _camera.Front * cameraSpeed * (float) e.Time );
-			keybindings.RegisterHold(Key.S,		// Backward
+			// Movement
+			keybindings.RegisterHold(Key.W,     // Forward
+				(FrameEventArgs e) => _camera.Position += _camera.Front * cameraSpeed * (float) e.Time);
+			keybindings.RegisterHold(Key.S,     // Backward
 				(FrameEventArgs e) => _camera.Position -= _camera.Front * cameraSpeed * (float) e.Time);
-			keybindings.RegisterHold(Key.A,		// Left
+			keybindings.RegisterHold(Key.A,     // Left
 				(FrameEventArgs e) => _camera.Position -= _camera.Right * cameraSpeed * (float) e.Time);
-			keybindings.RegisterHold(Key.D,		// Right
+			keybindings.RegisterHold(Key.D,     // Right
 				(FrameEventArgs e) => _camera.Position += _camera.Right * cameraSpeed * (float) e.Time);
 			keybindings.RegisterHold(Key.Q,     // Up
 				(FrameEventArgs e) => _camera.Position += _camera.Up * cameraSpeed * (float) e.Time);
 			keybindings.RegisterHold(Key.E,     // Down
 				(FrameEventArgs e) => _camera.Position -= _camera.Up * cameraSpeed * (float) e.Time);
 
-			keybindings.RegisterHold(Key.Left,	() => _angleY -= 1.5);
+			// Rotations
+			keybindings.RegisterHold(Key.Left, () => _angleY -= 1.5);
 			keybindings.RegisterHold(Key.Right, () => _angleY += 1.5);
-			keybindings.RegisterHold(Key.Up,	() => _angleX -= 1.5);
-			keybindings.RegisterHold(Key.Down,	() => _angleX += 1.5);
+			keybindings.RegisterHold(Key.Up, () => _angleX -= 1.5);
+			keybindings.RegisterHold(Key.Down, () => _angleX += 1.5);
 
-			/*
-			Vector3[] test = new Vector3[3] { new Vector3(-0.5f, -0.5f, -0.5f), new Vector3(0.5f, 0.5f, -0.5f), new Vector3(0.5f, -0.5f, -0.5f) };
-
-			Vector3 result = GetNormal(test);*/
 		}
 
 		protected Vector3 GetNormal(Vector3[] verts)
@@ -250,5 +271,12 @@ namespace ShapeDatabase.UI {
 
 			base.OnUnload(e);
 		}
+
+		public override void Exit() {
+			Settings.Active = false;
+			Settings.DirectShutDown = true;
+			base.Exit();
+		}
+
 	}
 }

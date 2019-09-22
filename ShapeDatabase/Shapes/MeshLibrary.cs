@@ -42,6 +42,13 @@ namespace ShapeDatabase.Shapes {
 				library.Add(entry.Name, entry);
 		}
 
+
+		public MeshEntry this[string name] {
+			get {
+				return library[name];
+			}
+		}
+
 		public IEnumerator<MeshEntry> GetEnumerator() {
 			return Meshes.GetEnumerator();
 		}
