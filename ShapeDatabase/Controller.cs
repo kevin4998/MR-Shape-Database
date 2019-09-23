@@ -1,9 +1,11 @@
 ﻿using CommandLine;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI;
+using ShapeDatabase.Refiner;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Diagnostics;
 
 namespace ShapeDatabase
 {
@@ -43,15 +45,43 @@ namespace ShapeDatabase
 				UnstructuredMesh mesh = meshEntry.Mesh;
 				int numberOfVertices = mesh.UnstructuredGrid.Length;
 				int numberOfFaces = mesh.Elements.Length / 3;
+
 				if(numberOfVertices < 100 || numberOfFaces < 100)
 				{
-					;
+					//MeshEntry refinedMesh = RefineMesh(meshEntry);
+					MeshEntry refinedMesh = RefineMesh(meshEntry);
 				}
 			}
 
 			Console.WriteLine("Done Processing Meshes.");
 		}
 
+		public static MeshEntry RefineMesh(MeshEntry meshEntry)
+		{
+				string javaPath = @"C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe";
+				string inputFile = @"..\..\Content\Shapes\Initial\m1674.off";
+				string outputFile = @"..\..\Content\Shapes\Initial\m1674-2.off";
+				var processInfo = new ProcessStartInfo($"{javaPath}", $@"-jar catmullclark.jar {inputFile} {outputFile}")
+				{
+					CreateNoWindow = true,
+					UseShellExecute = false
+				};
+
+				processInfo.WorkingDirectory = @"C:\Users\guusd\Documents\UniversiteitUtrecht\M2.1\MR\MR-Shape-Database\ShapeDatabase\Refiner\Scripts"; // this is where your jar file is.
+				Process proc;
+
+				if ((proc = Process.Start(processInfo)) == null)
+				{
+					throw new InvalidOperationException("??");
+				}
+
+				proc.WaitForExit();
+				int exitCode = proc.ExitCode;
+				proc.Close();
+			
+
+			return new MeshEntry();
+		}
 
 		/// <summary>
 		/// Actions which will be performe don the converted Options

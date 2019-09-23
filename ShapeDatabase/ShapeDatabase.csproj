@@ -40,6 +40,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Refiner\Refiner.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="UI\shader.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
