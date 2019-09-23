@@ -52,7 +52,7 @@ namespace ShapeDatabase
 				{
 					//MeshEntry refinedMesh = RefineMesh(meshEntry);
 
-					Refiner.ExtendMesh(meshEntry);
+					Refiner.ExtendMesh(meshEntry, false);
 				}
 
 				if (numberOfVertices > 50000 || numberOfFaces > 50000)
