@@ -34,7 +34,20 @@ namespace ShapeDatabase
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 			Console.WriteLine($"Shape Count:{meshes.Count}");
 			foreach (string name in meshes.Names)
+			{
 				Console.WriteLine($"\t- {name}");
+			}
+				
+			foreach(MeshEntry meshEntry in meshes.Meshes)
+			{
+				UnstructuredMesh mesh = meshEntry.Mesh;
+				int numberOfVertices = mesh.UnstructuredGrid.Length;
+				int numberOfFaces = mesh.Elements.Length / 3;
+				if(numberOfVertices < 100 || numberOfFaces < 100)
+				{
+					;
+				}
+			}
 
 			Console.WriteLine("Done Processing Meshes.");
 		}
