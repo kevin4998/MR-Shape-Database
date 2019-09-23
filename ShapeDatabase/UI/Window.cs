@@ -122,7 +122,7 @@ namespace ShapeDatabase.UI {
 
 		protected override void OnLoad(EventArgs e)
 		{
-			GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+			GL.ClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 
 			GL.Enable(EnableCap.DepthTest);
 
@@ -162,7 +162,7 @@ namespace ShapeDatabase.UI {
 			_lightingShader.SetMatrix4("view", _camera.GetViewMatrix());
 			_lightingShader.SetMatrix4("projection", _camera.GetProjectionMatrix());
 
-			_lightingShader.SetVector3("objectColor", new Vector3(1.0f, 0.5f, 0.31f));
+			_lightingShader.SetVector3("objectColor", new Vector3(1.0f, 0.6f, 0.31f));
 			_lightingShader.SetVector3("lightColor", new Vector3(1.0f, 1.0f, 1.0f));
 			_lightingShader.SetVector3("lightPos", _lightPos);
 			_lightingShader.SetVector3("viewPos", _camera.Position);

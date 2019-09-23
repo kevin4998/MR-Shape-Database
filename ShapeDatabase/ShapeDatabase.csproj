@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Content\Shapes\Initial\61.off">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Content\Shapes\Initial\LDB_101.off">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
