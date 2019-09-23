@@ -49,19 +49,25 @@ namespace ShapeDatabase
 				if(numberOfVertices < 100 || numberOfFaces < 100)
 				{
 					//MeshEntry refinedMesh = RefineMesh(meshEntry);
-					MeshEntry refinedMesh = RefineMesh(meshEntry);
+
+					ExtendMesh(meshEntry.Name, false);
+				}
+
+				if (numberOfVertices > 50000 || numberOfFaces > 50000)
+				{
+					SimplifyMesh(meshEntry);
 				}
 			}
 
 			Console.WriteLine("Done Processing Meshes.");
 		}
 
-		public static MeshEntry RefineMesh(MeshEntry meshEntry)
+		static void ExtendMesh(string meshName, bool overwrite)
 		{
 				string javaPath = @"C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe";
-				string inputFile = @"..\..\Content\Shapes\Initial\m1674.off";
-				string outputFile = @"..\..\Content\Shapes\Initial\m1674-2.off";
-				var processInfo = new ProcessStartInfo($"{javaPath}", $@"-jar catmullclark.jar {inputFile} {outputFile}")
+				string inputFile = $@"..\..\Content\Shapes\Initial\{meshName}";
+				string outputFile = $@"..\..\Content\Shapes\Initial\{(overwrite ? meshName : (meshName.Remove(meshName.Length - 4, 4) + "(Extended).off"))}";
+				var processInfo = new ProcessStartInfo($"{javaPath}", $@"-jar doosabin.jar {inputFile} {outputFile}")
 				{
 					CreateNoWindow = true,
 					UseShellExecute = false
@@ -78,11 +84,13 @@ namespace ShapeDatabase
 				proc.WaitForExit();
 				int exitCode = proc.ExitCode;
 				proc.Close();
-			
-
-			return new MeshEntry();
 		}
 
+		static void SimplifyMesh(MeshEntry meshEntry)
+		{
+
+		}
+		
 		/// <summary>
 		/// Actions which will be performe don the converted Options
 		/// object.
