@@ -16,7 +16,7 @@ namespace ShapeDatabase.Refine
 			CallJavaScript("doosabin", mesh.Name, overwrite);
 		}
 
-		public static void SimplyMesh(MeshEntry mesh, bool overwrite)
+		public static void SimplifyMesh(MeshEntry mesh, bool overwrite)
 		{
 			CallJavaScript("cleanoff", mesh.Name, overwrite);
 		}

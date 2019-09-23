@@ -39,27 +39,24 @@ namespace ShapeDatabase
 			{
 				Console.WriteLine($"\t- {name}");
 			}
-				
+			
+			/*
 			foreach(MeshEntry meshEntry in meshes.Meshes)
 			{
-				;
-
 				UnstructuredMesh mesh = meshEntry.Mesh;
 				int numberOfVertices = mesh.UnstructuredGrid.Length;
 				int numberOfFaces = mesh.Elements.Length / 3;
 
 				if(numberOfVertices < 100 || numberOfFaces < 100)
 				{
-					//MeshEntry refinedMesh = RefineMesh(meshEntry);
-
 					Refiner.ExtendMesh(meshEntry, false);
 				}
 
 				if (numberOfVertices > 50000 || numberOfFaces > 50000)
 				{
-					//Refiner.SimplifyMesh(meshEntry);
+					Refiner.SimplifyMesh(meshEntry, false);
 				}
-			}
+			}*/
 
 			Console.WriteLine("Done Processing Meshes.");
 		}
