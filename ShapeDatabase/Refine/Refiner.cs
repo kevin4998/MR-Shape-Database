@@ -17,14 +17,14 @@ namespace ShapeDatabase.Refine
 
 		private static void CallJavaScript(string script, string inputFile, string outputFile)
 		{
-			string javaPath = @"C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe";
+			string javaPath = Settings.JavaDir;
 			var processInfo = new ProcessStartInfo($"{javaPath}", $@"-jar {script}.jar {@"..\Shapes\Initial\" + inputFile} {@"..\Shapes\Initial\" + outputFile}")
 			{
 				CreateNoWindow = true,
 				UseShellExecute = false
 			};
 
-			processInfo.WorkingDirectory = @"C:\Users\guusd\Documents\UniversiteitUtrecht\M2.1\MR\MR-Shape-Database\ShapeDatabase\Content\Scripts"; // this is where your jar file is.
+			processInfo.WorkingDirectory = Settings.JavaScriptsDir; // this is where your jar file is.
 			Process proc;
 
 			if ((proc = Process.Start(processInfo)) == null)

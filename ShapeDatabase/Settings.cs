@@ -44,5 +44,14 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static MeshLibrary MeshLibrary => Settings.FileManager.ProcessedMeshes;
 
+		/// <summary>
+		/// The location where all the Java refinement scripts are stored.
+		/// </summary>
+		public static string JavaScriptsDir { get; set; } = @"C:\Users\guusd\Documents\UniversiteitUtrecht\M2.1\MR\MR-Shape-Database\ShapeDatabase\Content\Scripts";
+
+		/// <summary>
+		/// The location where Java is installed on the computer.
+		/// </summary>
+		public static string JavaDir { get; set; } = @"C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe";
 	}
 }
