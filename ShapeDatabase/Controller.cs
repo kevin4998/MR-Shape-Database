@@ -1,7 +1,7 @@
 ﻿using CommandLine;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI;
-using ShapeDatabase.Refiner;
+using ShapeDatabase.Refine;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -42,6 +42,8 @@ namespace ShapeDatabase
 				
 			foreach(MeshEntry meshEntry in meshes.Meshes)
 			{
+				;
+
 				UnstructuredMesh mesh = meshEntry.Mesh;
 				int numberOfVertices = mesh.UnstructuredGrid.Length;
 				int numberOfFaces = mesh.Elements.Length / 3;
@@ -50,45 +52,16 @@ namespace ShapeDatabase
 				{
 					//MeshEntry refinedMesh = RefineMesh(meshEntry);
 
-					ExtendMesh(meshEntry.Name, false);
+					Refiner.ExtendMesh(meshEntry);
 				}
 
 				if (numberOfVertices > 50000 || numberOfFaces > 50000)
 				{
-					SimplifyMesh(meshEntry);
+					//Refiner.SimplifyMesh(meshEntry);
 				}
 			}
 
 			Console.WriteLine("Done Processing Meshes.");
-		}
-
-		static void ExtendMesh(string meshName, bool overwrite)
-		{
-				string javaPath = @"C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe";
-				string inputFile = $@"..\..\Content\Shapes\Initial\{meshName}";
-				string outputFile = $@"..\..\Content\Shapes\Initial\{(overwrite ? meshName : (meshName.Remove(meshName.Length - 4, 4) + "(Extended).off"))}";
-				var processInfo = new ProcessStartInfo($"{javaPath}", $@"-jar doosabin.jar {inputFile} {outputFile}")
-				{
-					CreateNoWindow = true,
-					UseShellExecute = false
-				};
-
-				processInfo.WorkingDirectory = @"C:\Users\guusd\Documents\UniversiteitUtrecht\M2.1\MR\MR-Shape-Database\ShapeDatabase\Refiner\Scripts"; // this is where your jar file is.
-				Process proc;
-
-				if ((proc = Process.Start(processInfo)) == null)
-				{
-					throw new InvalidOperationException("??");
-				}
-
-				proc.WaitForExit();
-				int exitCode = proc.ExitCode;
-				proc.Close();
-		}
-
-		static void SimplifyMesh(MeshEntry meshEntry)
-		{
-
 		}
 		
 		/// <summary>
