@@ -40,7 +40,7 @@ namespace ShapeDatabase
 				Console.WriteLine($"\t- {name}");
 			}
 			
-			/*
+			
 			foreach(MeshEntry meshEntry in meshes.Meshes)
 			{
 				UnstructuredMesh mesh = meshEntry.Mesh;
@@ -49,14 +49,9 @@ namespace ShapeDatabase
 
 				if(numberOfVertices < 100 || numberOfFaces < 100)
 				{
-					Refiner.ExtendMesh(meshEntry, false);
+					Refiner.ExtendMesh(@"..\Shapes\Initial\" + meshEntry.Name, @"..\Shapes\Initial\" + meshEntry.Name.Remove(meshEntry.Name.Length - 4, 4) + "(Extended).off");
 				}
-
-				if (numberOfVertices > 50000 || numberOfFaces > 50000)
-				{
-					Refiner.SimplifyMesh(meshEntry, false);
-				}
-			}*/
+			}
 
 			Console.WriteLine("Done Processing Meshes.");
 		}

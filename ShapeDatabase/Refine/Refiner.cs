@@ -11,39 +11,34 @@ namespace ShapeDatabase.Refine
 {
 	public class Refiner
 	{
-		public static void ExtendMesh(MeshEntry mesh, bool overwrite)
+		public static void ExtendMesh(string inputFileDirectory, string outputFileDirectory)
 		{
-			CallJavaScript("doosabin", mesh.Name, overwrite);
+			CallJavaScript("doosabin", inputFileDirectory, outputFileDirectory);
 		}
 
-		public static void SimplifyMesh(MeshEntry mesh, bool overwrite)
+		public static void SimplifyMesh(string inputFileDirectory, string outputFileDirectory)
 		{
-			CallJavaScript("cleanoff", mesh.Name, overwrite);
+			CallJavaScript("cleanoff", inputFileDirectory, outputFileDirectory);
 		}
 
-		public static void MakeTriangles(MeshEntry mesh, bool overwrite)
+		public static void MakeTriangles(string inputFileDirectory, string outputFileDirectory)
 		{
-			CallJavaScript("tess", mesh.Name, overwrite);
+			CallJavaScript("tess", inputFileDirectory, outputFileDirectory);
 		}
 
-		private static void CallJavaScript(string script, string inputFile, bool overwrite)
+		private static void CallJavaScript(string script, string inputFileDirectory, string outputFileDirectory)
 		{
 			string javaPath = Settings.JavaDir;
-			string outputFile = overwrite ? inputFile : inputFile.Remove(inputFile.Length - 4, 4) + "(Extended).off";
-			var processInfo = new ProcessStartInfo($"{javaPath}", $@"-jar {script}.jar {@"..\Shapes\Initial\" + inputFile} {@"..\Shapes\Initial\" + outputFile}")
+
+			var processInfo = new ProcessStartInfo($"{javaPath}", $@"-jar {script}.jar {inputFileDirectory} {outputFileDirectory}")
 			{
 				CreateNoWindow = true,
 				UseShellExecute = false
 			};
 
-			processInfo.WorkingDirectory = Settings.JavaScriptsDir; // this is where your jar file is.
+			processInfo.WorkingDirectory = Settings.JavaScriptsDir;
 			Process proc;
-
-			if ((proc = Process.Start(processInfo)) == null)
-			{
-				throw new InvalidOperationException("??");
-			}
-
+			proc = Process.Start(processInfo);
 			proc.WaitForExit();
 			int exitCode = proc.ExitCode;
 			proc.Close();
