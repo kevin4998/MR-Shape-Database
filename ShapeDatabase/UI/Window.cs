@@ -10,7 +10,7 @@ namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow
 	{
-		private IEnumerator<MeshEntry> enumerator =  CreateEnumerator();
+		private readonly IEnumerator<MeshEntry> enumerator =  CreateEnumerator();
 
 		private static IEnumerator<MeshEntry> CreateEnumerator() {
 			IEnumerator<MeshEntry> enums = Settings.MeshLibrary.GetEnumerator();
@@ -36,7 +36,7 @@ namespace ShapeDatabase.UI {
 
 		private Shader _lightingShader;
 
-		private KeyController keybindings;
+		private readonly KeyController keybindings;
 		private Camera _camera;
 		private double _angleY;
 		private double _angleX;
@@ -136,11 +136,11 @@ namespace ShapeDatabase.UI {
 			GL.BindVertexArray(_vaoModel);
 			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
 
-			var positionLocation = _lightingShader.GetAttribLocation("aPos");
+			int positionLocation = _lightingShader.GetAttribLocation("aPos");
 			GL.EnableVertexAttribArray(positionLocation);
 			GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
 
-			var normalLocation = _lightingShader.GetAttribLocation("aNormal");
+			int normalLocation = _lightingShader.GetAttribLocation("aNormal");
 			GL.EnableVertexAttribArray(normalLocation);
 			GL.VertexAttribPointer(normalLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
 

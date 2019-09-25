@@ -10,16 +10,12 @@ namespace ShapeDatabase.Refine
 	/// </summary>
 	public class ExtendRefiner : IRefiner<UnstructuredMesh>
 	{
-		private static readonly Lazy<Singleton>
-		lazy =
-		new Lazy<Singleton>
-			(() => new Singleton());
+		private static readonly Lazy<ExtendRefiner> lazy =
+			new Lazy<ExtendRefiner> (() => new ExtendRefiner());
 
-		public static Singleton Instance { get { return lazy.Value; } }
+		public static ExtendRefiner Instance { get { return lazy.Value; } }
 
-		private ExtendRefiner()
-		{
-		}
+		private ExtendRefiner() { }
 	
 		/// <summary>
 		/// Checkes whether mesh has too few faces or vertices.
@@ -47,16 +43,13 @@ namespace ShapeDatabase.Refine
 	/// </summary>
 	public class SimplifyRefiner : IRefiner<UnstructuredMesh>
 	{
-		private static readonly Lazy<Singleton>
-		lazy =
-		new Lazy<Singleton>
-			(() => new Singleton());
+		private static readonly Lazy<SimplifyRefiner> lazy =
+			new Lazy<SimplifyRefiner>(() => new SimplifyRefiner());
 
-		public static Singleton Instance { get { return lazy.Value; } }
+		public static SimplifyRefiner Instance { get { return lazy.Value; } }
 
-		private SimplifyRefiner()
-		{
-		}
+		private SimplifyRefiner() { }
+
 		/// <summary>
 		/// Checks whether mesh has too many faces or vertices.
 		/// </summary>

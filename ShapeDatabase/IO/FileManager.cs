@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using ShapeDatabase.Refine;
@@ -16,6 +17,12 @@ namespace ShapeDatabase.IO {
 	public class FileManager {
 
 		private const string EX_DIR_NE = "The provided directory does not exist \'{0}\'.";
+		private const string EX_FORMAT = "Could not load file '{0}' because of an Exception.";
+		/// <summary>
+		/// The maximum amount of attempts that a shape may be refined
+		/// before seeing it as unfixable.
+		/// </summary>
+		private const byte REFINEMENT_THRESHOLD = 4;
 
 		private static readonly Lazy<IReader <UnstructuredMesh>[]> LocalReaders =
 			new Lazy<IReader<UnstructuredMesh>[]>(ProduceReaders);
@@ -43,8 +50,6 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		public MeshLibrary ProcessedMeshes { get; } = new MeshLibrary();
 
-		private IDictionary<FileInfo, UnstructuredMesh> FilleMesh { get; } = new Dictionary<FileInfo, UnstructuredMesh>();
-
 
 		/// <summary>
 		/// Creates a new manager responsible for loading files.
@@ -52,6 +57,7 @@ namespace ShapeDatabase.IO {
 		public FileManager() {
 			foreach (IReader<UnstructuredMesh> reader in LocalReaders.Value)
 				AddReader(reader);
+			// Refiners added automatically.
 		}
 
 
@@ -92,14 +98,41 @@ namespace ShapeDatabase.IO {
 			if (string.IsNullOrEmpty(filedir))
 				throw new ArgumentNullException(nameof(filedir));
 
-			DirectoryInfo rootInfo = new DirectoryInfo(filedir);
-			if (!rootInfo.Exists)
-				throw new ArgumentException(string.Format(EX_DIR_NE, filedir));
+			// Phase 1: Discover files
+
+			FileInfo[] files = DiscoverFiles(new DirectoryInfo(filedir));
+			InfoMesh[] filemeshes;
+			byte attempts = 0;
+
+			while (files.Length != 0 && attempts++ < REFINEMENT_THRESHOLD) { 
+
+				// Phase 2: Process files into meshes
+
+				filemeshes = async ? ReadFilesAsync(files) : ReadFiles(files);
+
+				// Phase 3: Refine meshes into better examples (repeatable)
+
+				if (async)	files = RefineFilesAsync(filemeshes);
+				else		files = RefineFiles(filemeshes);
+
+			}
+
+			// Phase 4: Bin the files which could not be refined.
+			FailedShapes(files);
+
+			// Phase 5: Read final meshes
+			SuccessShapes(async);
+		}
+
+
+		private FileInfo[] DiscoverFiles(DirectoryInfo directory) {
+			if (!directory.Exists)
+				throw new ArgumentException(string.Format(EX_DIR_NE, directory.FullName));
 
 			Queue<DirectoryInfo> pdirs  = new Queue<DirectoryInfo>();
-			Queue<FileInfo>		 pfiles = new Queue<FileInfo>();
+			Queue<FileInfo>      pfiles = new Queue<FileInfo>();
 
-			pdirs.Enqueue(rootInfo);
+			pdirs.Enqueue(directory);
 			while (pdirs.Count != 0) {
 				DirectoryInfo dir = pdirs.Dequeue();
 
@@ -114,79 +147,112 @@ namespace ShapeDatabase.IO {
 
 			}
 
-			if (async)
-				ProcessFilesAsync(pfiles.ToArray());
-			else
-				ProcessFiles(pfiles.ToArray());
-
-
-
+			return pfiles.ToArray();
 		}
 
 
-		private void ProcessFiles(params FileInfo[] files) {
+		private InfoMesh[] ReadFiles(params FileInfo[] files) {
 			if (files == null || files.Length == 0)
-				return;
+				return Array.Empty<InfoMesh>();
+
+			List<InfoMesh> infoMeshes = new List<InfoMesh>(files.Length);
 
 			foreach (FileInfo file in files) {
-				string name = file.Name;
-				string ext	= file.Extension.ToLower();
+				InfoMesh infoMesh = ReadFile(file);
+				if (InfoMesh.NULL != infoMesh) infoMeshes.Add(infoMesh);
+			}
 
-				if (!readers.TryGetValue(ext, out IReader<UnstructuredMesh> reader))
-					continue;
+			return infoMeshes.ToArray();
+		}
 
-				using (StreamReader stream = file.OpenText()) { 
+		private InfoMesh[] ReadFilesAsync(params FileInfo[] files) {
+			if (files == null || files.Length == 0)
+				return Array.Empty<InfoMesh>();
+
+			ConcurrentBag<InfoMesh> infoMeshes = new ConcurrentBag<InfoMesh>();
+
+			Parallel.ForEach(files, (FileInfo file) => {
+				InfoMesh infoMesh = ReadFile(file);
+				if (InfoMesh.NULL != infoMesh)
+					infoMeshes.Add(infoMesh);
+			});
+
+			return infoMeshes.ToArray();
+		}
+
+		private InfoMesh ReadFile(FileInfo file) {
+			if (file == null || !file.Exists)
+				throw new ArgumentNullException(nameof(file));
+
+			string ext  = file.Extension.ToLower();
+
+			if (!readers.TryGetValue(ext, out IReader<UnstructuredMesh> reader))
+				return InfoMesh.NULL;
+
+			using (StreamReader stream = file.OpenText()) {
+				try { 
 					UnstructuredMesh mesh = reader.ConvertFile(stream);
-					FileMesh[file] = mesh;
-					ProcessedMeshes.Add(new MeshEntry(name, mesh));
+					return new InfoMesh(file, mesh);
+				} catch (InvalidFormatException ex) {
+					Console.WriteLine(EX_FORMAT, file.FullName);
+					Console.WriteLine(ex);
+					return InfoMesh.NULL;
 				}
-
 			}
 		}
 
-		private void ProcessFilesAsync(params FileInfo[] files) {
-			if (files == null || files.Length == 0)
-				return;
 
-			IDictionary<string, UnstructuredMesh> meshes = new ConcurrentDictionary<string, UnstructuredMesh>();
+		// Returns unrefineed files.
+		private FileInfo[] RefineFiles(params InfoMesh[] filemeshes) {
+			List<FileInfo> unrefinedFiles = new List<FileInfo>(filemeshes.Length);
 
-			Parallel.ForEach(files, (FileInfo file) => {
-				string name = file.Name;
-				string ext  = file.Extension.ToLower();
+			foreach(InfoMesh infomesh in filemeshes)
+				if (!RefineFile(infomesh.Info, infomesh.Mesh))
+					unrefinedFiles.Add(infomesh.Info);
 
-				if (!readers.TryGetValue(ext, out IReader<UnstructuredMesh> reader))
-					return;
+			return unrefinedFiles.ToArray();
+		}
 
-				using (StreamReader stream = file.OpenText()) {
-					UnstructuredMesh mesh = reader.ConvertFile(stream);
-					meshes.Add(name, mesh);
+		private FileInfo[] RefineFilesAsync(params InfoMesh[] filemeshes) {
+			ConcurrentBag<FileInfo> unrefinedFiles = new ConcurrentBag<FileInfo>();
+
+			Parallel.ForEach(filemeshes,
+				(InfoMesh infomesh) => {
+					if (!RefineFile(infomesh.Info, infomesh.Mesh))
+						unrefinedFiles.Add(infomesh.Info);
 				}
+			);
 
-			});
-
-			foreach (KeyValuePair<string, UnstructuredMesh> pair in meshes)
-				ProcessedMeshes.Add(new MeshEntry(pair.Key, pair.Value));
+			return unrefinedFiles.ToArray();
 		}
 
-
-		private void RefineFiles(params Tuple<FileInfo, UnstructuredMesh>[] filemeshes) {
-			foreach((FileInfo info, UnstructuredMesh mesh) in filemeshes)
-				RefineFile(info, mesh);
-		}
-
-		private void RefineFile(FileInfo info, UnstructuredMesh mesh) {
-			bool refined = false;
+		// Returns if the file was already refined.
+		private bool RefineFile(FileInfo info, UnstructuredMesh mesh) {
+			bool isRefined = true;
 			foreach (IRefiner<UnstructuredMesh> refiner in refiners) {
 				if (refiner.RequireRefinement(mesh)) {
 					refiner.RefineMesh(info);
-					refined = true;
+					isRefined = false;
 					break;
 				}
 			}
 
-			// If it is not refined, move it to our final map.
-			if (!refined) {
-				string dir = Settings.ShapeFinalDir;
+			// If it needs refinement then we put it in temp.
+			// If it does not need refinement then we put it in the final map.
+			string dir = isRefined ? Settings.ShapeFinalDir : Settings.ShapeTempDir;
+			string name = info.Name;
+			string ext = info.Extension;
+
+			Directory.CreateDirectory(dir);
+			info.MoveTo($"{dir}/{name}.{ext}");
+
+			return isRefined;
+		}
+
+
+		private void FailedShapes(params FileInfo[] files) {
+			foreach (FileInfo info in files) { 
+				string dir = Settings.ShapeFailedDir;
 				string name = info.Name;
 				string ext = info.Extension;
 
@@ -195,7 +261,64 @@ namespace ShapeDatabase.IO {
 			}
 		}
 
-		private void RefineFilesAsync();
+		private void SuccessShapes(bool async) {
+			DirectoryInfo finalDir = new DirectoryInfo(Settings.ShapeFinalDir);
+			if (!finalDir.Exists)
+				finalDir.Create();
+			FileInfo[] files = DiscoverFiles(finalDir);
+			InfoMesh[] filemeshes = async ? ReadFilesAsync(files) : ReadFiles(files);
+			foreach (InfoMesh infomesh in filemeshes) {
+				MeshEntry entry = new MeshEntry(infomesh.Info.Name, infomesh.Mesh);
+				ProcessedMeshes.Add(entry);
+			}
+		}
 
 	}
+
+	[DebuggerDisplay("{Info.Name} - Vertices:{Mesh.VerticesCount}")]
+	internal struct InfoMesh : IEquatable<InfoMesh> {
+
+		public static readonly InfoMesh NULL = new InfoMesh(null, UnstructuredMesh.NULL);
+
+		public FileInfo Info { get; }
+		public UnstructuredMesh Mesh { get; }
+
+
+		public InfoMesh(FileInfo file, UnstructuredMesh mesh) : this() {
+			this.Info = file;
+			this.Mesh = mesh;
+		}
+
+
+		public override bool Equals(object obj) {
+			return obj is InfoMesh && Equals((InfoMesh) obj);
+		}
+
+		public bool Equals(InfoMesh obj) {
+			return Object.ReferenceEquals(NULL, this)
+				? Object.ReferenceEquals(NULL, obj)
+				: !Object.ReferenceEquals(NULL, obj)
+					&& Info.Equals(obj.Info)
+					&& Mesh.Equals(obj.Mesh);
+		}
+
+		public override int GetHashCode() {
+			return base.GetHashCode();
+		}
+
+		public override string ToString() {
+			return $"{Info.ToString()} - {Mesh.ToString()}";
+		}
+
+
+		public static bool operator == (InfoMesh left, InfoMesh right) {
+			return left.Equals(right);
+		}
+
+		public static bool operator != (InfoMesh left, InfoMesh right) {
+			return !left.Equals(right);
+		}
+
+	}
+
 }

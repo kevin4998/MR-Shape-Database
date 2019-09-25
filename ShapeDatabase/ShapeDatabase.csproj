@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Content\Shapes\Final\" />
+    <Folder Include="Content\Shapes\Failed\" />
     <Folder Include="Content\Shapes\Temp\" />
     <Folder Include="UI\" />
     <Folder Include="Content\Shapes\All\" />

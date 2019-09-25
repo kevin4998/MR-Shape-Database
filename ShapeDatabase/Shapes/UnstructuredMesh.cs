@@ -11,6 +11,8 @@ namespace ShapeDatabase.Shapes {
 	[DebuggerDisplay("Grid Size: {UnstructuredGrid.Length}; Element Size: {Elements.Length}")]
 	public struct UnstructuredMesh {
 
+		public static readonly UnstructuredMesh NULL = new UnstructuredMesh(Array.Empty<Vector3>(), Array.Empty<uint>());
+
 		/// <summary>
 		/// An array defining all the points of the cells for this grid.
 		/// </summary>

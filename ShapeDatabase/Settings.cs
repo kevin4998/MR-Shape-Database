@@ -25,6 +25,11 @@ namespace ShapeDatabase {
 		public static string ShapeTempDir { get; set; } = "Content/Shapes/Temp";
 
 		/// <summary>
+		/// The location where the shapes are stored which could not be refined.
+		/// </summary>
+		public static string ShapeFailedDir { get; set; } = "Content/Shapes/Failed";
+
+		/// <summary>
 		/// The location where all the Java refinement scripts are stored.
 		/// </summary>
 		public static string JavaScriptsDir { get; set; } = "Content/Scripts";
