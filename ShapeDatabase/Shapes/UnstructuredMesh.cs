@@ -1,4 +1,5 @@
 ﻿using OpenTK;
+using System;
 using System.Diagnostics;
 
 namespace ShapeDatabase.Shapes {
@@ -19,6 +20,10 @@ namespace ShapeDatabase.Shapes {
 		/// define a shape. These shapes commonly consist of triangles.
 		/// </summary>
 		public uint[] Elements { get; }
+
+		public uint VerticesCount => Convert.ToUInt32(UnstructuredGrid.Length);
+
+		public uint FacesCount => Convert.ToUInt32(Elements.Length / 3);
 
 		/// <summary>
 		/// Initialises a new mesh with the specified containing grid and triangles on it.

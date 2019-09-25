@@ -39,5 +39,4 @@ namespace ShapeDatabase.IO {
 		Task<T> ConvertFileAsync(StreamReader reader);
 
 	}
-
 }

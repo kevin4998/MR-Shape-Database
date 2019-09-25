@@ -40,18 +40,19 @@ namespace ShapeDatabase
 				Console.WriteLine($"\t- {name}");
 			}
 			
-			
+			/*
 			foreach(MeshEntry meshEntry in meshes.Meshes)
 			{
 				UnstructuredMesh mesh = meshEntry.Mesh;
 				int numberOfVertices = mesh.UnstructuredGrid.Length;
 				int numberOfFaces = mesh.Elements.Length / 3;
-
+				
 				if(numberOfVertices < 100 || numberOfFaces < 100)
 				{
 					Refiner.ExtendMesh(@"..\Shapes\Initial\" + meshEntry.Name, @"..\Shapes\Initial\" + meshEntry.Name.Remove(meshEntry.Name.Length - 4, 4) + "(Extended).off");
 				}
 			}
+			*/
 
 			Console.WriteLine("Done Processing Meshes.");
 		}

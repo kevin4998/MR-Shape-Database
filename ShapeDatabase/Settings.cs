@@ -15,6 +15,27 @@ namespace ShapeDatabase {
 		public static string ShapeLibraryDir { get; set; } = "Content/Shapes/Initial";
 
 		/// <summary>
+		/// The location where all the processed and normalised files are stored.
+		/// </summary>
+		public static string ShapeFinalDir { get; set; } = "Content/Shapes/Final";
+
+		/// <summary>
+		/// The location where the shapes are stored which require refinement.
+		/// </summary>
+		public static string ShapeTempDir { get; set; } = "Content/Shapes/Temp";
+
+		/// <summary>
+		/// The location where all the Java refinement scripts are stored.
+		/// </summary>
+		public static string JavaScriptsDir { get; set; } = "Content/Scripts";
+
+		/// <summary>
+		/// The location where Java is installed on the computer.
+		/// </summary>
+		public static string JavaDir { get; set; } = "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/java.exe";
+		
+
+		/// <summary>
 		/// The culture which is required for converting the shape files.
 		/// </summary>
 		public static CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;
@@ -44,14 +65,5 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static MeshLibrary MeshLibrary => Settings.FileManager.ProcessedMeshes;
 
-		/// <summary>
-		/// The location where all the Java refinement scripts are stored.
-		/// </summary>
-		public static string JavaScriptsDir { get; set; } = @"C:\Users\guusd\Documents\UniversiteitUtrecht\M2.1\MR\MR-Shape-Database\ShapeDatabase\Content\Scripts";
-
-		/// <summary>
-		/// The location where Java is installed on the computer.
-		/// </summary>
-		public static string JavaDir { get; set; } = @"C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe";
 	}
 }
