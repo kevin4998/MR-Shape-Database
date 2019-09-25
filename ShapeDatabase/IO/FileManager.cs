@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,6 +15,10 @@ namespace ShapeDatabase.IO {
 	/// </summary>
 	public class FileManager {
 
+		#region --- Properties ---
+
+		#region -- Error Messages --
+
 		private const string EX_DIR_NE = "The provided directory does not exist \'{0}\'.";
 		private const string EX_FORMAT = "Could not load file '{0}' because of an Exception.";
 		/// <summary>
@@ -23,6 +26,10 @@ namespace ShapeDatabase.IO {
 		/// before seeing it as unfixable.
 		/// </summary>
 		private const byte REFINEMENT_THRESHOLD = 4;
+
+		#endregion
+
+		#region -- Static Variables --
 
 		private static readonly Lazy<IReader <UnstructuredMesh>[]> LocalReaders =
 			new Lazy<IReader<UnstructuredMesh>[]>(ProduceReaders);
@@ -40,15 +47,27 @@ namespace ShapeDatabase.IO {
 			};
 		}
 
-		// Pre-processing phase
+		#endregion
+
+		#region -- Instance Variables
+
 		private readonly ISet<string> formats = new HashSet<string>();
-		private readonly IDictionary<string, IReader<UnstructuredMesh>> readers = new Dictionary<string, IReader<UnstructuredMesh>>();
-		private readonly ICollection<IRefiner<UnstructuredMesh>> refiners = new List<IRefiner<UnstructuredMesh>>(LocalRefiners.Value);
+		private readonly IDictionary<string, IReader<UnstructuredMesh>> readers =
+			new Dictionary<string, IReader<UnstructuredMesh>>();
+		private readonly ICollection<IRefiner<UnstructuredMesh>> refiners =
+			new List<IRefiner<UnstructuredMesh>>(LocalRefiners.Value);
+
 
 		/// <summary>
 		/// A collection of all the loaded meshes sturctured inside a library.
 		/// </summary>
 		public MeshLibrary ProcessedMeshes { get; } = new MeshLibrary();
+
+		#endregion
+
+		#endregion
+
+		#region --- Constructor Methods ---
 
 
 		/// <summary>
@@ -60,7 +79,18 @@ namespace ShapeDatabase.IO {
 			// Refiners added automatically.
 		}
 
+		#endregion
 
+		#region --- Instance Methods ---
+
+		#region -- Public Operations --
+
+		/// <summary>
+		/// Provides another reader which is able to convert files into meshes.
+		/// This will have effect on the next provided directories.
+		/// It will not try to recover the extra filess from previous directories.
+		/// </summary>
+		/// <param name="readers">The readers which can convert files into meshes.</param>
 		public void AddReader(params IReader<UnstructuredMesh>[] readers) {
 			if (readers == null || readers.Length == 0)
 				return;
@@ -79,6 +109,12 @@ namespace ShapeDatabase.IO {
 
 		}
 
+		/// <summary>
+		/// Provides another refiner which can normalise meshes for easier feature extraction.
+		/// This will have effect on the next provided directories.
+		/// It will not try to recover the extra filess from previous directories.
+		/// </summary>
+		/// <param name="refiners">The refiner which can normalise a shape in any way.</param>
 		public void AddRefiner(params IRefiner<UnstructuredMesh>[] refiners) {
 			if (refiners == null || refiners.Length == 0)
 				return;
@@ -124,6 +160,9 @@ namespace ShapeDatabase.IO {
 			SuccessShapes(async);
 		}
 
+		#endregion
+
+		#region -- Private Phases --
 
 		private FileInfo[] DiscoverFiles(DirectoryInfo directory) {
 			if (!directory.Exists)
@@ -273,22 +312,52 @@ namespace ShapeDatabase.IO {
 			}
 		}
 
+		#endregion
+
+		#endregion
+
 	}
 
+	/// <summary>
+	/// A simple struct to combine a mesh with its origin file.
+	/// </summary>
 	[DebuggerDisplay("{Info.Name} - Vertices:{Mesh.VerticesCount}")]
 	internal struct InfoMesh : IEquatable<InfoMesh> {
 
+		#region --- Properties ---
+
+		/// <summary>
+		/// An InfoMesh to describe when no actual mesh/file could be delivered.
+		/// This is a <see langword="null"/> variant for this struct.
+		/// </summary>
 		public static readonly InfoMesh NULL = new InfoMesh(null, UnstructuredMesh.NULL);
 
+		/// <summary>
+		/// The file where the original mesh was stored.
+		/// </summary>
 		public FileInfo Info { get; }
+		/// <summary>
+		/// The mesh loaded from the specified file.
+		/// </summary>
 		public UnstructuredMesh Mesh { get; }
 
+		#endregion
 
+		#region --- Constructor Methods ---
+
+		/// <summary>
+		/// Links the given file and mesh together.
+		/// </summary>
+		/// <param name="file">The location where the mesh is stored.</param>
+		/// <param name="mesh">The shape which was loaded from the file.</param>
 		public InfoMesh(FileInfo file, UnstructuredMesh mesh) : this() {
 			this.Info = file;
 			this.Mesh = mesh;
 		}
 
+		#endregion
+
+		#region --- Instance Methods ---
 
 		public override bool Equals(object obj) {
 			return obj is InfoMesh && Equals((InfoMesh) obj);
@@ -310,6 +379,9 @@ namespace ShapeDatabase.IO {
 			return $"{Info.ToString()} - {Mesh.ToString()}";
 		}
 
+		#endregion
+
+		#region --- Operators ---
 
 		public static bool operator == (InfoMesh left, InfoMesh right) {
 			return left.Equals(right);
@@ -318,6 +390,8 @@ namespace ShapeDatabase.IO {
 		public static bool operator != (InfoMesh left, InfoMesh right) {
 			return !left.Equals(right);
 		}
+
+		#endregion
 
 	}
 
