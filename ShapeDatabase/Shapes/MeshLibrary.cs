@@ -7,7 +7,9 @@ namespace ShapeDatabase.Shapes {
 	/// <summary>
 	/// A collection of all the loaded meshes/shapes in the application.
 	/// </summary>
-	public class MeshLibrary : IEnumerable<MeshEntry> {
+	public class MeshLibrary : ICollection<MeshEntry> {
+
+		#region --- Properties ---
 
 		private readonly IDictionary<string, MeshEntry> library
 			= new Dictionary<string, MeshEntry>();
@@ -24,13 +26,25 @@ namespace ShapeDatabase.Shapes {
 		/// The amount of loaded Meshes.
 		/// </summary>
 		public int Count => library.Count;
+		/// <summary>
+		/// Specifies if it is possible to write new data to this library.
+		/// </summary>
+		public bool IsReadOnly => false;
 
+		#endregion
+
+		#region --- Constructor Methods --- 
 
 		/// <summary>
 		/// Creates a new Library to hold the different loaded meshes.
 		/// </summary>
 		public MeshLibrary() { }
 
+		#endregion
+
+		#region --- Instance Methods ---
+
+		#region -- Library Methods --
 
 		/// <summary>
 		/// Adds a new mesh into the collection
@@ -43,11 +57,60 @@ namespace ShapeDatabase.Shapes {
 				library.Add(entry.Name, entry);
 		}
 
+		/// <summary>
+		/// Attempts to get an entry with the given name from the library of meshes.
+		/// </summary>
+		/// <param name="name">The name of the shape to retrieve.</param>
+		/// <param name="entry">The shape which was retrieved from the database.</param>
+		/// <returns><see langword="true"/> if the shape could be retrieved.</returns>
+		/// <exception cref="ArgumentNullException">If the name is <see langword="null"/>
+		/// or <see cref="string.Empty"/>.</exception>
+		public bool TryGetValue(string name, out MeshEntry entry) {
+			return library.TryGetValue(name, out entry);
+		}
 
+		/// <summary>
+		/// Gives an <see cref="MeshEntry"/> with the specified name in the library.
+		/// </summary>
+		/// <param name="name">The name of the shape to retrieve.</param>
+		/// <returns>A mesh entry with the specified name.</returns>
+		/// <exception cref="ArgumentNullException">If the given name is
+		/// <see langword="null"/>.</exception>
+		/// <exception cref="KeyNotFoundException">If there is no entry with the
+		/// provided name.</exception>
 		public MeshEntry this[string name] {
 			get {
 				return library[name];
 			}
+		}
+
+		#endregion
+
+		#region -- Interface Methods --
+
+		void ICollection<MeshEntry>.Add(MeshEntry entry) {
+			Add(entry, false);
+		}
+
+		public void Clear() {
+			library.Clear();
+		}
+
+		public bool Contains(MeshEntry entry) {
+			return library.ContainsKey(entry.Name);
+		}
+
+		public bool Remove(MeshEntry entry) {
+			if (TryGetValue(entry.Name, out MeshEntry result)
+				&& entry.Mesh.Equals(result.Mesh)) {
+				library.Remove(entry.Name);
+				return true;
+			}
+			return false;
+		}
+
+		public void CopyTo(MeshEntry[] array, int arrayIndex) {
+			Meshes.CopyTo(array, arrayIndex);
 		}
 
 		public IEnumerator<MeshEntry> GetEnumerator() {
@@ -57,6 +120,11 @@ namespace ShapeDatabase.Shapes {
 		IEnumerator IEnumerable.GetEnumerator() {
 			return GetEnumerator();
 		}
+
+		#endregion
+
+		#endregion
+
 	}
 
 	/// <summary>

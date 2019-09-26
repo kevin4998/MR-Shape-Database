@@ -11,6 +11,11 @@ namespace ShapeDatabase.Shapes {
 	[DebuggerDisplay("Grid Size: {UnstructuredGrid.Length}; Element Size: {Elements.Length}")]
 	public struct UnstructuredMesh {
 
+		#region --- Properties ---
+
+		/// <summary>
+		/// A Default object for an unspecified mesh.
+		/// </summary>
 		public static readonly UnstructuredMesh NULL = new UnstructuredMesh(Array.Empty<Vector3>(), Array.Empty<uint>());
 
 		/// <summary>
@@ -22,10 +27,18 @@ namespace ShapeDatabase.Shapes {
 		/// define a shape. These shapes commonly consist of triangles.
 		/// </summary>
 		public uint[] Elements { get; }
-
+		/// <summary>
+		/// The total amount of vertices in this shape.
+		/// </summary>
 		public uint VerticesCount => Convert.ToUInt32(UnstructuredGrid.Length);
-
+		/// <summary>
+		/// The total amount of faces in this shape.
+		/// </summary>
 		public uint FacesCount => Convert.ToUInt32(Elements.Length / 3);
+
+		#endregion
+
+		#region --- Constructor Methods ---
 
 		/// <summary>
 		/// Initialises a new mesh with the specified containing grid and triangles on it.
@@ -41,6 +54,12 @@ namespace ShapeDatabase.Shapes {
 			UnstructuredGrid = grid;
 			Elements = indices;
 		}
+
+		#endregion
+
+		#region --- Instance Methods ---
+
+		#region -- Debug Conditions --
 
 #if DEBUG
 
@@ -69,6 +88,10 @@ namespace ShapeDatabase.Shapes {
 		}
 
 #endif
+
+		#endregion
+
+		#endregion
 
 	}
 }

@@ -22,15 +22,16 @@ namespace ShapeDatabase.IO {
 		private const string EX_NO_EXT = "No extension where provided for reader \'{0}\'.";
 		private const string EX_DIR_NE = "The provided directory does not exist \'{0}\'.";
 		private const string EX_FORMAT = "Could not load file '{0}' because of an Exception.";
+
+		#endregion
+
+		#region -- Static Variables --
+
 		/// <summary>
 		/// The maximum amount of attempts that a shape may be refined
 		/// before seeing it as unfixable.
 		/// </summary>
 		private const byte REFINEMENT_THRESHOLD = 4;
-
-		#endregion
-
-		#region -- Static Variables --
 
 		private static readonly Lazy<IReader <UnstructuredMesh>[]> LocalReaders =
 			new Lazy<IReader<UnstructuredMesh>[]>(ProduceReaders);

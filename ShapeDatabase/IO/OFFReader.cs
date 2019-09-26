@@ -13,6 +13,10 @@ namespace ShapeDatabase.IO {
 	/// </summary>
 	public class OFFReader : IReader<UnstructuredMesh> {
 
+		#region --- Properties ---
+
+		#region -- Exceptions --
+
 		const string EX_END_STREAM = "Cannot read data from the end of the stream.";
 
 		const string EX_MISSING_VALUES = "Missing values! Expected 3 values for vertices, faces and edges but received:\"{0}\".";
@@ -24,12 +28,38 @@ namespace ShapeDatabase.IO {
 		const string EX_NON_TRIANGLE = "Only triangle shapes are supported.";
 		const string EX_NON_NUMBER = "Could not convert the number \'{0}\'.";
 
-		private static readonly Lazy<OFFReader> instance = new Lazy<OFFReader>(() => new OFFReader());
+		#endregion
+
+		#region -- Static Properties --
+
+		private static readonly Lazy<OFFReader> instance =
+			new Lazy<OFFReader>(() => new OFFReader());
+		/// <summary>
+		/// A reader which can convert .off files into <see cref="UnstructuredMesh"/>es.
+		/// </summary>
+		public static OFFReader Instance => instance.Value;
+
+		#endregion
+
+		#region -- Instance Properties --
 
 		public string[] SupportedFormats { get; } = new string[] { "off" };
 
+		#endregion
 
+		#endregion
+
+		#region --- Constructor Methods ---
+
+		/// <summary>
+		/// Instantiates a new reader to convert files into
+		/// <see cref="UnstructuredMesh"/>es.
+		/// </summary>
 		private OFFReader() { }
+
+		#endregion
+
+		#region --- Instance Methods ---
 
 		public UnstructuredMesh ConvertFile(StreamReader reader) {
 			if (reader == null)
@@ -119,7 +149,7 @@ namespace ShapeDatabase.IO {
 			return Task.Run(() => ConvertFile(reader));
 		}
 
-		public static OFFReader Instance { get; } = instance.Value;
+		#endregion
 
 	}
 
