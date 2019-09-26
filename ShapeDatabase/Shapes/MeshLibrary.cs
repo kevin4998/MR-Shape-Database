@@ -37,8 +37,9 @@ namespace ShapeDatabase.Shapes {
 		/// if it is not present already.
 		/// </summary>
 		/// <param name="entry">A mesh with its information.</param>
-		public void Add(MeshEntry entry) {
-			if (!library.ContainsKey(entry.Name))
+		/// <param name="replace">If an old value can be overriden.</param>
+		public void Add(MeshEntry entry, bool replace = false) {
+			if (replace || !library.ContainsKey(entry.Name))
 				library.Add(entry.Name, entry);
 		}
 

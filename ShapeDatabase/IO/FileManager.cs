@@ -19,6 +19,7 @@ namespace ShapeDatabase.IO {
 
 		#region -- Error Messages --
 
+		private const string EX_NO_EXT = "No extension where provided for reader \'{0}\'.";
 		private const string EX_DIR_NE = "The provided directory does not exist \'{0}\'.";
 		private const string EX_FORMAT = "Could not load file '{0}' because of an Exception.";
 		/// <summary>
@@ -49,7 +50,7 @@ namespace ShapeDatabase.IO {
 
 		#endregion
 
-		#region -- Instance Variables
+		#region -- Instance Variables --
 
 		private readonly ISet<string> formats = new HashSet<string>();
 		private readonly IDictionary<string, IReader<UnstructuredMesh>> readers =
@@ -91,21 +92,24 @@ namespace ShapeDatabase.IO {
 		/// It will not try to recover the extra filess from previous directories.
 		/// </summary>
 		/// <param name="readers">The readers which can convert files into meshes.</param>
+		/// <exception cref="ArgumentException">If a given reader does not contain
+		/// any supported file extensions.</exception>
 		public void AddReader(params IReader<UnstructuredMesh>[] readers) {
 			if (readers == null || readers.Length == 0)
 				return;
 
 			foreach (IReader<UnstructuredMesh> reader in readers)
-				foreach (string format in reader.SupportedFormats) {
-					if (format == null || format.Length == 0)
-						throw new ArgumentException();
-					string ext = format.ToLower();
-					if (ext[0] != '.')
-						ext = '.' + ext;
+				if (reader != null)
+					foreach (string format in reader.SupportedFormats) {
+						if (format == null || format.Length == 0)
+							throw new ArgumentException(EX_NO_EXT, reader.GetType().FullName);
+						string ext = format.ToLower();
+						if (ext[0] != '.')
+							ext = '.' + ext;
 
-					formats.Add(ext);
-					this.readers.Add(ext, reader);
-				}
+						formats.Add(ext);
+						this.readers.Add(ext, reader);
+					}
 
 		}
 
@@ -120,21 +124,29 @@ namespace ShapeDatabase.IO {
 				return;
 
 			foreach(IRefiner<UnstructuredMesh> refine in refiners)
-				if (!this.refiners.Contains(refine))
+				if (refine != null && !this.refiners.Contains(refine))
 					this.refiners.Add(refine);
 		}
 
 
 		/// <summary>
-		/// Secure the specified location as a directory containing shapes for this application.
+		/// Secure the specified location as a directory containing new shapes
+		/// for this application. The program will first check and possibly
+		/// refine/normalise the given shapes before execution.
 		/// </summary>
 		/// <param name="filedir">The location on your device which will be used
 		/// for shapes in this database.</param>
+		/// <param name="async">If the given method may make use of asynchronous
+		/// operations.</param>
+		/// <exception cref="ArgumentNullException">If the given directory is
+		/// <see langword="null"/>.</exception>
+		/// <exception cref="ArgumentException">If the given directory does not exist.
+		/// </exception>
 		public void AddDirectory(string filedir, bool async = true) {
 			if (string.IsNullOrEmpty(filedir))
 				throw new ArgumentNullException(nameof(filedir));
 
-			// Phase 1: Discover files
+			// Phase 1: Discover files.
 
 			FileInfo[] files = DiscoverFiles(new DirectoryInfo(filedir));
 			InfoMesh[] filemeshes;
@@ -142,11 +154,11 @@ namespace ShapeDatabase.IO {
 
 			while (files.Length != 0 && attempts++ < REFINEMENT_THRESHOLD) { 
 
-				// Phase 2: Process files into meshes
+				// Phase 2: Process files into meshes. (repeatable)
 
 				filemeshes = async ? ReadFilesAsync(files) : ReadFiles(files);
 
-				// Phase 3: Refine meshes into better examples (repeatable)
+				// Phase 3: Refine meshes into better examples. (repeatable)
 
 				if (async)	files = RefineFilesAsync(filemeshes);
 				else		files = RefineFiles(filemeshes);
@@ -154,17 +166,64 @@ namespace ShapeDatabase.IO {
 			}
 
 			// Phase 4: Bin the files which could not be refined.
+
 			FailedShapes(files);
 
-			// Phase 5: Read final meshes
-			SuccessShapes(async);
+			// Phase 5: Read final meshes.
+
+			DirectoryInfo finalDir = new DirectoryInfo(Settings.ShapeFinalDir);
+			if (!finalDir.Exists)
+				finalDir.Create();
+			AddDirectoryDirect(finalDir.FullName, async);
+		}
+
+		/// <summary>
+		/// Secure the specified location as a directory containing already
+		/// processed shapes for this application. These space will override
+		/// currently stored shapes in the case of a collision.
+		/// </summary>
+		/// <param name="filedir">The location on your device which will be used
+		/// for shapes in this database.</param>
+		/// <param name="async">>If the given method may make use of asynchronous
+		/// operations.</param>
+		/// <exception cref="ArgumentNullException">If the given directory is
+		/// <see langword="null"/>.</exception>
+		/// <exception cref="ArgumentException">If the given directory does not exist.
+		/// </exception>
+		public void AddDirectoryDirect(string filedir, bool async = true) {
+			if (string.IsNullOrEmpty(filedir))
+				throw new ArgumentNullException(nameof(filedir));
+
+			// Phase 1: Discover files.
+			FileInfo[] files = DiscoverFiles(new DirectoryInfo(filedir));
+			// Phase 2: Process files into meshes.
+			InfoMesh[] filemeshes = async ? ReadFilesAsync(files) : ReadFiles(files);
+			// Phase 3: Store meshes into memory.
+			foreach (InfoMesh infomesh in filemeshes) {
+				MeshEntry entry = new MeshEntry(infomesh.Info.Name, infomesh.Mesh);
+				ProcessedMeshes.Add(entry, true);
+			}
 		}
 
 		#endregion
 
 		#region -- Private Phases --
 
+		/// <summary>
+		/// Looks through the specified directory and subdirectories for all
+		/// the different files which can be loaded by the current FileManager.
+		/// </summary>
+		/// <param name="directory">The main directory to search for files to convert.
+		/// </param>
+		/// <returns>An array of all the files in the directory which can be read.
+		/// </returns>
+		/// <exception cref="ArgumentNullException">if the given directory is
+		/// <see langword="null"/>.</exception>
+		/// <exception cref="ArgumentException">if the given directry does not exist.
+		/// </exception>
 		private FileInfo[] DiscoverFiles(DirectoryInfo directory) {
+			if (directory == null)
+				throw new ArgumentNullException(nameof(directory));
 			if (!directory.Exists)
 				throw new ArgumentException(string.Format(EX_DIR_NE, directory.FullName));
 
@@ -190,6 +249,16 @@ namespace ShapeDatabase.IO {
 		}
 
 
+		/// <summary>
+		/// Reads all the given files and returns the files together with
+		/// their converted mesh. This method will only return the files
+		/// which could be successfully read. So the returned array will
+		/// be smaller or of the same size as the input array.
+		/// This method is performed synchronously.
+		/// </summary>
+		/// <param name="files">A collection of files to be converted.</param>
+		/// <returns>An array containing all the successfully converted meshes.
+		/// This array will be smaller or of the same size as the input array.</returns>
 		private InfoMesh[] ReadFiles(params FileInfo[] files) {
 			if (files == null || files.Length == 0)
 				return Array.Empty<InfoMesh>();
@@ -204,6 +273,16 @@ namespace ShapeDatabase.IO {
 			return infoMeshes.ToArray();
 		}
 
+		/// <summary>
+		/// Reads all the given files and returns the files together with
+		/// their converted mesh. This method will only return the files
+		/// which could be successfully read. So the returned array will
+		/// be smaller or of the same size as the input array.
+		/// This method is performed asynchronously and will not preserve file order.
+		/// </summary>
+		/// <param name="files">A collection of files to be converted.</param>
+		/// <returns>An array containing all the successfully converted meshes.
+		/// This array will be smaller or of the same size as the input array.</returns>
 		private InfoMesh[] ReadFilesAsync(params FileInfo[] files) {
 			if (files == null || files.Length == 0)
 				return Array.Empty<InfoMesh>();
@@ -219,13 +298,23 @@ namespace ShapeDatabase.IO {
 			return infoMeshes.ToArray();
 		}
 
+		/// <summary>
+		/// Converts a single file safely into a mesh using the right reader
+		/// for this particular file type.
+		/// </summary>
+		/// <param name="file">The file that needs to be read and converted.</param>
+		/// <returns>A link between the file and the mesh created from it.
+		/// If it could not load the mesh for some reason then this will produce
+		/// the <see cref="InfoMesh.NULL"/> property.</returns>
+		/// <exception cref="ArgumentNullException">If the given file does not
+		/// exist or is <see langword="null"/>.</exception>
 		private InfoMesh ReadFile(FileInfo file) {
 			if (file == null || !file.Exists)
 				throw new ArgumentNullException(nameof(file));
 
-			string ext  = file.Extension.ToLower();
 
-			if (!readers.TryGetValue(ext, out IReader<UnstructuredMesh> reader))
+			if (!this.readers.TryGetValue(file.Extension.ToLower(),
+										  out IReader<UnstructuredMesh> reader))
 				return InfoMesh.NULL;
 
 			using (StreamReader stream = file.OpenText()) {
@@ -241,7 +330,21 @@ namespace ShapeDatabase.IO {
 		}
 
 
-		// Returns unrefineed files.
+		/// <summary>
+		/// Refines the given meshes if they do not follow the current refiners
+		/// specifications. The provided files will be moved in the process of execution.
+		/// 
+		/// Files which do not need to be refined will be moved to the
+		/// <see cref="Settings.ShapeFinalDir"/> directory, while files who have
+		/// just been refined will be moved to the <see cref="Settings.ShapeTempDir"/>
+		/// directory for further processing if needed.
+		/// 
+		/// This process happens synchronously and file order will be preserved.
+		/// </summary>
+		/// <param name="filemeshes">A collection of meshes which their files
+		/// which possibly need to be refined.</param>
+		/// <returns>An array containing all the files which need to be checked
+		/// for more refinement operations.</returns>
 		private FileInfo[] RefineFiles(params InfoMesh[] filemeshes) {
 			List<FileInfo> unrefinedFiles = new List<FileInfo>(filemeshes.Length);
 
@@ -252,6 +355,21 @@ namespace ShapeDatabase.IO {
 			return unrefinedFiles.ToArray();
 		}
 
+		/// <summary>
+		/// Refines the given meshes if they do not follow the current refiners
+		/// specifications. The provided files will be moved in the process of execution.
+		/// 
+		/// Files which do not need to be refined will be moved to the
+		/// <see cref="Settings.ShapeFinalDir"/> directory, while files who have
+		/// just been refined will be moved to the <see cref="Settings.ShapeTempDir"/>
+		/// directory for further processing if needed.
+		/// 
+		/// This process happens asynchronously and file order will not be preserved.
+		/// </summary>
+		/// <param name="filemeshes">A collection of meshes which their files
+		/// which possibly need to be refined.</param>
+		/// <returns>An array containing all the files which need to be checked
+		/// for more refinement operations.</returns>
 		private FileInfo[] RefineFilesAsync(params InfoMesh[] filemeshes) {
 			ConcurrentBag<FileInfo> unrefinedFiles = new ConcurrentBag<FileInfo>();
 
@@ -265,9 +383,27 @@ namespace ShapeDatabase.IO {
 			return unrefinedFiles.ToArray();
 		}
 
-		// Returns if the file was already refined.
+		/// <summary>
+		/// Refines the given mesh from the specified file if it does not follow
+		/// the refiners specifications. The file will be moved to the right
+		/// directory depending on the need for refinement.
+		/// 
+		/// Files which do not need to be refined will be moved to the specified
+		/// <see cref="Settings.ShapeFinalDir"/> directory, while files who have
+		/// just been refined will be moved to the <see cref="Settings.ShapeTempDir"/>
+		/// directory for further processing if needed.
+		/// </summary>
+		/// <param name="info">The file where the mesh was loaded from.</param>
+		/// <param name="mesh">The mesh which needs to be refined or checked.</param>
+		/// <returns><see langword="true"/> if this file was already refined
+		/// from the start and needs no further improvements.</returns>
+		/// <exception cref="ArgumentNullException">If the given file info
+		/// does not exist or is <see langword="null"/>.</exception>
 		private bool RefineFile(FileInfo info, UnstructuredMesh mesh) {
-			bool isRefined = true;
+			if (info == null || !info.Exists)
+				throw new ArgumentNullException(nameof(info));
+
+			bool isRefined = true;	// Holds if no refinement has been made.
 			foreach (IRefiner<UnstructuredMesh> refiner in refiners) {
 				if (refiner.RequireRefinement(mesh)) {
 					refiner.RefineMesh(info);
@@ -289,26 +425,22 @@ namespace ShapeDatabase.IO {
 		}
 
 
+		/// <summary>
+		/// Moves all the given <see cref="FileInfo"/> files into the
+		/// <see cref="Settings.ShapeFailedDir"/> directory for possible
+		/// later fixes.
+		/// </summary>
+		/// <param name="files">A collection of files which needs to be moved.</param>
 		private void FailedShapes(params FileInfo[] files) {
 			foreach (FileInfo info in files) { 
+				if (info == null) continue;
+
 				string dir = Settings.ShapeFailedDir;
 				string name = info.Name;
 				string ext = info.Extension;
 
 				Directory.CreateDirectory(dir);
 				info.MoveTo($"{dir}/{name}.{ext}");
-			}
-		}
-
-		private void SuccessShapes(bool async) {
-			DirectoryInfo finalDir = new DirectoryInfo(Settings.ShapeFinalDir);
-			if (!finalDir.Exists)
-				finalDir.Create();
-			FileInfo[] files = DiscoverFiles(finalDir);
-			InfoMesh[] filemeshes = async ? ReadFilesAsync(files) : ReadFiles(files);
-			foreach (InfoMesh infomesh in filemeshes) {
-				MeshEntry entry = new MeshEntry(infomesh.Info.Name, infomesh.Mesh);
-				ProcessedMeshes.Add(entry);
 			}
 		}
 
