@@ -70,5 +70,10 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static MeshLibrary MeshLibrary => Settings.FileManager.ProcessedMeshes;
 
+		/// <summary>
+		/// A collection of strings which will force the program to stop.
+		/// </summary>
+		public static string[] ExitArguments => new string[] { "exit", "quit", "stop" };
+
 	}
 }

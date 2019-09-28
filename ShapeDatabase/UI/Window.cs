@@ -10,19 +10,6 @@ namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow
 	{
-		private readonly IEnumerator<MeshEntry> enumerator =  CreateEnumerator();
-
-		private static IEnumerator<MeshEntry> CreateEnumerator() {
-			IEnumerator<MeshEntry> enums = Settings.MeshLibrary.GetEnumerator();
-			enums.MoveNext();
-			return enums;
-		}
-
-		private UnstructuredMesh CurrentMesh {
-			get {
-				return enumerator.Current.Mesh;
-			}
-		}
 
 		// Here we now have added the normals of the vertices
 		// Remember to define the layouts to the VAO's
@@ -41,12 +28,12 @@ namespace ShapeDatabase.UI {
 		private double _angleY;
 		private double _angleX;
 
-		public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) {
+		public Window(int width, int height, string title, UnstructuredMesh mesh) : base(width, height, GraphicsMode.Default, title) {
 
 			keybindings = new KeyController();
 			RegisterKeyBinds();
 
-			LoadMesh(CurrentMesh);
+			LoadMesh(mesh);
 		}
 
 		protected void LoadMesh(UnstructuredMesh mesh)
@@ -84,8 +71,6 @@ namespace ShapeDatabase.UI {
 					_angleY = 0;
 					_angleX = 0;
 				});
-			keybindings.RegisterDown(Key.Plus,  // Next Image
-				() => enumerator.MoveNext());
 
 			// Movement
 			keybindings.RegisterHold(Key.W,     // Forward

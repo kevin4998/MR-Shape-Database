@@ -7,7 +7,6 @@ namespace ShapeDatabase {
 			Console.WriteLine("Starting up!");
 
 			Controller.ProcessArguments(args);
-			Controller.RunWindow();
 
 			if (Settings.DirectShutDown)
 				return;

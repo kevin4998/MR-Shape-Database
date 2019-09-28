@@ -6,13 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace ShapeDatabase
 {
     public class Controller {
 
-		public static void RunWindow() {
-			using (Window window = new Window(800, 600, "Multimedia Retrieval - K. Westerbaan & G. de Jonge")) {
+		public static void RunWindow(UnstructuredMesh mesh) {
+			using (Window window = new Window(800, 600, "Multimedia Retrieval - K. Westerbaan & G. de Jonge", mesh)) {
 				window.Run(60.0);
 			}
 		}
@@ -25,6 +26,7 @@ namespace ShapeDatabase
 				.WithParsed(OnParsedValues);
 
 			Console.WriteLine("Done converting input!");
+			SelectShape();
 		}
 
 		public static void ProcessFiles(IEnumerable<string> dirs) {
@@ -39,24 +41,29 @@ namespace ShapeDatabase
 			{
 				Console.WriteLine($"\t- {name}");
 			}
-			
-			/*
-			foreach(MeshEntry meshEntry in meshes.Meshes)
-			{
-				UnstructuredMesh mesh = meshEntry.Mesh;
-				int numberOfVertices = mesh.UnstructuredGrid.Length;
-				int numberOfFaces = mesh.Elements.Length / 3;
-				
-				if(numberOfVertices < 100 || numberOfFaces < 100)
-				{
-					Refiner.ExtendMesh(@"..\Shapes\Initial\" + meshEntry.Name, @"..\Shapes\Initial\" + meshEntry.Name.Remove(meshEntry.Name.Length - 4, 4) + "(Extended).off");
-				}
-			}
-			*/
 
 			Console.WriteLine("Done Processing Meshes.");
 		}
 		
+		static void SelectShape() {
+			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
+
+			while (!Settings.DirectShutDown) {
+				Console.WriteLine("Please select a shape,");
+				Console.WriteLine("or write down 'stop' to exit the program");
+				string input = Console.ReadLine();
+
+				if (Array.IndexOf(Settings.ExitArguments, input.ToLower()) != -1) {
+					Settings.DirectShutDown = true;
+					break;
+				} else if (meshes.Names.Contains(input)) {
+					RunWindow(meshes[input].Mesh);
+				} else {
+					Console.WriteLine($"Unknown command: {input}");
+				}
+			}
+		}
+
 		/// <summary>
 		/// Actions which will be performe don the converted Options
 		/// object.
