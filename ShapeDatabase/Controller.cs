@@ -9,8 +9,8 @@ namespace ShapeDatabase
 {
     public class Controller {
 
-		public static void RunWindow() {
-			using (Window window = new Window(800, 600, "Multimedia Retrieval - K. Westerbaan & G. de Jonge")) {
+		public static void RunWindow(UnstructuredMesh mesh) {
+			using (Window window = new Window(800, 600, "Multimedia Retrieval - K. Westerbaan & G. de Jonge", mesh)) {
 				window.Run(60.0);
 			}
 		}
@@ -23,22 +23,46 @@ namespace ShapeDatabase
 				.WithParsed(OnParsedValues);
 
 			Console.WriteLine("Done converting input!");
+			SelectShape();
 		}
 
 		public static void ProcessFiles(IEnumerable<string> dirs) {
 			Console.WriteLine("Start Processing Meshes.");
 
-			foreach (string dir in dirs)
-				Settings.FileManager.AddDirectory(dir);
+			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
+			//foreach (string dir in dirs)
+			//	Settings.FileManager.AddDirectory(dir);
 
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
+
 			Console.WriteLine($"Shape Count:{meshes.Count}");
 			foreach (string name in meshes.Names)
+			{
 				Console.WriteLine($"\t- {name}");
+			}
 
 			Console.WriteLine("Done Processing Meshes.");
 		}
+		
+		static void SelectShape() {
+			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 
+			while (!Settings.DirectShutDown) {
+				Console.WriteLine();
+				Console.WriteLine("Please select a shape,");
+				Console.WriteLine("or write down 'stop' to exit the program");
+				string input = Console.ReadLine();
+
+				if (Array.IndexOf(Settings.ExitArguments, input.ToLower()) != -1) {
+					Settings.DirectShutDown = true;
+					break;
+				} else if (meshes.Names.Contains(input)) {
+					RunWindow(meshes[input].Mesh);
+				} else {
+					Console.WriteLine($"Unknown command: {input}");
+				}
+			}
+		}
 
 		/// <summary>
 		/// Actions which will be performe don the converted Options

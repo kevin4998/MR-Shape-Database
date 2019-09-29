@@ -10,19 +10,6 @@ namespace ShapeDatabase.UI {
 
 	public class Window : GameWindow
 	{
-		private IEnumerator<MeshEntry> enumerator =  CreateEnumerator();
-
-		private static IEnumerator<MeshEntry> CreateEnumerator() {
-			IEnumerator<MeshEntry> enums = Settings.MeshLibrary.GetEnumerator();
-			enums.MoveNext();
-			return enums;
-		}
-
-		private UnstructuredMesh CurrentMesh {
-			get {
-				return enumerator.Current.Mesh;
-			}
-		}
 
 		// Here we now have added the normals of the vertices
 		// Remember to define the layouts to the VAO's
@@ -36,17 +23,17 @@ namespace ShapeDatabase.UI {
 
 		private Shader _lightingShader;
 
-		private KeyController keybindings;
+		private readonly KeyController keybindings;
 		private Camera _camera;
 		private double _angleY;
 		private double _angleX;
 
-		public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) {
+		public Window(int width, int height, string title, UnstructuredMesh mesh) : base(width, height, GraphicsMode.Default, title) {
 
 			keybindings = new KeyController();
 			RegisterKeyBinds();
 
-			LoadMesh(CurrentMesh);
+			LoadMesh(mesh);
 		}
 
 		protected void LoadMesh(UnstructuredMesh mesh)
@@ -84,8 +71,6 @@ namespace ShapeDatabase.UI {
 					_angleY = 0;
 					_angleX = 0;
 				});
-			keybindings.RegisterDown(Key.Plus,  // Next Image
-				() => enumerator.MoveNext());
 
 			// Movement
 			keybindings.RegisterHold(Key.W,     // Forward
@@ -96,9 +81,9 @@ namespace ShapeDatabase.UI {
 				(FrameEventArgs e) => _camera.Position -= _camera.Right * cameraSpeed * (float) e.Time);
 			keybindings.RegisterHold(Key.D,     // Right
 				(FrameEventArgs e) => _camera.Position += _camera.Right * cameraSpeed * (float) e.Time);
-			keybindings.RegisterHold(Key.Q,     // Up
+			keybindings.RegisterHold(Key.E,     // Up
 				(FrameEventArgs e) => _camera.Position += _camera.Up * cameraSpeed * (float) e.Time);
-			keybindings.RegisterHold(Key.E,     // Down
+			keybindings.RegisterHold(Key.Q,     // Down
 				(FrameEventArgs e) => _camera.Position -= _camera.Up * cameraSpeed * (float) e.Time);
 
 			// Rotations
@@ -136,11 +121,11 @@ namespace ShapeDatabase.UI {
 			GL.BindVertexArray(_vaoModel);
 			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
 
-			var positionLocation = _lightingShader.GetAttribLocation("aPos");
+			int positionLocation = _lightingShader.GetAttribLocation("aPos");
 			GL.EnableVertexAttribArray(positionLocation);
 			GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
 
-			var normalLocation = _lightingShader.GetAttribLocation("aNormal");
+			int normalLocation = _lightingShader.GetAttribLocation("aNormal");
 			GL.EnableVertexAttribArray(normalLocation);
 			GL.VertexAttribPointer(normalLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
 
@@ -221,7 +206,6 @@ namespace ShapeDatabase.UI {
 
 		public override void Exit() {
 			Settings.Active = false;
-			Settings.DirectShutDown = true;
 			base.Exit();
 		}
 	}
