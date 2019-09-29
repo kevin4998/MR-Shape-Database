@@ -28,6 +28,11 @@ namespace ShapeDatabase.Shapes {
 		/// </summary>
 		public uint[] Elements { get; }
 		/// <summary>
+		/// If the current shape is normalised and false in the range of [-1,1]
+		/// located at the center of space.
+		/// </summary>
+		public bool IsNormalised { get; }
+		/// <summary>
 		/// The total amount of vertices in this shape.
 		/// </summary>
 		public uint VerticesCount => Convert.ToUInt32(UnstructuredGrid.Length);
@@ -35,7 +40,10 @@ namespace ShapeDatabase.Shapes {
 		/// The total amount of faces in this shape.
 		/// </summary>
 		public uint FacesCount => Convert.ToUInt32(Elements.Length / 3);
-
+		/// <summary>
+		/// An axis aligned bounding box which surrounds this shape.
+		/// </summary>
+		public AABB AABB => AABB.FromMesh(this);
 		#endregion
 
 		#region --- Constructor Methods ---
@@ -47,17 +55,49 @@ namespace ShapeDatabase.Shapes {
 		/// for shapes.</param>
 		/// <param name="indices">A collection of references to points
 		/// on the grid to form triangles.</param>
-		public UnstructuredMesh(Vector3[] grid, uint[] indices) {
-			Debug.Assert(GridCondition(grid));
-			Debug.Assert(IndiceCondition(grid, indices));
+		/// <param name="normalised">If the current shape is normalised and whose conditions
+		/// should be checked.</param>
+		public UnstructuredMesh(Vector3[] grid, uint[] indices, bool normalised = false) {
+			#if DEBUG
+			if (normalised) { 
+				Debug.Assert(GridCondition(grid));
+				Debug.Assert(IndiceCondition(grid, indices));
+			}
+			#endif
 
 			UnstructuredGrid = grid;
 			Elements = indices;
+			IsNormalised = normalised;
 		}
 
 		#endregion
 
-		#region --- Instance Methods ---
+		#region --- Methods ---
+
+		#region -- Instance Methods --
+
+		public UnstructuredMesh Normalise() {
+			AABB box = AABB;
+			// The transformation to scale all equally.
+			Vector2 cube = box.Cube;
+			float min = cube.X;
+			float max = cube.Y;
+			float scale = 2 / (max - min);
+			// The transformation to move to the origin center.
+			Vector3 move = box.Center;
+			for (int j = 2; j >= 0; j--)
+				move[j] = (move[j] - min) * scale;
+			// Perform transformations.
+			Vector3[] current = UnstructuredGrid;
+			Vector3[] next = new Vector3[current.Length];
+			for (int i = current.Length - 1; i >= 0; i--)
+				for (int j = 2; j >= 0; j--)
+					next[i][j] = (current[i][j] - min) * scale - move[j];
+
+			return new UnstructuredMesh(next, Elements, true);
+		}
+
+		#endregion
 
 		#region -- Debug Conditions --
 
@@ -69,9 +109,9 @@ namespace ShapeDatabase.Shapes {
 				return false;*/
 			// All points need to be in a -1,1 cube.
 			foreach (Vector3 variable in grid)
-				if (variable.X < -1 || variable.X > 1
-					|| variable.Y < -1 || variable.Y > 1
-					|| variable.Z < -1 || variable.Z > 1)
+				if (variable.X <= -1.00001f || variable.X >= 1.00001f
+					|| variable.Y <= -1.00001f || variable.Y >= 1.00001f
+					|| variable.Z <= -1.00001f || variable.Z >= 1.00001f)
 					return false;
 			return true;
 		}

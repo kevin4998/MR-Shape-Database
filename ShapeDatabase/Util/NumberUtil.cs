@@ -5,10 +5,9 @@ namespace ShapeDatabase.Util
 {
 
 	/// <summary>
-	/// A class to provide extra functionalty on Arrays.
+	/// A class to provide extra functionalty on Arrays and numbers.
 	/// </summary>
-	public static class ArrayUtil
-	{
+	public static class NumberUtil {
 
 		/// <summary>
 		/// Converts all the values in this array to a range between -1 and 1.
@@ -16,8 +15,7 @@ namespace ShapeDatabase.Util
 		/// </summary>
 		/// <param name="array">The array which will be used as a base for conversion.</param>
 		/// <returns>A new array with the scaled values.</returns>
-		public static Vector3[] Normalise(this Vector3[] array)
-		{
+		public static Vector3[] Normalise(this Vector3[] array) {
 			float min = float.MaxValue;
 			float max = float.MinValue;
 
@@ -42,12 +40,11 @@ namespace ShapeDatabase.Util
 		/// <param name="min">The minimum value within the array.</param>
 		/// <param name="max">The maximum value within the array.</param>
 		/// <returns>A new array with the scaled values.</returns>
-		public static Vector3[] Normalise(this Vector3[] array, float min, float max)
-		{
+		public static Vector3[] Normalise(this Vector3[] array, float min, float max) {
 			Vector3[] result = new Vector3[array.Length];
-			float dif = 2 / (max - min);
 
 			// Scale to [-1,1]
+			float dif = 2 / (max - min);
 
 			for (int i = array.Length - 1; i >= 0; i--)
 			{
@@ -80,6 +77,34 @@ namespace ShapeDatabase.Util
 				result[i] -= difv;
 
 			return result;
+		}
+
+		/// <summary>
+		/// Compares to floating point numbers for equality using a certain precision.
+		/// 
+		/// https://stackoverflow.com/a/3875619
+		/// </summary>
+		/// <param name="a">One value used for comparison.</param>
+		/// <param name="b">Another value to compare with.</param>
+		/// <param name="precision">The maximum difference between the two values.</param>
+		/// <returns><see langword="true"/> if both values are equal
+		/// with the specified precision.</returns>
+		public static bool NearlyEqual(float a, float b, float precision) {
+			const float Epsilon = float.Epsilon;
+			float absA = Math.Abs(a);
+			float absB = Math.Abs(b);
+			float diff = Math.Abs(a - b);
+
+			if (a.Equals(b))
+				// Shortcut, handles infinities
+				return true;
+			else if (a == 0 || b == 0 || absA + absB < Epsilon)
+				// a or b is zero or both are extremely close to it
+				// relative error is less meaningful here
+				return diff < (precision * Epsilon);
+			else
+				// Use relative error.
+				return diff / (absA + absB) < precision;
 		}
 
 	}
