@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenTK;
 
 namespace ShapeDatabase.Shapes {
@@ -71,9 +67,9 @@ namespace ShapeDatabase.Shapes {
 		public AABB(float minx, float maxx,
 					float miny, float maxy,
 					float minz, float maxz) {
-			Debug.Assert(minx < maxx);
-			Debug.Assert(miny < maxy);
-			Debug.Assert(minz < maxz);
+			Debug.Assert(minx <= maxx);
+			Debug.Assert(miny <= maxy);
+			Debug.Assert(minz <= maxz);
 
 			MinX = minx;
 			MaxX = maxx;

@@ -163,8 +163,7 @@ namespace ShapeDatabase.IO {
 
 				// Phase 3: Refine meshes into better examples. (repeatable)
 
-				if (async)	files = RefineFilesAsync(filemeshes);
-				else		files = RefineFiles(filemeshes);
+				files = async ? RefineFilesAsync(filemeshes) : RefineFiles(filemeshes);
 
 			}
 
@@ -203,7 +202,10 @@ namespace ShapeDatabase.IO {
 			InfoMesh[] filemeshes = async ? ReadFilesAsync(files) : ReadFiles(files);
 			// Phase 3: Store meshes into memory.
 			foreach (InfoMesh infomesh in filemeshes) {
-				MeshEntry entry = new MeshEntry(infomesh.Info.NameWithoutExtension(), infomesh.Mesh);
+				MeshEntry entry =
+					new MeshEntry(infomesh.Info.NameWithoutExtension(),
+								  infomesh.Info.Directory.Name,
+								  infomesh.Mesh);
 				ProcessedMeshes.Add(entry, true);
 			}
 		}
@@ -418,6 +420,7 @@ namespace ShapeDatabase.IO {
 			// If it needs refinement then we put it in temp.
 			// If it does not need refinement then we put it in the final map.
 			string dir = isRefined ? Settings.ShapeFinalDir : Settings.ShapeTempDir;
+			dir = Path.Combine(dir, info.Directory.Name);
 			string name = info.Name;
 			//string ext = info.Extension;
 
@@ -440,6 +443,7 @@ namespace ShapeDatabase.IO {
 				if (info == null) continue;
 
 				string dir = Settings.ShapeFailedDir;
+				dir = Path.Combine(dir, info.Directory.Name);
 				string name = info.Name;
 
 				Directory.CreateDirectory(dir);

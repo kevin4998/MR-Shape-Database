@@ -1,13 +1,9 @@
 ﻿using CommandLine;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI;
-using ShapeDatabase.Refine;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.IO;
 
 namespace ShapeDatabase
 {

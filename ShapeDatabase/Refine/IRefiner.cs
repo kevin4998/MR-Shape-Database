@@ -21,11 +21,13 @@ namespace ShapeDatabase.Refine {
 		/// Refines the mesh. Overwrites the specified file.
 		/// </summary>
 		/// <param name="file">The file containing the shape to refine.</param>
+		/// <param name="attemps">The number of times that this file has been
+		/// refined.</param>
 		/// <exception cref="ArgumentNullException">If the given file is
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
-		void RefineMesh(FileInfo file);
+		void RefineMesh(FileInfo file, int attemps = 0);
 
 	}
 

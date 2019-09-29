@@ -40,19 +40,19 @@
     <None Update="Content\Shapes\Initial\61.off">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Shapes\Initial\LDB_101.off">
+    <None Update="Content\Shapes\Initial\Chair\LDB_101.off">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Shapes\Initial\LDB_102.off">
+    <None Update="Content\Shapes\Initial\Chair\LDB_102.off">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Shapes\Initial\m1674.off">
+    <None Update="Content\Shapes\Initial\Sign\m1674.off">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Shapes\Initial\PSB_Chair.off">
+    <None Update="Content\Shapes\Initial\Chair\PSB_Chair.off">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Shapes\Initial\PSB_Green_Chair.off">
+    <None Update="Content\Shapes\Initial\Chair\PSB_Green_Chair.off">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

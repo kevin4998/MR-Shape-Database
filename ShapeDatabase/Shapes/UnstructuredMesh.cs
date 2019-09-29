@@ -76,6 +76,12 @@ namespace ShapeDatabase.Shapes {
 
 		#region -- Instance Methods --
 
+		/// <summary>
+		/// Converts the current mesh to fall in the [-1,1] range and at the 
+		/// center of the universe.
+		/// </summary>
+		/// <returns>A new mesh, different from the current one, which is normalised.
+		/// </returns>
 		public UnstructuredMesh Normalise() {
 			AABB box = AABB;
 			// The transformation to scale all equally.

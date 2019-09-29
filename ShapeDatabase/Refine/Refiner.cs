@@ -55,7 +55,7 @@ namespace ShapeDatabase.Refine {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
-		public void RefineMesh(FileInfo file) {
+		public void RefineMesh(FileInfo file, int attemps = 0) {
 			if (file == null)
 				throw new ArgumentNullException(nameof(file));
 			if (!file.Exists)
@@ -78,6 +78,7 @@ namespace ShapeDatabase.Refine {
 
 		private static readonly int MAX_FACES = 5000;
 		private static readonly int MAX_VERTICES = 5000;
+		public static readonly float RANGE = 0.00001f;
 
 		private static readonly Lazy<SimplifyRefiner> lazy =
 			new Lazy<SimplifyRefiner>(() => new SimplifyRefiner());
@@ -118,14 +119,14 @@ namespace ShapeDatabase.Refine {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
-		public void RefineMesh(FileInfo file) {
+		public void RefineMesh(FileInfo file, int attemps = 0) {
 			if (file == null)
 				throw new ArgumentNullException(nameof(file));
 			if (!file.Exists)
 				throw new ArgumentException("File {0} does not exist.", file.FullName);
 
-			Refiner.CallJavaScript("cleanoff", file.FullName, file.FullName);
-			Refiner.CallJavaScript("tess", file.FullName, file.FullName);
+			Refiner.CallJavaScript("cleanoff", file.FullName, file.FullName, (RANGE * (attemps + 1)).ToString());
+			//Refiner.CallJavaScript("tess", file.FullName, file.FullName);
 		}
 
 		#endregion
@@ -149,7 +150,8 @@ namespace ShapeDatabase.Refine {
 		/// <exception cref="ArgumentNullException">If any of the given parameters
 		/// is <see langword="null"/> or is <see cref="string.Empty"/>.</exception>
 		public static void CallJavaScript(string script, string inputFileDirectory,
-														 string outputFileDirectory) {
+														 string outputFileDirectory,
+														 string param = "") {
 			if (string.IsNullOrEmpty(script))
 				throw new ArgumentNullException(nameof(script));
 			if (string.IsNullOrEmpty(inputFileDirectory))
@@ -159,7 +161,9 @@ namespace ShapeDatabase.Refine {
 
 			string javaPath = Settings.JavaDir;
 
-			ProcessStartInfo processInfo = new ProcessStartInfo($"{javaPath}", $@"-jar {script}.jar {inputFileDirectory} {outputFileDirectory}")
+			ProcessStartInfo processInfo =
+				new ProcessStartInfo($"{javaPath}",
+				$@"-jar {script}.jar {inputFileDirectory} {outputFileDirectory} {param}")
 			{
 				CreateNoWindow = false,
 				UseShellExecute = false,
