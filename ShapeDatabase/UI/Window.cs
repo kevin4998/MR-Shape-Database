@@ -81,9 +81,9 @@ namespace ShapeDatabase.UI {
 				(FrameEventArgs e) => _camera.Position -= _camera.Right * cameraSpeed * (float) e.Time);
 			keybindings.RegisterHold(Key.D,     // Right
 				(FrameEventArgs e) => _camera.Position += _camera.Right * cameraSpeed * (float) e.Time);
-			keybindings.RegisterHold(Key.Q,     // Up
+			keybindings.RegisterHold(Key.E,     // Up
 				(FrameEventArgs e) => _camera.Position += _camera.Up * cameraSpeed * (float) e.Time);
-			keybindings.RegisterHold(Key.E,     // Down
+			keybindings.RegisterHold(Key.Q,     // Down
 				(FrameEventArgs e) => _camera.Position -= _camera.Up * cameraSpeed * (float) e.Time);
 
 			// Rotations
@@ -206,7 +206,6 @@ namespace ShapeDatabase.UI {
 
 		public override void Exit() {
 			Settings.Active = false;
-			Settings.DirectShutDown = true;
 			base.Exit();
 		}
 	}

@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 using ShapeDatabase.Refine;
 using ShapeDatabase.Shapes;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.IO {
 
@@ -31,7 +32,7 @@ namespace ShapeDatabase.IO {
 		/// The maximum amount of attempts that a shape may be refined
 		/// before seeing it as unfixable.
 		/// </summary>
-		private const byte REFINEMENT_THRESHOLD = 4;
+		private const byte REFINEMENT_THRESHOLD = 16;
 
 		private static readonly Lazy<IReader <UnstructuredMesh>[]> LocalReaders =
 			new Lazy<IReader<UnstructuredMesh>[]>(ProduceReaders);
@@ -45,7 +46,8 @@ namespace ShapeDatabase.IO {
 		}
 		private static IRefiner<UnstructuredMesh>[] ProduceRefiners() {
 			return new IRefiner<UnstructuredMesh>[] {
-
+				ExtendRefiner.Instance,
+				SimplifyRefiner.Instance
 			};
 		}
 
@@ -201,7 +203,7 @@ namespace ShapeDatabase.IO {
 			InfoMesh[] filemeshes = async ? ReadFilesAsync(files) : ReadFiles(files);
 			// Phase 3: Store meshes into memory.
 			foreach (InfoMesh infomesh in filemeshes) {
-				MeshEntry entry = new MeshEntry(infomesh.Info.Name, infomesh.Mesh);
+				MeshEntry entry = new MeshEntry(infomesh.Info.NameWithoutExtension(), infomesh.Mesh);
 				ProcessedMeshes.Add(entry, true);
 			}
 		}
@@ -417,10 +419,11 @@ namespace ShapeDatabase.IO {
 			// If it does not need refinement then we put it in the final map.
 			string dir = isRefined ? Settings.ShapeFinalDir : Settings.ShapeTempDir;
 			string name = info.Name;
-			string ext = info.Extension;
+			//string ext = info.Extension;
 
+			string newDir = $"{dir}/{name}";
 			Directory.CreateDirectory(dir);
-			info.MoveTo($"{dir}/{name}.{ext}");
+			info.MoveAndOverwrite(newDir);
 
 			return isRefined;
 		}
@@ -438,10 +441,9 @@ namespace ShapeDatabase.IO {
 
 				string dir = Settings.ShapeFailedDir;
 				string name = info.Name;
-				string ext = info.Extension;
 
 				Directory.CreateDirectory(dir);
-				info.MoveTo($"{dir}/{name}.{ext}");
+				info.MoveAndOverwrite($"{dir}/{name}");
 			}
 		}
 
@@ -463,8 +465,12 @@ namespace ShapeDatabase.IO {
 		/// An InfoMesh to describe when no actual mesh/file could be delivered.
 		/// This is a <see langword="null"/> variant for this struct.
 		/// </summary>
-		public static readonly InfoMesh NULL = new InfoMesh(null, UnstructuredMesh.NULL);
+		public static readonly InfoMesh NULL = new InfoMesh(null, UnstructuredMesh.NULL, true);
 
+		/// <summary>
+		/// Specifies if the this object represents the null variant for structs.
+		/// </summary>
+		private bool IsNull { get; }
 		/// <summary>
 		/// The file where the original mesh was stored.
 		/// </summary>
@@ -486,6 +492,12 @@ namespace ShapeDatabase.IO {
 		public InfoMesh(FileInfo file, UnstructuredMesh mesh) : this() {
 			this.Info = file;
 			this.Mesh = mesh;
+			IsNull = false;
+		}
+
+		private InfoMesh(FileInfo file, UnstructuredMesh mesh, bool isNull) 
+			:this(file, mesh) {
+			IsNull = isNull;
 		}
 
 		#endregion
@@ -497,9 +509,9 @@ namespace ShapeDatabase.IO {
 		}
 
 		public bool Equals(InfoMesh obj) {
-			return Object.ReferenceEquals(NULL, this)
-				? Object.ReferenceEquals(NULL, obj)
-				: !Object.ReferenceEquals(NULL, obj)
+			return this.IsNull
+				?   obj.IsNull
+				:  !obj.IsNull
 					&& Info.Equals(obj.Info)
 					&& Mesh.Equals(obj.Mesh);
 		}

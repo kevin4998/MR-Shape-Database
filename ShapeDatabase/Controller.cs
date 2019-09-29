@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace ShapeDatabase
 {
@@ -32,10 +33,12 @@ namespace ShapeDatabase
 		public static void ProcessFiles(IEnumerable<string> dirs) {
 			Console.WriteLine("Start Processing Meshes.");
 
+			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
 			foreach (string dir in dirs)
 				Settings.FileManager.AddDirectory(dir);
 
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
+
 			Console.WriteLine($"Shape Count:{meshes.Count}");
 			foreach (string name in meshes.Names)
 			{
@@ -49,6 +52,7 @@ namespace ShapeDatabase
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 
 			while (!Settings.DirectShutDown) {
+				Console.WriteLine();
 				Console.WriteLine("Please select a shape,");
 				Console.WriteLine("or write down 'stop' to exit the program");
 				string input = Console.ReadLine();

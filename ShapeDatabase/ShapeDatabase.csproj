@@ -6,6 +6,10 @@
     <StartupObject>ShapeDatabase.Program</StartupObject>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="Content\Shapes\Final\" />
     <Folder Include="Content\Shapes\Failed\" />

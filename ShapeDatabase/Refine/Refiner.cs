@@ -161,7 +161,7 @@ namespace ShapeDatabase.Refine {
 
 			ProcessStartInfo processInfo = new ProcessStartInfo($"{javaPath}", $@"-jar {script}.jar {inputFileDirectory} {outputFileDirectory}")
 			{
-				CreateNoWindow = true,
+				CreateNoWindow = false,
 				UseShellExecute = false,
 				WorkingDirectory = Settings.JavaScriptsDir
 			};

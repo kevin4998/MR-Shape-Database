@@ -65,8 +65,8 @@ namespace ShapeDatabase.Shapes {
 
 		private static bool GridCondition(Vector3[] grid) {
 			// A grid contains the X, Y and Z coords to must be a multiple of 3.
-			if (grid.Length == 0)
-				return false;
+			/*if (grid.Length == 0)
+				return false;*/
 			// All points need to be in a -1,1 cube.
 			foreach (Vector3 variable in grid)
 				if (variable.X < -1 || variable.X > 1
@@ -78,7 +78,7 @@ namespace ShapeDatabase.Shapes {
 
 		private static bool IndiceCondition(Vector3[] grid, uint[] indices) {
 			// Extention of 3 as it contains triangles.
-			if (indices.Length % 3 != 0 || indices.Length == 0)
+			if (indices.Length % 3 != 0)
 				return false;
 			// Can only use points specified in the grid.
 			foreach (uint variable in indices)

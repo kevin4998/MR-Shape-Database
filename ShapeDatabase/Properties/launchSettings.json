@@ -2,7 +2,7 @@
   "profiles": {
     "ShapeDatabase": {
       "commandName": "Project",
-      "commandLineArgs": "--directory \"Content\\Shapes\\Initial\""
+      "commandLineArgs": "--directory \"Content\\Shapes\\Final\""
     }
   }
 }

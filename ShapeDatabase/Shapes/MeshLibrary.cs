@@ -54,7 +54,7 @@ namespace ShapeDatabase.Shapes {
 		/// <param name="replace">If an old value can be overriden.</param>
 		public void Add(MeshEntry entry, bool replace = false) {
 			if (replace || !library.ContainsKey(entry.Name))
-				library.Add(entry.Name, entry);
+				library[entry.Name] = entry;
 		}
 
 		/// <summary>
