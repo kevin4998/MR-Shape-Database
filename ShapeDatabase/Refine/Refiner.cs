@@ -181,6 +181,12 @@ namespace ShapeDatabase.Refine {
 			}
 		}
 
+		/// <summary>
+		/// Method which, given a mesh, splits each triangle in 4 triangles and overwrites the original off file.
+		/// </summary>
+		/// <param name="mesh">The unstructured mesh of which the triangles should be split</param>
+		/// <param name="writer">the writer for overwriting the off file</param>
+		/// <param name="location">The location (file.FullName) if the off file</param>
 		public static void Split4Triangles(UnstructuredMesh mesh, IWriter<UnstructuredMesh> writer, string location)
 		{
 			uint[] newElements = new uint[mesh.Elements.Length * 4];
@@ -219,6 +225,12 @@ namespace ShapeDatabase.Refine {
 			writer.WriteFile(result, location);
 		}
 		
+		/// <summary>
+		/// Given two vertices, return a vertice that lies exactly inbetween.
+		/// </summary>
+		/// <param name="vert1">The first vertice</param>
+		/// <param name="vert2">The second vertice</param>
+		/// <returns></returns>
 		private static Vector3 GetMiddle(Vector3 vert1, Vector3 vert2)
 		{
 			double middleX = (vert1.X + vert2.X) / 2.0;
