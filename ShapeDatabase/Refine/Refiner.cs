@@ -63,9 +63,9 @@ namespace ShapeDatabase.Refine {
 			if (!file.Exists)
 				throw new ArgumentException("File {0} does not exist.", file.FullName);
 
-
-			//Refiner.Split4Triangles(mesh, writer, file.FullName);
-			Refiner.CallJavaScript("catmullclark", file.FullName, file.FullName);
+			Refiner.Split4Triangles(mesh, writer, file.FullName);
+			Refiner.CallJavaScript("cleanoff", file.FullName, file.FullName, "0.0001");
+			Refiner.CallJavaScript("doosabin", file.FullName, file.FullName);
 			Refiner.CallJavaScript("tess", file.FullName, file.FullName);
 		}
 

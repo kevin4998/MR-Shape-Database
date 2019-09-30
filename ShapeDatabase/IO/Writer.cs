@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ShapeDatabase.IO
 {
+	/// <summary>
+	/// Class for writing a mesh to an off file.
+	/// </summary>
 	public class Writer : IWriter<UnstructuredMesh>
 	{
 		public string[] SupportedFormats { get; } = new string[] { "off" };
@@ -18,13 +21,21 @@ namespace ShapeDatabase.IO
 
 		public static Writer Instance { get { return lazy.Value; } }
 
+		/// <summary>
+		/// Writes an unstructured mesh to an off file at a given location.
+		/// </summary>
+		/// <param name="type">The unstructured mesh that needs to be written to an off file</param>
+		/// <param name="location">The location of the off file</param>
 		public void WriteFile(UnstructuredMesh type, string location)
 		{
-			string val = "C:\\Users\\guusd\\Documents\\UniversiteitUtrecht\\M2.1\\MR\\MR-Shape-Database\\ShapeDatabase\\bin\\Debug\\net48\\Content\\Shapes\\Initial\\Sign\\m1674.off";
-			string valtxt = "C:\\Users\\guusd\\Documents\\UniversiteitUtrecht\\M2.1\\MR\\MR-Shape-Database\\ShapeDatabase\\bin\\Debug\\net48\\Content\\Shapes\\Initial\\Sign\\m1674.txt";
-			WriteFile(type, new StreamWriter(val));
+			WriteFile(type, new StreamWriter(location));
 		}
 
+		/// <summary>
+		/// Writes an unstructured mesh to an off file with a given streamwriter
+		/// </summary>
+		/// <param name="type">The unstructured mesh that needs to be written to an off file</param>
+		/// <param name="writer">The streamwriter that needs to be used</param>
 		public void WriteFile(UnstructuredMesh type, StreamWriter writer)
 		{
 			using(writer)
@@ -42,11 +53,21 @@ namespace ShapeDatabase.IO
 			}
 		}
 
+		/// <summary>
+		/// Writes an unstructured mesh to an off file at a given location.
+		/// </summary>
+		/// <param name="type">The unstructured mesh that needs to be written to an off file</param>
+		/// <param name="location">The location of the off file</param>
 		public Task WriteFileAsync(UnstructuredMesh type, string location)
 		{
 			return Task.Run(() => WriteFile(type, location));
-		}	
+		}
 
+		/// <summary>
+		/// Writes an unstructured mesh to an off file with a given streamwriter
+		/// </summary>
+		/// <param name="type">The unstructured mesh that needs to be written to an off file</param>
+		/// <param name="writer">The streamwriter that needs to be used</param>
 		public Task WriteFileAsync(UnstructuredMesh type, StreamWriter writer)
 		{
 			return Task.Run(() => WriteFile(type, writer));
