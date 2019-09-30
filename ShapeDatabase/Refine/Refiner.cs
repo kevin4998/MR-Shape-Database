@@ -64,8 +64,8 @@ namespace ShapeDatabase.Refine {
 				throw new ArgumentException("File {0} does not exist.", file.FullName);
 
 
-			Refiner.Split4Triangles(mesh, writer, file.FullName);
-			Refiner.CallJavaScript("doosabin", file.FullName, file.FullName);
+			//Refiner.Split4Triangles(mesh, writer, file.FullName);
+			Refiner.CallJavaScript("catmullclark", file.FullName, file.FullName);
 			Refiner.CallJavaScript("tess", file.FullName, file.FullName);
 		}
 
@@ -190,14 +190,14 @@ namespace ShapeDatabase.Refine {
 		public static void Split4Triangles(UnstructuredMesh mesh, IWriter<UnstructuredMesh> writer, string location)
 		{
 			uint[] newElements = new uint[mesh.Elements.Length * 4];
-			Vector3[] newVertices = new Vector3[mesh.VerticesCount + mesh.Elements.Length];
+			Vector3[] newVertices = new Vector3[mesh.VerticesCount + mesh.FacesCount * 3];
 
 			for (int i = 0; i < mesh.VerticesCount; i++)
 			{
 				newVertices[i] = mesh.UnstructuredGrid[i];
 			}
 
-			for (int i = 0; i < mesh.VerticesCount * 3; i = i + 3)
+			for (int i = 0; i < mesh.Elements.Length; i = i + 3)
 			{
 				newVertices[mesh.VerticesCount + i] = GetMiddle(mesh.UnstructuredGrid[mesh.Elements[i]], mesh.UnstructuredGrid[mesh.Elements[i + 1]]);
 				newVertices[mesh.VerticesCount + i + 1] = GetMiddle(mesh.UnstructuredGrid[mesh.Elements[i + 1]], mesh.UnstructuredGrid[mesh.Elements[i + 2]]);
