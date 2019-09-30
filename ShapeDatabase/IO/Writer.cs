@@ -19,7 +19,7 @@ namespace ShapeDatabase.IO
 
 		public void WriteFile(UnstructuredMesh type, string location)
 		{
-			//TODO
+			WriteFile(type, new StreamWriter(location));
 		}
 
 		public void WriteFile(UnstructuredMesh type, StreamWriter writer)
