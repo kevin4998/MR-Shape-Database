@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.Refine {
@@ -27,8 +28,7 @@ namespace ShapeDatabase.Refine {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
-		void RefineMesh(FileInfo file, int attemps = 0);
-
+		void RefineMesh(IWriter<UnstructuredMesh> writer, UnstructuredMesh mesh, FileInfo file, int attemps = 0);
 	}
 
 }

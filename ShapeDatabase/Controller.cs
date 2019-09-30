@@ -30,8 +30,8 @@ namespace ShapeDatabase
 			Console.WriteLine("Start Processing Meshes.");
 
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
-			//foreach (string dir in dirs)
-			//	Settings.FileManager.AddDirectory(dir);
+			foreach (string dir in dirs)
+				Settings.FileManager.AddDirectory(dir);
 
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 
