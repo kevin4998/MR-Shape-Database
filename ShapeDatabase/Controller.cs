@@ -1,4 +1,6 @@
 ﻿using CommandLine;
+using ShapeDatabase.Features.Statistics;
+using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI;
 using System;
@@ -91,7 +93,36 @@ namespace ShapeDatabase {
 		static void MeasureShapes(IEnumerable<string> dirs) {
 			Console.WriteLine("Start Measuring Meshes.");
 			LoadNewFiles(dirs, false);
+
+			RecordHolder recordHolder = new RecordHolder(
+				("Name",	 (MeshEntry entry) => entry.Name),
+				("Class",	 (MeshEntry entry) => entry.Class),
+				("Vertices", (MeshEntry entry) => entry.Mesh.VerticesCount),
+				("Faces",	 (MeshEntry entry) => entry.Mesh.FacesCount),
+				("",						 _ => ""), // Empty line to seperate values.
+				("Min X",    (MeshEntry entry) => entry.Mesh.AABB.MinX),
+				("Min Y",    (MeshEntry entry) => entry.Mesh.AABB.MinY),
+				("Min Z",    (MeshEntry entry) => entry.Mesh.AABB.MinZ),
+				("Max X",    (MeshEntry entry) => entry.Mesh.AABB.MaxX),
+				("Max Y",    (MeshEntry entry) => entry.Mesh.AABB.MaxY),
+				("Max Z",    (MeshEntry entry) => entry.Mesh.AABB.MaxZ),
+				(" ",                        _ => ""), // Empty line to seperate values.
+				("Range X",  (MeshEntry entry) => entry.Mesh.AABB.MaxX - entry.Mesh.AABB.MinX),
+				("Range Y",  (MeshEntry entry) => entry.Mesh.AABB.MaxY - entry.Mesh.AABB.MinY),
+				("Range Z",  (MeshEntry entry) => entry.Mesh.AABB.MaxZ - entry.Mesh.AABB.MinZ)
+			);
+			recordHolder.TakeSnapShot(Settings.MeshLibrary);
+
 			Console.WriteLine("Done Measuring Meshes.");
+
+			const string datetimeFormat = "yyyy-MM-dd-HH-mm-ss";
+			string filename = recordHolder.SnapshotTime.ToString(datetimeFormat)
+							+ "_"
+							+ Settings.MeasurementsFile;
+			RecordsWriter.Instance.WriteFile(recordHolder, filename);
+
+			Console.WriteLine($"Statistics exported to: {filename}");
+
 			ShowShapeCount();
 		}
 

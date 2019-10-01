@@ -13,9 +13,10 @@ namespace ShapeDatabase.IO {
 		public static char SeperatorChar => ';';
 		public static string Seperator => SeperatorChar.ToString();
 
-		private readonly Lazy<RecordsWriter> lazy = new Lazy<RecordsWriter>();
+		private static readonly Lazy<RecordsWriter> lazy =
+			new Lazy<RecordsWriter>(() => new RecordsWriter());
 
-		public RecordsWriter Instance => lazy.Value;
+		public static RecordsWriter Instance => lazy.Value;
 		public string[] SupportedFormats => new string[] { ".csv" };
 
 		#endregion

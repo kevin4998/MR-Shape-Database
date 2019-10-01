@@ -30,6 +30,11 @@ namespace ShapeDatabase {
 		public static string ShapeFailedDir { get; set; } = "Content/Shapes/Failed";
 
 		/// <summary>
+		/// The location where the measurement/statistics file is stored.
+		/// </summary>
+		public static string MeasurementsFile { get; set; } = "measures.csv";
+
+		/// <summary>
 		/// The location where all the Java refinement scripts are stored.
 		/// </summary>
 		public static string JavaScriptsDir { get; set; } = "Content/Scripts";

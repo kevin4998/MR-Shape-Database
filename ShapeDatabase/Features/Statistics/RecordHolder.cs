@@ -68,7 +68,7 @@ namespace ShapeDatabase.Features.Statistics {
 
 		public RecordHolder AddMeasure(string measureName, Func<MeshEntry, object> provider,
 										bool overwrite = false) {
-			if (string.IsNullOrEmpty(measureName))
+			if (measureName == null)
 				throw new ArgumentNullException(nameof(measureName));
 			if (provider == null)
 				throw new ArgumentNullException(nameof(provider));
