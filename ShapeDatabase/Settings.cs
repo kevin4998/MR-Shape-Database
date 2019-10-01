@@ -41,6 +41,11 @@ namespace ShapeDatabase {
 		
 
 		/// <summary>
+		/// The current processes which needs to be executed.
+		/// </summary>
+		public static OperationMode Mode { get; set; } = OperationMode.VIEW;
+
+		/// <summary>
 		/// The culture which is required for converting the shape files.
 		/// </summary>
 		public static CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;
