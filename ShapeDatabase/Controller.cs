@@ -5,11 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace ShapeDatabase
-{
+namespace ShapeDatabase {
+
+	/// <summary>
+	/// The main application controller.
+	/// This object determines what gets performed and what won't.
+	/// </summary>
     public class Controller {
 
 
+		/// <summary>
+		/// Converts the given console arguments and
+		/// starts the application based on their input.
+		/// </summary>
+		/// <param name="args">The actions which this application should perform.</param>
 		public static void ProcessArguments(string[] args) {
 			Console.WriteLine("Starting converting input!");
 
@@ -60,6 +69,12 @@ namespace ShapeDatabase
 
 
 
+		/// <summary>
+		/// Refinement mode for the application.
+		/// This requests the application to select the given shapes
+		/// and refine them to our specified standard.
+		/// </summary>
+		/// <param name="dirs">The directories containing shapes.</param>
 		static void RefineShapes(IEnumerable<string> dirs) {
 			Console.WriteLine("Start Processing Meshes.");
 			LoadNewFiles(dirs, true);
@@ -67,16 +82,25 @@ namespace ShapeDatabase
 			ShowShapeCount();
 		}
 
+		/// <summary>
+		/// Measurement mode for the application.
+		/// This requests the application to analyse the given shapes
+		/// and tell us their statistics.
+		/// </summary>
+		/// <param name="dirs">The directories containing shapes.</param>
 		static void MeasureShapes(IEnumerable<string> dirs) {
 			Console.WriteLine("Start Measuring Meshes.");
 			LoadNewFiles(dirs, false);
 			Console.WriteLine("Done Measuring Meshes.");
 			ShowShapeCount();
 		}
-		
+
 		/// <summary>
-		/// A method with the purpose of letting users view and analyse their shapes.
+		/// Viewing mode for the application.
+		/// This requests the application to read the shapes
+		/// and let the user view and analyse them themselves.
 		/// </summary>
+		/// <param name="dirs">The directories containing shapes.</param>
 		static void ViewShapes(IEnumerable<string> dirs) {
 			Console.WriteLine("Start Loading Meshes.");
 			LoadNewFiles(dirs, false);
@@ -104,6 +128,9 @@ namespace ShapeDatabase
 
 
 
+		/// <summary>
+		/// Tell the user how many shapes are currently loaded.
+		/// </summary>
 		static void ShowShapeCount() {
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 			Console.WriteLine($"{meshes.Count} Shapes are availabe:");
@@ -111,12 +138,21 @@ namespace ShapeDatabase
 				Console.WriteLine($"\t- {name}");
 		}
 
+		/// <summary>
+		/// Visualises the specified mesh on the window.
+		/// </summary>
+		/// <param name="mesh"></param>
 		static void RunWindow(UnstructuredMesh mesh) {
 			using (Window window = new Window(800, 600, "Multimedia Retrieval - K. Westerbaan & G. de Jonge", mesh)) {
 				window.Run(60.0);
 			}
 		}
 
+		/// <summary>
+		/// Let the application process the given directories for shapes.
+		/// </summary>
+		/// <param name="dirs">The directories containing shapes.</param>
+		/// <param name="refine">If the shapes should be automatically refined.</param>
 		static void LoadNewFiles(IEnumerable<string> dirs, bool refine = false) {
 			if (refine)
 				foreach (string dir in dirs)
@@ -127,6 +163,10 @@ namespace ShapeDatabase
 
 		}
 
+		/// <summary>
+		/// Restores previously refined and processed files for
+		/// visualisation or measurements.
+		/// </summary>
 		static void LoadFinalFiles() {
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
 		}
