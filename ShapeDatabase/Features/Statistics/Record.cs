@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using ShapeDatabase.Util;
@@ -8,7 +9,7 @@ namespace ShapeDatabase.Features.Statistics {
 	/// <summary>
 	/// A class containing all the different statistics/measures for a single shape.
 	/// </summary>
-	public class Record : IEquatable<Record> {
+	public class Record : IEquatable<Record>, IEnumerable<object> {
 
 		#region --- Properties ---
 
@@ -69,6 +70,19 @@ namespace ShapeDatabase.Features.Statistics {
 					return result;
 				throw new KeyNotFoundException();
 			}
+		}
+
+		#endregion
+
+		#region -- Interface Methods --
+
+		public IEnumerator<object> GetEnumerator() {
+			return Enumerators.FromConvert(Measures.GetEnumerator(),
+										   tuple => tuple.Item2);
+		}
+
+		IEnumerator IEnumerable.GetEnumerator() {
+			return GetEnumerator();
 		}
 
 		#endregion

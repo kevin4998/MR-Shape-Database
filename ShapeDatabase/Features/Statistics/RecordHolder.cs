@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.Features.Statistics {
-	
+
 	/// <summary>
 	/// A class containing a collection of <see cref="Record"/>s
 	/// which is able to create snapshots of databases with its specific measures.
 	/// </summary>
-	public class RecordHolder {
+	public class RecordHolder : IEnumerable<Record> {
 
 		#region --- Properties ---
 
@@ -128,6 +129,16 @@ namespace ShapeDatabase.Features.Statistics {
 			foreach((string name, Func<MeshEntry, object> provider) in Measures)
 				record.AddMeasure(name, provider(entry));
 			return record;
+		}
+
+
+
+		public IEnumerator<Record> GetEnumerator() {
+			return Records.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator() {
+			return GetEnumerator();
 		}
 
 		#endregion
