@@ -6,16 +6,29 @@ using ShapeDatabase.Features.Statistics;
 
 namespace ShapeDatabase.IO {
 
+	/// <summary>
+	/// A writer to convert a <see cref="RecordHolder"/> class into a csv formatted file.
+	/// </summary>
 	public class RecordsWriter : IWriter<RecordHolder> {
 
 		#region --- Properties ---
 
+		/// <summary>
+		/// The character which is used to seperate values in a csv document.
+		/// </summary>
 		public static char SeperatorChar => ';';
+		/// <summary>
+		/// A string value which represent the seperater character.
+		/// <see cref="SeperatorChar"/>
+		/// </summary>
 		public static string Seperator => SeperatorChar.ToString();
 
 		private static readonly Lazy<RecordsWriter> lazy =
 			new Lazy<RecordsWriter>(() => new RecordsWriter());
 
+		/// <summary>
+		/// Provides a writer to convert <see cref="RecordHolder"/>s into csv.
+		/// </summary>
 		public static RecordsWriter Instance => lazy.Value;
 		public string[] SupportedFormats => new string[] { ".csv" };
 
@@ -23,6 +36,9 @@ namespace ShapeDatabase.IO {
 
 		#region --- Constructor Methods ---
 
+		/// <summary>
+		/// Instatiates a new writer for records.
+		/// </summary>
 		private RecordsWriter() { }
 
 		#endregion
