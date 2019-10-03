@@ -30,6 +30,11 @@ namespace ShapeDatabase {
 		public static string ShapeFailedDir { get; set; } = "Content/Shapes/Failed";
 
 		/// <summary>
+		/// The location where the measurement/statistics file is stored.
+		/// </summary>
+		public static string MeasurementsFile { get; set; } = "measures.csv";
+
+		/// <summary>
 		/// The location where all the Java refinement scripts are stored.
 		/// </summary>
 		public static string JavaScriptsDir { get; set; } = "Content/Scripts";
@@ -39,6 +44,11 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static string JavaDir { get; set; } = "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/java.exe";
 		
+
+		/// <summary>
+		/// The current processes which needs to be executed.
+		/// </summary>
+		public static OperationMode Mode { get; set; } = OperationMode.VIEW;
 
 		/// <summary>
 		/// The culture which is required for converting the shape files.

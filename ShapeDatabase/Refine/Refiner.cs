@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using OpenTK;
+using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.Refine {
@@ -55,12 +57,14 @@ namespace ShapeDatabase.Refine {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
-		public void RefineMesh(FileInfo file, int attemps = 0) {
+		public void RefineMesh(IWriter<UnstructuredMesh> writer, UnstructuredMesh mesh, FileInfo file, int attemps = 0) {
 			if (file == null)
 				throw new ArgumentNullException(nameof(file));
 			if (!file.Exists)
 				throw new ArgumentException("File {0} does not exist.", file.FullName);
 
+			Refiner.Split4Triangles(mesh, writer, file.FullName);
+			Refiner.CallJavaScript("cleanoff", file.FullName, file.FullName, "0.0001");
 			Refiner.CallJavaScript("doosabin", file.FullName, file.FullName);
 			Refiner.CallJavaScript("tess", file.FullName, file.FullName);
 		}
@@ -119,7 +123,7 @@ namespace ShapeDatabase.Refine {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
-		public void RefineMesh(FileInfo file, int attemps = 0) {
+		public void RefineMesh(IWriter<UnstructuredMesh> _, UnstructuredMesh __, FileInfo file, int attemps = 0) {
 			if (file == null)
 				throw new ArgumentNullException(nameof(file));
 			if (!file.Exists)
@@ -177,6 +181,63 @@ namespace ShapeDatabase.Refine {
 			}
 		}
 
-	}
+		/// <summary>
+		/// Method which, given a mesh, splits each triangle in 4 triangles and overwrites the original off file.
+		/// </summary>
+		/// <param name="mesh">The unstructured mesh of which the triangles should be split</param>
+		/// <param name="writer">the writer for overwriting the off file</param>
+		/// <param name="location">The location (file.FullName) if the off file</param>
+		public static void Split4Triangles(UnstructuredMesh mesh, IWriter<UnstructuredMesh> writer, string location)
+		{
+			uint[] newElements = new uint[mesh.Elements.Length * 4];
+			Vector3[] newVertices = new Vector3[mesh.VerticesCount + mesh.FacesCount * 3];
 
+			for (int i = 0; i < mesh.VerticesCount; i++)
+			{
+				newVertices[i] = mesh.UnstructuredGrid[i];
+			}
+
+			for (int i = 0; i < mesh.Elements.Length; i = i + 3)
+			{
+				newVertices[mesh.VerticesCount + i] = GetMiddle(mesh.UnstructuredGrid[mesh.Elements[i]], mesh.UnstructuredGrid[mesh.Elements[i + 1]]);
+				newVertices[mesh.VerticesCount + i + 1] = GetMiddle(mesh.UnstructuredGrid[mesh.Elements[i + 1]], mesh.UnstructuredGrid[mesh.Elements[i + 2]]);
+				newVertices[mesh.VerticesCount + i + 2] = GetMiddle(mesh.UnstructuredGrid[mesh.Elements[i + 2]], mesh.UnstructuredGrid[mesh.Elements[i]]);
+
+				newElements[i * 4] = mesh.Elements[i];
+				newElements[i * 4 + 1] = (uint)(mesh.VerticesCount + i);
+				newElements[i * 4 + 2] = (uint)(mesh.VerticesCount + i + 2);
+
+				newElements[i * 4 + 3] = (uint)(mesh.VerticesCount + i);
+				newElements[i * 4 + 4] = mesh.Elements[i + 1];
+				newElements[i * 4 + 5] = (uint)(mesh.VerticesCount + i + 1);
+
+				newElements[i * 4 + 6] = (uint)(mesh.VerticesCount + i + 2);
+				newElements[i * 4 + 7] = (uint)(mesh.VerticesCount + i + 1);
+				newElements[i * 4 + 8] = mesh.Elements[i + 2];
+
+				newElements[i * 4 + 9] = (uint)(mesh.VerticesCount + i);
+				newElements[i * 4 + 10] = (uint)(mesh.VerticesCount + i + 1);
+				newElements[i * 4 + 11] = (uint)(mesh.VerticesCount + i + 2);
+			}
+
+			UnstructuredMesh result = new UnstructuredMesh(newVertices, newElements);
+
+			writer.WriteFile(result, location);
+		}
+		
+		/// <summary>
+		/// Given two vertices, return a vertice that lies exactly inbetween.
+		/// </summary>
+		/// <param name="vert1">The first vertice</param>
+		/// <param name="vert2">The second vertice</param>
+		/// <returns></returns>
+		private static Vector3 GetMiddle(Vector3 vert1, Vector3 vert2)
+		{
+			double middleX = (vert1.X + vert2.X) / 2.0;
+			double middleY = (vert1.Y + vert2.Y) / 2.0;
+			double middleZ = (vert1.Z + vert2.Z) / 2.0;
+
+			return new Vector3((float)middleX, (float)middleY, (float)middleZ);
+		}
+	}
 }

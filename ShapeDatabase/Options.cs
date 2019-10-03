@@ -19,6 +19,16 @@ namespace ShapeDatabase {
 		public IEnumerable<string> ShapeDirectories { get; set; }
 
 		/// <summary>
+		/// The process of operations that this application should perform.
+		/// </summary>
+		[Option('m', "mode",
+			Required = false,
+			Default = "VIEW",
+			HelpText = "A property to define what should happen to the specified shapes." +
+			"\nSupported Modes are: REFINE, MEASURE, VIEW")]
+		public string Mode { get; set; }
+
+		/// <summary>
 		/// The culture in which the files were written.
 		/// Needed for the conversion process.
 		/// </summary>
@@ -46,9 +56,33 @@ namespace ShapeDatabase {
 			get {
 				yield return new Example("Initial Library", new Options() { ShapeDirectories = new string[] { "Content/Shapes/Initial" } });
 				yield return new Example("Small Library",	new Options() { ShapeDirectories = new string[] { "Content/Shapes/Small" } });
-				yield return new Example("All Library",		new Options() { ShapeDirectories = new string[] { "Content/Shapes/Initial", "Content/Shapes/Original" } });
+				yield return new Example("All Libraries",	new Options() { ShapeDirectories = new string[] { "Content/Shapes/Initial", "Content/Shapes/Original" } });
 			}
 		}
+
+	}
+
+	/// <summary>
+	/// Different execution processes which this application can follow.
+	/// </summary>
+	public enum OperationMode {
+
+		/// <summary>
+		/// Describes that the behaviour is not specified.
+		/// </summary>
+		NONE = 0,
+		/// <summary>
+		/// Describes that the application should refine these shapes.
+		/// </summary>
+		REFINE = 1,
+		/// <summary>
+		/// Describes that the application should export measurements from the shapes.
+		/// </summary>
+		MEASURE = 2,
+		/// <summary>
+		/// Describes that the user want to view the shapes.
+		/// </summary>
+		VIEW = 4
 
 	}
 

@@ -107,5 +107,21 @@ namespace ShapeDatabase.Util
 				return diff / (absA + absB) < precision;
 		}
 
+		/// <summary>
+		/// A generic hash method based on java's hash implementation.
+		/// <see cref="http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/be44bff34df4/src/share/classes/java/util/Arrays.java"/>
+		/// </summary>
+		/// <param name="values">The different items to combine the hashcode off.</param>
+		/// <returns>An integer uniquely representing the different values.</returns>
+		public static int Hash(params object[] values) {
+			if (values == null || values.Length == 0)
+				return 0;
+
+			int result  =1;
+			foreach (object value in values)
+				result = 31 * result + (value == null ? 0 : value.GetHashCode());
+			return result;
+		}
+
 	}
 }

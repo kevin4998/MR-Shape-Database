@@ -38,6 +38,8 @@ namespace ShapeDatabase.IO {
 			new Lazy<IReader<UnstructuredMesh>[]>(ProduceReaders);
 		private static readonly Lazy<IRefiner<UnstructuredMesh>[]> LocalRefiners =
 			new Lazy<IRefiner<UnstructuredMesh>[]>(ProduceRefiners);
+		private static readonly Lazy<IWriter<UnstructuredMesh>> LocalWriter =
+			new Lazy<IWriter<UnstructuredMesh>>(ProduceWriter);
 
 		private static IReader<UnstructuredMesh>[] ProduceReaders() {
 			return new IReader<UnstructuredMesh>[] {
@@ -51,6 +53,11 @@ namespace ShapeDatabase.IO {
 			};
 		}
 
+		private static IWriter<UnstructuredMesh> ProduceWriter()
+		{
+			return Writer.Instance;
+		}
+
 		#endregion
 
 		#region -- Instance Variables --
@@ -60,6 +67,7 @@ namespace ShapeDatabase.IO {
 			new Dictionary<string, IReader<UnstructuredMesh>>();
 		private readonly ICollection<IRefiner<UnstructuredMesh>> refiners =
 			new List<IRefiner<UnstructuredMesh>>(LocalRefiners.Value);
+		private readonly IWriter<UnstructuredMesh> writer = LocalWriter.Value;
 
 
 		/// <summary>
@@ -411,7 +419,7 @@ namespace ShapeDatabase.IO {
 			bool isRefined = true;	// Holds if no refinement has been made.
 			foreach (IRefiner<UnstructuredMesh> refiner in refiners) {
 				if (refiner.RequireRefinement(mesh)) {
-					refiner.RefineMesh(info);
+					refiner.RefineMesh(writer, mesh, info);
 					isRefined = false;
 					break;
 				}

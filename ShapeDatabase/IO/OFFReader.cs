@@ -78,7 +78,7 @@ namespace ShapeDatabase.IO {
 			// Read all the faces as specified by the amount.
 			uint[]	  ebo = GetFaces(reader, faceCount);
 			// Return the mesh but normalised to the [-1,1] range centered on 0,0,0.
-			return new UnstructuredMesh(vob, ebo, false).Normalise();
+			return new UnstructuredMesh(vob, ebo, false);//.Normalise();
 		}
 
 		public Task<UnstructuredMesh> ConvertFileAsync(StreamReader reader) {
