@@ -11,7 +11,7 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Properties ---
 
-		private g3.IMesh Base { get; }
+		public g3.IMesh Base { get; }
 		public bool IsNormalised => throw new NotImplementedException();
 
 		public uint VertexCount => (uint) Base.VertexCount;

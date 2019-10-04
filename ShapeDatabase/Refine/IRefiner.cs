@@ -28,7 +28,7 @@ namespace ShapeDatabase.Refine {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
-		void RefineMesh(UnstructuredMesh mesh, FileInfo file, int attemps = 0);
+		void RefineMesh(IMesh mesh, FileInfo file);
 	}
 
 }

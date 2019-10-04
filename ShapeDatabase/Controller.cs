@@ -173,7 +173,7 @@ namespace ShapeDatabase {
 		/// Visualises the specified mesh on the window.
 		/// </summary>
 		/// <param name="mesh"></param>
-		static void RunWindow(UnstructuredMesh mesh) {
+		static void RunWindow(IMesh mesh) {
 			using (Window window = new Window(800, 600, "Multimedia Retrieval - K. Westerbaan & G. de Jonge", mesh)) {
 				window.Run(60.0);
 			}

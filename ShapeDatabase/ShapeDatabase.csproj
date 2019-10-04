@@ -26,18 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Content\Scripts\catmullclark.jar">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\Scripts\cleanoff.jar">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\Scripts\doosabin.jar">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\Scripts\tess.jar">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Content\Shapes\Initial\61.off">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
