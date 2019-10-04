@@ -41,19 +41,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Content\Shapes\Initial\Chair\LDB_101.off">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="Content\Shapes\Initial\Chair\LDB_102.off">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="Content\Shapes\Initial\Sign\m1674.off">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="Content\Shapes\Initial\Chair\PSB_Chair.off">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="Content\Shapes\Initial\Chair\PSB_Green_Chair.off">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
@@ -78,5 +78,9 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y &#xD;&#xA;start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y" />
+  </Target>
 
 </Project>
