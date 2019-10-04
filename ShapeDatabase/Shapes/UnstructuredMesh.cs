@@ -9,6 +9,7 @@ namespace ShapeDatabase.Shapes {
 	/// in space without any form of positional restrictions.
 	/// </summary>
 	[DebuggerDisplay("Grid Size: {UnstructuredGrid.Length}; Element Size: {Elements.Length}")]
+	[Obsolete("Replace with the IMesh variant in Geometry 3.")]
 	public struct UnstructuredMesh {
 
 		#region --- Properties ---

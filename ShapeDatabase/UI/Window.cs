@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL4;
@@ -28,7 +29,7 @@ namespace ShapeDatabase.UI {
 		private double _angleY;
 		private double _angleX;
 
-		public Window(int width, int height, string title, UnstructuredMesh mesh) : base(width, height, GraphicsMode.Default, title) {
+		public Window(int width, int height, string title, IMesh mesh) : base(width, height, GraphicsMode.Default, title) {
 
 			keybindings = new KeyController();
 			RegisterKeyBinds();
@@ -36,6 +37,33 @@ namespace ShapeDatabase.UI {
 			LoadMesh(mesh);
 		}
 
+		protected void LoadMesh(IMesh mesh)
+		{
+			_vertices = new float[mesh.FaceCount * 18];
+			int i = 0;
+
+			foreach (Vector3 face in mesh.Faces)
+			{
+
+				Vector3[] vertices = new Vector3[3] { mesh.GetVertex((uint)face.X), mesh.GetVertex((uint) face.Y), mesh.GetVertex((uint)face.Z) };
+
+				Vector3 Normal = GetNormal(vertices);
+
+				for (int j = 0; j < 3; j++)
+				{
+					_vertices[(i * 6) + (j * 6)] = vertices[j].X;
+					_vertices[(i * 6) + (j * 6) + 1] = vertices[j].Y;
+					_vertices[(i * 6) + (j * 6) + 2] = vertices[j].Z;
+					_vertices[(i * 6) + (j * 6) + 3] = Normal.X;
+					_vertices[(i * 6) + (j * 6) + 4] = Normal.Y;
+					_vertices[(i * 6) + (j * 6) + 5] = Normal.Z;
+				}
+
+				i += 3;
+			}
+		}
+
+		/*
 		protected void LoadMesh(UnstructuredMesh mesh)
 		{
 			int totalVertices = mesh.Elements.Length;
@@ -57,7 +85,7 @@ namespace ShapeDatabase.UI {
 					_vertices[(i * 6) + (j * 6) + 5] = Normal.Z;
 				}
 			}
-		}
+		}*/
 
 		protected virtual void RegisterKeyBinds() {
 

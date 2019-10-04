@@ -11,6 +11,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A simpel reader implementation to convert OFF files into meshes.
 	/// </summary>
+	[Obsolete]
 	public class OFFReader : IReader<UnstructuredMesh> {
 
 		#region --- Properties ---

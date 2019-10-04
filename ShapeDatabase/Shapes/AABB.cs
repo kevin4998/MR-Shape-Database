@@ -7,7 +7,8 @@ namespace ShapeDatabase.Shapes {
 	/// The axis aligned bounding box of the shape.
 	/// This is a box which perfectly surrounds the whole shape.
 	/// </summary>
-	public struct AABB {
+	[DebuggerDisplay("({MinX}, {MinY}, {MinZ});({MaxX}, {MaxY}, {MaxZ})")]
+	public struct AABB : IBoundingBox {
 
 		#region --- Properties ---
 
@@ -17,6 +18,11 @@ namespace ShapeDatabase.Shapes {
 		public float MaxY { get; }
 		public float MinZ { get; }
 		public float MaxZ { get; }
+
+		public float Width  => MaxX - MinX;
+		public float Height => MaxY - MinY;
+		public float Depth  => MaxZ - MinZ;
+		public float Volume => Width * Height * Depth;
 
 		public Vector3 Min {
 			get {

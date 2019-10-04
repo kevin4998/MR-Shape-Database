@@ -16,7 +16,7 @@ namespace ShapeDatabase.Refine {
 		/// <param name="mesh">The item to check for refinement.</param>
 		/// <returns><see langword="true"/> if a refinement operation is needed
 		/// for an optimal shape.</returns>
-		bool RequireRefinement(UnstructuredMesh mesh);
+		bool RequireRefinement(IMesh mesh);
 
 		/// <summary>
 		/// Refines the mesh. Overwrites the specified file.
@@ -28,7 +28,7 @@ namespace ShapeDatabase.Refine {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
-		void RefineMesh(IWriter<UnstructuredMesh> writer, UnstructuredMesh mesh, FileInfo file, int attemps = 0);
+		void RefineMesh(UnstructuredMesh mesh, FileInfo file, int attemps = 0);
 	}
 
 }
