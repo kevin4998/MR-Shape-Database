@@ -83,7 +83,7 @@ namespace ShapeDatabase.Refine {
 
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(5000);
-			Writer.Instance.WriteFile(meshDMesh3, file.FullName);
+			IO.OFFWriter.Instance.WriteFile((GeometryMesh) meshDMesh3, file.FullName);
 		}
 
 		#endregion
@@ -147,11 +147,11 @@ namespace ShapeDatabase.Refine {
 			if (!file.Exists)
 				throw new ArgumentException("File {0} does not exist.", file.FullName);
 
-			DMesh3 meshDMesh3 = (DMesh3)((GeometryMesh)mesh).Base;
+			DMesh3 meshDMesh3 = mesh as GeometryMesh;
 
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(5000);
-			Writer.Instance.WriteFile(meshDMesh3, file.FullName);
+			IO.OFFWriter.Instance.WriteFile((GeometryMesh) meshDMesh3, file.FullName);
 		}
 
 		#endregion

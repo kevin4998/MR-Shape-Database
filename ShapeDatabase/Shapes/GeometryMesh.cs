@@ -46,6 +46,8 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Methods ---
 
+		#region -- Instance Methods --
+
 		public IBoundingBox GetBoundingBox() {
 			throw new NotImplementedException();
 		}
@@ -56,6 +58,20 @@ namespace ShapeDatabase.Shapes {
 		public static GeometryMesh Create(g3.IMesh mesh) {
 			return mesh == null ? null : new GeometryMesh(mesh);
 		}
+
+		#endregion
+
+		#region -- Operators --
+
+		public static implicit operator GeometryMesh(g3.DMesh3 mesh) {
+			return new GeometryMesh(mesh);
+		}
+
+		public static implicit operator g3.DMesh3(GeometryMesh mesh) {
+			return mesh.Base as g3.DMesh3;
+		}
+
+		#endregion
 
 		#endregion
 

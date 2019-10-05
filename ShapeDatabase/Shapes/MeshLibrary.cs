@@ -154,14 +154,14 @@ namespace ShapeDatabase.Shapes {
 		/// <summary>
 		/// The mesh containing the shape of this object.
 		/// </summary>
-		public UnstructuredMesh Mesh { get; }
+		public IMesh Mesh { get; }
 
 		/// <summary>
 		/// Creates a new entry to be used in the <see cref="MeshLibrary"/>
 		/// </summary>
 		/// <param name="name">The unique name for this shape.</param>
 		/// <param name="mesh">The actual 3 dimensional shape.</param>
-		public MeshEntry(string name, UnstructuredMesh mesh) 
+		public MeshEntry(string name, IMesh mesh) 
 			: this(name, null, mesh) { }
 		/// <summary>
 		/// Creates a new entry to be used in the <see cref="MeshLibrary"/>
@@ -169,7 +169,7 @@ namespace ShapeDatabase.Shapes {
 		/// <param name="name">The unique name for this shape.</param>
 		/// <param name="clazz">The type of shape which this one is specified as.</param>
 		/// <param name="mesh">The actual 3 dimensional shape.</param>
-		public MeshEntry(string name, string clazz, UnstructuredMesh mesh)
+		public MeshEntry(string name, string clazz, IMesh mesh)
 			: this(name, clazz, mesh, null) { }
 		/// <summary>
 		/// Creates a new entry to be used in the <see cref="MeshLibrary"/>
@@ -178,7 +178,7 @@ namespace ShapeDatabase.Shapes {
 		/// <param name="clazz">The type of shape which this one is specified as.</param>
 		/// <param name="mesh">The actual 3 dimensional shape.</param>
 		/// <param name="features">A collection of tags to identify this shape.</param>
-		public MeshEntry(string name, string clazz, UnstructuredMesh mesh, params string[] features) {
+		public MeshEntry(string name, string clazz, IMesh mesh, params string[] features) {
 			Name = string.IsNullOrEmpty(name)
 					? throw new ArgumentNullException(nameof(name))
 					: name;

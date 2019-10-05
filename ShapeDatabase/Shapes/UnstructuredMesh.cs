@@ -1,6 +1,7 @@
-﻿using OpenTK;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using OpenTK;
 
 namespace ShapeDatabase.Shapes {
 
@@ -10,7 +11,7 @@ namespace ShapeDatabase.Shapes {
 	/// </summary>
 	[DebuggerDisplay("Grid Size: {UnstructuredGrid.Length}; Element Size: {Elements.Length}")]
 	[Obsolete("Replace with the IMesh variant in Geometry 3.")]
-	public struct UnstructuredMesh {
+	public struct UnstructuredMesh : IMesh {
 
 		#region --- Properties ---
 
@@ -23,11 +24,19 @@ namespace ShapeDatabase.Shapes {
 		/// An array defining all the points of the cells for this grid.
 		/// </summary>
 		public Vector3[] UnstructuredGrid { get; }
+		public IEnumerable<Vector3> Vertices => UnstructuredGrid;
 		/// <summary>
 		/// An array specifying which point in the grid should be use to
 		/// define a shape. These shapes commonly consist of triangles.
 		/// </summary>
 		public uint[] Elements { get; }
+		public IEnumerable<Vector3> Edges {
+			get {
+				for (int i = 0; i < Elements.Length;)
+					yield return new Vector3(Elements[i++], Elements[i++], Elements[i++]);
+			}
+		}
+		public IEnumerable<Vector3> Faces => Array.Empty<Vector3>();
 		/// <summary>
 		/// If the current shape is normalised and false in the range of [-1,1]
 		/// located at the center of space.
@@ -36,11 +45,13 @@ namespace ShapeDatabase.Shapes {
 		/// <summary>
 		/// The total amount of vertices in this shape.
 		/// </summary>
-		public uint VerticesCount => Convert.ToUInt32(UnstructuredGrid.Length);
+		public uint VertexCount => Convert.ToUInt32(UnstructuredGrid.Length);
 		/// <summary>
 		/// The total amount of faces in this shape.
 		/// </summary>
-		public uint FacesCount => Convert.ToUInt32(Elements.Length / 3);
+		public uint FaceCount => Convert.ToUInt32(Elements.Length / 3);
+
+		public uint EdgeCount => 0;
 		/// <summary>
 		/// An axis aligned bounding box which surrounds this shape.
 		/// </summary>
@@ -104,6 +115,8 @@ namespace ShapeDatabase.Shapes {
 			return new UnstructuredMesh(next, Elements, true);
 		}
 
+		public IBoundingBox GetBoundingBox() => AABB;
+		public Vector3 GetVertex(uint pos) => UnstructuredGrid[pos];
 		#endregion
 
 		#region -- Debug Conditions --

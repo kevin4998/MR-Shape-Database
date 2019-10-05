@@ -12,7 +12,7 @@ namespace ShapeDatabase.IO {
 	/// A simpel reader implementation to convert OFF files into meshes.
 	/// </summary>
 	[Obsolete]
-	public class OFFReader : IReader<UnstructuredMesh> {
+	public class OFFReader : IReader<IMesh> {
 
 		#region --- Properties ---
 
@@ -36,7 +36,7 @@ namespace ShapeDatabase.IO {
 		private static readonly Lazy<OFFReader> instance =
 			new Lazy<OFFReader>(() => new OFFReader());
 		/// <summary>
-		/// A reader which can convert .off files into <see cref="UnstructuredMesh"/>es.
+		/// A reader which can convert .off files into <see cref="IMesh"/>es.
 		/// </summary>
 		public static OFFReader Instance => instance.Value;
 
@@ -54,7 +54,7 @@ namespace ShapeDatabase.IO {
 
 		/// <summary>
 		/// Instantiates a new reader to convert files into
-		/// <see cref="UnstructuredMesh"/>es.
+		/// <see cref="IMesh"/>es.
 		/// </summary>
 		private OFFReader() { }
 
@@ -64,7 +64,7 @@ namespace ShapeDatabase.IO {
 
 		#region -- Public Methods --
 
-		public UnstructuredMesh ConvertFile(StreamReader reader) {
+		public IMesh ConvertFile(StreamReader reader) {
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
 			if (reader.EndOfStream)
@@ -82,7 +82,7 @@ namespace ShapeDatabase.IO {
 			return new UnstructuredMesh(vob, ebo, false);//.Normalise();
 		}
 
-		public Task<UnstructuredMesh> ConvertFileAsync(StreamReader reader) {
+		public Task<IMesh> ConvertFileAsync(StreamReader reader) {
 			return Task.Run(() => ConvertFile(reader));
 		}
 

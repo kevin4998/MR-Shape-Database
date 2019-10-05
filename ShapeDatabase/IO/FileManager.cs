@@ -34,28 +34,29 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		private const byte REFINEMENT_THRESHOLD = 16;
 
-		private static readonly Lazy<IReader <UnstructuredMesh>[]> LocalReaders =
-			new Lazy<IReader<UnstructuredMesh>[]>(ProduceReaders);
-		private static readonly Lazy<IRefiner<UnstructuredMesh>[]> LocalRefiners =
-			new Lazy<IRefiner<UnstructuredMesh>[]>(ProduceRefiners);
-		private static readonly Lazy<IWriter<UnstructuredMesh>> LocalWriter =
-			new Lazy<IWriter<UnstructuredMesh>>(ProduceWriter);
+		private static readonly Lazy<IReader <IMesh>[]> LocalReaders =
+			new Lazy<IReader<IMesh>[]>(ProduceReaders);
+		private static readonly Lazy<IRefiner<IMesh>[]> LocalRefiners =
+			new Lazy<IRefiner<IMesh>[]>(ProduceRefiners);
+		private static readonly Lazy<IWriter<IMesh>> LocalWriter =
+			new Lazy<IWriter<IMesh>>(ProduceWriter);
 
-		private static IReader<UnstructuredMesh>[] ProduceReaders() {
-			return new IReader<UnstructuredMesh>[] {
-				OFFReader.Instance
+		private static IReader<IMesh>[] ProduceReaders() {
+			return new IReader<IMesh>[] {
+				OFFReader.Instance,
+				(IReader<IMesh>) GeomOffReader.Instance
 			};
 		}
-		private static IRefiner<UnstructuredMesh>[] ProduceRefiners() {
-			return new IRefiner<UnstructuredMesh>[] {
+		private static IRefiner<IMesh>[] ProduceRefiners() {
+			return new IRefiner<IMesh>[] {
 				ExtendRefiner.Instance,
 				SimplifyRefiner.Instance
 			};
 		}
 
-		private static IWriter<UnstructuredMesh> ProduceWriter()
+		private static IWriter<IMesh> ProduceWriter()
 		{
-			return Writer.Instance;
+			return OFFWriter.Instance;
 		}
 
 		#endregion
@@ -63,11 +64,11 @@ namespace ShapeDatabase.IO {
 		#region -- Instance Variables --
 
 		private readonly ISet<string> formats = new HashSet<string>();
-		private readonly IDictionary<string, IReader<UnstructuredMesh>> readers =
-			new Dictionary<string, IReader<UnstructuredMesh>>();
-		private readonly ICollection<IRefiner<UnstructuredMesh>> refiners =
-			new List<IRefiner<UnstructuredMesh>>(LocalRefiners.Value);
-		private readonly IWriter<UnstructuredMesh> writer = LocalWriter.Value;
+		private readonly IDictionary<string, IReader<IMesh>> readers =
+			new Dictionary<string, IReader<IMesh>>();
+		private readonly ICollection<IRefiner<IMesh>> refiners =
+			new List<IRefiner<IMesh>>(LocalRefiners.Value);
+		private readonly IWriter<IMesh> writer = LocalWriter.Value;
 
 
 		/// <summary>
@@ -86,7 +87,7 @@ namespace ShapeDatabase.IO {
 		/// Creates a new manager responsible for loading files.
 		/// </summary>
 		public FileManager() {
-			foreach (IReader<UnstructuredMesh> reader in LocalReaders.Value)
+			foreach (IReader<IMesh> reader in LocalReaders.Value)
 				AddReader(reader);
 			// Refiners added automatically.
 		}
@@ -105,11 +106,11 @@ namespace ShapeDatabase.IO {
 		/// <param name="readers">The readers which can convert files into meshes.</param>
 		/// <exception cref="ArgumentException">If a given reader does not contain
 		/// any supported file extensions.</exception>
-		public void AddReader(params IReader<UnstructuredMesh>[] readers) {
+		public void AddReader(params IReader<IMesh>[] readers) {
 			if (readers == null || readers.Length == 0)
 				return;
 
-			foreach (IReader<UnstructuredMesh> reader in readers)
+			foreach (IReader<IMesh> reader in readers)
 				if (reader != null)
 					foreach (string format in reader.SupportedFormats) {
 						if (format == null || format.Length == 0)
@@ -130,11 +131,11 @@ namespace ShapeDatabase.IO {
 		/// It will not try to recover the extra filess from previous directories.
 		/// </summary>
 		/// <param name="refiners">The refiner which can normalise a shape in any way.</param>
-		public void AddRefiner(params IRefiner<UnstructuredMesh>[] refiners) {
+		public void AddRefiner(params IRefiner<IMesh>[] refiners) {
 			if (refiners == null || refiners.Length == 0)
 				return;
 
-			foreach(IRefiner<UnstructuredMesh> refine in refiners)
+			foreach(IRefiner<IMesh> refine in refiners)
 				if (refine != null && !this.refiners.Contains(refine))
 					this.refiners.Add(refine);
 		}
@@ -327,12 +328,12 @@ namespace ShapeDatabase.IO {
 
 
 			if (!this.readers.TryGetValue(file.Extension.ToLower(),
-										  out IReader<UnstructuredMesh> reader))
+										  out IReader<IMesh> reader))
 				return InfoMesh.NULL;
 
 			using (StreamReader stream = file.OpenText()) {
-				try { 
-					UnstructuredMesh mesh = reader.ConvertFile(stream);
+				try {
+					IMesh mesh = reader.ConvertFile(stream);
 					return new InfoMesh(file, mesh);
 				} catch (InvalidFormatException ex) {
 					Console.WriteLine(EX_FORMAT, file.FullName);
@@ -412,14 +413,14 @@ namespace ShapeDatabase.IO {
 		/// from the start and needs no further improvements.</returns>
 		/// <exception cref="ArgumentNullException">If the given file info
 		/// does not exist or is <see langword="null"/>.</exception>
-		private bool RefineFile(FileInfo info, UnstructuredMesh mesh) {
+		private bool RefineFile(FileInfo info, IMesh mesh) {
 			if (info == null || !info.Exists)
 				throw new ArgumentNullException(nameof(info));
 
 			bool isRefined = true;	// Holds if no refinement has been made.
-			foreach (IRefiner<UnstructuredMesh> refiner in refiners) {
+			foreach (IRefiner<IMesh> refiner in refiners) {
 				if (refiner.RequireRefinement(mesh)) {
-					refiner.RefineMesh(writer, mesh, info);
+					refiner.RefineMesh(mesh, info);
 					isRefined = false;
 					break;
 				}
@@ -477,7 +478,7 @@ namespace ShapeDatabase.IO {
 		/// An InfoMesh to describe when no actual mesh/file could be delivered.
 		/// This is a <see langword="null"/> variant for this struct.
 		/// </summary>
-		public static readonly InfoMesh NULL = new InfoMesh(null, UnstructuredMesh.NULL, true);
+		public static readonly InfoMesh NULL = new InfoMesh(null, null, true);
 
 		/// <summary>
 		/// Specifies if the this object represents the null variant for structs.
@@ -490,7 +491,7 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// The mesh loaded from the specified file.
 		/// </summary>
-		public UnstructuredMesh Mesh { get; }
+		public IMesh Mesh { get; }
 
 		#endregion
 
@@ -501,13 +502,13 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		/// <param name="file">The location where the mesh is stored.</param>
 		/// <param name="mesh">The shape which was loaded from the file.</param>
-		public InfoMesh(FileInfo file, UnstructuredMesh mesh) : this() {
+		public InfoMesh(FileInfo file, IMesh mesh) : this() {
 			this.Info = file;
 			this.Mesh = mesh;
 			IsNull = false;
 		}
 
-		private InfoMesh(FileInfo file, UnstructuredMesh mesh, bool isNull) 
+		private InfoMesh(FileInfo file, IMesh mesh, bool isNull) 
 			:this(file, mesh) {
 			IsNull = isNull;
 		}

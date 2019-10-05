@@ -1,10 +1,7 @@
 ﻿using OpenTK;
 using ShapeDatabase.Shapes;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ShapeDatabase.IO
@@ -12,14 +9,14 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for writing a mesh to an off file.
 	/// </summary>
-	public class Writer : IWriter<IMesh>
+	public class OFFWriter : IWriter<IMesh>
 	{
 		public string[] SupportedFormats { get; } = new string[] { "off" };
 
-		private static readonly Lazy<Writer> lazy =
-			new Lazy<Writer>(() => new Writer());
+		private static readonly Lazy<OFFWriter> lazy =
+			new Lazy<OFFWriter>(() => new OFFWriter());
 
-		public static Writer Instance { get { return lazy.Value; } }
+		public static OFFWriter Instance { get { return lazy.Value; } }
 
 		/// <summary>
 		/// Writes an unstructured mesh to an off file at a given location.
@@ -43,13 +40,11 @@ namespace ShapeDatabase.IO
 				writer.WriteLine("OFF");
 				writer.WriteLine($"{type.VertexCount} {type.FaceCount} 0");
 				foreach(Vector3 vertice in type.Vertices)
-				{
 					writer.WriteLine($"{vertice.X} {vertice.Y} {vertice.Z}");
-				}
+
 				foreach(Vector3 face in type.Faces)
-				{
 					writer.WriteLine($"3 {face.X} {face.Y} {face.Z}");
-				}
+
 			}
 		}
 

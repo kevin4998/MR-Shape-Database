@@ -6,12 +6,16 @@ namespace ShapeDatabase.Util {
 
 	public static class Functions {
 
+		public static Vector3 VectorCreate(uint x, uint y, uint z) {
+			return new Vector3(x, y, z);
+		}
+
 		public static Vector3 VectorCreate(int x, int y, int z) {
-			return new Vector3(x, y, x);
+			return new Vector3(x, y, z);
 		}
 
 		public static Vector3 VectorCreate(float x, float y, float z) {
-			return new Vector3(x, y, x);
+			return new Vector3(x, y, z);
 		}
 
 

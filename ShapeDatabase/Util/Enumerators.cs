@@ -58,6 +58,63 @@ namespace ShapeDatabase.Util {
 			return new Enumerable<A>(enumerator);
 		}
 
+		public static IEnumerator<A> SpecifyType<A>(IEnumerator enumerator) {
+			return new TypeEnumerator<A>(enumerator);
+		}
+
+		public static IEnumerator<TResult> Cast<TResult>(this IEnumerator enumerator) {
+			return SpecifyType<TResult>(enumerator);
+		}
+
+		public static IEnumerable<TResult> Enumerate<TResult>(this IEnumerator<TResult> enumerator) {
+			while (enumerator.MoveNext())
+				yield return enumerator.Current;
+		}
+
+	}
+
+	class TypeEnumerator<TGoal> : IEnumerator<TGoal> {
+
+		private IEnumerator Base { get; }
+
+		public TGoal Current {
+			get {
+				object current = Base.Current;
+				return (current is TGoal) ? (TGoal) current : default;
+			}
+		}
+		object IEnumerator.Current => Current;
+
+		public TypeEnumerator(IEnumerator enumerator) {
+			Base = enumerator ?? throw new ArgumentNullException(nameof(enumerator));
+		}
+
+		public bool MoveNext() => Base.MoveNext();
+		public void Reset() => Base.Reset();
+
+		#region IDisposable Support
+		private bool disposedValue = false; // To detect redundant calls
+
+		protected virtual void Dispose(bool disposing) {
+			if (!disposedValue) {
+				if (disposing) {
+					// TODO: dispose managed state (managed objects).
+					// Not present
+				}
+
+				// TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
+				// TODO: set large fields to null.
+
+				disposedValue = true;
+			}
+		}
+
+		// This code added to correctly implement the disposable pattern.
+		public void Dispose() {
+			// Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+			Dispose(true);
+		}
+		#endregion
 	}
 
 	class Enumerable<T> : IEnumerable<T> {

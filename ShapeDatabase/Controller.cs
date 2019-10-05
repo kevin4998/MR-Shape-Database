@@ -97,19 +97,20 @@ namespace ShapeDatabase {
 			RecordHolder recordHolder = new RecordHolder(
 				("Name",	 (MeshEntry entry) => entry.Name),
 				("Class",	 (MeshEntry entry) => entry.Class),
-				("Vertices", (MeshEntry entry) => entry.Mesh.VerticesCount),
-				("Faces",	 (MeshEntry entry) => entry.Mesh.FacesCount),
+				("Vertices", (MeshEntry entry) => entry.Mesh.VertexCount),
+				("Faces",	 (MeshEntry entry) => entry.Mesh.FaceCount),
 				("",						 _ => ""), // Empty line to seperate values.
-				("Min X",    (MeshEntry entry) => entry.Mesh.AABB.MinX),
-				("Min Y",    (MeshEntry entry) => entry.Mesh.AABB.MinY),
-				("Min Z",    (MeshEntry entry) => entry.Mesh.AABB.MinZ),
-				("Max X",    (MeshEntry entry) => entry.Mesh.AABB.MaxX),
-				("Max Y",    (MeshEntry entry) => entry.Mesh.AABB.MaxY),
-				("Max Z",    (MeshEntry entry) => entry.Mesh.AABB.MaxZ),
+				("Min X",    (MeshEntry entry) => entry.Mesh.GetBoundingBox().MinX),
+				("Min Y",    (MeshEntry entry) => entry.Mesh.GetBoundingBox().MinY),
+				("Min Z",    (MeshEntry entry) => entry.Mesh.GetBoundingBox().MinZ),
+				("Max X",    (MeshEntry entry) => entry.Mesh.GetBoundingBox().MaxX),
+				("Max Y",    (MeshEntry entry) => entry.Mesh.GetBoundingBox().MaxY),
+				("Max Z",    (MeshEntry entry) => entry.Mesh.GetBoundingBox().MaxZ),
 				(" ",                        _ => ""), // Empty line to seperate values.
-				("Range X",  (MeshEntry entry) => entry.Mesh.AABB.MaxX - entry.Mesh.AABB.MinX),
-				("Range Y",  (MeshEntry entry) => entry.Mesh.AABB.MaxY - entry.Mesh.AABB.MinY),
-				("Range Z",  (MeshEntry entry) => entry.Mesh.AABB.MaxZ - entry.Mesh.AABB.MinZ)
+				("Range X",  (MeshEntry entry) => entry.Mesh.GetBoundingBox().Width),
+				("Range Y",  (MeshEntry entry) => entry.Mesh.GetBoundingBox().Height),
+				("Range Z",  (MeshEntry entry) => entry.Mesh.GetBoundingBox().Depth),
+				("Volume",	 (MeshEntry entry) => entry.Mesh.GetBoundingBox().Volume)
 			);
 			recordHolder.TakeSnapShot(Settings.MeshLibrary);
 
