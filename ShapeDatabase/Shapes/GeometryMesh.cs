@@ -18,20 +18,18 @@ namespace ShapeDatabase.Shapes {
 		public uint FaceCount => (uint) Base.TriangleCount;
 		public uint EdgeCount => throw new NotImplementedException();
 
-		public IEnumerable<Vector3> Vertices =>
-			FromEnumerator(
-				CombineConvert(
-					Base.VertexIndices().GetEnumerator(),
-					Functions.VectorCreate
-				)
-			);
-		public IEnumerable<Vector3> Faces =>
-			FromEnumerator(
-				CombineConvert(
-					Base.TriangleIndices().GetEnumerator(),
-					VectorCreate
-				)
-			);
+		public IEnumerable<Vector3> Vertices {
+			get {
+				for(int i = 0; i < VertexCount; i++)
+					yield return VectorConvert(Base.GetVertex(i));
+			}
+		}
+		public IEnumerable<Vector3> Faces {
+			get {
+				for (int i = 0; i < FaceCount; i++)
+					yield return VectorConvert(Base.GetTriangle(i));
+			}
+		}
 		public IEnumerable<Vector3> Edges => throw new NotImplementedException();
 
 		#endregion

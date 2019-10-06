@@ -42,16 +42,23 @@ namespace ShapeDatabase.UI {
 			_vertices = new float[mesh.FaceCount * 18];
 			int i = 0;
 
+			List<Vector3> temp= mesh.Faces.ToList();
+			List<Vector3> temp2 = mesh.Vertices.ToList();
+
 			foreach (Vector3 face in mesh.Faces)
 			{
 
-				Vector3[] vertices = new Vector3[3] { mesh.GetVertex((uint)face.X), mesh.GetVertex((uint) face.Y), mesh.GetVertex((uint)face.Z) };
+				Vector3[] vertices = new Vector3[3] {
+					mesh.GetVertex((uint)face.X),
+					mesh.GetVertex((uint) face.Y),
+					mesh.GetVertex((uint)face.Z)
+				};
 
 				Vector3 Normal = GetNormal(vertices);
 
 				for (int j = 0; j < 3; j++)
 				{
-					_vertices[(i * 6) + (j * 6)] = vertices[j].X;
+					_vertices[(i * 6) + (j * 6)]	 = vertices[j].X;
 					_vertices[(i * 6) + (j * 6) + 1] = vertices[j].Y;
 					_vertices[(i * 6) + (j * 6) + 2] = vertices[j].Z;
 					_vertices[(i * 6) + (j * 6) + 3] = Normal.X;

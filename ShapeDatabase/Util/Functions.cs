@@ -31,6 +31,10 @@ namespace ShapeDatabase.Util {
 			);
 		}
 
+		public static Vector3 VectorConvert(Index3i vector) {
+			return new Vector3(vector.a, vector.b, vector.c);
+		}
+
 	}
 
 }
