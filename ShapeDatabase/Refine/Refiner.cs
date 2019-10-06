@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using g3;
+using gs;
 using OpenTK;
 using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
@@ -70,21 +73,19 @@ namespace ShapeDatabase.Refine {
 				PreventNormalFlips = true
 			};
 
-			float z = 0.025F;
-			while (meshDMesh3.VertexCount < 5000)
+			int i = 0;
+			while (meshDMesh3.VertexCount < 5000 && i < 20)
 			{
-				remesher.SetTargetEdgeLength(z);
-				for (int k = 0; k < 20; ++k)
-				{
-					remesher.BasicRemeshPass();
-				}
-
-				z *= 0.5F;
+				remesher.SetTargetEdgeLength(0.0001F);
+				remesher.BasicRemeshPass();
+				i++;
 			}
 
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(5000);
-			IO.OFFWriter.Instance.WriteFile((GeometryMesh) meshDMesh3, file.FullName);
+
+			IOWriteResult result = StandardMeshWriter.WriteFile(file.FullName,
+			new List<WriteMesh>() { new WriteMesh(meshDMesh3) }, WriteOptions.Defaults);
 		}
 
 		#endregion
@@ -152,7 +153,10 @@ namespace ShapeDatabase.Refine {
 
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(5000);
-			IO.OFFWriter.Instance.WriteFile((GeometryMesh) meshDMesh3, file.FullName);
+			new MeshAutoRepair(meshDMesh3);
+
+			IOWriteResult result = StandardMeshWriter.WriteFile(file.FullName,
+			new List<WriteMesh>() { new WriteMesh(meshDMesh3) }, WriteOptions.Defaults);
 		}
 
 		#endregion

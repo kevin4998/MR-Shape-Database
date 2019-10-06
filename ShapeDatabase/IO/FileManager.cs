@@ -153,7 +153,7 @@ namespace ShapeDatabase.IO {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given directory does not exist.
 		/// </exception>
-		public void AddDirectory(string filedir, bool async = true) {
+		public void AddDirectory(string filedir, bool async = false) {
 			if (string.IsNullOrEmpty(filedir))
 				throw new ArgumentNullException(nameof(filedir));
 
@@ -306,10 +306,6 @@ namespace ShapeDatabase.IO {
 				InfoMesh infoMesh = ReadFile(file);
 				if (InfoMesh.NULL != infoMesh)
 					infoMeshes.Add(infoMesh);
-				else
-				{
-					;
-				}
 			});
 
 			return infoMeshes.ToArray();
@@ -333,7 +329,9 @@ namespace ShapeDatabase.IO {
 										  out IReader<GeometryMesh> reader))
 				return InfoMesh.NULL;
 
-			using (StreamReader stream = file.OpenText()) {
+			;
+
+			using (StreamReader stream = File.OpenText(file.FullName)) {
 				try {
 					IMesh mesh = reader.ConvertFile(stream);
 					return new InfoMesh(file, mesh);
@@ -431,7 +429,7 @@ namespace ShapeDatabase.IO {
 			// If it needs refinement then we put it in temp.
 			// If it does not need refinement then we put it in the final map.
 			string dir = isRefined ? Settings.ShapeFinalDir : Settings.ShapeTempDir;
-			dir = Path.Combine(dir, info.Directory.Name);
+			dir = Path.Combine(dir, info.Directory.Name).Replace('\\', '/');
 			string name = info.Name;
 			//string ext = info.Extension;
 
