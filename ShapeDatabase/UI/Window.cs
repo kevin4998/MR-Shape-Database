@@ -42,9 +42,6 @@ namespace ShapeDatabase.UI {
 			_vertices = new float[mesh.FaceCount * 18];
 			int i = 0;
 
-			List<Vector3> temp= mesh.Faces.ToList();
-			List<Vector3> temp2 = mesh.Vertices.ToList();
-
 			foreach (Vector3 face in mesh.Faces)
 			{
 

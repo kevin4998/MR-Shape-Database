@@ -10,14 +10,18 @@ namespace ShapeDatabase.Shapes {
 		uint VertexCount { get; }
 		uint FaceCount { get; }
 		uint EdgeCount { get; }
+		uint NormalCount { get; }
 
 		IEnumerable<Vector3> Vertices { get; }
 		IEnumerable<Vector3> Faces { get; }
 		IEnumerable<Vector3> Edges { get; }
+		IEnumerable<Vector3> Normals { get; }
 
 		IBoundingBox GetBoundingBox();
 
 		Vector3 GetVertex(uint pos);
+		Vector3 GetFace(uint pos);
+		Vector3 GetNormal(uint pos);
 
 	}
 

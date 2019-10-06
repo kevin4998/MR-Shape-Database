@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using OpenTK;
@@ -37,6 +38,13 @@ namespace ShapeDatabase.Shapes {
 			}
 		}
 		public IEnumerable<Vector3> Faces => Array.Empty<Vector3>();
+		public IEnumerable<Vector3> Normals {
+			get {
+				for (uint i = 0; i < NormalCount; i++)
+					yield return GetNormal(i);
+			}
+		}
+
 		/// <summary>
 		/// If the current shape is normalised and false in the range of [-1,1]
 		/// located at the center of space.
@@ -52,6 +60,7 @@ namespace ShapeDatabase.Shapes {
 		public uint FaceCount => Convert.ToUInt32(Elements.Length / 3);
 
 		public uint EdgeCount => 0;
+		public uint NormalCount => FaceCount;
 		/// <summary>
 		/// An axis aligned bounding box which surrounds this shape.
 		/// </summary>
@@ -117,6 +126,19 @@ namespace ShapeDatabase.Shapes {
 
 		public IBoundingBox GetBoundingBox() => AABB;
 		public Vector3 GetVertex(uint pos) => UnstructuredGrid[pos];
+		public Vector3 GetFace(uint pos) {
+			uint i = pos * 3;
+			return new Vector3(Elements[i++], Elements[i++], Elements[i++]);
+		}
+		public Vector3 GetNormal(uint pos) {
+			Vector3 face = GetFace(pos);
+
+			Vector3 v1 = GetVertex(Convert.ToUInt32(face.X));
+			Vector3 v2 = GetVertex(Convert.ToUInt32(face.Y));
+			Vector3 v3 = GetVertex(Convert.ToUInt32(face.Z));
+
+			return Vector3.Cross(v2 - v1, v3 - v1).Normalized();
+		}
 		#endregion
 
 		#region -- Debug Conditions --

@@ -66,8 +66,9 @@ namespace ShapeDatabase.Refine {
 
 			DMesh3 meshDMesh3 = (DMesh3)((GeometryMesh)mesh).Base;
 
-			Remesher remesher = new Remesher(meshDMesh3);
-			remesher.PreventNormalFlips = true;
+			Remesher remesher = new Remesher(meshDMesh3) {
+				PreventNormalFlips = true
+			};
 
 			float z = 0.05F;
 			while (meshDMesh3.VertexCount < 5000)

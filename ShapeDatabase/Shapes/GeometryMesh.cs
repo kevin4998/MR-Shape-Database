@@ -17,6 +17,7 @@ namespace ShapeDatabase.Shapes {
 		public uint VertexCount => (uint) Base.VertexCount;
 		public uint FaceCount => (uint) Base.TriangleCount;
 		public uint EdgeCount => throw new NotImplementedException();
+		public uint NormalCount => (uint) Base.VertexCount;
 
 		public IEnumerable<Vector3> Vertices {
 			get {
@@ -31,6 +32,15 @@ namespace ShapeDatabase.Shapes {
 			}
 		}
 		public IEnumerable<Vector3> Edges => throw new NotImplementedException();
+		public IEnumerable<Vector3> Normals {
+			get {
+				if (Base.HasVertexNormals)
+					for (int i = 0; i < NormalCount; i++)
+						yield return VectorConvert(Base.GetVertexNormal(i));
+				else
+					throw new NotImplementedException();
+			}
+		}
 
 		#endregion
 
@@ -51,6 +61,14 @@ namespace ShapeDatabase.Shapes {
 		}
 		public Vector3 GetVertex(uint pos) {
 			return VectorConvert(Base.GetVertex(Convert.ToInt32(pos)));
+		}
+
+		public Vector3 GetFace(uint pos) {
+			return VectorConvert(Base.GetTriangle(Convert.ToInt32(pos)));
+		}
+
+		public Vector3 GetNormal(uint pos) {
+			return VectorConvert(Base.GetVertexNormal(Convert.ToInt32(pos)));
 		}
 
 		public static GeometryMesh Create(g3.IMesh mesh) {
