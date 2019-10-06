@@ -306,6 +306,10 @@ namespace ShapeDatabase.IO {
 				InfoMesh infoMesh = ReadFile(file);
 				if (InfoMesh.NULL != infoMesh)
 					infoMeshes.Add(infoMesh);
+				else
+				{
+					;
+				}
 			});
 
 			return infoMeshes.ToArray();
@@ -324,7 +328,6 @@ namespace ShapeDatabase.IO {
 		private InfoMesh ReadFile(FileInfo file) {
 			if (file == null || !file.Exists)
 				throw new ArgumentNullException(nameof(file));
-
 
 			if (!this.readers.TryGetValue(file.Extension.ToLower(),
 										  out IReader<GeometryMesh> reader))

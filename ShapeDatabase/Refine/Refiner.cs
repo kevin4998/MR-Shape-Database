@@ -69,7 +69,7 @@ namespace ShapeDatabase.Refine {
 			Remesher remesher = new Remesher(meshDMesh3);
 			remesher.PreventNormalFlips = true;
 
-			float z = 0.05F;
+			float z = 0.025F;
 			while (meshDMesh3.VertexCount < 5000)
 			{
 				remesher.SetTargetEdgeLength(z);
@@ -78,7 +78,7 @@ namespace ShapeDatabase.Refine {
 					remesher.BasicRemeshPass();
 				}
 
-				z *= 0.75F;
+				z *= 0.5F;
 			}
 
 			Reducer reducer = new Reducer(meshDMesh3);
