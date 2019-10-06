@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using ShapeDatabase.IO;
-using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.Refine {
 
@@ -16,7 +14,7 @@ namespace ShapeDatabase.Refine {
 		/// <param name="mesh">The item to check for refinement.</param>
 		/// <returns><see langword="true"/> if a refinement operation is needed
 		/// for an optimal shape.</returns>
-		bool RequireRefinement(IMesh mesh);
+		bool RequireRefinement(T mesh);
 
 		/// <summary>
 		/// Refines the mesh. Overwrites the specified file.
@@ -28,7 +26,7 @@ namespace ShapeDatabase.Refine {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
-		void RefineMesh(IMesh mesh, FileInfo file);
+		void RefineMesh(T mesh, FileInfo file);
 	}
 
 }

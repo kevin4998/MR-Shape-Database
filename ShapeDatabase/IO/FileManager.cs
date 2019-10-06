@@ -34,17 +34,16 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		private const byte REFINEMENT_THRESHOLD = 16;
 
-		private static readonly Lazy<IReader <IMesh>[]> LocalReaders =
-			new Lazy<IReader<IMesh>[]>(ProduceReaders);
+		private static readonly Lazy<IReader <GeometryMesh>[]> LocalReaders =
+			new Lazy<IReader<GeometryMesh>[]>(ProduceReaders);
 		private static readonly Lazy<IRefiner<IMesh>[]> LocalRefiners =
 			new Lazy<IRefiner<IMesh>[]>(ProduceRefiners);
 		private static readonly Lazy<IWriter<IMesh>> LocalWriter =
 			new Lazy<IWriter<IMesh>>(ProduceWriter);
 
-		private static IReader<IMesh>[] ProduceReaders() {
-			return new IReader<IMesh>[] {
-				OFFReader.Instance,
-				(IReader<IMesh>) GeomOffReader.Instance
+		private static IReader<GeometryMesh>[] ProduceReaders() {
+			return new IReader<GeometryMesh>[] {
+				GeomOffReader.Instance
 			};
 		}
 		private static IRefiner<IMesh>[] ProduceRefiners() {
@@ -64,8 +63,8 @@ namespace ShapeDatabase.IO {
 		#region -- Instance Variables --
 
 		private readonly ISet<string> formats = new HashSet<string>();
-		private readonly IDictionary<string, IReader<IMesh>> readers =
-			new Dictionary<string, IReader<IMesh>>();
+		private readonly IDictionary<string, IReader<GeometryMesh>> readers =
+			new Dictionary<string, IReader<GeometryMesh>>();
 		private readonly ICollection<IRefiner<IMesh>> refiners =
 			new List<IRefiner<IMesh>>(LocalRefiners.Value);
 		private readonly IWriter<IMesh> writer = LocalWriter.Value;
@@ -87,7 +86,7 @@ namespace ShapeDatabase.IO {
 		/// Creates a new manager responsible for loading files.
 		/// </summary>
 		public FileManager() {
-			foreach (IReader<IMesh> reader in LocalReaders.Value)
+			foreach (IReader<GeometryMesh> reader in LocalReaders.Value)
 				AddReader(reader);
 			// Refiners added automatically.
 		}
@@ -106,11 +105,11 @@ namespace ShapeDatabase.IO {
 		/// <param name="readers">The readers which can convert files into meshes.</param>
 		/// <exception cref="ArgumentException">If a given reader does not contain
 		/// any supported file extensions.</exception>
-		public void AddReader(params IReader<IMesh>[] readers) {
+		public void AddReader(params IReader<GeometryMesh>[] readers) {
 			if (readers == null || readers.Length == 0)
 				return;
 
-			foreach (IReader<IMesh> reader in readers)
+			foreach (IReader<GeometryMesh> reader in readers)
 				if (reader != null)
 					foreach (string format in reader.SupportedFormats) {
 						if (format == null || format.Length == 0)
@@ -328,7 +327,7 @@ namespace ShapeDatabase.IO {
 
 
 			if (!this.readers.TryGetValue(file.Extension.ToLower(),
-										  out IReader<IMesh> reader))
+										  out IReader<GeometryMesh> reader))
 				return InfoMesh.NULL;
 
 			using (StreamReader stream = file.OpenText()) {

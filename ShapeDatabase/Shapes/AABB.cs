@@ -96,12 +96,11 @@ namespace ShapeDatabase.Shapes {
 		/// </summary>
 		/// <param name="mesh">The mesh whose bounding box needs to be found.</param>
 		/// <returns>An <see cref="AABB"/> around this shape.</returns>
-		public static AABB FromMesh(UnstructuredMesh mesh) {
+		public static AABB FromMesh(IMesh mesh) {
 			float minx = float.MaxValue, miny = float.MaxValue, minz = float.MaxValue,
 				  maxx = float.MinValue, maxy = float.MinValue, maxz = float.MinValue;
-			Vector3[] points = mesh.UnstructuredGrid;
 
-			foreach (Vector3 point in points) {
+			foreach (Vector3 point in mesh.Vertices) {
 				minx = minx < point.X ? minx : point.X;
 				maxx = maxx > point.X ? maxx : point.X;
 				miny = miny < point.Y ? miny : point.Y;
