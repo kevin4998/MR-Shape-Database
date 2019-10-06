@@ -80,10 +80,13 @@ namespace ShapeDatabase {
 		/// </summary>
 		MEASURE = 2,
 		/// <summary>
-		/// Describes that the user want to view the shapes.
+		/// Describes that the user wants to view the shapes.
 		/// </summary>
-		VIEW = 4
-
+		VIEW = 3,
+		/// <summary>
+		/// Describes that the user wants to extract features from the shapes.
+		/// </summary>
+		FEATURES = 4,
 	}
 
 }

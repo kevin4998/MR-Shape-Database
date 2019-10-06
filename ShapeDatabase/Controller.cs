@@ -3,9 +3,11 @@ using ShapeDatabase.Features.Statistics;
 using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI;
+using ShapeDatabase.Features;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using ShapeDatabase.Features.Descriptors;
 
 namespace ShapeDatabase {
 
@@ -54,6 +56,9 @@ namespace ShapeDatabase {
 				break;
 			case OperationMode.VIEW:
 				ViewShapes(options.ShapeDirectories);
+				break;
+			case OperationMode.FEATURES:
+				ExtractFeaturesShapes(options.ShapeDirectories);
 				break;
 			}
 		}
@@ -156,6 +161,27 @@ namespace ShapeDatabase {
 					Console.WriteLine($"Unknown command: {input}");
 				}
 			}
+		}
+
+		/// <summary>
+		/// Mode for extracting descriptors and features of the shapes.
+		/// </summary>
+		/// <param name="dirs">The directories containing shapes.</param>
+		static void ExtractFeaturesShapes(IEnumerable<string> dirs)
+		{
+			Console.WriteLine("Start Loading Meshes.");
+			LoadNewFiles(dirs, false);
+
+			DescriptorManager manager = new DescriptorManager(new List<IDescriptor<GeometryMesh>> { new SurfaceAreaDescriptor() });
+			manager.CalulcateDescriptors(Settings.MeshLibrary);
+
+			Console.WriteLine("Done Extracting Descriptors.");
+
+			//TODO
+
+			Console.WriteLine("Done Extracting Features.");
+
+			ShowShapeCount();
 		}
 
 
