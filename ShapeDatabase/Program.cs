@@ -14,7 +14,5 @@ namespace ShapeDatabase {
 			Console.WriteLine("Press any key to exit application.");
 			Console.ReadLine();
 		}
-
 	}
-
 }

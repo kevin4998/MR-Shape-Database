@@ -162,49 +162,4 @@ namespace ShapeDatabase.Refine {
 		#endregion
 
 	}
-
-	/// <summary>
-	/// Class for functionality related to mesh refinement.
-	/// </summary>
-	public class Refiner {
-
-		/// <summary>
-		/// Calls a Java script located in the Settings.JavaDir directory. Executes script and overwrites the .off file.
-		/// </summary>
-		/// <param name="script">Name of the Java script located in the Settings.
-		/// JavaDir directory</param>
-		/// <param name="inputFileDirectory">Path from Java file to the input off file
-		/// </param>
-		/// <param name="outputFileDirectory">Path from Java file to the output off file
-		/// </param>
-		/// <exception cref="ArgumentNullException">If any of the given parameters
-		/// is <see langword="null"/> or is <see cref="string.Empty"/>.</exception>
-		public static void CallJavaScript(string script, string inputFileDirectory,
-														 string outputFileDirectory,
-														 string param = "") {
-			if (string.IsNullOrEmpty(script))
-				throw new ArgumentNullException(nameof(script));
-			if (string.IsNullOrEmpty(inputFileDirectory))
-				throw new ArgumentNullException(nameof(inputFileDirectory));
-			if (string.IsNullOrEmpty(outputFileDirectory))
-				throw new ArgumentNullException(nameof(outputFileDirectory));
-
-			string javaPath = Settings.JavaDir;
-
-			ProcessStartInfo processInfo =
-				new ProcessStartInfo($"{javaPath}",
-				$@"-jar {script}.jar {inputFileDirectory} {outputFileDirectory} {param}")
-			{
-				CreateNoWindow = false,
-				UseShellExecute = false,
-				WorkingDirectory = Settings.JavaScriptsDir
-			};
-
-			using (Process proc = Process.Start(processInfo)) { 
-				proc.WaitForExit();
-				int exitCode = proc.ExitCode;
-				proc.Close();
-			}
-		}
-	}
 }

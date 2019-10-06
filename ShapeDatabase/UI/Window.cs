@@ -67,30 +67,6 @@ namespace ShapeDatabase.UI {
 			}
 		}
 
-		/*
-		protected void LoadMesh(UnstructuredMesh mesh)
-		{
-			int totalVertices = mesh.Elements.Length;
-			_vertices = new float[totalVertices * 6];
-
-			for(int i = 0; i < totalVertices; i += 3)
-			{
-				Vector3[] TrianglePoints = new Vector3[3] {mesh.UnstructuredGrid[mesh.Elements[i]], mesh.UnstructuredGrid[mesh.Elements[i + 1]], mesh.UnstructuredGrid[mesh.Elements[i + 2]]};
-
-				Vector3 Normal = GetNormal(new Vector3[3] {TrianglePoints[0], TrianglePoints[1], TrianglePoints[2]});
-
-				for(int j = 0; j < 3; j++)
-				{
-					_vertices[(i * 6) + (j * 6)] = TrianglePoints[j].X;
-					_vertices[(i * 6) + (j * 6) + 1] = TrianglePoints[j].Y;
-					_vertices[(i * 6) + (j * 6) + 2] = TrianglePoints[j].Z;
-					_vertices[(i * 6) + (j * 6) + 3] = Normal.X;
-					_vertices[(i * 6) + (j * 6) + 4] = Normal.Y;
-					_vertices[(i * 6) + (j * 6) + 5] = Normal.Z;
-				}
-			}
-		}*/
-
 		protected virtual void RegisterKeyBinds() {
 
 			const float cameraSpeed = 1.5f;
