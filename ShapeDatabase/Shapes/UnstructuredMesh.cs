@@ -168,12 +168,15 @@ namespace ShapeDatabase.Shapes {
 					return false;
 			return true;
 		}
-
+		public double GetTriArea(int id)
+		{
+			throw new NotImplementedException();
+		}
 #endif
 
-		#endregion
+			#endregion
 
-		#endregion
+			#endregion
 
-	}
+		}
 }

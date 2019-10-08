@@ -4,6 +4,7 @@ using OpenTK;
 using ShapeDatabase.Util;
 using static ShapeDatabase.Util.Enumerators;
 using static ShapeDatabase.Util.Functions;
+using g3;
 
 namespace ShapeDatabase.Shapes {
 
@@ -11,7 +12,7 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Properties ---
 
-		public g3.IMesh Base { get; }
+		public g3.DMesh3 Base { get; }
 		public bool IsNormalised => throw new NotImplementedException();
 
 		public uint VertexCount => (uint) Base.VertexCount;
@@ -46,7 +47,7 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Constructor Methods ---
 
-		public GeometryMesh(g3.IMesh mesh) {
+		public GeometryMesh(g3.DMesh3 mesh) {
 			Base = mesh ?? throw new ArgumentNullException(nameof(mesh));
 		}
 
@@ -71,7 +72,12 @@ namespace ShapeDatabase.Shapes {
 			return VectorConvert(Base.GetVertexNormal(Convert.ToInt32(pos)));
 		}
 
-		public static GeometryMesh Create(g3.IMesh mesh) {
+		public double GetTriArea(int tID)
+		{
+			return Base.GetTriArea(tID);
+		}
+
+		public static GeometryMesh Create(g3.DMesh3 mesh) {
 			return mesh == null ? null : new GeometryMesh(mesh);
 		}
 

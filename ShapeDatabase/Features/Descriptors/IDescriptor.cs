@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace ShapeDatabase.Features.Descriptors
 {
-	public interface IDescriptor<T>
+	public interface IDescriptor
 	{
-		double CalculateDescriptor(T mesh);
+		string Name { get; }
+
+		double Weight { get; }
+
+		double Compare(object desc);
+	}
+
+	public interface IDescriptor<T> : IDescriptor where T : IDescriptor<T>
+	{
+		double Compare(T desc);
 	}
 }

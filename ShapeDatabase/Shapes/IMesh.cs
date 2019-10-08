@@ -23,6 +23,8 @@ namespace ShapeDatabase.Shapes {
 		Vector3 GetFace(uint pos);
 		Vector3 GetNormal(uint pos);
 
+		double GetTriArea(int tID);
+
 	}
 
 }

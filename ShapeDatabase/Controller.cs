@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ShapeDatabase.Features.Descriptors;
+using System.Linq;
+using System.Reflection;
 
 namespace ShapeDatabase {
 
@@ -58,7 +60,7 @@ namespace ShapeDatabase {
 				ViewShapes(options.ShapeDirectories);
 				break;
 			case OperationMode.FEATURES:
-				ExtractFeaturesShapes(options.ShapeDirectories);
+				ExtractFeatures(options.ShapeDirectories);
 				break;
 			}
 		}
@@ -167,24 +169,18 @@ namespace ShapeDatabase {
 		/// Mode for extracting descriptors and features of the shapes.
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
-		static void ExtractFeaturesShapes(IEnumerable<string> dirs)
+		static void ExtractFeatures(IEnumerable<string> dirs)
 		{
 			Console.WriteLine("Start Loading Meshes.");
 			LoadNewFiles(dirs, false);
 
-			DescriptorManager manager = new DescriptorManager(new List<IDescriptor<GeometryMesh>> { new SurfaceAreaDescriptor() });
-			manager.CalulcateDescriptors(Settings.MeshLibrary);
+			FeatureManager manager = new FMBuilder(DescriptorCalculators.SurfaceArea).Build();
+			manager.CalculateVectors(Settings.MeshLibrary.ToArray());
 
 			Console.WriteLine("Done Extracting Descriptors.");
 
-			//TODO
-
-			Console.WriteLine("Done Extracting Features.");
-
 			ShowShapeCount();
 		}
-
-
 
 		/// <summary>
 		/// Tell the user how many shapes are currently loaded.
