@@ -9,11 +9,11 @@ namespace ShapeDatabase.Features.Descriptors
 {
 	public class FeatureManager
 	{
-		Dictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
+		public Dictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
 
 		public delegate IDescriptor DescriptorCalculator(IMesh mesh);
 
-		List<DescriptorCalculator> descriptorCalculators = new List<DescriptorCalculator>();
+		public List<DescriptorCalculator> descriptorCalculators = new List<DescriptorCalculator>();
 
 		public FeatureManager(params DescriptorCalculator[] descriptorcalculators) 
 		{

@@ -179,6 +179,11 @@ namespace ShapeDatabase {
 
 			Console.WriteLine("Done Extracting Descriptors.");
 
+			string location = Settings.FeatureVectorDir	+ "/" + Settings.FeatureVectorFile;
+			FMWriter.Instance.WriteFile(manager, location);
+
+			Console.WriteLine($"Statistics exported to: {location}");
+
 			ShowShapeCount();
 		}
 

@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Content\Vectors\" />
     <Folder Include="Content\Shapes\Final\" />
     <Folder Include="Content\Shapes\Failed\" />
     <Folder Include="Content\Shapes\Temp\" />

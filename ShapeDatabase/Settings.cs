@@ -30,7 +30,17 @@ namespace ShapeDatabase {
 		public static string ShapeFailedDir { get; set; } = "Content/Shapes/Failed";
 
 		/// <summary>
-		/// The location where the measurement/statistics file is stored.
+		/// The location where the shapes are stored which could not be refined.
+		/// </summary>
+		public static string FeatureVectorDir { get; set; } = "Content/Vectors";
+
+		/// <summary>
+		/// The file name of the feature vectors.
+		/// </summary>
+		public static string FeatureVectorFile { get; set; } = "featurevectors.csv";
+
+		/// <summary>
+		/// The file name of the measurement/statistics file.
 		/// </summary>
 		public static string MeasurementsFile { get; set; } = "measures.csv";
 

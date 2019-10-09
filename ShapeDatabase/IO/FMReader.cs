@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShapeDatabase.Features
 {
-	class FMReader
+	class FMReader 
 	{
 	}
 }
