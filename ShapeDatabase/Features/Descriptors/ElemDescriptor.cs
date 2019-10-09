@@ -9,12 +9,10 @@ namespace ShapeDatabase.Features.Descriptors
 	public class ElemDescriptor : IDescriptor<ElemDescriptor>
 	{
 		public string Name { get; }
-		public double Weight { get; }
 		public double Value { get; }
 
-		public ElemDescriptor(string name, double weight, double value)
+		public ElemDescriptor(string name, double value)
 		{
-			Weight = weight;
 			Name = name;
 			Value = value;
 		}

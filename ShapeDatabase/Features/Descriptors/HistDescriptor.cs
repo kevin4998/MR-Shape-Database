@@ -9,17 +9,15 @@ namespace ShapeDatabase.Features.Descriptors
 	public class HistDescriptor : IDescriptor<HistDescriptor>
 	{
 		public string Name { get; }
-		public double Weight { get; }
 		public double Offset { get; }
 
 		public double BinSize { get; }
 
 		public int[] BinValues { get; }
 
-		public HistDescriptor(string name, double weight, double offset, double binsize, int[] binvalues)
+		public HistDescriptor(string name, double offset, double binsize, int[] binvalues)
 		{
 			Name = name;
-			Weight = weight;
 			Offset = offset;
 			BinSize = binsize;
 			BinValues = binvalues;

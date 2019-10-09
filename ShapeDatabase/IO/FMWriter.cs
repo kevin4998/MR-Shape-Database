@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ShapeDatabase.Features
 {
+	/// <summary>
+	/// Class for writing the featurevectors of the featuremanager to a csv file.
+	/// </summary>
 	public class FMWriter : IWriter<FeatureManager>
 	{
 
@@ -92,7 +95,7 @@ namespace ShapeDatabase.Features
 						ElemDescriptor elem = (ElemDescriptor)desc;
 						descriptorValues.Add(elem.Value.ToString());
 					}
-					else if(desc is HistDescriptor)
+					else
 					{
 						HistDescriptor hist = (HistDescriptor)desc;
 						string[] histValues = new string[12];

@@ -10,6 +10,7 @@ using System.Globalization;
 using ShapeDatabase.Features.Descriptors;
 using System.Linq;
 using System.Reflection;
+using System.IO;
 
 namespace ShapeDatabase {
 
@@ -166,7 +167,7 @@ namespace ShapeDatabase {
 		}
 
 		/// <summary>
-		/// Mode for extracting descriptors and features of the shapes.
+		/// Mode for extracting featurevectors of the shapes, or reading them from a csv file.
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
 		static void ExtractFeatures(IEnumerable<string> dirs)
@@ -174,17 +175,30 @@ namespace ShapeDatabase {
 			Console.WriteLine("Start Loading Meshes.");
 			LoadNewFiles(dirs, false);
 
-			FeatureManager manager = new FMBuilder(DescriptorCalculators.SurfaceArea).Build();
-			manager.CalculateVectors(Settings.MeshLibrary.ToArray());
+			string location = Settings.FeatureVectorDir + "/" + Settings.FeatureVectorFile;
+			
+			if(!Settings.ReadVectorFile)
+			{
+				FeatureManager manager = new FMBuilder(DescriptorCalculators.SurfaceArea).Build();
+				manager.CalculateVectors(Settings.MeshLibrary.ToArray());
 
-			Console.WriteLine("Done Extracting Descriptors.");
+				Console.WriteLine("Done Extracting Descriptors.");
 
-			string location = Settings.FeatureVectorDir	+ "/" + Settings.FeatureVectorFile;
-			FMWriter.Instance.WriteFile(manager, location);
+				ShowShapeCount();
+				FMWriter.Instance.WriteFile(manager, location);
 
-			Console.WriteLine($"Statistics exported to: {location}");
+				Console.WriteLine($"FeatureVectors exported to: {location}");
+			}
+			else
+			{
+				FeatureManager manager;
+				using (StreamReader reader = new StreamReader(location))
+				{
+					manager = FMReader.Instance.ConvertFile(new StreamReader(location));
+				}
 
-			ShowShapeCount();
+				Console.WriteLine($"Done Importing FeatureVectors from: {location}");
+			}		
 		}
 
 		/// <summary>

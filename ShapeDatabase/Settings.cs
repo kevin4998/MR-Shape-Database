@@ -34,6 +34,11 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static string FeatureVectorDir { get; set; } = "Content/Vectors";
 
+		// <summary>
+		/// States whether the featuremanager should be created by reading a vectorfile.
+		/// </summary>
+		public static bool ReadVectorFile { get; set; } = true;
+
 		/// <summary>
 		/// The file name of the feature vectors.
 		/// </summary>

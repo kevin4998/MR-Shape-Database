@@ -10,8 +10,6 @@ namespace ShapeDatabase.Features.Descriptors
 	{
 		string Name { get; }
 
-		double Weight { get; }
-
 		double Compare(object desc);
 	}
 

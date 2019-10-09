@@ -19,7 +19,7 @@ namespace ShapeDatabase.Features
 				surfaceArea += mesh.GetTriArea(i);
 			}
 
-			return new ElemDescriptor("SurfaceArea", 1, surfaceArea);
+			return new ElemDescriptor("SurfaceArea", surfaceArea);
 		}
 	}
 }
