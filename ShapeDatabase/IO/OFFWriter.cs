@@ -2,6 +2,7 @@
 using ShapeDatabase.Shapes;
 using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ShapeDatabase.IO
@@ -37,6 +38,8 @@ namespace ShapeDatabase.IO
 		/// <param name="writer">The streamwriter that needs to be used</param>
 		public void WriteFile(IMesh type, StreamWriter writer)
 		{
+			Thread.CurrentThread.CurrentCulture = Settings.Culture;
+
 			writer.WriteLine("OFF");
 			writer.WriteLine($"{type.VertexCount} {type.FaceCount} 0");
 			foreach(Vector3 vertice in type.Vertices)

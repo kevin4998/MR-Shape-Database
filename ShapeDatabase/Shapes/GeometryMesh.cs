@@ -36,8 +36,7 @@ namespace ShapeDatabase.Shapes {
 				if (Base.HasVertexNormals)
 					for (int i = 0; i < NormalCount; i++)
 						yield return VectorConvert(Base.GetVertexNormal(i));
-				else
-					throw new NotImplementedException();
+				yield break;
 			}
 		}
 
@@ -80,7 +79,7 @@ namespace ShapeDatabase.Shapes {
 		#region -- Operators --
 
 		public static implicit operator GeometryMesh(g3.DMesh3 mesh) {
-			return new GeometryMesh(mesh);
+			return mesh == null ? null : new GeometryMesh(mesh);
 		}
 
 		public static implicit operator g3.DMesh3(GeometryMesh mesh) {

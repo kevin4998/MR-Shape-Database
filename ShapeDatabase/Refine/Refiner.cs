@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using Accord.Statistics.Analysis;
-using Accord.Statistics.Models.Regression.Linear;
 using g3;
 using gs;
 using OpenTK;
@@ -23,6 +18,7 @@ namespace ShapeDatabase.Refine {
 		#region --- Properties ---
 
 		private static readonly int DESIRED_VERTICES = 5000;
+		private static readonly int MAX_ITERATIONS = 20;
 
 		private static readonly Lazy<ExtendRefiner> lazy =
 			new Lazy<ExtendRefiner> (() => new ExtendRefiner());
@@ -71,14 +67,14 @@ namespace ShapeDatabase.Refine {
 			if (!file.Exists)
 				throw new ArgumentException("File {0} does not exist.", file.FullName);
 
-			DMesh3 meshDMesh3 = (DMesh3)((GeometryMesh)mesh).Base;
+			DMesh3 meshDMesh3 = mesh as GeometryMesh;
 
 			Remesher remesher = new Remesher(meshDMesh3) {
 				PreventNormalFlips = true
 			};
 
 			int i = 0;
-			while (meshDMesh3.VertexCount < 5000 && i < 20)
+			while (meshDMesh3.VertexCount < 5000 && i < MAX_ITERATIONS)
 			{
 				remesher.SetTargetEdgeLength(0.0001F);
 				remesher.BasicRemeshPass();
@@ -88,8 +84,7 @@ namespace ShapeDatabase.Refine {
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(5000);
 
-			IOWriteResult result = StandardMeshWriter.WriteFile(file.FullName,
-			new List<WriteMesh>() { new WriteMesh(meshDMesh3) }, WriteOptions.Defaults);
+			GeomOffWriter.Instance.WriteFile(meshDMesh3, file.FullName);
 		}
 
 		#endregion
@@ -159,8 +154,7 @@ namespace ShapeDatabase.Refine {
 			reducer.ReduceToVertexCount(5000);
 			new MeshAutoRepair(meshDMesh3);
 
-			IOWriteResult result = StandardMeshWriter.WriteFile(file.FullName,
-			new List<WriteMesh>() { new WriteMesh(meshDMesh3) }, WriteOptions.Defaults);
+			GeomOffWriter.Instance.WriteFile(meshDMesh3, file.FullName);
 		}
 
 		#endregion
@@ -225,7 +219,6 @@ namespace ShapeDatabase.Refine {
 		public void RefineMesh(Shapes.IMesh mesh, FileInfo file) {
 			Shapes.IMesh transformed = FlipShape(ScaleShape(AlignShape(CenterShape(mesh))));
 			IO.OFFWriter.Instance.WriteFile(transformed, file.FullName);
-
 		}
 
 
@@ -260,8 +253,8 @@ namespace ShapeDatabase.Refine {
 			Vector3 center = FindBaryCenter(mesh);
 
 			Vector3[] points = new Vector3[vertices];
-			for (uint i = vertices - 1; i >= 0; i--)
-				points[i] = mesh.GetVertex(i) - center;
+			for (uint i = vertices; i > 0; i--)
+				points[i - 1] = mesh.GetVertex(i - 1) - center;
 
 			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
 			modifiedMesh.Vertices = points;
@@ -270,9 +263,9 @@ namespace ShapeDatabase.Refine {
 
 		private static Shapes.IMesh AlignShape(Shapes.IMesh mesh) {
 			double[][] matrix = new double[mesh.VertexCount][];
-			for (uint i = mesh.VertexCount - 1; i >= 0; i--) {
-				Vector3 point = mesh.GetVertex(i);
-				matrix[i] = new double[] { point.X, point.Y, point.Z };
+			for (uint i = mesh.VertexCount; i > 0; i--) {
+				Vector3 point = mesh.GetVertex(i - 1);
+				matrix[i - 1] = new double[] { point.X, point.Y, point.Z };
 			}
 
 			PrincipalComponentAnalysis pca =
@@ -295,8 +288,8 @@ namespace ShapeDatabase.Refine {
 
 			uint vertices = mesh.VertexCount;
 			Vector3[] points = new Vector3[vertices];
-			for (uint i = vertices - 1; i >= 0; i--)
-				points[i] = mesh.GetVertex(i) * scale;
+			for (uint i = vertices; i > 0; i--)
+				points[i - 1] = mesh.GetVertex(i - 1) * scale;
 
 			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
 			modifiedMesh.Vertices = points;

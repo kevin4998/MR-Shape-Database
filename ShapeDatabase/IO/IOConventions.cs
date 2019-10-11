@@ -24,8 +24,12 @@ namespace ShapeDatabase.IO {
 		/// <returns><see langword="true"/> if at the end of the stream it says
 		/// that the previously read shape is normalised.</returns>
 		public static bool CheckIfNormalised(StreamReader reader) {
-			if (reader == null || reader.EndOfStream)
+			if (reader == null)
 				return false;
+			// Reset stream if it is at the end.
+			// G3 readers read to the end giving us problems.
+			if (reader.EndOfStream)
+				reader.BaseStream.Seek(0, SeekOrigin.Begin);
 
 			string lastLine;
 			bool found = false;
@@ -53,7 +57,10 @@ namespace ShapeDatabase.IO {
 		public static void WriteIfNormalised(bool normalised, StreamWriter writer) {
 			if (writer == null)
 				return;
-			if (normalised) writer.WriteLine($"# {NORMALISED_DATA}");
+			if (normalised) {
+				writer.WriteLine();
+				writer.WriteLine($"# {NORMALISED_DATA}");
+			}
 		}
 
 	}

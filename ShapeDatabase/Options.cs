@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CommandLine;
 using CommandLine.Text;
 
@@ -65,6 +66,7 @@ namespace ShapeDatabase {
 	/// <summary>
 	/// Different execution processes which this application can follow.
 	/// </summary>
+	[Flags]
 	public enum OperationMode {
 
 		/// <summary>

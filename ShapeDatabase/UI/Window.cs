@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL4;
@@ -29,7 +27,8 @@ namespace ShapeDatabase.UI {
 		private double _angleY;
 		private double _angleX;
 
-		public Window(int width, int height, string title, IMesh mesh) : base(width, height, GraphicsMode.Default, title) {
+		public Window(int width, int height, string title, IMesh mesh)
+			: base(width, height, GraphicsMode.Default, title) {
 
 			keybindings = new KeyController();
 			RegisterKeyBinds();
@@ -46,9 +45,9 @@ namespace ShapeDatabase.UI {
 			{
 
 				Vector3[] vertices = new Vector3[3] {
-					mesh.GetVertex((uint)face.X),
+					mesh.GetVertex((uint) face.X),
 					mesh.GetVertex((uint) face.Y),
-					mesh.GetVertex((uint)face.Z)
+					mesh.GetVertex((uint) face.Z)
 				};
 
 				Vector3 Normal = GetNormal(vertices);
