@@ -11,7 +11,7 @@ namespace ShapeDatabase.Shapes {
 		#region --- Properties ---
 
 		public g3.IMesh Base { get; }
-		public bool IsNormalised => false;
+		public bool IsNormalised { get; }
 
 		public uint VertexCount => (uint) Base.VertexCount;
 		public uint FaceCount => (uint) Base.TriangleCount;
@@ -45,8 +45,9 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Constructor Methods ---
 
-		public GeometryMesh(g3.IMesh mesh) {
+		public GeometryMesh(g3.IMesh mesh, bool normalised = false) {
 			Base = mesh ?? throw new ArgumentNullException(nameof(mesh));
+			IsNormalised = normalised;
 		}
 
 		#endregion

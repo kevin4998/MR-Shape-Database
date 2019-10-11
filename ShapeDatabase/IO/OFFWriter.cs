@@ -25,7 +25,9 @@ namespace ShapeDatabase.IO
 		/// <param name="location">The location of the off file</param>
 		public void WriteFile(IMesh type, string location)
 		{
-			WriteFile(type, new StreamWriter(location));
+			using (StreamWriter writer = new StreamWriter(location)) { 
+				WriteFile(type, writer);
+			}
 		}
 
 		/// <summary>
@@ -35,17 +37,14 @@ namespace ShapeDatabase.IO
 		/// <param name="writer">The streamwriter that needs to be used</param>
 		public void WriteFile(IMesh type, StreamWriter writer)
 		{
-			using(writer)
-			{
-				writer.WriteLine("OFF");
-				writer.WriteLine($"{type.VertexCount} {type.FaceCount} 0");
-				foreach(Vector3 vertice in type.Vertices)
-					writer.WriteLine($"{vertice.X} {vertice.Y} {vertice.Z}");
+			writer.WriteLine("OFF");
+			writer.WriteLine($"{type.VertexCount} {type.FaceCount} 0");
+			foreach(Vector3 vertice in type.Vertices)
+				writer.WriteLine($"{vertice.X} {vertice.Y} {vertice.Z}");
 
-				foreach(Vector3 face in type.Faces)
-					writer.WriteLine($"3 {face.X} {face.Y} {face.Z}");
-
-			}
+			foreach(Vector3 face in type.Faces)
+				writer.WriteLine($"3 {face.X} {face.Y} {face.Z}");
+			IOConventions.WriteIfNormalised(type.IsNormalised, writer);
 		}
 
 		/// <summary>

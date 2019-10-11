@@ -219,7 +219,7 @@ namespace ShapeDatabase.Refine {
 		#region --- Instance Methods ---
 
 		public bool RequireRefinement(Shapes.IMesh mesh) {
-			return mesh.IsNormalised;
+			return !mesh.IsNormalised;
 		}
 
 		public void RefineMesh(Shapes.IMesh mesh, FileInfo file) {

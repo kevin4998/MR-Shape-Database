@@ -11,7 +11,7 @@ namespace ShapeDatabase {
 			if (Settings.DirectShutDown)
 				return;
 
-			Console.WriteLine("Press any key to exit application.");
+			Console.WriteLine("Press enter to exit application.");
 			Console.ReadLine();
 		}
 	}
