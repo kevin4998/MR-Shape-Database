@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using OpenTK;
-using ShapeDatabase.Util;
-using static ShapeDatabase.Util.Enumerators;
 using static ShapeDatabase.Util.Functions;
 
 namespace ShapeDatabase.Shapes {
@@ -12,11 +11,11 @@ namespace ShapeDatabase.Shapes {
 		#region --- Properties ---
 
 		public g3.IMesh Base { get; }
-		public bool IsNormalised => throw new NotImplementedException();
+		public bool IsNormalised => false;
 
 		public uint VertexCount => (uint) Base.VertexCount;
 		public uint FaceCount => (uint) Base.TriangleCount;
-		public uint EdgeCount => throw new NotImplementedException();
+		public uint EdgeCount => 0;
 		public uint NormalCount => (uint) Base.VertexCount;
 
 		public IEnumerable<Vector3> Vertices {
@@ -31,7 +30,7 @@ namespace ShapeDatabase.Shapes {
 					yield return VectorConvert(Base.GetTriangle(i));
 			}
 		}
-		public IEnumerable<Vector3> Edges => throw new NotImplementedException();
+		public IEnumerable<Vector3> Edges => Enumerable.Empty<Vector3>();
 		public IEnumerable<Vector3> Normals {
 			get {
 				if (Base.HasVertexNormals)
@@ -57,7 +56,7 @@ namespace ShapeDatabase.Shapes {
 		#region -- Instance Methods --
 
 		public IBoundingBox GetBoundingBox() {
-			throw new NotImplementedException();
+			return AABB.FromMesh(this);
 		}
 		public Vector3 GetVertex(uint pos) {
 			return VectorConvert(Base.GetVertex(Convert.ToInt32(pos)));

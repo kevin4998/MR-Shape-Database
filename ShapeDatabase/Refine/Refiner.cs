@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using Accord.Statistics.Analysis;
+using Accord.Statistics.Models.Regression.Linear;
 using g3;
 using gs;
 using OpenTK;
 using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Refine {
 
@@ -162,4 +166,153 @@ namespace ShapeDatabase.Refine {
 		#endregion
 
 	}
+
+	/// <summary>
+	/// A class to normalise all shapes in the same style using
+	/// the 4 step normalisation process.
+	/// <para>
+	/// The 4 steps of the normalisation process consists of:
+	/// <list type="number">
+	///		<item>
+	///			<description>Centering to the shape to the bary center.</description>
+	///		</item>
+	///		<item>
+	///			<description>Aligning the shape using the eigenvectors.</description>
+	///		</item>
+	///		<item>
+	///			<description>Scaling the figure to fit the [-1,1] range.</description>
+	///		</item>
+	///		<item>
+	///			<description>And finally flipping along all 3 axis using the
+	///			momentum test.</description>
+	///		</item>
+	/// </list>
+	/// </para>
+	/// </summary>
+	public class NormalisationRefiner : IRefiner<Shapes.IMesh> {
+
+		#region --- Properties ---
+
+		private const float MIN_VALUE = -1f;
+		private const float MAX_VALUE = 1f;
+
+		private static readonly Lazy<NormalisationRefiner> lazy
+			= new Lazy<NormalisationRefiner>();
+
+		/// <summary>
+		/// Gives a refiner to normalise meshes.
+		/// </summary>
+		public static NormalisationRefiner Instance => lazy.Value;
+
+		#endregion
+
+		#region --- Constructor Methods ---
+
+		/// <summary>
+		/// Initialises a new refiner which makes use of the 4 step normalisation
+		/// process to make all meshes similar.
+		/// </summary>
+		public NormalisationRefiner() { }
+
+		#endregion
+
+		#region --- Instance Methods ---
+
+		public bool RequireRefinement(Shapes.IMesh mesh) {
+			return mesh.IsNormalised;
+		}
+
+		public void RefineMesh(Shapes.IMesh mesh, FileInfo file) {
+			Shapes.IMesh transformed = FlipShape(ScaleShape(AlignShape(CenterShape(mesh))));
+			IO.OFFWriter.Instance.WriteFile(transformed, file.FullName);
+
+		}
+
+
+		/// <summary>
+		/// Attempts to find the centroid or barycenter point of a mesh
+		/// by using the average of all points in a mesh.
+		/// </summary>
+		/// <param name="mesh">The mesh to find the barycenter point.</param>
+		/// <returns>A <see cref="Vector3"/> containing the center.</returns>
+		private static Vector3 FindBaryCenter(Shapes.IMesh mesh) {
+			double[] center = new double[3];
+
+			if (mesh != null) { 
+				foreach (Vector3 vector in mesh.Vertices)
+					for(int i = 2; i >= 0; i--)
+						center[i] += vector[i];
+
+				double inverse = 1 / mesh.VertexCount;
+				for(int i = 2; i >= 0; i--)
+					center[i] *= inverse;
+			}
+
+			return new Vector3(
+				Convert.ToSingle(center[0]),
+				Convert.ToSingle(center[1]),
+				Convert.ToSingle(center[2]));
+		}
+
+
+		private static Shapes.IMesh CenterShape(Shapes.IMesh mesh) {
+			uint vertices = mesh.VertexCount;
+			Vector3 center = FindBaryCenter(mesh);
+
+			Vector3[] points = new Vector3[vertices];
+			for (uint i = vertices - 1; i >= 0; i--)
+				points[i] = mesh.GetVertex(i) - center;
+
+			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
+			modifiedMesh.Vertices = points;
+			return modifiedMesh;
+		}
+
+		private static Shapes.IMesh AlignShape(Shapes.IMesh mesh) {
+			double[][] matrix = new double[mesh.VertexCount][];
+			for (uint i = mesh.VertexCount - 1; i >= 0; i--) {
+				Vector3 point = mesh.GetVertex(i);
+				matrix[i] = new double[] { point.X, point.Y, point.Z };
+			}
+
+			PrincipalComponentAnalysis pca =
+				new PrincipalComponentAnalysis(PrincipalComponentMethod.Standardize,
+											   true, 3);
+			pca.Learn(matrix);
+			double[][] modified = pca.Transform(matrix);
+			Vector3[] vectors = NumberUtil.Vectorize(modified);
+
+			Shapes.SimpleMesh simple = Shapes.SimpleMesh.CreateFrom(mesh);
+			simple.Vertices = vectors;
+			return simple;
+		}
+
+		private static Shapes.IMesh ScaleShape(Shapes.IMesh mesh) {
+			IBoundingBox bb = mesh.GetBoundingBox();
+			float min = NumberUtil.Min(bb.MinX, bb.MinY, bb.MinZ);
+			float max = NumberUtil.Max(bb.MaxX, bb.MaxY, bb.MaxZ);
+			float scale = (MAX_VALUE - MIN_VALUE) / (max - min);
+
+			uint vertices = mesh.VertexCount;
+			Vector3[] points = new Vector3[vertices];
+			for (uint i = vertices - 1; i >= 0; i--)
+				points[i] = mesh.GetVertex(i) * scale;
+
+			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
+			modifiedMesh.Vertices = points;
+			return modifiedMesh;
+		}
+
+		private static Shapes.IMesh FlipShape(Shapes.IMesh mesh) {
+
+			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
+			modifiedMesh.IsNormalised = true;
+			return modifiedMesh;
+		}
+
+
+		#endregion
+
+	}
+
 }

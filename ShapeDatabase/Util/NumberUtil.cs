@@ -123,5 +123,49 @@ namespace ShapeDatabase.Util
 			return result;
 		}
 
+		public static Vector3[] Vectorize(double[][] matrix) {
+			Vector3[] vectors = new Vector3[matrix.GetLength(0)];
+
+			for (int i = vectors.Length - 1; i >= 0; i--) {
+				double[] current = matrix[i];
+				if (current.Length != 3)
+					throw new ArgumentException(
+						string.Format(
+							"Invalid vector size, expected size 3 but got '{0}'",
+							current.Length
+						)
+					);
+				else
+					vectors[i] = new Vector3(
+						Convert.ToSingle(current[0]),
+						Convert.ToSingle(current[1]),
+						Convert.ToSingle(current[2])
+					);
+			}
+
+			return vectors;
+				
+		}
+
+		public static T Min<T>(params T[] values) where T : IComparable {
+			if (values == null || values.Length == 0)
+				throw new ArgumentNullException(nameof(values));
+
+			T min = default;
+			foreach(T value in values)
+				min = min.CompareTo(value) <= 0 ? min : value;
+			return min;
+		}
+
+		public static T Max<T>(params T[] values) where T : IComparable {
+			if (values == null || values.Length == 0)
+				throw new ArgumentNullException(nameof(values));
+
+			T max = default;
+			foreach (T value in values)
+				max = max.CompareTo(value) >= 0 ? max : value;
+			return max;
+		}
+
 	}
 }

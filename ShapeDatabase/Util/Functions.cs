@@ -18,6 +18,14 @@ namespace ShapeDatabase.Util {
 			return new Vector3(x, y, z);
 		}
 
+		public static Vector3 VectorCreate(double x, double y, double z) {
+			return new Vector3(
+				Convert.ToSingle(x),
+				Convert.ToSingle(y),
+				Convert.ToSingle(z)
+			);
+		}
+
 
 		public static Vector3 VectorConvert(Vector3f vector) {
 			return new Vector3(vector.x, vector.y, vector.z);
