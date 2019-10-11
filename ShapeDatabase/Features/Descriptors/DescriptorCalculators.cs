@@ -8,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace ShapeDatabase.Features
 {
+	/// <summary>
+	/// Class for defining all descriptor calculator methods
+	/// </summary>
 	public static class DescriptorCalculators
 	{
+		/// <summary>
+		/// Elementary descriptor for calculating the surface area of a mesh
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The elementary descriptor with the calculated value</returns>
 		public static ElemDescriptor SurfaceArea(IMesh mesh)
 		{
 			double surfaceArea = 0;

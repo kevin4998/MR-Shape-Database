@@ -26,15 +26,7 @@ namespace ShapeDatabase.Features
 		/// <see cref="SeperatorChar"/>
 		/// </summary>
 		public static string Seperator => SeperatorChar.ToString();
-		/// <summary>
-		/// The character which is used to seperate values of a single histogram descriptor.
-		/// </summary>
-		public static char HistSeperatorChar => ';';
-		/// <summary>
-		/// A string value which represent the histogram seperater character.
-		/// <see cref="HistSeperatorChar"/>
-		/// </summary>
-		public static string HistSeperator => HistSeperatorChar.ToString();
+
 
 		private static readonly Lazy<FMWriter> lazy =
 			new Lazy<FMWriter>(() => new FMWriter());
@@ -58,6 +50,11 @@ namespace ShapeDatabase.Features
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Writes featurevectors to a csv file.
+		/// </summary>
+		/// <param name="type">The featuremanager containing the featurevectors</param>
+		/// <param name="location">Location of the csv file</param>
 		public void WriteFile(FeatureManager type, string location)
 		{
 			using (StreamWriter writer = new StreamWriter(location))
@@ -66,6 +63,11 @@ namespace ShapeDatabase.Features
 			}
 		}
 
+		/// <summary>
+		/// Writes featurevectors to a csv file.
+		/// </summary>
+		/// <param name="type">The featuremanager containing the featurevectors</param>
+		/// <param name="location">The streamwriter to be used</param>
 		public void WriteFile(FeatureManager type, StreamWriter writer)
 		{
 			if (type.featureVectors == null)
@@ -74,9 +76,11 @@ namespace ShapeDatabase.Features
 				throw new ArgumentNullException(nameof(writer));
 
 			// First line specify the descriptor names
-			List<string> descriptorNames = new List<string>();
-			descriptorNames.Add("MeshName");
-			foreach(IDescriptor desc in type.featureVectors.First().Value.Descriptors)
+			List<string> descriptorNames = new List<string>
+			{
+				"MeshName"
+			};
+			foreach (IDescriptor desc in type.featureVectors.First().Value.Descriptors)
 			{
 				descriptorNames.Add(desc.Name);
 			}
@@ -90,23 +94,7 @@ namespace ShapeDatabase.Features
 				descriptorValues.Add(vector.Key);
 				foreach(IDescriptor desc in vector.Value.Descriptors)
 				{
-					if(desc is ElemDescriptor)
-					{
-						ElemDescriptor elem = (ElemDescriptor)desc;
-						descriptorValues.Add(elem.Value.ToString());
-					}
-					else
-					{
-						HistDescriptor hist = (HistDescriptor)desc;
-						string[] histValues = new string[12];
-						histValues[0] =	hist.Offset.ToString();
-						histValues[1] = hist.BinSize.ToString();
-						for(int i = 2; i < 12; i++)
-						{
-							histValues[i] = hist.BinValues[i].ToString();
-						}
-						descriptorValues.Add(string.Join(HistSeperator, histValues));
-					}
+					descriptorValues.Add(desc.Serialize());
 				}
 				writer.WriteLine(string.Join(Seperator, descriptorValues.ToArray()));
 			}

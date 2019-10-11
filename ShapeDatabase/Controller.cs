@@ -192,9 +192,10 @@ namespace ShapeDatabase {
 			else
 			{
 				FeatureManager manager;
+
 				using (StreamReader reader = new StreamReader(location))
 				{
-					manager = FMReader.Instance.ConvertFile(new StreamReader(location));
+					manager = FMReader.Instance.ConvertFile(reader);
 				}
 
 				Console.WriteLine($"Done Importing FeatureVectors from: {location}");
