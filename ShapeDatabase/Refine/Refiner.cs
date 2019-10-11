@@ -218,9 +218,9 @@ namespace ShapeDatabase.Refine {
 		}
 
 		public void RefineMesh(Shapes.IMesh mesh, FileInfo file) {
-			Shapes.SimpleMesh transformed = 
-				FlipShape(
-					ScaleShape(
+			Shapes.SimpleMesh transformed =
+				ScaleShape(
+					FlipShape(
 						AlignShape(
 							CenterShape(mesh)
 						)
@@ -319,11 +319,34 @@ namespace ShapeDatabase.Refine {
 			return simple;
 		}
 
+		private static Shapes.SimpleMesh FlipShape(Shapes.IMesh mesh) {
+			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
+
+			uint[] positiveValues = new uint[3];
+			foreach (Vector3 vector in modifiedMesh.Vertices)
+				for (int i = 2; i >= 0; i--)
+					if (vector[i] >= 0)
+						positiveValues[i]++;
+
+			// Most mass should be on the left/ in the negative space.
+			uint half = modifiedMesh.VertexCount >> 1;
+			Vector3 flip = new Vector3();
+			for (int i = 2; i >= 0; i--)
+				flip[i] = (positiveValues[i] > half) ? -1 : 1;
+			// Flip the direction of vertices if more mass is on the positive side.
+			if (flip != Vector3.One)
+				for (uint i = 0; i < modifiedMesh.VertexCount; i++)
+					modifiedMesh.SetVertex(i, modifiedMesh.GetVertex(i) * flip);
+
+			return modifiedMesh;
+		}
+
 		private static Shapes.SimpleMesh ScaleShape(Shapes.IMesh mesh) {
 			IBoundingBox bb = mesh.GetBoundingBox();
-			float min = NumberUtil.Min(bb.MinX, bb.MinY, bb.MinZ);
-			float max = NumberUtil.Max(bb.MaxX, bb.MaxY, bb.MaxZ);
-			float scale = (MAX_VALUE - MIN_VALUE) / (max - min);
+
+			Vector3 size = bb.Size;
+			float dif = NumberUtil.Max(size.X, size.Y, size.Z);
+			float scale = (MAX_VALUE - MIN_VALUE) / dif;
 
 			uint vertices = mesh.VertexCount;
 			Vector3[] points = new Vector3[vertices];
@@ -332,14 +355,6 @@ namespace ShapeDatabase.Refine {
 
 			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
 			modifiedMesh.Vertices = points;
-			return modifiedMesh;
-		}
-
-		private static Shapes.SimpleMesh FlipShape(Shapes.IMesh mesh) {
-			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
-
-
-
 			return modifiedMesh;
 		}
 
