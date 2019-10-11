@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Accord.Statistics.Analysis;
 using g3;
 using gs;
@@ -217,55 +218,93 @@ namespace ShapeDatabase.Refine {
 		}
 
 		public void RefineMesh(Shapes.IMesh mesh, FileInfo file) {
-			Shapes.IMesh transformed = FlipShape(ScaleShape(AlignShape(CenterShape(mesh))));
+			Shapes.SimpleMesh transformed = 
+				FlipShape(
+					ScaleShape(
+						AlignShape(
+							CenterShape(mesh)
+						)
+					)
+				);
+			transformed.IsNormalised = true;
 			IO.OFFWriter.Instance.WriteFile(transformed, file.FullName);
 		}
 
 
 		/// <summary>
 		/// Attempts to find the centroid or barycenter point of a mesh
-		/// by using the average of all points in a mesh.
+		/// by using the average of the center of all triangles divided
+		/// by their mass for an accurate representation.
 		/// </summary>
 		/// <param name="mesh">The mesh to find the barycenter point.</param>
 		/// <returns>A <see cref="Vector3"/> containing the center.</returns>
 		private static Vector3 FindBaryCenter(Shapes.IMesh mesh) {
-			double[] center = new double[3];
+			
+			OpenTK.Vector3d totalSum = new OpenTK.Vector3d();
+			double totalArea = 0;
 
-			if (mesh != null) { 
-				foreach (Vector3 vector in mesh.Vertices)
-					for(int i = 2; i >= 0; i--)
-						center[i] += vector[i];
+			foreach(Vector3 face in mesh.Faces) {
 
-				double inverse = 1 / mesh.VertexCount;
-				for(int i = 2; i >= 0; i--)
-					center[i] *= inverse;
+				Vector3[] vertices = new Vector3[3] {
+					mesh.GetVertex((uint) face.X),
+					mesh.GetVertex((uint) face.Y),
+					mesh.GetVertex((uint) face.Z)
+				};
+
+				double area = AreaOfTriangle(vertices);
+				totalSum += OpenTK.Vector3d.Multiply(
+					(OpenTK.Vector3d) CenterOfTriangle(vertices), area);
+
+				totalArea += area;
 			}
 
-			return new Vector3(
-				Convert.ToSingle(center[0]),
-				Convert.ToSingle(center[1]),
-				Convert.ToSingle(center[2]));
+			return (Vector3) OpenTK.Vector3d.Divide(totalSum, totalArea);
+
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		private static Vector3 CenterOfTriangle(Vector3[] points) {
+			if (points == null || points.Length == 0)
+				throw new ArgumentNullException(nameof(points));
+
+			Vector3 result = new Vector3();
+			for(int i = 2; i >= 0; i--)
+				result += points[i];
+			return result / 3;
+		}
+
+		// http://james-ramsden.com/area-of-a-triangle-in-3d-c-code/
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		private static double AreaOfTriangle(Vector3[] points) {
+			if (points == null || points.Length == 0)
+				throw new ArgumentNullException(nameof(points));
+
+			double a = Vector3.Distance(points[0], points[1]);
+			double b = Vector3.Distance(points[0], points[1]);
+			double c = Vector3.Distance(points[0], points[1]);
+			double sum = (a + b + c) / 2;
+			return Math.Sqrt(sum * (sum-a) * (sum-b) * (sum-c));
 		}
 
 
-		private static Shapes.IMesh CenterShape(Shapes.IMesh mesh) {
+		private static Shapes.SimpleMesh CenterShape(Shapes.IMesh mesh) {
 			uint vertices = mesh.VertexCount;
 			Vector3 center = FindBaryCenter(mesh);
 
 			Vector3[] points = new Vector3[vertices];
-			for (uint i = vertices; i > 0; i--)
-				points[i - 1] = mesh.GetVertex(i - 1) - center;
+			for (uint i = 0; i < vertices; i++)
+				points[i] = mesh.GetVertex(i) - center;
 
 			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
 			modifiedMesh.Vertices = points;
 			return modifiedMesh;
 		}
 
-		private static Shapes.IMesh AlignShape(Shapes.IMesh mesh) {
+		private static Shapes.SimpleMesh AlignShape(Shapes.IMesh mesh) {
 			double[][] matrix = new double[mesh.VertexCount][];
-			for (uint i = mesh.VertexCount; i > 0; i--) {
-				Vector3 point = mesh.GetVertex(i - 1);
-				matrix[i - 1] = new double[] { point.X, point.Y, point.Z };
+			for (uint i = 0; i < mesh.VertexCount; i++) {
+				Vector3 point = mesh.GetVertex(i);
+				matrix[i] = new double[] { point.X, point.Y, point.Z };
 			}
 
 			PrincipalComponentAnalysis pca =
@@ -280,7 +319,7 @@ namespace ShapeDatabase.Refine {
 			return simple;
 		}
 
-		private static Shapes.IMesh ScaleShape(Shapes.IMesh mesh) {
+		private static Shapes.SimpleMesh ScaleShape(Shapes.IMesh mesh) {
 			IBoundingBox bb = mesh.GetBoundingBox();
 			float min = NumberUtil.Min(bb.MinX, bb.MinY, bb.MinZ);
 			float max = NumberUtil.Max(bb.MaxX, bb.MaxY, bb.MaxZ);
@@ -288,18 +327,19 @@ namespace ShapeDatabase.Refine {
 
 			uint vertices = mesh.VertexCount;
 			Vector3[] points = new Vector3[vertices];
-			for (uint i = vertices; i > 0; i--)
-				points[i - 1] = mesh.GetVertex(i - 1) * scale;
+			for (uint i = 0; i < vertices; i++)
+				points[i] = mesh.GetVertex(i) * scale;
 
 			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
 			modifiedMesh.Vertices = points;
 			return modifiedMesh;
 		}
 
-		private static Shapes.IMesh FlipShape(Shapes.IMesh mesh) {
-
+		private static Shapes.SimpleMesh FlipShape(Shapes.IMesh mesh) {
 			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
-			modifiedMesh.IsNormalised = true;
+
+
+
 			return modifiedMesh;
 		}
 

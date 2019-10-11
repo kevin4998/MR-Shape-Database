@@ -31,6 +31,10 @@ namespace ShapeDatabase.Util {
 			return new Vector3(vector.x, vector.y, vector.z);
 		}
 
+		public static Vector3 VectorConvert(OpenTK.Vector3d vector) {
+			return (Vector3) vector;
+		}
+
 		public static Vector3 VectorConvert(g3.Vector3d vector) {
 			return new Vector3(
 				Convert.ToSingle(vector.x),
