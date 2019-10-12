@@ -7,57 +7,47 @@ using System.Threading.Tasks;
 namespace ShapeDatabase.Features.Descriptors
 {
 	/// <summary>
-	/// Class for elementary descriptors
+	/// A descriptor which can summarise the shape with a single value.
 	/// </summary>
-	public class ElemDescriptor : IDescriptor<ElemDescriptor>
-	{
-		/// <summary>
-		/// Name of the descriptor
-		/// </summary>
-		public string Name { get; }
+	public class ElemDescriptor : BaseDescriptor<ElemDescriptor> {
+
+		#region --- Properties ---
+
 		/// <summary>
 		/// Value of the elementary descriptor
 		/// </summary>
 		public double Value { get; }
+
+		#endregion
+
+		#region --- Constructor Methods ---
 
 		/// <summary>
 		/// Constructor of the elementary descriptor
 		/// </summary>
 		/// <param name="name">Name of the descriptor</param>
 		/// <param name="value">Value of the descritor</param>
-		public ElemDescriptor(string name, double value)
-		{
-			Name = name;
+		/// <exception cref="ArgumentNullException">If the name is <see langword="null"/>.
+		/// </exception>
+		public ElemDescriptor(string name, double value) 
+			: base(name) {
 			Value = value;
 		}
 
-		/// <summary>
-		/// Method for comparison with another elementary descriptor
-		/// </summary>
-		/// <param name="desc">The other elementary descriptor</param>
-		/// <returns>Double indicating the resemblance</returns>
-		public double Compare(ElemDescriptor desc)
-		{
+		#endregion
+
+		#region --- Instance Methods ---
+
+		public override double Compare(ElemDescriptor desc) {
 			throw new NotImplementedException();
 		}
 
-		/// <summary>
-		/// Serializes the descriptor
-		/// </summary>
-		/// <returns>The serialized descriptor value</returns>
-		public string Serialize()
-		{
-			return Value.ToString();
+		public override string Serialize() {
+			IFormatProvider format = Settings.Culture;
+			return Value.ToString(format);
 		}
 
-		/// <summary>
-		/// Method for comparison with another elementary descriptor
-		/// </summary>
-		/// <param name="desc">The other elementary descriptor</param>
-		/// <returns>Double indicating the resemblance</returns>
-		double IDescriptor.Compare(object desc)
-		{
-			return Compare(desc as ElemDescriptor);
-		}
+		#endregion
+
 	}
 }

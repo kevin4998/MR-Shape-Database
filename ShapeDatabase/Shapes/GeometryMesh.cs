@@ -90,7 +90,7 @@ namespace ShapeDatabase.Shapes {
 		}
 
 		public static implicit operator g3.DMesh3(GeometryMesh mesh) {
-			return mesh.Base as g3.DMesh3;
+			return mesh?.Base as g3.DMesh3;
 		}
 
 		#endregion

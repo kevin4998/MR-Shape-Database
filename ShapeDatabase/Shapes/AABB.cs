@@ -97,6 +97,9 @@ namespace ShapeDatabase.Shapes {
 		/// <param name="mesh">The mesh whose bounding box needs to be found.</param>
 		/// <returns>An <see cref="AABB"/> around this shape.</returns>
 		public static AABB FromMesh(IMesh mesh) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+
 			float minx = float.MaxValue, miny = float.MaxValue, minz = float.MaxValue,
 				  maxx = float.MinValue, maxy = float.MinValue, maxz = float.MinValue;
 

@@ -18,7 +18,7 @@ namespace ShapeDatabase {
 	/// The main application controller.
 	/// This object determines what gets performed and what won't.
 	/// </summary>
-    public class Controller {
+    public static class Controller {
 
 
 		/// <summary>

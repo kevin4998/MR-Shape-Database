@@ -11,7 +11,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A simpel reader implementation to convert OFF files into meshes.
 	/// </summary>
-	[Obsolete]
+	[Obsolete("Make use of the new GeomOffReader to read in shapes.")]
 	public class OFFReader : IReader<IMesh> {
 
 		#region --- Properties ---

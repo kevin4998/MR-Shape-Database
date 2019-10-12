@@ -109,7 +109,7 @@ namespace ShapeDatabase.Features
 				
 				List<IDescriptor> descriptors = new List<IDescriptor>();
 
-				for(int i = 0; i < descriptorNames.Count(); i++)
+				for(int i = 0; i < descriptorNames.Length; i++)
 				{
 					descriptors.Clear();
 					string value = values[i];

@@ -70,7 +70,7 @@ namespace ShapeDatabase.Features
 		/// <param name="location">The streamwriter to be used</param>
 		public void WriteFile(FeatureManager type, StreamWriter writer)
 		{
-			if (type.featureVectors == null)
+			if (type == null)
 				throw new ArgumentNullException(nameof(type));
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
@@ -80,7 +80,7 @@ namespace ShapeDatabase.Features
 			{
 				"MeshName"
 			};
-			foreach (IDescriptor desc in type.featureVectors.First().Value.Descriptors)
+			foreach (IDescriptor desc in type.FeatureVectors.First().Value.Descriptors)
 			{
 				descriptorNames.Add(desc.Name);
 			}
@@ -88,7 +88,7 @@ namespace ShapeDatabase.Features
 
 			// Next lines specify the descriptor values
 			List<string> descriptorValues = new List<string>();
-			foreach(KeyValuePair<string, FeatureVector> vector in type.featureVectors)
+			foreach(KeyValuePair<string, FeatureVector> vector in type.FeatureVectors)
 			{
 				descriptorValues.Clear();
 				descriptorValues.Add(vector.Key);

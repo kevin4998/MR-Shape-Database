@@ -20,12 +20,13 @@ namespace ShapeDatabase.Features
 		/// <returns>The elementary descriptor with the calculated value</returns>
 		public static ElemDescriptor SurfaceArea(IMesh mesh)
 		{
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+
 			double surfaceArea = 0;
 
 			for (int i = 0; i < mesh.FaceCount; i++)
-			{
 				surfaceArea += mesh.GetTriArea(i);
-			}
 
 			return new ElemDescriptor("SurfaceArea", surfaceArea);
 		}

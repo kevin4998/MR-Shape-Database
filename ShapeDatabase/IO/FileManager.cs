@@ -114,7 +114,7 @@ namespace ShapeDatabase.IO {
 					foreach (string format in reader.SupportedFormats) {
 						if (format == null || format.Length == 0)
 							throw new ArgumentException(EX_NO_EXT, reader.GetType().FullName);
-						string ext = format.ToLower();
+						string ext = format.ToLower(Settings.Culture);
 						if (ext[0] != '.')
 							ext = '.' + ext;
 
@@ -238,7 +238,8 @@ namespace ShapeDatabase.IO {
 			if (directory == null)
 				throw new ArgumentNullException(nameof(directory));
 			if (!directory.Exists)
-				throw new ArgumentException(string.Format(EX_DIR_NE, directory.FullName));
+				throw new ArgumentException(
+					string.Format(Settings.Culture, EX_DIR_NE, directory.FullName));
 
 			Queue<DirectoryInfo> pdirs  = new Queue<DirectoryInfo>();
 			Queue<FileInfo>      pfiles = new Queue<FileInfo>();
@@ -253,7 +254,7 @@ namespace ShapeDatabase.IO {
 
 				FileInfo[] files  = dir.GetFiles();
 				foreach (FileInfo file in files)
-					if (formats.Contains(file.Extension.ToLower()))
+					if (formats.Contains(file.Extension.ToLower(Settings.Culture)))
 						pfiles.Enqueue(file);
 
 			}
@@ -325,7 +326,7 @@ namespace ShapeDatabase.IO {
 			if (file == null || !file.Exists)
 				throw new ArgumentNullException(nameof(file));
 
-			if (!this.readers.TryGetValue(file.Extension.ToLower(),
+			if (!this.readers.TryGetValue(file.Extension.ToLower(Settings.Culture),
 										  out IReader<GeometryMesh> reader))
 				return InfoMesh.NULL;
 
@@ -447,7 +448,7 @@ namespace ShapeDatabase.IO {
 		/// later fixes.
 		/// </summary>
 		/// <param name="files">A collection of files which needs to be moved.</param>
-		private void FailedShapes(params FileInfo[] files) {
+		private static void FailedShapes(params FileInfo[] files) {
 			foreach (FileInfo info in files) { 
 				if (info == null) continue;
 

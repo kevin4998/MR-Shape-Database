@@ -67,6 +67,9 @@ namespace ShapeDatabase.Util {
 		}
 
 		public static IEnumerable<TResult> Enumerate<TResult>(this IEnumerator<TResult> enumerator) {
+			if (enumerator == null)
+				throw new ArgumentNullException(nameof(enumerator));
+
 			while (enumerator.MoveNext())
 				yield return enumerator.Current;
 		}

@@ -5,35 +5,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShapeDatabase.Features
-{
+namespace ShapeDatabase.Features {
+
 	/// <summary>
-	/// Class for a featurevector
+	/// A class to represent a collection of descriptor values for a shape.
 	/// </summary>
-	public class FeatureVector
-	{
+	public class FeatureVector : Util.IComparable<FeatureVector> {
+
 		/// <summary>
-		/// The descriptors of the featurevector
+		/// A collection of descriptors which have been saved in this
+		/// <see cref="FeatureVector"/>.
 		/// </summary>
 		public IEnumerable<IDescriptor> Descriptors { get; }
 
 		/// <summary>
 		/// Constructor for the featurevector, given all of its descriptors
 		/// </summary>
-		/// <param name="descriptors">The descriptors that should be saved in the featurevector</param>
-		public FeatureVector(IEnumerable<IDescriptor> descriptors)
-		{
-			Descriptors = descriptors;
+		/// <param name="descriptors">A collection of specifications for a specific shape.
+		/// </param>
+		/// <exception cref="ArgumentNullException">if the given descriptors are
+		/// <see langword="null"/>.</exception>
+		public FeatureVector(IEnumerable<IDescriptor> descriptors) {
+			Descriptors = descriptors
+				?? throw new ArgumentNullException(nameof(descriptors));
 		}
 
-		/// <summary>
-		/// Method for comparison with another featurevector
-		/// </summary>
-		/// <param name="vector">The other feature vector</param>
-		/// <returns>Doubling representing its resemblance</returns>
-		public double Compare(FeatureVector vector)
-		{
+		public double Compare(FeatureVector vector) {
 			throw new NotImplementedException();
 		}
+
 	}
 }

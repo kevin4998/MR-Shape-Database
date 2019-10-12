@@ -16,6 +16,9 @@ namespace ShapeDatabase.Util
 		/// <param name="array">The array which will be used as a base for conversion.</param>
 		/// <returns>A new array with the scaled values.</returns>
 		public static Vector3[] Normalise(this Vector3[] array) {
+			if (array == null)
+				throw new ArgumentNullException(nameof(array));
+
 			float min = float.MaxValue;
 			float max = float.MinValue;
 
@@ -41,6 +44,9 @@ namespace ShapeDatabase.Util
 		/// <param name="max">The maximum value within the array.</param>
 		/// <returns>A new array with the scaled values.</returns>
 		public static Vector3[] Normalise(this Vector3[] array, float min, float max) {
+			if (array == null)
+				throw new ArgumentNullException(nameof(array));
+
 			Vector3[] result = new Vector3[array.Length];
 
 			// Scale to [-1,1]

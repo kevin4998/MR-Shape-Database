@@ -18,7 +18,7 @@ namespace ShapeDatabase.Refine {
 
 		#region --- Properties ---
 
-		private static readonly int DESIRED_VERTICES = 5000;
+		private const int DESIRED_VERTICES = 5000;
 
 		private static readonly Lazy<ExtendRefiner> lazy =
 			new Lazy<ExtendRefiner> (() => new ExtendRefiner());
@@ -49,6 +49,7 @@ namespace ShapeDatabase.Refine {
 		/// for an optimal shape.</returns>
 		public bool RequireRefinement(Shapes.IMesh mesh)
 		{
+			if (mesh == null) throw new ArgumentNullException(nameof(mesh));
 			return mesh.VertexCount != DESIRED_VERTICES;
 		}
 		/// <summary>
@@ -99,7 +100,7 @@ namespace ShapeDatabase.Refine {
 
 		#region --- Properties ---
 
-		private static readonly int DESIRED_VERTICES = 5000;
+		private const int DESIRED_VERTICES = 5000;
 
 		private static readonly Lazy<SimplifyRefiner> lazy =
 			new Lazy<SimplifyRefiner>(() => new SimplifyRefiner());

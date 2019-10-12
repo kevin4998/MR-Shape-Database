@@ -75,6 +75,8 @@ namespace ShapeDatabase.Util {
 		public static T GetValueOrDefault<T>(this SerializationInfo info, string name, Lazy<T> def) {
 			if (info == null)
 				throw new ArgumentNullException(nameof(info));
+			if (def == null)
+				throw new ArgumentNullException(nameof(def));
 
 			if (!info.TryGetValue(name, out T value))
 				value = def.Value;

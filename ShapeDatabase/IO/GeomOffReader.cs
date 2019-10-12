@@ -20,6 +20,8 @@ namespace ShapeDatabase.IO {
 		private GeomOffReader() { }
 
 		public GeometryMesh ConvertFile(StreamReader reader) {
+			if (reader == null) throw new ArgumentNullException(nameof(reader));
+
 			DMesh3 mesh = StandardMeshReader.ReadMesh(reader.BaseStream, "off");
 			return new GeometryMesh(mesh);
 		}
