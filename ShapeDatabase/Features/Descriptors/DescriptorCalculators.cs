@@ -10,6 +10,7 @@ using OpenTK;
 using System.Runtime.CompilerServices;
 using Accord.Statistics.Analysis;
 using Accord.Statistics.Models.Regression.Linear;
+using System.Threading;
 
 namespace ShapeDatabase.Features
 {
@@ -72,6 +73,38 @@ namespace ShapeDatabase.Features
 			double[] eigenvalues = pca.Eigenvalues;
 
 			return new ElemDescriptor("Eccentricity", eigenvalues[0] / eigenvalues[2]);
+		}
+
+		/// <summary>
+		/// Elementary descriptor for calculating the largest distance between any two contour points
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The elementary descriptor with the calculated value</returns>
+		public static ElemDescriptor Diameter(IMesh mesh)
+		{
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+
+			float biggestDiameter = 0;
+
+			Parallel.For(0, mesh.VertexCount, i =>
+			{
+				Parallel.For(i, mesh.VertexCount, j =>
+				{
+				float distance = Vector3.Distance(mesh.GetVertex((uint)i), mesh.GetVertex((uint)j));
+				float tempDiameter;
+
+				do
+				{
+					tempDiameter = biggestDiameter;
+					if (distance <= biggestDiameter)
+						break;
+				}
+				while (Interlocked.CompareExchange(ref biggestDiameter, distance, tempDiameter) != tempDiameter);
+				});
+			});
+
+			return new ElemDescriptor("Diameter", biggestDiameter);
 		}
 	}
 }
