@@ -23,7 +23,7 @@ namespace ShapeDatabase.IO {
 			if (reader == null) throw new ArgumentNullException(nameof(reader));
 
 			DMesh3 mesh = StandardMeshReader.ReadMesh(reader.BaseStream, "off");
-			return new GeometryMesh(mesh);
+			return new GeometryMesh(mesh, IOConventions.CheckIfNormalised(reader));
 		}
 
 		public Task<GeometryMesh> ConvertFileAsync(StreamReader reader) {

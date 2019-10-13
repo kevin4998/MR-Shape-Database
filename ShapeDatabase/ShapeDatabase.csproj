@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Accord.Statistics" Version="3.8.0" />
     <PackageReference Include="CommandLineParser" Version="2.6.0" />
     <PackageReference Include="geometry3Sharp" Version="1.0.324" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
@@ -73,5 +74,9 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y&#xD;&#xA;start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y" />
+  </Target>
 
 </Project>

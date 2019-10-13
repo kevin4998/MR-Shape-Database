@@ -86,7 +86,7 @@ namespace ShapeDatabase.Util
 		}
 
 		/// <summary>
-		/// Compares to floating point numbers for equality using a certain precision.
+		/// Compares two floating point numbers for equality using a certain precision.
 		/// 
 		/// https://stackoverflow.com/a/3875619
 		/// </summary>
@@ -127,6 +127,79 @@ namespace ShapeDatabase.Util
 			foreach (object value in values)
 				result = 31 * result + (value == null ? 0 : value.GetHashCode());
 			return result;
+		}
+
+		public static Vector3[] Vectorize(this double[][] matrix) {
+			Vector3[] vectors = new Vector3[matrix.GetLength(0)];
+
+			for (int i = vectors.Length - 1; i >= 0; i--)
+				vectors[i] = AsVector(matrix[i]);
+
+			return vectors;
+				
+		}
+
+		public static float[][] InvertVectorize(Vector3[] vector) {
+			float[][] matrix = new float[vector.Length][];
+			for (int i = vector.Length - 1; i >= 0; i--)
+				matrix[i] = vector[i].AsArray();
+			return matrix;
+		}
+
+		public static double[][] InvertVectorizeD(Vector3[] vector) {
+			double[][] matrix = new double[vector.Length][];
+			for (int i = vector.Length - 1; i >= 0; i--)
+				matrix[i] = vector[i].AsArrayD();
+			return matrix;
+		}
+
+		public static float[] AsArray(this Vector3 vector) {
+			return new float[] { vector.X, vector.Y, vector.Z };
+		}
+
+		public static double[] AsArrayD(this Vector3 vector) {
+			return new double[] { vector.X, vector.Y, vector.Z };
+		}
+
+		public static Vector3 AsVector(this double[] array) {
+			if (array == null)
+				throw new ArgumentNullException(nameof(array));
+			float[] floats = new float[array.Length];
+			for(int i = array.Length - 1; i >= 0; i--)
+				floats[i] = Convert.ToSingle(array[i]);
+			return AsVector(floats);
+		}
+
+		public static Vector3 AsVector(this float[] array) {
+			if (array == null)
+				throw new ArgumentNullException(nameof(array));
+			if (array.Length != 3)
+				throw new ArgumentException(
+					"Invalid vector size, expected size 3 but got '{0}'",
+					array.Length.ToString(Settings.Culture)
+				);
+
+			return new Vector3(array[0], array[1], array[2]);
+		}
+
+		public static T Min<T>(params T[] values) where T : IComparable {
+			if (values == null || values.Length == 0)
+				throw new ArgumentNullException(nameof(values));
+
+			T min = default;
+			foreach(T value in values)
+				min = min.CompareTo(value) <= 0 ? min : value;
+			return min;
+		}
+
+		public static T Max<T>(params T[] values) where T : IComparable {
+			if (values == null || values.Length == 0)
+				throw new ArgumentNullException(nameof(values));
+
+			T max = default;
+			foreach (T value in values)
+				max = max.CompareTo(value) >= 0 ? max : value;
+			return max;
 		}
 
 	}

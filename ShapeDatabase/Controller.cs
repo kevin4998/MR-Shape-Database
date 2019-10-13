@@ -43,27 +43,36 @@ namespace ShapeDatabase {
 		static void OnParsedValues(Options options) {
 			// Convert Options value to Settings.
 			if (Enum.TryParse(options.Mode, true, out OperationMode mode))
-				Settings.Mode = mode;
+				Settings.Mode = mode | OperationMode.VIEW;
 			Settings.Culture = CultureInfo.GetCultureInfo(options.Culture);
 			Settings.ShowDebug = options.DebugMessages;
+
+			if (options.CleanStart) {
+				Console.WriteLine("Cleaning directories!");
+				string[] cachedDirs = new string[] {
+					Settings.ShapeFailedDir,
+					Settings.ShapeFinalDir,
+					Settings.ShapeTempDir
+					//Settings.MeasurementsFile
+				};
+				foreach (string dir in cachedDirs) {
+					DirectoryInfo info = new DirectoryInfo(dir);
+					info.Delete(true);
+				}
+				Console.WriteLine("Finished cleaning directories!");
+			}
 
 			Console.WriteLine("Done converting input!");
 			// Start program activity.
 			LoadFinalFiles();
-			switch (Settings.Mode) {
-			case OperationMode.REFINE:
+			if (Settings.Mode.HasFlag(OperationMode.REFINE))
 				RefineShapes(options.ShapeDirectories);
-				break;
-			case OperationMode.MEASURE:
+			if (Settings.Mode.HasFlag(OperationMode.MEASURE))
 				MeasureShapes(options.ShapeDirectories);
-				break;
-			case OperationMode.VIEW:
+      if (Settings.Mode.HasFlag(OperationMode.FEATURES))
+        ExtractFeatures(options.ShapeDirectories);
+			if (Settings.Mode.HasFlag(OperationMode.VIEW))
 				ViewShapes(options.ShapeDirectories);
-				break;
-			case OperationMode.FEATURES:
-				ExtractFeatures(options.ShapeDirectories);
-				break;
-			}
 		}
 
 		/// <summary>
@@ -176,7 +185,7 @@ namespace ShapeDatabase {
 			LoadNewFiles(dirs, false);
 
 			string location = Settings.FeatureVectorDir + "/" + Settings.FeatureVectorFile;
-			
+
 			if(!Settings.ReadVectorFile)
 			{
 				FeatureManager manager = new FMBuilder(DescriptorCalculators.SurfaceArea).Build();
@@ -199,7 +208,7 @@ namespace ShapeDatabase {
 				}
 
 				Console.WriteLine($"Done Importing FeatureVectors from: {location}");
-			}		
+			}
 		}
 
 		/// <summary>
@@ -242,6 +251,7 @@ namespace ShapeDatabase {
 		/// visualisation or measurements.
 		/// </summary>
 		static void LoadFinalFiles() {
+			Directory.CreateDirectory(Settings.ShapeFinalDir);
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
 		}
 

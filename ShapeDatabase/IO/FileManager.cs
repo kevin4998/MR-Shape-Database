@@ -49,7 +49,8 @@ namespace ShapeDatabase.IO {
 		private static IRefiner<IMesh>[] ProduceRefiners() {
 			return new IRefiner<IMesh>[] {
 				ExtendRefiner.Instance,
-				SimplifyRefiner.Instance
+				SimplifyRefiner.Instance,
+				NormalisationRefiner.Instance
 			};
 		}
 
@@ -214,7 +215,7 @@ namespace ShapeDatabase.IO {
 					new MeshEntry(infomesh.Info.NameWithoutExtension(),
 								  infomesh.Info.Directory.Name,
 								  infomesh.Mesh);
-				ProcessedMeshes.Add(entry, true);
+				ProcessedMeshes.Add(entry, false);
 			}
 		}
 

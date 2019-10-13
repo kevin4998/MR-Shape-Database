@@ -1,0 +1,14 @@
+mid: 1785
+url: http://www.pdx3d.com/wrl/br_freemont.gz.wrl
+ref_url: http://www.pdx3d.com/bridges.htm
+format: wrl 
+pid: 2289
+polygons: 4556
+connected_components: 217
+average_dihedral_angle: 1.36844
+bounding_box: xmin = 1.43992e+006, ymin = 24.2, zmin = -689640, xmax = 1.44208e+006, ymax = 417.35, zmax = -689564
+avg_depth: 1.982054
+center: (1441000.546407,183.086340,-689601.248627)
+scale: 1042.689453
+principle_axes: (1.000000,-0.000137,-0.000816), (-0.000136,-0.999999,0.001022), (0.000817,0.001022,0.999999)
+principle_values: (349465.140773,3884.115983,700.525000)

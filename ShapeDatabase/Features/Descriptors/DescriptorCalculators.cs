@@ -25,7 +25,7 @@ namespace ShapeDatabase.Features
 
 			double surfaceArea = 0;
 
-			for (int i = 0; i < mesh.FaceCount; i++)
+			for (uint i = 0; i < mesh.FaceCount; i++)
 				surfaceArea += mesh.GetTriArea(i);
 
 			return new ElemDescriptor("SurfaceArea", surfaceArea);

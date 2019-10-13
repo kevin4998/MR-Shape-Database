@@ -78,8 +78,10 @@ namespace ShapeDatabase.IO {
 			Vector3[] vob = GetVertices(reader, vertexCount);
 			// Read all the faces as specified by the amount.
 			uint[]	  ebo = GetFaces(reader, faceCount);
-			// Return the mesh but normalised to the [-1,1] range centered on 0,0,0.
-			return new UnstructuredMesh(vob, ebo, false);//.Normalise();
+			// Check if the shape was normalised.
+			bool normalised = IOConventions.CheckIfNormalised(reader);
+			// Return the mesh now that all the information is gathered.
+			return new UnstructuredMesh(vob, ebo, normalised);
 		}
 
 		public Task<IMesh> ConvertFileAsync(StreamReader reader) {

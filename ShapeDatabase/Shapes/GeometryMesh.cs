@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using OpenTK;
-using ShapeDatabase.Util;
-using static ShapeDatabase.Util.Enumerators;
 using static ShapeDatabase.Util.Functions;
 using g3;
 
@@ -13,11 +12,11 @@ namespace ShapeDatabase.Shapes {
 		#region --- Properties ---
 
 		public g3.DMesh3 Base { get; }
-		public bool IsNormalised => throw new NotImplementedException();
+		public bool IsNormalised { get; }
 
 		public uint VertexCount => (uint) Base.VertexCount;
 		public uint FaceCount => (uint) Base.TriangleCount;
-		public uint EdgeCount => throw new NotImplementedException();
+		public uint EdgeCount => 0;
 		public uint NormalCount => (uint) Base.VertexCount;
 
 		public IEnumerable<Vector3> Vertices {
@@ -32,14 +31,13 @@ namespace ShapeDatabase.Shapes {
 					yield return VectorConvert(Base.GetTriangle(i));
 			}
 		}
-		public IEnumerable<Vector3> Edges => throw new NotImplementedException();
+		public IEnumerable<Vector3> Edges => Enumerable.Empty<Vector3>();
 		public IEnumerable<Vector3> Normals {
 			get {
 				if (Base.HasVertexNormals)
 					for (int i = 0; i < NormalCount; i++)
 						yield return VectorConvert(Base.GetVertexNormal(i));
-				else
-					throw new NotImplementedException();
+				yield break;
 			}
 		}
 
@@ -47,8 +45,9 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Constructor Methods ---
 
-		public GeometryMesh(g3.DMesh3 mesh) {
+		public GeometryMesh(g3.DMesh3 mesh, bool normalised = false) {
 			Base = mesh ?? throw new ArgumentNullException(nameof(mesh));
+			IsNormalised = normalised;
 		}
 
 		#endregion
@@ -58,7 +57,7 @@ namespace ShapeDatabase.Shapes {
 		#region -- Instance Methods --
 
 		public IBoundingBox GetBoundingBox() {
-			throw new NotImplementedException();
+			return AABB.FromMesh(this);
 		}
 		public Vector3 GetVertex(uint pos) {
 			return VectorConvert(Base.GetVertex(Convert.ToInt32(pos)));
@@ -72,9 +71,9 @@ namespace ShapeDatabase.Shapes {
 			return VectorConvert(Base.GetVertexNormal(Convert.ToInt32(pos)));
 		}
 
-		public double GetTriArea(int tID)
+		public double GetTriArea(uint tID)
 		{
-			return Base.GetTriArea(tID);
+			return Base.GetTriArea(Convert.ToInt32(tID));
 		}
 
 		public static GeometryMesh Create(g3.DMesh3 mesh) {
@@ -86,7 +85,7 @@ namespace ShapeDatabase.Shapes {
 		#region -- Operators --
 
 		public static implicit operator GeometryMesh(g3.DMesh3 mesh) {
-			return new GeometryMesh(mesh);
+			return mesh == null ? null : new GeometryMesh(mesh);
 		}
 
 		public static implicit operator g3.DMesh3(GeometryMesh mesh) {
