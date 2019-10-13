@@ -19,6 +19,8 @@ namespace ShapeDatabase.Shapes {
 		public uint EdgeCount => 0;
 		public uint NormalCount => (uint) Base.VertexCount;
 
+		private readonly Lazy<IBoundingBox> lazy;
+
 		public IEnumerable<Vector3> Vertices {
 			get {
 				for(int i = 0; i < VertexCount; i++)
@@ -48,6 +50,8 @@ namespace ShapeDatabase.Shapes {
 		public GeometryMesh(g3.DMesh3 mesh, bool normalised = false) {
 			Base = mesh ?? throw new ArgumentNullException(nameof(mesh));
 			IsNormalised = normalised;
+
+			lazy = new Lazy<IBoundingBox>(InitializeBoundingBox);
 		}
 
 		#endregion
@@ -56,8 +60,13 @@ namespace ShapeDatabase.Shapes {
 
 		#region -- Instance Methods --
 
-		public IBoundingBox GetBoundingBox() {
+		private IBoundingBox InitializeBoundingBox()
+		{
 			return AABB.FromMesh(this);
+		}
+
+		public IBoundingBox GetBoundingBox() {
+			return lazy.Value;
 		}
 
 		public Vector3 GetVertex(uint pos) {
