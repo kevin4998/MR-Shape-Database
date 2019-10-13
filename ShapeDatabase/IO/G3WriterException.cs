@@ -16,6 +16,11 @@ namespace ShapeDatabase.IO {
 	[Serializable]
 	public class G3WriterException : IOException {
 
+		#region --- Properties ---
+
+		private const string EX_INVALID_CONS =
+			"Cannot use the constructor without IOWriteResult variables.";
+
 		// Serialisation names for SerializationInfo.
 		private const string serCode = "Code";
 		/// <summary>
@@ -23,6 +28,36 @@ namespace ShapeDatabase.IO {
 		/// went wrong in the deserialisation process.
 		/// </summary>
 		public IOWriteResult Result { get; }
+
+		#endregion
+
+		#region --- Constructor Methods ---
+
+		/// <summary>
+		/// Initialises a new instance of of the <see cref="G3WriterException"/> class,
+		/// which specified that a problem occured in an external writer.
+		/// </summary>
+		protected G3WriterException()
+			: base() {
+			throw new InvalidOperationException(EX_INVALID_CONS);
+		}
+
+		/// <summary>
+		/// Initialises a new instance of of the <see cref="G3WriterException"/> class,
+		/// which specified that a problem occured in an external writer.
+		/// </summary>
+		/// <param name="message">The error message to show to the user.</param>
+		protected G3WriterException(string message)
+			: base(message) { }
+
+		/// <summary>
+		/// Initialises a new instance of of the <see cref="G3WriterException"/> class,
+		/// which specified that a problem occured in an external writer.
+		/// </summary>
+		/// <param name="message">The error message to show to the user.</param>
+		/// <param name="innerException">The previous exception which caused this one.</param>
+		protected G3WriterException(string message, Exception innerException)
+			: base(message, innerException) { }
 
 
 		/// <summary>
@@ -44,9 +79,10 @@ namespace ShapeDatabase.IO {
 		/// handles the inner exception.
 		/// </param>
 		public G3WriterException(IOWriteResult result, Exception innerException)
-			: base(result.message, innerException) {
+			: this(result.message, innerException) {
 			Result = result;
 		}
+
 
 		/// <summary>
 		/// Initialises a new instance of of the <see cref="G3WriterException"/> class,
@@ -60,6 +96,9 @@ namespace ShapeDatabase.IO {
 			Result = info.GetValue<IOWriteResult>(serCode);
 		}
 
+		#endregion
+
+		#region --- Isntance Methods ---
 
 		[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
 		public override void GetObjectData(SerializationInfo info, StreamingContext context) {
@@ -69,6 +108,8 @@ namespace ShapeDatabase.IO {
 			info.AddValue(serCode, Result);
 			base.GetObjectData(info, context);
 		}
+
+		#endregion
 
 	}
 

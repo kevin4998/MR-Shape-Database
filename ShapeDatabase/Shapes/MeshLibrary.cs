@@ -131,7 +131,9 @@ namespace ShapeDatabase.Shapes {
 	/// <summary>
 	/// A single loaded Mesh with extra information about its shape.
 	/// </summary>
-	public struct MeshEntry {
+	public struct MeshEntry : IEquatable<MeshEntry> {
+
+		#region --- Properties ---
 
 		/// <summary>
 		/// The class given to all shapes without a specified class.
@@ -152,6 +154,11 @@ namespace ShapeDatabase.Shapes {
 		/// The mesh containing the shape of this object.
 		/// </summary>
 		public IMesh Mesh { get; }
+
+		#endregion
+
+		#region --- Instance Methods ---
+
 		/// <summary>
 		/// Creates a new entry to be used in the <see cref="MeshLibrary"/>
 		/// </summary>
@@ -172,6 +179,33 @@ namespace ShapeDatabase.Shapes {
 			Class = string.IsNullOrEmpty(clazz) ? DefaultClass : clazz;
 			Mesh = mesh;
 		}
+
+		#endregion
+
+		#region --- Instance Methods ---
+
+		public override bool Equals(object obj) {
+			return obj is MeshEntry entry && Equals(entry);
+		}
+
+		public bool Equals(MeshEntry other) {
+			return this.Name.Equals(other.Name, StringComparison.InvariantCultureIgnoreCase);
+		}
+
+		public override int GetHashCode() {
+			return this.Name.GetHashCode();
+		}
+
+
+		public static bool operator ==(MeshEntry left, MeshEntry right) {
+			return left.Equals(right);
+		}
+
+		public static bool operator !=(MeshEntry left, MeshEntry right) {
+			return !(left == right);
+		}
+
+		#endregion
 
 	}
 

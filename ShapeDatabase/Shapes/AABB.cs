@@ -8,7 +8,7 @@ namespace ShapeDatabase.Shapes {
 	/// This is a box which perfectly surrounds the whole shape.
 	/// </summary>
 	[DebuggerDisplay("({MinX}, {MinY}, {MinZ});({MaxX}, {MaxY}, {MaxZ})")]
-	public struct AABB : IBoundingBox {
+	public struct AABB : IBoundingBox, IEquatable<AABB> {
 
 		#region --- Properties ---
 
@@ -88,6 +88,44 @@ namespace ShapeDatabase.Shapes {
 		#endregion
 
 		#region --- Methods ---
+
+		#region -- Instance Methods ---
+
+		public override bool Equals(object obj) {
+			return obj is AABB aABB && Equals(aABB);
+		}
+
+		public bool Equals(AABB other) {
+			return this.MinX == other.MinX &&
+				   this.MaxX == other.MaxX &&
+				   this.MinY == other.MinY &&
+				   this.MaxY == other.MaxY &&
+				   this.MinZ == other.MinZ &&
+				   this.MaxZ == other.MaxZ;
+		}
+
+		public override int GetHashCode() {
+			// Automaticall generated code
+			int hashCode = 1957011258;
+			hashCode = hashCode * -1521134295 + this.MinX.GetHashCode();
+			hashCode = hashCode * -1521134295 + this.MaxX.GetHashCode();
+			hashCode = hashCode * -1521134295 + this.MinY.GetHashCode();
+			hashCode = hashCode * -1521134295 + this.MaxY.GetHashCode();
+			hashCode = hashCode * -1521134295 + this.MinZ.GetHashCode();
+			hashCode = hashCode * -1521134295 + this.MaxZ.GetHashCode();
+			return hashCode;
+		}
+
+		public static bool operator ==(AABB left, AABB right) {
+			return left.Equals(right);
+		}
+
+		public static bool operator !=(AABB left, AABB right) {
+			return !(left == right);
+		}
+
+
+		#endregion
 
 		#region -- Static Methods --
 

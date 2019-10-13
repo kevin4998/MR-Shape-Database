@@ -59,6 +59,7 @@ namespace ShapeDatabase.Shapes {
 		public IBoundingBox GetBoundingBox() {
 			return AABB.FromMesh(this);
 		}
+
 		public Vector3 GetVertex(uint pos) {
 			return VectorConvert(Base.GetVertex(Convert.ToInt32(pos)));
 		}
@@ -85,10 +86,19 @@ namespace ShapeDatabase.Shapes {
 		#region -- Operators --
 
 		public static implicit operator GeometryMesh(g3.DMesh3 mesh) {
-			return mesh == null ? null : new GeometryMesh(mesh);
+			return ToGeometryMesh(mesh);
 		}
 
 		public static implicit operator g3.DMesh3(GeometryMesh mesh) {
+			return ToDMesh3(mesh);
+		}
+
+
+		public static GeometryMesh ToGeometryMesh(DMesh3 mesh) {
+			return mesh == null ? null : new GeometryMesh(mesh);
+		}
+
+		public static DMesh3 ToDMesh3(GeometryMesh mesh) {
 			return mesh?.Base as g3.DMesh3;
 		}
 
