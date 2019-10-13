@@ -6,6 +6,7 @@ using ShapeDatabase.UI;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 
 namespace ShapeDatabase {
 
@@ -41,6 +42,21 @@ namespace ShapeDatabase {
 				Settings.Mode = mode | OperationMode.VIEW;
 			Settings.Culture = CultureInfo.GetCultureInfo(options.Culture);
 			Settings.ShowDebug = options.DebugMessages;
+
+			if (options.CleanStart) {
+				Console.WriteLine("Cleaning directories!");
+				string[] cachedDirs = new string[] {
+					Settings.ShapeFailedDir,
+					Settings.ShapeFinalDir,
+					Settings.ShapeTempDir
+					//Settings.MeasurementsFile
+				};
+				foreach (string dir in cachedDirs) {
+					DirectoryInfo info = new DirectoryInfo(dir);
+					info.Delete(true);
+				}
+				Console.WriteLine("Finished cleaning directories!");
+			}
 
 			Console.WriteLine("Done converting input!");
 			// Start program activity.
@@ -195,6 +211,7 @@ namespace ShapeDatabase {
 		/// visualisation or measurements.
 		/// </summary>
 		static void LoadFinalFiles() {
+			Directory.CreateDirectory(Settings.ShapeFinalDir);
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
 		}
 

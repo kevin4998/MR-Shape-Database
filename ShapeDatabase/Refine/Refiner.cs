@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.CompilerServices;
+//using Accord.Math;
 using Accord.Statistics.Analysis;
+using Accord.Statistics.Models.Regression.Linear;
 using g3;
 using gs;
 using OpenTK;
@@ -188,6 +190,8 @@ namespace ShapeDatabase.Refine {
 
 		#region --- Properties ---
 
+		private const string EX_3D_VEC = "The given vector is not 3 dimensional but: '{0}'.";
+
 		private const float MIN_VALUE = -1f;
 		private const float MAX_VALUE = 1f;
 
@@ -222,14 +226,13 @@ namespace ShapeDatabase.Refine {
 				ScaleShape(
 					FlipShape(
 						AlignShape(
-							CenterShape(mesh)
+							OffCenterShape(mesh)
 						)
 					)
 				);
 			transformed.IsNormalised = true;
 			IO.OFFWriter.Instance.WriteFile(transformed, file.FullName);
 		}
-
 
 		/// <summary>
 		/// Attempts to find the centroid or barycenter point of a mesh
@@ -286,6 +289,19 @@ namespace ShapeDatabase.Refine {
 			return Math.Sqrt(sum * (sum-a) * (sum-b) * (sum-c));
 		}
 
+		// Move into the positive area.
+		private static Shapes.SimpleMesh OffCenterShape(Shapes.IMesh mesh) {
+			uint vertices = mesh.VertexCount;
+			Vector3 smallesPoint = mesh.GetBoundingBox().Min;
+
+			Vector3[] points = new Vector3[vertices];
+			for (uint i = 0; i < vertices; i++)
+				points[i] = mesh.GetVertex(i) - smallesPoint;
+
+			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
+			modifiedMesh.Vertices = points;
+			return modifiedMesh;
+		}
 
 		private static Shapes.SimpleMesh CenterShape(Shapes.IMesh mesh) {
 			uint vertices = mesh.VertexCount;
@@ -300,20 +316,33 @@ namespace ShapeDatabase.Refine {
 			return modifiedMesh;
 		}
 
-		private static Shapes.SimpleMesh AlignShape(Shapes.IMesh mesh) {
+		private static Shapes.SimpleMesh AlignShape(Shapes.SimpleMesh mesh) {
+			// Prepare matrix of all the vectors to present to PCA.
 			double[][] matrix = new double[mesh.VertexCount][];
-			for (uint i = 0; i < mesh.VertexCount; i++) {
-				Vector3 point = mesh.GetVertex(i);
-				matrix[i] = new double[] { point.X, point.Y, point.Z };
-			}
-
+			for (uint i = 0; i < mesh.VertexCount; i++)
+				matrix[i] = mesh.GetVertex(i).AsArrayD();
+			// Call PCA using The Accord library.
 			PrincipalComponentAnalysis pca =
-				new PrincipalComponentAnalysis(PrincipalComponentMethod.Standardize,
-											   true, 3);
-			pca.Learn(matrix);
-			double[][] modified = pca.Transform(matrix);
-			Vector3[] vectors = NumberUtil.Vectorize(modified);
+				new PrincipalComponentAnalysis(PrincipalComponentMethod.Center,
+											   false, 3);
+			MultivariateLinearRegression regression = pca.Learn(matrix);
+			double[][] transformed = regression.Transform(matrix);
+			Vector3[] vectors = transformed.Vectorize();
 
+			/*
+			// Find the collection of eigenVectors.
+			double[][] eigenvectors = pca.ComponentVectors;
+			// Convert the coordinate system to the eigenvector one.
+			Vector3[] vectors = new Vector3[mesh.VertexCount];
+			for (int i = (int) mesh.VertexCount - 1; i >= 0; i--) {
+				double[] currentVector = matrix[i];
+				double[] newVector = Accord.Math.Matrix.Dot(eigenvectors,
+															currentVector);
+				vectors[i] = newVector.AsVector();
+			}
+			*/
+
+			// Provide the new positions into the mesh.
 			Shapes.SimpleMesh simple = Shapes.SimpleMesh.CreateFrom(mesh);
 			simple.Vertices = vectors;
 			return simple;
@@ -344,14 +373,19 @@ namespace ShapeDatabase.Refine {
 		private static Shapes.SimpleMesh ScaleShape(Shapes.IMesh mesh) {
 			IBoundingBox bb = mesh.GetBoundingBox();
 
-			Vector3 size = bb.Size;
-			float dif = NumberUtil.Max(size.X, size.Y, size.Z);
-			float scale = (MAX_VALUE - MIN_VALUE) / dif;
 
-			uint vertices = mesh.VertexCount;
-			Vector3[] points = new Vector3[vertices];
-			for (uint i = 0; i < vertices; i++)
-				points[i] = mesh.GetVertex(i) * scale;
+			float min = NumberUtil.Min(bb.MinX, bb.MinY, bb.MinZ);
+			float max = NumberUtil.Max(bb.MaxX, bb.MaxY, bb.MaxZ);
+			float dif = (MAX_VALUE - MIN_VALUE) / (max - min);
+
+			Vector3 minVector = new Vector3(min, min, min);
+			Vector3 minExpVector = new Vector3(MIN_VALUE, MIN_VALUE, MIN_VALUE);
+
+			Vector3[] points = new Vector3[mesh.VertexCount];
+			for (int i = points.Length - 1; i >= 0; i--) {
+				points[i] = (mesh.GetVertex((uint) i) - minVector) * dif + minExpVector;
+			}
+
 
 			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
 			modifiedMesh.Vertices = points;

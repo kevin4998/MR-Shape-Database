@@ -49,6 +49,16 @@ namespace ShapeDatabase {
 		public bool DebugMessages { get; set; }
 
 		/// <summary>
+		/// Describes if previously saved data for speed should be kept during this
+		/// execution.
+		/// </summary>
+		[Option("clean",
+			Required = false,
+			Default = false,
+			HelpText = "If the cached should be removed as if it was a clean install.")]
+		public bool CleanStart { get; set; }
+
+		/// <summary>
 		/// A collection of examples on how to use this application.
 		/// Easier for learning where to find your libraries.
 		/// </summary>
