@@ -78,9 +78,9 @@ namespace ShapeDatabase.Shapes {
 			double b = Vector3.Distance(points[1], points[2]);
 			double c = Vector3.Distance(points[2], points[0]);
 			double sum = (a + b + c) / 2;
-			return Math.Sqrt(sum * (sum - a) * (sum - b) * (sum - c));
+			double area = Math.Sqrt(sum * (sum - a) * (sum - b) * (sum - c));
+			return double.IsNaN(area) ? 0 : area;
 		}
-
 	}
 
 }

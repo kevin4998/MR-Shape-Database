@@ -30,5 +30,18 @@ namespace ShapeDatabase.Features
 
 			return new ElemDescriptor("SurfaceArea", surfaceArea);
 		}
+
+		/// <summary>
+		/// Elementary descriptor for calculating the volume of the axis-aligned bouding box
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The elementary descriptor with the calculated value</returns>
+		public static ElemDescriptor BoundingBoxVolume(IMesh mesh)
+		{
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+
+			return new ElemDescriptor("BoundingBoxVolume", mesh.GetBoundingBox().Volume);
+		}
 	}
 }

@@ -257,7 +257,7 @@ namespace ShapeDatabase.Refine {
 				Vector3[] vertices = mesh.GetVerticesFromFace(face);
 
 				double area = mesh.GetTriArea(vertices);
-				if (double.IsNaN(area))
+				if (area == 0)
 					continue;
 				totalSum += OpenTK.Vector3d.Multiply(
 					(OpenTK.Vector3d) CenterOfTriangle(vertices), area);

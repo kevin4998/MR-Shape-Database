@@ -83,8 +83,7 @@ namespace ShapeDatabase.Features.Descriptors
 
 			if (library != null)
 				foreach(MeshEntry entry in library)
-					FeatureVectors.Add(entry.Name, CalculateVector(entry));
-
+					CalculateVector(entry);
 		}
 
 		/// <summary>

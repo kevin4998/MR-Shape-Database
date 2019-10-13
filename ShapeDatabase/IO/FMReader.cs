@@ -111,7 +111,6 @@ namespace ShapeDatabase.Features
 
 				for(int i = 0; i < descriptorNames.Length; i++)
 				{
-					descriptors.Clear();
 					string value = values[i];
 
 					//Check whether value is an ElemDescriptor or HistDescriptor
