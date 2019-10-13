@@ -94,7 +94,7 @@ namespace ShapeDatabase.Features
 				descriptorValues.Add(vector.Key);
 				foreach(IDescriptor desc in vector.Value.Descriptors)
 				{
-					descriptorValues.Add(desc.Serialize());
+					descriptorValues.Add(desc.Serialise());
 				}
 				writer.WriteLine(string.Join(Seperator, descriptorValues.ToArray()));
 			}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ShapeDatabase.Features.Descriptors
@@ -42,9 +43,25 @@ namespace ShapeDatabase.Features.Descriptors
 			throw new NotImplementedException();
 		}
 
-		public override string Serialize() {
-			IFormatProvider format = Settings.Culture;
-			return Value.ToString(format);
+		protected override StringBuilder SubSerialise(StringBuilder builder) {
+			return builder?.Append(Value);
+		}
+
+		public static ElemDescriptor DeSerialise(string serialised) {
+			if (string.IsNullOrEmpty(serialised))
+				throw new ArgumentNullException(nameof(serialised));
+			
+			string[] split = serialised.Split(NameSeperator);
+			if (split.Length == 0)
+				return null;
+
+			string name = split[0];
+			string stringValue = (split.Length > 1) ? split[1] : "0";
+
+			if (!double.TryParse(stringValue, out double value))
+				return null;
+
+			return new ElemDescriptor(name, value);
 		}
 
 		#endregion
