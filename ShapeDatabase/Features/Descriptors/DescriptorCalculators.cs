@@ -1,10 +1,15 @@
 ﻿using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.Shapes;
+using ShapeDatabase.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenTK;
+using System.Runtime.CompilerServices;
+using Accord.Statistics.Analysis;
+using Accord.Statistics.Models.Regression.Linear;
 
 namespace ShapeDatabase.Features
 {
@@ -42,6 +47,31 @@ namespace ShapeDatabase.Features
 				throw new ArgumentNullException(nameof(mesh));
 
 			return new ElemDescriptor("BoundingBoxVolume", mesh.GetBoundingBox().Volume);
+		}
+
+		/// <summary>
+		/// Elementary descriptor for calculating the ratio between largest and smallest eigenvalues
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The elementary descriptor with the calculated value</returns>
+		public static ElemDescriptor Eccentricity(IMesh mesh)
+		{
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+
+			// Prepare matrix of all the vectors to present to PCA.
+			double[][] matrix = new double[mesh.VertexCount][];
+			for (uint i = 0; i < mesh.VertexCount; i++)
+				matrix[i] = mesh.GetVertex(i).AsArrayD();
+			// Call PCA using The Accord library.
+			PrincipalComponentAnalysis pca =
+				new PrincipalComponentAnalysis(PrincipalComponentMethod.Center,
+											   false, 3);
+			MultivariateLinearRegression regression = pca.Learn(matrix);
+			// Find the collection of eigenVectors.
+			double[] eigenvalues = pca.Eigenvalues;
+
+			return new ElemDescriptor("Eccentricity", eigenvalues[0] / eigenvalues[2]);
 		}
 	}
 }

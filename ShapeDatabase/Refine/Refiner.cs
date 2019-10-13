@@ -317,8 +317,8 @@ namespace ShapeDatabase.Refine {
 				double[] newVector = Accord.Math.Matrix.Dot(eigenvectors,
 															currentVector);
 				vectors[i] = newVector.AsVector();
-			}
-			*/
+			}*/
+			
 
 			// Provide the new positions into the mesh.
 			Shapes.SimpleMesh simple = Shapes.SimpleMesh.CreateFrom(mesh);
