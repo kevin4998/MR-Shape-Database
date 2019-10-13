@@ -84,21 +84,21 @@ namespace ShapeDatabase {
 		/// </summary>
 		NONE = 0,
 		/// <summary>
+		/// Describes that the user wants to view the shapes.
+		/// </summary>
+		VIEW = 1,
+		/// <summary>
 		/// Describes that the application should refine these shapes.
 		/// </summary>
-		REFINE = 1,
+		REFINE = 2,
 		/// <summary>
 		/// Describes that the application should export measurements from the shapes.
 		/// </summary>
-		MEASURE = 2,
-		/// <summary>
-		/// Describes that the user wants to view the shapes.
-		/// </summary>
-		VIEW = 3,
+		MEASURE = 4,
 		/// <summary>
 		/// Describes that the user wants to extract features from the shapes.
 		/// </summary>
-		FEATURES = 4,
+		FEATURES = 8,
 	}
 
 }

@@ -69,8 +69,8 @@ namespace ShapeDatabase {
 				RefineShapes(options.ShapeDirectories);
 			if (Settings.Mode.HasFlag(OperationMode.MEASURE))
 				MeasureShapes(options.ShapeDirectories);
-      if (Settings.Mode.HasFlag(OperationMode.FEATURES))
-        ExtractFeatures(options.ShapeDirectories);
+			if (Settings.Mode.HasFlag(OperationMode.FEATURES))
+				ExtractFeatures(options.ShapeDirectories);
 			if (Settings.Mode.HasFlag(OperationMode.VIEW))
 				ViewShapes(options.ShapeDirectories);
 		}

@@ -57,9 +57,9 @@ namespace ShapeDatabase.UI {
 					_vertices[(i * 6) + (j * 6)]	 = vertices[j].X;
 					_vertices[(i * 6) + (j * 6) + 1] = vertices[j].Y;
 					_vertices[(i * 6) + (j * 6) + 2] = vertices[j].Z;
-					_vertices[(i * 6) + (j * 6) + 3] = Normal.X;
-					_vertices[(i * 6) + (j * 6) + 4] = Normal.Y;
-					_vertices[(i * 6) + (j * 6) + 5] = Normal.Z;
+					_vertices[(i * 6) + (j * 6) + 3] = Math.Abs(Normal.X);
+					_vertices[(i * 6) + (j * 6) + 4] = Math.Abs(Normal.Y);
+					_vertices[(i * 6) + (j * 6) + 5] = Math.Abs(Normal.Z);
 				}
 
 				i += 3;
