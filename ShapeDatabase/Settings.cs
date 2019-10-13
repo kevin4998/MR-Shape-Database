@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
 
@@ -87,7 +88,7 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// A collection of strings which will force the program to stop.
 		/// </summary>
-		public static string[] ExitArguments => new string[] { "exit", "quit", "stop" };
+		public static ICollection<string> ExitArguments => new string[] { "exit", "quit", "stop" };
 
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// A collection of formats which the given reader can convert.
 		/// </summary>
-		string[] SupportedFormats { get; }
+		ICollection<string> SupportedFormats { get; }
 
 		/// <summary>
 		/// Transforms the given file into an object on the current thread.

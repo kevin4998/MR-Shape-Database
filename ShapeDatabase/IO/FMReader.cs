@@ -46,7 +46,7 @@ namespace ShapeDatabase.Features
 		/// Provides a reader creating a featuremanager out of a csv with featurevectors.
 		/// </summary>
 		public static FMReader Instance => lazy.Value;
-		public string[] SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { ".csv" };
 
 		#endregion
 

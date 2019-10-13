@@ -18,10 +18,10 @@ namespace ShapeDatabase.UI
 		{
 			// Load vertex shader and compile
 			// LoadSource is a simple function that just loads all text from the file whose path is given.
-			var shaderSource = LoadSource(vertPath);
+			string shaderSource = LoadSource(vertPath);
 
 			// GL.CreateShader will create an empty shader (obviously). The ShaderType enum denotes which type of shader will be created.
-			var vertexShader = GL.CreateShader(ShaderType.VertexShader);
+			int vertexShader = GL.CreateShader(ShaderType.VertexShader);
 
 			// Now, bind the GLSL source code
 			GL.ShaderSource(vertexShader, shaderSource);
@@ -31,7 +31,7 @@ namespace ShapeDatabase.UI
 
 			// We do the same for the fragment shader
 			shaderSource = LoadSource(fragPath);
-			var fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
+			int fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
 			GL.ShaderSource(fragmentShader, shaderSource);
 			CompileShader(fragmentShader);
 
@@ -58,19 +58,19 @@ namespace ShapeDatabase.UI
 			// later.
 
 			// First, we have to get the number of active uniforms in the shader.
-			GL.GetProgram(Handle, GetProgramParameterName.ActiveUniforms, out var numberOfUniforms);
+			GL.GetProgram(Handle, GetProgramParameterName.ActiveUniforms, out int numberOfUniforms);
 
 			// Next, allocate the dictionary to hold the locations.
 			_uniformLocations = new Dictionary<string, int>();
 
 			// Loop over all the uniforms,
-			for (var i = 0; i < numberOfUniforms; i++)
+			for (int i = 0; i < numberOfUniforms; i++)
 			{
 				// get the name of this uniform,
-				var key = GL.GetActiveUniform(Handle, i, out _, out _);
+				string key = GL.GetActiveUniform(Handle, i, out _, out _);
 
 				// get the location,
-				var location = GL.GetUniformLocation(Handle, key);
+				int location = GL.GetUniformLocation(Handle, key);
 
 				// and then add it to the dictionary.
 				_uniformLocations.Add(key, location);
@@ -84,7 +84,7 @@ namespace ShapeDatabase.UI
 			GL.CompileShader(shader);
 
 			// Check for compilation errors
-			GL.GetShader(shader, ShaderParameter.CompileStatus, out var code);
+			GL.GetShader(shader, ShaderParameter.CompileStatus, out int code);
 			if (code != (int)All.True)
 			{
 				// We can use `GL.GetShaderInfoLog(shader)` to get information about the error.
@@ -98,7 +98,7 @@ namespace ShapeDatabase.UI
 			GL.LinkProgram(program);
 
 			// Check for linking errors
-			GL.GetProgram(program, GetProgramParameterName.LinkStatus, out var code);
+			GL.GetProgram(program, GetProgramParameterName.LinkStatus, out int code);
 			if (code != (int)All.True)
 			{
 				// We can use `GL.GetProgramInfoLog(program)` to get information about the error.
@@ -125,7 +125,7 @@ namespace ShapeDatabase.UI
 		// Just loads the entire file into a string.
 		private static string LoadSource(string path)
 		{
-			using (var sr = new StreamReader(path, Encoding.UTF8))
+			using (StreamReader sr = new StreamReader(path, Encoding.UTF8))
 			{
 				return sr.ReadToEnd();
 			}

@@ -23,7 +23,7 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		public static GeomOffWriter Instance => lazy.Value;
 
-		public string[] SupportedFormats { get; } = new string[] { "off" };
+		public ICollection<string> SupportedFormats { get; } = new string[] { "off" };
 		private WriteOptions Options { get; } = WriteOptions.Defaults;
 
 		#endregion

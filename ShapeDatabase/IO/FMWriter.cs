@@ -35,7 +35,7 @@ namespace ShapeDatabase.Features
 		/// Provides a writer to convert <see cref="RecordHolder"/>s into csv.
 		/// </summary>
 		public static FMWriter Instance => lazy.Value;
-		public string[] SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { ".csv" };
 
 		#endregion
 

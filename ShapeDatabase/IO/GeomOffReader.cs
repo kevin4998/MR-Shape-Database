@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using g3;
@@ -15,7 +16,7 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		public static GeomOffReader Instance => instance.Value;
 
-		public string[] SupportedFormats => new string[] { "off" };
+		public ICollection<string> SupportedFormats => new string[] { "off" };
 
 		private GeomOffReader() { }
 

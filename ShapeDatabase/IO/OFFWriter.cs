@@ -1,6 +1,7 @@
 ﻿using OpenTK;
 using ShapeDatabase.Shapes;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace ShapeDatabase.IO
 	/// </summary>
 	public class OFFWriter : IWriter<IMesh>
 	{
-		public string[] SupportedFormats { get; } = new string[] { "off" };
+		public ICollection<string> SupportedFormats { get; } = new string[] { "off" };
 
 		private static readonly Lazy<OFFWriter> lazy =
 			new Lazy<OFFWriter>(() => new OFFWriter());

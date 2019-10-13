@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -38,8 +39,6 @@ namespace ShapeDatabase.IO {
 			new Lazy<IReader<GeometryMesh>[]>(ProduceReaders);
 		private static readonly Lazy<IRefiner<IMesh>[]> LocalRefiners =
 			new Lazy<IRefiner<IMesh>[]>(ProduceRefiners);
-		private static readonly Lazy<IWriter<IMesh>> LocalWriter =
-			new Lazy<IWriter<IMesh>>(ProduceWriter);
 
 		private static IReader<GeometryMesh>[] ProduceReaders() {
 			return new IReader<GeometryMesh>[] {
@@ -54,11 +53,6 @@ namespace ShapeDatabase.IO {
 			};
 		}
 
-		private static IWriter<IMesh> ProduceWriter()
-		{
-			return OFFWriter.Instance;
-		}
-
 		#endregion
 
 		#region -- Instance Variables --
@@ -68,7 +62,6 @@ namespace ShapeDatabase.IO {
 			new Dictionary<string, IReader<GeometryMesh>>();
 		private readonly ICollection<IRefiner<IMesh>> refiners =
 			new List<IRefiner<IMesh>>(LocalRefiners.Value);
-		private readonly IWriter<IMesh> writer = LocalWriter.Value;
 
 
 		/// <summary>

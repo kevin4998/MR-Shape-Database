@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace ShapeDatabase.IO {
 		/// Provides a writer to convert <see cref="RecordHolder"/>s into csv.
 		/// </summary>
 		public static RecordsWriter Instance => lazy.Value;
-		public string[] SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { ".csv" };
 
 		#endregion
 

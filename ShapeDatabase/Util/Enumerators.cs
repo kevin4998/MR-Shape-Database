@@ -23,8 +23,8 @@ namespace ShapeDatabase.Util {
 		/// </param>
 		/// <returns>A new enumerator over the same object but providing the given
 		/// value.</returns>
-		public static IEnumerator<B> ConvertTo<A,B>(this IEnumerator<A> enumerator,
-														Func<A, B> converter) {
+		public static IEnumerator<TReturn> ConvertTo<TCurrent, TReturn>(
+			this IEnumerator<TCurrent> enumerator, Func<TCurrent, TReturn> converter) {
 			return FromConvert(enumerator, converter);
 		}
 
@@ -44,29 +44,31 @@ namespace ShapeDatabase.Util {
 		/// value.</returns>
 		/// <exception cref="ArgumentNullException">If any of the provided parameters
 		/// is equal to <see langword="null"/>.</exception>
-		public static IEnumerator<B> FromConvert<A, B>(IEnumerator<A> enumerator,
-													   Func<A, B> converter) {
-			return new ConvertEnumerator<A, B>(enumerator, converter);
+		public static IEnumerator<TReturn> FromConvert<TCurrent, TReturn>(
+			IEnumerator<TCurrent> enumerator, Func<TCurrent, TReturn> converter) {
+			return new ConvertEnumerator<TCurrent, TReturn>(enumerator, converter);
 		}
 
-		public static IEnumerator<B> CombineConvert<A, B>(IEnumerator<A> enumerator,
-														Func<A, A, A, B> converter) {
-			return new TripleCombineEnumerator<A, B>(enumerator, converter);
+		public static IEnumerator<TReturn> CombineConvert<TCurrent, TReturn>(
+			IEnumerator<TCurrent> enumerator,
+			Func<TCurrent, TCurrent, TCurrent, TReturn> converter) {
+			return new TripleCombineEnumerator<TCurrent, TReturn>(enumerator, converter);
 		}
 
-		public static IEnumerable<A> FromEnumerator<A>(IEnumerator<A> enumerator) {
-			return new Enumerable<A>(enumerator);
+		public static IEnumerable<T> FromEnumerator<T>(
+			IEnumerator<T> enumerator) {
+			return new Enumerable<T>(enumerator);
 		}
 
-		public static IEnumerator<A> SpecifyType<A>(IEnumerator enumerator) {
-			return new TypeEnumerator<A>(enumerator);
+		public static IEnumerator<T> SpecifyType<T>(IEnumerator enumerator) {
+			return new TypeEnumerator<T>(enumerator);
 		}
 
-		public static IEnumerator<TResult> Cast<TResult>(this IEnumerator enumerator) {
-			return SpecifyType<TResult>(enumerator);
+		public static IEnumerator<T> Cast<T>(this IEnumerator enumerator) {
+			return SpecifyType<T>(enumerator);
 		}
 
-		public static IEnumerable<TResult> Enumerate<TResult>(this IEnumerator<TResult> enumerator) {
+		public static IEnumerable<T> Enumerate<T>(this IEnumerator<T> enumerator) {
 			if (enumerator == null)
 				throw new ArgumentNullException(nameof(enumerator));
 

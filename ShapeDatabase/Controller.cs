@@ -164,7 +164,7 @@ namespace ShapeDatabase {
 								  "or write down 'stop' to exit the program.");
 				string input = Console.ReadLine();
 
-				if (Array.IndexOf(Settings.ExitArguments, input.ToLower()) != -1) {
+				if (Settings.ExitArguments.Contains(input.ToLower(Settings.Culture))) {
 					Settings.DirectShutDown = true;
 					break;
 				} else if (meshes.Names.Contains(input)) {
