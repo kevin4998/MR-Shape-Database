@@ -10,7 +10,7 @@ namespace ShapeDatabase.UI
 {
 	public class Shader
 	{
-		public readonly int Handle;
+		public int Handle { get; private set; }
 
 		private readonly Dictionary<string, int> _uniformLocations;
 

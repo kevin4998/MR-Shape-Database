@@ -77,7 +77,7 @@ namespace ShapeDatabase {
 	/// Different execution processes which this application can follow.
 	/// </summary>
 	[Flags]
-	public enum OperationMode {
+	public enum OperationModes {
 
 		/// <summary>
 		/// Describes that the behaviour is not specified.
@@ -98,7 +98,8 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// Describes that the user wants to extract features from the shapes.
 		/// </summary>
-		FEATURES = 8,
+		FEATURES = 8
+
 	}
 
 }

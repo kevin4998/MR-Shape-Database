@@ -52,7 +52,7 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// The current processes which needs to be executed.
 		/// </summary>
-		public static OperationMode Mode { get; set; } = OperationMode.VIEW;
+		public static OperationModes Mode { get; set; } = OperationModes.VIEW;
 
 		/// <summary>
 		/// The culture which is required for converting the shape files.

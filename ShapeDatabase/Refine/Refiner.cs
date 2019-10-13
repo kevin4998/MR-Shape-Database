@@ -131,6 +131,8 @@ namespace ShapeDatabase.Refine {
 		/// <returns><see langword="true"/> if the given mesh has too many faces.
 		/// </returns>
 		public bool RequireRefinement(Shapes.IMesh mesh) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
 			return mesh.VertexCount != DESIRED_VERTICES;
 		}
 
@@ -155,7 +157,6 @@ namespace ShapeDatabase.Refine {
 
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(5000);
-			new MeshAutoRepair(meshDMesh3);
 
 			GeomOffWriter.Instance.WriteFile(meshDMesh3, file.FullName);
 		}
@@ -216,10 +217,16 @@ namespace ShapeDatabase.Refine {
 		#region --- Instance Methods ---
 
 		public bool RequireRefinement(Shapes.IMesh mesh) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
 			return !mesh.IsNormalised;
 		}
 
 		public void RefineMesh(Shapes.IMesh mesh, FileInfo file) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+			if (file == null)
+				throw new ArgumentNullException(nameof(file));
 			Shapes.SimpleMesh transformed =
 				ScaleShape(
 					FlipShape(
