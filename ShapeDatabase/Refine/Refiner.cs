@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.CompilerServices;
-//using Accord.Math;
 using Accord.Statistics.Analysis;
 using Accord.Statistics.Models.Regression.Linear;
 using g3;
@@ -190,8 +189,6 @@ namespace ShapeDatabase.Refine {
 
 		#region --- Properties ---
 
-		private const string EX_3D_VEC = "The given vector is not 3 dimensional but: '{0}'.";
-
 		private const float MIN_VALUE = -1f;
 		private const float MAX_VALUE = 1f;
 
@@ -226,13 +223,14 @@ namespace ShapeDatabase.Refine {
 				ScaleShape(
 					FlipShape(
 						AlignShape(
-							OffCenterShape(mesh)
+							CenterShape(mesh)
 						)
 					)
 				);
 			transformed.IsNormalised = true;
 			IO.OFFWriter.Instance.WriteFile(transformed, file.FullName);
 		}
+
 
 		/// <summary>
 		/// Attempts to find the centroid or barycenter point of a mesh
@@ -255,6 +253,8 @@ namespace ShapeDatabase.Refine {
 				};
 
 				double area = AreaOfTriangle(vertices);
+				if (double.IsNaN(area))
+					continue;
 				totalSum += OpenTK.Vector3d.Multiply(
 					(OpenTK.Vector3d) CenterOfTriangle(vertices), area);
 
@@ -283,25 +283,12 @@ namespace ShapeDatabase.Refine {
 				throw new ArgumentNullException(nameof(points));
 
 			double a = Vector3.Distance(points[0], points[1]);
-			double b = Vector3.Distance(points[0], points[1]);
-			double c = Vector3.Distance(points[0], points[1]);
+			double b = Vector3.Distance(points[1], points[2]);
+			double c = Vector3.Distance(points[2], points[0]);
 			double sum = (a + b + c) / 2;
 			return Math.Sqrt(sum * (sum-a) * (sum-b) * (sum-c));
 		}
 
-		// Move into the positive area.
-		private static Shapes.SimpleMesh OffCenterShape(Shapes.IMesh mesh) {
-			uint vertices = mesh.VertexCount;
-			Vector3 smallesPoint = mesh.GetBoundingBox().Min;
-
-			Vector3[] points = new Vector3[vertices];
-			for (uint i = 0; i < vertices; i++)
-				points[i] = mesh.GetVertex(i) - smallesPoint;
-
-			Shapes.SimpleMesh modifiedMesh = Shapes.SimpleMesh.CreateFrom(mesh);
-			modifiedMesh.Vertices = points;
-			return modifiedMesh;
-		}
 
 		private static Shapes.SimpleMesh CenterShape(Shapes.IMesh mesh) {
 			uint vertices = mesh.VertexCount;
