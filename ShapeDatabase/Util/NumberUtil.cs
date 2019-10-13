@@ -130,6 +130,9 @@ namespace ShapeDatabase.Util
 		}
 
 		public static Vector3[] Vectorize(this double[][] matrix) {
+			if (matrix == null)
+				throw new ArgumentNullException(nameof(matrix));
+
 			Vector3[] vectors = new Vector3[matrix.GetLength(0)];
 
 			for (int i = vectors.Length - 1; i >= 0; i--)
@@ -140,6 +143,9 @@ namespace ShapeDatabase.Util
 		}
 
 		public static float[][] InvertVectorize(Vector3[] vector) {
+			if (vector == null)
+				throw new ArgumentNullException(nameof(vector));
+
 			float[][] matrix = new float[vector.Length][];
 			for (int i = vector.Length - 1; i >= 0; i--)
 				matrix[i] = vector[i].AsArray();
@@ -147,6 +153,9 @@ namespace ShapeDatabase.Util
 		}
 
 		public static double[][] InvertVectorizeD(Vector3[] vector) {
+			if (vector == null)
+				throw new ArgumentNullException(nameof(vector));
+
 			double[][] matrix = new double[vector.Length][];
 			for (int i = vector.Length - 1; i >= 0; i--)
 				matrix[i] = vector[i].AsArrayD();
@@ -154,10 +163,14 @@ namespace ShapeDatabase.Util
 		}
 
 		public static float[] AsArray(this Vector3 vector) {
+			if (vector == null)
+				throw new ArgumentNullException(nameof(vector));
 			return new float[] { vector.X, vector.Y, vector.Z };
 		}
 
 		public static double[] AsArrayD(this Vector3 vector) {
+			if (vector == null)
+				throw new ArgumentNullException(nameof(vector));
 			return new double[] { vector.X, vector.Y, vector.Z };
 		}
 

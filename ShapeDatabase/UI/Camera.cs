@@ -33,7 +33,7 @@ namespace ShapeDatabase.UI
 		// The position of the camera
 		public Vector3 Position { get; set; }
 		// This is simply the aspect ratio of the viewport, used for the projection matrix
-		public float AspectRatio { private get; set; }
+		public float AspectRatio { get; set; }
 
 		public Vector3 Front => _front;
 		public Vector3 Up => _up;
@@ -48,7 +48,7 @@ namespace ShapeDatabase.UI
 				// We clamp the pitch value between -89 and 89 to prevent the camera from going upside down, and a bunch
 				// of weird "bugs" when you are using euler angles for rotation.
 				// If you want to read more about this you can try researching a topic called gimbal lock
-				var angle = MathHelper.Clamp(value, -89f, 89f);
+				float angle = MathHelper.Clamp(value, -89f, 89f);
 				_pitch = MathHelper.DegreesToRadians(angle);
 				UpdateVectors();
 			}
@@ -73,12 +73,14 @@ namespace ShapeDatabase.UI
 			get => MathHelper.RadiansToDegrees(_fov);
 			set
 			{
-				var angle = MathHelper.Clamp(value, 1f, 45f);
+				float angle = MathHelper.Clamp(value, 1f, 45f);
 				_fov = MathHelper.DegreesToRadians(angle);
 			}
 		}
 
 		public Camera Reset(Window window) {
+			if (window == null)
+				throw new ArgumentNullException(nameof(window));
 			Position = Vector3.UnitZ * 2;
 			AspectRatio = window.Width / (float) window.Height;
 			return this;

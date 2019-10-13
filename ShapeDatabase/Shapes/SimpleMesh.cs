@@ -48,9 +48,9 @@ namespace ShapeDatabase.Shapes {
 		#region --- Constructor Methods ---
 
 		public SimpleMesh(IMesh mesh)
-			: this(mesh.Vertices, mesh.Faces,
-				   mesh.Edges, mesh.Normals,
-				   mesh.IsNormalised) { }
+			: this(mesh?.Vertices, mesh.Faces,
+				   mesh?.Edges, mesh.Normals,
+				   (mesh == null) ? false : mesh.IsNormalised) { }
 
 		public SimpleMesh(IEnumerable<Vector3> vertices,
 						  IEnumerable<Vector3> faces,
@@ -105,7 +105,7 @@ namespace ShapeDatabase.Shapes {
 				if (error)
 					throw new ArgumentNullException(nameof(vectors));
 				else
-					return new Vector3[0];
+					return Array.Empty<Vector3>();
 			}
 
 			if (vectors is Vector3[] array)

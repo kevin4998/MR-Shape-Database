@@ -38,6 +38,9 @@ namespace ShapeDatabase.UI {
 
 		protected void LoadMesh(IMesh mesh)
 		{
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+
 			_vertices = new float[mesh.FaceCount * 18];
 			int i = 0;
 
@@ -66,7 +69,7 @@ namespace ShapeDatabase.UI {
 			}
 		}
 
-		protected virtual void RegisterKeyBinds() {
+		protected void RegisterKeyBinds() {
 
 			const float cameraSpeed = 1.5f;
 
@@ -100,8 +103,10 @@ namespace ShapeDatabase.UI {
 			keybindings.RegisterHold(Key.Down, () => _angleX += 1.5);
 		}
 
-		protected Vector3 GetNormal(Vector3[] verts)
+		protected static Vector3 GetNormal(Vector3[] verts)
 		{
+			if (verts == null)
+				throw new ArgumentNullException(nameof(verts));
 			if (verts.Length != 3)
 				throw new ArgumentException("Input should have 3 vertices.");
 
@@ -182,8 +187,9 @@ namespace ShapeDatabase.UI {
 			base.OnMouseMove(e);
 		}
 
-		protected override void OnMouseWheel(MouseWheelEventArgs e)
-		{
+		protected override void OnMouseWheel(MouseWheelEventArgs e) {
+			if (e == null)
+				throw new ArgumentNullException(nameof(e));
 			_camera.Fov -= e.DeltaPrecise;
 			base.OnMouseWheel(e);
 		}

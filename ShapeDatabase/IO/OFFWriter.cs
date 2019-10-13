@@ -36,8 +36,12 @@ namespace ShapeDatabase.IO
 		/// </summary>
 		/// <param name="type">The unstructured mesh that needs to be written to an off file</param>
 		/// <param name="writer">The streamwriter that needs to be used</param>
-		public void WriteFile(IMesh type, StreamWriter writer)
-		{
+		public void WriteFile(IMesh type, StreamWriter writer) {
+			if (type == null)
+				throw new ArgumentNullException(nameof(type));
+			if (writer == null)
+				throw new ArgumentNullException(nameof(writer));
+
 			Thread.CurrentThread.CurrentCulture = Settings.Culture;
 
 			writer.WriteLine("OFF");

@@ -42,8 +42,8 @@ namespace ShapeDatabase {
 		/// <param name="options">Parsed Command Line Argument Collection.</param>
 		static void OnParsedValues(Options options) {
 			// Convert Options value to Settings.
-			if (Enum.TryParse(options.Mode, true, out OperationMode mode))
-				Settings.Mode = mode | OperationMode.VIEW;
+			if (Enum.TryParse(options.Mode, true, out OperationModes mode))
+				Settings.Mode = mode | OperationModes.VIEW;
 			Settings.Culture = CultureInfo.GetCultureInfo(options.Culture);
 			Settings.ShowDebug = options.DebugMessages;
 
@@ -65,13 +65,13 @@ namespace ShapeDatabase {
 			Console.WriteLine("Done converting input!");
 			// Start program activity.
 			LoadFinalFiles();
-			if (Settings.Mode.HasFlag(OperationMode.REFINE))
+			if (Settings.Mode.HasFlag(OperationModes.REFINE))
 				RefineShapes(options.ShapeDirectories);
-			if (Settings.Mode.HasFlag(OperationMode.MEASURE))
+			if (Settings.Mode.HasFlag(OperationModes.MEASURE))
 				MeasureShapes(options.ShapeDirectories);
-      if (Settings.Mode.HasFlag(OperationMode.FEATURES))
-        ExtractFeatures(options.ShapeDirectories);
-			if (Settings.Mode.HasFlag(OperationMode.VIEW))
+			if (Settings.Mode.HasFlag(OperationModes.FEATURES))
+				ExtractFeatures(options.ShapeDirectories);
+			if (Settings.Mode.HasFlag(OperationModes.VIEW))
 				ViewShapes(options.ShapeDirectories);
 		}
 
