@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.Features.Statistics {
@@ -103,8 +102,7 @@ namespace ShapeDatabase.Features.Statistics {
 		}
 		public IRecordHolder<MeshEntry> TakeSnapShot(IEnumerable<MeshEntry> library) {
 			if (!IsEmpty || IsActive)
-				throw new InvalidOperationException(Resources.EX_Dubble_Snapshot);
-			// TODO: Give custom exception.
+				throw new SnapShotException();
 			if (library == null)
 				throw new ArgumentNullException(nameof(library));
 

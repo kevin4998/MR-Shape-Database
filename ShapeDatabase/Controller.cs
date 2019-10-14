@@ -97,9 +97,9 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
 		static void RefineShapes(IEnumerable<string> dirs) {
-			Console.WriteLine(I_StartProc_Input);
+			Console.WriteLine(I_StartProc_Mesh);
 			LoadNewFiles(dirs, true);
-			Console.WriteLine(I_EndProc_Input);
+			Console.WriteLine(I_EndProc_Mesh);
 			ShowShapeCount();
 		}
 
