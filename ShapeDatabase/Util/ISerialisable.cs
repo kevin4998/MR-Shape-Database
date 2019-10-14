@@ -15,7 +15,7 @@ namespace ShapeDatabase.Util {
 		/// </summary>
 		/// <returns>A string which contains all the information from this object
 		/// to restore it to its original shape again.</returns>
-		string Serialise();
+		string Serialize();
 
 	}
 }

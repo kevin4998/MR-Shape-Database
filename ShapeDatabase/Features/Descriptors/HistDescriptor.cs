@@ -19,7 +19,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// The character which is used to seperate values of
 		/// a single histogram descriptor.
 		/// </summary>
-		public static char HistSeperator => ';';
+		public static string HistSeperator => ";";
 
 		/// <summary>
 		/// The offset value of the first bin
@@ -62,47 +62,17 @@ namespace ShapeDatabase.Features.Descriptors {
 			throw new NotImplementedException();
 		}
 
-		protected override StringBuilder SubSerialise(StringBuilder builder) {
-			if (builder == null)
-				throw new ArgumentNullException(nameof(builder));
+		public override string Serialize() {
+			IFormatProvider format = Settings.Culture;
 
-			builder
-				.Append(Offset)
-				.Append(HistSeperator)
-				.Append(BinSize);
+			string[] histValues = new string[12];
+			histValues[0] = Offset.ToString(format);
+			histValues[1] = BinSize.ToString(format);
 
-			foreach (int value in BinValues)
-				builder.Append(HistSeperator).Append(value);
-
-			return builder;
-		}
-
-		public static HistDescriptor Deserialise(string serialised) {
-			if (string.IsNullOrEmpty(serialised))
-				throw new ArgumentNullException(nameof(serialised));
-
-			string[] split = serialised.Split(NameSeperator);
-			if (split.Length < 2)
-				return null;
-
-			string name = split[0];
-			string histValue = string.Join(HistSeperator.ToString(Settings.Culture),
-										   split, 1, split.Length - 1);
-
-			string[] valueSplit = histValue.Split(HistSeperator);
-			if (valueSplit.Length < 3)
-				return null;
-
-			if (!double.TryParse(valueSplit[0], out double offset)
-				|| !double.TryParse(valueSplit[1], out double binSize))
-				return null;
-
-			int[] values = new int[valueSplit.Length - 2];
-			for (int i = 2; i < valueSplit.Length; i++)
-				if (int.TryParse(valueSplit[i], out values[i]))
-					return null;
-
-			return new HistDescriptor(name, offset, binSize, values);
+			for (int i = 2; i < 12; i++)
+				histValues[i] = BinValues[i].ToString(format);
+			
+			return string.Join(HistSeperator, histValues);
 		}
 
 		#endregion

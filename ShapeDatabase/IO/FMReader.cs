@@ -117,7 +117,7 @@ namespace ShapeDatabase.Features
 					//Check whether value is an ElemDescriptor or HistDescriptor
 					if(!value.Contains(HistSeperator))
 					{
-						descriptors.Add(new ElemDescriptor(descriptorNames[i], Convert.ToDouble(value, Settings.Culture)));
+						descriptors.Add(new ElemDescriptor(descriptorNames[i], Convert.ToDouble(value)));
 					}
 					else
 					{

@@ -134,7 +134,7 @@ namespace ShapeDatabase {
 			Console.WriteLine("Done Measuring Meshes.");
 
 			const string datetimeFormat = "yyyy-MM-dd-HH-mm-ss";
-			string filename = recordHolder.SnapshotTime.ToString(datetimeFormat, Settings.Culture)
+			string filename = recordHolder.SnapshotTime.ToString(datetimeFormat)
 							+ "_"
 							+ Settings.MeasurementsFile;
 			RecordsWriter.Instance.WriteFile(recordHolder, filename);

@@ -86,8 +86,7 @@ namespace ShapeDatabase.Features.Statistics {
 					return true;
 				} else {
 					throw new InvalidCastException(
-						string.Format(Settings.Culture,
-							EX_CAST,
+						string.Format(EX_CAST,
 							typeof(T).Name,
 							result == null ? "NULL" : result.GetType().Name)
 					);
