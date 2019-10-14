@@ -154,6 +154,7 @@ namespace ShapeDatabase {
 			// Content/Analysis/2019-10-04-13-22-52_measures.csv
 			string location = Path.Combine(directory, filename);
 			// Export the generated file
+			Directory.CreateDirectory(directory);
 			RecordsWriter.Instance.WriteFile(recordHolder, location);
 			Console.WriteLine(I_Measure_Exp, filename);
 
@@ -201,6 +202,7 @@ namespace ShapeDatabase {
 			string filename = Settings.FeatureVectorFile;
 			string directory = Settings.FeatureVectorDir;
 
+			Directory.CreateDirectory(directory);
 			string location = Path.Combine(directory, filename);
 
 			if(!Settings.ReadVectorFile)
