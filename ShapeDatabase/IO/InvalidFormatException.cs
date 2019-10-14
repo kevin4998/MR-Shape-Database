@@ -83,7 +83,7 @@ namespace ShapeDatabase.IO {
 		/// <param name="actulFormat">The format which was provided by the file or reader.</param>
 		/// <param name="expectedFormat">The format which this class or reader supports.</param>
 		public InvalidFormatException(string actulFormat, string expectedFormat)
-			: this(string.Format(ArgsMsg, actulFormat, expectedFormat)) {
+			: this(string.Format(Settings.Culture, ArgsMsg, actulFormat, expectedFormat)) {
 			this.ActulFormat = actulFormat;
 			this.ExpectedFormat = expectedFormat;
 		}
@@ -100,7 +100,7 @@ namespace ShapeDatabase.IO {
 		/// handles the inner exception.
 		/// </param>
 		public InvalidFormatException(string actulFormat, string expectedFormat, Exception innerException)
-			: this(string.Format(ArgsMsg, actulFormat, expectedFormat), innerException) {
+			: this(string.Format(Settings.Culture, ArgsMsg, actulFormat, expectedFormat), innerException) {
 			this.ActulFormat = actulFormat;
 			this.ExpectedFormat = expectedFormat;
 		}

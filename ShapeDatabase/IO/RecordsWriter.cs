@@ -22,7 +22,7 @@ namespace ShapeDatabase.IO {
 		/// A string value which represent the seperater character.
 		/// <see cref="SeperatorChar"/>
 		/// </summary>
-		public static string Seperator => SeperatorChar.ToString();
+		public static string Seperator => SeperatorChar.ToString(Settings.Culture);
 
 		private static readonly Lazy<RecordsWriter> lazy =
 			new Lazy<RecordsWriter>(() => new RecordsWriter());

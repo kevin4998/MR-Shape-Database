@@ -117,11 +117,18 @@ namespace ShapeDatabase.Features
 					//Check whether value is an ElemDescriptor or HistDescriptor
 					if(!value.Contains(HistSeperator))
 					{
-						descriptors.Add(new ElemDescriptor(descriptorNames[i], Convert.ToDouble(value)));
+						descriptors.Add(new ElemDescriptor(descriptorNames[i],
+							Convert.ToDouble(value, Settings.Culture)));
 					}
 					else
 					{
-						descriptors.Add(new HistDescriptor(descriptorNames[i], Convert.ToDouble(values[0]), Convert.ToDouble(values[1]), values.Skip(2).Select(x => Int32.Parse(x)).ToArray()));
+						IFormatProvider provider = Settings.Culture;
+						descriptors.Add(new HistDescriptor(descriptorNames[i],
+							Convert.ToDouble(values[0], provider),
+							Convert.ToDouble(values[1], provider),
+							values.Skip(2)
+								.Select(x => int.Parse(x, provider))
+								.ToArray()));
 					}
 				}
 
