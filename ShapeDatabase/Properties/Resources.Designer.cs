@@ -61,6 +61,24 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to exit,quit,stop.
+        /// </summary>
+        internal static string A_ExitArgs {
+            get {
+                return ResourceManager.GetString("A_ExitArgs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ,.
+        /// </summary>
+        internal static string A_ExitSep {
+            get {
+                return ResourceManager.GetString("A_ExitSep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Multimedia Retrieval - K. Westerbaan &amp; G. de Jonge.
         /// </summary>
         internal static string A_WindowName {
@@ -70,20 +88,101 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Content.
+        /// </summary>
+        internal static string D_ContentDir {
+            get {
+                return ResourceManager.GetString("D_ContentDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed.
+        /// </summary>
+        internal static string D_FailedDir {
+            get {
+                return ResourceManager.GetString("D_FailedDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vectors.
+        /// </summary>
+        internal static string D_FeatureDir {
+            get {
+                return ResourceManager.GetString("D_FeatureDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to featurevectors.csv.
+        /// </summary>
+        internal static string D_FeatureFile {
+            get {
+                return ResourceManager.GetString("D_FeatureFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Final.
+        /// </summary>
+        internal static string D_FinalDir {
+            get {
+                return ResourceManager.GetString("D_FinalDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initial.
+        /// </summary>
+        internal static string D_InitialDir {
+            get {
+                return ResourceManager.GetString("D_InitialDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Analysis.
+        /// </summary>
+        internal static string D_MeasureDir {
+            get {
+                return ResourceManager.GetString("D_MeasureDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to measures.csv.
+        /// </summary>
+        internal static string D_MeasureFile {
+            get {
+                return ResourceManager.GetString("D_MeasureFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shapes.
+        /// </summary>
+        internal static string D_ShapesDir {
+            get {
+                return ResourceManager.GetString("D_ShapesDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temp.
+        /// </summary>
+        internal static string D_TempDir {
+            get {
+                return ResourceManager.GetString("D_TempDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to yyyy-MM-dd-HH-mm-ss.
         /// </summary>
         internal static string F_DateFormat {
             get {
                 return ResourceManager.GetString("F_DateFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0}/{1}.
-        /// </summary>
-        internal static string F_File_Features {
-            get {
-                return ResourceManager.GetString("F_File_Features", resourceCulture);
             }
         }
         

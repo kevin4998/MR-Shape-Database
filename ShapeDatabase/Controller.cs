@@ -135,14 +135,26 @@ namespace ShapeDatabase {
 
 			Console.WriteLine(I_EndMeasure);
 
-			string filename = string.Format(		// Example file:
-					Settings.Culture,				// 2019-10-04-13-22-52_measures
-					F_File_Measure,
-					recordHolder.SnapshotTime
-						.ToString(F_DateFormat, Settings.Culture),
-					Settings.MeasurementsFile);
-
-			RecordsWriter.Instance.WriteFile(recordHolder, filename);
+			// Preparation data to construct path and filename.
+			CultureInfo culture = Settings.Culture;
+			DateTime dateTime = recordHolder.SnapshotTime;
+			string timeformat = F_DateFormat;
+			string fileformat = F_File_Measure;
+			string fileApendix = Settings.MeasurementsFile;
+			// Example dir:
+			// Content/Analysis
+			string directory = Settings.MeasurementsDir;
+			// Example time:
+			// 2019-10-04-13-22-52
+			string time = dateTime.ToString(timeformat, culture);
+			// Example file:
+			// 2019-10-04-13-22-52_measures.csv
+			string filename = string.Format(culture, fileformat, time, fileApendix);
+			// Example loc:
+			// Content/Analysis/2019-10-04-13-22-52_measures.csv
+			string location = Path.Combine(directory, filename);
+			// Export the generated file
+			RecordsWriter.Instance.WriteFile(recordHolder, location);
 			Console.WriteLine(I_Measure_Exp, filename);
 
 			ShowShapeCount();
@@ -186,10 +198,10 @@ namespace ShapeDatabase {
 		{
 			LoadNewFiles(dirs, false);
 
-			string location = string.Format(Settings.Culture,
-										F_File_Features,
-										Settings.FeatureVectorDir,
-										Settings.FeatureVectorFile);
+			string filename = Settings.FeatureVectorFile;
+			string directory = Settings.FeatureVectorDir;
+
+			string location = Path.Combine(directory, filename);
 
 			if(!Settings.ReadVectorFile)
 			{

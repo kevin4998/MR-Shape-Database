@@ -117,17 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="A_ExitArgs" xml:space="preserve">
+    <value>exit,quit,stop</value>
+    <comment>A list of different names which will stop the application. The elements are seperated using the A_ExitSep variable. At least 1 element should be in the list.</comment>
+  </data>
+  <data name="A_ExitSep" xml:space="preserve">
+    <value>,</value>
+    <comment>The seperated between the exit commands in the A_ExitArgs list.</comment>
+  </data>
   <data name="A_WindowName" xml:space="preserve">
     <value>Multimedia Retrieval - K. Westerbaan &amp; G. de Jonge</value>
     <comment>The title of the window which will be created by the application.</comment>
   </data>
+  <data name="D_ContentDir" xml:space="preserve">
+    <value>Content</value>
+    <comment>The directory which will be used to save all the content files to.</comment>
+  </data>
+  <data name="D_FailedDir" xml:space="preserve">
+    <value>Failed</value>
+    <comment>The directory which will contain all the shapes that could not be refined by this program.</comment>
+  </data>
+  <data name="D_FeatureDir" xml:space="preserve">
+    <value>Vectors</value>
+    <comment>The directory which will contain the different extracted feature vectors.</comment>
+  </data>
+  <data name="D_FeatureFile" xml:space="preserve">
+    <value>featurevectors.csv</value>
+    <comment>The file where all the features/descriptors will be saved in.</comment>
+  </data>
+  <data name="D_FinalDir" xml:space="preserve">
+    <value>Final</value>
+    <comment>The directory which will contain all the shapes that have fully been refined by the program.</comment>
+  </data>
+  <data name="D_InitialDir" xml:space="preserve">
+    <value>Initial</value>
+    <comment>The directory which will contain the initial shapes that need to be processed.</comment>
+  </data>
+  <data name="D_MeasureDir" xml:space="preserve">
+    <value>Analysis</value>
+    <comment>The directory which will contain the different extracted measurements/statistics.</comment>
+  </data>
+  <data name="D_MeasureFile" xml:space="preserve">
+    <value>measures.csv</value>
+    <comment>The file where all the statistics/measurements will be saved in.</comment>
+  </data>
+  <data name="D_ShapesDir" xml:space="preserve">
+    <value>Shapes</value>
+    <comment>The directory which will contain all the shape files.</comment>
+  </data>
+  <data name="D_TempDir" xml:space="preserve">
+    <value>Temp</value>
+    <comment>The directory which will store all the shapes during processing phase, this map is temporary.</comment>
+  </data>
   <data name="F_DateFormat" xml:space="preserve">
     <value>yyyy-MM-dd-HH-mm-ss</value>
     <comment>The format which is being used to visualise dates on exported files.</comment>
-  </data>
-  <data name="F_File_Features" xml:space="preserve">
-    <value>{0}/{1}</value>
-    <comment>The format for where the featurevectors will be stored.</comment>
   </data>
   <data name="F_File_Measure" xml:space="preserve">
     <value>{0}_{1}</value>
