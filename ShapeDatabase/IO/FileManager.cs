@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
+using ShapeDatabase.Properties;
 using ShapeDatabase.Refine;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.Util;
@@ -18,14 +19,6 @@ namespace ShapeDatabase.IO {
 	public class FileManager {
 
 		#region --- Properties ---
-
-		#region -- Error Messages --
-
-		private const string EX_NO_EXT = "No extension where provided for reader \'{0}\'.";
-		private const string EX_DIR_NE = "The provided directory does not exist \'{0}\'.";
-		private const string EX_FORMAT = "Could not load file '{0}' because of an Exception.";
-
-		#endregion
 
 		#region -- Static Variables --
 
@@ -107,7 +100,9 @@ namespace ShapeDatabase.IO {
 				if (reader != null)
 					foreach (string format in reader.SupportedFormats) {
 						if (format == null || format.Length == 0)
-							throw new ArgumentException(EX_NO_EXT, reader.GetType().FullName);
+							throw new ArgumentException(
+								Resources.EX_Missing_Ext,
+								reader.GetType().FullName);
 						string ext = format.ToLower(Settings.Culture);
 						if (ext[0] != '.')
 							ext = '.' + ext;
@@ -233,7 +228,8 @@ namespace ShapeDatabase.IO {
 				throw new ArgumentNullException(nameof(directory));
 			if (!directory.Exists)
 				throw new ArgumentException(
-					string.Format(Settings.Culture, EX_DIR_NE, directory.FullName));
+					Resources.EX_Directoy_NotExist,
+					directory.FullName);
 
 			Queue<DirectoryInfo> pdirs  = new Queue<DirectoryInfo>();
 			Queue<FileInfo>      pfiles = new Queue<FileInfo>();
@@ -331,7 +327,7 @@ namespace ShapeDatabase.IO {
 					IMesh mesh = reader.ConvertFile(stream);
 					return new InfoMesh(file, mesh);
 				} catch (InvalidFormatException ex) {
-					Console.WriteLine(EX_FORMAT, file.FullName);
+					Console.WriteLine(Resources.EX_FileNotLoad, file.FullName);
 					Console.WriteLine(ex);
 					return InfoMesh.NULL;
 				}

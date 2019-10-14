@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.Security.Permissions;
 using ShapeDatabase.Util;
 
+using static ShapeDatabase.Properties.Resources;
+
 namespace ShapeDatabase.IO {
 
 	/// <summary>
@@ -15,9 +17,6 @@ namespace ShapeDatabase.IO {
 	[Serializable]
 	public class InvalidFormatException : IOException {
 
-		// Message attributes, should be refactored for Localisation.
-		private const string NoArgMsg = "The provided format could not be processed by this class.";
-		private const string ArgsMsg = "The current class cannot read '{0}', expected format(s) '{1}'.";
 		// Serialisation names for SerializationInfo.
 		private const string serFalse = "Actual";
 		private const string serTrue = "Expected";
@@ -39,7 +38,7 @@ namespace ShapeDatabase.IO {
 		/// which specified that an invalid file format is used in its reader.
 		/// </summary>
 		public InvalidFormatException()
-			: this(NoArgMsg) { }
+			: this(EX_Invalid_Format_No_Args) { }
 
 		/// <summary>
 		/// Initialises a new instance of of the <see cref="InvalidFormatException"/> class,
@@ -83,7 +82,7 @@ namespace ShapeDatabase.IO {
 		/// <param name="actulFormat">The format which was provided by the file or reader.</param>
 		/// <param name="expectedFormat">The format which this class or reader supports.</param>
 		public InvalidFormatException(string actulFormat, string expectedFormat)
-			: this(string.Format(Settings.Culture, ArgsMsg, actulFormat, expectedFormat)) {
+			: this(string.Format(Settings.Culture, EX_Invalid_Format, actulFormat, expectedFormat)) {
 			this.ActulFormat = actulFormat;
 			this.ExpectedFormat = expectedFormat;
 		}
@@ -100,7 +99,7 @@ namespace ShapeDatabase.IO {
 		/// handles the inner exception.
 		/// </param>
 		public InvalidFormatException(string actulFormat, string expectedFormat, Exception innerException)
-			: this(string.Format(Settings.Culture, ArgsMsg, actulFormat, expectedFormat), innerException) {
+			: this(string.Format(Settings.Culture, EX_Invalid_Format, actulFormat, expectedFormat), innerException) {
 			this.ActulFormat = actulFormat;
 			this.ExpectedFormat = expectedFormat;
 		}

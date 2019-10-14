@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.Features.Statistics {
@@ -12,15 +13,6 @@ namespace ShapeDatabase.Features.Statistics {
 	public class RecordHolder : IRecordHolder<MeshEntry> {
 
 		#region --- Properties ---
-
-		#region -- Exception Messages --
-
-		private const string EX_DUBBLE_SNAP = "The current record already contains a snapshot. " +
-			"Please reset the RecordHolder first before taking another snapshot.";
-
-		#endregion
-
-		#region -- Instance Properties --
 
 		private readonly IDictionary<string, Func<MeshEntry, object>> measures =
 			new Dictionary<string, Func<MeshEntry, object>>();
@@ -44,8 +36,6 @@ namespace ShapeDatabase.Features.Statistics {
 					yield return pair.Key;
 			}
 		}
-
-		#endregion
 
 		#endregion
 
@@ -113,7 +103,8 @@ namespace ShapeDatabase.Features.Statistics {
 		}
 		public IRecordHolder<MeshEntry> TakeSnapShot(IEnumerable<MeshEntry> library) {
 			if (!IsEmpty || IsActive)
-				throw new InvalidOperationException(EX_DUBBLE_SNAP);
+				throw new InvalidOperationException(Resources.EX_Dubble_Snapshot);
+			// TODO: Give custom exception.
 			if (library == null)
 				throw new ArgumentNullException(nameof(library));
 

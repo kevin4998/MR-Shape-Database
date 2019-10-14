@@ -6,6 +6,8 @@ using System.Security.Permissions;
 using g3;
 using ShapeDatabase.Util;
 
+using static ShapeDatabase.Properties.Resources;
+
 namespace ShapeDatabase.IO {
 
 	/// <summary>
@@ -17,9 +19,6 @@ namespace ShapeDatabase.IO {
 	public class G3WriterException : IOException {
 
 		#region --- Properties ---
-
-		private const string EX_INVALID_CONS =
-			"Cannot use the constructor without IOWriteResult variables.";
 
 		// Serialisation names for SerializationInfo.
 		private const string serCode = "Code";
@@ -39,7 +38,7 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		protected G3WriterException()
 			: base() {
-			throw new InvalidOperationException(EX_INVALID_CONS);
+			throw new InvalidOperationException(EX_G3_Writer);
 		}
 
 		/// <summary>

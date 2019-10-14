@@ -169,6 +169,46 @@
     <value>Temp</value>
     <comment>The directory which will store all the shapes during processing phase, this map is temporary.</comment>
   </data>
+  <data name="EX_Directoy_NotExist" xml:space="preserve">
+    <value>The provided directory does not exist '{0}'.</value>
+    <comment>The exception which is given when an attempt is made to read from a directory which does not exist.</comment>
+  </data>
+  <data name="EX_Dubble_Snapshot" xml:space="preserve">
+    <value>The current record already contains a snapshot. Please reset the RecordHolder first before taking another snapshot.</value>
+    <comment>The exception which is given when there is an attempt to make another snapshot while a previous one is still stored in it.</comment>
+  </data>
+  <data name="EX_EndOfStream" xml:space="preserve">
+    <value>Cannot read data from the end of a stream.</value>
+    <comment>The exception which is given when an attempt to read from the end of a file is given.</comment>
+  </data>
+  <data name="EX_FileNotFound" xml:space="preserve">
+    <value>Could not load file '{0}' because it does not exist.</value>
+    <comment>The exception which is given when a file could not be read because it could not be found on the device.</comment>
+  </data>
+  <data name="EX_FileNotLoad" xml:space="preserve">
+    <value>Could not load file '{0}' because of an Exception.</value>
+    <comment>The exception which is given when a file could not be read because of another exception. This other exception will be shown after it and execution will continue without this part.</comment>
+  </data>
+  <data name="EX_G3_Writer" xml:space="preserve">
+    <value>Cannot use the constructor without IOWriteResult variables.</value>
+    <comment>The exception which is given when an exception in a writer happens but the cause of the fail is not provided.</comment>
+  </data>
+  <data name="EX_Invalid_Format" xml:space="preserve">
+    <value>The current class cannot read '{0}', expected format(s) '{1}'.</value>
+    <comment>The exception which is given when a format exception is called because of invalid formats.</comment>
+  </data>
+  <data name="EX_Invalid_Format_No_Args" xml:space="preserve">
+    <value>The provided format could not be processed by this class.</value>
+    <comment>The exception which is given when a format exception is called withoutt specifying any arguments for the cause.</comment>
+  </data>
+  <data name="EX_Invalid_Vector_Size" xml:space="preserve">
+    <value>Invalid vector size, expected size 3 but got '{0}'</value>
+    <comment>The exception which is given when an array could not be converted to a 3D vector because the dimensions weren't right.</comment>
+  </data>
+  <data name="EX_Missing_Ext" xml:space="preserve">
+    <value>No extension where provided for reader '{0}'. Add your own reader to the FileManager by using the AddReader(IReader&lt;&gt;) method.</value>
+    <comment>The exception which is given when an attempt to read a file is made that this application does not yet support.</comment>
+  </data>
   <data name="F_DateFormat" xml:space="preserve">
     <value>yyyy-MM-dd-HH-mm-ss</value>
     <comment>The format which is being used to visualise dates on exported files.</comment>

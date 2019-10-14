@@ -1,5 +1,6 @@
 ﻿using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
+using ShapeDatabase.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,12 +25,6 @@ namespace ShapeDatabase.Features
 		/// The character which is used to seperate values of a single histogram descriptor.
 		/// </summary>
 		public static char HistSeperator => ';';
-
-		#endregion
-
-		#region -- Exceptions --
-
-		const string EX_END_STREAM = "Cannot read data from the end of the stream.";
 
 		#endregion
 
@@ -71,7 +66,7 @@ namespace ShapeDatabase.Features
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
 			if (reader.EndOfStream)
-				throw new ArgumentException(EX_END_STREAM);
+				throw new ArgumentException(Resources.EX_EndOfStream);
 
 			Dictionary<string, FeatureVector> featureVectors = GetFeatureVectors(reader);
 

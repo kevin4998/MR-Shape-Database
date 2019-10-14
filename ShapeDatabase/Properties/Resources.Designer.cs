@@ -178,6 +178,96 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided directory does not exist &apos;{0}&apos;..
+        /// </summary>
+        internal static string EX_Directoy_NotExist {
+            get {
+                return ResourceManager.GetString("EX_Directoy_NotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The current record already contains a snapshot. Please reset the RecordHolder first before taking another snapshot..
+        /// </summary>
+        internal static string EX_Dubble_Snapshot {
+            get {
+                return ResourceManager.GetString("EX_Dubble_Snapshot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot read data from the end of a stream..
+        /// </summary>
+        internal static string EX_EndOfStream {
+            get {
+                return ResourceManager.GetString("EX_EndOfStream", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not load file &apos;{0}&apos; because it does not exist..
+        /// </summary>
+        internal static string EX_FileNotFound {
+            get {
+                return ResourceManager.GetString("EX_FileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not load file &apos;{0}&apos; because of an Exception..
+        /// </summary>
+        internal static string EX_FileNotLoad {
+            get {
+                return ResourceManager.GetString("EX_FileNotLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot use the constructor without IOWriteResult variables..
+        /// </summary>
+        internal static string EX_G3_Writer {
+            get {
+                return ResourceManager.GetString("EX_G3_Writer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The current class cannot read &apos;{0}&apos;, expected format(s) &apos;{1}&apos;..
+        /// </summary>
+        internal static string EX_Invalid_Format {
+            get {
+                return ResourceManager.GetString("EX_Invalid_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The provided format could not be processed by this class..
+        /// </summary>
+        internal static string EX_Invalid_Format_No_Args {
+            get {
+                return ResourceManager.GetString("EX_Invalid_Format_No_Args", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid vector size, expected size 3 but got &apos;{0}&apos;.
+        /// </summary>
+        internal static string EX_Invalid_Vector_Size {
+            get {
+                return ResourceManager.GetString("EX_Invalid_Vector_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No extension where provided for reader &apos;{0}&apos;. Add your own reader to the FileManager by using the AddReader(IReader&lt;&gt;) method..
+        /// </summary>
+        internal static string EX_Missing_Ext {
+            get {
+                return ResourceManager.GetString("EX_Missing_Ext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to yyyy-MM-dd-HH-mm-ss.
         /// </summary>
         internal static string F_DateFormat {
