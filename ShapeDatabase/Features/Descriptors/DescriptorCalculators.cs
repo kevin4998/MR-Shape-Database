@@ -88,9 +88,9 @@ namespace ShapeDatabase.Features
 
 			float biggestDiameter = 0;
 
-			Parallel.For(0, mesh.VertexCount, i =>
+			Parallel.For(0, mesh.VertexCount - 1, i =>
 			{
-				Parallel.For(i, mesh.VertexCount, j =>
+				Parallel.For(i + 1, mesh.VertexCount, j =>
 				{
 				float distance = Vector3.Distance(mesh.GetVertex((uint)i), mesh.GetVertex((uint)j));
 				float tempDiameter;
@@ -115,14 +115,16 @@ namespace ShapeDatabase.Features
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
 		public static HistDescriptor DistanceBarycenter(IMesh mesh)
 		{
+			double binSize = 0.05;
+			int[] binValues = new int[10];
+			int numberOfValues = 5000;	
 			Vector3 baryCenter = NormalisationRefiner.FindBaryCenter(mesh);
 
-			double binSize = 0.15;
-			int[] binValues = new int[10];
-
-			Parallel.For(0, mesh.VertexCount, i =>
+			Parallel.For(0, numberOfValues, i =>
 			{
-				float distance = Vector3.Distance(mesh.GetVertex((uint)i), baryCenter);
+				Random random = new Random();
+				Vector3 randomVector = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+				float distance = Vector3.Distance(randomVector, baryCenter);
 				int bin = Math.Min((int)(distance / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
@@ -137,20 +139,63 @@ namespace ShapeDatabase.Features
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
 		public static HistDescriptor DistanceVertices(IMesh mesh)
 		{
-			double binSize = 0.25;
+			double binSize = 0.1;
 			int[] binValues = new int[10];
+			int numberOfValues = 5000;
 
-			Parallel.For(0, mesh.VertexCount, i =>
+			Parallel.For(0, numberOfValues, i =>
 			{
-				Parallel.For(i, mesh.VertexCount, j =>
+				Random random = new Random();
+				Vector3 randomVector1 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+				Vector3 randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+
+				while (randomVector1 == randomVector2)
 				{
-					float distance = Vector3.Distance(mesh.GetVertex((uint)i), mesh.GetVertex((uint)j));
-					int bin = Math.Min((int)(distance / binSize), 9);
-					AddOneToBin(ref binValues, bin);
-				});
+					randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+				}
+
+				float distance = Vector3.Distance(randomVector1, randomVector2);
+				int bin = Math.Min((int)(distance / binSize), 9);
+				AddOneToBin(ref binValues, bin);
 			});
 
 			return new HistDescriptor("DistanceVertices", binSize, binValues);
+		}
+
+		/// <summary>
+		/// Histogram descriptor for calculating the square root of an triangle given by three random vertices
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		public static HistDescriptor SquareRootTriangles(IMesh mesh)
+		{
+			double binSize = 0.2;
+			int[] binValues = new int[10];
+			int numberOfValues = 5000;
+		
+			Parallel.For(0, numberOfValues, i =>
+			{
+				Random random = new Random();
+				Vector3 randomVector1 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+				Vector3 randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+				Vector3 randomVector3 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+
+				while (randomVector1 == randomVector2)
+				{
+					randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+				}
+
+				while (randomVector1 == randomVector3)
+				{
+					randomVector3 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+				}
+
+				double area = Math.Sqrt(GetTriArea(new Vector3[] { randomVector1, randomVector2, randomVector3 }));
+				int bin = Math.Min((int)(area / binSize), 9);
+				AddOneToBin(ref binValues, bin);
+			});
+
+			return new HistDescriptor("SquareRootTriangles", binSize, binValues);
 		}
 
 		/// <summary>
@@ -167,6 +212,21 @@ namespace ShapeDatabase.Features
 				tempBinValue = binValues[bin];
 			}
 			while (Interlocked.CompareExchange(ref binValues[bin], tempBinValue + 1, tempBinValue) != tempBinValue);
+		}
+
+		/// <summary>
+		/// Returns the area of three vertices
+		/// </summary>
+		/// <param name="points">Array with the three vertices</param>
+		/// <returns>The area</returns>
+		private static double GetTriArea(Vector3[] points)
+		{
+			double a = Vector3.Distance(points[0], points[1]);
+			double b = Vector3.Distance(points[1], points[2]);
+			double c = Vector3.Distance(points[2], points[0]);
+			double sum = (a + b + c) / 2;
+			double area = Math.Sqrt(sum * (sum - a) * (sum - b) * (sum - c));
+			return double.IsNaN(area) ? 0 : area;
 		}
 	}
 }
