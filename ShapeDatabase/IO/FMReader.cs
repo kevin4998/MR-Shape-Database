@@ -111,16 +111,15 @@ namespace ShapeDatabase.Features
 
 				for(int i = 0; i < descriptorNames.Length; i++)
 				{
-					string value = values[i];
-
 					//Check whether value is an ElemDescriptor or HistDescriptor
-					if(!value.Contains(HistSeperator))
+					if(!values[i].Contains(HistSeperator))
 					{
-						descriptors.Add(new ElemDescriptor(descriptorNames[i], Convert.ToDouble(value)));
+						descriptors.Add(new ElemDescriptor(descriptorNames[i], Convert.ToDouble(values[i])));
 					}
 					else
 					{
-						descriptors.Add(new HistDescriptor(descriptorNames[i], Convert.ToDouble(values[0]), Convert.ToDouble(values[1]), values.Skip(2).Select(x => Int32.Parse(x)).ToArray()));
+						string[] histValues = values[i].Split(HistSeperator).Skip(1).ToArray();
+						descriptors.Add(new HistDescriptor(descriptorNames[i], Convert.ToDouble(values[i].Split(HistSeperator)[0]), histValues.Select(x => Int32.Parse(x)).ToArray()));
 					}
 				}
 

@@ -11,6 +11,7 @@ using System.Runtime.CompilerServices;
 using Accord.Statistics.Analysis;
 using Accord.Statistics.Models.Regression.Linear;
 using System.Threading;
+using ShapeDatabase.Refine;
 
 namespace ShapeDatabase.Features
 {
@@ -105,6 +106,29 @@ namespace ShapeDatabase.Features
 			});
 
 			return new ElemDescriptor("Diameter", biggestDiameter);
+		}
+
+		public static HistDescriptor AvgDistanceBarycenter(IMesh mesh)
+		{
+			Vector3 BaryCenter = NormalisationRefiner.FindBaryCenter(mesh);
+
+			double BinSize = 0.2;
+			int[] BinValues = new int[10];
+
+			Parallel.For(0, mesh.VertexCount, i =>
+			{
+				float Distance = Vector3.Distance(mesh.GetVertex((uint)i), BaryCenter);
+				int Bin = Math.Min((int)(Distance / BinSize), 9);
+				int TempBinValue;
+
+				do
+				{
+					TempBinValue = BinValues[Bin];
+				}
+				while (Interlocked.CompareExchange(ref BinValues[Bin], TempBinValue + 1, TempBinValue) != TempBinValue);
+			});
+					   
+			return new HistDescriptor("AvgDistanceBarycenter", BinSize, BinValues);
 		}
 	}
 }

@@ -22,10 +22,6 @@ namespace ShapeDatabase.Features.Descriptors {
 		public static string HistSeperator => ";";
 
 		/// <summary>
-		/// The offset value of the first bin
-		/// </summary>
-		private double Offset { get; }
-		/// <summary>
 		/// The width of one bin
 		/// </summary>
 		private double BinSize { get; }
@@ -45,9 +41,8 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <param name="offset">Offset value of the descriptor</param>
 		/// <param name="binsize">Bin width of the descriptor</param>
 		/// <param name="binvalues">Bin values of the descriptor</param>
-		public HistDescriptor(string name, double offset, double binsize, int[] binvalues) 
+		public HistDescriptor(string name, double binsize, int[] binvalues) 
 			: base(name) {
-			Offset = offset;
 			BinSize = binsize;
 			BinValues = binvalues;
 		}
@@ -65,12 +60,11 @@ namespace ShapeDatabase.Features.Descriptors {
 		public override string Serialize() {
 			IFormatProvider format = Settings.Culture;
 
-			string[] histValues = new string[12];
-			histValues[0] = Offset.ToString(format);
-			histValues[1] = BinSize.ToString(format);
+			string[] histValues = new string[11];
+			histValues[0] = BinSize.ToString(format);
 
-			for (int i = 2; i < 12; i++)
-				histValues[i] = BinValues[i].ToString(format);
+			for (int i = 1; i < 11; i++)
+				histValues[i] = BinValues[i - 1].ToString(format);
 			
 			return string.Join(HistSeperator, histValues);
 		}
