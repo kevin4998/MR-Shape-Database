@@ -108,7 +108,12 @@ namespace ShapeDatabase.Features
 			return new ElemDescriptor("Diameter", biggestDiameter);
 		}
 
-		public static HistDescriptor AvgDistanceBarycenter(IMesh mesh)
+		/// <summary>
+		/// Histogram descriptor for calculating the distance to the barycenter of a random vertex
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		public static HistDescriptor DistanceBarycenter(IMesh mesh)
 		{
 			Vector3 BaryCenter = NormalisationRefiner.FindBaryCenter(mesh);
 
@@ -128,7 +133,7 @@ namespace ShapeDatabase.Features
 				while (Interlocked.CompareExchange(ref BinValues[Bin], TempBinValue + 1, TempBinValue) != TempBinValue);
 			});
 					   
-			return new HistDescriptor("AvgDistanceBarycenter", BinSize, BinValues);
+			return new HistDescriptor("DistanceBarycenter", BinSize, BinValues);
 		}
 	}
 }
