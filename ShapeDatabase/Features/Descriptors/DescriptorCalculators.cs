@@ -115,25 +115,58 @@ namespace ShapeDatabase.Features
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
 		public static HistDescriptor DistanceBarycenter(IMesh mesh)
 		{
-			Vector3 BaryCenter = NormalisationRefiner.FindBaryCenter(mesh);
+			Vector3 baryCenter = NormalisationRefiner.FindBaryCenter(mesh);
 
-			double BinSize = 0.2;
-			int[] BinValues = new int[10];
+			double binSize = 0.15;
+			int[] binValues = new int[10];
 
 			Parallel.For(0, mesh.VertexCount, i =>
 			{
-				float Distance = Vector3.Distance(mesh.GetVertex((uint)i), BaryCenter);
-				int Bin = Math.Min((int)(Distance / BinSize), 9);
-				int TempBinValue;
-
-				do
-				{
-					TempBinValue = BinValues[Bin];
-				}
-				while (Interlocked.CompareExchange(ref BinValues[Bin], TempBinValue + 1, TempBinValue) != TempBinValue);
+				float distance = Vector3.Distance(mesh.GetVertex((uint)i), baryCenter);
+				int bin = Math.Min((int)(distance / binSize), 9);
+				AddOneToBin(ref binValues, bin);
 			});
 					   
-			return new HistDescriptor("DistanceBarycenter", BinSize, BinValues);
+			return new HistDescriptor("DistanceBarycenter", binSize, binValues);
+		}
+
+		/// <summary>
+		/// Histogram descriptor for calculating the distance between two random vertices
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		public static HistDescriptor DistanceVertices(IMesh mesh)
+		{
+			double binSize = 0.25;
+			int[] binValues = new int[10];
+
+			Parallel.For(0, mesh.VertexCount, i =>
+			{
+				Parallel.For(i, mesh.VertexCount, j =>
+				{
+					float distance = Vector3.Distance(mesh.GetVertex((uint)i), mesh.GetVertex((uint)j));
+					int bin = Math.Min((int)(distance / binSize), 9);
+					AddOneToBin(ref binValues, bin);
+				});
+			});
+
+			return new HistDescriptor("DistanceVertices", binSize, binValues);
+		}
+
+		/// <summary>
+		/// Atomically adds one to a histogram bin
+		/// </summary>
+		/// <param name="binValues">The histogram</param>
+		/// <param name="bin">The bin index</param>
+		private static void AddOneToBin(ref int[] binValues, int bin)
+		{
+			int tempBinValue;
+
+			do
+			{
+				tempBinValue = binValues[bin];
+			}
+			while (Interlocked.CompareExchange(ref binValues[bin], tempBinValue + 1, tempBinValue) != tempBinValue);
 		}
 	}
 }
