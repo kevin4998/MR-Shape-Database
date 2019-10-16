@@ -48,18 +48,25 @@ namespace ShapeDatabase.Util {
 		}
 
 		/// <summary>
-		/// Returns the area of three vertices
+		/// Returns the area of a triangle
 		/// </summary>
 		/// <param name="points">Array with the three vertices</param>
 		/// <returns>The area</returns>
 		public static double GetTriArea(Vector3[] points)
 		{
-			double a = Vector3.Distance(points[0], points[1]);
-			double b = Vector3.Distance(points[1], points[2]);
-			double c = Vector3.Distance(points[2], points[0]);
-			double sum = (a + b + c) / 2;
-			double area = Math.Sqrt(sum * (sum - a) * (sum - b) * (sum - c));
+			double area = 0.5 * Vector3.Cross(points[1] - points[0], points[2] - points[0]).Length;
 			return double.IsNaN(area) ? 0 : area;
+		}
+
+		/// <summary>
+		/// Returns the volume of a tetrahedron
+		/// </summary>
+		/// <param name="points">Array with the four vertices of the tetrahedron</param>
+		/// <returns>The volume</returns>
+		public static double GetTetVolume(Vector3[] points)
+		{
+			double volume = Math.Abs(Vector3.Dot(points[0] - points[3], Vector3.Cross(points[1] - points[3], points[2] - points[3]))) / 6;
+			return double.IsNaN(volume) ? 0 : volume;
 		}
 	}
 }
