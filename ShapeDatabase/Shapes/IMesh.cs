@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using OpenTK;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Shapes {
 
@@ -73,13 +74,7 @@ namespace ShapeDatabase.Shapes {
 			if (points == null || points.Length != 3)
 				throw new ArgumentNullException(nameof(points));
 
-
-			double a = Vector3.Distance(points[0], points[1]);
-			double b = Vector3.Distance(points[1], points[2]);
-			double c = Vector3.Distance(points[2], points[0]);
-			double sum = (a + b + c) / 2;
-			double area = Math.Sqrt(sum * (sum - a) * (sum - b) * (sum - c));
-			return double.IsNaN(area) ? 0 : area;
+			return Functions.GetTriArea(points);
 		}
 	}
 

@@ -47,6 +47,19 @@ namespace ShapeDatabase.Util {
 			return new Vector3(vector.a, vector.b, vector.c);
 		}
 
+		/// <summary>
+		/// Returns the area of three vertices
+		/// </summary>
+		/// <param name="points">Array with the three vertices</param>
+		/// <returns>The area</returns>
+		public static double GetTriArea(Vector3[] points)
+		{
+			double a = Vector3.Distance(points[0], points[1]);
+			double b = Vector3.Distance(points[1], points[2]);
+			double c = Vector3.Distance(points[2], points[0]);
+			double sum = (a + b + c) / 2;
+			double area = Math.Sqrt(sum * (sum - a) * (sum - b) * (sum - c));
+			return double.IsNaN(area) ? 0 : area;
+		}
 	}
-
 }

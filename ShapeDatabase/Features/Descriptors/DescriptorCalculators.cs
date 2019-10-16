@@ -169,7 +169,7 @@ namespace ShapeDatabase.Features
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
 		public static HistDescriptor SquareRootTriangles(IMesh mesh)
 		{
-			double binSize = 0.15;
+			double binSize = 0.125;
 			int[] binValues = new int[10];
 			int numberOfValues = 5000;
 			ThreadSafeRandom random = new ThreadSafeRandom();
@@ -189,8 +189,8 @@ namespace ShapeDatabase.Features
 				{
 					randomVector3 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
 				}
-
-				double area = Math.Sqrt(GetTriArea(new Vector3[] { randomVector1, randomVector2, randomVector3 }));
+				
+				double area = Math.Sqrt(Functions.GetTriArea(new Vector3[] { randomVector1, randomVector2, randomVector3 }));
 				int bin = Math.Min((int)(area / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
@@ -212,21 +212,6 @@ namespace ShapeDatabase.Features
 				tempBinValue = binValues[bin];
 			}
 			while (Interlocked.CompareExchange(ref binValues[bin], tempBinValue + 1, tempBinValue) != tempBinValue);
-		}
-
-		/// <summary>
-		/// Returns the area of three vertices
-		/// </summary>
-		/// <param name="points">Array with the three vertices</param>
-		/// <returns>The area</returns>
-		private static double GetTriArea(Vector3[] points)
-		{
-			double a = Vector3.Distance(points[0], points[1]);
-			double b = Vector3.Distance(points[1], points[2]);
-			double c = Vector3.Distance(points[2], points[0]);
-			double sum = (a + b + c) / 2;
-			double area = Math.Sqrt(sum * (sum - a) * (sum - b) * (sum - c));
-			return double.IsNaN(area) ? 0 : area;
 		}
 	}
 }
