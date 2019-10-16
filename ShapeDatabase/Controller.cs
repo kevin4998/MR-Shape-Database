@@ -248,7 +248,21 @@ namespace ShapeDatabase {
 				QueryWriter.Instance.WriteFile(QueryResults, location);
 			}
 
+			ShowQueryResults(QueryResults);
+
 			Console.WriteLine("Done Saving Query Results.");
+		}
+
+		/// <summary>
+		/// Shows the user the results of the queries.
+		/// </summary>
+		static void ShowQueryResults(Tuple<string, IList<(string, double)>>[] results)
+		{
+			Console.WriteLine($"{results.Length} Query Results:");
+			foreach (Tuple<string, IList<(string, double)>> result in results)
+			{
+				Console.WriteLine($"\t- {result.Item1} : {string.Join(", ", result.Item2.Select(x => x.Item1 + "(" + x.Item2 + ")"))}");
+			}
 		}
 
 		/// <summary>
@@ -283,7 +297,6 @@ namespace ShapeDatabase {
 			else
 				foreach (string dir in dirs)
 					Settings.FileManager.AddDirectoryDirect(dir);
-
 		}
 
 		/// <summary>
