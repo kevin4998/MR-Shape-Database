@@ -123,8 +123,8 @@ namespace ShapeDatabase.Features
 
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Vector3 randomVector = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-				float distance = Vector3.Distance(randomVector, baryCenter);
+				Vector3[] randomVector = GetRandomVertices(mesh, random, 1);
+				float distance = Vector3.Distance(randomVector[0], baryCenter);
 				int bin = Math.Min((int)(distance / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
@@ -146,15 +146,8 @@ namespace ShapeDatabase.Features
 
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Vector3 randomVector1 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-				Vector3 randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-
-				while (randomVector1 == randomVector2)
-				{
-					randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-				}
-
-				float distance = Vector3.Distance(randomVector1, randomVector2);
+				Vector3[] randomVectors = GetRandomVertices(mesh, random, 2);
+				float distance = Vector3.Distance(randomVectors[0], randomVectors[1]);
 				int bin = Math.Min((int)(distance / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
@@ -176,21 +169,8 @@ namespace ShapeDatabase.Features
 
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Vector3 randomVector1 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-				Vector3 randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-				Vector3 randomVector3 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-
-				while (randomVector1 == randomVector2)
-				{
-					randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-				}
-
-				while (randomVector1 == randomVector3)
-				{
-					randomVector3 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-				}
-				
-				double area = Math.Sqrt(Functions.GetTriArea(new Vector3[] { randomVector1, randomVector2, randomVector3 }));
+				Vector3[] randomVectors = GetRandomVertices(mesh, random, 3);
+				double area = Math.Sqrt(Functions.GetTriArea(new Vector3[] { randomVectors[0], randomVectors[1], randomVectors[2] }));
 				int bin = Math.Min((int)(area / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
@@ -199,7 +179,7 @@ namespace ShapeDatabase.Features
 		}
 
 		/// <summary>
-		/// Atomically adds one to a histogram bin
+		/// Method for atomically adding up one to a histogram bin
 		/// </summary>
 		/// <param name="binValues">The histogram</param>
 		/// <param name="bin">The bin index</param>
@@ -212,6 +192,30 @@ namespace ShapeDatabase.Features
 				tempBinValue = binValues[bin];
 			}
 			while (Interlocked.CompareExchange(ref binValues[bin], tempBinValue + 1, tempBinValue) != tempBinValue);
+		}
+
+		/// <summary>
+		/// Method for getting a certain number of random vertices from a mesh
+		/// </summary>
+		/// <param name="mesh">The mesh of which the random vertices will be taken</param>
+		/// <param name="random">The (threadsafe) random generator</param>
+		/// <param name="numberOfVertices">The number of random vertices</param>
+		/// <returns>An array containing the random vertices</returns>
+		private static Vector3[] GetRandomVertices(IMesh mesh, ThreadSafeRandom random, int numberOfVertices)
+		{
+			Vector3[] vertices = new Vector3[numberOfVertices];
+
+			for(int i = 0; i < numberOfVertices; i++)
+			{
+				Vector3 newVertice = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+				while(vertices.Contains(newVertice))
+				{
+					newVertice = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+				}
+				vertices[i] = newVertice;
+			}
+
+			return vertices;
 		}
 	}
 }
