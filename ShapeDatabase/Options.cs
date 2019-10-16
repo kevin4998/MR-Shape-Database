@@ -26,7 +26,7 @@ namespace ShapeDatabase {
 			Required = false,
 			Default = "VIEW",
 			HelpText = "A property to define what should happen to the specified shapes." +
-			"\nSupported Modes are: REFINE, MEASURE, VIEW")]
+			"\nSupported Modes are: REFINE, MEASURE, FEATURES, QUERY, VIEW")]
 		public string Mode { get; set; }
 
 		/// <summary>
@@ -98,8 +98,10 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// Describes that the user wants to extract features from the shapes.
 		/// </summary>
-		FEATURES = 8
-
+		FEATURES = 8,
+		/// <summary>
+		/// Describes that the user wants to query shapes.
+		/// </summary>
+		QUERY = 16
 	}
-
 }

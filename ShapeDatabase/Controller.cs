@@ -71,6 +71,11 @@ namespace ShapeDatabase {
 				MeasureShapes(options.ShapeDirectories);
 			if (Settings.Mode.HasFlag(OperationModes.FEATURES))
 				ExtractFeatures(options.ShapeDirectories);
+			if (Settings.Mode.HasFlag(OperationModes.QUERY))
+			{
+				FeatureManager featuremanager = ExtractFeatures(options.ShapeDirectories);
+				QueryShapes(featuremanager);
+			}
 			if (Settings.Mode.HasFlag(OperationModes.VIEW))
 				ViewShapes(options.ShapeDirectories);
 		}
@@ -179,16 +184,18 @@ namespace ShapeDatabase {
 		/// Mode for extracting featurevectors of the shapes, or reading them from a csv file.
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
-		static void ExtractFeatures(IEnumerable<string> dirs)
+		static FeatureManager ExtractFeatures(IEnumerable<string> dirs)
 		{
 			Console.WriteLine("Start Loading Meshes.");
 			LoadNewFiles(dirs, false);
+			Console.WriteLine("Done Loading Meshes.");
 
 			string location = Settings.FeatureVectorDir + "/" + Settings.FeatureVectorFile;
+			FeatureManager manager;
 
-			if(!Settings.ReadVectorFile)
+			if (!Settings.ReadVectorFile)
 			{
-				FeatureManager manager = new FMBuilder(DescriptorCalculators.SurfaceArea, DescriptorCalculators.BoundingBoxVolume, DescriptorCalculators.Diameter, DescriptorCalculators.Eccentricity, DescriptorCalculators.AngleVertices, DescriptorCalculators.DistanceBarycenter, DescriptorCalculators.DistanceVertices, DescriptorCalculators.SquareRootTriangles, DescriptorCalculators.CubeRootTetrahedron).Build();
+				manager = new FMBuilder(DescriptorCalculators.SurfaceArea, DescriptorCalculators.BoundingBoxVolume, DescriptorCalculators.Diameter, DescriptorCalculators.Eccentricity, DescriptorCalculators.AngleVertices, DescriptorCalculators.DistanceBarycenter, DescriptorCalculators.DistanceVertices, DescriptorCalculators.SquareRootTriangles, DescriptorCalculators.CubeRootTetrahedron).Build();
 				manager.CalculateVectors(Settings.MeshLibrary.ToArray());
 
 				Console.WriteLine("Done Extracting Descriptors.");
@@ -200,8 +207,6 @@ namespace ShapeDatabase {
 			}
 			else
 			{
-				FeatureManager manager;
-
 				using (StreamReader reader = new StreamReader(location))
 				{
 					manager = FMReader.Instance.ConvertFile(reader);
@@ -209,6 +214,24 @@ namespace ShapeDatabase {
 
 				Console.WriteLine($"Done Importing FeatureVectors from: {location}");
 			}
+
+			return manager;
+		}
+
+		/// <summary>
+		/// Mode for comparing query shapes to the database shapes.
+		/// </summary>
+		/// <param name="featuremanager">The featuremanager of the complete database</param>
+		static void QueryShapes(FeatureManager DatabaseFM)
+		{
+			Console.WriteLine("Start Loading Query Meshes.");
+			LoadQueryFiles();
+			Console.WriteLine("Done Loading Meshes.");
+
+			FeatureManager QueryFM = new FMBuilder(DescriptorCalculators.SurfaceArea, DescriptorCalculators.BoundingBoxVolume, DescriptorCalculators.Diameter, DescriptorCalculators.Eccentricity, DescriptorCalculators.AngleVertices, DescriptorCalculators.DistanceBarycenter, DescriptorCalculators.DistanceVertices, DescriptorCalculators.SquareRootTriangles, DescriptorCalculators.CubeRootTetrahedron).Build();
+			QueryFM.CalculateVectors(Settings.QueryLibrary.ToArray());
+
+			Console.WriteLine("Done Extracting Descriptors.");
 		}
 
 		/// <summary>
@@ -255,5 +278,12 @@ namespace ShapeDatabase {
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
 		}
 
+		/// <summary>
+		/// Processes the query shapes (and loads them in memory).
+		/// </summary>
+		static void LoadQueryFiles()
+		{
+			Settings.FileManager.AddQueryDirectory(Settings.QueryDir);
+		}
 	}
 }

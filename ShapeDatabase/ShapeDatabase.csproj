@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Content\Query\" />
     <Folder Include="Content\Vectors\" />
     <Folder Include="Content\Shapes\Final\" />
     <Folder Include="Content\Shapes\Failed\" />

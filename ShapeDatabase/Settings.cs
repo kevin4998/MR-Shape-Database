@@ -30,6 +30,11 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static string ShapeFailedDir { get; set; } = "Content/Shapes/Failed";
 
+		// <summary>
+		/// The location where the shapes are stored which should be queried.
+		/// </summary>
+		public static string QueryDir { get; set; } = "Content/Query";
+
 		/// <summary>
 		/// The location where the shapes are stored which could not be refined.
 		/// </summary>
@@ -84,6 +89,11 @@ namespace ShapeDatabase {
 		/// A collection of all the loaded shapes by this application.
 		/// </summary>
 		public static MeshLibrary MeshLibrary => Settings.FileManager.ProcessedMeshes;
+
+		/// <summary>
+		/// A collection of all the query shapes.
+		/// </summary>
+		public static MeshLibrary QueryLibrary => Settings.FileManager.QueryMeshes;
 
 		/// <summary>
 		/// A collection of strings which will force the program to stop.
