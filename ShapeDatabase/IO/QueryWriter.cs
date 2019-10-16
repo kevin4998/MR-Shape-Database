@@ -86,7 +86,7 @@ namespace ShapeDatabase.IO
 
 			foreach(Tuple<string, IList<(string, double)>> result in type)
 			{
-				writer.WriteLine(result.Item1 + Seperator + string.Join(Seperator, result.Item2));
+				writer.WriteLine(result.Item1 + Seperator + string.Join(Seperator, result.Item2.Select(x => x.Item1 + " (" + x.Item2 + ")" )));
 			}
 
 			writer.Flush();

@@ -222,16 +222,20 @@ namespace ShapeDatabase {
 		/// <param name="featuremanager">The featuremanager of the complete database</param>
 		static void QueryShapes(FeatureManager DatabaseFM)
 		{
+			Console.WriteLine("Start Loading Query Meshes.");
+			LoadQueryFiles();
+			Console.WriteLine("Done Loading Meshes.");
+
 			Console.WriteLine("Start Comparing Meshes.");
 
-			string[] QueryShapes = Settings.QueryShapes;
-			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[Settings.QueryShapes.Length];
+			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[Settings.QueryLibrary.Meshes.Count];
 
-			Parallel.For(0, QueryShapes.Length, i =>
+			Parallel.For(0, Settings.QueryLibrary.Meshes.Count, i =>
 			{
-				IList<(string, double)> Results = DatabaseFM.CalculateResults(QueryShapes[i]);
-				Results = Results.Take(Settings.KBestResults).ToList();
-				QueryResults[i] = new Tuple <string, IList<(string, double)>> (QueryShapes[i], Results);
+				string name = Settings.QueryLibrary.Names.ElementAt(i);
+				IList<(string, double)> results = DatabaseFM.CalculateResults(Settings.QueryLibrary.Meshes.ElementAt(i));
+				results = results.Take(Settings.KBestResults).ToArray();
+				QueryResults[i] = new Tuple<string, IList<(string, double)>>(name, results);
 			});
 
 			Console.WriteLine("Done Comparing Meshes.");
@@ -289,6 +293,14 @@ namespace ShapeDatabase {
 		static void LoadFinalFiles() {
 			Directory.CreateDirectory(Settings.ShapeFinalDir);
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
+		}
+
+		/// <summary>
+		/// Processes the query shapes (and loads them in memory).
+		/// </summary>
+		static void LoadQueryFiles()
+		{
+			Settings.FileManager.AddQueryDirectory(Settings.QueryDir);
 		}
 	}
 }

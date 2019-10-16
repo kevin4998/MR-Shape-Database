@@ -177,15 +177,15 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <see cref="FeatureManager"/> and returns all the meshes ordered by the
 		/// similarity.
 		/// </summary>
-		/// <param name="mesh">The name of the mesh that should be compared with all other meshes in the database.</param>
+		/// <param name="mesh">The mesh that should be compared with all other meshes in the database.</param>
 		/// <returns>A <see cref="IList{T}"/> containing all the meshes in this manager
 		/// and ordered by their similarity. The <see cref="IList{T}"/> has a tuple
 		/// containing the name of the mesh as well as an indicator of similarity
 		/// represented as double. The results are ordered (best match first).</returns>
-		public IList<(string, double)> CalculateResults(string mesh)
+		public IList<(string, double)> CalculateResults(MeshEntry mesh)
 		{
 			(string, double)[] results = new (string, double)[FeatureVectors.Count];
-			FeatureVector vector = FeatureVectors[mesh];
+			FeatureVector vector = CalculateVector(mesh, false);
 
 			Parallel.For(0, FeatureVectors.Count, i =>
 			{
@@ -193,7 +193,7 @@ namespace ShapeDatabase.Features.Descriptors
 				results[i] = (FeatureVectors.ElementAt(i).Key, result);
 			});
 
-			return results.OrderBy(x => x.Item2).Skip(1).ToList();
+			return results.OrderBy(x => x.Item2).ToList();
 		}
 
 		#endregion

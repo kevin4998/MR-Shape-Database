@@ -85,11 +85,26 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static MeshLibrary MeshLibrary => Settings.FileManager.ProcessedMeshes;
 
-		// <summary>
-		/// List of shape names that will be queried.
+		/// <summary>
+		/// A collection of all the query meshes sturctured inside a library.
 		/// </summary>
-		public static string[] QueryShapes { get; set; } = new string[] {"101"};
-		
+		public static MeshLibrary QueryMeshes { get; } = new MeshLibrary();
+
+		/// <summary>
+		/// A collection of all the loaded shapes by this application.
+		/// </summary>
+		public static MeshLibrary QueryLibrary => Settings.FileManager.QueryMeshes;
+
+		// <summary>
+		/// The location where the query shapes are located
+		/// </summary>
+		public static string QueryDir { get; set; } = "Content/Query";
+
+		/// <summary>
+		/// The file name of the query results file (also stored in QueryDir)
+		/// </summary>
+		public static string QueryResultsFile { get; set; } = "queryresults.csv";
+
 		/// <summary>
 		/// Stating the number the number of best matching results that should be shown/saved.
 		/// </summary>
@@ -99,16 +114,6 @@ namespace ShapeDatabase {
 		/// States whether the query results should be saved (in QueryDir)
 		/// </summary>
 		public static bool SaveQueryResults = true;
-
-		// <summary>
-		/// The location where the query results are stored.
-		/// </summary>
-		public static string QueryDir { get; set; } = "Content/Query";
-
-		/// <summary>
-		/// The file name of the query results file (in QueryDir)
-		/// </summary>
-		public static string QueryResultsFile { get; set; } = "queryresults.csv";
 
 		/// <summary>
 		/// A collection of strings which will force the program to stop.
