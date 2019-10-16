@@ -69,11 +69,6 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		public MeshLibrary ProcessedMeshes { get; } = new MeshLibrary();
 
-		/// <summary>
-		/// A collection of all the query meshes sturctured inside a library.
-		/// </summary>
-		public MeshLibrary QueryMeshes { get; } = new MeshLibrary();
-
 		#endregion
 
 		#endregion
@@ -184,71 +179,6 @@ namespace ShapeDatabase.IO {
 			if (!finalDir.Exists)
 				finalDir.Create();
 			AddDirectoryDirect(finalDir.FullName, async);
-		}
-
-		/// <summary>
-		/// Secure the specified location as a directory containing query shapes
-		/// for this application. The program will first check and possibly
-		/// refine/normalise the given shapes before loading them in memory.
-		/// </summary>
-		/// <param name="filedir">The location on your device which will be used
-		/// for shapes in this database.</param>
-		/// <param name="async">If the given method may make use of asynchronous
-		/// operations.</param>
-		/// <exception cref="ArgumentNullException">If the given directory is
-		/// <see langword="null"/>.</exception>
-		/// <exception cref="ArgumentException">If the given directory does not exist.
-		/// </exception>
-		public void AddQueryDirectory(string filedir, bool async = false)
-		{
-			if (string.IsNullOrEmpty(filedir))
-				throw new ArgumentNullException(nameof(filedir));
-
-			// Phase 1: Discover query files.
-
-			FileInfo[] Files = DiscoverFiles(new DirectoryInfo(filedir));
-
-			// Phase 2: Process files into meshes.
-
-			InfoMesh[] QueryMeshes = async ? ReadFilesAsync(Files) : ReadFiles(Files);
-
-			InfoMesh[] RefinedQueryMeshes = QueryMeshes;
-
-			// Phase 3: Refine query meshes in parallel.
-
-			Parallel.For(0, QueryMeshes.Length, i =>
-			{
-				InfoMesh TempMesh = QueryMeshes[i];
-
-				bool RequiresRefinement = true;
-				int Attempt = 0;
-
-				while (RequiresRefinement && Attempt++ < REFINEMENT_THRESHOLD)
-				{
-					RequiresRefinement = false;
-
-					foreach (IRefiner<IMesh> refiner in refiners)
-					{
-						if (refiner.RequireRefinement(TempMesh.Mesh))
-						{
-							refiner.RefineMesh(TempMesh.Mesh, TempMesh.Info);
-							TempMesh = ReadFile(TempMesh.Info);
-							RequiresRefinement = true;
-						}
-					}
-				}
-			});
-
-			// Phase 4: Add refined query meshes to library.
-
-			foreach (InfoMesh mesh in RefinedQueryMeshes)
-			{
-				MeshEntry entry =
-					new MeshEntry(mesh.Info.NameWithoutExtension(),
-								  mesh.Info.Directory.Name,
-								  mesh.Mesh);
-				this.QueryMeshes.Add(entry, false);
-			}
 		}
 
 		/// <summary>

@@ -73,10 +73,7 @@ namespace ShapeDatabase {
 			if (Settings.Mode.HasFlag(OperationModes.FEATURES))
 				ExtractFeatures(options.ShapeDirectories);
 			if (Settings.Mode.HasFlag(OperationModes.QUERY))
-			{
-				FeatureManager featuremanager = ExtractFeatures(options.ShapeDirectories);
-				QueryShapes(featuremanager);
-			}
+				QueryShapes(ExtractFeatures(options.ShapeDirectories));
 			if (Settings.Mode.HasFlag(OperationModes.VIEW))
 				ViewShapes(options.ShapeDirectories);
 		}
@@ -225,18 +222,29 @@ namespace ShapeDatabase {
 		/// <param name="featuremanager">The featuremanager of the complete database</param>
 		static void QueryShapes(FeatureManager DatabaseFM)
 		{
-			Console.WriteLine("Start Loading Query Meshes.");
-			LoadQueryFiles();
-			Console.WriteLine("Done Loading Meshes.");
+			Console.WriteLine("Start Comparing Meshes.");
 
-			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[Settings.QueryLibrary.Meshes.Count];
+			string[] QueryShapes = Settings.QueryShapes;
+			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[QueryShapes.Length];
 
-			Parallel.For(0, Settings.QueryLibrary.Meshes.Count, i =>
+			Parallel.For(0, QueryShapes.Length, i =>
 			{
-				string name = Settings.QueryLibrary.Names.ElementAt(i);
-				IList<(string, double)> results = DatabaseFM.CalculateResults(Settings.QueryLibrary.Meshes.ElementAt(i).Mesh);
-				QueryResults[i] = new Tuple <string, IList<(string, double)>> (name, results);
+				IList<(string, double)> results = DatabaseFM.CalculateResults(QueryShapes[i]);
+				results = results.Take(Settings.KBestResults).ToList();
+				QueryResults[i] = new Tuple <string, IList<(string, double)>> (QueryShapes[i], results);
 			});
+
+			Console.WriteLine("Done Comparing Meshes.");
+
+			Console.WriteLine("Start Saving Query Results.");
+
+			if (Settings.SaveQueryResults)
+			{
+				string location = Settings.QueryDir + "/" + Settings.QueryResultsFile;
+				QueryWriter.Instance.WriteFile(QueryResults, location);
+			}
+
+			Console.WriteLine("Done Saving Query Results.");
 		}
 
 		/// <summary>
@@ -281,14 +289,6 @@ namespace ShapeDatabase {
 		static void LoadFinalFiles() {
 			Directory.CreateDirectory(Settings.ShapeFinalDir);
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
-		}
-
-		/// <summary>
-		/// Processes the query shapes (and loads them in memory).
-		/// </summary>
-		static void LoadQueryFiles()
-		{
-			Settings.FileManager.AddQueryDirectory(Settings.QueryDir);
 		}
 	}
 }

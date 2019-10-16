@@ -177,14 +177,16 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <see cref="FeatureManager"/> and returns all the meshes ordered by the
 		/// similarity.
 		/// </summary>
-		/// <param name="mesh">The mesh whose similar variants will be retrieved.</param>
+		/// <param name="mesh">The name of the mesh that should be compared with all other meshes in the database.</param>
 		/// <returns>A <see cref="IList{T}"/> containing all the meshes in this manager
 		/// and ordered by their similarity. The <see cref="IList{T}"/> has a tuple
 		/// containing the name of the mesh as well as an indicator of similarity
-		/// represented as double.</returns>
-		public IList<(string, double)> CalculateResults(IMesh mesh)
+		/// represented as double. The results are ordered (best match first).</returns>
+		public IList<(string, double)> CalculateResults(string mesh)
 		{
-			throw new NotImplementedException();
+			//let op; de meshname die je krijgt, zit zelf ook in de database, dus niet meerekenen.
+			//NOT IMPLEMENTED YET
+			return null;
 		}
 
 		#endregion

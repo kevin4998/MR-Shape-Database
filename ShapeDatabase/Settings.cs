@@ -30,11 +30,6 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static string ShapeFailedDir { get; set; } = "Content/Shapes/Failed";
 
-		// <summary>
-		/// The location where the shapes are stored which should be queried.
-		/// </summary>
-		public static string QueryDir { get; set; } = "Content/Query";
-
 		/// <summary>
 		/// The location where the shapes are stored which could not be refined.
 		/// </summary>
@@ -90,10 +85,30 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static MeshLibrary MeshLibrary => Settings.FileManager.ProcessedMeshes;
 
-		/// <summary>
-		/// A collection of all the query shapes.
+		// <summary>
+		/// List of shape names that will be queried.
 		/// </summary>
-		public static MeshLibrary QueryLibrary => Settings.FileManager.QueryMeshes;
+		public static string[] QueryShapes { get; set; } = new string[] {"101", "102"};
+		
+		/// <summary>
+		/// Stating the number the number of best matching results that should be shown/saved.
+		/// </summary>
+		public static int KBestResults = 5;
+
+		/// <summary>
+		/// States whether the query results should be saved (in QueryDir)
+		/// </summary>
+		public static bool SaveQueryResults = true;
+
+		// <summary>
+		/// The location where the query results are stored.
+		/// </summary>
+		public static string QueryDir { get; set; } = "Content/Query";
+
+		/// <summary>
+		/// The file name of the query results file (in QueryDir)
+		/// </summary>
+		public static string QueryResultsFile { get; set; } = "queryresults.csv";
 
 		/// <summary>
 		/// A collection of strings which will force the program to stop.

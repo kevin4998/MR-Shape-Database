@@ -32,7 +32,7 @@ namespace ShapeDatabase.Features
 			new Lazy<FMWriter>(() => new FMWriter());
 
 		/// <summary>
-		/// Provides a writer to convert <see cref="RecordHolder"/>s into csv.
+		/// Provides a writer to convert <see cref="FeatureManager"/>s into csv.
 		/// </summary>
 		public static FMWriter Instance => lazy.Value;
 		public ICollection<string> SupportedFormats => new string[] { ".csv" };
@@ -103,14 +103,14 @@ namespace ShapeDatabase.Features
 			writer.Flush();
 		}
 
-		public Task WriteFileAsync(FeatureManager records, string location)
+		public Task WriteFileAsync(FeatureManager fm, string location)
 		{
-			return Task.Run(() => WriteFile(records, location));
+			return Task.Run(() => WriteFile(fm, location));
 		}
 
-		public Task WriteFileAsync(FeatureManager records, StreamWriter writer)
+		public Task WriteFileAsync(FeatureManager fm, StreamWriter writer)
 		{
-			return Task.Run(() => WriteFile(records, writer));
+			return Task.Run(() => WriteFile(fm, writer));
 		}
 
 		#endregion
