@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.Features.Descriptors
@@ -181,7 +182,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// and ordered by their similarity. The <see cref="IList{T}"/> has a tuple
 		/// containing the name of the mesh as well as an indicator of similarity
 		/// represented as double.</returns>
-		public IList<(string, double)> CalculateResults(MeshEntry mesh)
+		public IList<(string, double)> CalculateResults(IMesh mesh)
 		{
 			throw new NotImplementedException();
 		}

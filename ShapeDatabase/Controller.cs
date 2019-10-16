@@ -11,6 +11,7 @@ using ShapeDatabase.Features.Descriptors;
 using System.Linq;
 using System.Reflection;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ShapeDatabase {
 
@@ -228,10 +229,14 @@ namespace ShapeDatabase {
 			LoadQueryFiles();
 			Console.WriteLine("Done Loading Meshes.");
 
-			FeatureManager QueryFM = new FMBuilder(DescriptorCalculators.SurfaceArea, DescriptorCalculators.BoundingBoxVolume, DescriptorCalculators.Diameter, DescriptorCalculators.Eccentricity, DescriptorCalculators.AngleVertices, DescriptorCalculators.DistanceBarycenter, DescriptorCalculators.DistanceVertices, DescriptorCalculators.SquareRootTriangles, DescriptorCalculators.CubeRootTetrahedron).Build();
-			QueryFM.CalculateVectors(Settings.QueryLibrary.ToArray());
+			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[Settings.QueryLibrary.Meshes.Count];
 
-			Console.WriteLine("Done Extracting Descriptors.");
+			Parallel.For(0, Settings.QueryLibrary.Meshes.Count, i =>
+			{
+				string name = Settings.QueryLibrary.Names.ElementAt(i);
+				IList<(string, double)> results = DatabaseFM.CalculateResults(Settings.QueryLibrary.Meshes.ElementAt(i).Mesh);
+				QueryResults[i] = new Tuple <string, IList<(string, double)>> (name, results);
+			});
 		}
 
 		/// <summary>
