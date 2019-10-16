@@ -184,19 +184,16 @@ namespace ShapeDatabase.Features.Descriptors
 		/// represented as double. The results are ordered (best match first).</returns>
 		public IList<(string, double)> CalculateResults(string mesh)
 		{
-			(string, double)[] results = new (string, double)[FeatureVectors.Count - 1];
+			(string, double)[] results = new (string, double)[FeatureVectors.Count];
 			FeatureVector vector = FeatureVectors[mesh];
 
 			Parallel.For(0, FeatureVectors.Count, i =>
 			{
-				if(FeatureVectors.ElementAt(i).Key != mesh)
-				{
-					double result = FeatureVectors.ElementAt(i).Value.Compare(vector);
-					results[i] = (FeatureVectors.ElementAt(i).Key, result);
-				}
+				double result = FeatureVectors.ElementAt(i).Value.Compare(vector);
+				results[i] = (FeatureVectors.ElementAt(i).Key, result);
 			});
 
-			return results.OrderBy(x => x.Item2).ToList();
+			return results.OrderBy(x => x.Item2).Skip(1).ToList();
 		}
 
 		#endregion

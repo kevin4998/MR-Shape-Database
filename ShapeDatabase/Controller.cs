@@ -225,13 +225,13 @@ namespace ShapeDatabase {
 			Console.WriteLine("Start Comparing Meshes.");
 
 			string[] QueryShapes = Settings.QueryShapes;
-			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[QueryShapes.Length];
+			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[Settings.QueryShapes.Length];
 
 			Parallel.For(0, QueryShapes.Length, i =>
 			{
-				IList<(string, double)> results = DatabaseFM.CalculateResults(QueryShapes[i]);
-				results = results.Take(Settings.KBestResults).ToList();
-				QueryResults[i] = new Tuple <string, IList<(string, double)>> (QueryShapes[i], results);
+				IList<(string, double)> Results = DatabaseFM.CalculateResults(QueryShapes[i]);
+				Results = Results.Take(Settings.KBestResults).ToList();
+				QueryResults[i] = new Tuple <string, IList<(string, double)>> (QueryShapes[i], Results);
 			});
 
 			Console.WriteLine("Done Comparing Meshes.");

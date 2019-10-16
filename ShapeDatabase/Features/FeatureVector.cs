@@ -1,4 +1,5 @@
 ﻿using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,8 @@ namespace ShapeDatabase.Features {
 		}
 
 		public double Compare(FeatureVector vector) {
-			throw new NotImplementedException();
+			//TODO; currently returns 0.5 for testing.
+			return 0.5;
 		}
-
 	}
 }

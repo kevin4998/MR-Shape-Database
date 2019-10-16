@@ -88,12 +88,12 @@ namespace ShapeDatabase {
 		// <summary>
 		/// List of shape names that will be queried.
 		/// </summary>
-		public static string[] QueryShapes { get; set; } = new string[] {"101", "102"};
+		public static string[] QueryShapes { get; set; } = new string[] {"101"};
 		
 		/// <summary>
 		/// Stating the number the number of best matching results that should be shown/saved.
 		/// </summary>
-		public static int KBestResults = 5;
+		public static int KBestResults = 3;
 
 		/// <summary>
 		/// States whether the query results should be saved (in QueryDir)
