@@ -188,7 +188,7 @@ namespace ShapeDatabase {
 
 			if(!Settings.ReadVectorFile)
 			{
-				FeatureManager manager = new FMBuilder(DescriptorCalculators.SurfaceArea, DescriptorCalculators.BoundingBoxVolume, DescriptorCalculators.Diameter, DescriptorCalculators.Eccentricity, DescriptorCalculators.DistanceBarycenter, DescriptorCalculators.DistanceVertices, DescriptorCalculators.SquareRootTriangles, DescriptorCalculators.CubeRootTetrahedron).Build();
+				FeatureManager manager = new FMBuilder(DescriptorCalculators.SurfaceArea, DescriptorCalculators.BoundingBoxVolume, DescriptorCalculators.Diameter, DescriptorCalculators.Eccentricity, DescriptorCalculators.AngleVertices, DescriptorCalculators.DistanceBarycenter, DescriptorCalculators.DistanceVertices, DescriptorCalculators.SquareRootTriangles, DescriptorCalculators.CubeRootTetrahedron).Build();
 				manager.CalculateVectors(Settings.MeshLibrary.ToArray());
 
 				Console.WriteLine("Done Extracting Descriptors.");

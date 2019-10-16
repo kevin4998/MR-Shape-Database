@@ -68,5 +68,16 @@ namespace ShapeDatabase.Util {
 			double volume = Math.Abs(Vector3.Dot(points[0] - points[3], Vector3.Cross(points[1] - points[3], points[2] - points[3]))) / 6;
 			return double.IsNaN(volume) ? 0 : volume;
 		}
+
+		/// <summary>
+		/// Returns the angle between three vertices
+		/// </summary>
+		/// <param name="points">Array with the three vertices</param>
+		/// <returns>The angle (0-180 degrees)</returns>
+		public static double GetAngleVertices(Vector3[] points)
+		{
+			double angle = Math.Acos(Vector3.Dot(Vector3.Normalize(points[1] - points[0]), Vector3.Normalize(points[2] - points[0])));
+			return double.IsNaN(angle) ? 0 : angle * 180/Math.PI;
+		}
 	}
 }

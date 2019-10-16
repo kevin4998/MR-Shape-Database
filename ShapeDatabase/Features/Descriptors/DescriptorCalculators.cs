@@ -123,8 +123,8 @@ namespace ShapeDatabase.Features
 
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Vector3[] randomVector = GetRandomVertices(mesh, random, 1);
-				float distance = Vector3.Distance(randomVector[0], baryCenter);
+				Vector3 randomVertice = GetRandomVertices(mesh, random, 1)[0];
+				float distance = Vector3.Distance(randomVertice, baryCenter);
 				int bin = Math.Min((int)(distance / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
@@ -146,8 +146,8 @@ namespace ShapeDatabase.Features
 
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Vector3[] randomVectors = GetRandomVertices(mesh, random, 2);
-				float distance = Vector3.Distance(randomVectors[0], randomVectors[1]);
+				Vector3[] randomVertices = GetRandomVertices(mesh, random, 2);
+				float distance = Vector3.Distance(randomVertices[0], randomVertices[1]);
 				int bin = Math.Min((int)(distance / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
@@ -169,8 +169,8 @@ namespace ShapeDatabase.Features
 
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Vector3[] randomVectors = GetRandomVertices(mesh, random, 3);
-				double area = Math.Sqrt(Functions.GetTriArea(randomVectors));
+				Vector3[] randomVertices = GetRandomVertices(mesh, random, 3);
+				double area = Math.Sqrt(Functions.GetTriArea(randomVertices));
 				int bin = Math.Min((int)(area / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
@@ -192,8 +192,8 @@ namespace ShapeDatabase.Features
 
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Vector3[] randomVectors = GetRandomVertices(mesh, random, 4);
-				double volume = Math.Pow(Functions.GetTetVolume(randomVectors), (1d / 3d));
+				Vector3[] randomVertices = GetRandomVertices(mesh, random, 4);
+				double volume = Math.Pow(Functions.GetTetVolume(randomVertices), (1d / 3d));
 				int bin = Math.Min((int)(volume / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
@@ -201,6 +201,28 @@ namespace ShapeDatabase.Features
 			return new HistDescriptor("CubeRootTetrahedron", binSize, binValues);
 		}
 
+		/// <summary>
+		/// Histogram descriptor for calculating the angle between three random vertices
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		public static HistDescriptor AngleVertices(IMesh mesh)
+		{
+			double binSize = 18;
+			int[] binValues = new int[10];
+			int numberOfValues = 5000;
+			ThreadSafeRandom random = new ThreadSafeRandom();
+
+			Parallel.For(0, numberOfValues, i =>
+			{
+				Vector3[] randomVertices = GetRandomVertices(mesh, random, 3);
+				double angle = Functions.GetAngleVertices(randomVertices);
+				int bin = Math.Min((int)(angle / binSize), 9);
+				AddOneToBin(ref binValues, bin);
+			});
+
+			return new HistDescriptor("AngleVertices", binSize, binValues);
+		}
 		/// <summary>
 		/// Method for atomically adding up one to a histogram bin
 		/// </summary>
