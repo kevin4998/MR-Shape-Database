@@ -115,14 +115,14 @@ namespace ShapeDatabase.Features
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
 		public static HistDescriptor DistanceBarycenter(IMesh mesh)
 		{
-			double binSize = 0.05;
+			double binSize = 0.15;
 			int[] binValues = new int[10];
 			int numberOfValues = 5000;	
 			Vector3 baryCenter = NormalisationRefiner.FindBaryCenter(mesh);
+			ThreadSafeRandom random = new ThreadSafeRandom();
 
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Random random = new Random();
 				Vector3 randomVector = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
 				float distance = Vector3.Distance(randomVector, baryCenter);
 				int bin = Math.Min((int)(distance / binSize), 9);
@@ -139,13 +139,13 @@ namespace ShapeDatabase.Features
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
 		public static HistDescriptor DistanceVertices(IMesh mesh)
 		{
-			double binSize = 0.1;
+			double binSize = 0.25;
 			int[] binValues = new int[10];
 			int numberOfValues = 5000;
+			ThreadSafeRandom random = new ThreadSafeRandom();
 
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Random random = new Random();
 				Vector3 randomVector1 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
 				Vector3 randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
 
@@ -169,13 +169,13 @@ namespace ShapeDatabase.Features
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
 		public static HistDescriptor SquareRootTriangles(IMesh mesh)
 		{
-			double binSize = 0.2;
+			double binSize = 0.15;
 			int[] binValues = new int[10];
 			int numberOfValues = 5000;
-		
+			ThreadSafeRandom random = new ThreadSafeRandom();
+
 			Parallel.For(0, numberOfValues, i =>
 			{
-				Random random = new Random();
 				Vector3 randomVector1 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
 				Vector3 randomVector2 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
 				Vector3 randomVector3 = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
