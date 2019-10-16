@@ -52,6 +52,38 @@ namespace ShapeDatabase.Features
 		}
 
 		/// <summary>
+		/// Elementary descriptor for calculating the largest distance between any two contour points
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The elementary descriptor with the calculated value</returns>
+		public static ElemDescriptor Diameter(IMesh mesh)
+		{
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+
+			float biggestDiameter = 0;
+
+			Parallel.For(0, mesh.VertexCount - 1, i =>
+			{
+				Parallel.For(i + 1, mesh.VertexCount, j =>
+				{
+					float distance = Vector3.Distance(mesh.GetVertex((uint)i), mesh.GetVertex((uint)j));
+					float tempDiameter;
+
+					do
+					{
+						tempDiameter = biggestDiameter;
+						if (distance <= biggestDiameter)
+							break;
+					}
+					while (Interlocked.CompareExchange(ref biggestDiameter, distance, tempDiameter) != tempDiameter);
+				});
+			});
+
+			return new ElemDescriptor("Diameter", biggestDiameter);
+		}
+
+		/// <summary>
 		/// Elementary descriptor for calculating the ratio between largest and smallest eigenvalues
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
@@ -74,38 +106,6 @@ namespace ShapeDatabase.Features
 			double[] eigenvalues = pca.Eigenvalues;
 
 			return new ElemDescriptor("Eccentricity", eigenvalues[0] / eigenvalues[2]);
-		}
-
-		/// <summary>
-		/// Elementary descriptor for calculating the largest distance between any two contour points
-		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The elementary descriptor with the calculated value</returns>
-		public static ElemDescriptor Diameter(IMesh mesh)
-		{
-			if (mesh == null)
-				throw new ArgumentNullException(nameof(mesh));
-
-			float biggestDiameter = 0;
-
-			Parallel.For(0, mesh.VertexCount - 1, i =>
-			{
-				Parallel.For(i + 1, mesh.VertexCount, j =>
-				{
-				float distance = Vector3.Distance(mesh.GetVertex((uint)i), mesh.GetVertex((uint)j));
-				float tempDiameter;
-
-				do
-				{
-					tempDiameter = biggestDiameter;
-					if (distance <= biggestDiameter)
-						break;
-				}
-				while (Interlocked.CompareExchange(ref biggestDiameter, distance, tempDiameter) != tempDiameter);
-				});
-			});
-
-			return new ElemDescriptor("Diameter", biggestDiameter);
 		}
 
 		/// <summary>
@@ -170,12 +170,35 @@ namespace ShapeDatabase.Features
 			Parallel.For(0, numberOfValues, i =>
 			{
 				Vector3[] randomVectors = GetRandomVertices(mesh, random, 3);
-				double area = Math.Sqrt(Functions.GetTriArea(new Vector3[] { randomVectors[0], randomVectors[1], randomVectors[2] }));
+				double area = Math.Sqrt(Functions.GetTriArea(randomVectors));
 				int bin = Math.Min((int)(area / binSize), 9);
 				AddOneToBin(ref binValues, bin);
 			});
 
 			return new HistDescriptor("SquareRootTriangles", binSize, binValues);
+		}
+
+		/// <summary>
+		/// Histogram descriptor for calculating the cube root of a tetrahedron given by four random vertices
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		public static HistDescriptor CubeRootTetrahedron(IMesh mesh)
+		{
+			double binSize = 0.075;
+			int[] binValues = new int[10];
+			int numberOfValues = 5000;
+			ThreadSafeRandom random = new ThreadSafeRandom();
+
+			Parallel.For(0, numberOfValues, i =>
+			{
+				Vector3[] randomVectors = GetRandomVertices(mesh, random, 4);
+				double volume = Math.Pow(Functions.GetTetVolume(randomVectors), (1d / 3d));
+				int bin = Math.Min((int)(volume / binSize), 9);
+				AddOneToBin(ref binValues, bin);
+			});
+
+			return new HistDescriptor("CubeRootTetrahedron", binSize, binValues);
 		}
 
 		/// <summary>
