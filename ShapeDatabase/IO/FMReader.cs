@@ -70,7 +70,7 @@ namespace ShapeDatabase.Features
 
 			Dictionary<string, FeatureVector> featureVectors = GetFeatureVectors(reader);
 
-			return new FeatureManager(featureVectors);
+			return new FMBuilder(featureVectors).Build();
 		}
 
 		public Task<FeatureManager> ConvertFileAsync(StreamReader reader)

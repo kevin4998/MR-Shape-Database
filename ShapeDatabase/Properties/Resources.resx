@@ -205,6 +205,10 @@
     <value>Invalid vector size, expected size 3 but got '{0}'</value>
     <comment>The exception which is given when an array could not be converted to a 3D vector because the dimensions weren't right.</comment>
   </data>
+  <data name="EX_MinMax_Switch" xml:space="preserve">
+    <value>The provided maximum value is below the minimum bound. The maximum value should always be larger than this minimum bound.</value>
+    <comment>The exception which is given when a maximum value is provided which is less than a minimum lower bound.</comment>
+  </data>
   <data name="EX_Missing_Ext" xml:space="preserve">
     <value>No extension where provided for reader '{0}'. Add your own reader to the FileManager by using the AddReader(IReader&lt;&gt;) method.</value>
     <comment>The exception which is given when an attempt to read a file is made that this application does not yet support.</comment>

@@ -259,6 +259,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided maximum value is below the minimum bound. The maximum value should always be larger than this minimum bound..
+        /// </summary>
+        internal static string EX_MinMax_Switch {
+            get {
+                return ResourceManager.GetString("EX_MinMax_Switch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No extension where provided for reader &apos;{0}&apos;. Add your own reader to the FileManager by using the AddReader(IReader&lt;&gt;) method..
         /// </summary>
         internal static string EX_Missing_Ext {

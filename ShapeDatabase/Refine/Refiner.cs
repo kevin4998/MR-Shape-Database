@@ -253,7 +253,7 @@ namespace ShapeDatabase.Refine {
 		/// </summary>
 		/// <param name="mesh">The mesh to find the barycenter point.</param>
 		/// <returns>A <see cref="Vector3"/> containing the center.</returns>
-		public static Vector3 FindBaryCenter(Shapes.IMesh mesh) {
+		private static Vector3 FindBaryCenter(Shapes.IMesh mesh) {
 
 			OpenTK.Vector3d totalSum = new OpenTK.Vector3d();
 			double totalArea = 0;

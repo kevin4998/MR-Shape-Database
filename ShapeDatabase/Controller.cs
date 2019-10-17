@@ -209,7 +209,7 @@ namespace ShapeDatabase {
 			{
 				Console.WriteLine(I_StartProc_Feature);
 
-				FeatureManager manager = new FMBuilder(DescriptorCalculators.SurfaceArea).Build();
+				FeatureManager manager = new FMBuilder().Build();
 				manager.CalculateVectors(Settings.MeshLibrary.ToArray());
 
 				Console.WriteLine(I_EndProc_Feature);
