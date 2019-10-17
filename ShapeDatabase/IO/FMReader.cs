@@ -1,5 +1,6 @@
 ﻿using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
+using ShapeDatabase.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,12 +25,6 @@ namespace ShapeDatabase.Features
 		/// The character which is used to seperate values of a single histogram descriptor.
 		/// </summary>
 		public static char HistSeperator => ';';
-
-		#endregion
-
-		#region -- Exceptions --
-
-		const string EX_END_STREAM = "Cannot read data from the end of the stream.";
 
 		#endregion
 
@@ -71,7 +66,7 @@ namespace ShapeDatabase.Features
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
 			if (reader.EndOfStream)
-				throw new ArgumentException(EX_END_STREAM);
+				throw new ArgumentException(Resources.EX_EndOfStream);
 
 			Dictionary<string, FeatureVector> featureVectors = GetFeatureVectors(reader);
 
@@ -111,15 +106,30 @@ namespace ShapeDatabase.Features
 
 				for(int i = 0; i < descriptorNames.Length; i++)
 				{
+					descriptors.Clear();
+					string value = values[i];
+
 					//Check whether value is an ElemDescriptor or HistDescriptor
-					if(!values[i].Contains(HistSeperator))
+					if(!value.Contains(HistSeperator))
 					{
-						descriptors.Add(new ElemDescriptor(descriptorNames[i], Convert.ToDouble(values[i])));
+						descriptors.Add(new ElemDescriptor(descriptorNames[i],
+							Convert.ToDouble(value, Settings.Culture)));
 					}
 					else
 					{
-						string[] histValues = values[i].Split(HistSeperator).Skip(1).ToArray();
-						descriptors.Add(new HistDescriptor(descriptorNames[i], Convert.ToDouble(values[i].Split(HistSeperator)[0]), histValues.Select(x => Int32.Parse(x)).ToArray()));
+
+						string[] splits = value.Split(HistSeperator);
+
+						string binSize = splits[0];
+						string[] histValues = splits.Skip(1).ToArray();
+
+						IFormatProvider provider = Settings.Culture;
+						descriptors.Add(new HistDescriptor(
+							descriptorNames[i],
+							Convert.ToDouble(binSize, provider),
+							histValues
+								.Select(x => int.Parse(x, provider))
+								.ToArray()));
 					}
 				}
 

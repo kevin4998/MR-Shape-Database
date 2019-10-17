@@ -1,5 +1,6 @@
 ﻿using System;
 using OpenTK;
+using ShapeDatabase.Properties;
 
 namespace ShapeDatabase.Util
 {
@@ -188,7 +189,7 @@ namespace ShapeDatabase.Util
 				throw new ArgumentNullException(nameof(array));
 			if (array.Length != 3)
 				throw new ArgumentException(
-					"Invalid vector size, expected size 3 but got '{0}'",
+					Resources.EX_Invalid_Vector_Size,
 					array.Length.ToString(Settings.Culture)
 				);
 

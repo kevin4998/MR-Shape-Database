@@ -23,7 +23,8 @@ namespace ShapeDatabase.Util {
 
 			FileInfo newFile = new FileInfo(dir);
 			// Check if it is the same file, so we don't need to move it.
-			if (newFile.FullName.Equals(current.FullName))
+			if (newFile.FullName.Equals(current.FullName,
+										StringComparison.InvariantCultureIgnoreCase))
 				return;
 			// If it is not the same file, check if there is already on there,
 			// if so remove it.

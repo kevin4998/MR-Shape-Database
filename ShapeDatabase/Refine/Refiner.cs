@@ -7,6 +7,7 @@ using g3;
 using gs;
 using OpenTK;
 using ShapeDatabase.IO;
+using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.Util;
 
@@ -65,10 +66,12 @@ namespace ShapeDatabase.Refine {
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
 		public void RefineMesh(Shapes.IMesh mesh, FileInfo file) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
 			if (file == null)
 				throw new ArgumentNullException(nameof(file));
 			if (!file.Exists)
-				throw new ArgumentException("File {0} does not exist.", file.FullName);
+				throw new ArgumentException(Resources.EX_FileNotFound, file.FullName);
 
 			DMesh3 meshDMesh3 = mesh as GeometryMesh;
 
@@ -146,12 +149,13 @@ namespace ShapeDatabase.Refine {
 		/// <exception cref="ArgumentException">If the given file does not exist.
 		/// </exception>
 		///
-		public void RefineMesh(Shapes.IMesh mesh, FileInfo file)
-		{
+		public void RefineMesh(Shapes.IMesh mesh, FileInfo file) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
 			if (file == null)
 				throw new ArgumentNullException(nameof(file));
 			if (!file.Exists)
-				throw new ArgumentException("File {0} does not exist.", file.FullName);
+				throw new ArgumentException(Resources.EX_FileNotLoad, file.FullName);
 
 			DMesh3 meshDMesh3 = mesh as GeometryMesh;
 
@@ -227,6 +231,8 @@ namespace ShapeDatabase.Refine {
 				throw new ArgumentNullException(nameof(mesh));
 			if (file == null)
 				throw new ArgumentNullException(nameof(file));
+			if (!file.Exists)
+				throw new ArgumentException(Resources.EX_FileNotLoad, file.FullName);
 			Shapes.SimpleMesh transformed =
 				ScaleShape(
 					FlipShape(
