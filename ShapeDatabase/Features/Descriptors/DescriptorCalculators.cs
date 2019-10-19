@@ -12,6 +12,7 @@ using Accord.Statistics.Analysis;
 using Accord.Statistics.Models.Regression.Linear;
 using System.Threading;
 using ShapeDatabase.Refine;
+using System.Collections;
 
 namespace ShapeDatabase.Features
 {
@@ -20,6 +21,26 @@ namespace ShapeDatabase.Features
 	/// </summary>
 	public static class DescriptorCalculators
 	{
+
+		/// <summary>
+		/// A collection of all the locally defined descriptors.
+		/// </summary>
+		public static IEnumerable<FeatureManager.DescriptorCalculator> Descriptors {
+			get {
+				yield return SurfaceArea;
+				yield return BoundingBoxVolume;
+				yield return Diameter;
+				yield return Eccentricity;
+				yield return DistanceBarycenter;
+				yield return DistanceVertices;
+				yield return SquareRootTriangles;
+				yield return CubeRootTetrahedron;
+				yield return AngleVertices;
+			}
+		}
+
+		#region --- Elementary Descriptors ---
+
 		/// <summary>
 		/// Elementary descriptor for calculating the surface area of a mesh
 		/// </summary>
@@ -101,12 +122,16 @@ namespace ShapeDatabase.Features
 			PrincipalComponentAnalysis pca =
 				new PrincipalComponentAnalysis(PrincipalComponentMethod.Center,
 											   false, 3);
-			MultivariateLinearRegression regression = pca.Learn(matrix);
+			pca.Learn(matrix);
 			// Find the collection of eigenVectors.
 			double[] eigenvalues = pca.Eigenvalues;
 
 			return new ElemDescriptor("Eccentricity", eigenvalues[0] / eigenvalues[2]);
 		}
+
+		#endregion
+
+		#region --- Histogram Descriptors ---
 
 		/// <summary>
 		/// Histogram descriptor for calculating the distance to the barycenter of a random vertex
@@ -117,16 +142,14 @@ namespace ShapeDatabase.Features
 		{
 			double binSize = 0.15;
 			int[] binValues = new int[10];
-			int numberOfValues = 5000;	
-			Vector3 baryCenter = NormalisationRefiner.FindBaryCenter(mesh);
-			ThreadSafeRandom random = new ThreadSafeRandom();
+			int numberOfValues = 5000;
 
-			Parallel.For(0, numberOfValues, i =>
-			{
-				Vector3 randomVertice = GetRandomVertices(mesh, random, 1)[0];
-				float distance = Vector3.Distance(randomVertice, baryCenter);
+			Parallel.For(0, numberOfValues, i => {
+				Random random = RandomUtil.ThreadSafeRandom;
+				Vector3 randomVertice = GetRandomVertice(mesh, random);
+				float distance = randomVertice.Length;
 				int bin = Math.Min((int)(distance / binSize), 9);
-				AddOneToBin(ref binValues, bin);
+				Interlocked.Increment(ref binValues[bin]);
 			});
 					   
 			return new HistDescriptor("DistanceBarycenter", binSize, binValues);
@@ -142,14 +165,13 @@ namespace ShapeDatabase.Features
 			double binSize = 0.25;
 			int[] binValues = new int[10];
 			int numberOfValues = 5000;
-			ThreadSafeRandom random = new ThreadSafeRandom();
 
-			Parallel.For(0, numberOfValues, i =>
-			{
+			Parallel.For(0, numberOfValues, i => {
+				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 2);
 				float distance = Vector3.Distance(randomVertices[0], randomVertices[1]);
 				int bin = Math.Min((int)(distance / binSize), 9);
-				AddOneToBin(ref binValues, bin);
+				Interlocked.Increment(ref binValues[bin]);
 			});
 
 			return new HistDescriptor("DistanceVertices", binSize, binValues);
@@ -165,14 +187,14 @@ namespace ShapeDatabase.Features
 			double binSize = 0.125;
 			int[] binValues = new int[10];
 			int numberOfValues = 5000;
-			ThreadSafeRandom random = new ThreadSafeRandom();
 
 			Parallel.For(0, numberOfValues, i =>
 			{
+				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 3);
 				double area = Math.Sqrt(Functions.GetTriArea(randomVertices));
 				int bin = Math.Min((int)(area / binSize), 9);
-				AddOneToBin(ref binValues, bin);
+				Interlocked.Increment(ref binValues[bin]);
 			});
 
 			return new HistDescriptor("SquareRootTriangles", binSize, binValues);
@@ -188,14 +210,13 @@ namespace ShapeDatabase.Features
 			double binSize = 0.075;
 			int[] binValues = new int[10];
 			int numberOfValues = 5000;
-			ThreadSafeRandom random = new ThreadSafeRandom();
 
-			Parallel.For(0, numberOfValues, i =>
-			{
+			Parallel.For(0, numberOfValues, i => {
+				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 4);
 				double volume = Math.Pow(Functions.GetTetVolume(randomVertices), (1d / 3d));
 				int bin = Math.Min((int)(volume / binSize), 9);
-				AddOneToBin(ref binValues, bin);
+				Interlocked.Increment(ref binValues[bin]);
 			});
 
 			return new HistDescriptor("CubeRootTetrahedron", binSize, binValues);
@@ -211,32 +232,30 @@ namespace ShapeDatabase.Features
 			double binSize = 18;
 			int[] binValues = new int[10];
 			int numberOfValues = 5000;
-			ThreadSafeRandom random = new ThreadSafeRandom();
 
-			Parallel.For(0, numberOfValues, i =>
-			{
+			Parallel.For(0, numberOfValues, i => {
+				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 3);
 				double angle = Functions.GetAngleVertices(randomVertices);
 				int bin = Math.Min((int)(angle / binSize), 9);
-				AddOneToBin(ref binValues, bin);
+				Interlocked.Increment(ref binValues[bin]);
 			});
 
 			return new HistDescriptor("AngleVertices", binSize, binValues);
 		}
-		/// <summary>
-		/// Method for atomically adding up one to a histogram bin
-		/// </summary>
-		/// <param name="binValues">The histogram</param>
-		/// <param name="bin">The bin index</param>
-		private static void AddOneToBin(ref int[] binValues, int bin)
-		{
-			int tempBinValue;
 
-			do
-			{
-				tempBinValue = binValues[bin];
-			}
-			while (Interlocked.CompareExchange(ref binValues[bin], tempBinValue + 1, tempBinValue) != tempBinValue);
+		#endregion
+
+		#region --- Helper Functions ---
+
+		/// <summary>
+		/// Method for getting a random vertex out of a mesh.
+		/// </summary>
+		/// <param name="mesh">The mesh of which the random vertices will be taken</param>
+		/// <param name="random">The (threadsafe) random generator</param>
+		/// <returns>A Single Vector3 which is a random vertex position.</returns>
+		private static Vector3 GetRandomVertice(IMesh mesh, Random random) {
+			return mesh.GetVertex(random.NextUint(mesh.VertexCount));
 		}
 
 		/// <summary>
@@ -246,21 +265,35 @@ namespace ShapeDatabase.Features
 		/// <param name="random">The (threadsafe) random generator</param>
 		/// <param name="numberOfVertices">The number of random vertices</param>
 		/// <returns>An array containing the random vertices</returns>
-		private static Vector3[] GetRandomVertices(IMesh mesh, ThreadSafeRandom random, int numberOfVertices)
+		private static Vector3[] GetRandomVertices(IMesh mesh, Random random, int numberOfVertices)
 		{
 			Vector3[] vertices = new Vector3[numberOfVertices];
+			uint[] randomNumbers = new uint[numberOfVertices];
 
-			for(int i = 0; i < numberOfVertices; i++)
-			{
-				Vector3 newVertice = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
-				while(vertices.Contains(newVertice))
-				{
-					newVertice = mesh.GetVertex((uint)random.Next(0, (int)mesh.VertexCount));
+			for(int i = 0; i < numberOfVertices; i++) {
+
+				uint newIndex = random.NextUint(mesh.VertexCount);
+				if (ContainsValue(randomNumbers, i, newIndex)) {
+					i--;
+					continue;
 				}
-				vertices[i] = newVertice;
+
+				vertices[i] = mesh.GetVertex(newIndex);
 			}
 
 			return vertices;
 		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		private static bool ContainsValue(uint[] array, int maxPos, uint value) {
+			for(; maxPos >= 0; maxPos--)
+				if (array[maxPos] == value)
+					return true;
+			return false;
+		}
+
+		#endregion
+
 	}
+
 }

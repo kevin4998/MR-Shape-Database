@@ -11,7 +11,8 @@ using ShapeDatabase.Features.Descriptors;
 using System.Linq;
 using System.Reflection;
 using System.IO;
-using System.Threading.Tasks;
+
+using static ShapeDatabase.Properties.Resources;
 
 namespace ShapeDatabase {
 
@@ -28,7 +29,7 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="args">The actions which this application should perform.</param>
 		public static void ProcessArguments(string[] args) {
-			Console.WriteLine("Starting converting input!");
+			Console.WriteLine(I_StartProc_Input);
 
 			Parser.Default.ParseArguments<Options>(args)
 				.WithNotParsed(OnErrors)
@@ -49,7 +50,7 @@ namespace ShapeDatabase {
 			Settings.ShowDebug = options.DebugMessages;
 
 			if (options.CleanStart) {
-				Console.WriteLine("Cleaning directories!");
+				Console.WriteLine(I_StartClean);
 				string[] cachedDirs = new string[] {
 					Settings.ShapeFailedDir,
 					Settings.ShapeFinalDir,
@@ -60,10 +61,10 @@ namespace ShapeDatabase {
 					DirectoryInfo info = new DirectoryInfo(dir);
 					info.Delete(true);
 				}
-				Console.WriteLine("Finished cleaning directories!");
+				Console.WriteLine(I_EndClean);
 			}
 
-			Console.WriteLine("Done converting input!");
+			Console.WriteLine(I_EndProc_Input);
 			// Start program activity.
 			LoadFinalFiles();
 			if (Settings.Mode.HasFlag(OperationModes.REFINE))
@@ -72,8 +73,6 @@ namespace ShapeDatabase {
 				MeasureShapes(options.ShapeDirectories);
 			if (Settings.Mode.HasFlag(OperationModes.FEATURES))
 				ExtractFeatures(options.ShapeDirectories);
-			if (Settings.Mode.HasFlag(OperationModes.QUERY))
-				QueryShapes(ExtractFeatures(options.ShapeDirectories));
 			if (Settings.Mode.HasFlag(OperationModes.VIEW))
 				ViewShapes(options.ShapeDirectories);
 		}
@@ -98,9 +97,9 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
 		static void RefineShapes(IEnumerable<string> dirs) {
-			Console.WriteLine("Start Processing Meshes.");
+			Console.WriteLine(I_StartProc_Mesh);
 			LoadNewFiles(dirs, true);
-			Console.WriteLine("Done Processing Meshes.");
+			Console.WriteLine(I_EndProc_Mesh);
 			ShowShapeCount();
 		}
 
@@ -111,7 +110,7 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
 		static void MeasureShapes(IEnumerable<string> dirs) {
-			Console.WriteLine("Start Measuring Meshes.");
+			Console.WriteLine(I_StartMeasure);
 			LoadNewFiles(dirs, false);
 
 			RecordHolder recordHolder = new RecordHolder(
@@ -134,15 +133,30 @@ namespace ShapeDatabase {
 			);
 			recordHolder.TakeSnapShot(Settings.MeshLibrary);
 
-			Console.WriteLine("Done Measuring Meshes.");
+			Console.WriteLine(I_EndMeasure);
 
-			const string datetimeFormat = "yyyy-MM-dd-HH-mm-ss";
-			string filename = recordHolder.SnapshotTime.ToString(datetimeFormat)
-							+ "_"
-							+ Settings.MeasurementsFile;
-			RecordsWriter.Instance.WriteFile(recordHolder, filename);
-
-			Console.WriteLine($"Statistics exported to: {filename}");
+			// Preparation data to construct path and filename.
+			CultureInfo culture = Settings.Culture;
+			DateTime dateTime = recordHolder.SnapshotTime;
+			string timeformat = F_DateFormat;
+			string fileformat = F_File_Measure;
+			string fileApendix = Settings.MeasurementsFile;
+			// Example dir:
+			// Content/Analysis
+			string directory = Settings.MeasurementsDir;
+			// Example time:
+			// 2019-10-04-13-22-52
+			string time = dateTime.ToString(timeformat, culture);
+			// Example file:
+			// 2019-10-04-13-22-52_measures.csv
+			string filename = string.Format(culture, fileformat, time, fileApendix);
+			// Example loc:
+			// Content/Analysis/2019-10-04-13-22-52_measures.csv
+			string location = Path.Combine(directory, filename);
+			// Export the generated file
+			Directory.CreateDirectory(directory);
+			RecordsWriter.Instance.WriteFile(recordHolder, location);
+			Console.WriteLine(I_Measure_Exp, filename);
 
 			ShowShapeCount();
 		}
@@ -154,17 +168,16 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
 		static void ViewShapes(IEnumerable<string> dirs) {
-			Console.WriteLine("Start Loading Meshes.");
 			LoadNewFiles(dirs, false);
-			Console.WriteLine("Done Loading Meshes.");
 
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 			// Notify the user of their options.
 			ShowShapeCount();
 			// Ask the user for a specific value.
 			while (!Settings.DirectShutDown) {
-				Console.WriteLine("\nPlease select a shape, " +
-								  "or write down 'stop' to exit the program.");
+				Console.WriteLine();	// Empty line for clearance.
+				Console.WriteLine(I_ShapeSelect_Prompt,
+								  Settings.ExitArguments.FirstOrDefault());
 				string input = Console.ReadLine();
 
 				if (Settings.ExitArguments.Contains(input.ToLower(Settings.Culture))) {
@@ -173,7 +186,7 @@ namespace ShapeDatabase {
 				} else if (meshes.Names.Contains(input)) {
 					RunWindow(meshes[input].Mesh);
 				} else {
-					Console.WriteLine($"Unknown command: {input}");
+					Console.WriteLine(I_UnknownCommand, input);
 				}
 			}
 		}
@@ -182,86 +195,40 @@ namespace ShapeDatabase {
 		/// Mode for extracting featurevectors of the shapes, or reading them from a csv file.
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
-		static FeatureManager ExtractFeatures(IEnumerable<string> dirs)
+		static void ExtractFeatures(IEnumerable<string> dirs)
 		{
-			Console.WriteLine("Start Loading Meshes.");
 			LoadNewFiles(dirs, false);
-			Console.WriteLine("Done Loading Meshes.");
 
-			string location = Settings.FeatureVectorDir + "/" + Settings.FeatureVectorFile;
-			FeatureManager manager;
+			string filename = Settings.FeatureVectorFile;
+			string directory = Settings.FeatureVectorDir;
 
-			if (!Settings.ReadVectorFile)
+			Directory.CreateDirectory(directory);
+			string location = Path.Combine(directory, filename);
+
+			if(!Settings.ReadVectorFile)
 			{
-				manager = new FMBuilder(DescriptorCalculators.SurfaceArea, DescriptorCalculators.BoundingBoxVolume, DescriptorCalculators.Diameter, DescriptorCalculators.Eccentricity, DescriptorCalculators.AngleVertices, DescriptorCalculators.DistanceBarycenter, DescriptorCalculators.DistanceVertices, DescriptorCalculators.SquareRootTriangles, DescriptorCalculators.CubeRootTetrahedron).Build();
+				Console.WriteLine(I_StartProc_Feature);
+
+				FeatureManager manager = new FMBuilder().Build();
 				manager.CalculateVectors(Settings.MeshLibrary.ToArray());
 
-				Console.WriteLine("Done Extracting Descriptors.");
+				Console.WriteLine(I_EndProc_Feature);
 
 				ShowShapeCount();
 				FMWriter.Instance.WriteFile(manager, location);
 
-				Console.WriteLine($"FeatureVectors exported to: {location}");
+				Console.WriteLine(I_Feature_Exp, location);
 			}
 			else
 			{
+				FeatureManager manager;
+
 				using (StreamReader reader = new StreamReader(location))
 				{
 					manager = FMReader.Instance.ConvertFile(reader);
 				}
 
-				Console.WriteLine($"Done Importing FeatureVectors from: {location}");
-			}
-
-			return manager;
-		}
-
-		/// <summary>
-		/// Mode for comparing query shapes to the database shapes.
-		/// </summary>
-		/// <param name="featuremanager">The featuremanager of the complete database</param>
-		static void QueryShapes(FeatureManager DatabaseFM)
-		{
-			Console.WriteLine("Start Loading Query Meshes.");
-			LoadQueryFiles();
-			Console.WriteLine("Done Loading Meshes.");
-
-			Console.WriteLine("Start Comparing Meshes.");
-
-			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[Settings.QueryLibrary.Meshes.Count];
-
-			Parallel.For(0, Settings.QueryLibrary.Meshes.Count, i =>
-			{
-				string name = Settings.QueryLibrary.Names.ElementAt(i);
-				IList<(string, double)> results = DatabaseFM.CalculateResults(Settings.QueryLibrary.Meshes.ElementAt(i));
-				results = results.Take(Settings.KBestResults).ToArray();
-				QueryResults[i] = new Tuple<string, IList<(string, double)>>(name, results);
-			});
-
-			Console.WriteLine("Done Comparing Meshes.");
-
-			Console.WriteLine("Start Saving Query Results.");
-
-			if (Settings.SaveQueryResults)
-			{
-				string location = Settings.QueryDir + "/" + Settings.QueryResultsFile;
-				QueryWriter.Instance.WriteFile(QueryResults, location);
-			}
-
-			ShowQueryResults(QueryResults);
-
-			Console.WriteLine("Done Saving Query Results.");
-		}
-
-		/// <summary>
-		/// Shows the user the results of the queries.
-		/// </summary>
-		static void ShowQueryResults(Tuple<string, IList<(string, double)>>[] results)
-		{
-			Console.WriteLine($"{results.Length} Query Results:");
-			foreach (Tuple<string, IList<(string, double)>> result in results)
-			{
-				Console.WriteLine($"\t- {result.Item1} : {string.Join(", ", result.Item2.Select(x => x.Item1 + "(" + x.Item2 + ")"))}");
+				Console.WriteLine(I_Feature_Imp, location);
 			}
 		}
 
@@ -270,7 +237,7 @@ namespace ShapeDatabase {
 		/// </summary>
 		static void ShowShapeCount() {
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
-			Console.WriteLine($"{meshes.Count} Shapes are availabe:");
+			Console.WriteLine(I_ShapeCount, meshes.Count);
 			foreach (string name in meshes.Names)
 				Console.WriteLine($"\t- {name}");
 		}
@@ -280,7 +247,7 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="mesh"></param>
 		static void RunWindow(IMesh mesh) {
-			using (Window window = new Window(800, 600, "Multimedia Retrieval - K. Westerbaan & G. de Jonge", mesh)) {
+			using (Window window = new Window(800, 600, A_WindowName, mesh)) {
 				window.Run(60.0);
 			}
 		}
@@ -291,12 +258,15 @@ namespace ShapeDatabase {
 		/// <param name="dirs">The directories containing shapes.</param>
 		/// <param name="refine">If the shapes should be automatically refined.</param>
 		static void LoadNewFiles(IEnumerable<string> dirs, bool refine = false) {
+			Console.WriteLine(I_StartLoad_Mesh);
 			if (refine)
 				foreach (string dir in dirs)
 					Settings.FileManager.AddDirectory(dir);
 			else
 				foreach (string dir in dirs)
 					Settings.FileManager.AddDirectoryDirect(dir);
+			Console.WriteLine(I_EndLoad_Mesh);
+
 		}
 
 		/// <summary>
@@ -308,12 +278,5 @@ namespace ShapeDatabase {
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
 		}
 
-		/// <summary>
-		/// Processes the query shapes (and loads them in memory).
-		/// </summary>
-		static void LoadQueryFiles()
-		{
-			Settings.FileManager.AddQueryDirectory(Settings.QueryDir);
-		}
 	}
 }

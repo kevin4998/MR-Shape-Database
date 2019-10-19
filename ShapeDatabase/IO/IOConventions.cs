@@ -35,7 +35,7 @@ namespace ShapeDatabase.IO {
 			bool found = false;
 			while (!reader.EndOfStream) {
 				lastLine = reader.ReadLine();
-				if (!lastLine.StartsWith("#"))
+				if (!lastLine.StartsWith("#", StringComparison.InvariantCultureIgnoreCase))
 					continue;
 
 				string text = lastLine.Substring(2);

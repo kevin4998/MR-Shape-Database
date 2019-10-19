@@ -44,12 +44,23 @@ namespace ShapeDatabase.Features {
 						 params FeatureManager.DescriptorCalculator[] calculators) {
 			Values = vectors ?? throw new ArgumentNullException(nameof(vectors));
 			Calculators = new List<FeatureManager.DescriptorCalculator>();
+
+			AddLocalCalculators();
 			AddCalculators(calculators);
 		}
 
 		#endregion
 
 		#region --- Instance Methods ---
+
+		// Add the calculators which are already defined here so it should not be
+		// repeated in all the builder constructors.
+		private void AddLocalCalculators() {
+			foreach(FeatureManager.DescriptorCalculator calculator
+					in DescriptorCalculators.Descriptors)
+				Calculators.Add(calculator);
+		}
+
 
 		/// <summary>
 		/// Method for adding more descriptor calculator delegates
@@ -72,6 +83,20 @@ namespace ShapeDatabase.Features {
 			foreach(KeyValuePair<string, FeatureVector> vector in vectors)
 				Values.Add(vector);
 		}
+
+		/// <summary>
+		/// Method for adding more featurevectors
+		/// </summary>
+		/// <param name="vectors">The featurevectors to be added</param>
+		public void AddFeatures(params (string, FeatureVector)[] vectors) {
+			if (vectors == null || vectors.Length == 0)
+				return;
+
+			foreach((string meshName, FeatureVector values) in vectors)
+				if (!string.IsNullOrEmpty(meshName) && values != null)
+					Values.Add(meshName, values);
+		}
+
 
 		/// <summary>
 		/// Method for building a featuremanager containing the featurevectors and descriptorcalculators of the FMBuilder.

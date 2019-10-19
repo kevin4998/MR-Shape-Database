@@ -3,6 +3,7 @@ using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Input;
+using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.UI {
@@ -108,7 +109,9 @@ namespace ShapeDatabase.UI {
 			if (verts == null)
 				throw new ArgumentNullException(nameof(verts));
 			if (verts.Length != 3)
-				throw new ArgumentException("Input should have 3 vertices.");
+				throw new ArgumentException(
+					Resources.EX_Invalid_Vector_Size,
+					verts.Length.ToString(Settings.Culture));
 
 			Vector3 v1 = verts[0];
 			Vector3 v2 = verts[1];
