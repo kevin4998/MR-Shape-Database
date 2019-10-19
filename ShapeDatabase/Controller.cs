@@ -13,6 +13,7 @@ using System.Reflection;
 using System.IO;
 
 using static ShapeDatabase.Properties.Resources;
+using System.Threading.Tasks;
 
 namespace ShapeDatabase {
 
@@ -73,6 +74,8 @@ namespace ShapeDatabase {
 				MeasureShapes(options.ShapeDirectories);
 			if (Settings.Mode.HasFlag(OperationModes.FEATURES))
 				ExtractFeatures(options.ShapeDirectories);
+			if (Settings.Mode.HasFlag(OperationModes.QUERY))
+				QueryShapes(ExtractFeatures(options.ShapeDirectories));
 			if (Settings.Mode.HasFlag(OperationModes.VIEW))
 				ViewShapes(options.ShapeDirectories);
 		}
@@ -195,7 +198,7 @@ namespace ShapeDatabase {
 		/// Mode for extracting featurevectors of the shapes, or reading them from a csv file.
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
-		static void ExtractFeatures(IEnumerable<string> dirs)
+		static FeatureManager ExtractFeatures(IEnumerable<string> dirs)
 		{
 			LoadNewFiles(dirs, false);
 
@@ -205,11 +208,13 @@ namespace ShapeDatabase {
 			Directory.CreateDirectory(directory);
 			string location = Path.Combine(directory, filename);
 
-			if(!Settings.ReadVectorFile)
+			FeatureManager manager;
+
+			if (!Settings.ReadVectorFile)
 			{
 				Console.WriteLine(I_StartProc_Feature);
 
-				FeatureManager manager = new FMBuilder().Build();
+				manager = new FMBuilder().Build();
 				manager.CalculateVectors(Settings.MeshLibrary.ToArray());
 
 				Console.WriteLine(I_EndProc_Feature);
@@ -221,14 +226,63 @@ namespace ShapeDatabase {
 			}
 			else
 			{
-				FeatureManager manager;
-
 				using (StreamReader reader = new StreamReader(location))
 				{
 					manager = FMReader.Instance.ConvertFile(reader);
 				}
 
 				Console.WriteLine(I_Feature_Imp, location);
+			}
+
+			return manager;
+		}
+
+		/// <summary>
+		/// Mode for comparing query shapes to the database shapes.
+		/// </summary>
+		/// <param name="featuremanager">The featuremanager of the complete database</param>
+		static void QueryShapes(FeatureManager DatabaseFM)
+		{
+			Console.WriteLine("Start Loading Query Meshes.");
+			LoadQueryFiles();
+			Console.WriteLine("Done Loading Meshes.");
+
+			Console.WriteLine("Start Comparing Meshes.");
+
+			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[Settings.QueryLibrary.Meshes.Count];
+
+			Parallel.For(0, Settings.QueryLibrary.Meshes.Count, i =>
+			{
+				string name = Settings.QueryLibrary.Names.ElementAt(i);
+				IList<(string, double)> results = DatabaseFM.CalculateResults(Settings.QueryLibrary.Meshes.ElementAt(i));
+				results = results.Take(Settings.KBestResults).ToArray();
+				QueryResults[i] = new Tuple<string, IList<(string, double)>>(name, results);
+			});
+
+			Console.WriteLine("Done Comparing Meshes.");
+
+			Console.WriteLine("Start Saving Query Results.");
+
+			if (Settings.SaveQueryResults)
+			{
+				string location = Settings.QueryDir + "/" + Settings.QueryResultsFile;
+				QueryWriter.Instance.WriteFile(QueryResults, location);
+			}
+
+			ShowQueryResults(QueryResults);
+
+			Console.WriteLine("Done Saving Query Results.");
+		}
+
+		/// <summary>
+		/// Shows the user the results of the queries.
+		/// </summary>
+		static void ShowQueryResults(Tuple<string, IList<(string, double)>>[] results)
+		{
+			Console.WriteLine($"{results.Length} Query Results:");
+			foreach (Tuple<string, IList<(string, double)>> result in results)
+			{
+				Console.WriteLine($"\t- {result.Item1} : {string.Join(", ", result.Item2.Select(x => x.Item1 + "(" + x.Item2 + ")"))}");
 			}
 		}
 
@@ -278,5 +332,12 @@ namespace ShapeDatabase {
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
 		}
 
+		/// <summary>
+		/// Processes the query shapes (and loads them in memory).
+		/// </summary>
+		static void LoadQueryFiles()
+		{
+			Settings.FileManager.AddQueryDirectory(Settings.QueryDir);
+		}
 	}
 }

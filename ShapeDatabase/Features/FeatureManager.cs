@@ -26,7 +26,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <summary>
 		/// IDictionary with mesh names as key, and their featurevector as value.
 		/// </summary>
-		public IDictionary<string, FeatureVector> FeatureVectors { get; }
+		public IDictionary<string, FeatureVector> FeatureVectors { get; set; }
 		/// <summary>
 		/// IList of all descriptor calculater delegates.
 		/// </summary>
@@ -52,6 +52,7 @@ namespace ShapeDatabase.Features.Descriptors
 							  params DescriptorCalculator[] descriptorcalculators) {
 
 			FeatureVectors = featurevectors ?? new Dictionary<string, FeatureVector>();
+			NormaliseVectors();
 			DescriptorCalculators = new List<DescriptorCalculator>();
 
 			if (DescriptorCalculators != null)
@@ -85,6 +86,8 @@ namespace ShapeDatabase.Features.Descriptors
 			if (library != null)
 				foreach(MeshEntry entry in library)
 					CalculateVector(entry);
+
+			NormaliseVectors();
 		}
 
 		/// <summary>
@@ -111,7 +114,11 @@ namespace ShapeDatabase.Features.Descriptors
 				FeatureVectors.Add(entry.Name, created);
 				return created;
 			}
+		}
 
+		public void NormaliseVectors()
+		{
+			//FeatureVectors = FeatureNormaliser.Instance.NormaliseVectors(FeatureVectors);
 		}
 
 		/// <summary>
@@ -125,7 +132,6 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <returns>The new <see cref="FeatureVector"/> with all the descriptors.
 		/// </returns>
 		private FeatureVector ExpandVector(MeshEntry entry, FeatureVector baseVector) {
-
 
 			FeatureVector newVector = CreateVector(entry);
 			IEnumerable<IDescriptor> updates = ExceptWith(newVector.Descriptors,
