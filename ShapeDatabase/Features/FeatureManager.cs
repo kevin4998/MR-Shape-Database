@@ -51,8 +51,15 @@ namespace ShapeDatabase.Features.Descriptors
 		public FeatureManager(IDictionary<string, FeatureVector> featurevectors,
 							  params DescriptorCalculator[] descriptorcalculators) {
 
-			FeatureVectors = featurevectors ?? new Dictionary<string, FeatureVector>();
-			NormaliseVectors();
+			if(featurevectors != null && featurevectors.Count() != 0)
+			{
+				NormaliseVectors();
+			}
+			else
+			{
+				FeatureVectors = new Dictionary<string, FeatureVector>();
+			}
+
 			DescriptorCalculators = new List<DescriptorCalculator>();
 
 			if (DescriptorCalculators != null)
@@ -118,7 +125,7 @@ namespace ShapeDatabase.Features.Descriptors
 
 		public void NormaliseVectors()
 		{
-			//FeatureVectors = FeatureNormaliser.Instance.NormaliseVectors(FeatureVectors);
+			FeatureVectors = FeatureNormaliser.Instance.NormaliseVectors(FeatureVectors);
 		}
 
 		/// <summary>
