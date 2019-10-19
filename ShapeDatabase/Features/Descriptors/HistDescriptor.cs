@@ -88,6 +88,11 @@ namespace ShapeDatabase.Features.Descriptors {
 			for (int i = BinValues.Length - 1; i >= 0; i--)
 				normalised[i] = BinValues[i] / total;
 
+			for(int i = 0; i < BinValues.Length - 1; i++)
+			{
+				normalised[i + 1] += normalised[i];
+			}
+
 			return new HistDescriptor(base.Name, BinSize, normalised);
 		}
 
