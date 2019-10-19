@@ -128,7 +128,7 @@ namespace ShapeDatabase.Features
 							descriptorNames[i],
 							Convert.ToDouble(binSize, provider),
 							histValues
-								.Select(x => int.Parse(x, provider))
+								.Select(x => float.Parse(x, provider))
 								.ToArray()));
 					}
 				}

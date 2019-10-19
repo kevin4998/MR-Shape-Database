@@ -27,7 +27,7 @@ namespace ShapeDatabase.Features
 		/// <returns>The normlised vectors</returns>
 		public IDictionary<string, FeatureVector> NormaliseVectors(IDictionary<string, FeatureVector> vectors)
 		{
-			IDictionary<string, FeatureVector> normalisedVectors = vectors;
+			Dictionary<string, FeatureVector> normalisedVectors = new Dictionary<string, FeatureVector>();
 
 			IDictionary<string, double> averages = GetAverages(vectors);
 			IDictionary<string, double> deviations = GetStandardDeviations(vectors, averages);
@@ -44,13 +44,12 @@ namespace ShapeDatabase.Features
 					{
 						ElemDescriptor unnormalisedDescriptor = (ElemDescriptor)vector.Value.Descriptors.ElementAt(j);
 
-						normalisedDescriptors[j] = new ElemDescriptor(unnormalisedDescriptor.Name, (unnormalisedDescriptor.Value - averages[unnormalisedDescriptor.Name]) / deviations[unnormalisedDescriptor.Name]);
+						normalisedDescriptors[j] = new ElemDescriptor(unnormalisedDescriptor.Name, Math.Abs((unnormalisedDescriptor.Value - averages[unnormalisedDescriptor.Name])) / deviations[unnormalisedDescriptor.Name]);
 					}
 					//Normalisation for Histogram Descriptor
 					else
 					{
-						//TODO
-						normalisedDescriptors[j] = desc;
+						normalisedDescriptors[j] = ((HistDescriptor)desc).Normalise();
 					}
 					j++;
 				}

@@ -152,7 +152,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 					   
-			return new HistDescriptor("DistanceBarycenter", binSize, binValues);
+			return new HistDescriptor("DistanceBarycenter", binSize, Array.ConvertAll(binValues, x => (float)x));
 		}
 
 		/// <summary>
@@ -174,7 +174,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return new HistDescriptor("DistanceVertices", binSize, binValues);
+			return new HistDescriptor("DistanceVertices", binSize, Array.ConvertAll(binValues, x => (float)x));
 		}
 
 		/// <summary>
@@ -197,7 +197,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return new HistDescriptor("SquareRootTriangles", binSize, binValues);
+			return new HistDescriptor("SquareRootTriangles", binSize, Array.ConvertAll(binValues, x => (float)x));
 		}
 
 		/// <summary>
@@ -219,7 +219,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return new HistDescriptor("CubeRootTetrahedron", binSize, binValues);
+			return new HistDescriptor("CubeRootTetrahedron", binSize, Array.ConvertAll(binValues, x => (float)x));
 		}
 
 		/// <summary>
@@ -241,7 +241,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return new HistDescriptor("AngleVertices", binSize, binValues);
+			return new HistDescriptor("AngleVertices", binSize, Array.ConvertAll(binValues, x => (float)x));
 		}
 
 		#endregion
