@@ -141,7 +141,7 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// Stating the number the number of best matching results that should be shown/saved.
 		/// </summary>
-		public static int KBestResults = 3;
+		public static int KBestResults = 5;
 
 		/// <summary>
 		/// States whether the query results should be saved (in QueryDir)

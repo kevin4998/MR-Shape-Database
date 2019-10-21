@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShapeDatabase.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <summary>
 		/// The number of values in each of the bins.
 		/// </summary>
-		private float[] BinValues { get; }
+		public float[] BinValues { get; }
 
 		#endregion
 
@@ -50,10 +51,16 @@ namespace ShapeDatabase.Features.Descriptors {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Calculates the EMD distance with another histogram descriptor.
+		/// </summary>
+		/// <param name="desc">The other histogram descriptor</param>
+		/// <returns>The distance (0 = Equal Descriptors, 1 = Completely Different)</returns>
 		public override double Compare(HistDescriptor desc) {
 			if (desc == null)
 				throw new ArgumentNullException(nameof(desc));
-			throw new NotImplementedException();
+
+			return Functions.CalculatePTD(BinValues.Select(x => (double)x).ToArray(), Enumerable.Repeat(1d, BinValues.Length).ToArray(), desc.BinValues.Select(x => (double)x).ToArray(), Enumerable.Repeat(1d, BinValues.Length).ToArray());
 		}
 
 		public override string Serialize() {

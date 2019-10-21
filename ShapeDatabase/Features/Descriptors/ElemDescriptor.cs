@@ -38,8 +38,15 @@ namespace ShapeDatabase.Features.Descriptors
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Returns the distance with another elemtary descriptor.
+		/// </summary>
+		/// <param name="desc">The other elementary descriptor</param>
+		/// <returns>The distance (0 = Equal Descriptors, 1 = Completely Different)</returns>
 		public override double Compare(ElemDescriptor desc) {
-			throw new NotImplementedException();
+			if (desc == null)
+				throw new ArgumentNullException(nameof(desc));
+			return Math.Abs(desc.Value - Value);
 		}
 
 		public override string Serialize() {

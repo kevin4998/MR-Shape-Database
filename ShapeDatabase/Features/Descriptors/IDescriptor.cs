@@ -32,12 +32,12 @@ namespace ShapeDatabase.Features.Descriptors
 		/// where a value of 1 represents 100% similarity, or it being the same one,
 		/// and a similarity of 0 meaning that they are nothing alike.
 		/// </summary>
-		/// <param name="desc">The object to compare against for similarity.</param>
+		/// <param name="desc">The object to 
+		/// against for similarity.</param>
 		/// <returns>A double which represent the similarity between the objects.
 		/// 1 means that two values are the same and 0 means that they are nothing alike.
 		/// The returned value will always be within the range of [0,1].</returns>
 		double Compare(T desc);
-
 	}
 
 	/// <summary>
