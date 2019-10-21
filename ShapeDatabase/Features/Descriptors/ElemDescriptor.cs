@@ -54,6 +54,9 @@ namespace ShapeDatabase.Features.Descriptors
 			return Math.Abs(desc.Value - Value);
 		}
 
+		/// Serializes the elementary descriptor.
+		/// </summary>
+		/// <returns>Serialized elementary descriptor</returns>
 		public override string Serialize() {
 			IFormatProvider format = Settings.Culture;
 			return Value.ToString(format);

@@ -68,6 +68,10 @@ namespace ShapeDatabase.Features.Descriptors {
 			return Functions.CalculatePTD(BinValues.Select(x => (double)x).ToArray(), Enumerable.Repeat(1d, BinValues.Length).ToArray(), desc.BinValues.Select(x => (double)x).ToArray(), Enumerable.Repeat(1d, BinValues.Length).ToArray());
 		}
 
+		/// <summary>
+		/// Serializes the histogram descriptor.
+		/// </summary>
+		/// <returns>Serialized histogram descriptor</returns>
 		public override string Serialize() {
 			IFormatProvider format = Settings.Culture;
 

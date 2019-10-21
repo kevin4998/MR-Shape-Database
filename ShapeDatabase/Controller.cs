@@ -243,14 +243,11 @@ namespace ShapeDatabase {
 		/// <param name="featuremanager">The featuremanager of the complete database</param>
 		static void QueryShapes(FeatureManager DatabaseFM)
 		{
-			Console.WriteLine("Start Loading Query Meshes.");
-			LoadQueryFiles();
-			Console.WriteLine("Done Loading Meshes.");
+			Console.WriteLine(I_StartProc_Query);
 
-			Console.WriteLine("Start Comparing Meshes.");
+			LoadQueryFiles();
 
 			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[Settings.QueryLibrary.Meshes.Count];
-
 			Parallel.For(0, Settings.QueryLibrary.Meshes.Count, i =>
 			{
 				string name = Settings.QueryLibrary.Names.ElementAt(i);
@@ -259,19 +256,17 @@ namespace ShapeDatabase {
 				QueryResults[i] = new Tuple<string, IList<(string, double)>>(name, results);
 			});
 
-			Console.WriteLine("Done Comparing Meshes.");
-
-			Console.WriteLine("Start Saving Query Results.");
+			Console.WriteLine(I_EndProc_Query);
 
 			if (Settings.SaveQueryResults)
 			{
+				Console.WriteLine(I_Query_Exp);
+
 				string location = Settings.QueryDir + "/" + Settings.QueryResultsFile;
 				QueryWriter.Instance.WriteFile(QueryResults, location);
 			}
 
 			ShowQueryResults(QueryResults);
-
-			Console.WriteLine("Done Saving Query Results.");
 		}
 
 		/// <summary>

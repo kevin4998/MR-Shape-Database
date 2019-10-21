@@ -329,11 +329,22 @@ namespace ShapeDatabase.Properties {
                 return ResourceManager.GetString("I_EndProc_Feature", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Done converting input!.
-        /// </summary>
-        internal static string I_EndProc_Input {
+
+		/// <summary>
+		///   End of the querying pipeline..
+		/// </summary>
+		internal static string I_EndProc_Query
+		{
+			get
+			{
+				return ResourceManager.GetString("I_EndProc_Query", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Done converting input!.
+		/// </summary>
+		internal static string I_EndProc_Input {
             get {
                 return ResourceManager.GetString("I_EndProc_Input", resourceCulture);
             }
@@ -374,11 +385,22 @@ namespace ShapeDatabase.Properties {
                 return ResourceManager.GetString("I_Feature_Imp", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Statistics exported to: {0}.
-        /// </summary>
-        internal static string I_Measure_Exp {
+
+		/// <summary>
+		///   Experts the querying results..
+		/// </summary>
+		internal static string I_Query_Exp
+		{
+			get
+			{
+				return ResourceManager.GetString("I_Query_Exp", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Statistics exported to: {0}.
+		/// </summary>
+		internal static string I_Measure_Exp {
             get {
                 return ResourceManager.GetString("I_Measure_Exp", resourceCulture);
             }
@@ -437,11 +459,22 @@ namespace ShapeDatabase.Properties {
                 return ResourceManager.GetString("I_StartProc_Feature", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Starting converting input!.
-        /// </summary>
-        internal static string I_StartProc_Input {
+
+		/// <summary>
+		///   Looks up a localized string similar to Start the querying proces..
+		/// </summary>
+		internal static string I_StartProc_Query
+		{
+			get
+			{
+				return ResourceManager.GetString("I_StartProc_Query", resourceCulture);
+			}
+		}
+
+		/// <summary>
+		///   Looks up a localized string similar to Starting converting input!.
+		/// </summary>
+		internal static string I_StartProc_Input {
             get {
                 return ResourceManager.GetString("I_StartProc_Input", resourceCulture);
             }
