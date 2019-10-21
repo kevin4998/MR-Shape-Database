@@ -31,6 +31,11 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// </summary>
 		public float[] BinValues { get; }
 
+		/// <summary>
+		/// Weight of the histogram descriptor
+		/// </summary>
+		public double Weight { get; } = 1;
+
 		#endregion
 
 		#region --- Constructor Methods ---
@@ -69,7 +74,7 @@ namespace ShapeDatabase.Features.Descriptors {
 			string[] histValues = new string[BinValues.Length + 1];
 			histValues[0] = BinSize.ToString(format);
 
-			for (int i = 1; i < 11; i++)
+			for (int i = 1; i < BinValues.Length + 1; i++)
 				histValues[i] = BinValues[i - 1].ToString(format);
 			
 			return string.Join(HistSeperator, histValues);

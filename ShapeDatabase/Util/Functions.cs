@@ -104,6 +104,7 @@ namespace ShapeDatabase.Util {
 			double W = X_weights.Sum();
 			double U = Y_weights.Sum();
 
+			//Normalise both arrays, and the weights of the second array
 			for (int i = 0; i < X_weights.Length; i++)
 			{
 				X_values[i] /= W;
@@ -111,6 +112,7 @@ namespace ShapeDatabase.Util {
 				Y_weights[i] *= (W / U);
 			}
 
+			//Count the flow of each bin
 			double[] Distances = new double[X_values.Length];
 			Distances[0] = X_values[0] * X_weights[0] - Y_values[0] * Y_weights[0];
 			for (int i = 1; i < Distances.Length; i++)
@@ -118,6 +120,7 @@ namespace ShapeDatabase.Util {
 				Distances[i] = X_values[i] * X_weights[i] + Distances[i - 1] - Y_values[i] * Y_weights[i];
 			}
 
+			//Return the PTD
 			return Math.Abs(Distances.Sum() / W);
 		}
 

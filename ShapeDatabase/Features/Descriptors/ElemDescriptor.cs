@@ -18,6 +18,11 @@ namespace ShapeDatabase.Features.Descriptors
 		/// </summary>
 		public double Value { get; }
 
+		/// <summary>
+		/// Weight of the elementary descriptor
+		/// </summary>
+		public double Weight { get; } = 1;
+
 		#endregion
 
 		#region --- Constructor Methods ---

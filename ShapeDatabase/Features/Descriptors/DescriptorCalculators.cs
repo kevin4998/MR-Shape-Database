@@ -21,7 +21,16 @@ namespace ShapeDatabase.Features
 	/// </summary>
 	public static class DescriptorCalculators
 	{
+		#region --- Properties ---
 
+		/// <summary>
+		/// The number of values in a histogram.
+		/// </summary>
+		private const int NUMBER_OF_VALUES = 5000;
+		/// <summary>
+		/// The number of bins in a histogram.
+		/// </summary>
+		private const int NUMBER_OF_BINS = 10;
 		/// <summary>
 		/// A collection of all the locally defined descriptors.
 		/// </summary>
@@ -38,6 +47,8 @@ namespace ShapeDatabase.Features
 				yield return AngleVertices;
 			}
 		}
+
+		#endregion
 
 		#region --- Elementary Descriptors ---
 
@@ -141,14 +152,13 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor DistanceBarycenter(IMesh mesh)
 		{
 			double binSize = 0.15;
-			int[] binValues = new int[10];
-			int numberOfValues = 5000;
+			int[] binValues = new int[NUMBER_OF_BINS];
 
-			Parallel.For(0, numberOfValues, i => {
+			Parallel.For(0, NUMBER_OF_VALUES, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3 randomVertice = GetRandomVertice(mesh, random);
 				float distance = randomVertice.Length;
-				int bin = Math.Min((int)(distance / binSize), 9);
+				int bin = Math.Min((int)(distance / binSize), binValues.Length - 1);
 				Interlocked.Increment(ref binValues[bin]);
 			});
 					   
@@ -163,14 +173,13 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor DistanceVertices(IMesh mesh)
 		{
 			double binSize = 0.25;
-			int[] binValues = new int[10];
-			int numberOfValues = 5000;
+			int[] binValues = new int[NUMBER_OF_BINS];
 
-			Parallel.For(0, numberOfValues, i => {
+			Parallel.For(0, NUMBER_OF_VALUES, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 2);
 				float distance = Vector3.Distance(randomVertices[0], randomVertices[1]);
-				int bin = Math.Min((int)(distance / binSize), 9);
+				int bin = Math.Min((int)(distance / binSize), binValues.Length - 1);
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
@@ -185,15 +194,14 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor SquareRootTriangles(IMesh mesh)
 		{
 			double binSize = 0.125;
-			int[] binValues = new int[10];
-			int numberOfValues = 5000;
+			int[] binValues = new int[NUMBER_OF_BINS];
 
-			Parallel.For(0, numberOfValues, i =>
+			Parallel.For(0, NUMBER_OF_VALUES, i =>
 			{
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 3);
 				double area = Math.Sqrt(Functions.GetTriArea(randomVertices));
-				int bin = Math.Min((int)(area / binSize), 9);
+				int bin = Math.Min((int)(area / binSize), binValues.Length - 1);
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
@@ -208,14 +216,13 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor CubeRootTetrahedron(IMesh mesh)
 		{
 			double binSize = 0.075;
-			int[] binValues = new int[10];
-			int numberOfValues = 5000;
+			int[] binValues = new int[NUMBER_OF_BINS];
 
-			Parallel.For(0, numberOfValues, i => {
+			Parallel.For(0, NUMBER_OF_VALUES, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 4);
 				double volume = Math.Pow(Functions.GetTetVolume(randomVertices), (1d / 3d));
-				int bin = Math.Min((int)(volume / binSize), 9);
+				int bin = Math.Min((int)(volume / binSize), binValues.Length - 1);
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
@@ -230,14 +237,13 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor AngleVertices(IMesh mesh)
 		{
 			double binSize = 18;
-			int[] binValues = new int[10];
-			int numberOfValues = 5000;
+			int[] binValues = new int[NUMBER_OF_BINS];
 
-			Parallel.For(0, numberOfValues, i => {
+			Parallel.For(0, NUMBER_OF_VALUES, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 3);
 				double angle = Functions.GetAngleVertices(randomVertices);
-				int bin = Math.Min((int)(angle / binSize), 9);
+				int bin = Math.Min((int)(angle / binSize), binValues.Length - 1);
 				Interlocked.Increment(ref binValues[bin]);
 			});
 

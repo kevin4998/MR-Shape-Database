@@ -58,14 +58,15 @@ namespace ShapeDatabase.Features {
 			{
 				if(desc is ElemDescriptor)
 				{
-					values.Add(((ElemDescriptor)desc).Value);
-					weights.Add(1);
+					ElemDescriptor elem_desc = (ElemDescriptor)desc;
+					values.Add(elem_desc.Value);
+					weights.Add(elem_desc.Weight);
 				}
 				else
 				{
 					HistDescriptor hist_desc = (HistDescriptor)desc;
 					values.AddRange(hist_desc.BinValues.Select(y => (double)y).ToArray());
-					weights.AddRange(Enumerable.Repeat((double)1 / hist_desc.BinValues.Length, hist_desc.BinValues.Length));
+					weights.AddRange(Enumerable.Repeat(hist_desc.Weight / hist_desc.BinValues.Length, hist_desc.BinValues.Length));
 				}
 			}
 

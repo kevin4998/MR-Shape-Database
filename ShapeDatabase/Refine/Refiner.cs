@@ -20,7 +20,13 @@ namespace ShapeDatabase.Refine {
 
 		#region --- Properties ---
 
+		/// <summary>
+		/// The number of desried vertices.
+		/// </summary>
 		private const int DESIRED_VERTICES = 5000;
+		/// <summary>
+		/// The maximum number of refinement iterations.
+		/// </summary>
 		private const int MAX_ITERATIONS = 20;
 
 		private static readonly Lazy<ExtendRefiner> lazy =
