@@ -237,6 +237,10 @@
     <value>Done extracting descriptors.</value>
     <comment>Notify the user that the descriptors for all shapes have been calculated.</comment>
   </data>
+	<data name="I_EndProc_Query" xml:space="preserve">
+    <value>Done with the query.</value>
+    <comment>Notify the user that the query pipeline has ended.</comment>
+  </data>
   <data name="I_EndProc_Input" xml:space="preserve">
     <value>Done converting input!</value>
     <comment>Notify the end of input argument conversion.</comment>
@@ -252,6 +256,10 @@
   <data name="I_Feature_Exp" xml:space="preserve">
     <value>FeatureVectors exported to: {0}</value>
     <comment>Notify that the featuress have been saved to a specified file.</comment>
+  </data>
+	<data name="I_Query_Exp" xml:space="preserve">
+    <value>Exporting the query results.</value>
+    <comment>Notify that the query results have been saved to a specified file.</comment>
   </data>
   <data name="I_Feature_Imp" xml:space="preserve">
     <value>FeatureVectors imported from: {0}</value>
@@ -284,6 +292,10 @@
   <data name="I_StartProc_Feature" xml:space="preserve">
     <value>Start extracting descriptors.</value>
     <comment>Notify the user that the descriptors for all shapes are being calculated.</comment>
+  </data>
+	<data name="I_StartProc_Query" xml:space="preserve">
+    <value>Starting the query.</value>
+    <comment>Notify that the query pipeline has started.</comment>
   </data>
   <data name="I_StartProc_Input" xml:space="preserve">
     <value>Starting converting input!</value>
