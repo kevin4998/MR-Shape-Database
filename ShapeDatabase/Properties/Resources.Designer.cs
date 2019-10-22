@@ -205,6 +205,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided number had a negative value while this function only excepts positive values. Given value {0}..
+        /// </summary>
+        internal static string EX_ExpPosValue {
+            get {
+                return ResourceManager.GetString("EX_ExpPosValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not load file &apos;{0}&apos; because it does not exist..
         /// </summary>
         internal static string EX_FileNotFound {

@@ -5,6 +5,7 @@ using OpenTK.Graphics.OpenGL4;
 using OpenTK.Input;
 using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.UI {
 
@@ -54,7 +55,7 @@ namespace ShapeDatabase.UI {
 					mesh.GetVertex((uint) face.Z)
 				};
 
-				Vector3 Normal = GetNormal(vertices);
+				Vector3 Normal = Functions.GetNormal(vertices);
 
 				for (int j = 0; j < 3; j++)
 				{
@@ -102,22 +103,6 @@ namespace ShapeDatabase.UI {
 			keybindings.RegisterHold(Key.Right, () => _angleY += 1.5);
 			keybindings.RegisterHold(Key.Up, () => _angleX -= 1.5);
 			keybindings.RegisterHold(Key.Down, () => _angleX += 1.5);
-		}
-
-		protected static Vector3 GetNormal(Vector3[] verts)
-		{
-			if (verts == null)
-				throw new ArgumentNullException(nameof(verts));
-			if (verts.Length != 3)
-				throw new ArgumentException(
-					Resources.EX_Invalid_Vector_Size,
-					verts.Length.ToString(Settings.Culture));
-
-			Vector3 v1 = verts[0];
-			Vector3 v2 = verts[1];
-			Vector3 v3 = verts[2];
-			
-			return Vector3.Cross(v2 - v1, v3 - v1).Normalized();
 		}
 
 		protected override void OnLoad(EventArgs e)

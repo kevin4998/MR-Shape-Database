@@ -198,9 +198,9 @@ namespace ShapeDatabase {
 		/// Mode for extracting featurevectors of the shapes, or reading them from a csv file.
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
-		static FeatureManager ExtractFeatures(IEnumerable<string> dirs)
+		static FeatureManager ExtractFeatures(IEnumerable<string> _)
 		{
-			LoadNewFiles(dirs, false);
+			//LoadNewFiles(dirs, false);
 
 			string filename = Settings.FeatureVectorFile;
 			string directory = Settings.FeatureVectorDir;

@@ -51,7 +51,38 @@ namespace ShapeDatabase.Util {
 
 
 		/// <summary>
+		/// Calculates the normal created by the given provided points.
+		/// The order of the given points is important to determine the right normal.
+		/// </summary>
+		/// <param name="points">Array with the three vertices</param>
+		/// <returns>A vector containing the normal.</returns>
+		public static Vector3 GetNormal(Vector3[] points, bool normalised = true) {
+			VerifyVectorArray(points, 3);
+
+			Vector3 v1 = points[0];
+			Vector3 v2 = points[1];
+			Vector3 v3 = points[2];
+
+			Vector3 normal = Vector3.Cross(v2 - v1, v3 - v1);
+			if (normalised)
+				normal.Normalize();
+			return normal;
+		}
+
+		/// <summary>
+		/// Calculates the middle point of the provided triangle.
+		/// </summary>
+		/// <param name="points">Array with the three vertices</param>
+		/// <returns>A vector containing the center point.</returns>
+		public static Vector3 GetCenter(Vector3[] points) {
+			VerifyVectorArray(points, 3);
+			return (points[0] + points[1] + points[2]) / 3;
+		}
+
+		/// <summary>
 		/// Returns the area of a triangle
+		/// 
+		/// <seealso cref="http://james-ramsden.com/area-of-a-triangle-in-3d-c-code/"/>
 		/// </summary>
 		/// <param name="points">Array with the three vertices</param>
 		/// <returns>The area</returns>

@@ -313,6 +313,10 @@
     <value>Unknown command: {0}</value>
     <comment>Notify the user that the given action cannot be completed by this application.</comment>
   </data>
+  <data name="EX_ExpPosValue" xml:space="preserve">
+    <value>The provided number had a negative value while this function only excepts positive values. Given value {0}.</value>
+    <comment>The exception which is given when a negative number is provided to a method which only accepts positive ones.</comment>
+  </data>
   <data name="EX_UnEqual_Sizes" xml:space="preserve">
     <value>The provided arrays do not have the same size, all should be of the same length. Expected Size: {0}, Given Size {1}.</value>
     <comment>The exception which is given when 2 or more arrays are provided of different lengths when all should have the exact same element count.</comment>
