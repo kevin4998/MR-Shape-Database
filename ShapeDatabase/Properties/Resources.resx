@@ -202,7 +202,7 @@
     <comment>The exception which is given when a format exception is called withoutt specifying any arguments for the cause.</comment>
   </data>
   <data name="EX_Invalid_Vector_Size" xml:space="preserve">
-    <value>Invalid vector size, expected size 3 but got '{0}'</value>
+    <value>Invalid vector size, expected size {0} but got '{1}'</value>
     <comment>The exception which is given when an array could not be converted to a 3D vector because the dimensions weren't right.</comment>
   </data>
   <data name="EX_MinMax_Switch" xml:space="preserve">
@@ -320,5 +320,9 @@
   <data name="EX_UnEqual_Sizes" xml:space="preserve">
     <value>The provided arrays do not have the same size, all should be of the same length. Expected Size: {0}, Given Size {1}.</value>
     <comment>The exception which is given when 2 or more arrays are provided of different lengths when all should have the exact same element count.</comment>
+  </data>
+  <data name="EX_Empty_Array" xml:space="preserve">
+    <value>The given array is empty, this method does not accept arrays without values.</value>
+    <comment>The exception which is given when an empty array is provided while its values are important.</comment>
   </data>
 </root>

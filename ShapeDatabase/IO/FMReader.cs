@@ -102,7 +102,7 @@ namespace ShapeDatabase.Features
 				string meshName = values[0];
 				values = values.Skip(1).ToArray();
 				
-				List<IDescriptor> descriptors = new List<IDescriptor>();
+				IList<IDescriptor> descriptors = new List<IDescriptor>();
 
 				for(int i = 0; i < descriptorNames.Length; i++)
 				{
@@ -124,17 +124,19 @@ namespace ShapeDatabase.Features
 						string[] histValues = splits.Skip(1).ToArray();
 
 						IFormatProvider provider = Settings.Culture;
-						descriptors.Add(new HistDescriptor(
+						descriptors.Add(HistDescriptor.FromNormalised(
 							descriptorNames[i],
 							Convert.ToDouble(binSize, provider),
-							histValues
-								.Select(x => float.Parse(x, provider))
-								.ToArray()));
+							Array.ConvertAll(
+								histValues,
+								x => float.Parse(x, provider)
+							)
+						));
 					}
 				}
 
 				featureVectors.Remove(meshName);
-				featureVectors.Add(meshName, new FeatureVector(descriptors));
+				featureVectors.Add(meshName, new FeatureVector(descriptors.ToArray()));
 			}
 
 			return featureVectors;

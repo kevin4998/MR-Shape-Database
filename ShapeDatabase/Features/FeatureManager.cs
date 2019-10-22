@@ -148,7 +148,7 @@ namespace ShapeDatabase.Features.Descriptors
 			foreach (IDescriptor desc in updates)
 				descriptors.Add(desc);
 
-			return new FeatureVector(descriptors);
+			return new FeatureVector(descriptors.ToArray());
 		}
 
 		/// <summary>
@@ -164,7 +164,7 @@ namespace ShapeDatabase.Features.Descriptors
 			foreach (DescriptorCalculator calculator in DescriptorCalculators)
 				descriptors.Add(calculator(entry.Mesh));
 
-			return new FeatureVector(descriptors);
+			return new FeatureVector(descriptors.ToArray());
 		}
 
 		/// <summary>

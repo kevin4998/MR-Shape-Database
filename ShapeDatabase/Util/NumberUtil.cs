@@ -217,16 +217,8 @@ namespace ShapeDatabase.Util
 		}
 
 		public static TGoal[] Cast<TFrom,TGoal>(this TFrom[] values,
-								Func<TFrom, TGoal> parser) {
-			if (values == null)
-				throw new ArgumentNullException(nameof(values));
-			if (parser == null)
-				throw new ArgumentNullException(nameof(parser));
-
-			TGoal[] result = new TGoal[values.Length];
-			for(int i = values.Length - 1; i >= 0; i--)
-				result[i] = parser(values[i]);
-			return result;
+								Converter<TFrom, TGoal> parser) {
+			return Array.ConvertAll(values, parser);
 		}
 
 	}

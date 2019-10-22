@@ -79,6 +79,7 @@ namespace ShapeDatabase.Util {
 			return (points[0] + points[1] + points[2]) / 3;
 		}
 
+
 		/// <summary>
 		/// Returns the area of a triangle
 		/// 
@@ -203,8 +204,12 @@ namespace ShapeDatabase.Util {
 				throw new ArgumentNullException(nameof(points));
 			if (points.Length != size)
 				throw new ArgumentException(
-					Resources.EX_Invalid_Vector_Size,
-					points.Length.ToString(Settings.Culture));
+					string.Format(
+						Settings.Culture,
+						Resources.EX_Invalid_Vector_Size,
+						size,
+						points.Length
+					));
 		}
 	}
 }

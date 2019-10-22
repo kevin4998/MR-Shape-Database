@@ -63,7 +63,7 @@ namespace ShapeDatabase.Features
 
 					//Normalisation for Histogram Descriptor.
 					} else if (desc is HistDescriptor histDesc)
-						normalisedDescriptors[descCount] = histDesc.Normalise();
+						normalisedDescriptors[descCount] = histDesc;
 
 					// Normalisation for unsupported Descriptors.
 					else

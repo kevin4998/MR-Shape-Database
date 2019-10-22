@@ -16,11 +16,14 @@ namespace ShapeDatabase.Features {
 
 		#region --- Properties ---
 
+		// A sorted array containing all the descriptors.
+		private readonly IDescriptor[] descriptors;
+
 		/// <summary>
 		/// A collection of descriptors which have been saved in this
 		/// <see cref="FeatureVector"/>.
 		/// </summary>
-		public IEnumerable<IDescriptor> Descriptors { get; }
+		public IEnumerable<IDescriptor> Descriptors => descriptors;
 
 		/// <summary>
 		/// A collection of the names of all the descriptors which have been
@@ -49,9 +52,12 @@ namespace ShapeDatabase.Features {
 		/// </param>
 		/// <exception cref="ArgumentNullException">if the given descriptors are
 		/// <see langword="null"/>.</exception>
-		public FeatureVector(IEnumerable<IDescriptor> descriptors) {
-			Descriptors = descriptors
-				?? throw new ArgumentNullException(nameof(descriptors));
+		public FeatureVector(IDescriptor[] descriptors) {
+			if (descriptors == null)
+				throw new ArgumentNullException(nameof(descriptors));
+
+			Array.Sort(descriptors, DescriptorComparer.Instance);
+			this.descriptors = descriptors;
 		}
 
 		#endregion

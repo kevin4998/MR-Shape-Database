@@ -196,6 +196,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The given array is empty, this method does not accept arrays without values..
+        /// </summary>
+        internal static string EX_Empty_Array {
+            get {
+                return ResourceManager.GetString("EX_Empty_Array", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot read data from the end of a stream..
         /// </summary>
         internal static string EX_EndOfStream {
@@ -259,7 +268,7 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid vector size, expected size 3 but got &apos;{0}&apos;.
+        ///   Looks up a localized string similar to Invalid vector size, expected size {0} but got &apos;{1}&apos;.
         /// </summary>
         internal static string EX_Invalid_Vector_Size {
             get {
