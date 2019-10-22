@@ -15,14 +15,10 @@ namespace ShapeDatabase.Features
 	{
 
 		private const int SampleSize = 1_000;
-		private const int TestSize = 10 * SampleSize;
 		private const int Dimensionality = 32;
-		private const string VectorsPathSuffix = "vectors.hnsw";
-		private const string GraphPathSuffix = "graph.hnsw";
 
 		public static void BuildAndSave()
 		{
-			Stopwatch clock;
 			List<float[]> sampleVectors;
 
 			var parameters = new Parameters();
@@ -30,62 +26,18 @@ namespace ShapeDatabase.Features
 			var world = new SmallWorld<float[], float>(CosineDistance.NonOptimized);
 
 			Console.Write($"Generating {SampleSize} sample vectos... ");
-			clock = Stopwatch.StartNew();
 			sampleVectors = RandomVectors(Dimensionality, SampleSize);
-			Console.WriteLine($"Done in {clock.ElapsedMilliseconds} ms.");
 
 			Console.WriteLine("Building HNSW graph... ");
 			using (var listener = new MetricsEventListener(EventSources.GraphBuildEventSource.Instance))
 			{
-				clock = Stopwatch.StartNew();
 				world.BuildGraph(sampleVectors, new Random(42), parameters);
-				Console.WriteLine($"Done in {clock.ElapsedMilliseconds} ms.");
 			}
-
-			//Console.Write($"Saving HNSW graph to '${Path.Combine(Directory.GetCurrentDirectory(), pathPrefix)}'... ");
-			clock = Stopwatch.StartNew();
-			BinaryFormatter formatter = new BinaryFormatter();
-			MemoryStream sampleVectorsStream = new MemoryStream();
-			formatter.Serialize(sampleVectorsStream, sampleVectors);
-			//File.WriteAllBytes($"{pathPrefix}.{VectorsPathSuffix}", sampleVectorsStream.ToArray());
-			//File.WriteAllBytes($"{pathPrefix}.{GraphPathSuffix}", world.SerializeGraph());
-			Console.WriteLine($"Done in {clock.ElapsedMilliseconds} ms.");
-
-
-			float[] query = Enumerable.Repeat(1f, 32).ToArray();
+					   
+			float[] query = Enumerable.Repeat(0f, 32).ToArray();
 			var best20 = world.KNNSearch(query, 20);
 			var best1 = best20.OrderBy(r => r.Distance).First();
 			;
-
-		}
-
-		private static void LoadAndSearch(string pathPrefix)
-		{
-			Stopwatch clock;
-			var world = new SmallWorld<float[], float>(CosineDistance.NonOptimized);
-
-			Console.Write("Loading HNSW graph... ");
-			clock = Stopwatch.StartNew();
-			BinaryFormatter formatter = new BinaryFormatter();
-			var sampleVectors = (List<float[]>)formatter.Deserialize(new MemoryStream(File.ReadAllBytes($"{pathPrefix}.{VectorsPathSuffix}")));
-			world.DeserializeGraph(sampleVectors, File.ReadAllBytes($"{pathPrefix}.{GraphPathSuffix}"));
-			Console.WriteLine($"Done in {clock.ElapsedMilliseconds} ms.");
-
-			Console.Write($"Generating {TestSize} test vectos... ");
-			clock = Stopwatch.StartNew();
-			var vectors = RandomVectors(Dimensionality, TestSize);
-			Console.WriteLine($"Done in {clock.ElapsedMilliseconds} ms.");
-
-			Console.WriteLine("Running search agains the graph... ");
-			using (var listener = new MetricsEventListener(EventSources.GraphSearchEventSource.Instance))
-			{
-				clock = Stopwatch.StartNew();
-				Parallel.ForEach(vectors, (vector) =>
-				{
-					world.KNNSearch(vector, 10);
-				});
-				Console.WriteLine($"Done in {clock.ElapsedMilliseconds} ms.");
-			}
 		}
 
 		private static List<float[]> RandomVectors(int vectorSize, int vectorsCount)
