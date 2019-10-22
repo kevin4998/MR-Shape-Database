@@ -42,7 +42,7 @@ namespace ShapeDatabase.Features
 			IDictionary<string, double> averages = GetAverages(vectors);
 			IDictionary<string, double> deviations = GetStandardDeviations(vectors, averages);
 
-			foreach(KeyValuePair<string, FeatureVector> pair in vectors) { 
+			foreach(KeyValuePair<string, FeatureVector> pair in vectors.ToArray()) { 
 				string name = pair.Key;
 				FeatureVector vector = pair.Value;
 				IDescriptor[] normalisedDescriptors = new IDescriptor[vector.DescriptorCount];
@@ -104,7 +104,7 @@ namespace ShapeDatabase.Features
 			// Normalise all the values in averages.
 			double inverseCount = 1 / vectors.Count;
 			// TODO use the iterator to ensure that changes can be made in the loop.
-			foreach(KeyValuePair<string, double> sum in averages)
+			foreach(KeyValuePair<string, double> sum in averages.ToArray())
 				averages[sum.Key] = sum.Value * inverseCount;
 
 			return averages;
@@ -138,7 +138,7 @@ namespace ShapeDatabase.Features
 					squaredDifference[desc.Name] += Math.Pow(desc.Value - averages[desc.Name], 2);
 
 			double inverseCount = 1 / vectors.Count;
-			foreach (KeyValuePair<string, double> sum in squaredDifference)
+			foreach (KeyValuePair<string, double> sum in squaredDifference.ToArray())
 				squaredDifference[sum.Key] = Math.Sqrt(sum.Value * inverseCount);
 
 			return squaredDifference;

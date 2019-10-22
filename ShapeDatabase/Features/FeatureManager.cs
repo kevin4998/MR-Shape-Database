@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ShapeDatabase.IO;
+using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.Features.Descriptors
@@ -195,18 +196,17 @@ namespace ShapeDatabase.Features.Descriptors
 		/// and ordered by their similarity. The <see cref="IList{T}"/> has a tuple
 		/// containing the name of the mesh as well as an indicator of similarity
 		/// represented as double. The results are ordered (best match first).</returns>
-		public IList<(string, double)> CalculateResults(MeshEntry mesh)
+		public QueryResult CalculateResults(MeshEntry mesh)
 		{
-			(string, double)[] results = new (string, double)[FeatureVectors.Count];
-			FeatureVector vector = CalculateVector(mesh, false);
+			QueryResult result = new QueryResult(mesh.Name, mesh.Mesh);
+			FeatureVector reference = CalculateVector(mesh, false);
 
-			Parallel.For(0, FeatureVectors.Count, i =>
-			{
-				double result = FeatureVectors.ElementAt(i).Value.Compare(vector);
-				results[i] = (FeatureVectors.ElementAt(i).Key, result);
+			Parallel.ForEach(FeatureVectors, vector => {
+				double difference = FeatureVector.Compare(reference, vector.Value);
+				result.AddItem(vector.Key, difference);
 			});
 
-			return results.OrderBy(x => x.Item2).ToList();
+			return result;
 		}
 
 		#endregion

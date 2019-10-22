@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.Util.Collections;
 
@@ -36,6 +37,10 @@ namespace ShapeDatabase.Query {
 		/// of the most accurate one first.
 		/// </summary>
 		public IEnumerable<QueryItem> Results => results;
+		/// <summary>
+		/// The number of elements which have been compared to the reference one.
+		/// </summary>
+		public int Count => results.Count;
 
 		#endregion
 
@@ -74,7 +79,14 @@ namespace ShapeDatabase.Query {
 		public void AddItem(QueryItem item) {
 			if (item == null)
 				throw new ArgumentNullException(nameof(item));
-			results.Add(item);
+			
+			IList list = (IList) results;
+			if (list.IsSynchronized)
+				results.Add(item);
+			else
+				lock (list.SyncRoot) { 
+					results.Add(item);
+				}
 		}
 
 		/// <summary>
@@ -85,6 +97,35 @@ namespace ShapeDatabase.Query {
 		/// item. The larger the distance the further it is from the reference item.
 		/// </param>
 		public void AddItem(string name, double distance) => AddItem(new QueryItem(name, distance));
+
+		/// <summary>
+		/// Gives the best results from the query object as an array.
+		/// The size of the array will be the given size or the maximum
+		/// amount of queried objects in this class.
+		/// </summary>
+		/// <param name="resultCount">The number of elements to retrieve.</param>
+		/// <returns>An array containing the best querried items from the
+		/// solution.</returns>
+		public QueryItem[] GetBestResults(int resultCount) {
+			if (resultCount < 0)
+				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(resultCount));
+
+			IList list = (IList) results;
+			if (list.IsSynchronized)
+				return SafeBestResults(resultCount);
+			else
+				lock (list.SyncRoot) {
+					return SafeBestResults(resultCount);
+				}
+			}
+
+		private QueryItem[] SafeBestResults(int resultCount) {
+			int count = Math.Min(resultCount, Count);
+			QueryItem[] result = new QueryItem[count];
+			for (int i = 0; i < count; i++)
+				result[i] = results[i];
+			return result;
+		}
 
 		#endregion
 

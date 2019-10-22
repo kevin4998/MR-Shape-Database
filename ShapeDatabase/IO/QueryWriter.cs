@@ -1,5 +1,6 @@
 ﻿using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
+using ShapeDatabase.Query;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for writing the query results to a csv file.
 	/// </summary>
-	public class QueryWriter : IWriter<(string, IList<(string, double)>)[]>
+	public class QueryWriter : IWriter<QueryResult[]>
 	{
 
 		#region --- Properties ---
@@ -50,12 +51,7 @@ namespace ShapeDatabase.IO
 
 		#region --- Instance Methods ---
 
-		/// <summary>
-		/// Writes the query results to a csv file.
-		/// </summary>
-		/// <param name="type">The query results</param>
-		/// <param name="location">Location of the csv file</param>
-		public void WriteFile((string, IList<(string, double)>)[] type, string location)
+		public void WriteFile(QueryResult[] type, string location)
 		{
 			using (StreamWriter writer = new StreamWriter(location))
 			{
@@ -63,12 +59,7 @@ namespace ShapeDatabase.IO
 			}
 		}
 
-		/// <summary>
-		/// Writes the query results to a csv file.
-		/// </summary>
-		/// <param name="type">The query results</param>
-		/// <param name="location">Location of the csv file</param>
-		public void WriteFile((string, IList<(string, double)>)[] type, StreamWriter writer)
+		public void WriteFile(QueryResult[] type, StreamWriter writer)
 		{
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
@@ -77,27 +68,27 @@ namespace ShapeDatabase.IO
 
 			string[] columnNames = new string[Settings.KBestResults + 1];
 			columnNames[0] = "QueryMesh";
-			for(int i = 1; i < Settings.KBestResults + 1; i++)
+			for(int i = 1; i <= Settings.KBestResults; i++)
 			{
 				columnNames[i] = $"K = {i}";
 			}
 			
 			writer.WriteLine(string.Join(Seperator, columnNames));
 
-			foreach((string queryName, IList<(string, double)> queryResult) in type)
+			foreach(QueryResult queryResult in type)
 			{
-				writer.WriteLine(queryName + Seperator + string.Join(Seperator, queryResult.Select(x => x.Item1 + " (" + x.Item2 + ")" )));
+				writer.WriteLine(queryResult.QueryName + Seperator + string.Join(Seperator, queryResult.Results.Select(x => x.MeshName + " (" + x.MeshDistance + ")" )));
 			}
 
 			writer.Flush();
 		}
 
-		public Task WriteFileAsync((string, IList<(string, double)>)[] results, string location)
+		public Task WriteFileAsync(QueryResult[] results, string location)
 		{
 			return Task.Run(() => WriteFile(results, location));
 		}
 
-		public Task WriteFileAsync((string, IList<(string, double)>)[] results, StreamWriter writer)
+		public Task WriteFileAsync(QueryResult[] results, StreamWriter writer)
 		{
 			return Task.Run(() => WriteFile(results, writer));
 		}

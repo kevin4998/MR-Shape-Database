@@ -14,6 +14,8 @@ using System.IO;
 
 using static ShapeDatabase.Properties.Resources;
 using System.Threading.Tasks;
+using ShapeDatabase.Query;
+using System.Threading;
 
 namespace ShapeDatabase {
 
@@ -247,13 +249,13 @@ namespace ShapeDatabase {
 
 			LoadQueryFiles();
 
-			(string, IList<(string, double)>)[] QueryResults = new (string, IList<(string, double)>)[Settings.QueryLibrary.Meshes.Count];
-			Parallel.For(0, Settings.QueryLibrary.Meshes.Count, i =>
-			{
-				string name = Settings.QueryLibrary.Names.ElementAt(i);
-				IList<(string, double)> results = DatabaseFM.CalculateResults(Settings.QueryLibrary.Meshes.ElementAt(i));
-				results = results.Take(Settings.KBestResults).ToArray();
-				QueryResults[i] = (name, results);
+			int queryItems = Settings.QueryLibrary.Meshes.Count;
+			QueryResult[] queryResults = new QueryResult[queryItems];
+			int nextElement = -1;	// Increment returns the new value.
+
+			Parallel.ForEach(Settings.QueryLibrary.Meshes, mesh => {
+				int position = Interlocked.Increment(ref nextElement);
+				queryResults[position] = DatabaseFM.CalculateResults(mesh);
 			});
 
 			Console.WriteLine(I_EndProc_Query);
@@ -263,22 +265,22 @@ namespace ShapeDatabase {
 				Console.WriteLine(I_Query_Exp);
 
 				string location = Settings.QueryDir + "/" + Settings.QueryResultsFile;
-				QueryWriter.Instance.WriteFile(QueryResults, location);
+				QueryWriter.Instance.WriteFile(queryResults, location);
 			}
 
-			ShowQueryResults(QueryResults);
+			ShowQueryResults(queryResults);
 		}
 
 
 		/// <summary>
 		/// Shows the user the results of the queries.
 		/// </summary>
-		static void ShowQueryResults((string, IList<(string, double)>)[] results)
+		static void ShowQueryResults(QueryResult[] results)
 		{
 			Console.WriteLine($"{results.Length} Query Results:");
-			foreach ((string queryName, IList<(string, double)> queryResult) in results)
+			foreach (QueryResult queryResult in results)
 			{
-				Console.WriteLine($"\t- {queryName} : {string.Join(", ", queryResult.Select(x => x.Item1 + "(" + x.Item2 + ")"))}");
+				Console.WriteLine($"\t- {queryResult.QueryName} : {string.Join(", ", queryResult.Results.Select(x => x.MeshName + "(" + x.MeshDistance + ")"))}");
 			}
 		}
 

@@ -22,7 +22,6 @@ namespace ShapeDatabase.Util.Collections {
 
 		private T[] array;
 
-
 		public T this[int index] {
 			get => array[index];
 			set { if (value is T item) Add(item); }
@@ -62,7 +61,8 @@ namespace ShapeDatabase.Util.Collections {
 				throw new ArgumentNullException(nameof(collection));
 
 			if (collection is ICollection<T> col) {
-				array = new T[col.Count];
+				Count = col.Count;
+				array = new T[Count];
 				col.CopyTo(array, 0);
 			} else {
 				array = new T[STARTING_SIZE];
