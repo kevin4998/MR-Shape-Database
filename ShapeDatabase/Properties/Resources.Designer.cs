@@ -277,6 +277,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided arrays do not have the same size, all should be of the same length. Expected Size: {0}, Given Size {1}..
+        /// </summary>
+        internal static string EX_UnEqual_Sizes {
+            get {
+                return ResourceManager.GetString("EX_UnEqual_Sizes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to yyyy-MM-dd-HH-mm-ss.
         /// </summary>
         internal static string F_DateFormat {

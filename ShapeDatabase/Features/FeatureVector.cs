@@ -1,6 +1,7 @@
 ﻿using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.Util;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,33 @@ namespace ShapeDatabase.Features {
 	/// </summary>
 	public class FeatureVector : Util.IComparable<FeatureVector> {
 
+		#region --- Properties ---
+
 		/// <summary>
 		/// A collection of descriptors which have been saved in this
 		/// <see cref="FeatureVector"/>.
 		/// </summary>
 		public IEnumerable<IDescriptor> Descriptors { get; }
+
+		/// <summary>
+		/// A collection of the names of all the descriptors which have been
+		/// saved in the current <see cref="FeatureVector"/>.
+		/// </summary>
+		public IEnumerable<string> DescriptorNames {
+			get {
+				foreach (IDescriptor descriptor in Descriptors)
+					yield return descriptor.Name;
+			}
+		}
+
+		/// <summary>
+		/// The number of descriptors which are present in this vector.
+		/// </summary>
+		public int DescriptorCount => Descriptors.Count();
+
+		#endregion
+
+		#region --- Constructor Methods ---
 
 		/// <summary>
 		/// Constructor for the featurevector, given all of its descriptors
@@ -31,6 +54,10 @@ namespace ShapeDatabase.Features {
 				?? throw new ArgumentNullException(nameof(descriptors));
 		}
 
+		#endregion
+
+		#region --- Instance Methods ---
+
 		/// <summary>
 		/// Compare with another using the Proportional Transportation Distance.
 		/// </summary>
@@ -38,6 +65,9 @@ namespace ShapeDatabase.Features {
 		/// <returns>The PTD</returns>
 		public double Compare(FeatureVector vector) 
 		{
+			if (vector == null)
+				throw new ArgumentNullException(nameof(vector));
+
 			(double[] X_values, double[] X_weights) = CreatePTDArray(Descriptors);
 			(double[] Y_values, double[] Y_weights) = CreatePTDArray(vector.Descriptors);
 
@@ -56,21 +86,39 @@ namespace ShapeDatabase.Features {
 
 			foreach(IDescriptor desc in descriptors)
 			{
-				if(desc is ElemDescriptor)
+				if(desc is ElemDescriptor elem_desc)
 				{
-					ElemDescriptor elem_desc = (ElemDescriptor)desc;
 					values.Add(elem_desc.Value);
 					weights.Add(elem_desc.Weight);
 				}
-				else
+				else if (desc is HistDescriptor hist_desc)
 				{
-					HistDescriptor hist_desc = (HistDescriptor)desc;
-					values.AddRange(hist_desc.BinValues.Select(y => (double)y).ToArray());
-					weights.AddRange(Enumerable.Repeat(hist_desc.Weight / hist_desc.BinValues.Length, hist_desc.BinValues.Length));
-				}
+					values.AddRange(hist_desc.BinValues.Cast<double>());
+					weights.AddRange(Enumerable.Repeat(hist_desc.Weight / hist_desc.BinCount, hist_desc.BinCount));
+
+				} else
+					throw new NotImplementedException();
 			}
 
 			return (values.ToArray(), weights.ToArray());
 		}
+
+		#endregion
+
 	}
+
+	public static class FeatureVectorEx {
+
+		public static IEnumerable<T> GetDescriptors<T>(this FeatureVector vector) 
+			where T : IDescriptor{
+			if (vector == null)
+				throw new ArgumentNullException(nameof(vector));
+
+			foreach (IDescriptor descriptor in vector.Descriptors)
+				if (descriptor is T)
+					yield return (T) descriptor;
+		}
+
+	}
+
 }

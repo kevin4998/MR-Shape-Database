@@ -128,7 +128,8 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static MeshLibrary QueryLibrary => Settings.FileManager.QueryMeshes;
 
-		// <summary>
+
+		/// <summary>
 		/// The location where the query shapes are located
 		/// </summary>
 		public static string QueryDir { get; set; } = "Content/Query";
@@ -141,12 +142,12 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// Stating the number the number of best matching results that should be shown/saved.
 		/// </summary>
-		public static int KBestResults = 5;
+		public static int KBestResults { get; set; } = 5;
 
 		/// <summary>
 		/// States whether the query results should be saved (in QueryDir)
 		/// </summary>
-		public static bool SaveQueryResults = true;
+		public static bool SaveQueryResults { get; set; } = true;
 
 		/// <summary>
 		/// A collection of strings which will force the program to stop.

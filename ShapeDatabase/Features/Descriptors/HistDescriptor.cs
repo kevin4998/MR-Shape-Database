@@ -31,6 +31,8 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// </summary>
 		public float[] BinValues { get; }
 
+		public int BinCount => BinValues.Length;
+
 		/// <summary>
 		/// Weight of the histogram descriptor
 		/// </summary>

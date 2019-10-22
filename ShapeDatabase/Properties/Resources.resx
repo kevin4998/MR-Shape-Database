@@ -237,7 +237,7 @@
     <value>Done extracting descriptors.</value>
     <comment>Notify the user that the descriptors for all shapes have been calculated.</comment>
   </data>
-	<data name="I_EndProc_Query" xml:space="preserve">
+  <data name="I_EndProc_Query" xml:space="preserve">
     <value>Done with the query.</value>
     <comment>Notify the user that the query pipeline has ended.</comment>
   </data>
@@ -257,7 +257,7 @@
     <value>FeatureVectors exported to: {0}</value>
     <comment>Notify that the featuress have been saved to a specified file.</comment>
   </data>
-	<data name="I_Query_Exp" xml:space="preserve">
+  <data name="I_Query_Exp" xml:space="preserve">
     <value>Exporting the query results.</value>
     <comment>Notify that the query results have been saved to a specified file.</comment>
   </data>
@@ -293,7 +293,7 @@
     <value>Start extracting descriptors.</value>
     <comment>Notify the user that the descriptors for all shapes are being calculated.</comment>
   </data>
-	<data name="I_StartProc_Query" xml:space="preserve">
+  <data name="I_StartProc_Query" xml:space="preserve">
     <value>Starting the query.</value>
     <comment>Notify that the query pipeline has started.</comment>
   </data>
@@ -312,5 +312,9 @@
   <data name="I_UnknownCommand" xml:space="preserve">
     <value>Unknown command: {0}</value>
     <comment>Notify the user that the given action cannot be completed by this application.</comment>
+  </data>
+  <data name="EX_UnEqual_Sizes" xml:space="preserve">
+    <value>The provided arrays do not have the same size, all should be of the same length. Expected Size: {0}, Given Size {1}.</value>
+    <comment>The exception which is given when 2 or more arrays are provided of different lengths when all should have the exact same element count.</comment>
   </data>
 </root>
