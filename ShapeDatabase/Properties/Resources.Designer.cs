@@ -160,6 +160,24 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Query.
+        /// </summary>
+        internal static string D_QueryDir {
+            get {
+                return ResourceManager.GetString("D_QueryDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to queryresults.csv.
+        /// </summary>
+        internal static string D_QueryFile {
+            get {
+                return ResourceManager.GetString("D_QueryFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shapes.
         /// </summary>
         internal static string D_ShapesDir {

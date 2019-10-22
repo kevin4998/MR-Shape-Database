@@ -145,8 +145,8 @@ namespace ShapeDatabase.Features.Descriptors {
 				throw new ArgumentException(Resources.EX_Empty_Array, nameof(histogram));
 			float last = histogram[0];
 			// Verify that the next value is always bigger than the previous.
-			for (int i = 1; i < histogram.Length; i--)
-				if (last >= histogram[i])
+			for (int i = 1; i < histogram.Length; i++)
+				if (last > histogram[i])
 					return false;
 				else
 					last = histogram[i];

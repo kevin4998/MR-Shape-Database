@@ -103,6 +103,7 @@ namespace ShapeDatabase.Features
 
 			// Normalise all the values in averages.
 			double inverseCount = 1 / vectors.Count;
+			// TODO use the iterator to ensure that changes can be made in the loop.
 			foreach(KeyValuePair<string, double> sum in averages)
 				averages[sum.Key] = sum.Value * inverseCount;
 

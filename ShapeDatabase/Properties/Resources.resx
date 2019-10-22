@@ -325,4 +325,12 @@
     <value>The given array is empty, this method does not accept arrays without values.</value>
     <comment>The exception which is given when an empty array is provided while its values are important.</comment>
   </data>
+  <data name="D_QueryDir" xml:space="preserve">
+    <value>Query</value>
+    <comment>The directory which will contain all the query shapes which needs to be compared with our stored database.</comment>
+  </data>
+  <data name="D_QueryFile" xml:space="preserve">
+    <value>queryresults.csv</value>
+    <comment>The file where all the similar files with their scores will be saved in.</comment>
+  </data>
 </root>

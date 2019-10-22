@@ -54,6 +54,12 @@ namespace ShapeDatabase {
 		public static string MeasurementsDir { get; set; } =
 			Path.Combine(D_ContentDir, D_MeasureDir);
 
+		/// <summary>
+		/// The location where the query shapes are located
+		/// </summary>
+		public static string QueryDir { get; set; } =
+			Path.Combine(D_ContentDir, D_QueryDir);
+
 
 		/// <summary>
 		/// States whether the featuremanager should be created by reading a vectorfile.
@@ -69,6 +75,11 @@ namespace ShapeDatabase {
 		/// The file name of the measurement/statistics file.
 		/// </summary>
 		public static string MeasurementsFile { get; set; } = D_MeasureFile;
+
+		/// <summary>
+		/// The file name of the query results file.
+		/// </summary>
+		public static string QueryResultsFile { get; set; } = D_QueryFile;
 
 		#endregion
 
@@ -91,6 +102,11 @@ namespace ShapeDatabase {
 		/// Describes if the application should be active.
 		/// </summary>
 		public static bool Active { get; set; } = true;
+
+		/// <summary>
+		/// States whether the query results should be saved (in QueryDir)
+		/// </summary>
+		public static bool SaveQueryResults { get; set; } = true;
 
 		/// <summary>
 		/// Describes if all the functionality of the application should cease at once.
@@ -121,33 +137,21 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// A collection of all the query meshes sturctured inside a library.
 		/// </summary>
-		public static MeshLibrary QueryMeshes { get; } = new MeshLibrary();
+		public static MeshLibrary QueryMeshes { get; set; } = new MeshLibrary();
 
 		/// <summary>
 		/// A collection of all the loaded shapes by this application.
 		/// </summary>
-		public static MeshLibrary QueryLibrary => Settings.FileManager.QueryMeshes;
+		public static MeshLibrary QueryLibrary => FileManager.QueryMeshes;
 
 
-		/// <summary>
-		/// The location where the query shapes are located
-		/// </summary>
-		public static string QueryDir { get; set; } = "Content/Query";
 
 		/// <summary>
-		/// The file name of the query results file (also stored in QueryDir)
-		/// </summary>
-		public static string QueryResultsFile { get; set; } = "queryresults.csv";
-
-		/// <summary>
-		/// Stating the number the number of best matching results that should be shown/saved.
+		/// Stating the number the number of best matching results that
+		/// should be shown/saved.
 		/// </summary>
 		public static int KBestResults { get; set; } = 5;
 
-		/// <summary>
-		/// States whether the query results should be saved (in QueryDir)
-		/// </summary>
-		public static bool SaveQueryResults { get; set; } = true;
 
 		/// <summary>
 		/// A collection of strings which will force the program to stop.

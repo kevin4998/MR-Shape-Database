@@ -247,13 +247,13 @@ namespace ShapeDatabase {
 
 			LoadQueryFiles();
 
-			Tuple<string, IList<(string, double)>>[] QueryResults = new Tuple<string, IList<(string, double)>>[Settings.QueryLibrary.Meshes.Count];
+			(string, IList<(string, double)>)[] QueryResults = new (string, IList<(string, double)>)[Settings.QueryLibrary.Meshes.Count];
 			Parallel.For(0, Settings.QueryLibrary.Meshes.Count, i =>
 			{
 				string name = Settings.QueryLibrary.Names.ElementAt(i);
 				IList<(string, double)> results = DatabaseFM.CalculateResults(Settings.QueryLibrary.Meshes.ElementAt(i));
 				results = results.Take(Settings.KBestResults).ToArray();
-				QueryResults[i] = new Tuple<string, IList<(string, double)>>(name, results);
+				QueryResults[i] = (name, results);
 			});
 
 			Console.WriteLine(I_EndProc_Query);
@@ -269,15 +269,16 @@ namespace ShapeDatabase {
 			ShowQueryResults(QueryResults);
 		}
 
+
 		/// <summary>
 		/// Shows the user the results of the queries.
 		/// </summary>
-		static void ShowQueryResults(Tuple<string, IList<(string, double)>>[] results)
+		static void ShowQueryResults((string, IList<(string, double)>)[] results)
 		{
 			Console.WriteLine($"{results.Length} Query Results:");
-			foreach (Tuple<string, IList<(string, double)>> result in results)
+			foreach ((string queryName, IList<(string, double)> queryResult) in results)
 			{
-				Console.WriteLine($"\t- {result.Item1} : {string.Join(", ", result.Item2.Select(x => x.Item1 + "(" + x.Item2 + ")"))}");
+				Console.WriteLine($"\t- {queryName} : {string.Join(", ", queryResult.Select(x => x.Item1 + "(" + x.Item2 + ")"))}");
 			}
 		}
 
@@ -290,6 +291,7 @@ namespace ShapeDatabase {
 			foreach (string name in meshes.Names)
 				Console.WriteLine($"\t- {name}");
 		}
+
 
 		/// <summary>
 		/// Visualises the specified mesh on the window.
@@ -334,5 +336,7 @@ namespace ShapeDatabase {
 		{
 			Settings.FileManager.AddQueryDirectory(Settings.QueryDir);
 		}
+
 	}
+
 }
