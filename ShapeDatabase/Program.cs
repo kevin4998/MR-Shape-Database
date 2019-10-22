@@ -12,8 +12,7 @@ namespace ShapeDatabase {
 
 		static void Main(string[] args) {
 
-			ANN hoi = new ANN();
-			hoi.Test();
+			ANN.BuildAndSave();
 
 
 			Console.WriteLine(Resources.I_StartUp);
