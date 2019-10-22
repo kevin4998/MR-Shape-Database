@@ -129,17 +129,25 @@ namespace ShapeDatabase.Util {
 				);
 			#endregion
 
-			double X = xValues.Sum();
-			double Y = yValues.Sum();
-			double W = xWeights.Sum();
-			double U = yWeights.Sum();
+			double X = 0, Y = 0, W = 0, U = 0;
+
+			for (int i = xValues.Length - 1; i >= 0; i--) {
+				X += xValues[i];
+				Y += xWeights[i];
+				W += yValues[i];
+				U += yWeights[i];
+			}
+
+			X = 1 / X;
+			Y = 1 / Y;
+			double WU = W / U;
 
 			//Normalise both arrays, and the weights of the second array
-			for (int i = 0; i < xValues.Length; i++)
+			for (int i = xValues.Length - 1; i >= 0; i--)
 			{
-				xValues[i] /= X;
-				yValues[i] /= Y;
-				yWeights[i] *= (W / U);
+				xValues[i] *= X;
+				yValues[i] *= Y;
+				yWeights[i] *= WU;
 			}
 
 			//Count the flow of each bin
