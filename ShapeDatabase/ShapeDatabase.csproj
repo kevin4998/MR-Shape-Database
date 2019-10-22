@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Accord.MachineLearning" Version="3.8.0" />
     <PackageReference Include="Accord.Statistics" Version="3.8.0" />
     <PackageReference Include="CommandLineParser" Version="2.6.0" />
     <PackageReference Include="geometry3Sharp" Version="1.0.324" />
@@ -59,6 +60,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="HNSW.Net">
+      <HintPath>HNSW.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -77,6 +84,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="HNSW.Net.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="UI\shader.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

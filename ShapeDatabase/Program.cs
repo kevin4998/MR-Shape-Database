@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Resources;
+using ShapeDatabase.Features;
 using ShapeDatabase.Properties;
 
 // Define what the default languages is for this application.
@@ -10,6 +11,11 @@ namespace ShapeDatabase {
 	class Program {
 
 		static void Main(string[] args) {
+
+			ANN hoi = new ANN();
+			hoi.Test();
+
+
 			Console.WriteLine(Resources.I_StartUp);
 
 			Controller.ProcessArguments(args);
