@@ -7,7 +7,14 @@ using ShapeDatabase.Properties;
 
 namespace ShapeDatabase.Util.Collections {
 
-	public sealed class SortedList<T> : IList<T>, IList, IReadOnlyList<T> {
+	/// <summary>
+	/// Represents a specific list where all the entries are sorted in increasing order.
+	/// </summary>
+	/// <typeparam name="T">The type of objects stored in the list.
+	/// All objects in the list shoud implement the <see cref="System.IComparable{T}"/>
+	/// interface to allow for ordering.</typeparam>
+	public sealed class SortedList<T> : IList<T>, IList, IReadOnlyList<T> 
+		where T : System.IComparable<T> {
 
 		#region --- Properties ---
 
@@ -161,4 +168,5 @@ namespace ShapeDatabase.Util.Collections {
 		#endregion
 
 	}
+
 }
