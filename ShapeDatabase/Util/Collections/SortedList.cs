@@ -13,12 +13,14 @@ namespace ShapeDatabase.Util.Collections {
 	/// <typeparam name="T">The type of objects stored in the list.
 	/// All objects in the list shoud implement the <see cref="System.IComparable{T}"/>
 	/// interface to allow for ordering.</typeparam>
-	public sealed class SortedList<T> : IList<T>, IList, IReadOnlyList<T> 
-		where T : System.IComparable<T> {
+	public class SortedList<T> : IList<T>, IList, IReadOnlyList<T>, IEquatable<SortedList<T>> where T : System.IComparable<T> {
 
 		#region --- Properties ---
 
-		private const int STARTING_SIZE = 8;
+		/// <summary>
+		/// The minimum array size which should be used for storing values.
+		/// </summary>
+		protected const int StartingSize = 8;
 
 		private T[] array;
 
@@ -36,18 +38,29 @@ namespace ShapeDatabase.Util.Collections {
 			}
 		}
 
-		public int Count { get; private set; } = 0;
-		public bool IsReadOnly {get; private set; }
-		public bool IsFixedSize => false;
+		public virtual int Count { get; private set; } = 0;
+		public virtual bool IsReadOnly { get; private set; }
+		public virtual bool IsFixedSize => false;
 
-		public object SyncRoot { get; } = new object();
-		public bool IsSynchronized => false;
+		public virtual object SyncRoot { get; } = new object();
+		public virtual bool IsSynchronized => false;
 
 		#endregion
 
 		#region --- Constructor Methods ---
 
-		public SortedList() : this(STARTING_SIZE) { }
+		/// <summary>
+		/// Initialises a new list where all elements are sorted with a size of 8.
+		/// </summary>
+
+		public SortedList() : this(StartingSize) { }
+
+		/// <summary>
+		/// Initialises a new list where all elements are sorted with the given size.
+		/// </summary>
+		/// <param name="capacity">The amount of starting space in the list.</param>
+		/// <exception cref="ArgumentException">If the given capactiy is below 0.
+		/// You can't create an list with negative capacity.</exception>
 
 		public SortedList(int capacity) {
 			if (capacity < 0)
@@ -55,6 +68,15 @@ namespace ShapeDatabase.Util.Collections {
 
 			array = new T[capacity];
 		}
+
+		/// <summary>
+		/// Initialises a new list where all elements are sorted
+		/// using the given collection for initial population.
+		/// </summary>
+		/// <param name="collection">All the elements which should be present
+		/// in this sorted list.</param>
+		/// <exception cref="ArgumentNullException">If the given collection is
+		/// <see langword="null"/> or in other words, does not exist.</exception>
 
 		public SortedList(IEnumerable<T> collection) {
 			if (collection == null)
@@ -65,36 +87,41 @@ namespace ShapeDatabase.Util.Collections {
 				array = new T[Count];
 				col.CopyTo(array, 0);
 			} else {
-				array = new T[STARTING_SIZE];
+				array = new T[StartingSize];
 				using (IEnumerator<T> enumerator = collection.GetEnumerator()) {
-					while (enumerator.MoveNext())
-						Add(enumerator.Current);
+					while (enumerator.MoveNext()) {
+						if (Count == array.Length) {
+							T[] newArray = new T[array.Length << 1];
+							array.CopyTo(newArray, 0);
+							array = newArray;
+						}
+						array[Count++] = enumerator.Current;
+					}
 				}
 			}
+			Array.Sort(array);
 		}
 
 		#endregion
 
 		#region --- Instance Methods ---
 
-		private void ExpandArray() {
-			T[] newArray = new T[array.Length * 2];
+		#region -- Interface Methods --
+
+		/// <summary>
+		/// Dubbles the size of the internal array for storing values.
+		/// All previous values will be copied to the new array.
+		/// </summary>
+		protected virtual void ExpandArray() {
+			T[] newArray = new T[array.Length << 1];
 			array.CopyTo(newArray, 0);
 			array = newArray;
 		}
 
-		public void Add(T item) {
+		public virtual void Add(T item) {
 			int position = Array.BinarySearch(array, item);
 			if (position < 0) position = ~position;
-
-			if (Count == array.Length)
-				ExpandArray();
-
-			for(int newPos = Count - 1; newPos > position; /*Incrementation in code*/)
-				array[newPos] = array[--newPos];
-			array[position] = item;
-
-			Count++;
+			Insert(position, item);
 		}
 
 		int IList.Add(object value) {
@@ -106,24 +133,24 @@ namespace ShapeDatabase.Util.Collections {
 		}
 
 
-		public void Clear() {
+		public virtual void Clear() {
 			Count = 0;
 			// Do not keep too much space occupied.
-			if (array.Length > STARTING_SIZE)
-				array = new T[STARTING_SIZE];
+			if (array.Length > StartingSize)
+				array = new T[StartingSize];
 		}
 
-		public bool Contains(T item) => Array.BinarySearch(array, item) != -1;
+		public virtual bool Contains(T item) => IndexOf(item) < 0;
 
-		public bool Contains(object value) => value is T && Contains((T) value);
-
-
-		public void CopyTo(T[] array, int arrayIndex) => this.array.CopyTo(array, arrayIndex);
-
-		public void CopyTo(Array array, int arrayIndex) => this.array.CopyTo(array, arrayIndex);
+		public virtual bool Contains(object value) => value is T && Contains((T) value);
 
 
-		public IEnumerator<T> GetEnumerator() {
+		public virtual void CopyTo(T[] array, int arrayIndex) => this.array.CopyTo(array, arrayIndex);
+
+		public virtual void CopyTo(Array array, int arrayIndex) => this.array.CopyTo(array, arrayIndex);
+
+
+		public virtual IEnumerator<T> GetEnumerator() {
 			for (int i = 0; i < Count; i++)
 				yield return array[i];
 		}
@@ -131,10 +158,32 @@ namespace ShapeDatabase.Util.Collections {
 		IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
 
-		public int IndexOf(T item) => Array.BinarySearch(array, item);
+		public virtual int IndexOf(T item) => Array.BinarySearch(array, item);
 
-		public int IndexOf(object value) => (value is T) ? IndexOf((T) value) : -1;
+		public virtual int IndexOf(object value) => (value is T) ? IndexOf((T) value) : -1;
 
+
+		/// <summary>
+		/// Places the provided element at the given position,
+		/// assuming that the provided position keeps the array sorted.
+		/// </summary>
+		/// <param name="index">The place to put this item in the array to keep
+		/// it sorted.</param>
+		/// <param name="item">The object value which needs to be placed in the array.
+		/// </param>
+		protected void Insert(int index, T item) {
+			if (index < 0)
+				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(index));
+
+			if (Count == array.Length)
+				ExpandArray();
+
+			for (int newPos = Count - 1; newPos > index; /*Incrementation in code*/)
+				array[newPos] = array[--newPos];
+			array[index] = item;
+
+			++Count;
+		}
 
 		void IList<T>.Insert(int index, T item) => Add(item);
 
@@ -143,20 +192,20 @@ namespace ShapeDatabase.Util.Collections {
 		}
 
 
-		public bool Remove(T item) {
+		public virtual bool Remove(T item) {
 			int index = IndexOf(item);
-			if (index == -1)
+			if (index < 0)
 				return false;
 
 			RemoveAt(index);
 			return true;
 		}
 
-		public void Remove(object value) {
+		public virtual void Remove(object value) {
 			if (value is T item) Remove(item);
 		}
 
-		public void RemoveAt(int index) {
+		public virtual void RemoveAt(int index) {
 			if (index < 0 || index >= Count)
 				throw new ArgumentOutOfRangeException(nameof(index));
 
@@ -164,6 +213,38 @@ namespace ShapeDatabase.Util.Collections {
 			for (int i = index; i < length; /*Incrementation in expression*/)
 				array[i] = array[++i];
 		}
+
+		#endregion
+
+		#region -- Object Methods --
+
+		public override bool Equals(object obj) {
+			return Equals(obj as SortedList<T>);
+		}
+
+		public bool Equals(SortedList<T> other) {
+			return other != null && array.Equals(other.array);
+		}
+
+		public override int GetHashCode() {
+			return array.GetHashCode();
+		}
+
+		#endregion
+
+		#region -- Operators --
+
+		public static bool operator ==(SortedList<T> left, SortedList<T> right) {
+			return (left == null)
+				 ? right == null
+				 : left.Equals(right);
+		}
+
+		public static bool operator !=(SortedList<T> left, SortedList<T> right) {
+			return !(left == right);
+		}
+
+		#endregion
 
 		#endregion
 

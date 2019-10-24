@@ -19,7 +19,7 @@ namespace ShapeDatabase.Query {
 
 		#region --- Properties ---
 
-		private readonly IList<QueryItem> results = new SortedList<QueryItem>();
+		private readonly IList<QueryItem> results;
 
 		/// <summary>
 		/// The name of the item which is used as a reference during comparison.
@@ -57,7 +57,7 @@ namespace ShapeDatabase.Query {
 
 			QueryName = name;
 			QueryMesh = mesh ?? throw new ArgumentNullException(nameof(mesh));
-			results = new SortedList<QueryItem>();
+			results = new ConcurrentSortedList<QueryItem>();
 		}
 
 		#endregion

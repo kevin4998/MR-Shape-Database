@@ -135,11 +135,6 @@ namespace ShapeDatabase {
 		public static MeshLibrary MeshLibrary => FileManager.ProcessedMeshes;
 
 		/// <summary>
-		/// A collection of all the query meshes sturctured inside a library.
-		/// </summary>
-		public static MeshLibrary QueryMeshes { get; set; } = new MeshLibrary();
-
-		/// <summary>
 		/// A collection of all the loaded shapes by this application.
 		/// </summary>
 		public static MeshLibrary QueryLibrary => FileManager.QueryMeshes;
