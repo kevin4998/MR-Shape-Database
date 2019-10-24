@@ -7,10 +7,16 @@ using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.IO {
 
+	/// <summary>
+	/// A specific reader which can convert files to the geomtry 3 mesh format.
+	/// </summary>
 	public class GeomOffReader : IReader<GeometryMesh> {
+
+		#region --- Properties ---
 
 		private static readonly Lazy<GeomOffReader> instance =
 			new Lazy<GeomOffReader>(() => new GeomOffReader());
+
 		/// <summary>
 		/// A reader which can convert .off files into <see cref="GeometryMesh"/>es.
 		/// </summary>
@@ -18,7 +24,15 @@ namespace ShapeDatabase.IO {
 
 		public ICollection<string> SupportedFormats => new string[] { "off" };
 
+		#endregion
+
+		#region --- Constructor Methods ---
+
 		private GeomOffReader() { }
+
+		#endregion
+
+		#region --- Instance Methods ---
 
 		public GeometryMesh ConvertFile(StreamReader reader) {
 			if (reader == null) throw new ArgumentNullException(nameof(reader));
@@ -27,9 +41,10 @@ namespace ShapeDatabase.IO {
 			return new GeometryMesh(mesh, IOConventions.CheckIfNormalised(reader));
 		}
 
-		public Task<GeometryMesh> ConvertFileAsync(StreamReader reader) {
-			return Task.Run(() => ConvertFile(reader));
-		}
+		object IReader.ConvertFile(StreamReader reader) => ConvertFile(reader);
+
+
+		#endregion
 
 	}
 }

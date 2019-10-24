@@ -349,6 +349,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MeshName.
+        /// </summary>
+        internal static string F_MeshName {
+            get {
+                return ResourceManager.GetString("F_MeshName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finished cleaning directories!.
         /// </summary>
         internal static string I_EndClean {

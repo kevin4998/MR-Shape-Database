@@ -13,24 +13,28 @@ namespace ShapeDatabase.IO
 	/// </summary>
 	public class OFFWriter : IWriter<IMesh>
 	{
-		public ICollection<string> SupportedFormats { get; } = new string[] { "off" };
+		#region --- Properties ---
 
 		private static readonly Lazy<OFFWriter> lazy =
 			new Lazy<OFFWriter>(() => new OFFWriter());
 
+		/// <summary>
+		/// Provides an instance of the writer which can serialise any type of meshes.
+		/// </summary>
 		public static OFFWriter Instance { get { return lazy.Value; } }
 
-		/// <summary>
-		/// Writes an unstructured mesh to an off file at a given location.
-		/// </summary>
-		/// <param name="type">The unstructured mesh that needs to be written to an off file</param>
-		/// <param name="location">The location of the off file</param>
-		public void WriteFile(IMesh type, string location)
-		{
-			using (StreamWriter writer = new StreamWriter(location)) { 
-				WriteFile(type, writer);
-			}
-		}
+
+		public ICollection<string> SupportedFormats { get; } = new string[] { "off" };
+
+		#endregion
+
+		#region --- Constructor Methods ---
+
+		private OFFWriter() { }
+
+		#endregion
+
+		#region --- Instance Methods ---
 
 		/// <summary>
 		/// Writes an unstructured mesh to an off file with a given streamwriter
@@ -55,24 +59,10 @@ namespace ShapeDatabase.IO
 			IOConventions.WriteIfNormalised(type.IsNormalised, writer);
 		}
 
-		/// <summary>
-		/// Writes an unstructured mesh to an off file at a given location.
-		/// </summary>
-		/// <param name="type">The unstructured mesh that needs to be written to an off file</param>
-		/// <param name="location">The location of the off file</param>
-		public Task WriteFileAsync(IMesh type, string location)
-		{
-			return Task.Run(() => WriteFile(type, location));
-		}
+		void IWriter.WriteFile(object type, StreamWriter writer)
+			=> WriteFile(type as GeometryMesh, writer);
 
-		/// <summary>
-		/// Writes an unstructured mesh to an off file with a given streamwriter
-		/// </summary>
-		/// <param name="type">The unstructured mesh that needs to be written to an off file</param>
-		/// <param name="writer">The streamwriter that needs to be used</param>
-		public Task WriteFileAsync(IMesh type, StreamWriter writer)
-		{
-			return Task.Run(() => WriteFile(type, writer));
-		}
+		#endregion
+
 	}
 }

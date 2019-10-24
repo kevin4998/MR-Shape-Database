@@ -18,8 +18,6 @@ namespace ShapeDatabase.Features
 
 		#region --- Properties ---
 
-		public static readonly string MeshName = "MeshName";
-
 		private static readonly Lazy<FMWriter> lazy =
 			new Lazy<FMWriter>(() => new FMWriter());
 
@@ -46,19 +44,6 @@ namespace ShapeDatabase.Features
 		/// Writes featurevectors to a csv file.
 		/// </summary>
 		/// <param name="type">The featuremanager containing the featurevectors</param>
-		/// <param name="location">Location of the csv file</param>
-		public void WriteFile(FeatureManager type, string location)
-		{
-			using (StreamWriter writer = new StreamWriter(location))
-			{
-				WriteFile(type, writer);
-			}
-		}
-
-		/// <summary>
-		/// Writes featurevectors to a csv file.
-		/// </summary>
-		/// <param name="type">The featuremanager containing the featurevectors</param>
 		/// <param name="location">The streamwriter to be used</param>
 		public void WriteFile(FeatureManager type, StreamWriter writer)
 		{
@@ -69,7 +54,7 @@ namespace ShapeDatabase.Features
 
 			using (CsvWriter csv = new CsvWriter(writer)) {
 				// First line containing the headers.
-				csv.WriteField("MeshName");
+				csv.WriteField(IOConventions.MeshName);
 				foreach (string name in type.DescriptorNames)
 					csv.WriteField(name);
 				csv.NextRecord();
@@ -85,15 +70,8 @@ namespace ShapeDatabase.Features
 			}
 		}
 
-		public Task WriteFileAsync(FeatureManager fm, string location)
-		{
-			return Task.Run(() => WriteFile(fm, location));
-		}
-
-		public Task WriteFileAsync(FeatureManager fm, StreamWriter writer)
-		{
-			return Task.Run(() => WriteFile(fm, writer));
-		}
+		void IO.IWriter.WriteFile(object type, StreamWriter writer)
+			=> WriteFile(type as FeatureManager, writer);
 
 		#endregion
 

@@ -26,6 +26,8 @@ namespace ShapeDatabase.IO
 		/// Provides a writer to convert query results into csv
 		/// </summary>
 		public static QueryWriter Instance => lazy.Value;
+
+
 		public ICollection<string> SupportedFormats => new string[] { ".csv" };
 
 		#endregion
@@ -41,14 +43,6 @@ namespace ShapeDatabase.IO
 
 		#region --- Instance Methods ---
 
-		public void WriteFile(QueryResult[] type, string location)
-		{
-			using (StreamWriter writer = new StreamWriter(location))
-			{
-				WriteFile(type, writer);
-			}
-		}
-
 		public void WriteFile(QueryResult[] type, StreamWriter writer)
 		{
 			if (type == null)
@@ -58,7 +52,7 @@ namespace ShapeDatabase.IO
 
 			using (CsvWriter csv = new CsvWriter(writer)) {
 				// Header of the CSV file.
-				csv.WriteField("QueryMesh");
+				csv.WriteField(IOConventions.MeshName);
 				for (int i = 1; i <= Settings.KBestResults; i++)
 					csv.WriteField($"K = {i}");
 				csv.NextRecord();
@@ -74,15 +68,8 @@ namespace ShapeDatabase.IO
 			}
 		}
 
-		public Task WriteFileAsync(QueryResult[] results, string location)
-		{
-			return Task.Run(() => WriteFile(results, location));
-		}
-
-		public Task WriteFileAsync(QueryResult[] results, StreamWriter writer)
-		{
-			return Task.Run(() => WriteFile(results, writer));
-		}
+		void IWriter.WriteFile(object type, StreamWriter writer)
+			=> WriteFile(type as QueryResult[], writer);
 
 		#endregion
 

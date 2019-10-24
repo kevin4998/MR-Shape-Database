@@ -22,6 +22,8 @@ namespace ShapeDatabase.IO {
 		/// Provides a writer to convert <see cref="RecordHolder"/>s into csv.
 		/// </summary>
 		public static RecordsWriter Instance => lazy.Value;
+
+
 		public ICollection<string> SupportedFormats => new string[] { ".csv" };
 
 		#endregion
@@ -36,12 +38,6 @@ namespace ShapeDatabase.IO {
 		#endregion
 
 		#region --- Instance Methods ---
-
-		public void WriteFile(RecordHolder records, string location) {
-			using (StreamWriter writer = new StreamWriter(location)) {
-				WriteFile(records, writer);
-			}
-		}
 
 		public void WriteFile(RecordHolder records, StreamWriter writer) {
 			if (records == null)
@@ -65,13 +61,8 @@ namespace ShapeDatabase.IO {
 			}
 		}
 
-		public Task WriteFileAsync(RecordHolder records, string location) {
-			return Task.Run(() => WriteFile(records, location));
-		}
-
-		public Task WriteFileAsync(RecordHolder records, StreamWriter writer) {
-			return Task.Run(() => WriteFile(records, writer));
-		}
+		void IWriter.WriteFile(object type, StreamWriter writer)
+			=> WriteFile(type as RecordHolder, writer);
 
 		#endregion
 

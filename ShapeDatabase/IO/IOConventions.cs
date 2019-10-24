@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using ShapeDatabase.Properties;
 
 namespace ShapeDatabase.IO {
 
@@ -13,6 +14,11 @@ namespace ShapeDatabase.IO {
 		/// The message to show that a shape is normalised.
 		/// </summary>
 		public const string NORMALISED_DATA = "Normalised";
+
+		/// <summary>
+		/// The word to describe the name of a mesh.
+		/// </summary>
+		public static string MeshName => Resources.F_MeshName;
 
 		/// <summary>
 		/// Check if at the end of a given stream it is mentioned that

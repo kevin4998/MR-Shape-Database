@@ -19,31 +19,23 @@ namespace ShapeDatabase.Features
 	{
 		#region --- Properties ---
 
-		/// <summary>
-		/// The character which is used to seperate values in a csv document.
-		/// </summary>
-		public static char Seperator => ',';
-		/// <summary>
-		/// The character which is used to seperate values of a single histogram descriptor.
-		/// </summary>
-		public static char HistSeperator => ';';
-
-		#endregion
-
 		#region -- Static Properties --
 
 		private static readonly Lazy<FMReader> lazy =
 			new Lazy<FMReader>(() => new FMReader());
 
-		#endregion
-
-		#region -- Instance Properties --
-
 		/// <summary>
 		/// Provides a reader creating a featuremanager out of a csv with featurevectors.
 		/// </summary>
 		public static FMReader Instance => lazy.Value;
+
+		#endregion
+
+		#region -- Instance Properties --
+
 		public ICollection<string> SupportedFormats => new string[] { ".csv" };
+
+		#endregion
 
 		#endregion
 
@@ -75,10 +67,7 @@ namespace ShapeDatabase.Features
 			return new FMBuilder(featureVectors).Build();
 		}
 
-		public Task<FeatureManager> ConvertFileAsync(StreamReader reader)
-		{
-			return Task.Run(() => ConvertFile(reader));
-		}
+		object IO.IReader.ConvertFile(StreamReader reader) => ConvertFile(reader);
 
 		#endregion
 
@@ -99,7 +88,7 @@ namespace ShapeDatabase.Features
 				// Find the individual values.
 				do {
 					// Check to see if there is an entry here.
-					if (!csv.TryGetField(FMWriter.MeshName, out string name))
+					if (!csv.TryGetField(IOConventions.MeshName, out string name))
 						break;
 					// Collect all the descriptors from the CSV.
 					IList<IDescriptor> descriptors = new List<IDescriptor>();
@@ -146,5 +135,7 @@ namespace ShapeDatabase.Features
 		}
 
 		#endregion
+
 	}
+
 }

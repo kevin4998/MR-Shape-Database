@@ -337,4 +337,8 @@
     <value>Operations for the given data is currently not supported: {0}</value>
     <comment>The exception which is given when a method has not implementated a reaction for a specific type or argument input. Developers should write extensions for it.</comment>
   </data>
+  <data name="F_MeshName" xml:space="preserve">
+    <value>MeshName</value>
+    <comment>The format to use in files to describe the name of a mesh.</comment>
+  </data>
 </root>
