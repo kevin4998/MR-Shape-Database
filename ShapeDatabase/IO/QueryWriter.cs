@@ -66,20 +66,21 @@ namespace ShapeDatabase.IO
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
 
-			string[] columnNames = new string[Settings.KBestResults + 1];
-			columnNames[0] = "QueryMesh";
+			// Header of the CSV file.
+			StringBuilder builder = new StringBuilder("QueryMesh");
 			for(int i = 1; i <= Settings.KBestResults; i++)
-			{
-				columnNames[i] = $"K = {i}";
+				builder.Append(SeperatorChar)
+					   .AppendFormat(Settings.Culture, "K = {0}", i);
+			builder.AppendLine();
+			// Each item in the CSV file.
+			foreach(QueryResult result in type) { 
+				builder.Append(result.QueryName);
+				foreach(QueryItem item in result.GetBestResults(Settings.KBestResults))
+					builder.Append(SeperatorChar)
+						   .Append(item);
 			}
-			
-			writer.WriteLine(string.Join(Seperator, columnNames));
 
-			foreach(QueryResult queryResult in type)
-			{
-				writer.WriteLine(queryResult.QueryName + Seperator + string.Join(Seperator, queryResult.Results.Select(x => x.MeshName + " (" + x.MeshDistance + ")" )));
-			}
-
+			writer.WriteLine(builder.ToString());
 			writer.Flush();
 		}
 

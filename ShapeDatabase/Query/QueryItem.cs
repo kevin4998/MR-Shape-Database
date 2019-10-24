@@ -65,6 +65,11 @@ namespace ShapeDatabase.Query {
 			return MeshName.GetHashCode();
 		}
 
+
+		public override string ToString() {
+			return $"{MeshName} ({MeshDistance})";
+		}
+
 		#endregion
 
 		#region --- Operators ---

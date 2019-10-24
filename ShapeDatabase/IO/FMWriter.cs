@@ -76,27 +76,20 @@ namespace ShapeDatabase.Features
 				throw new ArgumentNullException(nameof(writer));
 
 			// First line specify the descriptor names
-			List<string> descriptorNames = new List<string>
-			{
-				"MeshName"
-			};
-			foreach (IDescriptor desc in type.FeatureVectors.First().Value.Descriptors)
-			{
-				descriptorNames.Add(desc.Name);
-			}
-			writer.WriteLine(string.Join(Seperator, descriptorNames.ToArray()));
+			StringBuilder builder = new StringBuilder("MeshName");
+			foreach (string name in type.DescriptorNames)
+				builder.Append(Seperator).Append(name);
+			writer.WriteLine(builder.ToString());
 
 			// Next lines specify the descriptor values
-			List<string> descriptorValues = new List<string>();
-			foreach(KeyValuePair<string, FeatureVector> vector in type.FeatureVectors)
+			foreach(KeyValuePair<string, FeatureVector> vector in type.VectorDictionary)
 			{
-				descriptorValues.Clear();
-				descriptorValues.Add(vector.Key);
+				builder.Clear();
+				builder.Append(vector.Key);
 				foreach(IDescriptor desc in vector.Value.Descriptors)
-				{
-					descriptorValues.Add(desc.Serialize());
-				}
-				writer.WriteLine(string.Join(Seperator, descriptorValues.ToArray()));
+					builder.Append(SeperatorChar).Append(desc.Serialize());
+
+				writer.WriteLine(builder.ToString());
 			}
 
 			// Finally make sure that all the data is written.
