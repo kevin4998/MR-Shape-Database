@@ -68,7 +68,7 @@ namespace ShapeDatabase.Query {
 		#region --- Operators ---
 
 		public static bool operator ==(QueryItem left, QueryItem right) {
-			return left.Equals(right);
+			return Equals(left, right);
 		}
 
 		public static bool operator !=(QueryItem left, QueryItem right) {

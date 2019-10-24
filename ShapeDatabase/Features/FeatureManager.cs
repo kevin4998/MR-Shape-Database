@@ -199,7 +199,7 @@ namespace ShapeDatabase.Features.Descriptors
 		public QueryResult CalculateResults(MeshEntry mesh)
 		{
 			QueryResult result = new QueryResult(mesh.Name, mesh.Mesh);
-			FeatureVector reference = CalculateVector(mesh, false);
+			FeatureVector reference = CreateVector(mesh);
 
 			Parallel.ForEach(FeatureVectors, vector => {
 				double difference = FeatureVector.Compare(reference, vector.Value);

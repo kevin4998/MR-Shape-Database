@@ -174,6 +174,8 @@ namespace ShapeDatabase.Util.Collections {
 		protected void Insert(int index, T item) {
 			if (index < 0)
 				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(index));
+			if (index > Count)
+				index = Count;
 
 			if (Count == array.Length)
 				ExpandArray();
