@@ -1,7 +1,9 @@
-﻿using ShapeDatabase.Features.Descriptors;
+﻿using CsvHelper;
+using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 using ShapeDatabase.Properties;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -91,55 +93,56 @@ namespace ShapeDatabase.Features
 		{
 			Dictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
 
-			//First read the descriptor names
-			string[] descriptorNames = reader.ReadLine().Split(Seperator).Skip(1).ToArray();
-
-			//Next read the descriptor values
-			while (!reader.EndOfStream)
-			{
-				string line = reader.ReadLine();
-				string[] values = line.Split(Seperator);
-				string meshName = values[0];
-				values = values.Skip(1).ToArray();
-				
-				IList<IDescriptor> descriptors = new List<IDescriptor>();
-
-				for(int i = 0; i < descriptorNames.Length; i++)
-				{
-					descriptors.Clear();
-					string value = values[i];
-
-					//Check whether value is an ElemDescriptor or HistDescriptor
-					if(!value.Contains(HistSeperator))
-					{
-						descriptors.Add(new ElemDescriptor(descriptorNames[i],
-							Convert.ToDouble(value, Settings.Culture)));
-					}
-					else
-					{
-
-						string[] splits = value.Split(HistSeperator);
-
-						string binSize = splits[0];
-						string[] histValues = splits.Skip(1).ToArray();
-
-						IFormatProvider provider = Settings.Culture;
-						descriptors.Add(HistDescriptor.FromNormalised(
-							descriptorNames[i],
-							Convert.ToDouble(binSize, provider),
-							Array.ConvertAll(
-								histValues,
-								x => float.Parse(x, provider)
-							)
-						));
-					}
-				}
-
-				featureVectors.Remove(meshName);
-				featureVectors.Add(meshName, new FeatureVector(descriptors.ToArray()));
+			using (CsvReader csv = new CsvReader(reader)) {
+				// Read the header, to see which measures there are.
+				IEnumerable<string> names = csv.GetRecords<string>();
+				// Find the individual values.
+				do {
+					// Check to see if there is an entry here.
+					if (!csv.TryGetField(FMWriter.MeshName, out string name))
+						break;
+					// Collect all the descriptors from the CSV.
+					IList<IDescriptor> descriptors = new List<IDescriptor>();
+					foreach(string descName in names)
+						if (csv.TryGetField(descName, out string serialisedDesc))
+							if (TryDeserialise(descName, serialisedDesc, out IDescriptor desc))
+								descriptors.Add(desc);
+					// Combine them and save them as a vector.
+					FeatureVector vector = new FeatureVector(descriptors.ToArray());
+					featureVectors.Add(name, vector);
+				} while (csv.Read());
 			}
 
 			return featureVectors;
+		}
+
+		private static bool TryDeserialise(string name, string serialised,
+											out IDescriptor desc) {
+			try { 
+				desc = DeserialiseDescriptor(name, serialised);
+				return true;
+			} catch (NotImplementedException _) {
+				desc = null;
+				return false;
+			}
+		}
+
+		private static IDescriptor DeserialiseDescriptor(string name,
+														 string serialised) {
+			//Check whether value is an ElemDescriptor or HistDescriptor
+			if (ElemDescriptor.TryParse(name, serialised, out ElemDescriptor edesc))
+				return edesc;
+			else if (HistDescriptor.TryParse(name, serialised, out HistDescriptor hdesc))
+				return hdesc;
+			else
+				throw new NotImplementedException(
+					string.Format(
+						Settings.Culture,
+						Resources.EX_Not_Supported,
+						serialised
+					)
+				);
+
 		}
 
 		#endregion

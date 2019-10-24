@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Descriptors
 {
@@ -41,7 +42,9 @@ namespace ShapeDatabase.Features.Descriptors
 
 		#endregion
 
-		#region --- Instance Methods ---
+		#region --- Methods ---
+
+		#region -- Instance Methods --
 
 		/// <summary>
 		/// Returns the distance with another elemtary descriptor.
@@ -61,6 +64,28 @@ namespace ShapeDatabase.Features.Descriptors
 			IFormatProvider format = Settings.Culture;
 			return Value.ToString(format);
 		}
+
+		#endregion
+
+		#region -- Static Methods --
+
+		public static bool TryParse(string name, string serialised,
+									out ElemDescriptor desc) {
+			if (string.IsNullOrEmpty(name))
+				throw new ArgumentNullException(nameof(name));
+			if (string.IsNullOrEmpty(serialised))
+				throw new ArgumentNullException(nameof(serialised));
+
+			if (double.TryParse(serialised, out double value)) {
+				desc = new ElemDescriptor(name, value);
+				return true;
+			}
+
+			desc = null;
+			return false;
+		}
+
+		#endregion
 
 		#endregion
 

@@ -15,16 +15,6 @@ namespace ShapeDatabase.IO {
 
 		#region --- Properties ---
 
-		/// <summary>
-		/// The character which is used to seperate values in a csv document.
-		/// </summary>
-		public static char SeperatorChar => ';';
-		/// <summary>
-		/// A string value which represent the seperater character.
-		/// <see cref="SeperatorChar"/>
-		/// </summary>
-		public static string Seperator => SeperatorChar.ToString(Settings.Culture);
-
 		private static readonly Lazy<RecordsWriter> lazy =
 			new Lazy<RecordsWriter>(() => new RecordsWriter());
 

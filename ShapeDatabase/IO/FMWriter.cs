@@ -18,6 +18,8 @@ namespace ShapeDatabase.Features
 
 		#region --- Properties ---
 
+		public static readonly string MeshName = "MeshName";
+
 		private static readonly Lazy<FMWriter> lazy =
 			new Lazy<FMWriter>(() => new FMWriter());
 

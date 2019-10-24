@@ -333,4 +333,8 @@
     <value>queryresults.csv</value>
     <comment>The file where all the similar files with their scores will be saved in.</comment>
   </data>
+  <data name="EX_Not_Supported" xml:space="preserve">
+    <value>Operations for the given data is currently not supported: {0}</value>
+    <comment>The exception which is given when a method has not implementated a reaction for a specific type or argument input. Developers should write extensions for it.</comment>
+  </data>
 </root>
