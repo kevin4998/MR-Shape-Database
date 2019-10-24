@@ -105,7 +105,7 @@ namespace ShapeDatabase.Features
 					averages[desc.Name] += desc.Value;
 
 			// Normalise all the values in averages.
-			double inverseCount = 1 / vectors.Count;
+			double inverseCount = 1d / vectors.Count;
 			foreach(string name in averages.Keys.ToArray())
 				averages[name] *= inverseCount;
 
@@ -139,7 +139,7 @@ namespace ShapeDatabase.Features
 				foreach (ElemDescriptor desc in vector.GetDescriptors<ElemDescriptor>())
 					squaredDifference[desc.Name] += Math.Pow(desc.Value - averages[desc.Name], 2);
 
-			double inverseCount = 1 / vectors.Count;
+			double inverseCount = 1d / vectors.Count;
 			foreach (KeyValuePair<string, double> sum in squaredDifference.ToArray())
 				squaredDifference[sum.Key] = Math.Sqrt(sum.Value * inverseCount);
 
