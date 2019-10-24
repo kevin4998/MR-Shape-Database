@@ -1,4 +1,5 @@
-﻿using ShapeDatabase.Features.Descriptors;
+﻿using CsvHelper;
+using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 using System;
 using System.Collections.Generic;
@@ -16,17 +17,6 @@ namespace ShapeDatabase.Features
 	{
 
 		#region --- Properties ---
-
-		/// <summary>
-		/// The character which is used to seperate values in a csv document.
-		/// </summary>
-		public static char SeperatorChar => ',';
-		/// <summary>
-		/// A string value which represent the seperater character.
-		/// <see cref="SeperatorChar"/>
-		/// </summary>
-		public static string Seperator => SeperatorChar.ToString(Settings.Culture);
-
 
 		private static readonly Lazy<FMWriter> lazy =
 			new Lazy<FMWriter>(() => new FMWriter());
@@ -75,25 +65,22 @@ namespace ShapeDatabase.Features
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
 
-			// First line specify the descriptor names
-			StringBuilder builder = new StringBuilder("MeshName");
-			foreach (string name in type.DescriptorNames)
-				builder.Append(Seperator).Append(name);
-			writer.WriteLine(builder.ToString());
-
-			// Next lines specify the descriptor values
-			foreach(KeyValuePair<string, FeatureVector> vector in type.VectorDictionary)
-			{
-				builder.Clear();
-				builder.Append(vector.Key);
-				foreach(IDescriptor desc in vector.Value.Descriptors)
-					builder.Append(SeperatorChar).Append(desc.Serialize());
-
-				writer.WriteLine(builder.ToString());
+			using (CsvWriter csv = new CsvWriter(writer)) {
+				// First line containing the headers.
+				csv.WriteField("MeshName");
+				foreach (string name in type.DescriptorNames)
+					csv.WriteField(name);
+				csv.NextRecord();
+				// Next lines containing the entries.
+				foreach (KeyValuePair<string, FeatureVector> vector in type.VectorDictionary) {
+					csv.WriteField(vector.Key);
+					foreach (IDescriptor desc in vector.Value.Descriptors)
+						csv.WriteField(desc.Serialize());
+					csv.NextRecord();
+				}
+				// Finally make sure that all the data is written.
+				csv.Flush();
 			}
-
-			// Finally make sure that all the data is written.
-			writer.Flush();
 		}
 
 		public Task WriteFileAsync(FeatureManager fm, string location)

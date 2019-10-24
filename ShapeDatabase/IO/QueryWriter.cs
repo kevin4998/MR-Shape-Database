@@ -1,4 +1,5 @@
-﻿using ShapeDatabase.Features.Descriptors;
+﻿using CsvHelper;
+using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 using System;
@@ -17,17 +18,6 @@ namespace ShapeDatabase.IO
 	{
 
 		#region --- Properties ---
-
-		/// <summary>
-		/// The character which is used to seperate values in a csv document.
-		/// </summary>
-		public static char SeperatorChar => ',';
-		/// <summary>
-		/// A string value which represent the seperater character.
-		/// <see cref="SeperatorChar"/>
-		/// </summary>
-		public static string Seperator => SeperatorChar.ToString(Settings.Culture);
-
 
 		private static readonly Lazy<QueryWriter> lazy =
 			new Lazy<QueryWriter>(() => new QueryWriter());
@@ -66,22 +56,22 @@ namespace ShapeDatabase.IO
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
 
-			// Header of the CSV file.
-			StringBuilder builder = new StringBuilder("QueryMesh");
-			for(int i = 1; i <= Settings.KBestResults; i++)
-				builder.Append(SeperatorChar)
-					   .AppendFormat(Settings.Culture, "K = {0}", i);
-			builder.AppendLine();
-			// Each item in the CSV file.
-			foreach(QueryResult result in type) { 
-				builder.Append(result.QueryName);
-				foreach(QueryItem item in result.GetBestResults(Settings.KBestResults))
-					builder.Append(SeperatorChar)
-						   .Append(item);
+			using (CsvWriter csv = new CsvWriter(writer)) {
+				// Header of the CSV file.
+				csv.WriteField("QueryMesh");
+				for (int i = 1; i <= Settings.KBestResults; i++)
+					csv.WriteField($"K = {i}");
+				csv.NextRecord();
+				// Each item in the CSV file.
+				foreach (QueryResult result in type) {
+					csv.WriteField(result.QueryName);
+					foreach (QueryItem item in result.GetBestResults(Settings.KBestResults))
+						csv.WriteField(item);
+					csv.NextRecord();
+				}
+				// Finally make sure that all the data is written.
+				csv.Flush();
 			}
-
-			writer.WriteLine(builder.ToString());
-			writer.Flush();
 		}
 
 		public Task WriteFileAsync(QueryResult[] results, string location)

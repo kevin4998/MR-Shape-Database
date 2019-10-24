@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using CsvHelper;
 using ShapeDatabase.Features.Statistics;
 
 namespace ShapeDatabase.IO {
@@ -58,13 +59,20 @@ namespace ShapeDatabase.IO {
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
 
-			// First line specify our Measurement Names.
-			writer.WriteLine(string.Join(Seperator, records.MeasureNames.ToArray()));
-			// Next lines specify our entries.
-			foreach (Record record in records)
-				writer.WriteLine(string.Join(Seperator, record.ToArray()));
-			// Finally make sure that all the data is written.
-			writer.Flush();
+			using (CsvWriter csv = new CsvWriter(writer)) {
+				// First line specify our Measurement Names.
+				foreach(string name in records.MeasureNames)
+					csv.WriteField(name);
+				csv.NextRecord();
+				// Next lines specify our entries.
+				foreach (Record record in records) { 
+					foreach((string _, object value) in record.Measures)
+						csv.WriteField(value);
+					csv.NextRecord();
+				}
+				// Finally make sure that all the data is written.
+				csv.Flush();
+			}
 		}
 
 		public Task WriteFileAsync(RecordHolder records, string location) {
