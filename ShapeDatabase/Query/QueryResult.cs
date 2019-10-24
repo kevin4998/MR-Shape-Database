@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace ShapeDatabase.Query {
 	/// This object shows the distances between the given item and all other
 	/// database items.
 	/// </summary>
+	[DebuggerDisplay("{QueryName}: {Count} comparisons")]
 	public class QueryResult {
 
 		#region --- Properties ---
@@ -41,6 +43,10 @@ namespace ShapeDatabase.Query {
 		/// The number of elements which have been compared to the reference one.
 		/// </summary>
 		public int Count => results.Count;
+		/// <summary>
+		/// Shows if no items have been compared yet to the reference item.
+		/// </summary>
+		public bool IsEmpty => Count == 0;
 
 		#endregion
 

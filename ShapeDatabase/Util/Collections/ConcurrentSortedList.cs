@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace ShapeDatabase.Util.Collections {
 	/// <typeparam name="T">The type of objects stored in the list.
 	/// All objects in the list shoud implement the <see cref="System.IComparable{T}"/>
 	/// interface to allow for ordering.</typeparam>
+	[DebuggerDisplay("Count = {Count}")]
 	public class ConcurrentSortedList<T> : SortedList<T>
 		where T : System.IComparable<T> {
 

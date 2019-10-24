@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Accord.Diagnostics;
 using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
@@ -17,6 +18,8 @@ namespace ShapeDatabase.Features.Descriptors
 
 		#region --- Properties ---
 
+		private IDictionary<string, FeatureVector> features;
+
 		/// <summary>
 		/// Delegate for calculating a descriptor.
 		/// </summary>
@@ -27,7 +30,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <summary>
 		/// IDictionary with mesh names as key, and their featurevector as value.
 		/// </summary>
-		public IDictionary<string, FeatureVector> FeatureVectors { get; private set; }
+		public IDictionary<string, FeatureVector> FeatureVectors => features;
 		/// <summary>
 		/// IList of all descriptor calculater delegates.
 		/// </summary>
@@ -51,22 +54,12 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <param name="descriptorcalculators">The descriptor calculators that can be used to calculate the featurevectors</param>
 		public FeatureManager(IDictionary<string, FeatureVector> featurevectors,
 							  params DescriptorCalculator[] descriptorcalculators) {
+			if (featurevectors == null)
+				throw new ArgumentNullException(nameof(featurevectors));
+			Debug.Assert(descriptorcalculators.All(x => x != null));
 
-			if(featurevectors != null && featurevectors.Count != 0)
-			{
-				NormaliseVectors();
-			}
-			else
-			{
-				FeatureVectors = new Dictionary<string, FeatureVector>();
-			}
-
-			DescriptorCalculators = new List<DescriptorCalculator>();
-
-			if (DescriptorCalculators != null)
-				foreach (DescriptorCalculator calculator in descriptorcalculators)
-					if (calculator != null)
-						DescriptorCalculators.Add(calculator);
+			features = new Dictionary<string, FeatureVector>(featurevectors);
+			DescriptorCalculators = new List<DescriptorCalculator>(descriptorcalculators);
 		}
 
 		#endregion
@@ -103,7 +96,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// </summary>
 		/// <param name="entry">The mesh of which the featurevector should be calculated</param>
 		/// <returns></returns>
-		public FeatureVector CalculateVector(MeshEntry entry, bool replace = false) {
+		private FeatureVector CalculateVector(MeshEntry entry, bool replace = false) {
 
 			// Check if we already ran the computations for this entry.
 			if (FeatureVectors.TryGetValue(entry.Name, out FeatureVector found)) {
@@ -124,9 +117,8 @@ namespace ShapeDatabase.Features.Descriptors
 			}
 		}
 
-		public void NormaliseVectors()
-		{
-			FeatureVectors = FeatureNormaliser.NormaliseVectors(FeatureVectors);
+		public void NormaliseVectors() {
+			FeatureNormaliser.NormaliseVectors(ref features);
 		}
 
 		/// <summary>

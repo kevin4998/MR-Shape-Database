@@ -56,9 +56,12 @@ namespace ShapeDatabase.Features
 						double averageValue = averages[elemDesc.Name];
 						double deviationValue = deviations[elemDesc.Name];
 
+						double value = (deviationValue == 0) ? 0
+								: Math.Abs(elemValue - averageValue) / deviationValue;
+
 						normalisedDescriptors[descCount] = new ElemDescriptor(
-							elemDesc.Name,
-							Math.Abs(elemValue - averageValue) / deviationValue
+							elemName,
+							value
 						);
 
 					//Normalisation for Histogram Descriptor.
@@ -103,9 +106,8 @@ namespace ShapeDatabase.Features
 
 			// Normalise all the values in averages.
 			double inverseCount = 1 / vectors.Count;
-			// TODO use the iterator to ensure that changes can be made in the loop.
-			foreach(KeyValuePair<string, double> sum in averages.ToArray())
-				averages[sum.Key] = sum.Value * inverseCount;
+			foreach(string name in averages.Keys.ToArray())
+				averages[name] *= inverseCount;
 
 			return averages;
 		}
@@ -133,8 +135,8 @@ namespace ShapeDatabase.Features
 			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>())
 				squaredDifference[desc.Name] = 0;
 
-			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
-				foreach (ElemDescriptor desc in vector.Value.GetDescriptors<ElemDescriptor>())
+			foreach (FeatureVector vector in vectors.Values)
+				foreach (ElemDescriptor desc in vector.GetDescriptors<ElemDescriptor>())
 					squaredDifference[desc.Name] += Math.Pow(desc.Value - averages[desc.Name], 2);
 
 			double inverseCount = 1 / vectors.Count;

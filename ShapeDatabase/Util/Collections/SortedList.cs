@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using ShapeDatabase.Properties;
@@ -13,6 +14,7 @@ namespace ShapeDatabase.Util.Collections {
 	/// <typeparam name="T">The type of objects stored in the list.
 	/// All objects in the list shoud implement the <see cref="System.IComparable{T}"/>
 	/// interface to allow for ordering.</typeparam>
+	[DebuggerDisplay("Count = {Count}")]
 	public class SortedList<T> : IList<T>, IList, IReadOnlyList<T>, IEquatable<SortedList<T>> where T : System.IComparable<T> {
 
 		#region --- Properties ---

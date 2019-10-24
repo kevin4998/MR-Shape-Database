@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace ShapeDatabase.Query {
 	/// The results of a single comparison between a reference item and
 	/// a comparison item from the library.
 	/// </summary>
+	[DebuggerDisplay("{MeshName}: {MeshDistance}")]
 	public struct QueryItem : IEquatable<QueryItem>, IComparable<QueryItem> {
 
 		#region --- Properties ---
