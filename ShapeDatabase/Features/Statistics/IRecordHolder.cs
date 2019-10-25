@@ -54,12 +54,6 @@ namespace ShapeDatabase.Features.Statistics {
 	public interface IRecordHolder<T> : IRecordHolder, IEnumerable<Record> {
 
 		/// <summary>
-		/// A collection of measures which will be taken of all the objects in
-		/// a provided database during the next snapshot.
-		/// </summary>
-		IEnumerable<(string, Func<T, object>)> Measures { get; }
-
-		/// <summary>
 		/// Provides a new measurement to be taken for the objects in the database.
 		/// </summary>
 		/// <param name="measureName">The unique name of the measurement.</param>

@@ -1,43 +1,36 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ShapeDatabase.Features.Statistics {
 
 	/// <summary>
 	/// A class containing a collection of <see cref="Record"/>s
 	/// which is able to create snapshots of databases with its specific measures.
+	/// This recordholder has an internal cache which can be used to calculate
+	/// different <see cref="Record"/>s.
 	/// </summary>
 	/// <typeparam name="T">The object which will be used for making records.</typeparam>
-	public class RecordHolder<T> : IRecordHolder<T> {
+	public class CachedRecordHolder<T> : RecordHolder<T>, ICachedRecordHolder<T> {
 
 		#region --- Properties ---
 
-		private readonly IDictionary<string, Func<T, object>> measures =
-			new Dictionary<string, Func<T, object>>();
-		protected Func<T, string> NameProvider { get; }
+		public ICache Cache { get; } = new Cache();
 
+		private readonly IDictionary<string, Func<T, ICache, object>> measures
+			= new Dictionary<string, Func<T, ICache, object>>();
 
-		public virtual bool IsEmpty => SnapshotTime == DateTime.MinValue;
-		public virtual bool IsActive { get; protected set; } = false;
-
-		public virtual DateTime SnapshotTime { get; protected set; } = DateTime.MinValue;
-		public virtual ICollection<Record> Records { get; private set; } = new List<Record>();
 		/// <summary>
 		/// A collection of measures which will be taken of all the objects in
 		/// a provided database during the next snapshot.
 		/// </summary>
-		private IEnumerable<(string, Func<T, object>)> Measures {
+		private IEnumerable<(string, Func<T, ICache, object>)> Measures {
 			get {
-				foreach (KeyValuePair<string, Func<T, object>> pair in measures)
+				foreach (KeyValuePair<string, Func<T, ICache, object>> pair in measures)
 					yield return (pair.Key, pair.Value);
-			}
-		}
-		public virtual IEnumerable<string> MeasureNames {
-			get {
-				// Using the KeyValuePairs instead of the Name Set to guarantee ordering.
-				foreach (KeyValuePair<string, Func<T, object>> pair in measures)
-					yield return pair.Key;
 			}
 		}
 
@@ -52,11 +45,8 @@ namespace ShapeDatabase.Features.Statistics {
 		/// </summary>
 		/// <param name="nameProvider">The formula to get a unique name
 		/// for the object.</param>
-		public RecordHolder(Func<T, string> nameProvider) {
-			this.NameProvider = nameProvider
-				?? throw new ArgumentNullException(nameof(nameProvider));
-		}
-		
+		public CachedRecordHolder(Func<T, string> nameProvider) : base(nameProvider) { }
+
 		/// <summary>
 		/// Instantiates a new <see cref="RecordHolder"/> with the specified
 		/// measurements.
@@ -68,18 +58,19 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <exception cref="ArgumentNullException">If a measurement is
 		/// <see langword="null"/> or any of its properties is <see langword="null"/>.
 		/// </exception>
-		public RecordHolder(Func<T, string> nameProvider,
-							params (string, Func<T, object>)[] measures) 
-			: this(nameProvider) {
-			this.AddMeasure(measures);
-		}
+		public CachedRecordHolder(Func<T, string> nameProvider,
+								  params (string, Func<T, object>)[] measures)
+			: base(nameProvider, measures) { }
 
 		#endregion
 
-		#region --- Methods ---
+		#region --- Instance Methods ---
 
-		public virtual IRecordHolder<T> AddMeasure(string measureName, Func<T, object> provider,
-										bool overwrite = false) {
+		public ICachedRecordHolder<T> AddMeasure(
+				string measureName,
+				Func<T, ICache, object> provider,
+				bool overwrite = false) {
+			
 			if (measureName == null)
 				throw new ArgumentNullException(nameof(measureName));
 			if (provider == null)
@@ -91,30 +82,33 @@ namespace ShapeDatabase.Features.Statistics {
 			return this;
 		}
 
+		public override IRecordHolder<T> AddMeasure(
+										string measureName,
+										Func<T, object> provider,
+										bool overwrite = false) {
+			if (provider == null)
+				throw new ArgumentNullException(nameof(provider));
+			return AddMeasure(measureName, (x, _) => provider(x), overwrite);
+		}
 
-		public virtual IRecordHolder<T> Reset() {
-			SnapshotTime = DateTime.MinValue;
-			Records = new List<Record>();
+		ICachedRecordHolder<T> ICachedRecordHolder<T>.AddMeasure(
+				string measureName,
+				Func<T, object> provider,
+				bool overwrite) {
+			AddMeasure(measureName, provider, overwrite);
 			return this;
 		}
-		IRecordHolder IRecordHolder.Reset() => Reset();
-		public virtual IRecordHolder<T> TakeSnapShot(IEnumerable<T> library) {
-			if (!IsEmpty || IsActive)
-				throw new SnapShotException();
-			if (library == null)
-				throw new ArgumentNullException(nameof(library));
 
-			IsActive = true;
-			SnapshotTime = DateTime.Now;
-			IList<Record> localRecords = new List<Record>();
-			foreach (T entry in library)
-				localRecords.Add(EntrySnapShot(NameProvider(entry), entry));
-
-			Records = localRecords;
-			IsActive = false;
+		ICachedRecordHolder<T> ICachedRecordHolder<T>.Reset() {
+			base.Reset();
 			return this;
 		}
-		
+
+		ICachedRecordHolder<T> ICachedRecordHolder<T>.TakeSnapShot(IEnumerable<T> library) {
+			TakeSnapShot(library);
+			return this;
+		}
+
 		/// <summary>
 		/// Creates a single record for a single item from the database.
 		/// This <see cref="Record"/> contains all the measurements which can be taken.
@@ -122,23 +116,15 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <param name="entry">The database item to get values from.</param>
 		/// <param name="entryName">The name of the entry to remember in the record.</param>
 		/// <returns>The current object for chaining.</returns>
-		protected virtual Record EntrySnapShot(string entryName, T entry) {
+		protected override Record EntrySnapShot(string entryName, T entry) {
 			Record record = new Record(SnapshotTime, entryName);
-			foreach ((string name, Func<T, object> provider) in Measures)
-				record.AddMeasure(name, provider(entry));
+			foreach ((string name, Func<T, ICache, object> provider) in Measures)
+				record.AddMeasure(name, provider(entry, Cache));
 			return record;
-		}
-
-
-
-		public IEnumerator<Record> GetEnumerator() {
-			return Records.GetEnumerator();
-		}
-		IEnumerator IEnumerable.GetEnumerator() {
-			return GetEnumerator();
 		}
 
 		#endregion
 
 	}
+
 }
