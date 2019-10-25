@@ -39,8 +39,7 @@ namespace ShapeDatabase.Features
 			if (vectors == null) throw new ArgumentNullException(nameof(vectors));
 			if (vectors.Count == 0) return;
 
-			IDictionary<string, double> averages = GetAverages(vectors);
-			IDictionary<string, double> deviations = GetStandardDeviations(vectors, averages);
+			IDictionary<string, (double, double)> MinMaxValues = GetMinMax(vectors);
 
 			foreach(KeyValuePair<string, FeatureVector> pair in vectors.ToArray()) { 
 				string name = pair.Key;
@@ -53,11 +52,9 @@ namespace ShapeDatabase.Features
 					if(desc is ElemDescriptor elemDesc) {
 						string elemName = elemDesc.Name;
 						double elemValue = elemDesc.Value;
-						double averageValue = averages[elemDesc.Name];
-						double deviationValue = deviations[elemDesc.Name];
+						double range = MinMaxValues[desc.Name].Item2 - MinMaxValues[desc.Name].Item1;
 
-						double value = (deviationValue == 0) ? 0
-								: Math.Abs(elemValue - averageValue) / deviationValue;
+						double value = range == 0 ? elemValue : (elemValue - MinMaxValues[desc.Name].Item1) / range;
 
 						normalisedDescriptors[descCount] = new ElemDescriptor(
 							elemName,
@@ -77,6 +74,38 @@ namespace ShapeDatabase.Features
 
 				vectors[name] = new FeatureVector(normalisedDescriptors);
 			}
+		}
+
+		/// <summary>
+		/// Gets the minimum and maximum value of each descriptor of all given vectors
+		/// </summary>
+		/// <param name="vectors">The vectors</param>
+		/// <returns>Dictionary with dscriptor name as key, and (min, max) as value.</returns>
+		private static IDictionary<string, (double, double)> GetMinMax(IDictionary<string, FeatureVector> vectors)
+		{
+			if (vectors == null)
+				throw new ArgumentNullException(nameof(vectors));
+			if (vectors.Count == 0)
+				return new Dictionary<string, (double, double)>();
+
+			IDictionary<string, (double, double)> MinMaxValues = new Dictionary<string, (double, double)>();
+
+			// Initialise the values for all the elementary descriptors.
+			FeatureVector exampleVector = vectors.First().Value;
+			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>())
+				MinMaxValues[desc.Name] = (desc.Value, desc.Value);
+
+			// Iterate over all vectors and update the min and max of each descriptor.
+			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
+				foreach (ElemDescriptor desc in vector.Value.GetDescriptors<ElemDescriptor>())
+				{
+					double Min = desc.Value < MinMaxValues[desc.Name].Item1 ? desc.Value : MinMaxValues[desc.Name].Item1;
+					double Max = desc.Value > MinMaxValues[desc.Name].Item1 ? desc.Value : MinMaxValues[desc.Name].Item2;
+					MinMaxValues[desc.Name] = (Min, Max); 
+				}
+
+			// Return the found min and max values per descriptor.
+			return MinMaxValues;
 		}
 
 		/// <summary>
@@ -145,6 +174,5 @@ namespace ShapeDatabase.Features
 
 			return squaredDifference;
 		}
-
 	}
 }
