@@ -28,11 +28,6 @@ namespace ShapeDatabase.Query {
 		/// This is the provided query item's name.
 		/// </summary>
 		public string QueryName { get; }
-		/// <summary>
-		/// The mesh of the item which is used as a reference during comparison.
-		/// This is the mesh used to extract the vectors from.
-		/// </summary>
-		public IMesh QueryMesh { get; }
 
 		/// <summary>
 		/// A collection containing all the compared items from the database in order
@@ -57,12 +52,11 @@ namespace ShapeDatabase.Query {
 		/// </summary>
 		/// <param name="name">The name of the object used for comparison.</param>
 		/// <param name="mesh">The mesh to extract the feature vectors from.</param>
-		public QueryResult(string name, IMesh mesh) {
+		public QueryResult(string name) {
 			if (string.IsNullOrEmpty(name))
 				throw new ArgumentNullException(nameof(name));
 
 			QueryName = name;
-			QueryMesh = mesh ?? throw new ArgumentNullException(nameof(mesh));
 			results = new ConcurrentSortedList<QueryItem>();
 		}
 

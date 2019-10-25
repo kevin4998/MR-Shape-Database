@@ -11,10 +11,6 @@ namespace ShapeDatabase {
 	class Program {
 
 		static void Main(string[] args) {
-
-			ANN.BuildAndSave();
-
-
 			Console.WriteLine(Resources.I_StartUp);
 
 			Controller.ProcessArguments(args);
