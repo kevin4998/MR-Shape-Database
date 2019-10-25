@@ -325,13 +325,13 @@ namespace ShapeDatabase.IO {
 
 			// Check if there is a direct implementation for this class.
 			if (typeWriters.TryGetValue(type, out IWriter writer)) { 
-				writer.WriteFile(type, path);
+				writer.WriteFile(value, path);
 				return;
 			// Check if there is a more generic version for the class.
 			} else { 
 				foreach (KeyValuePair<Type, IWriter> pair in typeWriters)
 					if (type.IsAssignableFrom(pair.Key)) { 
-						pair.Value.WriteFile(type, path);
+						pair.Value.WriteFile(value, path);
 						return;
 					}
 			}
