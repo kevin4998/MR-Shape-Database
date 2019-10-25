@@ -33,7 +33,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <summary>
 		/// The number of values in each of the bins.
 		/// </summary>
-		public float[] BinValues { get; }
+		private float[] BinValues { get; }
 
 		public int BinCount => BinValues.Length;
 

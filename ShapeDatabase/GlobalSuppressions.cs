@@ -16,4 +16,3 @@
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "Code from external source.", Scope = "member", Target = "~M:ShapeDatabase.UI.Shader.SetInt(System.String,System.Int32)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA1801:Review unused parameters", Justification = "Code from external source.", Scope = "member", Target = "~M:ShapeDatabase.UI.Shader.SetInt(System.String,System.Int32)")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "Histogram should be an array.", Scope = "member", Target = "~P:ShapeDatabase.Features.Descriptors.HistDescriptor.BinValues")]
