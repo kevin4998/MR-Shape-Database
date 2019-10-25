@@ -25,6 +25,7 @@ namespace ShapeDatabase.Util.Collections {
 		protected const int StartingSize = 8;
 
 		private T[] array;
+		private IComparer<T> comparer;
 
 		public T this[int index] {
 			get => array[index];
@@ -69,6 +70,7 @@ namespace ShapeDatabase.Util.Collections {
 				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(capacity));
 
 			array = new T[capacity];
+			comparer = Comparer<T>.Default;
 		}
 
 		/// <summary>
@@ -101,7 +103,8 @@ namespace ShapeDatabase.Util.Collections {
 					}
 				}
 			}
-			Array.Sort(array);
+			comparer = Comparer<T>.Default;
+			Array.Sort(array, comparer);
 		}
 
 		#endregion
@@ -121,7 +124,7 @@ namespace ShapeDatabase.Util.Collections {
 		}
 
 		public virtual void Add(T item) {
-			int position = Array.BinarySearch(array, item);
+			int position = Array.BinarySearch(array, item, comparer);
 			if (position < 0) position = ~position;
 			Insert(position, item);
 		}
@@ -160,7 +163,7 @@ namespace ShapeDatabase.Util.Collections {
 		IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
 
-		public virtual int IndexOf(T item) => Array.BinarySearch(array, item);
+		public virtual int IndexOf(T item) => Array.BinarySearch(array, item, comparer);
 
 		public virtual int IndexOf(object value) => (value is T) ? IndexOf((T) value) : -1;
 
@@ -182,8 +185,7 @@ namespace ShapeDatabase.Util.Collections {
 			if (Count == array.Length)
 				ExpandArray();
 
-			for (int newPos = Count - 1; newPos > index; /*Incrementation in code*/)
-				array[newPos] = array[--newPos];
+			Array.Copy(array, index, array, index + 1, Count - index);
 			array[index] = item;
 
 			++Count;
@@ -213,9 +215,7 @@ namespace ShapeDatabase.Util.Collections {
 			if (index < 0 || index >= Count)
 				throw new ArgumentOutOfRangeException(nameof(index));
 
-			int length = --Count;
-			for (int i = index; i < length; /*Incrementation in expression*/)
-				array[i] = array[++i];
+			Array.Copy(array, index + 1, array, index, --Count - index);
 		}
 
 		#endregion
