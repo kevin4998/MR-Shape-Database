@@ -36,9 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="alglibnet2.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Content\Shapes\Initial\61.off">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -64,9 +61,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="alglibnet2">
-      <HintPath>alglibnet2.dll</HintPath>
-    </Reference>
     <Reference Include="HNSW.Net">
       <HintPath>HNSW.Net.dll</HintPath>
     </Reference>

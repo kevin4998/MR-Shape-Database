@@ -25,7 +25,7 @@ namespace ShapeDatabase.Features
 		/// <summary>
 		/// The MinMaxValues, calculates so far.
 		/// </summary>
-		private IDictionary<string, (double, double)> MinMaxValues;
+		private readonly IDictionary<string, (double, double)> MinMaxValues;
 
 		/// <summary>
 		/// Initialization of the featurenormaliser.

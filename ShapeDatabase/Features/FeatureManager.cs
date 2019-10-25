@@ -215,14 +215,11 @@ namespace ShapeDatabase.Features.Descriptors
 		/// represented as double. The results are ordered (best match first).</returns>
 		public QueryResult CalculateResults(MeshEntry mesh)
 		{
-			QueryResult result = new QueryResult(mesh.Name);
-			FeatureVector queryMesh = CreateVector(mesh);
-			queryMesh = FeatureNormaliser.Instance.NormaliseVector(queryMesh);
+			FeatureVector queryVector = CreateVector(mesh);
+			queryVector = FeatureNormaliser.Instance.NormaliseVector(queryVector);
 
-			Parallel.ForEach(features, vector => {
-				double difference = FeatureVector.Compare(queryMesh, vector.Value);
-				result.AddItem(vector.Key, difference);
-			});
+			ANN HNSW = new ANN(features.Select(x => new NamedFeatureVector(x.Key, x.Value)));
+			QueryResult result = HNSW.RunANNQuery(new NamedFeatureVector(mesh.Name, queryVector), Settings.KBestResults);
 
 			return result;
 		}
