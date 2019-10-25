@@ -138,8 +138,12 @@ namespace ShapeDatabase.Features.Descriptors
 			}
 		}
 
+		/// <summary>
+		/// Updates the min and max values and normalises the database meshes.
+		/// </summary>
 		public void NormaliseVectors() {
-			FeatureNormaliser.NormaliseVectors(ref features);
+			FeatureNormaliser.Instance.UpdateMinMaxDictionary(features);
+			FeatureNormaliser.Instance.NormaliseVectors(ref features);
 		}
 
 		/// <summary>
@@ -212,10 +216,11 @@ namespace ShapeDatabase.Features.Descriptors
 		public QueryResult CalculateResults(MeshEntry mesh)
 		{
 			QueryResult result = new QueryResult(mesh.Name);
-			FeatureVector reference = CreateVector(mesh);
+			FeatureVector queryMesh = CreateVector(mesh);
+			queryMesh = FeatureNormaliser.Instance.NormaliseVector(queryMesh);
 
 			Parallel.ForEach(features, vector => {
-				double difference = FeatureVector.Compare(reference, vector.Value);
+				double difference = FeatureVector.Compare(queryMesh, vector.Value);
 				result.AddItem(vector.Key, difference);
 			});
 

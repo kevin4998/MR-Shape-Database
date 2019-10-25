@@ -12,35 +12,51 @@ namespace ShapeDatabase.Features
 	/// <summary>
 	/// Class for normalising featurevectors
 	/// </summary>
-	public static class FeatureNormaliser {
+	public class FeatureNormaliser {
+
+		private static readonly Lazy<FeatureNormaliser> lazy =
+			new Lazy<FeatureNormaliser>(() => new FeatureNormaliser());
 
 		/// <summary>
-		/// Function for normalising featurevectors.
+		/// Creates and instance of the featurenormaliser.
 		/// </summary>
-		/// <param name="vectors">The vectors to be normalised.</param>
-		/// <returns>The normlised vectors.</returns>
-		public static IDictionary<string, FeatureVector> NormaliseVectors(
-										IDictionary<string, FeatureVector> vectors) {
-			if (vectors == null) return null;
+		public static FeatureNormaliser Instance => lazy.Value;
 
-			IDictionary<string, FeatureVector> newVectors
-				= new Dictionary<string, FeatureVector>(vectors);
-			NormaliseVectors(ref newVectors);
-			return newVectors;
+		/// <summary>
+		/// The MinMaxValues, calculates so far.
+		/// </summary>
+		IDictionary<string, (double, double)> MinMaxValues;
+
+		/// <summary>
+		/// Initialization of the featurenormaliser.
+		/// </summary>
+		public FeatureNormaliser()
+		{
+			MinMaxValues = new Dictionary<string, (double, double)>();
+		}
+
+		/// <summary>
+		/// Class used to normalise one single featurevector.
+		/// </summary>
+		/// <param name="vector">The featurevector</param>
+		/// <returns>The normalised featurevector</returns>
+		public FeatureVector NormaliseVector(FeatureVector vector)
+		{
+			IDictionary<string, FeatureVector> singleDic = new Dictionary<string, FeatureVector>() { { "singleVec", vector} };
+			NormaliseVectors(ref singleDic);
+			return singleDic["singleVec"];
 		}
 
 		/// <summary>
 		/// Function for normalising featurevectors.
 		/// </summary>
 		/// <param name="vectors">The vectors to be normalised.</param>
-		public static void NormaliseVectors(
+		public void NormaliseVectors(
 										ref IDictionary<string, FeatureVector> vectors)
 		{
 			if (vectors == null) throw new ArgumentNullException(nameof(vectors));
 			if (vectors.Count == 0) return;
-
-			IDictionary<string, (double, double)> MinMaxValues = GetMinMax(vectors);
-
+			
 			foreach(KeyValuePair<string, FeatureVector> pair in vectors.ToArray()) { 
 				string name = pair.Key;
 				FeatureVector vector = pair.Value;
@@ -77,23 +93,23 @@ namespace ShapeDatabase.Features
 		}
 
 		/// <summary>
-		/// Gets the minimum and maximum value of each descriptor of all given vectors
+		/// Updates the MinMax dictionary, used for normalisation.
 		/// </summary>
 		/// <param name="vectors">The vectors</param>
-		/// <returns>Dictionary with dscriptor name as key, and (min, max) as value.</returns>
-		private static IDictionary<string, (double, double)> GetMinMax(IDictionary<string, FeatureVector> vectors)
+		public void UpdateMinMaxDictionary(IDictionary<string, FeatureVector> vectors)
 		{
 			if (vectors == null)
 				throw new ArgumentNullException(nameof(vectors));
 			if (vectors.Count == 0)
-				return new Dictionary<string, (double, double)>();
+				return;
 
-			IDictionary<string, (double, double)> MinMaxValues = new Dictionary<string, (double, double)>();
-
-			// Initialise the values for all the elementary descriptors.
+			// Initialise descriptors if they had not been added before.
 			FeatureVector exampleVector = vectors.First().Value;
 			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>())
-				MinMaxValues[desc.Name] = (desc.Value, desc.Value);
+			{
+				if(!MinMaxValues.ContainsKey(desc.Name))
+					MinMaxValues[desc.Name] = (desc.Value, desc.Value);
+			}
 
 			// Iterate over all vectors and update the min and max of each descriptor.
 			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
@@ -103,9 +119,6 @@ namespace ShapeDatabase.Features
 					double Max = (desc.Value > MinMaxValues[desc.Name].Item2) ? desc.Value : MinMaxValues[desc.Name].Item2;
 					MinMaxValues[desc.Name] = (Min, Max); 
 				}
-
-			// Return the found min and max values per descriptor.
-			return MinMaxValues;
 		}
 	}
 }
