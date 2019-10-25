@@ -139,7 +139,25 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static MeshLibrary QueryLibrary => FileManager.QueryMeshes;
 
+		/// <summary>
+		/// Refine shapes to this number of vertices.
+		/// </summary>
+		public static int RefineVertexNumber { get; set; } = 5250;
 
+		/// <summary>
+		/// Maximum number of refinement steps per shape.
+		/// </summary>
+		public static int MaxRefineIterations { get; set; } = 20;
+
+		/// <summary>
+		/// Number of values per histogram descriptor.
+		/// </summary>
+		public static int ValuesPerHistogram { get; set; } = 5000;
+
+		/// <summary>
+		/// Number of bins per histogram descriptor.
+		/// </summary>
+		public static int BinsPerHistogram { get; set; } = 10;
 
 		/// <summary>
 		/// Stating the number the number of best matching results that

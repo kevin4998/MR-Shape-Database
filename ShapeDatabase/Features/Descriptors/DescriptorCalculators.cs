@@ -24,14 +24,6 @@ namespace ShapeDatabase.Features
 		#region --- Properties ---
 
 		/// <summary>
-		/// The number of values in a histogram.
-		/// </summary>
-		private const int NUMBER_OF_VALUES = 5000;
-		/// <summary>
-		/// The number of bins in a histogram.
-		/// </summary>
-		private const int NUMBER_OF_BINS = 10;
-		/// <summary>
 		/// The multiplier needed for calculating compactness.
 		/// </summary>
 		private const double COMPACTNESS_CONS = 1 / (36 * Math.PI);
@@ -218,9 +210,9 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor DistanceBarycenter(IMesh mesh)
 		{
 			double binSize = 0.15;
-			int[] binValues = new int[NUMBER_OF_BINS];
+			int[] binValues = new int[Settings.BinsPerHistogram];
 
-			Parallel.For(0, NUMBER_OF_VALUES, i => {
+			Parallel.For(0, Settings.ValuesPerHistogram, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3 randomVertice = GetRandomVertice(mesh, random);
 				float distance = randomVertice.Length;
@@ -239,9 +231,9 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor DistanceVertices(IMesh mesh)
 		{
 			double binSize = 0.25;
-			int[] binValues = new int[NUMBER_OF_BINS];
+			int[] binValues = new int[Settings.BinsPerHistogram];
 
-			Parallel.For(0, NUMBER_OF_VALUES, i => {
+			Parallel.For(0, Settings.ValuesPerHistogram, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 2);
 				float distance = Vector3.Distance(randomVertices[0], randomVertices[1]);
@@ -260,9 +252,9 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor SquareRootTriangles(IMesh mesh)
 		{
 			double binSize = 0.125;
-			int[] binValues = new int[NUMBER_OF_BINS];
+			int[] binValues = new int[Settings.BinsPerHistogram];
 
-			Parallel.For(0, NUMBER_OF_VALUES, i =>
+			Parallel.For(0, Settings.ValuesPerHistogram, i =>
 			{
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 3);
@@ -282,9 +274,9 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor CubeRootTetrahedron(IMesh mesh)
 		{
 			double binSize = 0.075;
-			int[] binValues = new int[NUMBER_OF_BINS];
+			int[] binValues = new int[Settings.BinsPerHistogram];
 
-			Parallel.For(0, NUMBER_OF_VALUES, i => {
+			Parallel.For(0, Settings.ValuesPerHistogram, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 4);
 				double volume = Math.Pow(Functions.GetTetVolume(randomVertices), (1d / 3d));
@@ -303,9 +295,9 @@ namespace ShapeDatabase.Features
 		public static HistDescriptor AngleVertices(IMesh mesh)
 		{
 			double binSize = 18;
-			int[] binValues = new int[NUMBER_OF_BINS];
+			int[] binValues = new int[Settings.BinsPerHistogram];
 
-			Parallel.For(0, NUMBER_OF_VALUES, i => {
+			Parallel.For(0, Settings.ValuesPerHistogram, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 3);
 				double angle = Functions.GetAngleVertices(randomVertices);
