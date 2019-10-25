@@ -12,36 +12,51 @@ namespace ShapeDatabase.Features
 	/// <summary>
 	/// Class for normalising featurevectors
 	/// </summary>
-	public static class FeatureNormaliser {
+	public class FeatureNormaliser {
+
+		private static readonly Lazy<FeatureNormaliser> lazy =
+			new Lazy<FeatureNormaliser>(() => new FeatureNormaliser());
 
 		/// <summary>
-		/// Function for normalising featurevectors.
+		/// Creates and instance of the featurenormaliser.
 		/// </summary>
-		/// <param name="vectors">The vectors to be normalised.</param>
-		/// <returns>The normlised vectors.</returns>
-		public static IDictionary<string, FeatureVector> NormaliseVectors(
-										IDictionary<string, FeatureVector> vectors) {
-			if (vectors == null) return null;
+		public static FeatureNormaliser Instance => lazy.Value;
 
-			IDictionary<string, FeatureVector> newVectors
-				= new Dictionary<string, FeatureVector>(vectors);
-			NormaliseVectors(ref newVectors);
-			return newVectors;
+		/// <summary>
+		/// The MinMaxValues, calculates so far.
+		/// </summary>
+		private IDictionary<string, (double, double)> MinMaxValues;
+
+		/// <summary>
+		/// Initialization of the featurenormaliser.
+		/// </summary>
+		public FeatureNormaliser()
+		{
+			MinMaxValues = new Dictionary<string, (double, double)>();
+		}
+
+		/// <summary>
+		/// Class used to normalise one single featurevector.
+		/// </summary>
+		/// <param name="vector">The featurevector</param>
+		/// <returns>The normalised featurevector</returns>
+		public FeatureVector NormaliseVector(FeatureVector vector)
+		{
+			IDictionary<string, FeatureVector> singleDic = new Dictionary<string, FeatureVector>() { { "singleVec", vector} };
+			NormaliseVectors(ref singleDic);
+			return singleDic["singleVec"];
 		}
 
 		/// <summary>
 		/// Function for normalising featurevectors.
 		/// </summary>
 		/// <param name="vectors">The vectors to be normalised.</param>
-		public static void NormaliseVectors(
+		public void NormaliseVectors(
 										ref IDictionary<string, FeatureVector> vectors)
 		{
 			if (vectors == null) throw new ArgumentNullException(nameof(vectors));
 			if (vectors.Count == 0) return;
-
-			IDictionary<string, double> averages = GetAverages(vectors);
-			IDictionary<string, double> deviations = GetStandardDeviations(vectors, averages);
-
+			
 			foreach(KeyValuePair<string, FeatureVector> pair in vectors.ToArray()) { 
 				string name = pair.Key;
 				FeatureVector vector = pair.Value;
@@ -53,22 +68,31 @@ namespace ShapeDatabase.Features
 					if(desc is ElemDescriptor elemDesc) {
 						string elemName = elemDesc.Name;
 						double elemValue = elemDesc.Value;
-						double averageValue = averages[elemDesc.Name];
-						double deviationValue = deviations[elemDesc.Name];
+						(double min, double max) = MinMaxValues[desc.Name];
+						double range = max - min;
 
-						double value = (deviationValue == 0) ? 0
-								: Math.Abs(elemValue - averageValue) / deviationValue;
+						if(range != 0)
+						{
+							elemValue = Math.Max(min, elemValue);
+							elemValue = Math.Min(max, elemValue);
+							elemValue = (elemValue - min) / range;
+						}
+						else
+						{
+							elemValue = Math.Max(0, elemValue);
+							elemValue = Math.Min(1, elemValue);
+						}
 
 						normalisedDescriptors[descCount] = new ElemDescriptor(
 							elemName,
-							value
+							elemValue
 						);
 
 					//Normalisation for Histogram Descriptor.
 					} else if (desc is HistDescriptor histDesc)
 						normalisedDescriptors[descCount] = histDesc;
 
-					// Normalisation for unsupported Descriptors.
+					//Normalisation for unsupported Descriptors.
 					else
 						throw new NotImplementedException();
 
@@ -80,71 +104,32 @@ namespace ShapeDatabase.Features
 		}
 
 		/// <summary>
-		/// Calculates the averages of all elementary descriptors.
+		/// Updates the MinMax dictionary, used for normalisation.
 		/// </summary>
-		/// <param name="vectors">The featurevectors</param>
-		/// <returns>IDictionary containing all (and only) elementary descriptor names, including their averages.</returns>
-		private static IDictionary<string, double> GetAverages(
-												IDictionary<string, FeatureVector> vectors)
+		/// <param name="vectors">The vectors</param>
+		public void UpdateMinMaxDictionary(IDictionary<string, FeatureVector> vectors)
 		{
 			if (vectors == null)
 				throw new ArgumentNullException(nameof(vectors));
 			if (vectors.Count == 0)
-				return new Dictionary<string, double>();
+				return;
 
-			IDictionary<string, double> averages = new Dictionary<string, double>();
+			// Initialise descriptors if they had not been added before.
 			FeatureVector exampleVector = vectors.First().Value;
-
-			// Initialise the values for all the elementary descriptors.
 			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>())
-				averages[desc.Name] = 0;
+			{
+				if(!MinMaxValues.ContainsKey(desc.Name))
+					MinMaxValues[desc.Name] = (desc.Value, desc.Value);
+			}
 
-			// Increment the value for all elementary descriptors.
+			// Iterate over all vectors and update the min and max of each descriptor.
 			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
 				foreach (ElemDescriptor desc in vector.Value.GetDescriptors<ElemDescriptor>())
-					averages[desc.Name] += desc.Value;
-
-			// Normalise all the values in averages.
-			double inverseCount = 1d / vectors.Count;
-			foreach(string name in averages.Keys.ToArray())
-				averages[name] *= inverseCount;
-
-			return averages;
+				{
+					double Min = (desc.Value < MinMaxValues[desc.Name].Item1) ? desc.Value : MinMaxValues[desc.Name].Item1;
+					double Max = (desc.Value > MinMaxValues[desc.Name].Item2) ? desc.Value : MinMaxValues[desc.Name].Item2;
+					MinMaxValues[desc.Name] = (Min, Max); 
+				}
 		}
-
-		/// <summary>
-		/// Calculates the standard deviation of all elementary descriptors.
-		/// </summary>
-		/// <param name="vectors">The featurevectors</param>
-		/// <param name="averages">IDictionary containing all elementary descriptor names, and their averages</param>
-		/// <returns>IDictionary containing all (and only) elementary descriptor names, including their averages.</returns>
-		public static IDictionary<string, double> GetStandardDeviations(
-										IDictionary<string, FeatureVector> vectors,
-										IDictionary<string, double> averages)
-		{
-			if (vectors == null)
-				throw new ArgumentNullException(nameof(vectors));
-			if (averages == null)
-				throw new ArgumentNullException(nameof(averages));
-			if (vectors.Count == 0)
-				return new Dictionary<string, double>();
-
-			IDictionary<string, double> squaredDifference = new Dictionary<string, double>();
-			FeatureVector exampleVector = vectors.First().Value;
-
-			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>())
-				squaredDifference[desc.Name] = 0;
-
-			foreach (FeatureVector vector in vectors.Values)
-				foreach (ElemDescriptor desc in vector.GetDescriptors<ElemDescriptor>())
-					squaredDifference[desc.Name] += Math.Pow(desc.Value - averages[desc.Name], 2);
-
-			double inverseCount = 1d / vectors.Count;
-			foreach (KeyValuePair<string, double> sum in squaredDifference.ToArray())
-				squaredDifference[sum.Key] = Math.Sqrt(sum.Value * inverseCount);
-
-			return squaredDifference;
-		}
-
 	}
 }
