@@ -160,6 +160,24 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Query.
+        /// </summary>
+        internal static string D_QueryDir {
+            get {
+                return ResourceManager.GetString("D_QueryDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to queryresults.csv.
+        /// </summary>
+        internal static string D_QueryFile {
+            get {
+                return ResourceManager.GetString("D_QueryFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shapes.
         /// </summary>
         internal static string D_ShapesDir {
@@ -196,11 +214,29 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The given array is empty, this method does not accept arrays without values..
+        /// </summary>
+        internal static string EX_Empty_Array {
+            get {
+                return ResourceManager.GetString("EX_Empty_Array", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot read data from the end of a stream..
         /// </summary>
         internal static string EX_EndOfStream {
             get {
                 return ResourceManager.GetString("EX_EndOfStream", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The provided number had a negative value while this function only excepts positive values. Given value {0}..
+        /// </summary>
+        internal static string EX_ExpPosValue {
+            get {
+                return ResourceManager.GetString("EX_ExpPosValue", resourceCulture);
             }
         }
         
@@ -250,7 +286,7 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid vector size, expected size 3 but got &apos;{0}&apos;.
+        ///   Looks up a localized string similar to Invalid vector size, expected size {0} but got &apos;{1}&apos;.
         /// </summary>
         internal static string EX_Invalid_Vector_Size {
             get {
@@ -273,6 +309,15 @@ namespace ShapeDatabase.Properties {
         internal static string EX_Missing_Ext {
             get {
                 return ResourceManager.GetString("EX_Missing_Ext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The provided arrays do not have the same size, all should be of the same length. Expected Size: {0}, Given Size {1}..
+        /// </summary>
+        internal static string EX_UnEqual_Sizes {
+            get {
+                return ResourceManager.GetString("EX_UnEqual_Sizes", resourceCulture);
             }
         }
         

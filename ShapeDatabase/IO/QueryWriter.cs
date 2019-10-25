@@ -12,7 +12,7 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for writing the query results to a csv file.
 	/// </summary>
-	public class QueryWriter : IWriter<Tuple<string, IList<(string, double)>>[]>
+	public class QueryWriter : IWriter<(string, IList<(string, double)>)[]>
 	{
 
 		#region --- Properties ---
@@ -25,7 +25,7 @@ namespace ShapeDatabase.IO
 		/// A string value which represent the seperater character.
 		/// <see cref="SeperatorChar"/>
 		/// </summary>
-		public static string Seperator => SeperatorChar.ToString();
+		public static string Seperator => SeperatorChar.ToString(Settings.Culture);
 
 
 		private static readonly Lazy<QueryWriter> lazy =
@@ -55,7 +55,7 @@ namespace ShapeDatabase.IO
 		/// </summary>
 		/// <param name="type">The query results</param>
 		/// <param name="location">Location of the csv file</param>
-		public void WriteFile(Tuple<string, IList<(string, double)>>[] type, string location)
+		public void WriteFile((string, IList<(string, double)>)[] type, string location)
 		{
 			using (StreamWriter writer = new StreamWriter(location))
 			{
@@ -68,7 +68,7 @@ namespace ShapeDatabase.IO
 		/// </summary>
 		/// <param name="type">The query results</param>
 		/// <param name="location">Location of the csv file</param>
-		public void WriteFile(Tuple<string, IList<(string, double)>>[] type, StreamWriter writer)
+		public void WriteFile((string, IList<(string, double)>)[] type, StreamWriter writer)
 		{
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
@@ -84,20 +84,20 @@ namespace ShapeDatabase.IO
 			
 			writer.WriteLine(string.Join(Seperator, columnNames));
 
-			foreach(Tuple<string, IList<(string, double)>> result in type)
+			foreach((string queryName, IList<(string, double)> queryResult) in type)
 			{
-				writer.WriteLine(result.Item1 + Seperator + string.Join(Seperator, result.Item2.Select(x => x.Item1 + " (" + x.Item2 + ")" )));
+				writer.WriteLine(queryName + Seperator + string.Join(Seperator, queryResult.Select(x => x.Item1 + " (" + x.Item2 + ")" )));
 			}
 
 			writer.Flush();
 		}
 
-		public Task WriteFileAsync(Tuple<string, IList<(string, double)>>[] results, string location)
+		public Task WriteFileAsync((string, IList<(string, double)>)[] results, string location)
 		{
 			return Task.Run(() => WriteFile(results, location));
 		}
 
-		public Task WriteFileAsync(Tuple<string, IList<(string, double)>>[] results, StreamWriter writer)
+		public Task WriteFileAsync((string, IList<(string, double)>)[] results, StreamWriter writer)
 		{
 			return Task.Run(() => WriteFile(results, writer));
 		}

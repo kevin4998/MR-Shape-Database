@@ -216,5 +216,10 @@ namespace ShapeDatabase.Util
 			return max;
 		}
 
+		public static TGoal[] Cast<TFrom,TGoal>(this TFrom[] values,
+								Converter<TFrom, TGoal> parser) {
+			return Array.ConvertAll(values, parser);
+		}
+
 	}
 }

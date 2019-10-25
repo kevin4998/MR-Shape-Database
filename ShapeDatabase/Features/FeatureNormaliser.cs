@@ -1,5 +1,7 @@
-﻿using ShapeDatabase.Features.Descriptors;
+﻿using Accord.Math;
+using ShapeDatabase.Features.Descriptors;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,54 +12,68 @@ namespace ShapeDatabase.Features
 	/// <summary>
 	/// Class for normalising featurevectors
 	/// </summary>
-	public class FeatureNormaliser
-	{
-		private static readonly Lazy<FeatureNormaliser> lazy
-			= new Lazy<FeatureNormaliser>();
+	public static class FeatureNormaliser {
 
 		/// <summary>
-		/// Gives a refiner to normalise meshes.
+		/// Function for normalising featurevectors.
 		/// </summary>
-		public static FeatureNormaliser Instance => lazy.Value;
+		/// <param name="vectors">The vectors to be normalised.</param>
+		/// <returns>The normlised vectors.</returns>
+		public static IDictionary<string, FeatureVector> NormaliseVectors(
+										IDictionary<string, FeatureVector> vectors) {
+			if (vectors == null) return null;
+
+			IDictionary<string, FeatureVector> newVectors
+				= new Dictionary<string, FeatureVector>(vectors);
+			NormaliseVectors(ref newVectors);
+			return newVectors;
+		}
 
 		/// <summary>
-		/// Function for normalising featurevectors
+		/// Function for normalising featurevectors.
 		/// </summary>
-		/// <param name="vectors">The vectors to be normalised</param>
-		/// <returns>The normlised vectors</returns>
-		public IDictionary<string, FeatureVector> NormaliseVectors(IDictionary<string, FeatureVector> vectors)
+		/// <param name="vectors">The vectors to be normalised.</param>
+		public static void NormaliseVectors(
+										ref IDictionary<string, FeatureVector> vectors)
 		{
-			Dictionary<string, FeatureVector> normalisedVectors = new Dictionary<string, FeatureVector>();
+			if (vectors == null) throw new ArgumentNullException(nameof(vectors));
+			if (vectors.Count == 0) return;
 
 			IDictionary<string, double> averages = GetAverages(vectors);
 			IDictionary<string, double> deviations = GetStandardDeviations(vectors, averages);
 
-			foreach(KeyValuePair<string, FeatureVector> vector in vectors)
-			{
-				IDescriptor[] normalisedDescriptors = new IDescriptor[vector.Value.Descriptors.Count()];
+			foreach(KeyValuePair<string, FeatureVector> pair in vectors) { 
+				string name = pair.Key;
+				FeatureVector vector = pair.Value;
+				IDescriptor[] normalisedDescriptors = new IDescriptor[vector.DescriptorCount];
 
-				int j = 0;
-				foreach (IDescriptor desc in vector.Value.Descriptors)
-				{
-					//Normalisation for Elementary Descriptor
-					if(desc is ElemDescriptor)
-					{
-						ElemDescriptor unnormalisedDescriptor = (ElemDescriptor)vector.Value.Descriptors.ElementAt(j);
+				int descCount = 0;
+				foreach (IDescriptor desc in vector.Descriptors) {
+					//Normalisation for Elementary Descriptor.
+					if(desc is ElemDescriptor elemDesc) {
+						string elemName = elemDesc.Name;
+						double elemValue = elemDesc.Value;
+						double averageValue = averages[elemDesc.Name];
+						double deviationValue = deviations[elemDesc.Name];
 
-						normalisedDescriptors[j] = new ElemDescriptor(unnormalisedDescriptor.Name, Math.Abs((unnormalisedDescriptor.Value - averages[unnormalisedDescriptor.Name])) / deviations[unnormalisedDescriptor.Name]);
-					}
-					//Normalisation for Histogram Descriptor
+						normalisedDescriptors[descCount] = new ElemDescriptor(
+							elemDesc.Name,
+							Math.Abs(elemValue - averageValue) / deviationValue
+						);
+
+					//Normalisation for Histogram Descriptor.
+					} else if (desc is HistDescriptor histDesc)
+						normalisedDescriptors[descCount] = histDesc;
+
+					// Normalisation for unsupported Descriptors.
 					else
-					{
-						normalisedDescriptors[j] = ((HistDescriptor)desc).Normalise();
-					}
-					j++;
+						throw new NotImplementedException();
+
+					descCount++;
 				}
 
-				normalisedVectors[vector.Key] = new FeatureVector(normalisedDescriptors);
+				vectors[name] = new FeatureVector(normalisedDescriptors);
 			}
-
-			return normalisedVectors;
 		}
 
 		/// <summary>
@@ -65,29 +81,31 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="vectors">The featurevectors</param>
 		/// <returns>IDictionary containing all (and only) elementary descriptor names, including their averages.</returns>
-		private IDictionary<string, double> GetAverages(IDictionary<string, FeatureVector> vectors)
+		private static IDictionary<string, double> GetAverages(
+												IDictionary<string, FeatureVector> vectors)
 		{
-			Dictionary<string, double> totalSums = new Dictionary<string, double>();
+			if (vectors == null)
+				throw new ArgumentNullException(nameof(vectors));
+			if (vectors.Count == 0)
+				return new Dictionary<string, double>();
 
-			foreach (IDescriptor desc in vectors.ElementAt(0).Value.Descriptors.Where(x => x is ElemDescriptor))
-			{
-				totalSums[desc.Name] = 0;
-			}
+			IDictionary<string, double> averages = new Dictionary<string, double>();
+			FeatureVector exampleVector = vectors.First().Value;
 
+			// Initialise the values for all the elementary descriptors.
+			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>())
+				averages[desc.Name] = 0;
+
+			// Increment the value for all elementary descriptors.
 			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
-			{
-				foreach (IDescriptor desc in vector.Value.Descriptors.Where(x => x is ElemDescriptor))
-				{
-					totalSums[desc.Name] += ((ElemDescriptor)desc).Value;
-				}
-			}
+				foreach (ElemDescriptor desc in vector.Value.GetDescriptors<ElemDescriptor>())
+					averages[desc.Name] += desc.Value;
 
-			Dictionary<string, double> averages = new Dictionary<string, double>();
-
-			foreach(KeyValuePair<string, double> sum in totalSums)
-			{
-				averages[sum.Key] = sum.Value / vectors.Count;
-			}
+			// Normalise all the values in averages.
+			double inverseCount = 1 / vectors.Count;
+			// TODO use the iterator to ensure that changes can be made in the loop.
+			foreach(KeyValuePair<string, double> sum in averages)
+				averages[sum.Key] = sum.Value * inverseCount;
 
 			return averages;
 		}
@@ -98,31 +116,33 @@ namespace ShapeDatabase.Features
 		/// <param name="vectors">The featurevectors</param>
 		/// <param name="averages">IDictionary containing all elementary descriptor names, and their averages</param>
 		/// <returns>IDictionary containing all (and only) elementary descriptor names, including their averages.</returns>
-		public IDictionary<string, double> GetStandardDeviations(IDictionary<string, FeatureVector> vectors, IDictionary<string, double> averages)
+		public static IDictionary<string, double> GetStandardDeviations(
+										IDictionary<string, FeatureVector> vectors,
+										IDictionary<string, double> averages)
 		{
-			Dictionary<string, double> squaredDifferenceSums = new Dictionary<string, double>();
+			if (vectors == null)
+				throw new ArgumentNullException(nameof(vectors));
+			if (averages == null)
+				throw new ArgumentNullException(nameof(averages));
+			if (vectors.Count == 0)
+				return new Dictionary<string, double>();
 
-			foreach (IDescriptor desc in vectors.ElementAt(0).Value.Descriptors.Where(x => x is ElemDescriptor))
-			{
-				squaredDifferenceSums[desc.Name] = 0;
-			}
+			IDictionary<string, double> squaredDifference = new Dictionary<string, double>();
+			FeatureVector exampleVector = vectors.First().Value;
+
+			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>())
+				squaredDifference[desc.Name] = 0;
 
 			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
-			{
-				foreach (IDescriptor desc in vector.Value.Descriptors.Where(x => x is ElemDescriptor))
-				{
-					squaredDifferenceSums[desc.Name] += Math.Pow(((ElemDescriptor)desc).Value - averages[desc.Name], 2);
-				}
-			}
+				foreach (ElemDescriptor desc in vector.Value.GetDescriptors<ElemDescriptor>())
+					squaredDifference[desc.Name] += Math.Pow(desc.Value - averages[desc.Name], 2);
 
-			Dictionary<string, double> deviations = new Dictionary<string, double>();
+			double inverseCount = 1 / vectors.Count;
+			foreach (KeyValuePair<string, double> sum in squaredDifference)
+				squaredDifference[sum.Key] = Math.Sqrt(sum.Value * inverseCount);
 
-			foreach (KeyValuePair<string, double> sum in squaredDifferenceSums)
-			{
-				deviations[sum.Key] = Math.Sqrt(sum.Value / vectors.Count);
-			}
-
-			return deviations;
+			return squaredDifference;
 		}
+
 	}
 }

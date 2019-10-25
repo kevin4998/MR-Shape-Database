@@ -44,7 +44,8 @@ namespace ShapeDatabase.Features.Descriptors
 	/// A class which can be used to compare existing <see cref="IDescriptor"/>s
 	/// by using their <see cref="IDescriptor.Name"/>.
 	/// </summary>
-	public class DescriptorComparer : IEqualityComparer<IDescriptor> {
+	public class DescriptorComparer : IEqualityComparer<IDescriptor>,
+									  IComparer<IDescriptor> {
 
 		#region --- Properties ---
 
@@ -54,6 +55,11 @@ namespace ShapeDatabase.Features.Descriptors
 		/// The only object of this kind for comparison.
 		/// </summary>
 		public static DescriptorComparer Instance => lazy.Value;
+
+		private readonly StringComparison comparison =
+			StringComparison.InvariantCultureIgnoreCase;
+		private readonly StringComparer comparer =
+			StringComparer.InvariantCultureIgnoreCase;
 
 		#endregion
 
@@ -69,11 +75,20 @@ namespace ShapeDatabase.Features.Descriptors
 			return x == null
 				? y == null
 				: y != null
-					&& x.Name.Equals(y.Name, StringComparison.OrdinalIgnoreCase);
+					&& x.Name.Equals(y.Name, comparison);
 		}
 
 		public int GetHashCode(IDescriptor obj) {
 			return (obj == null) ? 0 : obj.GetHashCode();
+		}
+
+		public int Compare(IDescriptor x, IDescriptor y) {
+			if (x == null)
+				throw new ArgumentNullException(nameof(x));
+			if (y == null)
+				throw new ArgumentNullException(nameof(y));
+
+			return comparer.Compare(x.Name, y.Name);
 		}
 
 		#endregion

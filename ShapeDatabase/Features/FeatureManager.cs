@@ -26,7 +26,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <summary>
 		/// IDictionary with mesh names as key, and their featurevector as value.
 		/// </summary>
-		public IDictionary<string, FeatureVector> FeatureVectors { get; set; }
+		public IDictionary<string, FeatureVector> FeatureVectors { get; private set; }
 		/// <summary>
 		/// IList of all descriptor calculater delegates.
 		/// </summary>
@@ -51,7 +51,7 @@ namespace ShapeDatabase.Features.Descriptors
 		public FeatureManager(IDictionary<string, FeatureVector> featurevectors,
 							  params DescriptorCalculator[] descriptorcalculators) {
 
-			if(featurevectors != null && featurevectors.Count() != 0)
+			if(featurevectors != null && featurevectors.Count != 0)
 			{
 				NormaliseVectors();
 			}
@@ -125,7 +125,7 @@ namespace ShapeDatabase.Features.Descriptors
 
 		public void NormaliseVectors()
 		{
-			FeatureVectors = FeatureNormaliser.Instance.NormaliseVectors(FeatureVectors);
+			FeatureVectors = FeatureNormaliser.NormaliseVectors(FeatureVectors);
 		}
 
 		/// <summary>
@@ -148,7 +148,7 @@ namespace ShapeDatabase.Features.Descriptors
 			foreach (IDescriptor desc in updates)
 				descriptors.Add(desc);
 
-			return new FeatureVector(descriptors);
+			return new FeatureVector(descriptors.ToArray());
 		}
 
 		/// <summary>
@@ -164,7 +164,7 @@ namespace ShapeDatabase.Features.Descriptors
 			foreach (DescriptorCalculator calculator in DescriptorCalculators)
 				descriptors.Add(calculator(entry.Mesh));
 
-			return new FeatureVector(descriptors);
+			return new FeatureVector(descriptors.ToArray());
 		}
 
 		/// <summary>

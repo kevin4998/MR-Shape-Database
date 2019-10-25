@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using OpenTK;
+using ShapeDatabase.Properties;
 using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Shapes {
@@ -30,6 +31,49 @@ namespace ShapeDatabase.Shapes {
 
 	public static class MeshEx {
 
+		public static Vector3 GetVertex(this IMesh mesh, int pos) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+			if (pos < 0)
+				throw new ArgumentException(
+					string.Format(
+						Settings.Culture,
+						Resources.EX_ExpPosValue,
+						pos
+					)
+				);
+			return mesh.GetVertex((uint) pos);
+		}
+
+		public static Vector3 GetFace(this IMesh mesh, int pos) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+			if (pos < 0)
+				throw new ArgumentException(
+					string.Format(
+						Settings.Culture,
+						Resources.EX_ExpPosValue,
+						pos
+					)
+				);
+			return mesh.GetFace((uint) pos);
+		}
+
+		public static Vector3 GetNormal(this IMesh mesh, int pos) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+			if (pos < 0)
+				throw new ArgumentException(
+					string.Format(
+						Settings.Culture,
+						Resources.EX_ExpPosValue,
+						pos
+					)
+				);
+			return mesh.GetNormal((uint) pos);
+		}
+
+
 		public static Vector3[] GetVerticesFromFace(this IMesh mesh, uint pos) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
@@ -49,8 +93,8 @@ namespace ShapeDatabase.Shapes {
 				mesh.GetVertex((uint) face.Z)
 			};
 		}
+		
 
-		// http://james-ramsden.com/area-of-a-triangle-in-3d-c-code/
 		public static double GetTriArea(this IMesh mesh, uint pos) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));

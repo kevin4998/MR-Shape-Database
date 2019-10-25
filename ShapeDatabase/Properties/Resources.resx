@@ -202,7 +202,7 @@
     <comment>The exception which is given when a format exception is called withoutt specifying any arguments for the cause.</comment>
   </data>
   <data name="EX_Invalid_Vector_Size" xml:space="preserve">
-    <value>Invalid vector size, expected size 3 but got '{0}'</value>
+    <value>Invalid vector size, expected size {0} but got '{1}'</value>
     <comment>The exception which is given when an array could not be converted to a 3D vector because the dimensions weren't right.</comment>
   </data>
   <data name="EX_MinMax_Switch" xml:space="preserve">
@@ -237,7 +237,7 @@
     <value>Done extracting descriptors.</value>
     <comment>Notify the user that the descriptors for all shapes have been calculated.</comment>
   </data>
-	<data name="I_EndProc_Query" xml:space="preserve">
+  <data name="I_EndProc_Query" xml:space="preserve">
     <value>Done with the query.</value>
     <comment>Notify the user that the query pipeline has ended.</comment>
   </data>
@@ -257,7 +257,7 @@
     <value>FeatureVectors exported to: {0}</value>
     <comment>Notify that the featuress have been saved to a specified file.</comment>
   </data>
-	<data name="I_Query_Exp" xml:space="preserve">
+  <data name="I_Query_Exp" xml:space="preserve">
     <value>Exporting the query results.</value>
     <comment>Notify that the query results have been saved to a specified file.</comment>
   </data>
@@ -293,7 +293,7 @@
     <value>Start extracting descriptors.</value>
     <comment>Notify the user that the descriptors for all shapes are being calculated.</comment>
   </data>
-	<data name="I_StartProc_Query" xml:space="preserve">
+  <data name="I_StartProc_Query" xml:space="preserve">
     <value>Starting the query.</value>
     <comment>Notify that the query pipeline has started.</comment>
   </data>
@@ -312,5 +312,25 @@
   <data name="I_UnknownCommand" xml:space="preserve">
     <value>Unknown command: {0}</value>
     <comment>Notify the user that the given action cannot be completed by this application.</comment>
+  </data>
+  <data name="EX_ExpPosValue" xml:space="preserve">
+    <value>The provided number had a negative value while this function only excepts positive values. Given value {0}.</value>
+    <comment>The exception which is given when a negative number is provided to a method which only accepts positive ones.</comment>
+  </data>
+  <data name="EX_UnEqual_Sizes" xml:space="preserve">
+    <value>The provided arrays do not have the same size, all should be of the same length. Expected Size: {0}, Given Size {1}.</value>
+    <comment>The exception which is given when 2 or more arrays are provided of different lengths when all should have the exact same element count.</comment>
+  </data>
+  <data name="EX_Empty_Array" xml:space="preserve">
+    <value>The given array is empty, this method does not accept arrays without values.</value>
+    <comment>The exception which is given when an empty array is provided while its values are important.</comment>
+  </data>
+  <data name="D_QueryDir" xml:space="preserve">
+    <value>Query</value>
+    <comment>The directory which will contain all the query shapes which needs to be compared with our stored database.</comment>
+  </data>
+  <data name="D_QueryFile" xml:space="preserve">
+    <value>queryresults.csv</value>
+    <comment>The file where all the similar files with their scores will be saved in.</comment>
   </data>
 </root>

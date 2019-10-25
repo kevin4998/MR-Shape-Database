@@ -1,4 +1,6 @@
-﻿using ShapeDatabase.Util;
+﻿using Accord.Diagnostics;
+using ShapeDatabase.Properties;
+using ShapeDatabase.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +33,8 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// </summary>
 		public float[] BinValues { get; }
 
+		public int BinCount => BinValues.Length;
+
 		/// <summary>
 		/// Weight of the histogram descriptor
 		/// </summary>
@@ -48,6 +52,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <param name="binvalues">Bin values of the descriptor</param>
 		public HistDescriptor(string name, double binsize, float[] binvalues) 
 			: base(name) {
+			Debug.Assert(VerifyHistogram(binvalues));
 			BinSize = binsize;
 			BinValues = binvalues;
 		}
@@ -65,7 +70,12 @@ namespace ShapeDatabase.Features.Descriptors {
 			if (desc == null)
 				throw new ArgumentNullException(nameof(desc));
 
-			return Functions.CalculatePTD(BinValues.Select(x => (double)x).ToArray(), Enumerable.Repeat(1d, BinValues.Length).ToArray(), desc.BinValues.Select(x => (double)x).ToArray(), Enumerable.Repeat(1d, BinValues.Length).ToArray());
+			double[] weights = Enumerable.Repeat(1d, BinValues.Length).ToArray();
+			return Functions.CalculatePTD(
+				BinValues.Cast<float, double>(x => x),
+				weights,
+				desc.BinValues.Cast<float, double>(x => x),
+				weights);
 		}
 
 		/// <summary>
@@ -88,30 +98,69 @@ namespace ShapeDatabase.Features.Descriptors {
 
 		#region -- Static Methods --
 
-		/// <summary>
-		/// Converts the integer based histogram in a float based histogram
-		/// where the float value is always between 0 and 1 representating
-		/// the persentage of values that are within that range.
-		/// </summary>
-		/// <returns>The normalised HistDescriptor</returns>
-		public HistDescriptor Normalise()
-		{
-			float[] normalised = new float[BinValues.Length];
-			float total = 0;
-			foreach (float binSize in BinValues)
-				total += binSize;
-
-			for (int i = BinValues.Length - 1; i >= 0; i--)
-				normalised[i] = BinValues[i] / total;
-
-			for(int i = 0; i < BinValues.Length - 1; i++)
-			{
-				normalised[i + 1] += normalised[i];
-			}
-
-			return new HistDescriptor(base.Name, BinSize, normalised);
+		public static HistDescriptor FromHistogram(string name, double binSize,
+													int[] histogram) {
+			return FromHistogram(name, binSize,
+								 Array.ConvertAll(histogram, x => (float) x));
 		}
 
+		public static HistDescriptor FromHistogram(string name, double binSize,
+													float[] histogram) {
+			if (histogram == null)
+				throw new ArgumentNullException(nameof(histogram));
+			if (histogram.Length == 0)
+				throw new ArgumentException(Resources.EX_Empty_Array, nameof(histogram));
+
+			float[] accumulated = new float[histogram.Length];
+			accumulated[0] = histogram[0];
+			for (int i = 1; i < histogram.Length; i++)
+				accumulated[i] = accumulated[i - 1] + histogram[i];
+
+			return FromAccumulative(name, binSize, accumulated);
+		}
+
+		public static HistDescriptor FromAccumulative(string name, double binSize,
+													float[] accHist) {
+			if (accHist == null)
+				throw new ArgumentNullException(nameof(accHist));
+			if (accHist.Length == 0)
+				throw new ArgumentException(Resources.EX_Empty_Array, nameof(accHist));
+
+			float inverseLargest = 1 / accHist[accHist.Length - 1];
+			float[] normalised = Array.ConvertAll(accHist, value => value * inverseLargest);
+			return FromNormalised(name, binSize, normalised);
+		}
+
+		public static HistDescriptor FromNormalised(string name, double binSize,
+													float[] normHist) {
+			return new HistDescriptor(name, binSize, normHist);
+		}
+
+#if DEBUG
+
+		private static bool VerifyHistogram(float[] histogram) {
+			if (histogram == null)
+				throw new ArgumentNullException(nameof(histogram));
+			if (histogram.Length == 0)
+				throw new ArgumentException(Resources.EX_Empty_Array, nameof(histogram));
+			float last = histogram[0];
+			// Verify that the next value is always bigger than the previous.
+			for (int i = 1; i < histogram.Length; i++)
+				if (last > histogram[i])
+					return false;
+				else
+					last = histogram[i];
+			// Verify that the last value always contains all scores.
+			if (last != 1f)
+				return false;
+			// Notify that the whole histogram is ok.
+			return true;
+		}
+
+#endif
+
 		#endregion
+
 	}
+
 }

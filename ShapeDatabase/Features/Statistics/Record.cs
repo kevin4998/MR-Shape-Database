@@ -38,7 +38,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// a certain object.
 		/// </summary>
 		/// <param name="time">The moment in time when this record was created.</param>
-		/// <param name="name">The unique name of the object to who thi record belongs.
+		/// <param name="name">The unique name of the object to who this record belongs.
 		/// </param>
 		/// <exception cref="ArgumentNullException">If the provided name is
 		/// <see langword="null"/>.</exception>

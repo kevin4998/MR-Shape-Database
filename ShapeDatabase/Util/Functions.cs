@@ -51,7 +51,39 @@ namespace ShapeDatabase.Util {
 
 
 		/// <summary>
+		/// Calculates the normal created by the given provided points.
+		/// The order of the given points is important to determine the right normal.
+		/// </summary>
+		/// <param name="points">Array with the three vertices</param>
+		/// <returns>A vector containing the normal.</returns>
+		public static Vector3 GetNormal(Vector3[] points, bool normalised = true) {
+			VerifyVectorArray(points, 3);
+
+			Vector3 v1 = points[0];
+			Vector3 v2 = points[1];
+			Vector3 v3 = points[2];
+
+			Vector3 normal = Vector3.Cross(v2 - v1, v3 - v1);
+			if (normalised)
+				normal.Normalize();
+			return normal;
+		}
+
+		/// <summary>
+		/// Calculates the middle point of the provided triangle.
+		/// </summary>
+		/// <param name="points">Array with the three vertices</param>
+		/// <returns>A vector containing the center point.</returns>
+		public static Vector3 GetCenter(Vector3[] points) {
+			VerifyVectorArray(points, 3);
+			return (points[0] + points[1] + points[2]) / 3;
+		}
+
+
+		/// <summary>
 		/// Returns the area of a triangle
+		/// 
+		/// <seealso cref="http://james-ramsden.com/area-of-a-triangle-in-3d-c-code/"/>
 		/// </summary>
 		/// <param name="points">Array with the three vertices</param>
 		/// <returns>The area</returns>
@@ -89,37 +121,73 @@ namespace ShapeDatabase.Util {
 		/// <summary>
 		/// Calculates the PTD, given two arrays with values and their weights.
 		/// </summary>
-		/// <param name="X_values">The values of the first array</param>
-		/// <param name="X_weights">The weights of the first array</param>
-		/// <param name="Y_values">The values of the second array</param>
-		/// <param name="Y_weights">The values of the second array</param>
+		/// <param name="xValues">The values of the first array</param>
+		/// <param name="xWeights">The weights of the first array</param>
+		/// <param name="yValues">The values of the second array</param>
+		/// <param name="yWeights">The values of the second array</param>
 		/// <returns>The PTD</returns>
-		public static double CalculatePTD(double[] X_values, double[] X_weights, double[] Y_values, double[] Y_weights)
+		public static double CalculatePTD(double[] xValues, double[] xWeights,
+										  double[] yValues, double[] yWeights)
 		{
-			if (X_values == null || X_weights == null || Y_values == null || Y_weights == null)
-				throw new ArgumentNullException();
-			if ((X_values.Length != X_weights.Length) || (Y_values.Length != Y_weights.Length) || (X_values.Length != Y_values.Length))
-				throw new ArgumentNullException();
+			#region Parameter Checks
+			if (xValues == null)
+				throw new ArgumentNullException(nameof(xValues));
+			if (xWeights == null)
+				throw new ArgumentNullException(nameof(xWeights));
+			if (yValues == null)
+				throw new ArgumentNullException(nameof(yValues));
+			if (yWeights == null)
+				throw new ArgumentNullException(nameof(yWeights));
+			if (xValues.Length != xWeights.Length)
+				throw new ArgumentException(
+					string.Format(Settings.Culture,
+						Resources.EX_UnEqual_Sizes,
+						xValues.Length, xWeights.Length
+					)
+				);
+			if (yValues.Length != yWeights.Length)
+				throw new ArgumentException(
+					string.Format(Settings.Culture,
+						Resources.EX_UnEqual_Sizes,
+						yValues.Length, yWeights.Length
+					)
+				);
+			if (xValues.Length != yValues.Length)
+				throw new ArgumentException(
+					string.Format(Settings.Culture,
+						Resources.EX_UnEqual_Sizes,
+						xValues.Length, yValues.Length
+					)
+				);
+			#endregion
 
-			double X = X_values.Sum();
-			double Y = Y_values.Sum();
-			double W = X_weights.Sum();
-			double U = Y_weights.Sum();
+			double X = 0, Y = 0, W = 0, U = 0;
+
+			for (int i = xValues.Length - 1; i >= 0; i--) {
+				X += xValues[i];
+				Y += xWeights[i];
+				W += yValues[i];
+				U += yWeights[i];
+			}
+
+			X = 1 / X;
+			Y = 1 / Y;
+			double WU = W / U;
 
 			//Normalise both arrays, and the weights of the second array
-			for (int i = 0; i < X_values.Length; i++)
+			for (int i = xValues.Length - 1; i >= 0; i--)
 			{
-				X_values[i] /= X;
-				Y_values[i] /= Y;
-				Y_weights[i] *= (W / U);
+				xValues[i] *= X;
+				yValues[i] *= Y;
+				yWeights[i] *= WU;
 			}
 
 			//Count the flow of each bin
-			double[] Distances = new double[X_values.Length];
-			Distances[0] = (X_values[0] * X_weights[0]) - (Y_values[0] * Y_weights[0]);
+			double[] Distances = new double[xValues.Length];
+			Distances[0] = (xValues[0] * xWeights[0]) - (yValues[0] * yWeights[0]);
 			for (int i = 0; i < Distances.Length - 1; i++)
 			{
-				Distances[i + 1] = (X_values[i] * X_weights[i]) + Distances[i] - (Y_values[i] * Y_weights[i]);
+				Distances[i + 1] = (xValues[i] * xWeights[i]) + Distances[i] - (yValues[i] * yWeights[i]);
 			}
 
 			//Return the PTD
@@ -136,8 +204,12 @@ namespace ShapeDatabase.Util {
 				throw new ArgumentNullException(nameof(points));
 			if (points.Length != size)
 				throw new ArgumentException(
-					Resources.EX_Invalid_Vector_Size,
-					points.Length.ToString(Settings.Culture));
+					string.Format(
+						Settings.Culture,
+						Resources.EX_Invalid_Vector_Size,
+						size,
+						points.Length
+					));
 		}
 	}
 }

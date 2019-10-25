@@ -32,6 +32,11 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		private const int NUMBER_OF_BINS = 10;
 		/// <summary>
+		/// The multiplier needed for calculating compactness.
+		/// </summary>
+		private const double COMPACTNESS_CONS = 1 / (36 * Math.PI);
+
+		/// <summary>
 		/// A collection of all the locally defined descriptors.
 		/// </summary>
 		public static IEnumerable<FeatureManager.DescriptorCalculator> Descriptors {
@@ -40,6 +45,7 @@ namespace ShapeDatabase.Features
 				yield return BoundingBoxVolume;
 				yield return Diameter;
 				yield return Eccentricity;
+				yield return Compactness;
 				yield return DistanceBarycenter;
 				yield return DistanceVertices;
 				yield return SquareRootTriangles;
@@ -47,7 +53,24 @@ namespace ShapeDatabase.Features
 				yield return AngleVertices;
 			}
 		}
-
+		/// <summary>
+		/// A collection of all the names of each descriptor.
+		/// </summary>
+		public static IEnumerable<string> DescriptorNames {
+			get {
+				yield return "SurfaceArea";
+				yield return "BoundingBoxVolume";
+				yield return "Diameter";
+				yield return "Eccentricity";
+				yield return "Compactness";
+				yield return "DistanceBarycenter";
+				yield return "DistanceVertices";
+				yield return "SquareRootTriangles";
+				yield return "CubeRootTetrahedron";
+				yield return "AngleVertices";
+			}
+		}
+		
 		#endregion
 
 		#region --- Elementary Descriptors ---
@@ -99,7 +122,7 @@ namespace ShapeDatabase.Features
 			{
 				Parallel.For(i + 1, mesh.VertexCount, j =>
 				{
-					float distance = Vector3.Distance(mesh.GetVertex((uint)i), mesh.GetVertex((uint)j));
+					float distance = Vector3.Distance(mesh.GetVertex((uint) i), mesh.GetVertex((uint) j));
 					float tempDiameter;
 
 					do
@@ -112,6 +135,8 @@ namespace ShapeDatabase.Features
 				});
 			});
 
+			IBoundingBox bb = mesh.GetBoundingBox();
+			biggestDiameter /= NumberUtil.Max(bb.MaxX, bb.MaxY, bb.MaxZ);
 			return new ElemDescriptor("Diameter", biggestDiameter);
 		}
 
@@ -140,6 +165,47 @@ namespace ShapeDatabase.Features
 			return new ElemDescriptor("Eccentricity", eigenvalues[0] / eigenvalues[2]);
 		}
 
+		/// <summary>
+		/// Elementary descript for calculation how similar a shape is with respect
+		/// to a sphere.
+		/// 
+		/// <seealso cref="https://github.com/gradientspace/geometry3Sharp/blob/master/mesh/MeshMeasurements.cs"/>
+		/// </summary>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
+		/// <returns>The elementary descriptor with the calculated value</returns>
+		public static ElemDescriptor Compactness(IMesh mesh) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+
+			double area_sum = 0;
+			double mass_integral = 0;
+
+			for (uint i = 0; i < mesh.FaceCount; i++) {
+				Vector3[] triangle = mesh.GetVerticesFromFace(i);
+
+				Vector3 v0 = triangle[0];
+				Vector3 v1 = triangle[1];
+				Vector3 v2 = triangle[2];
+
+				Vector3 V1mV0 = v1 - v0;
+				Vector3 V2mV0 = v2 - v0;
+				Vector3 N = Vector3.Cross(V1mV0, V2mV0);
+
+				area_sum += 0.5 * N.Length;
+
+				double tmp0 = v0.X + v1.X;
+				double f1x = tmp0 + v2.X;
+				mass_integral += N.X * f1x;
+			}
+
+			double volume = mass_integral * (1.0 / 6.0);
+
+			// Formule c = (A^3)/(V^2)
+			double compactness = Math.Pow(area_sum, 3) / Math.Pow(volume, 2);
+			compactness *= COMPACTNESS_CONS;
+			return new ElemDescriptor("Compactness", compactness);
+		}
+
 		#endregion
 
 		#region --- Histogram Descriptors ---
@@ -162,7 +228,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 					   
-			return new HistDescriptor("DistanceBarycenter", binSize, Array.ConvertAll(binValues, x => (float)x));
+			return HistDescriptor.FromHistogram("DistanceBarycenter", binSize, binValues);
 		}
 
 		/// <summary>
@@ -183,7 +249,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return new HistDescriptor("DistanceVertices", binSize, Array.ConvertAll(binValues, x => (float)x));
+			return HistDescriptor.FromHistogram("DistanceVertices", binSize, binValues);
 		}
 
 		/// <summary>
@@ -205,7 +271,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return new HistDescriptor("SquareRootTriangles", binSize, Array.ConvertAll(binValues, x => (float)x));
+			return HistDescriptor.FromHistogram("SquareRootTriangles", binSize, binValues);
 		}
 
 		/// <summary>
@@ -226,7 +292,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return new HistDescriptor("CubeRootTetrahedron", binSize, Array.ConvertAll(binValues, x => (float)x));
+			return HistDescriptor.FromHistogram("CubeRootTetrahedron", binSize, binValues);
 		}
 
 		/// <summary>
@@ -247,7 +313,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return new HistDescriptor("AngleVertices", binSize, Array.ConvertAll(binValues, x => (float)x));
+			return HistDescriptor.FromHistogram("AngleVertices", binSize, binValues);
 		}
 
 		#endregion
