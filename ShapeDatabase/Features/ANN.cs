@@ -31,12 +31,12 @@ namespace ShapeDatabase.Features
 			IReadOnlyList<NamedFeatureVector> vectors = database.ToList().AsReadOnly();
 			world = new SmallWorld<NamedFeatureVector, double>(ANNDistance);
 
-			var parameters = new SmallWorld<NamedFeatureVector, double>.Parameters
+			SmallWorld<NamedFeatureVector, double>.Parameters parameters = new SmallWorld<NamedFeatureVector, double>.Parameters
 			{
 				EnableDistanceCacheForConstruction = true
 			};
 
-			using (var listener = new MetricsEventListener(EventSources.GraphBuildEventSource.Instance))
+			using (MetricsEventListener listener = new MetricsEventListener(EventSources.GraphBuildEventSource.Instance))
 			{
 				world.BuildGraph(vectors, new Random(), parameters);
 			}
@@ -48,10 +48,7 @@ namespace ShapeDatabase.Features
 		/// <param name="queryVector">The query vector</param>
 		/// <param name="kBest">The K Value</param>
 		/// <returns>The k-best result</returns>
-		public QueryResult RunANNQuery(NamedFeatureVector queryVector, int kBest)
-		{
-			if (queryVector == null)
-				throw new ArgumentNullException();
+		public QueryResult RunANNQuery(NamedFeatureVector queryVector, int kBest) {
 
 			QueryResult queryresult = new QueryResult(queryVector.Name);
 
@@ -73,9 +70,6 @@ namespace ShapeDatabase.Features
 		/// <returns></returns>
 		private static double ANNDistance(NamedFeatureVector vector1, NamedFeatureVector vector2)
 		{
-			if (vector1 == null || vector2 == null)
-				throw new ArgumentNullException();
-
 			return vector1.FeatureVector.Compare(vector2.FeatureVector);
 		}
 
@@ -89,18 +83,18 @@ namespace ShapeDatabase.Features
 			public MetricsEventListener(EventSource eventSource)
 			{
 				this.eventSource = eventSource;
-				this.EnableEvents(this.eventSource, EventLevel.LogAlways, EventKeywords.All, new Dictionary<string, string> { { "EventCounterIntervalSec", "1" } });
+				EnableEvents(this.eventSource, EventLevel.LogAlways, EventKeywords.All, new Dictionary<string, string> { { "EventCounterIntervalSec", "1" } });
 			}
 
 			public override void Dispose()
 			{
-				this.DisableEvents(this.eventSource);
+				DisableEvents(this.eventSource);
 				base.Dispose();
 			}
 
 			protected override void OnEventWritten(EventWrittenEventArgs eventData)
 			{
-				var counterData = eventData.Payload?.FirstOrDefault() as IDictionary<string, object>;
+				IDictionary<string, object> counterData = eventData.Payload?.FirstOrDefault() as IDictionary<string, object>;
 				if (counterData?.Count == 0)
 				{
 					return;
