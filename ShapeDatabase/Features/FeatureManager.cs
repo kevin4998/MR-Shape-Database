@@ -211,7 +211,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// represented as double. The results are ordered (best match first).</returns>
 		public QueryResult CalculateResults(MeshEntry mesh)
 		{
-			QueryResult result = new QueryResult(mesh.Name, mesh.Mesh);
+			QueryResult result = new QueryResult(mesh.Name);
 			FeatureVector reference = CreateVector(mesh);
 
 			Parallel.ForEach(features, vector => {
