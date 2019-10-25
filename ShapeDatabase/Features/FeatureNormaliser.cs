@@ -70,11 +70,36 @@ namespace ShapeDatabase.Features
 						double elemValue = elemDesc.Value;
 						double range = MinMaxValues[desc.Name].Item2 - MinMaxValues[desc.Name].Item1;
 
-						double value = (range == 0) ? elemValue : (elemValue - MinMaxValues[desc.Name].Item1) / range;
+						if(range != 0)
+						{
+							if(elemValue < MinMaxValues[desc.Name].Item1)
+							{
+								elemValue = 0;
+							}
+							else if(elemValue > MinMaxValues[desc.Name].Item2)
+							{
+								elemValue = 1;
+							}
+							else
+							{
+								elemValue = (elemValue - MinMaxValues[desc.Name].Item1) / range;
+							}
+						}
+						else
+						{
+							if (elemValue < 0)
+							{
+								elemValue = 0;
+							}
+							else if (elemValue > 1)
+							{
+								elemValue = 1;
+							}
+						}
 
 						normalisedDescriptors[descCount] = new ElemDescriptor(
 							elemName,
-							value
+							elemValue
 						);
 
 					//Normalisation for Histogram Descriptor.
