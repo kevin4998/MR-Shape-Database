@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
+using ShapeDatabase.Util;
 using ShapeDatabase.Util.Collections;
 
 namespace ShapeDatabase.Query {
@@ -57,7 +58,8 @@ namespace ShapeDatabase.Query {
 				throw new ArgumentNullException(nameof(name));
 
 			QueryName = name;
-			results = new ConcurrentSortedList<QueryItem>();
+			IComparer<QueryItem> comparer = new QueryItemComparer();
+			results = new ConcurrentSortedList<QueryItem>(comparer);
 		}
 
 		#endregion
