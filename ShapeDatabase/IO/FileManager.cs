@@ -330,7 +330,7 @@ namespace ShapeDatabase.IO {
 			// Check if there is a more generic version for the class.
 			} else { 
 				foreach (KeyValuePair<Type, IWriter> pair in typeWriters)
-					if (type.IsAssignableFrom(pair.Key)) { 
+					if (pair.Key.IsAssignableFrom(type)) { 
 						pair.Value.WriteFile(value, path);
 						return;
 					}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using g3;
 using ShapeDatabase.Shapes;
@@ -37,6 +38,7 @@ namespace ShapeDatabase.IO {
 		public GeometryMesh ConvertFile(StreamReader reader) {
 			if (reader == null) throw new ArgumentNullException(nameof(reader));
 
+			Thread.CurrentThread.CurrentCulture = Settings.Culture;
 			DMesh3 mesh = StandardMeshReader.ReadMesh(reader.BaseStream, "off");
 			return new GeometryMesh(mesh, IOConventions.CheckIfNormalised(reader));
 		}
