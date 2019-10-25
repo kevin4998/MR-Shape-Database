@@ -25,7 +25,7 @@ namespace ShapeDatabase.Util.Collections {
 		protected const int StartingSize = 8;
 
 		private T[] array;
-		private IComparer<T> comparer;
+		private readonly IComparer<T> comparer;
 
 		public T this[int index] {
 			get => array[index];

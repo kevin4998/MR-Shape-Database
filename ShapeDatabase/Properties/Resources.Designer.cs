@@ -196,6 +196,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not cast an object of type {0} to type {1}..
+        /// </summary>
+        internal static string EX_Cast {
+            get {
+                return ResourceManager.GetString("EX_Cast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The provided directory does not exist &apos;{0}&apos;..
         /// </summary>
         internal static string EX_Directoy_NotExist {

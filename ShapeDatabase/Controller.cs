@@ -118,7 +118,8 @@ namespace ShapeDatabase {
 			Console.WriteLine(I_StartMeasure);
 			LoadNewFiles(dirs, false);
 
-			RecordHolder recordHolder = new RecordHolder(
+			RecordHolder<MeshEntry> recordHolder = new RecordHolder<MeshEntry>(
+				(MeshEntry entry) => entry.Name,
 				("Name",	 (MeshEntry entry) => entry.Name),
 				("Class",	 (MeshEntry entry) => entry.Class),
 				("Vertices", (MeshEntry entry) => entry.Mesh.VertexCount),

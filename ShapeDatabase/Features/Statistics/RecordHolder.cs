@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.Features.Statistics {
 
@@ -9,12 +8,13 @@ namespace ShapeDatabase.Features.Statistics {
 	/// A class containing a collection of <see cref="Record"/>s
 	/// which is able to create snapshots of databases with its specific measures.
 	/// </summary>
-	public class RecordHolder : IRecordHolder<MeshEntry> {
+	public class RecordHolder<T> : IRecordHolder<T> {
 
 		#region --- Properties ---
 
-		private readonly IDictionary<string, Func<MeshEntry, object>> measures =
-			new Dictionary<string, Func<MeshEntry, object>>();
+		private readonly IDictionary<string, Func<T, object>> measures =
+			new Dictionary<string, Func<T, object>>();
+		private readonly Func<T, string> nameProvider;
 
 
 		public bool IsEmpty => SnapshotTime == DateTime.MinValue;
@@ -22,16 +22,16 @@ namespace ShapeDatabase.Features.Statistics {
 
 		public DateTime SnapshotTime { get; private set; } = DateTime.MinValue;
 		public ICollection<Record> Records { get; private set; } = new List<Record>();
-		public IEnumerable<(string, Func<MeshEntry, object>)> Measures {
+		public IEnumerable<(string, Func<T, object>)> Measures {
 			get {
-				foreach (KeyValuePair<string, Func<MeshEntry, object>> pair in measures)
+				foreach (KeyValuePair<string, Func<T, object>> pair in measures)
 					yield return (pair.Key, pair.Value);
 			}
 		}
 		public IEnumerable<string> MeasureNames {
 			get {
 				// Using the KeyValuePairs instead of the Name Set to guarantee ordering.
-				foreach (KeyValuePair<string, Func<MeshEntry, object>> pair in measures)
+				foreach (KeyValuePair<string, Func<T, object>> pair in measures)
 					yield return pair.Key;
 			}
 		}
@@ -43,9 +43,12 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <summary>
 		/// Instantiates a new <see cref="RecordHolder"/> with no measurements.
 		/// These measurements can later be added with
-		/// <see cref="AddMeasure(string, Func{MeshEntry, object}, bool)"/>.
+		/// <see cref="AddMeasure(string, Func{T, object}, bool)"/>.
 		/// </summary>
-		public RecordHolder() { }
+		public RecordHolder(Func<T, string> nameProvider) {
+			this.nameProvider = nameProvider
+				?? throw new ArgumentNullException(nameof(nameProvider));
+		}
 		/// <summary>
 		/// Instantiates a new <see cref="RecordHolder"/> with the specified
 		/// measurements.
@@ -55,16 +58,17 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <exception cref="ArgumentNullException">If a measurement is
 		/// <see langword="null"/> or any of its properties is <see langword="null"/>.
 		/// </exception>
-		public RecordHolder(params (string, Func<MeshEntry, object>)[] measures) {
-			AddMeasure(measures);
+		public RecordHolder(Func<T, string> nameProvider,
+							params (string, Func<T, object>)[] measures) 
+			: this(nameProvider) {
+			this.AddMeasure(measures);
 		}
 
 		#endregion
 
 		#region --- Methods ---
 
-
-		public IRecordHolder<MeshEntry> AddMeasure(string measureName, Func<MeshEntry, object> provider,
+		public IRecordHolder<T> AddMeasure(string measureName, Func<T, object> provider,
 										bool overwrite = false) {
 			if (measureName == null)
 				throw new ArgumentNullException(nameof(measureName));
@@ -76,31 +80,15 @@ namespace ShapeDatabase.Features.Statistics {
 
 			return this;
 		}
-		public IRecordHolder<MeshEntry> AddMeasure((string, Func<MeshEntry, object>) measure,
-										bool overwrite = false) {
-			return AddMeasure(measure.Item1, measure.Item2, overwrite);
-		}
-		public IRecordHolder<MeshEntry> AddMeasure(params (string, Func<MeshEntry, object>)[] measures) {
-			return AddMeasure(false, measures);
-		}
-		public IRecordHolder<MeshEntry> AddMeasure(bool overwrite,
-									   params (string, Func<MeshEntry, object>)[] measures) {
-			IRecordHolder<MeshEntry> holder = this;
-
-			if (measures != null)
-				foreach ((string name, Func<MeshEntry, object> func) in measures)
-					holder = holder.AddMeasure(name, func, overwrite);
-
-			return holder;
-		}
 
 
-		public IRecordHolder<MeshEntry> Reset() {
+		public IRecordHolder<T> Reset() {
 			SnapshotTime = DateTime.MinValue;
 			Records = new List<Record>();
 			return this;
 		}
-		public IRecordHolder<MeshEntry> TakeSnapShot(IEnumerable<MeshEntry> library) {
+		IRecordHolder IRecordHolder.Reset() => Reset();
+		public IRecordHolder<T> TakeSnapShot(IEnumerable<T> library) {
 			if (!IsEmpty || IsActive)
 				throw new SnapShotException();
 			if (library == null)
@@ -109,22 +97,24 @@ namespace ShapeDatabase.Features.Statistics {
 			IsActive = true;
 			SnapshotTime = DateTime.Now;
 			IList<Record> localRecords = new List<Record>();
-			foreach (MeshEntry entry in library)
-				localRecords.Add(EntrySnapShot(entry));
+			foreach (T entry in library)
+				localRecords.Add(EntrySnapShot(nameProvider(entry), entry));
 
 			Records = localRecords;
 			IsActive = false;
 			return this;
 		}
+		
 		/// <summary>
 		/// Creates a single record for a single item from the database.
 		/// This <see cref="Record"/> contains all the measurements which can be taken.
 		/// </summary>
 		/// <param name="entry">The database item to get values from.</param>
+		/// <param name="entryName">The name of the entry to remember in the record.</param>
 		/// <returns>The current object for chaining.</returns>
-		private Record EntrySnapShot(MeshEntry entry) {
-			Record record = new Record(SnapshotTime, entry.Name);
-			foreach ((string name, Func<MeshEntry, object> provider) in Measures)
+		private Record EntrySnapShot(string entryName, T entry) {
+			Record record = new Record(SnapshotTime, entryName);
+			foreach ((string name, Func<T, object> provider) in Measures)
 				record.AddMeasure(name, provider(entry));
 			return record;
 		}

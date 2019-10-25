@@ -341,4 +341,8 @@
     <value>MeshName</value>
     <comment>The format to use in files to describe the name of a mesh.</comment>
   </data>
+  <data name="EX_Cast" xml:space="preserve">
+    <value>Could not cast an object of type {0} to type {1}.</value>
+    <comment>The exception which is given when an attempt to cast an object from type A to type B is being performed and failed.</comment>
+  </data>
 </root>

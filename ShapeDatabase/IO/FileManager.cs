@@ -52,7 +52,7 @@ namespace ShapeDatabase.IO {
 		private static void PopulateWriters(ref IDictionary<Type, IWriter> dic) {
 			dic.Add(typeof(GeometryMesh),	GeomOffWriter.Instance);
 			dic.Add(typeof(IMesh),			OFFWriter.Instance);
-			dic.Add(typeof(RecordHolder),	RecordsWriter.Instance);
+			dic.Add(typeof(IRecordHolder),	RecordsWriter.Instance);
 			dic.Add(typeof(FeatureManager),	FMWriter.Instance);
 			dic.Add(typeof(QueryResult[]),	QueryWriter.Instance);
 		}

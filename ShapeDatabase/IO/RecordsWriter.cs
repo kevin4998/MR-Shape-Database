@@ -11,7 +11,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A writer to convert a <see cref="RecordHolder"/> class into a csv formatted file.
 	/// </summary>
-	public class RecordsWriter : IWriter<RecordHolder> {
+	public class RecordsWriter : IWriter<IRecordHolder> {
 
 		#region --- Properties ---
 
@@ -39,7 +39,7 @@ namespace ShapeDatabase.IO {
 
 		#region --- Instance Methods ---
 
-		public void WriteFile(RecordHolder records, StreamWriter writer) {
+		public void WriteFile(IRecordHolder records, StreamWriter writer) {
 			if (records == null)
 				throw new ArgumentNullException(nameof(records));
 			if (writer == null)
@@ -62,7 +62,7 @@ namespace ShapeDatabase.IO {
 		}
 
 		void IWriter.WriteFile(object type, StreamWriter writer)
-			=> WriteFile(type as RecordHolder, writer);
+			=> WriteFile(type as IRecordHolder, writer);
 
 		#endregion
 
