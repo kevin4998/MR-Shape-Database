@@ -5,7 +5,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
+using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.Features.Statistics;
 using ShapeDatabase.Properties;
+using ShapeDatabase.Query;
 using ShapeDatabase.Refine;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.Util;
@@ -46,11 +49,24 @@ namespace ShapeDatabase.IO {
 			};
 		}
 
+		private static void PopulateWriters(ref IDictionary<Type, IWriter> dic) {
+			dic.Add(typeof(GeometryMesh),	GeomOffWriter.Instance);
+			dic.Add(typeof(IMesh),			OFFWriter.Instance);
+			dic.Add(typeof(RecordHolder),	RecordsWriter.Instance);
+			dic.Add(typeof(FeatureManager),	FMWriter.Instance);
+			dic.Add(typeof(QueryResult[]),	QueryWriter.Instance);
+		}
+
 		#endregion
 
 		#region -- Instance Variables --
 
 		private readonly ISet<string> formats = new HashSet<string>();
+
+		private readonly IDictionary<Type, IWriter> typeWriters
+			= new Dictionary<Type, IWriter>();
+
+
 		private readonly IDictionary<string, IReader<GeometryMesh>> readers =
 			new Dictionary<string, IReader<GeometryMesh>>();
 		private readonly ICollection<IRefiner<IMesh>> refiners =
@@ -78,6 +94,7 @@ namespace ShapeDatabase.IO {
 		/// Creates a new manager responsible for loading files.
 		/// </summary>
 		public FileManager() {
+			PopulateWriters(ref typeWriters);
 			foreach (IReader<GeometryMesh> reader in LocalReaders.Value)
 				AddReader(reader);
 			// Refiners added automatically.
@@ -131,6 +148,19 @@ namespace ShapeDatabase.IO {
 			foreach(IRefiner<IMesh> refine in refiners)
 				if (refine != null && !this.refiners.Contains(refine))
 					this.refiners.Add(refine);
+		}
+
+		/// <summary>
+		/// Provides another writer which can change the format in which certain
+		/// information is being saved.
+		/// </summary>
+		/// <typeparam name="T">The type of objects which can be serialised.</typeparam>
+		/// <param name="writers">The collection of writers which can now be used
+		/// for serialisation purposes.</param>
+		public void AddWriter<T>(params IWriter<T>[] writers) {
+			foreach(IWriter<T> writer in writers)
+				if (readers != null)
+					typeWriters.Add(typeof(T), writer);
 		}
 
 
@@ -275,6 +305,55 @@ namespace ShapeDatabase.IO {
 								  mesh.Mesh);
 				this.QueryMeshes.Add(entry, false);
 			}
+		}
+
+
+		/// <summary>
+		/// Serialises the given object to the specified path if possible.
+		/// </summary>
+		/// <param name="type">The type of object which to serialise.</param>
+		/// <param name="value">The value which should be in the path.</param>
+		/// <param name="path">The location of the file where everything should be
+		/// written to.</param>
+		public void WriteObject(Type type, object value, string path) {
+			if (type == null)
+				throw new ArgumentNullException(nameof(type));
+			if (value == null)
+				throw new ArgumentNullException(nameof(value));
+			if (string.IsNullOrEmpty(path))
+				throw new ArgumentNullException(nameof(path));
+
+			// Check if there is a direct implementation for this class.
+			if (typeWriters.TryGetValue(type, out IWriter writer)) { 
+				writer.WriteFile(type, path);
+				return;
+			// Check if there is a more generic version for the class.
+			} else { 
+				foreach (KeyValuePair<Type, IWriter> pair in typeWriters)
+					if (type.IsAssignableFrom(pair.Key)) { 
+						pair.Value.WriteFile(type, path);
+						return;
+					}
+			}
+			// We don't have anything that can deserialise the class.
+			throw new NotSupportedException(
+				string.Format(
+					Settings.Culture,
+					Resources.EX_Not_Supported,
+					type.FullName
+				)
+			);
+		}
+
+		/// <summary>
+		/// Serialises the given object to the specified path if possible.
+		/// </summary>
+		/// <typeparam name="T">The type of object which to serialise.</typeparam>
+		/// <param name="type">The value which should be in the path.</param>
+		/// <param name="path">The location of the file where everything should be
+		/// written to.</param>
+		public void WriteObject<T>(T type, string path) {
+			WriteObject(typeof(T), type, path);
 		}
 
 		#endregion

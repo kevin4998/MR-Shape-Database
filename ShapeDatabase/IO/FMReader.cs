@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using ShapeDatabase.Features;
 using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 using ShapeDatabase.Properties;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShapeDatabase.Features
+namespace ShapeDatabase.IO
 {
 	/// <summary>
 	/// Class for creating a featuremanager out of a csv with featurevectors.

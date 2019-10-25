@@ -160,7 +160,7 @@ namespace ShapeDatabase {
 			string location = Path.Combine(directory, filename);
 			// Export the generated file
 			Directory.CreateDirectory(directory);
-			RecordsWriter.Instance.WriteFile(recordHolder, location);
+			Settings.FileManager.WriteObject(recordHolder, location);
 			Console.WriteLine(I_Measure_Exp, filename);
 
 			ShowShapeCount();
@@ -222,7 +222,7 @@ namespace ShapeDatabase {
 				Console.WriteLine(I_EndProc_Feature);
 
 				ShowShapeCount();
-				FMWriter.Instance.WriteFile(manager, location);
+				Settings.FileManager.WriteObject(manager, location);
 
 				Console.WriteLine(I_Feature_Exp, location);
 			}
@@ -265,7 +265,7 @@ namespace ShapeDatabase {
 				Console.WriteLine(I_Query_Exp);
 
 				string location = Settings.QueryDir + "/" + Settings.QueryResultsFile;
-				QueryWriter.Instance.WriteFile(queryResults, location);
+				Settings.FileManager.WriteObject(queryResults, location);
 			}
 
 			ShowQueryResults(queryResults);

@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using ShapeDatabase.Features;
 using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 using System;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShapeDatabase.Features
+namespace ShapeDatabase.IO
 {
 	/// <summary>
 	/// Class for writing the featurevectors of the featuremanager to a csv file.
