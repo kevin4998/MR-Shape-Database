@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using HNSW.Net;
+using ShapeDatabase.Features.Descriptors;
 using Parameters = HNSW.Net.SmallWorld<float[], float>.Parameters;
 
 namespace ShapeDatabase.Features
@@ -17,13 +18,34 @@ namespace ShapeDatabase.Features
 		private const int SampleSize = 1_000;
 		private const int Dimensionality = 32;
 
+		private SmallWorld<FeatureVector, double> world;
+
+		public ANN(IEnumerable<FeatureVector> database)
+		{
+			IReadOnlyList<FeatureVector> vectors = database.ToList().AsReadOnly();
+
+			var parameters = new SmallWorld<FeatureVector, double>.Parameters();
+			parameters.EnableDistanceCacheForConstruction = true;
+
+			using (var listener = new MetricsEventListener(EventSources.GraphBuildEventSource.Instance))
+			{
+				world.BuildGraph(vectors, new Random(), parameters);
+			}
+		}
+
+		public void ExecuteQuery(FeatureVector queryVector, int kBest)
+		{
+			var best20 = world.KNNSearch(queryVector, kBest);
+		}
+
+		
 		public static void BuildAndSave()
 		{
 			List<float[]> sampleVectors;
 
 			var parameters = new Parameters();
 			parameters.EnableDistanceCacheForConstruction = true;
-			var world = new SmallWorld<float[], float>(CosineDistance.NonOptimized);
+			SmallWorld<float[], float> world = new SmallWorld<float[], float>(CosineDistance.NonOptimized);
 
 			Console.Write($"Generating {SampleSize} sample vectos... ");
 			sampleVectors = RandomVectors(Dimensionality, SampleSize);
@@ -35,7 +57,7 @@ namespace ShapeDatabase.Features
 			}
 					   
 			float[] query = Enumerable.Repeat(0f, 32).ToArray();
-			var best20 = world.KNNSearch(query, 20);
+			IList<SmallWorld<float[], float>.KNNSearchResult> best20 = world.KNNSearch(query, 20);
 			var best1 = best20.OrderBy(r => r.Distance).First();
 			;
 		}
