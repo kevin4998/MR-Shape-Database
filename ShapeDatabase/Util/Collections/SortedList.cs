@@ -25,9 +25,9 @@ namespace ShapeDatabase.Util.Collections {
 		protected const int StartingSize = 8;
 
 		private T[] array;
-		private IComparer<T> comparer;
+		private readonly IComparer<T> comparer;
 
-		public T this[int index] {
+		public virtual T this[int index] {
 			get => array[index];
 			set { if (value is T item) Add(item); }
 		}
@@ -55,8 +55,14 @@ namespace ShapeDatabase.Util.Collections {
 		/// <summary>
 		/// Initialises a new list where all elements are sorted with a size of 8.
 		/// </summary>
-
 		public SortedList() : this(StartingSize) { }
+
+		/// <summary>
+		/// Initialises a new list where all elements are sorted with a size of 8.
+		/// </summary>
+		/// <param name="comparer">The method to compare two values with each other
+		/// for sorting.</param>
+		public SortedList(IComparer<T> comparer) : this(StartingSize, comparer) { }
 
 		/// <summary>
 		/// Initialises a new list where all elements are sorted with the given size.
@@ -64,13 +70,22 @@ namespace ShapeDatabase.Util.Collections {
 		/// <param name="capacity">The amount of starting space in the list.</param>
 		/// <exception cref="ArgumentException">If the given capactiy is below 0.
 		/// You can't create an list with negative capacity.</exception>
+		public SortedList(int capacity) : this(capacity, Comparer<T>.Default) { }
 
-		public SortedList(int capacity) {
-			if (capacity < 0)
+		/// <summary>
+		/// Initialises a new list where all elements are sorted with the given size.
+		/// </summary>
+		/// <param name="capacity">The amount of starting space in the list.</param>
+		/// <param name="comparer">The method to compare two values with each other
+		/// for sorting.</param>
+		/// <exception cref="ArgumentException">If the given capactiy is below 0.
+		/// You can't create an list with negative capacity.</exception>
+		public SortedList(int capacity, IComparer<T> comparer) { 
+			if (capacity< 0)
 				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(capacity));
 
 			array = new T[capacity];
-			comparer = Comparer<T>.Default;
+			this.comparer = comparer ?? throw new ArgumentNullException(nameof(comparer));
 		}
 
 		/// <summary>
@@ -81,8 +96,20 @@ namespace ShapeDatabase.Util.Collections {
 		/// in this sorted list.</param>
 		/// <exception cref="ArgumentNullException">If the given collection is
 		/// <see langword="null"/> or in other words, does not exist.</exception>
+		public SortedList(IEnumerable<T> collection)
+			: this(collection, Comparer<T>.Default) { }
 
-		public SortedList(IEnumerable<T> collection) {
+		/// <summary>
+		/// Initialises a new list where all elements are sorted
+		/// using the given collection for initial population.
+		/// </summary>
+		/// <param name="collection">All the elements which should be present
+		/// in this sorted list.</param>
+		/// <param name="comparer">The method to compare two values with each other
+		/// for sorting.</param>
+		/// <exception cref="ArgumentNullException">If the given collection is
+		/// <see langword="null"/> or in other words, does not exist.</exception>
+		public SortedList(IEnumerable<T> collection, IComparer<T> comparer) {
 			if (collection == null)
 				throw new ArgumentNullException(nameof(collection));
 
@@ -103,7 +130,7 @@ namespace ShapeDatabase.Util.Collections {
 					}
 				}
 			}
-			comparer = Comparer<T>.Default;
+			this.comparer = comparer;
 			Array.Sort(array, comparer);
 		}
 
