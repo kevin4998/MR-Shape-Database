@@ -21,7 +21,6 @@ namespace ShapeDatabase.Query {
 		private readonly IList<QueryItem> results = new SortedList<QueryItem>();
 
 		public string QueryName { get; }
-		public IMesh QueryMesh { get; }
 
 		public IEnumerable<QueryItem> Results => results;
 
@@ -29,12 +28,11 @@ namespace ShapeDatabase.Query {
 
 		#region --- Constructor Methods ---
 
-		public QueryResult(string name, IMesh mesh) {
+		public QueryResult(string name) {
 			if (string.IsNullOrEmpty(name))
 				throw new ArgumentNullException(nameof(name));
 
 			QueryName = name;
-			QueryMesh = mesh ?? throw new ArgumentNullException(nameof(mesh));
 			results = new SortedList<QueryItem>();
 		}
 

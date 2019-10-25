@@ -8,24 +8,28 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using HNSW.Net;
 using ShapeDatabase.Features.Descriptors;
-using Parameters = HNSW.Net.SmallWorld<float[], float>.Parameters;
+using ShapeDatabase.Query;
+//using Parameters = HNSW.Net.SmallWorld<float[], float>.Parameters;
 
 namespace ShapeDatabase.Features
 {
 	public class ANN
 	{
+		//private const int SampleSize = 1_000;
+		//private const int Dimensionality = 32;
 
-		private const int SampleSize = 1_000;
-		private const int Dimensionality = 32;
+		private readonly SmallWorld<NamedFeatureVector, double> world;
 
-		private SmallWorld<FeatureVector, double> world;
-
-		public ANN(IEnumerable<FeatureVector> database)
+		public ANN(IEnumerable<NamedFeatureVector> database)
 		{
-			IReadOnlyList<FeatureVector> vectors = database.ToList().AsReadOnly();
+			IReadOnlyList<NamedFeatureVector> vectors = database.ToList().AsReadOnly();
 
-			var parameters = new SmallWorld<FeatureVector, double>.Parameters();
-			parameters.EnableDistanceCacheForConstruction = true;
+			world = new SmallWorld<NamedFeatureVector, double>(ANNDistance);
+
+			var parameters = new SmallWorld<NamedFeatureVector, double>.Parameters
+			{
+				EnableDistanceCacheForConstruction = true
+			};
 
 			using (var listener = new MetricsEventListener(EventSources.GraphBuildEventSource.Instance))
 			{
@@ -33,12 +37,31 @@ namespace ShapeDatabase.Features
 			}
 		}
 
-		public void ExecuteQuery(FeatureVector queryVector, int kBest)
+		public QueryResult ExecuteQuery(NamedFeatureVector queryVector, int kBest)
 		{
-			var best20 = world.KNNSearch(queryVector, kBest);
+			if (queryVector == null)
+				throw new ArgumentNullException();
+
+			QueryResult queryresult = new QueryResult(queryVector.Name);
+
+			IList<SmallWorld<NamedFeatureVector, double>.KNNSearchResult> kBestResults = world.KNNSearch(queryVector, kBest);
+
+			foreach(SmallWorld<NamedFeatureVector, double>.KNNSearchResult queryitem in kBestResults)
+			{
+				queryresult.AddItem(new QueryItem(queryitem.Item.Name, queryitem.Distance));
+			}
+
+			return queryresult;
+		}
+		public static double ANNDistance(NamedFeatureVector vector1, NamedFeatureVector vector2)
+		{
+			if (vector1 == null || vector2 == null)
+				throw new ArgumentNullException();
+
+			return vector1.FeatureVector.Compare(vector2.FeatureVector);
 		}
 
-		
+		/*
 		public static void BuildAndSave()
 		{
 			List<float[]> sampleVectors;
@@ -79,7 +102,7 @@ namespace ShapeDatabase.Features
 			}
 
 			return vectors;
-		}
+		}*/
 
 		private class MetricsEventListener : EventListener
 		{
