@@ -22,7 +22,6 @@ namespace ShapeDatabase.Query {
 		private static readonly StringComparer comparer =
 			StringComparer.InvariantCultureIgnoreCase;
 
-
 		public string MeshName { get; }
 		public double MeshDistance { get; }
 
@@ -51,7 +50,6 @@ namespace ShapeDatabase.Query {
 			return MeshDistance.CompareTo(other.MeshDistance);
 		}
 
-
 		public override bool Equals(object obj) {
 			return obj != null
 				&& obj is QueryItem
@@ -62,11 +60,9 @@ namespace ShapeDatabase.Query {
 			return other != null && comparer.Equals(MeshName, other.MeshName);
 		}
 
-
 		public override int GetHashCode() {
 			return MeshName.GetHashCode();
 		}
-
 
 		public override string ToString() {
 			return $"{MeshName} ({MeshDistance})";

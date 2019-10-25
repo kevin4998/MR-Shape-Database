@@ -60,7 +60,7 @@ namespace ShapeDatabase.IO
 		}
 
 		void IWriter.WriteFile(object type, StreamWriter writer)
-			=> WriteFile(type as GeometryMesh, writer);
+			=> WriteFile(type as IMesh, writer);
 
 		#endregion
 
