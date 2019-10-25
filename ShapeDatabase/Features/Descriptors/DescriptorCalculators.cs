@@ -228,7 +228,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 					   
-			return HistDescriptor.FromHistogram("DistanceBarycenter", binSize, binValues);
+			return HistDescriptor.FromIntHistogram("DistanceBarycenter", binSize, binValues);
 		}
 
 		/// <summary>
@@ -249,7 +249,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return HistDescriptor.FromHistogram("DistanceVertices", binSize, binValues);
+			return HistDescriptor.FromIntHistogram("DistanceVertices", binSize, binValues);
 		}
 
 		/// <summary>
@@ -271,7 +271,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return HistDescriptor.FromHistogram("SquareRootTriangles", binSize, binValues);
+			return HistDescriptor.FromIntHistogram("SquareRootTriangles", binSize, binValues);
 		}
 
 		/// <summary>
@@ -292,7 +292,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return HistDescriptor.FromHistogram("CubeRootTetrahedron", binSize, binValues);
+			return HistDescriptor.FromIntHistogram("CubeRootTetrahedron", binSize, binValues);
 		}
 
 		/// <summary>
@@ -313,7 +313,7 @@ namespace ShapeDatabase.Features
 				Interlocked.Increment(ref binValues[bin]);
 			});
 
-			return HistDescriptor.FromHistogram("AngleVertices", binSize, binValues);
+			return HistDescriptor.FromIntHistogram("AngleVertices", binSize, binValues);
 		}
 
 		#endregion

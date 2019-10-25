@@ -140,23 +140,6 @@ namespace ShapeDatabase.Util {
 				);
 			#endregion
 
-			double X = 0, Y = 0;
-
-			for (int i = xValues.Length - 1; i >= 0; i--) {
-				X += xValues[i];
-				Y += yValues[i];
-			}
-
-			X = 1 / X;
-			Y = 1 / Y;
-
-			//Normalise both arrays
-			for (int i = xValues.Length - 1; i >= 0; i--)
-			{
-				xValues[i] *= X;
-				yValues[i] *= Y;
-			}
-
 			//Count the flow of each bin
 			double[] Distances = new double[xValues.Length];
 			Distances[0] = 0;
