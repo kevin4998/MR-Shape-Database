@@ -96,7 +96,7 @@ namespace ShapeDatabase.Refine {
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(5000);
 
-			Settings.FileManager.WriteObject(meshDMesh3, file.FullName);
+			Settings.FileManager.WriteObject(GeometryMesh.ToGeometryMesh(meshDMesh3), file.FullName);
 		}
 
 		#endregion
@@ -168,7 +168,7 @@ namespace ShapeDatabase.Refine {
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(5000);
 
-			Settings.FileManager.WriteObject(meshDMesh3, file.FullName);
+			Settings.FileManager.WriteObject(GeometryMesh.ToGeometryMesh(meshDMesh3), file.FullName);
 		}
 
 		#endregion

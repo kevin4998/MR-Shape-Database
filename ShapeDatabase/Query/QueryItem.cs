@@ -33,8 +33,10 @@ namespace ShapeDatabase.Query {
 		public QueryItem(string meshName, double meshDistance) {
 			if (meshDistance < 0)
 				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(meshDistance));
+			if (string.IsNullOrEmpty(meshName))
+				throw new ArgumentNullException(nameof(meshName));
 
-			this.MeshName = meshName ?? throw new ArgumentNullException(nameof(meshName));
+			this.MeshName = meshName;
 			this.MeshDistance = meshDistance;
 		}
 
