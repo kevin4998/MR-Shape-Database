@@ -13,17 +13,26 @@ using ShapeDatabase.Query;
 
 namespace ShapeDatabase.Features
 {
+	/// <summary>
+	/// Class for performing Approximate Nearest Neighbour (ANN) searches
+	/// </summary>
 	public class ANN
 	{
 		//private const int SampleSize = 1_000;
 		//private const int Dimensionality = 32;
 
+		/// <summary>
+		/// The world to which a query vector will be compared.
+		/// </summary>
 		private readonly SmallWorld<NamedFeatureVector, double> world;
 
+		/// <summary>
+		/// Initializes the ANN class, given all featuresvectors to which a query will be compared.
+		/// </summary>
+		/// <param name="database">All featurevectors of its world.</param>
 		public ANN(IEnumerable<NamedFeatureVector> database)
 		{
 			IReadOnlyList<NamedFeatureVector> vectors = database.ToList().AsReadOnly();
-
 			world = new SmallWorld<NamedFeatureVector, double>(ANNDistance);
 
 			var parameters = new SmallWorld<NamedFeatureVector, double>.Parameters
@@ -37,7 +46,13 @@ namespace ShapeDatabase.Features
 			}
 		}
 
-		public QueryResult ExecuteQuery(NamedFeatureVector queryVector, int kBest)
+		/// <summary>
+		/// Perform ANN search on the class' world, given a vector, returning the (approximate) k-best results.
+		/// </summary>
+		/// <param name="queryVector">The query vector</param>
+		/// <param name="kBest">The K Value</param>
+		/// <returns>The k-best result</returns>
+		public QueryResult RunANNQuery(NamedFeatureVector queryVector, int kBest)
 		{
 			if (queryVector == null)
 				throw new ArgumentNullException();
@@ -52,13 +67,6 @@ namespace ShapeDatabase.Features
 			}
 
 			return queryresult;
-		}
-		public static double ANNDistance(NamedFeatureVector vector1, NamedFeatureVector vector2)
-		{
-			if (vector1 == null || vector2 == null)
-				throw new ArgumentNullException();
-
-			return vector1.FeatureVector.Compare(vector2.FeatureVector);
 		}
 
 		/*
@@ -104,6 +112,23 @@ namespace ShapeDatabase.Features
 			return vectors;
 		}*/
 
+		/// <summary>
+		/// Distance function used for calculating the distances between vectors.
+		/// </summary>
+		/// <param name="vector1">The first vector.</param>
+		/// <param name="vector2">The second vector.</param>
+		/// <returns></returns>
+		private static double ANNDistance(NamedFeatureVector vector1, NamedFeatureVector vector2)
+		{
+			if (vector1 == null || vector2 == null)
+				throw new ArgumentNullException();
+
+			return vector1.FeatureVector.Compare(vector2.FeatureVector);
+		}
+
+		/// <summary>
+		/// Eventlistener used for building the world.
+		/// </summary>
 		private class MetricsEventListener : EventListener
 		{
 			private readonly EventSource eventSource;
@@ -128,7 +153,7 @@ namespace ShapeDatabase.Features
 					return;
 				}
 
-				Console.WriteLine($"[{counterData["Name"]}]: Avg={counterData["Mean"]}; SD={counterData["StandardDeviation"]}; Count={counterData["Count"]}");
+				//Console.WriteLine($"[{counterData["Name"]}]: Avg={counterData["Mean"]}; SD={counterData["StandardDeviation"]}; Count={counterData["Count"]}");
 			}
 		}
 	}
