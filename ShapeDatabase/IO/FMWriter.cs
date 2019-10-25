@@ -1,4 +1,6 @@
-﻿using ShapeDatabase.Features.Descriptors;
+﻿using CsvHelper;
+using ShapeDatabase.Features;
+using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShapeDatabase.Features
+namespace ShapeDatabase.IO
 {
 	/// <summary>
 	/// Class for writing the featurevectors of the featuremanager to a csv file.
@@ -16,17 +18,6 @@ namespace ShapeDatabase.Features
 	{
 
 		#region --- Properties ---
-
-		/// <summary>
-		/// The character which is used to seperate values in a csv document.
-		/// </summary>
-		public static char SeperatorChar => ',';
-		/// <summary>
-		/// A string value which represent the seperater character.
-		/// <see cref="SeperatorChar"/>
-		/// </summary>
-		public static string Seperator => SeperatorChar.ToString(Settings.Culture);
-
 
 		private static readonly Lazy<FMWriter> lazy =
 			new Lazy<FMWriter>(() => new FMWriter());
@@ -54,19 +45,6 @@ namespace ShapeDatabase.Features
 		/// Writes featurevectors to a csv file.
 		/// </summary>
 		/// <param name="type">The featuremanager containing the featurevectors</param>
-		/// <param name="location">Location of the csv file</param>
-		public void WriteFile(FeatureManager type, string location)
-		{
-			using (StreamWriter writer = new StreamWriter(location))
-			{
-				WriteFile(type, writer);
-			}
-		}
-
-		/// <summary>
-		/// Writes featurevectors to a csv file.
-		/// </summary>
-		/// <param name="type">The featuremanager containing the featurevectors</param>
 		/// <param name="location">The streamwriter to be used</param>
 		public void WriteFile(FeatureManager type, StreamWriter writer)
 		{
@@ -75,43 +53,26 @@ namespace ShapeDatabase.Features
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
 
-			// First line specify the descriptor names
-			List<string> descriptorNames = new List<string>
-			{
-				"MeshName"
-			};
-			foreach (IDescriptor desc in type.FeatureVectors.First().Value.Descriptors)
-			{
-				descriptorNames.Add(desc.Name);
-			}
-			writer.WriteLine(string.Join(Seperator, descriptorNames.ToArray()));
-
-			// Next lines specify the descriptor values
-			List<string> descriptorValues = new List<string>();
-			foreach(KeyValuePair<string, FeatureVector> vector in type.FeatureVectors)
-			{
-				descriptorValues.Clear();
-				descriptorValues.Add(vector.Key);
-				foreach(IDescriptor desc in vector.Value.Descriptors)
-				{
-					descriptorValues.Add(desc.Serialize());
+			using (CsvWriter csv = new CsvWriter(writer)) {
+				// First line containing the headers.
+				csv.WriteField(IOConventions.MeshName);
+				foreach (string name in type.DescriptorNames)
+					csv.WriteField(name);
+				csv.NextRecord();
+				// Next lines containing the entries.
+				foreach (KeyValuePair<string, FeatureVector> vector in type.VectorDictionary) {
+					csv.WriteField(vector.Key);
+					foreach (IDescriptor desc in vector.Value.Descriptors)
+						csv.WriteField(desc.Serialize());
+					csv.NextRecord();
 				}
-				writer.WriteLine(string.Join(Seperator, descriptorValues.ToArray()));
+				// Finally make sure that all the data is written.
+				csv.Flush();
 			}
-
-			// Finally make sure that all the data is written.
-			writer.Flush();
 		}
 
-		public Task WriteFileAsync(FeatureManager fm, string location)
-		{
-			return Task.Run(() => WriteFile(fm, location));
-		}
-
-		public Task WriteFileAsync(FeatureManager fm, StreamWriter writer)
-		{
-			return Task.Run(() => WriteFile(fm, writer));
-		}
+		void IO.IWriter.WriteFile(object type, StreamWriter writer)
+			=> WriteFile(type as FeatureManager, writer);
 
 		#endregion
 

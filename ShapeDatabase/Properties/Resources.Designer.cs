@@ -313,6 +313,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Operations for the given data is currently not supported: {0}.
+        /// </summary>
+        internal static string EX_Not_Supported {
+            get {
+                return ResourceManager.GetString("EX_Not_Supported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The provided arrays do not have the same size, all should be of the same length. Expected Size: {0}, Given Size {1}..
         /// </summary>
         internal static string EX_UnEqual_Sizes {
@@ -336,6 +345,15 @@ namespace ShapeDatabase.Properties {
         internal static string F_File_Measure {
             get {
                 return ResourceManager.GetString("F_File_Measure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MeshName.
+        /// </summary>
+        internal static string F_MeshName {
+            get {
+                return ResourceManager.GetString("F_MeshName", resourceCulture);
             }
         }
         

@@ -1,5 +1,7 @@
-﻿using ShapeDatabase.Features.Descriptors;
+﻿using CsvHelper;
+using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
+using ShapeDatabase.Query;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,21 +14,10 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for writing the query results to a csv file.
 	/// </summary>
-	public class QueryWriter : IWriter<(string, IList<(string, double)>)[]>
+	public class QueryWriter : IWriter<QueryResult[]>
 	{
 
 		#region --- Properties ---
-
-		/// <summary>
-		/// The character which is used to seperate values in a csv document.
-		/// </summary>
-		public static char SeperatorChar => ',';
-		/// <summary>
-		/// A string value which represent the seperater character.
-		/// <see cref="SeperatorChar"/>
-		/// </summary>
-		public static string Seperator => SeperatorChar.ToString(Settings.Culture);
-
 
 		private static readonly Lazy<QueryWriter> lazy =
 			new Lazy<QueryWriter>(() => new QueryWriter());
@@ -35,6 +26,8 @@ namespace ShapeDatabase.IO
 		/// Provides a writer to convert query results into csv
 		/// </summary>
 		public static QueryWriter Instance => lazy.Value;
+
+
 		public ICollection<string> SupportedFormats => new string[] { ".csv" };
 
 		#endregion
@@ -50,57 +43,33 @@ namespace ShapeDatabase.IO
 
 		#region --- Instance Methods ---
 
-		/// <summary>
-		/// Writes the query results to a csv file.
-		/// </summary>
-		/// <param name="type">The query results</param>
-		/// <param name="location">Location of the csv file</param>
-		public void WriteFile((string, IList<(string, double)>)[] type, string location)
-		{
-			using (StreamWriter writer = new StreamWriter(location))
-			{
-				WriteFile(type, writer);
-			}
-		}
-
-		/// <summary>
-		/// Writes the query results to a csv file.
-		/// </summary>
-		/// <param name="type">The query results</param>
-		/// <param name="location">Location of the csv file</param>
-		public void WriteFile((string, IList<(string, double)>)[] type, StreamWriter writer)
+		public void WriteFile(QueryResult[] type, StreamWriter writer)
 		{
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
 
-			string[] columnNames = new string[Settings.KBestResults + 1];
-			columnNames[0] = "QueryMesh";
-			for(int i = 1; i < Settings.KBestResults + 1; i++)
-			{
-				columnNames[i] = $"K = {i}";
+			using (CsvWriter csv = new CsvWriter(writer)) {
+				// Header of the CSV file.
+				csv.WriteField(IOConventions.MeshName);
+				for (int i = 1; i <= Settings.KBestResults; i++)
+					csv.WriteField($"K = {i}");
+				csv.NextRecord();
+				// Each item in the CSV file.
+				foreach (QueryResult result in type) {
+					csv.WriteField(result.QueryName);
+					foreach (QueryItem item in result.GetBestResults(Settings.KBestResults))
+						csv.WriteField(item);
+					csv.NextRecord();
+				}
+				// Finally make sure that all the data is written.
+				csv.Flush();
 			}
-			
-			writer.WriteLine(string.Join(Seperator, columnNames));
-
-			foreach((string queryName, IList<(string, double)> queryResult) in type)
-			{
-				writer.WriteLine(queryName + Seperator + string.Join(Seperator, queryResult.Select(x => x.Item1 + " (" + x.Item2 + ")" )));
-			}
-
-			writer.Flush();
 		}
 
-		public Task WriteFileAsync((string, IList<(string, double)>)[] results, string location)
-		{
-			return Task.Run(() => WriteFile(results, location));
-		}
-
-		public Task WriteFileAsync((string, IList<(string, double)>)[] results, StreamWriter writer)
-		{
-			return Task.Run(() => WriteFile(results, writer));
-		}
+		void IWriter.WriteFile(object type, StreamWriter writer)
+			=> WriteFile(type as QueryResult[], writer);
 
 		#endregion
 

@@ -221,5 +221,25 @@ namespace ShapeDatabase.Util
 			return Array.ConvertAll(values, parser);
 		}
 
+		public delegate bool TryParseDel<TInput, TOutput>(TInput input, out TOutput output);
+		public delegate bool TryParseDel<T>(string input, out T output);
+
+		public static bool TryParse<TFrom, TGoal>(this TFrom[] values,
+												  TryParseDel<TFrom, TGoal> parser,
+												  out TGoal[] results) {
+			if (values == null)
+				throw new ArgumentNullException(nameof(values));
+			if (parser == null)
+				throw new ArgumentNullException(nameof(parser));
+
+			TGoal[] temp = new TGoal[values.Length];
+			results = Array.Empty<TGoal>();
+			for (int i = values.Length - 1; i >= 0; i--)
+				if (!parser(values[i], out temp[i]))
+					return false;
+			results = temp;
+			return true;
+		}
+
 	}
 }

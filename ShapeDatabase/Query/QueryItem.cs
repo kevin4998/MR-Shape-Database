@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace ShapeDatabase.Query {
 	/// The results of a single comparison between a reference item and
 	/// a comparison item from the library.
 	/// </summary>
+	[DebuggerDisplay("{MeshName}: {MeshDistance}")]
 	public struct QueryItem : IEquatable<QueryItem>, IComparable<QueryItem> {
 
 		#region --- Properties ---
@@ -31,8 +33,10 @@ namespace ShapeDatabase.Query {
 		public QueryItem(string meshName, double meshDistance) {
 			if (meshDistance < 0)
 				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(meshDistance));
+			if (string.IsNullOrEmpty(meshName))
+				throw new ArgumentNullException(nameof(meshName));
 
-			this.MeshName = meshName ?? throw new ArgumentNullException(nameof(meshName));
+			this.MeshName = meshName;
 			this.MeshDistance = meshDistance;
 		}
 
@@ -63,12 +67,17 @@ namespace ShapeDatabase.Query {
 			return MeshName.GetHashCode();
 		}
 
+
+		public override string ToString() {
+			return $"{MeshName} ({MeshDistance})";
+		}
+
 		#endregion
 
 		#region --- Operators ---
 
 		public static bool operator ==(QueryItem left, QueryItem right) {
-			return left.Equals(right);
+			return Equals(left, right);
 		}
 
 		public static bool operator !=(QueryItem left, QueryItem right) {

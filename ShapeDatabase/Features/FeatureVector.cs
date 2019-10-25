@@ -71,13 +71,15 @@ namespace ShapeDatabase.Features {
 		/// <returns>The PTD</returns>
 		public double Compare(FeatureVector vector) 
 		{
-			if (vector == null)
+			/*if (vector == null)
 				throw new ArgumentNullException(nameof(vector));
 
 			(double[] X_values, double[] X_weights) = CreatePTDArray(Descriptors);
 			(double[] Y_values, double[] Y_weights) = CreatePTDArray(vector.Descriptors);
 
-			return Functions.CalculatePTD(X_values, X_weights, Y_values, Y_weights);
+			return Functions.CalculatePTD(X_values, X_weights, Y_values, Y_weights);*/
+
+			return Compare(this, vector);
 		}
 
 		/// <summary>
@@ -107,6 +109,63 @@ namespace ShapeDatabase.Features {
 			}
 
 			return (values.ToArray(), weights.ToArray());
+		}
+
+
+		/// <summary>
+		/// A manner to compare two features and see how similar they are.
+		/// This method takes the assumption that the enumerator from the
+		/// <see cref="FeatureVector"/>s return objects in an ordered manner.
+		/// </summary>
+		/// <param name="primary">The reference item for comparison.
+		/// All descriptors will be compared with the other vector.</param>
+		/// <param name="secondary">The comparison item, only descriptors which
+		/// it shares with the reference vector will be compared.</param>
+		/// <returns>A weighted average between [0,1] which shows the similarity.
+		/// A value of 1 means that they are the exact same and 0 means that they
+		/// are nothing alike.</returns>
+		public static double Compare(FeatureVector primary, FeatureVector secondary) {
+			if (primary == null)
+				throw new ArgumentNullException(nameof(primary));
+			if (secondary == null)
+				throw new ArgumentNullException(nameof(secondary));
+
+			DescriptorComparer comparer = DescriptorComparer.Instance;
+			IEnumerator<IDescriptor> pdescs = primary.Descriptors.GetEnumerator();
+			IEnumerator<IDescriptor> sdescs = secondary.Descriptors.GetEnumerator();
+
+			double sum = 0;
+			int count = 0;
+			bool hasNext = true;
+			hasNext &= pdescs.MoveNext();
+			hasNext &= sdescs.MoveNext();
+
+			while (hasNext) {
+				IDescriptor pdesc = pdescs.Current;
+				IDescriptor sdesc = sdescs.Current;
+
+				int dif = comparer.Compare(pdesc, sdesc);
+				if (dif == 0) {
+					sum += pdesc.Compare(sdesc);
+					count++;
+
+					hasNext &= pdescs.MoveNext();
+					hasNext &= sdescs.MoveNext();
+					continue;
+
+					// The primary one is beind so increment that side.
+				} else if (dif < 0) {
+					hasNext &= pdescs.MoveNext();
+
+					// The secondary one is beind so increment that side.
+				} else if (dif > 0) {
+					hasNext &= sdescs.MoveNext();
+				}
+			}
+
+			// Equals weight function.
+			return (count == 0) ? 0 : sum / count;
+
 		}
 
 		#endregion

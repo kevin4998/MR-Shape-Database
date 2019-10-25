@@ -19,7 +19,7 @@ namespace ShapeDatabase.IO {
 			() => new GeomOffWriter()
 		);
 		/// <summary>
-		/// Provides in instance of the writer which uses external serialisation methods.
+		/// Provides an instance of the writer which uses external serialisation methods.
 		/// </summary>
 		public static GeomOffWriter Instance => lazy.Value;
 
@@ -74,13 +74,8 @@ namespace ShapeDatabase.IO {
 			IOConventions.WriteIfNormalised(type.IsNormalised, writer);
 		}
 
-		public Task WriteFileAsync(GeometryMesh type, string location) {
-			return Task.Run(() => WriteFile(type, location));
-		}
-
-		public Task WriteFileAsync(GeometryMesh type, StreamWriter writer) {
-			return Task.Run(() => WriteFile(type, writer));
-		}
+		void IWriter.WriteFile(object type, StreamWriter writer)
+			=> WriteFile(type as GeometryMesh, writer);
 
 		#endregion
 

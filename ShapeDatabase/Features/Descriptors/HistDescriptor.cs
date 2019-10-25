@@ -22,7 +22,9 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// The character which is used to seperate values of
 		/// a single histogram descriptor.
 		/// </summary>
-		public static string HistSeperator => ";";
+		public static char HistSeperator => ';';
+
+		public static string HistSeperatorString => HistSeperator.ToString(Settings.Culture);
 
 		/// <summary>
 		/// The width of one bin
@@ -91,12 +93,37 @@ namespace ShapeDatabase.Features.Descriptors {
 			for (int i = 1; i < BinValues.Length + 1; i++)
 				histValues[i] = BinValues[i - 1].ToString(format);
 			
-			return string.Join(HistSeperator, histValues);
+			return string.Join(HistSeperatorString, histValues);
 		}
 
 		#endregion
 
 		#region -- Static Methods --
+
+		public static bool TryParse(string name, string serialised,
+									out HistDescriptor desc) {
+			if (string.IsNullOrEmpty(name))
+				throw new ArgumentNullException(nameof(name));
+			if (string.IsNullOrEmpty(serialised))
+				throw new ArgumentNullException(nameof(serialised));
+
+			desc = null;
+			string[] splits = serialised.Split(HistSeperator);
+
+			string sizeString = splits[0];
+			if (!double.TryParse(sizeString, out double binSize))
+				return false;
+
+			string[] stringBins = splits.Skip(1).ToArray();
+			//if (stringBins.Length != BinCount)
+			//	return false;
+			if (!NumberUtil.TryParse(stringBins, float.TryParse, out float[] bins))
+				return false;
+
+			desc = FromNormalised(name, binSize, bins);
+			return true;
+		}
+
 
 		public static HistDescriptor FromHistogram(string name, double binSize,
 													int[] histogram) {
