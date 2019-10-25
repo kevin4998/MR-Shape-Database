@@ -72,12 +72,9 @@ namespace ShapeDatabase.Features.Descriptors {
 			if (desc == null)
 				throw new ArgumentNullException(nameof(desc));
 
-			double[] weights = Enumerable.Repeat(1d, BinValues.Length).ToArray();
-			return Functions.CalculatePTD(
+			return Functions.CalculateEMD(
 				BinValues.Cast<float, double>(x => x),
-				weights,
-				desc.BinValues.Cast<float, double>(x => x),
-				weights);
+				desc.BinValues.Cast<float, double>(x => x));
 		}
 
 		/// <summary>

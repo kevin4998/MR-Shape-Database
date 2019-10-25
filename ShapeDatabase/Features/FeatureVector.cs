@@ -83,36 +83,6 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Creates value and weight arrays that can be used for calculating the PTD.
-		/// </summary>
-		/// <param name="descriptors">The descriptors</param>
-		/// <returns>The value (Item1) and weight (Item2) arrays</returns>
-		private (double[], double[]) CreatePTDArray(IEnumerable<IDescriptor> descriptors)
-		{
-			List<double> values = new List<double>();
-			List<double> weights = new List<double>();
-
-			foreach(IDescriptor desc in descriptors)
-			{
-				if(desc is ElemDescriptor elem_desc)
-				{
-					values.Add(elem_desc.Value);
-					weights.Add(elem_desc.Weight);
-				}
-				else if (desc is HistDescriptor hist_desc)
-				{
-					values.AddRange(hist_desc.BinValues.Cast<double>());
-					weights.AddRange(Enumerable.Repeat(hist_desc.Weight / hist_desc.BinCount, hist_desc.BinCount));
-
-				} else
-					throw new NotImplementedException();
-			}
-
-			return (values.ToArray(), weights.ToArray());
-		}
-
-
-		/// <summary>
 		/// A manner to compare two features and see how similar they are.
 		/// This method takes the assumption that the enumerator from the
 		/// <see cref="FeatureVector"/>s return objects in an ordered manner.
