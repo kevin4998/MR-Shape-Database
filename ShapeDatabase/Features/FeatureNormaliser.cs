@@ -68,33 +68,19 @@ namespace ShapeDatabase.Features
 					if(desc is ElemDescriptor elemDesc) {
 						string elemName = elemDesc.Name;
 						double elemValue = elemDesc.Value;
-						double range = MinMaxValues[desc.Name].Item2 - MinMaxValues[desc.Name].Item1;
+						(double min, double max) = MinMaxValues[desc.Name];
+						double range = max - min;
 
 						if(range != 0)
 						{
-							if(elemValue < MinMaxValues[desc.Name].Item1)
-							{
-								elemValue = 0;
-							}
-							else if(elemValue > MinMaxValues[desc.Name].Item2)
-							{
-								elemValue = 1;
-							}
-							else
-							{
-								elemValue = (elemValue - MinMaxValues[desc.Name].Item1) / range;
-							}
+							elemValue = Math.Max(min, elemValue);
+							elemValue = Math.Min(max, elemValue);
+							elemValue = (elemValue - min) / range;
 						}
 						else
 						{
-							if (elemValue < 0)
-							{
-								elemValue = 0;
-							}
-							else if (elemValue > 1)
-							{
-								elemValue = 1;
-							}
+							elemValue = Math.Max(0, elemValue);
+							elemValue = Math.Min(1, elemValue);
 						}
 
 						normalisedDescriptors[descCount] = new ElemDescriptor(

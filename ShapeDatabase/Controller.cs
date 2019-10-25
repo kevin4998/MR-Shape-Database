@@ -66,7 +66,6 @@ namespace ShapeDatabase {
 					DirectoryInfo info = new DirectoryInfo(dir);
 					if(info.Exists)			
 						info.Delete(true);
-
 				}
 				Console.WriteLine(I_EndClean);
 			}
