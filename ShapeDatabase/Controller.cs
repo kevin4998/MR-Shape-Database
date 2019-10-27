@@ -57,12 +57,15 @@ namespace ShapeDatabase {
 				string[] cachedDirs = new string[] {
 					Settings.ShapeFailedDir,
 					Settings.ShapeFinalDir,
-					Settings.ShapeTempDir
-					//Settings.MeasurementsFile
+					Settings.ShapeTempDir,
+					Settings.MeasurementsDir,
+					Settings.QueryDir,
+					Settings.FeatureVectorDir
 				};
 				foreach (string dir in cachedDirs) {
 					DirectoryInfo info = new DirectoryInfo(dir);
-					info.Delete(true);
+					if(info.Exists)			
+						info.Delete(true);
 				}
 				Console.WriteLine(I_EndClean);
 			}
@@ -337,9 +340,8 @@ namespace ShapeDatabase {
 		/// </summary>
 		static void LoadQueryFiles()
 		{
+			Directory.CreateDirectory(Settings.QueryDir);
 			Settings.FileManager.AddQueryDirectory(Settings.QueryDir);
 		}
-
 	}
-
 }

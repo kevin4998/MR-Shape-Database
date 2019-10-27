@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Resources;
+using ShapeDatabase.Features;
 using ShapeDatabase.Properties;
 
 // Define what the default languages is for this application.

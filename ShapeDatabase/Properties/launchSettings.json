@@ -2,7 +2,7 @@
   "profiles": {
     "ShapeDatabase": {
       "commandName": "Project",
-      "commandLineArgs": "--directory \"Content\\Shapes\\Initial\" -m query"
+      "commandLineArgs": "--directory \"Content\\Shapes\\Initial\" -m refine --clean"
     }
   }
 }

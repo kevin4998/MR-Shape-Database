@@ -33,7 +33,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <summary>
 		/// The number of values in each of the bins.
 		/// </summary>
-		public float[] BinValues { get; }
+		private float[] BinValues { get; }
 
 		public int BinCount => BinValues.Length;
 
@@ -54,9 +54,14 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <param name="binvalues">Bin values of the descriptor</param>
 		public HistDescriptor(string name, double binsize, float[] binvalues) 
 			: base(name) {
-			Debug.Assert(VerifyHistogram(binvalues));
 			BinSize = binsize;
-			BinValues = binvalues;
+
+			float inverseLargest = 1 / binvalues.Sum();
+			float[] normalisedBinValues = Array.ConvertAll(binvalues, value => value * inverseLargest);
+
+			Debug.Assert(VerifyHistogram(normalisedBinValues));
+
+			BinValues = normalisedBinValues;
 		}
 
 		#endregion
@@ -72,12 +77,9 @@ namespace ShapeDatabase.Features.Descriptors {
 			if (desc == null)
 				throw new ArgumentNullException(nameof(desc));
 
-			double[] weights = Enumerable.Repeat(1d, BinValues.Length).ToArray();
-			return Functions.CalculatePTD(
+			return Functions.CalculateEMD(
 				BinValues.Cast<float, double>(x => x),
-				weights,
-				desc.BinValues.Cast<float, double>(x => x),
-				weights);
+				desc.BinValues.Cast<float, double>(x => x));
 		}
 
 		/// <summary>
@@ -120,47 +122,15 @@ namespace ShapeDatabase.Features.Descriptors {
 			if (!NumberUtil.TryParse(stringBins, float.TryParse, out float[] bins))
 				return false;
 
-			desc = FromNormalised(name, binSize, bins);
+			desc = new HistDescriptor(name, binSize, bins);
 			return true;
 		}
 
-
-		public static HistDescriptor FromHistogram(string name, double binSize,
-													int[] histogram) {
-			return FromHistogram(name, binSize,
-								 Array.ConvertAll(histogram, x => (float) x));
-		}
-
-		public static HistDescriptor FromHistogram(string name, double binSize,
-													float[] histogram) {
-			if (histogram == null)
-				throw new ArgumentNullException(nameof(histogram));
-			if (histogram.Length == 0)
-				throw new ArgumentException(Resources.EX_Empty_Array, nameof(histogram));
-
-			float[] accumulated = new float[histogram.Length];
-			accumulated[0] = histogram[0];
-			for (int i = 1; i < histogram.Length; i++)
-				accumulated[i] = accumulated[i - 1] + histogram[i];
-
-			return FromAccumulative(name, binSize, accumulated);
-		}
-
-		public static HistDescriptor FromAccumulative(string name, double binSize,
-													float[] accHist) {
-			if (accHist == null)
-				throw new ArgumentNullException(nameof(accHist));
-			if (accHist.Length == 0)
-				throw new ArgumentException(Resources.EX_Empty_Array, nameof(accHist));
-
-			float inverseLargest = 1 / accHist[accHist.Length - 1];
-			float[] normalised = Array.ConvertAll(accHist, value => value * inverseLargest);
-			return FromNormalised(name, binSize, normalised);
-		}
-
-		public static HistDescriptor FromNormalised(string name, double binSize,
-													float[] normHist) {
-			return new HistDescriptor(name, binSize, normHist);
+		public static HistDescriptor FromIntHistogram(string name, double binSize,
+													int[] histogram)
+		{
+			return new HistDescriptor(name, binSize,
+								 Array.ConvertAll(histogram, x => (float)x));
 		}
 
 #if DEBUG
@@ -170,21 +140,16 @@ namespace ShapeDatabase.Features.Descriptors {
 				throw new ArgumentNullException(nameof(histogram));
 			if (histogram.Length == 0)
 				throw new ArgumentException(Resources.EX_Empty_Array, nameof(histogram));
-			float last = histogram[0];
-			// Verify that the next value is always bigger than the previous.
+			// Verify that the next value is always between 0 and 1
 			for (int i = 1; i < histogram.Length; i++)
-				if (last > histogram[i])
+				if (histogram[i] < 0 || histogram[i] > 1)
 					return false;
-				else
-					last = histogram[i];
-			// Verify that the last value always contains all scores.
-			if (last != 1f)
-				return false;
+
 			// Notify that the whole histogram is ok.
 			return true;
 		}
 
-#endif
+		#endif
 
 		#endregion
 

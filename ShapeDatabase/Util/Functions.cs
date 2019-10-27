@@ -119,39 +119,18 @@ namespace ShapeDatabase.Util {
 		}
 
 		/// <summary>
-		/// Calculates the PTD, given two arrays with values and their weights.
+		/// Calculates the EMD, given two arrays with values.
 		/// </summary>
 		/// <param name="xValues">The values of the first array</param>
-		/// <param name="xWeights">The weights of the first array</param>
 		/// <param name="yValues">The values of the second array</param>
-		/// <param name="yWeights">The values of the second array</param>
-		/// <returns>The PTD</returns>
-		public static double CalculatePTD(double[] xValues, double[] xWeights,
-										  double[] yValues, double[] yWeights)
+		/// <returns>The EMD</returns>
+		public static double CalculateEMD(double[] xValues, double[] yValues)
 		{
 			#region Parameter Checks
 			if (xValues == null)
 				throw new ArgumentNullException(nameof(xValues));
-			if (xWeights == null)
-				throw new ArgumentNullException(nameof(xWeights));
 			if (yValues == null)
 				throw new ArgumentNullException(nameof(yValues));
-			if (yWeights == null)
-				throw new ArgumentNullException(nameof(yWeights));
-			if (xValues.Length != xWeights.Length)
-				throw new ArgumentException(
-					string.Format(Settings.Culture,
-						Resources.EX_UnEqual_Sizes,
-						xValues.Length, xWeights.Length
-					)
-				);
-			if (yValues.Length != yWeights.Length)
-				throw new ArgumentException(
-					string.Format(Settings.Culture,
-						Resources.EX_UnEqual_Sizes,
-						yValues.Length, yWeights.Length
-					)
-				);
 			if (xValues.Length != yValues.Length)
 				throw new ArgumentException(
 					string.Format(Settings.Culture,
@@ -161,37 +140,18 @@ namespace ShapeDatabase.Util {
 				);
 			#endregion
 
-			double X = 0, Y = 0, W = 0, U = 0;
-
-			for (int i = xValues.Length - 1; i >= 0; i--) {
-				X += xValues[i];
-				Y += xWeights[i];
-				W += yValues[i];
-				U += yWeights[i];
-			}
-
-			X = 1 / X;
-			Y = 1 / Y;
-			double WU = W / U;
-
-			//Normalise both arrays, and the weights of the second array
-			for (int i = xValues.Length - 1; i >= 0; i--)
-			{
-				xValues[i] *= X;
-				yValues[i] *= Y;
-				yWeights[i] *= WU;
-			}
-
 			//Count the flow of each bin
 			double[] Distances = new double[xValues.Length];
-			Distances[0] = (xValues[0] * xWeights[0]) - (yValues[0] * yWeights[0]);
+			Distances[0] = 0;
 			for (int i = 0; i < Distances.Length - 1; i++)
 			{
-				Distances[i + 1] = (xValues[i] * xWeights[i]) + Distances[i] - (yValues[i] * yWeights[i]);
+				Distances[i + 1] = xValues[i] + Distances[i] - yValues[i];
 			}
 
-			//Return the PTD
-			return (Distances.Select(x => Math.Abs(x)).Sum() / W);
+			//Return the EMD
+			double totalDistance = Distances.Select(x => Math.Abs(x)).Sum();
+			double normalisedTotalDistanece = totalDistance / (xValues.Length - 1);
+			return (normalisedTotalDistanece);
 		}
 
 		/// <summary>

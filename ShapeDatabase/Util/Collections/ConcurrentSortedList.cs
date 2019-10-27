@@ -23,6 +23,19 @@ namespace ShapeDatabase.Util.Collections {
 
 		public override bool IsSynchronized => true;
 
+		public override T this[int index] {
+			get {
+				lock (SyncRoot) { 
+					return base[index];
+				}
+			}
+			set {
+				lock (SyncRoot) {
+					base[index] = value;
+				}
+			}
+		}
+
 		#endregion
 
 		#region --- Constructor Methods ---
@@ -33,12 +46,30 @@ namespace ShapeDatabase.Util.Collections {
 		public ConcurrentSortedList() : base() { }
 
 		/// <summary>
+		/// Initialises a new list where all elements are sorted with a size of 8.
+		/// </summary>
+		/// <param name="comparer">The method to compare two values with each other
+		/// for sorting.</param>
+		public ConcurrentSortedList(IComparer<T> comparer) : base(comparer) { }
+
+		/// <summary>
 		/// Initialises a new list where all elements are sorted with the given size.
 		/// </summary>
 		/// <param name="capacity">The amount of starting space in the list.</param>
 		/// <exception cref="ArgumentException">If the given capactiy is below 0.
 		/// You can't create an list with negative capacity.</exception>
 		public ConcurrentSortedList(int capacity) : base(capacity) { }
+
+		/// <summary>
+		/// Initialises a new list where all elements are sorted with the given size.
+		/// </summary>
+		/// <param name="capacity">The amount of starting space in the list.</param>
+		/// <param name="comparer">The method to compare two values with each other
+		/// for sorting.</param>
+		/// <exception cref="ArgumentException">If the given capactiy is below 0.
+		/// You can't create an list with negative capacity.</exception>
+		public ConcurrentSortedList(int capacity, IComparer<T> comparer)
+			: base(capacity, comparer) { }
 
 		/// <summary>
 		/// Initialises a new list where all elements are sorted
@@ -49,6 +80,19 @@ namespace ShapeDatabase.Util.Collections {
 		/// <exception cref="ArgumentNullException">If the given collection is
 		/// <see langword="null"/> or in other words, does not exist.</exception>
 		public ConcurrentSortedList(IEnumerable<T> collection) : base(collection) { }
+
+		/// <summary>
+		/// Initialises a new list where all elements are sorted
+		/// using the given collection for initial population.
+		/// </summary>
+		/// <param name="collection">All the elements which should be present
+		/// in this sorted list.</param>
+		/// <param name="comparer">The method to compare two values with each other
+		/// for sorting.</param>
+		/// <exception cref="ArgumentNullException">If the given collection is
+		/// <see langword="null"/> or in other words, does not exist.</exception>
+		public ConcurrentSortedList(IEnumerable<T> collection, IComparer<T> comparer)
+			: base(collection, comparer) { }
 
 		#endregion
 

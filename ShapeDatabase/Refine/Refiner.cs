@@ -20,15 +20,6 @@ namespace ShapeDatabase.Refine {
 
 		#region --- Properties ---
 
-		/// <summary>
-		/// The number of desried vertices.
-		/// </summary>
-		private const int DESIRED_VERTICES = 5000;
-		/// <summary>
-		/// The maximum number of refinement iterations.
-		/// </summary>
-		private const int MAX_ITERATIONS = 20;
-
 		private static readonly Lazy<ExtendRefiner> lazy =
 			new Lazy<ExtendRefiner> (() => new ExtendRefiner());
 
@@ -59,7 +50,7 @@ namespace ShapeDatabase.Refine {
 		public bool RequireRefinement(Shapes.IMesh mesh)
 		{
 			if (mesh == null) throw new ArgumentNullException(nameof(mesh));
-			return mesh.VertexCount != DESIRED_VERTICES;
+			return mesh.VertexCount != Settings.RefineVertexNumber;
 		}
 		/// <summary>
 		/// Extends mesh by applying one iteration of the Doo-Sabin algorithm.
@@ -86,7 +77,7 @@ namespace ShapeDatabase.Refine {
 			};
 
 			int i = 0;
-			while (meshDMesh3.VertexCount < 5000 && i < MAX_ITERATIONS)
+			while (meshDMesh3.VertexCount < Settings.RefineVertexNumber && i < Settings.MaxRefineIterations)
 			{
 				remesher.SetTargetEdgeLength(0.0001F);
 				remesher.BasicRemeshPass();
@@ -94,7 +85,7 @@ namespace ShapeDatabase.Refine {
 			}
 
 			Reducer reducer = new Reducer(meshDMesh3);
-			reducer.ReduceToVertexCount(5000);
+			reducer.ReduceToVertexCount(Settings.RefineVertexNumber);
 
 			Settings.FileManager.WriteObject(GeometryMesh.ToGeometryMesh(meshDMesh3), file.FullName);
 		}
@@ -109,8 +100,6 @@ namespace ShapeDatabase.Refine {
 	public class SimplifyRefiner : IRefiner<Shapes.IMesh> {
 
 		#region --- Properties ---
-
-		private const int DESIRED_VERTICES = 5000;
 
 		private static readonly Lazy<SimplifyRefiner> lazy =
 			new Lazy<SimplifyRefiner>(() => new SimplifyRefiner());
@@ -142,7 +131,7 @@ namespace ShapeDatabase.Refine {
 		public bool RequireRefinement(Shapes.IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
-			return mesh.VertexCount != DESIRED_VERTICES;
+			return mesh.VertexCount != Settings.RefineVertexNumber;
 		}
 
 		/// <summary>
@@ -166,7 +155,7 @@ namespace ShapeDatabase.Refine {
 			DMesh3 meshDMesh3 = mesh as GeometryMesh;
 
 			Reducer reducer = new Reducer(meshDMesh3);
-			reducer.ReduceToVertexCount(5000);
+			reducer.ReduceToVertexCount(Settings.RefineVertexNumber);
 
 			Settings.FileManager.WriteObject(GeometryMesh.ToGeometryMesh(meshDMesh3), file.FullName);
 		}

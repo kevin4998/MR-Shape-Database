@@ -22,6 +22,7 @@ namespace ShapeDatabase.Query {
 		private static readonly StringComparer comparer =
 			StringComparer.InvariantCultureIgnoreCase;
 
+		public bool IsNull => string.IsNullOrEmpty(MeshName);
 		public string MeshName { get; }
 		public double MeshDistance { get; }
 
@@ -97,6 +98,16 @@ namespace ShapeDatabase.Query {
 		}
 
 		#endregion
+
+	}
+
+	public class QueryItemComparer : IComparer<QueryItem> {
+		public int Compare(QueryItem x, QueryItem y) {
+			if (x == y)		return 0;
+			if (x.IsNull)	return int.MaxValue;
+			if (y.IsNull)	return int.MinValue;
+			else			return x.CompareTo(y);
+		}
 
 	}
 

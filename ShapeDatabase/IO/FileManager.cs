@@ -293,10 +293,11 @@ namespace ShapeDatabase.IO {
 						}
 					}
 				}
+
+				RefinedQueryMeshes[i] = TempMesh;
 			});
 
 			// Phase 4: Add refined query meshes to library.
-
 			foreach (InfoMesh mesh in RefinedQueryMeshes)
 			{
 				MeshEntry entry =
