@@ -97,7 +97,6 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// If Debug messages should be visible in the console.
 		/// </summary>
-		[Ignore]
 		public static bool ShowDebug { get; set; } = false;
 
 		/// <summary>
