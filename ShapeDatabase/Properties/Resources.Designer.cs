@@ -97,6 +97,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to evaluations.csv.
+        /// </summary>
+        internal static string D_EvaluationFile {
+            get {
+                return ResourceManager.GetString("D_EvaluationFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed.
         /// </summary>
         internal static string D_FailedDir {

@@ -18,19 +18,25 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Properties ---
 
-		public ICache Cache { get; } = new Cache();
+		public ICache<T> Cache { get; } = new Cache<T>();
 
-		private readonly IDictionary<string, Func<T, ICache, object>> measures
-			= new Dictionary<string, Func<T, ICache, object>>();
+		private readonly IDictionary<string, Func<T, ICache<T>, object>> measures
+			= new Dictionary<string, Func<T, ICache<T>, object>>();
 
 		/// <summary>
 		/// A collection of measures which will be taken of all the objects in
 		/// a provided database during the next snapshot.
 		/// </summary>
-		private IEnumerable<(string, Func<T, ICache, object>)> Measures {
+		private IEnumerable<(string, Func<T, ICache<T>, object>)> Measures {
 			get {
-				foreach (KeyValuePair<string, Func<T, ICache, object>> pair in measures)
+				foreach (KeyValuePair<string, Func<T, ICache<T>, object>> pair in measures)
 					yield return (pair.Key, pair.Value);
+			}
+		}
+		public override IEnumerable<string> MeasureNames {
+			get {
+				foreach (KeyValuePair<string, Func<T, ICache<T>, object>> pair in measures)
+					yield return pair.Key;
 			}
 		}
 
@@ -68,7 +74,7 @@ namespace ShapeDatabase.Features.Statistics {
 
 		public ICachedRecordHolder<T> AddMeasure(
 				string measureName,
-				Func<T, ICache, object> provider,
+				Func<T, ICache<T>, object> provider,
 				bool overwrite = false) {
 			
 			if (measureName == null)
@@ -117,8 +123,9 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <param name="entryName">The name of the entry to remember in the record.</param>
 		/// <returns>The current object for chaining.</returns>
 		protected override Record EntrySnapShot(string entryName, T entry) {
+			Cache.Clear();
 			Record record = new Record(SnapshotTime, entryName);
-			foreach ((string name, Func<T, ICache, object> provider) in Measures)
+			foreach ((string name, Func<T, ICache<T>, object> provider) in Measures)
 				record.AddMeasure(name, provider(entry, Cache));
 			return record;
 		}

@@ -15,7 +15,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <summary>
 		/// A collection of stored values which can be used when calculating measures.
 		/// </summary>
-		ICache Cache { get; }
+		ICache<T> Cache { get; }
 
 
 		/// <summary>
@@ -29,7 +29,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <exception cref="ArgumentNullException">If any of the given parameters
 		/// is <see langword="null"/>.</exception>
 		ICachedRecordHolder<T> AddMeasure(string measureName,
-										  Func<T, ICache, object> provider,
+										  Func<T, ICache<T>, object> provider,
 										  bool overwrite = false);
 
 		/// <summary>
@@ -158,7 +158,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <see langword="null"/>.</exception>
 		public static ICachedRecordHolder<T> AddMeasure<T>(
 				this ICachedRecordHolder<T> holder,
-				(string name, Func<T, ICache, object> func) measure,
+				(string name, Func<T, ICache<T>, object> func) measure,
 				bool overwrite = false) {
 			if (holder == null)
 				throw new ArgumentNullException(nameof(holder));
@@ -179,7 +179,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <see langword="null"/>.</exception>
 		public static ICachedRecordHolder<T> AddMeasure<T>(
 				this ICachedRecordHolder<T> holder,
-				params (string, Func<T, ICache, object>)[] measures) {
+				params (string, Func<T, ICache<T>, object>)[] measures) {
 			if (holder == null)
 				throw new ArgumentNullException(nameof(holder));
 
@@ -202,11 +202,11 @@ namespace ShapeDatabase.Features.Statistics {
 		public static ICachedRecordHolder<T> AddMeasure<T>(
 				this ICachedRecordHolder<T> holder,
 				bool overwrite,
-				params (string, Func<T, ICache, object>)[] measures) {
+				params (string, Func<T, ICache<T>, object>)[] measures) {
 			if (holder == null)
 				throw new ArgumentNullException(nameof(holder));
 
-			foreach ((string name, Func<T, ICache, object> func) in measures)
+			foreach ((string name, Func<T, ICache<T>, object> func) in measures)
 				holder = holder.AddMeasure(name, func, overwrite);
 
 			return holder;

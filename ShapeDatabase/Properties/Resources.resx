@@ -345,4 +345,8 @@
     <value>Could not cast an object of type {0} to type {1}.</value>
     <comment>The exception which is given when an attempt to cast an object from type A to type B is being performed and failed.</comment>
   </data>
+  <data name="D_EvaluationFile" xml:space="preserve">
+    <value>evaluations.csv</value>
+    <comment>The file where the analysis/evaluation of the query results will be saved to.</comment>
+  </data>
 </root>

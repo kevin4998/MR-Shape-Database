@@ -16,6 +16,7 @@ using static ShapeDatabase.Properties.Resources;
 using System.Threading.Tasks;
 using ShapeDatabase.Query;
 using System.Threading;
+using ShapeDatabase.UI.Console;
 
 namespace ShapeDatabase {
 
@@ -78,9 +79,11 @@ namespace ShapeDatabase {
 			if (Settings.Mode.HasFlag(OperationModes.MEASURE))
 				MeasureShapes(options.ShapeDirectories);
 			if (Settings.Mode.HasFlag(OperationModes.FEATURES))
-				ExtractFeatures(options.ShapeDirectories);
+				ExtractFeatures();
 			if (Settings.Mode.HasFlag(OperationModes.QUERY))
-				QueryShapes(ExtractFeatures(options.ShapeDirectories));
+				QueryShapes(ExtractFeatures());
+			if (Settings.Mode.HasFlag(OperationModes.EVALUATE))
+				EvaluateQuery(QueryShapes(ExtractFeatures()));
 			if (Settings.Mode.HasFlag(OperationModes.VIEW))
 				ViewShapes(options.ShapeDirectories);
 		}
@@ -204,7 +207,7 @@ namespace ShapeDatabase {
 		/// Mode for extracting featurevectors of the shapes, or reading them from a csv file.
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
-		static FeatureManager ExtractFeatures(IEnumerable<string> _)
+		static FeatureManager ExtractFeatures()
 		{
 			//LoadNewFiles(dirs, false);
 
@@ -247,7 +250,7 @@ namespace ShapeDatabase {
 		/// Mode for comparing query shapes to the database shapes.
 		/// </summary>
 		/// <param name="featuremanager">The featuremanager of the complete database</param>
-		static void QueryShapes(FeatureManager DatabaseFM)
+		static QueryResult[] QueryShapes(FeatureManager DatabaseFM)
 		{
 			Console.WriteLine(I_StartProc_Query);
 
@@ -273,6 +276,15 @@ namespace ShapeDatabase {
 			}
 
 			ShowQueryResults(queryResults);
+			return queryResults;
+		}
+
+		/// <summary>
+		/// Mode for evaluating the results of a query test.
+		/// </summary>
+		/// <param name="results">The successful results for a query.</param>
+		static void EvaluateQuery(params QueryResult[] results) {
+			EvaluationHandler.Evaluate(results);
 		}
 
 

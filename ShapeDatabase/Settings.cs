@@ -81,6 +81,11 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static string QueryResultsFile { get; set; } = D_QueryFile;
 
+		/// <summary>
+		/// The file name of the query evaluation results.
+		/// </summary>
+		public static string EvaluationFile { get; set; } = D_EvaluationFile;
+
 		#endregion
 
 		// Responsible for determining application executions.

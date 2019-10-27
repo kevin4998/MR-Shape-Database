@@ -8,7 +8,7 @@ namespace ShapeDatabase.Features.Statistics {
 	/// dictionaries which contain all the values and all the formulas.
 	/// The current implementation is single threaded.
 	/// </summary>
-	public class Cache : ICache {
+	public class Cache<T> : ICache<T> {
 
 		#region --- Properties ---
 
@@ -25,8 +25,8 @@ namespace ShapeDatabase.Features.Statistics {
 		/// calculate the properties with the specified name. The key here resembles
 		/// the property name and the value is the formula to find it.
 		/// </summary>
-		protected virtual IDictionary<string, Func<ICache, object>> CacheProvider { get; }
-			= new Dictionary<string, Func<ICache, object>>();
+		protected virtual IDictionary<string, Func<T, ICache<T>, object>> CacheProvider { get; }
+			= new Dictionary<string, Func<T, ICache<T>, object>>();
 		/// <summary>
 		/// A <see cref="IDictionary{TKey, TValue}"/> containing the different values
 		/// of properties stored in the cache.
@@ -35,7 +35,7 @@ namespace ShapeDatabase.Features.Statistics {
 			= new Dictionary<string, object>();
 
 		public virtual object this[string name] {
-			get => GetValue(name);
+			get => GetValue(name, default);
 			set => AddValue(name, value);
 		}
 
@@ -65,7 +65,7 @@ namespace ShapeDatabase.Features.Statistics {
 		public Cache(params (string, Func<object>)[] providers) {
 			foreach ((string name, Func<object> provider) in providers)
 				if (!string.IsNullOrEmpty(name) && provider != null)
-					CacheProvider.Add(name, _ => provider());
+					CacheProvider.Add(name, (_, __) => provider());
 		}
 
 		/// <summary>
@@ -73,8 +73,8 @@ namespace ShapeDatabase.Features.Statistics {
 		/// The provided functions may use the cache for help.
 		/// </summary>
 		/// <param name="providers">The collection of methods to add to the cache.</param>
-		public Cache(params (string, Func<ICache, object>)[] providers) {
-			foreach((string name, Func<ICache, object> provider) in providers)
+		public Cache(params (string, Func<T, ICache<T>, object>)[] providers) {
+			foreach((string name, Func<T, ICache<T>, object> provider) in providers)
 				if (!string.IsNullOrEmpty(name) && provider != null)
 					CacheProvider.Add(name, provider);
 		}
@@ -83,7 +83,7 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Instance Methods ---
 
-		public virtual ICache AddLazyValue(string name, Func<ICache, object> provider) {
+		public virtual ICache<T> AddLazyValue(string name, Func<T, ICache<T>, object> provider) {
 			if (string.IsNullOrEmpty(name))
 				throw new ArgumentNullException(nameof(name));
 			if (provider == null)
@@ -93,7 +93,7 @@ namespace ShapeDatabase.Features.Statistics {
 			return this;
 		}
 
-		public virtual ICache AddValue(string name, object value) {
+		public virtual ICache<T> AddValue(string name, object value) {
 			if (string.IsNullOrEmpty(name))
 				throw new ArgumentNullException(nameof(name));
 			
@@ -102,19 +102,27 @@ namespace ShapeDatabase.Features.Statistics {
 		}
 
 
-		public virtual object GetValue(string name) {
-			TryGetValue(name, out object value);
+		public virtual object GetValue(string name, T helper) {
+			TryGetValue(name, helper, out object value);
 			return value;
 		}
 
-		public virtual bool TryGetValue(string name, out object value) {
-			if (!CacheValues.TryGetValue(name, out value)
-				|| !CacheProvider.TryGetValue(name, out Func<ICache, object> provider))
+		public virtual bool TryGetValue(string name, T helper, out object value) {
+			value = default;
+			if (CacheValues.TryGetValue(name, out value))
+				return true;
+			if (!CacheProvider.TryGetValue(name, out Func<T, ICache<T>, object> provider))
 				return false;
 
-			value = provider(this);
+			value = provider(helper, this);
 			AddValue(name, value);
 			return true;
+		}
+
+
+		public virtual void Clear() {
+			CacheValues.Clear();
+			//CacheProvider.Clear();
 		}
 
 		#endregion

@@ -13,22 +13,22 @@ namespace ShapeDatabase.Features.Statistics {
 	/// An implementation of <see cref="ICache"/> inside a concurrent environment.
 	/// All operations on this object are safe in a multi-threaded environment.
 	/// </summary>
-	public class ConcurrentCache : Cache {
+	public class ConcurrentCache<T> : Cache<T> {
 
 		#region --- Properties ---
 
 		private long version = 0;
 
-		protected override IDictionary<string, Func<ICache, object>> CacheProvider
-			=> new ConcurrentDictionary<string, Func<ICache, object>>();
-		protected override IDictionary<string, object> CacheValues
-			=> new ConcurrentDictionary<string, object>();
+		protected override IDictionary<string, Func<T, ICache<T>, object>> CacheProvider { get; }
+			= new ConcurrentDictionary<string, Func<T, ICache<T>, object>>();
+		protected override IDictionary<string, object> CacheValues { get; }
+			= new ConcurrentDictionary<string, object>();
 		/// <summary>
 		/// A <see cref="IDictionary{TKey, TValue}"/> containing the locks for each
 		/// property to ensure that it works in a multi-threaded environment.
 		/// </summary>
-		protected virtual IDictionary<string, object> CacheLocks
-			=> new ConcurrentDictionary<string, object>();
+		protected virtual IDictionary<string, object> CacheLocks { get; }
+			= new ConcurrentDictionary<string, object>();
 
 		public override int Count => CacheLocks.Count;
 		public virtual long Version => version;
@@ -59,7 +59,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// The provided functions may use the cache for help.
 		/// </summary>
 		/// <param name="providers">The collection of methods to add to the cache.</param>
-		public ConcurrentCache(params (string, Func<ICache, object>)[] providers)
+		public ConcurrentCache(params (string, Func<T, ICache<T>, object>)[] providers)
 			: base(providers) { }
 
 		#endregion
@@ -103,7 +103,7 @@ namespace ShapeDatabase.Features.Statistics {
 		}
 
 
-		public override ICache AddLazyValue(string name, Func<ICache, object> provider) {
+		public override ICache<T> AddLazyValue(string name, Func<T, ICache<T>, object> provider) {
 			lock (GetLock(name)) { 
 				base.AddLazyValue(name, provider);
 				Interlocked.Increment(ref version);
@@ -111,7 +111,7 @@ namespace ShapeDatabase.Features.Statistics {
 			}
 		}
 
-		public override ICache AddValue(string name, object value) {
+		public override ICache<T> AddValue(string name, object value) {
 			lock (GetLock(name)) {
 				base.AddValue(name, value);
 				Interlocked.Increment(ref version);
@@ -119,12 +119,19 @@ namespace ShapeDatabase.Features.Statistics {
 			}
 		}
 
-		public override bool TryGetValue(string name, out object value) {
+		public override bool TryGetValue(string name, T helper, out object value) {
 			lock (GetLock(name)) {
-				bool result = base.TryGetValue(name, out value);
+				bool result = base.TryGetValue(name, helper, out value);
 				if (!result)
 					FreeLock(name);
 				return result;
+			}
+		}
+
+
+		public override void Clear() {
+			lock (CacheLocks) { 
+				base.Clear();
 			}
 		}
 
