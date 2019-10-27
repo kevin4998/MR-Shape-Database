@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using ShapeDatabase.Features;
 using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
-
+using ShapeDatabase.Util.Attributes;
 using static ShapeDatabase.Properties.Resources;
 
 namespace ShapeDatabase {
@@ -14,7 +15,7 @@ namespace ShapeDatabase {
 	public static class Settings {
 
 		// Responsible for IO operations.
-		// Knowing where to save files and retrive them.
+		// Knowing where to save files and retrieve them.
 		#region --- File Structure ---
 
 		/// <summary>
@@ -62,11 +63,6 @@ namespace ShapeDatabase {
 
 
 		/// <summary>
-		/// States whether the featuremanager should be created by reading a vectorfile.
-		/// </summary>
-		public static bool ReadVectorFile { get; set; } = false;
-
-		/// <summary>
 		/// The file name of the feature vectors/descriptors.
 		/// </summary>
 		public static string FeatureVectorFile { get; set; } = D_FeatureFile;
@@ -96,22 +92,31 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// If Debug messages should be visible in the console.
 		/// </summary>
+		[Ignore]
 		public static bool ShowDebug { get; set; } = false;
 
 		/// <summary>
 		/// Describes if the application should be active.
 		/// </summary>
+		[Ignore]
 		public static bool Active { get; set; } = true;
+
+		/// <summary>
+		/// Describes if all the functionality of the application should cease at once.
+		/// </summary>
+		[Ignore]
+		public static bool DirectShutDown { get; set; } = false;
+
+		/// <summary>
+		/// States whether the featuremanager should be created by reading a vectorfile.
+		/// </summary>
+		public static bool ReadVectorFile { get; set; } = false;
 
 		/// <summary>
 		/// States whether the query results should be saved (in QueryDir)
 		/// </summary>
 		public static bool SaveQueryResults { get; set; } = true;
 
-		/// <summary>
-		/// Describes if all the functionality of the application should cease at once.
-		/// </summary>
-		public static bool DirectShutDown { get; set; } = false;
 
 		#endregion
 
@@ -138,6 +143,12 @@ namespace ShapeDatabase {
 		/// A collection of all the loaded shapes by this application.
 		/// </summary>
 		public static MeshLibrary QueryLibrary => FileManager.QueryMeshes;
+
+		/// <summary>
+		/// A collection of all the weights for the different Descriptors.
+		/// </summary>
+		public static WeightManager Weights => WeightManager.Instance;
+
 
 		/// <summary>
 		/// Refine shapes to this number of vertices.
