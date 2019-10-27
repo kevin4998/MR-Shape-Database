@@ -11,7 +11,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A writer to convert a <see cref="RecordHolder"/> class into a csv formatted file.
 	/// </summary>
-	public class RecordsWriter : IWriter<RecordHolder> {
+	class RecordsWriter : IWriter<RecordHolder> {
 
 		#region --- Properties ---
 

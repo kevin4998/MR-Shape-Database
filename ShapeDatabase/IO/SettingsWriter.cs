@@ -9,7 +9,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A writer to serialise Settings from this application to an ini file.
 	/// </summary>
-	public class SettingsWriter : IWriter<TempSettings> {
+	class SettingsWriter : IWriter<TempSettings> {
 
 		#region --- Properties ---
 
@@ -19,7 +19,7 @@ namespace ShapeDatabase.IO {
 		public static SettingsWriter Instance => lazy.Value;
 
 		private static readonly Lazy<SettingsWriter> lazy
-			= new Lazy<SettingsWriter>();
+			= new Lazy<SettingsWriter>(() => new SettingsWriter());
 
 
 		public ICollection<string> SupportedFormats => new string[] { "ini" };

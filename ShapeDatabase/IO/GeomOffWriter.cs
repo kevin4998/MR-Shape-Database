@@ -11,7 +11,7 @@ namespace ShapeDatabase.IO {
 	/// A specific writer implementaion which serialises <see cref="GeometryMesh"/>es
 	/// using the <see cref="g3"/> library's serialisers.
 	/// </summary>
-	public class GeomOffWriter : IWriter<GeometryMesh> {
+	class GeomOffWriter : IWriter<GeometryMesh> {
 
 		#region --- Properties ---
 

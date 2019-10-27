@@ -16,7 +16,7 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for creating a featuremanager out of a csv with featurevectors.
 	/// </summary>
-	public class FMReader : IReader<FeatureManager>
+	class FMReader : IReader<FeatureManager>
 	{
 		#region --- Properties ---
 

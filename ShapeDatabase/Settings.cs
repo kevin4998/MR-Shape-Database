@@ -161,6 +161,12 @@ namespace ShapeDatabase {
 		public static int MaxRefineIterations { get; set; } = 20;
 
 		/// <summary>
+		/// The maximum number of times that any form of refinement will
+		/// be performed on a mesh before concluding that it can't be fixed.
+		/// </summary>
+		public static int RefinementThreshold { get; set; } = 16;
+
+		/// <summary>
 		/// Number of values per histogram descriptor.
 		/// </summary>
 		public static int ValuesPerHistogram { get; set; } = 5000;

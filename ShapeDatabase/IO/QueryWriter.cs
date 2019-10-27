@@ -14,7 +14,7 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for writing the query results to a csv file.
 	/// </summary>
-	public class QueryWriter : IWriter<QueryResult[]>
+	class QueryWriter : IWriter<QueryResult[]>
 	{
 
 		#region --- Properties ---

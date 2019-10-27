@@ -11,7 +11,7 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for writing a mesh to an off file.
 	/// </summary>
-	public class OFFWriter : IWriter<IMesh>
+	class OFFWriter : IWriter<IMesh>
 	{
 		#region --- Properties ---
 

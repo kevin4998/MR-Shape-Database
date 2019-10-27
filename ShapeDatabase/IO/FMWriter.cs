@@ -14,7 +14,7 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for writing the featurevectors of the featuremanager to a csv file.
 	/// </summary>
-	public class FMWriter : IWriter<FeatureManager>
+	class FMWriter : IWriter<FeatureManager>
 	{
 
 		#region --- Properties ---

@@ -9,7 +9,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A reader to serialise Settings for this application.
 	/// </summary>
-	public class SettingsReader : IReader<TempSettings> {
+	class SettingsReader : IReader<TempSettings> {
 
 		#region --- Properties ---
 
@@ -20,7 +20,7 @@ namespace ShapeDatabase.IO {
 		public static SettingsReader Instance => lazy.Value;
 
 		private static readonly Lazy<SettingsReader> lazy
-			= new Lazy<SettingsReader>();
+			= new Lazy<SettingsReader>(() => new SettingsReader());
 
 
 		public ICollection<string> SupportedFormats => new string[] { "ini" };

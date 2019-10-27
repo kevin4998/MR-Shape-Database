@@ -25,36 +25,23 @@ namespace ShapeDatabase.IO {
 
 		#region -- Static Variables --
 
-		/// <summary>
-		/// The maximum amount of attempts that a shape may be refined
-		/// before seeing it as unfixable.
-		/// </summary>
-		private const byte REFINEMENT_THRESHOLD = 16;
-
-		private static readonly Lazy<IReader <GeometryMesh>[]> LocalReaders =
-			new Lazy<IReader<GeometryMesh>[]>(ProduceReaders);
-		private static readonly Lazy<IRefiner<IMesh>[]> LocalRefiners =
-			new Lazy<IRefiner<IMesh>[]>(ProduceRefiners);
-
-		private static IReader<GeometryMesh>[] ProduceReaders() {
-			return new IReader<GeometryMesh>[] {
-				GeomOffReader.Instance
-			};
+		private static void PopulateRefiners(IList<IRefiner<IMesh>> refiners) {
+			refiners.Add(ExtendRefiner.Instance);
+			refiners.Add(SimplifyRefiner.Instance);
+			refiners.Add(NormalisationRefiner.Instance);
 		}
-		private static IRefiner<IMesh>[] ProduceRefiners() {
-			return new IRefiner<IMesh>[] {
-				ExtendRefiner.Instance,
-				SimplifyRefiner.Instance,
-				NormalisationRefiner.Instance
-			};
+		private static void PopulateReaders(IDictionary<Type, IReader> dic) {
+			dic.Add(typeof(GeometryMesh),	GeomOffReader.Instance);
+			dic.Add(typeof(FeatureManager), FMReader.Instance);
+			dic.Add(typeof(TempSettings),	SettingsReader.Instance);
 		}
-
-		private static void PopulateWriters(ref IDictionary<Type, IWriter> dic) {
+		private static void PopulateWriters(IDictionary<Type, IWriter> dic) {
 			dic.Add(typeof(GeometryMesh),	GeomOffWriter.Instance);
 			dic.Add(typeof(IMesh),			OFFWriter.Instance);
 			dic.Add(typeof(RecordHolder),	RecordsWriter.Instance);
 			dic.Add(typeof(FeatureManager),	FMWriter.Instance);
 			dic.Add(typeof(QueryResult[]),	QueryWriter.Instance);
+			dic.Add(typeof(TempSettings),	SettingsWriter.Instance);
 		}
 
 		#endregion
@@ -65,12 +52,10 @@ namespace ShapeDatabase.IO {
 
 		private readonly IDictionary<Type, IWriter> typeWriters
 			= new Dictionary<Type, IWriter>();
-
-
-		private readonly IDictionary<string, IReader<GeometryMesh>> readers =
-			new Dictionary<string, IReader<GeometryMesh>>();
-		private readonly ICollection<IRefiner<IMesh>> refiners =
-			new List<IRefiner<IMesh>>(LocalRefiners.Value);
+		private readonly IDictionary<Type, IReader> typeReaders
+			= new Dictionary<Type, IReader>();
+		private readonly IList<IRefiner<IMesh>> refiners
+			= new List<IRefiner<IMesh>>();
 
 
 		/// <summary>
@@ -89,15 +74,13 @@ namespace ShapeDatabase.IO {
 
 		#region --- Constructor Methods ---
 
-
 		/// <summary>
 		/// Creates a new manager responsible for loading files.
 		/// </summary>
 		public FileManager() {
-			PopulateWriters(ref typeWriters);
-			foreach (IReader<GeometryMesh> reader in LocalReaders.Value)
-				AddReader(reader);
-			// Refiners added automatically.
+			PopulateReaders(typeReaders);
+			PopulateWriters(typeWriters);
+			PopulateRefiners(refiners);
 		}
 
 		#endregion
@@ -114,25 +97,10 @@ namespace ShapeDatabase.IO {
 		/// <param name="readers">The readers which can convert files into meshes.</param>
 		/// <exception cref="ArgumentException">If a given reader does not contain
 		/// any supported file extensions.</exception>
-		public void AddReader(params IReader<GeometryMesh>[] readers) {
-			if (readers == null || readers.Length == 0)
-				return;
-
-			foreach (IReader<GeometryMesh> reader in readers)
+		public void AddReader<T>(params IReader<T>[] readers) {
+			foreach (IReader<T> reader in readers)
 				if (reader != null)
-					foreach (string format in reader.SupportedFormats) {
-						if (format == null || format.Length == 0)
-							throw new ArgumentException(
-								Resources.EX_Missing_Ext,
-								reader.GetType().FullName);
-						string ext = format.ToLower(Settings.Culture);
-						if (ext[0] != '.')
-							ext = '.' + ext;
-
-						formats.Add(ext);
-						this.readers.Add(ext, reader);
-					}
-
+					typeReaders.Add(typeof(T), reader);
 		}
 
 		/// <summary>
@@ -142,9 +110,6 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		/// <param name="refiners">The refiner which can normalise a shape in any way.</param>
 		public void AddRefiner(params IRefiner<IMesh>[] refiners) {
-			if (refiners == null || refiners.Length == 0)
-				return;
-
 			foreach(IRefiner<IMesh> refine in refiners)
 				if (refine != null && !this.refiners.Contains(refine))
 					this.refiners.Add(refine);
@@ -159,7 +124,7 @@ namespace ShapeDatabase.IO {
 		/// for serialisation purposes.</param>
 		public void AddWriter<T>(params IWriter<T>[] writers) {
 			foreach(IWriter<T> writer in writers)
-				if (readers != null)
+				if (writer != null)
 					typeWriters.Add(typeof(T), writer);
 		}
 
@@ -187,7 +152,7 @@ namespace ShapeDatabase.IO {
 			InfoMesh[] filemeshes;
 			byte attempts = 0;
 
-			while (files.Length != 0 && attempts++ < REFINEMENT_THRESHOLD) { 
+			while (files.Length != 0 && attempts++ < Settings.RefinementThreshold) { 
 
 				// Phase 2: Process files into meshes. (repeatable)
 
@@ -279,7 +244,7 @@ namespace ShapeDatabase.IO {
 				bool RequiresRefinement = true;
 				int Attempt = 0;
 
-				while (RequiresRefinement && Attempt++ < REFINEMENT_THRESHOLD)
+				while (RequiresRefinement && Attempt++ < Settings.RefinementThreshold)
 				{
 					RequiresRefinement = false;
 
@@ -337,13 +302,7 @@ namespace ShapeDatabase.IO {
 					}
 			}
 			// We don't have anything that can deserialise the class.
-			throw new NotSupportedException(
-				string.Format(
-					Settings.Culture,
-					Resources.EX_Not_Supported,
-					type.FullName
-				)
-			);
+			throw MissingFormatProvider(type.FullName);
 		}
 
 		/// <summary>
@@ -355,6 +314,65 @@ namespace ShapeDatabase.IO {
 		/// written to.</param>
 		public void WriteObject<T>(T type, string path) {
 			WriteObject(typeof(T), type, path);
+		}
+
+
+		/// <summary>
+		/// Deserialises the given file into the specified object type if possible.
+		/// </summary>
+		/// <param name="type">The type of object which to deserialise.</param>
+		/// <param name="path">The location of the file where everything should be
+		/// written to.</param>
+		/// <returns>The value which should be in the path.</returns>
+		public object ReadObject(Type type, string path) {
+			if (type == null)
+				throw new ArgumentNullException(nameof(type));
+			if (string.IsNullOrEmpty(path))
+				throw new ArgumentNullException(nameof(path));
+
+			// Check if there is a direct implementation for this class.
+			if (typeReaders.TryGetValue(type, out IReader reader)) {
+				return reader.ConvertFile(path);
+			// Check if there is a more generic version for the class.
+			} else {
+				foreach (KeyValuePair<Type, IReader> pair in typeReaders)
+					if (pair.Key.IsAssignableFrom(type))
+						return pair.Value.ConvertFile(path);
+			}
+			// We don't have anything that can deserialise the class.
+			throw MissingFormatProvider(type.FullName);
+		}
+
+		/// <summary>
+		/// Deserialises the given file into the specified object type if possible.
+		/// </summary>
+		/// <typeparam name="T">The type of object which to deserialise.</typeparam>
+		/// <param name="path">The location of the file where everything should be
+		/// written to.</param>
+		/// <returns>The value which should be in the path.</returns>
+		public T ReadObject<T>(string path) {
+			object result = ReadObject(typeof(T), path);
+			if (result is T value) return value;
+			else return default;
+		}
+
+		/// <summary>
+		/// Deserialises the given file into the specified object type if possible.
+		/// </summary>
+		/// <typeparam name="T">The type of object which to deserialise.</typeparam>
+		/// <param name="path">The location of the file where everything should be
+		/// written to.</param>
+		/// <param name="result">The value which should be in the path.</param>
+		/// <returns>If the value was successfully deserialised.</returns>
+		public bool TryRead<T>(string path, out T result) {
+			object obj = ReadObject(typeof(T), path);
+			if (obj is T type) {
+				result = type;
+				return true;
+			} else {
+				result = default;
+				return false;
+			}
 		}
 
 		#endregion
@@ -466,22 +484,10 @@ namespace ShapeDatabase.IO {
 			if (file == null || !file.Exists)
 				throw new ArgumentNullException(nameof(file));
 
-			if (!this.readers.TryGetValue(file.Extension.ToLower(Settings.Culture),
-										  out IReader<GeometryMesh> reader))
+			if (TryRead(file.FullName, out GeometryMesh mesh))
+				return new InfoMesh(file, mesh);
+			else
 				return InfoMesh.NULL;
-
-			;
-
-			using (StreamReader stream = File.OpenText(file.FullName)) {
-				try {
-					IMesh mesh = reader.ConvertFile(stream);
-					return new InfoMesh(file, mesh);
-				} catch (InvalidFormatException ex) {
-					Console.WriteLine(Resources.EX_FileNotLoad, file.FullName);
-					Console.WriteLine(ex);
-					return InfoMesh.NULL;
-				}
-			}
 		}
 
 
@@ -599,6 +605,21 @@ namespace ShapeDatabase.IO {
 				Directory.CreateDirectory(dir);
 				info.MoveAndOverwrite($"{dir}/{name}");
 			}
+		}
+
+		/// <summary>
+		/// Prepares an exception for if a certain file could not be read or written to.
+		/// </summary>
+		/// <param name="path">The path where to save or restore from.</param>
+		/// <returns>The exception to throw for this file.</returns>
+		private static NotSupportedException MissingFormatProvider(string path) {
+			return new NotSupportedException(
+				string.Format(
+					Settings.Culture,
+					Resources.EX_Not_Supported,
+					path
+				)
+			);
 		}
 
 		#endregion
