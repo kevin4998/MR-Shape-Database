@@ -108,7 +108,6 @@ namespace ShapeDatabase.Features.Statistics {
 		}
 
 		public virtual bool TryGetValue(string name, T helper, out object value) {
-			value = default;
 			if (CacheValues.TryGetValue(name, out value))
 				return true;
 			if (!CacheProvider.TryGetValue(name, out Func<T, ICache<T>, object> provider))

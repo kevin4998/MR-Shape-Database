@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using ShapeDatabase.Features.Statistics;
+using ShapeDatabase.Properties;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
 
@@ -19,7 +20,7 @@ namespace ShapeDatabase.UI.Console {
 				return entry;
 			if (QueryMeshes.TryGetValue(name, out entry))
 				return entry;
-			throw new ArgumentException("Mesh not found!");
+			throw new ArgumentException(Resources.EX_NoMesh);
 		}
 
 		private static int ClassCount(string className) {

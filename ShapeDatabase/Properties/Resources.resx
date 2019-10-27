@@ -349,4 +349,12 @@
     <value>evaluations.csv</value>
     <comment>The file where the analysis/evaluation of the query results will be saved to.</comment>
   </data>
+  <data name="D_SettingsFile" xml:space="preserve">
+    <value>settings.ini</value>
+    <comment>The file where all the application settings will be stored in.</comment>
+  </data>
+  <data name="EX_NoMesh" xml:space="preserve">
+    <value>Mesh not found!</value>
+    <comment>The exception which is given when a mesh is being retrieved which is not stored in our library.</comment>
+  </data>
 </root>

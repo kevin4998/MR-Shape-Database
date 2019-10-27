@@ -100,6 +100,7 @@ namespace ShapeDatabase.Features {
 			if (secondary == null)
 				throw new ArgumentNullException(nameof(secondary));
 
+			WeightManager weights = Settings.Weights;
 			DescriptorComparer comparer = DescriptorComparer.Instance;
 			IEnumerator<IDescriptor> pdescs = primary.Descriptors.GetEnumerator();
 			IEnumerator<IDescriptor> sdescs = secondary.Descriptors.GetEnumerator();
@@ -116,7 +117,7 @@ namespace ShapeDatabase.Features {
 
 				int dif = comparer.Compare(pdesc, sdesc);
 				if (dif == 0) {
-					sum += pdesc.Compare(sdesc);
+					sum += pdesc.Compare(sdesc) * weights[pdesc.Name];
 					count++;
 
 					hasNext &= pdescs.MoveNext();
@@ -132,7 +133,6 @@ namespace ShapeDatabase.Features {
 					hasNext &= sdescs.MoveNext();
 				}
 			}
-
 			// Equals weight function.
 			return (count == 0) ? 0 : sum / count;
 

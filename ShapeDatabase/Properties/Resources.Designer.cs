@@ -187,6 +187,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to settings.ini.
+        /// </summary>
+        internal static string D_SettingsFile {
+            get {
+                return ResourceManager.GetString("D_SettingsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shapes.
         /// </summary>
         internal static string D_ShapesDir {
@@ -327,6 +336,15 @@ namespace ShapeDatabase.Properties {
         internal static string EX_Missing_Ext {
             get {
                 return ResourceManager.GetString("EX_Missing_Ext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mesh not found!.
+        /// </summary>
+        internal static string EX_NoMesh {
+            get {
+                return ResourceManager.GetString("EX_NoMesh", resourceCulture);
             }
         }
         

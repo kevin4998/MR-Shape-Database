@@ -19,5 +19,5 @@
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "Code from external source.", Scope = "member", Target = "~M:ShapeDatabase.UI.Shader.SetInt(System.String,System.Int32)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA1801:Review unused parameters", Justification = "Code from external source.", Scope = "member", Target = "~M:ShapeDatabase.UI.Shader.SetInt(System.String,System.Int32)")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1724:Type names should not match namespaces", Justification = "This class is not used together with the System.Net namespace.", Scope = "type", Target = "~T:ShapeDatabase.Features.Statistics.Cache")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1724:Type names should not match namespaces", Justification = "This class is not used together with the System.Net namespace.", Scope = "type", Target = "~T:ShapeDatabase.Features.Statistics.Cache`1")]
 

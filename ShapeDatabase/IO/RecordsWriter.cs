@@ -11,7 +11,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A writer to convert a <see cref="RecordHolder"/> class into a csv formatted file.
 	/// </summary>
-	public class RecordsWriter : IWriter<IRecordHolder> {
+	class RecordsWriter : IWriter<IRecordHolder> {
 
 		#region --- Properties ---
 
@@ -24,7 +24,7 @@ namespace ShapeDatabase.IO {
 		public static RecordsWriter Instance => lazy.Value;
 
 
-		public ICollection<string> SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
 

@@ -26,7 +26,6 @@ namespace ShapeDatabase {
 	/// </summary>
     public static class Controller {
 
-
 		/// <summary>
 		/// Converts the given console arguments and
 		/// starts the application based on their input.
@@ -52,7 +51,11 @@ namespace ShapeDatabase {
 				Settings.Mode = mode | OperationModes.VIEW;
 			Settings.Culture = CultureInfo.GetCultureInfo(options.Culture);
 			Settings.ShowDebug = options.DebugMessages;
-
+			// Read the Settings.
+			string settingsFile = Settings.SettingsFile;
+			if (Settings.FileManager.TryRead(settingsFile, out TempSettings settings))
+				settings.Finalise();
+			// Start the application.
 			if (options.CleanStart) {
 				Console.WriteLine(I_StartClean);
 				string[] cachedDirs = new string[] {
@@ -86,6 +89,11 @@ namespace ShapeDatabase {
 				EvaluateQuery(QueryShapes(ExtractFeatures()));
 			if (Settings.Mode.HasFlag(OperationModes.VIEW))
 				ViewShapes(options.ShapeDirectories);
+			
+			// Finalise the program.
+			settings = new TempSettings();
+			settings.Initialise();
+			Settings.FileManager.WriteObject(settings, settingsFile);
 		}
 
 		/// <summary>
