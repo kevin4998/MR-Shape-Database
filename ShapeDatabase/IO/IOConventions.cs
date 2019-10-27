@@ -8,7 +8,7 @@ namespace ShapeDatabase.IO {
 	/// A collection of conventions which should be held along all the
 	/// IO objects of the ShapesDatabase application.
 	/// </summary>
-	public static class IOConventions {
+	static class IOConventions {
 
 		/// <summary>
 		/// The message to show that a shape is normalised.

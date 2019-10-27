@@ -14,7 +14,7 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for writing the featurevectors of the featuremanager to a csv file.
 	/// </summary>
-	public class FMWriter : IWriter<FeatureManager>
+	class FMWriter : IWriter<FeatureManager>
 	{
 
 		#region --- Properties ---
@@ -26,7 +26,7 @@ namespace ShapeDatabase.IO
 		/// Provides a writer to convert <see cref="FeatureManager"/>s into csv.
 		/// </summary>
 		public static FMWriter Instance => lazy.Value;
-		public ICollection<string> SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
 
@@ -41,11 +41,6 @@ namespace ShapeDatabase.IO
 
 		#region --- Instance Methods ---
 
-		/// <summary>
-		/// Writes featurevectors to a csv file.
-		/// </summary>
-		/// <param name="type">The featuremanager containing the featurevectors</param>
-		/// <param name="location">The streamwriter to be used</param>
 		public void WriteFile(FeatureManager type, StreamWriter writer)
 		{
 			if (type == null)
@@ -71,7 +66,7 @@ namespace ShapeDatabase.IO
 			}
 		}
 
-		void IO.IWriter.WriteFile(object type, StreamWriter writer)
+		void IWriter.WriteFile(object type, StreamWriter writer)
 			=> WriteFile(type as FeatureManager, writer);
 
 		#endregion

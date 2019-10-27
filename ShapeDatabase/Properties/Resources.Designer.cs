@@ -178,6 +178,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to settings.ini.
+        /// </summary>
+        internal static string D_SettingsFile {
+            get {
+                return ResourceManager.GetString("D_SettingsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shapes.
         /// </summary>
         internal static string D_ShapesDir {
