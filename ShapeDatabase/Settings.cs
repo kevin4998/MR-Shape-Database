@@ -77,6 +77,11 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static string QueryResultsFile { get; set; } = D_QueryFile;
 
+		/// <summary>
+		/// The file name of the application settings file.
+		/// </summary>
+		public static string SettingsFile { get; set; } = D_SettingsFile;
+
 		#endregion
 
 		// Responsible for determining application executions.

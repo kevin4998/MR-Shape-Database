@@ -34,7 +34,7 @@ namespace ShapeDatabase.IO
 
 		#region -- Instance Properties --
 
-		public ICollection<string> SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
 

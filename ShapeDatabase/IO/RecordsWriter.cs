@@ -24,7 +24,7 @@ namespace ShapeDatabase.IO {
 		public static RecordsWriter Instance => lazy.Value;
 
 
-		public ICollection<string> SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
 

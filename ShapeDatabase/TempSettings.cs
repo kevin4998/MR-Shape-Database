@@ -19,11 +19,11 @@ namespace ShapeDatabase {
 		#region --- Properties ---
 
 		private readonly IDictionary<string, double> weights
-			= new Dictionary<string, double>();
+			= new SortedDictionary<string, double>();
 		private readonly IDictionary<string, int>    variables
-			= new Dictionary<string, int>();
+			= new SortedDictionary<string, int>();
 		private readonly IDictionary<string, bool>   flow
-			= new Dictionary<string, bool>();
+			= new SortedDictionary<string, bool>();
 
 		/// <summary>
 		/// All the weights for each Descriptor during this program.

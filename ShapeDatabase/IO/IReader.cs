@@ -54,6 +54,30 @@ namespace ShapeDatabase.IO {
 	public static class ReaderEx {
 
 		/// <summary>
+		/// Checks if the current supports the provided file format.
+		/// </summary>
+		/// <param name="reader">The reader object which converts the file.</param>
+		/// <param name="extension">The extension of the file.</param>
+		/// <returns>If the reader can convert the provided file.</returns>
+		/// <exception cref="ArgumentNullException">If the given reader or extension
+		/// does not exist.</exception>
+		public static bool Supports(this IReader reader, string extension) {
+			if (reader == null)
+				throw new ArgumentNullException(nameof(reader));
+			if (string.IsNullOrEmpty(extension))
+				throw new ArgumentNullException(nameof(extension));
+
+			if (extension.Length != 0 || extension[0] == '.')
+				extension = extension.Substring(1);
+			ICollection<string> formats = reader.SupportedFormats;
+			foreach (string format in formats)
+				if (string.Equals(format, extension, StringComparison.InvariantCultureIgnoreCase))
+					return true;
+			return false;
+		}
+
+
+		/// <summary>
 		/// Transforms the given file into an object on the current thread.
 		/// </summary>
 		/// <param name="reader">The reader object which converts the file.</param>

@@ -30,10 +30,15 @@ namespace ShapeDatabase.IO {
 			refiners.Add(SimplifyRefiner.Instance);
 			refiners.Add(NormalisationRefiner.Instance);
 		}
-		private static void PopulateReaders(IDictionary<Type, IReader> dic) {
+		private static void PopulateReaders(IDictionary<Type, IReader> dic,
+											ISet<string> formats ) {
 			dic.Add(typeof(GeometryMesh),	GeomOffReader.Instance);
 			dic.Add(typeof(FeatureManager), FMReader.Instance);
 			dic.Add(typeof(TempSettings),	SettingsReader.Instance);
+
+			formats.UnionWith(GeomOffReader.Instance.SupportedFormats);
+			formats.UnionWith(FMReader.Instance.SupportedFormats);
+			formats.UnionWith(SettingsReader.Instance.SupportedFormats);
 		}
 		private static void PopulateWriters(IDictionary<Type, IWriter> dic) {
 			dic.Add(typeof(GeometryMesh),	GeomOffWriter.Instance);
@@ -78,7 +83,7 @@ namespace ShapeDatabase.IO {
 		/// Creates a new manager responsible for loading files.
 		/// </summary>
 		public FileManager() {
-			PopulateReaders(typeReaders);
+			PopulateReaders(typeReaders, formats);
 			PopulateWriters(typeWriters);
 			PopulateRefiners(refiners);
 		}
@@ -99,8 +104,10 @@ namespace ShapeDatabase.IO {
 		/// any supported file extensions.</exception>
 		public void AddReader<T>(params IReader<T>[] readers) {
 			foreach (IReader<T> reader in readers)
-				if (reader != null)
+				if (reader != null) { 
 					typeReaders.Add(typeof(T), reader);
+					formats.UnionWith(reader.SupportedFormats);
+				}
 		}
 
 		/// <summary>
@@ -330,15 +337,19 @@ namespace ShapeDatabase.IO {
 			if (string.IsNullOrEmpty(path))
 				throw new ArgumentNullException(nameof(path));
 
+			string extension = new FileInfo(path).Extension;
 			// Check if there is a direct implementation for this class.
-			if (typeReaders.TryGetValue(type, out IReader reader)) {
-				return reader.ConvertFile(path);
+			if (typeReaders.TryGetValue(type, out IReader reader)
+				&& reader.Supports(extension))
+					return reader.ConvertFile(path);
+
 			// Check if there is a more generic version for the class.
-			} else {
-				foreach (KeyValuePair<Type, IReader> pair in typeReaders)
-					if (pair.Key.IsAssignableFrom(type))
-						return pair.Value.ConvertFile(path);
-			}
+			foreach (KeyValuePair<Type, IReader> pair in typeReaders)
+				if (pair.Key.IsAssignableFrom(type)) {
+					reader = pair.Value;
+					if (reader.Supports(extension))
+						return reader.ConvertFile(path);
+				}
 			// We don't have anything that can deserialise the class.
 			throw MissingFormatProvider(type.FullName);
 		}
@@ -365,14 +376,19 @@ namespace ShapeDatabase.IO {
 		/// <param name="result">The value which should be in the path.</param>
 		/// <returns>If the value was successfully deserialised.</returns>
 		public bool TryRead<T>(string path, out T result) {
-			object obj = ReadObject(typeof(T), path);
-			if (obj is T type) {
-				result = type;
-				return true;
-			} else {
-				result = default;
-				return false;
+			result = default;
+			if (string.IsNullOrEmpty(path) || !File.Exists(path)) return false;
+
+			try { 
+				if (ReadObject(typeof(T), path) is T type) {
+					result = type;
+					return true;
+				} 
+			} catch (NotSupportedException) {
+				// We don't care about the exception since it didn't work.
+				// So ignore and continue.
 			}
+			return false;
 		}
 
 		#endregion
@@ -411,9 +427,13 @@ namespace ShapeDatabase.IO {
 					pdirs.Enqueue(subdir);
 
 				FileInfo[] files  = dir.GetFiles();
-				foreach (FileInfo file in files)
-					if (formats.Contains(file.Extension.ToLower(Settings.Culture)))
+				foreach (FileInfo file in files) {
+					string extension = file.Extension
+											.Substring(1)
+											.ToLower(Settings.Culture);
+					if (formats.Contains(extension))
 						pfiles.Enqueue(file);
+				}
 
 			}
 
