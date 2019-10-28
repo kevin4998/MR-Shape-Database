@@ -62,9 +62,9 @@ namespace ShapeDatabase {
 					Settings.ShapeFailedDir,
 					Settings.ShapeFinalDir,
 					Settings.ShapeTempDir,
+					Settings.FeatureVectorDir,
 					Settings.MeasurementsDir,
-					Settings.QueryDir,
-					Settings.FeatureVectorDir
+					Settings.QueryDir
 				};
 				foreach (string dir in cachedDirs) {
 					DirectoryInfo info = new DirectoryInfo(dir);
@@ -76,7 +76,8 @@ namespace ShapeDatabase {
 
 			Console.WriteLine(I_EndProc_Input);
 			// Start program activity.
-			LoadFinalFiles();
+			if (Settings.UseCacheData)
+				LoadFinalFiles();
 			if (Settings.Mode.HasFlag(OperationModes.REFINE))
 				RefineShapes(options.ShapeDirectories);
 			if (Settings.Mode.HasFlag(OperationModes.MEASURE))
@@ -225,10 +226,16 @@ namespace ShapeDatabase {
 			Directory.CreateDirectory(directory);
 			string location = Path.Combine(directory, filename);
 
-			FeatureManager manager;
+			// Attempt to retrieve form cache.
+			if (Settings.UseCacheData
+				&& Settings.FileManager.TryRead(location, out FeatureManager manager)) {
 
-			if (!Settings.ReadVectorFile)
-			{
+				Console.WriteLine(I_Feature_Imp, location);
+				return manager;
+			
+			// Recalculate if it is not there.
+			} else {
+
 				Console.WriteLine(I_StartProc_Feature);
 
 				manager = new FMBuilder().Build();
@@ -236,22 +243,10 @@ namespace ShapeDatabase {
 
 				Console.WriteLine(I_EndProc_Feature);
 
-				ShowShapeCount();
 				Settings.FileManager.WriteObject(manager, location);
-
 				Console.WriteLine(I_Feature_Exp, location);
+				return manager;
 			}
-			else
-			{
-				using (StreamReader reader = new StreamReader(location))
-				{
-					manager = FMReader.Instance.ConvertFile(reader);
-				}
-
-				Console.WriteLine(I_Feature_Imp, location);
-			}
-
-			return manager;
 		}
 
 		/// <summary>
@@ -279,7 +274,11 @@ namespace ShapeDatabase {
 			{
 				Console.WriteLine(I_Query_Exp);
 
-				string location = Settings.QueryDir + "/" + Settings.QueryResultsFile;
+				string directory = Settings.QueryDir;
+				string filename = Settings.QueryResultsFile;
+				if (!Directory.Exists(directory))
+					Directory.CreateDirectory(directory);
+				string location = Path.Combine(directory, filename);
 				Settings.FileManager.WriteObject(queryResults, location);
 			}
 
@@ -301,11 +300,9 @@ namespace ShapeDatabase {
 		/// </summary>
 		static void ShowQueryResults(QueryResult[] results)
 		{
-			Console.WriteLine($"{results.Length} Query Results:");
+			Console.WriteLine(I_QueryCount, results.Length);
 			foreach (QueryResult queryResult in results)
-			{
-				Console.WriteLine($"\t- {queryResult.QueryName} : {string.Join(", ", queryResult.Results.Select(x => x.MeshName + "(" + x.MeshDistance + ")"))}");
-			}
+				Console.WriteLine($"\t- {queryResult}");
 		}
 
 		/// <summary>

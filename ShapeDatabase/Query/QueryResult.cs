@@ -74,6 +74,7 @@ namespace ShapeDatabase.Query {
 			results.Clear();
 		}
 
+
 		/// <summary>
 		/// A new compared item to add to the collection.
 		/// </summary>
@@ -99,6 +100,7 @@ namespace ShapeDatabase.Query {
 		/// item. The larger the distance the further it is from the reference item.
 		/// </param>
 		public void AddItem(string name, double distance) => AddItem(new QueryItem(name, distance));
+
 
 		/// <summary>
 		/// Gives the best results from the query object as an array.
@@ -127,6 +129,16 @@ namespace ShapeDatabase.Query {
 			for (int i = 0; i < count; i++)
 				result[i] = results[i];
 			return result;
+		}
+
+
+		public override string ToString() {
+			return string.Format(
+				Settings.Culture,
+				"{0} : {1}",
+				QueryName,
+				string.Join(", ", Results)
+			);
 		}
 
 		#endregion

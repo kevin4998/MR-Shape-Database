@@ -117,9 +117,9 @@ namespace ShapeDatabase {
 		public static bool DirectShutDown { get; set; } = false;
 
 		/// <summary>
-		/// States whether the featuremanager should be created by reading a vectorfile.
+		/// Describes if cache values should be read and used to speed up the process.
 		/// </summary>
-		public static bool ReadVectorFile { get; set; } = false;
+		public static bool UseCacheData { get; set; } = true;
 
 		/// <summary>
 		/// States whether the query results should be saved (in QueryDir)

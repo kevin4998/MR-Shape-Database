@@ -502,6 +502,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} Query Results:.
+        /// </summary>
+        internal static string I_QueryCount {
+            get {
+                return ResourceManager.GetString("I_QueryCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} Shapes are available:.
         /// </summary>
         internal static string I_ShapeCount {
