@@ -40,7 +40,7 @@ namespace ShapeDatabase.Features {
 		/// </summary>
 		/// <param name="vectors">The featurevectors to be added to the FMBuilder</param>
 		/// <param name="calculators">The descriptor calculator delegates to be added to the FMBuilder</param>
-		public FMBuilder(Dictionary<string, FeatureVector> vectors,
+		public FMBuilder(IDictionary<string, FeatureVector> vectors,
 						 params FeatureManager.DescriptorCalculator[] calculators) {
 			Values = vectors ?? throw new ArgumentNullException(nameof(vectors));
 			Calculators = new List<FeatureManager.DescriptorCalculator>();

@@ -3,6 +3,7 @@ using ShapeDatabase.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace ShapeDatabase.Features {
 	/// <summary>
 	/// A class to represent a collection of descriptor values for a shape.
 	/// </summary>
+	[DebuggerDisplay("Count = {DescriptorCount}")]
 	public class FeatureVector : Util.IComparable<FeatureVector> {
 
 		#region --- Properties ---

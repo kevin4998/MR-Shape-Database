@@ -39,6 +39,10 @@ namespace ShapeDatabase.Features.Descriptors
 		/// </summary>
 		public IEnumerable<FeatureVector> FeatureVectors => features.Values;
 		/// <summary>
+		/// The total amount of features stored in this manager.
+		/// </summary>
+		public int FeatureCount => features.Count;
+		/// <summary>
 		/// IList of all descriptor calculater delegates.
 		/// </summary>
 		public IList<DescriptorCalculator> DescriptorCalculators { get; }

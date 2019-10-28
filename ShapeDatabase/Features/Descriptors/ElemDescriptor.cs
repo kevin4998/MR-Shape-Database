@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace ShapeDatabase.Features.Descriptors
 	/// <summary>
 	/// A descriptor which can summarise the shape with a single value.
 	/// </summary>
+	[DebuggerDisplay("{Name}: {Value}")]
 	public class ElemDescriptor : BaseDescriptor<ElemDescriptor> {
 
 		#region --- Properties ---
@@ -18,11 +20,6 @@ namespace ShapeDatabase.Features.Descriptors
 		/// Value of the elementary descriptor
 		/// </summary>
 		public double Value { get; }
-
-		/// <summary>
-		/// Weight of the elementary descriptor
-		/// </summary>
-		public double Weight { get; } = 1;
 
 		#endregion
 

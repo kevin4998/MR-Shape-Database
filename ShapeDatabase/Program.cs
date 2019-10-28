@@ -5,7 +5,6 @@ using ShapeDatabase.Properties;
 
 // Define what the default languages is for this application.
 // We do NOT define the US or Great Brittain constant on purpose.
-[assembly:NeutralResourcesLanguage("en")]
 namespace ShapeDatabase {
 
 	class Program {

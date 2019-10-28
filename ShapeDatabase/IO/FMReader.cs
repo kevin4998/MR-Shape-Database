@@ -63,7 +63,7 @@ namespace ShapeDatabase.IO
 			if (reader.EndOfStream)
 				throw new ArgumentException(Resources.EX_EndOfStream);
 
-			Dictionary<string, FeatureVector> featureVectors = GetFeatureVectors(reader);
+			IDictionary<string, FeatureVector> featureVectors = GetFeatureVectors(reader);
 
 			return new FMBuilder(featureVectors).Build();
 		}
@@ -79,15 +79,21 @@ namespace ShapeDatabase.IO
 		/// </summary>
 		/// <param name="reader">The streamreader of the csv</param>
 		/// <returns>Dictionary with featurevectors per meshname</returns>
-		private Dictionary<string, FeatureVector> GetFeatureVectors(StreamReader reader)
+		private IDictionary<string, FeatureVector> GetFeatureVectors(StreamReader reader)
 		{
-			Dictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
+			IDictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
 
 			using (CsvReader csv = new CsvReader(reader)) {
+				csv.Configuration.Delimiter =
+					Settings.Culture.TextInfo.ListSeparator;
+				csv.Configuration.IgnoreBlankLines = true;
+				// Csv syntax for reading headers.
+				csv.Read();
+				csv.ReadHeader();
 				// Read the header, to see which measures there are.
-				IEnumerable<string> names = csv.GetRecords<string>();
+				IEnumerable<string> names = csv.Context.HeaderRecord;
 				// Find the individual values.
-				do {
+				while (csv.Read()) { 
 					// Check to see if there is an entry here.
 					if (!csv.TryGetField(IOConventions.MeshName, out string name))
 						break;
@@ -100,7 +106,7 @@ namespace ShapeDatabase.IO
 					// Combine them and save them as a vector.
 					FeatureVector vector = new FeatureVector(descriptors.ToArray());
 					featureVectors.Add(name, vector);
-				} while (csv.Read());
+				}
 			}
 
 			return featureVectors;

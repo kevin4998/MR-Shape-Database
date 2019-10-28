@@ -51,11 +51,11 @@ namespace ShapeDatabase.Features
 		/// Function for normalising featurevectors.
 		/// </summary>
 		/// <param name="vectors">The vectors to be normalised.</param>
-		public void NormaliseVectors(
-										ref IDictionary<string, FeatureVector> vectors)
+		public void NormaliseVectors(ref IDictionary<string, FeatureVector> vectors)
 		{
 			if (vectors == null) throw new ArgumentNullException(nameof(vectors));
 			if (vectors.Count == 0) return;
+			if (MinMaxValues.Count == 0) UpdateMinMaxDictionary(vectors);
 			
 			foreach(KeyValuePair<string, FeatureVector> pair in vectors.ToArray()) { 
 				string name = pair.Key;

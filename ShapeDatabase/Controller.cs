@@ -228,7 +228,8 @@ namespace ShapeDatabase {
 
 			// Attempt to retrieve form cache.
 			if (Settings.UseCacheData
-				&& Settings.FileManager.TryRead(location, out FeatureManager manager)) {
+				&& Settings.FileManager.TryRead(location, out FeatureManager manager)
+				&& manager.FeatureCount != 0) {
 
 				Console.WriteLine(I_Feature_Imp, location);
 				return manager;

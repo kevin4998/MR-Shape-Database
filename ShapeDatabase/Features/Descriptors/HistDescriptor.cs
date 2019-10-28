@@ -1,8 +1,8 @@
-﻿using Accord.Diagnostics;
-using ShapeDatabase.Properties;
+﻿using ShapeDatabase.Properties;
 using ShapeDatabase.Util;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +14,7 @@ namespace ShapeDatabase.Features.Descriptors {
 	/// These values are stored by making use if histograms where the values
 	/// are grouped in buckets or bins.
 	/// </summary>
+	[DebuggerDisplay("{Name}: [{BinCount}]")]
 	public class HistDescriptor : BaseDescriptor<HistDescriptor> {
 
 		#region --- Properties ---
@@ -36,11 +37,6 @@ namespace ShapeDatabase.Features.Descriptors {
 		private float[] BinValues { get; }
 
 		public int BinCount => BinValues.Length;
-
-		/// <summary>
-		/// Weight of the histogram descriptor
-		/// </summary>
-		public double Weight { get; } = 1;
 
 		#endregion
 

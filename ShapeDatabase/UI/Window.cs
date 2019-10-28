@@ -115,7 +115,7 @@ namespace ShapeDatabase.UI {
 			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
 			GL.BufferData(BufferTarget.ArrayBuffer, _vertices.Length * sizeof(float), _vertices, BufferUsageHint.StaticDraw);
 
-			_lightingShader = new Shader("UI/shader.vert", "UI/lighting.frag");
+			_lightingShader = new Shader("Content/UI/shader.vert", "Content/UI/lighting.frag");
 			
 			_vaoModel = GL.GenVertexArray();
 			GL.BindVertexArray(_vaoModel);

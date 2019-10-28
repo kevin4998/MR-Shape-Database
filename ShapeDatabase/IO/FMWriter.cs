@@ -47,8 +47,13 @@ namespace ShapeDatabase.IO
 				throw new ArgumentNullException(nameof(type));
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
+			if (type.FeatureCount == 0)
+				return;
 
 			using (CsvWriter csv = new CsvWriter(writer)) {
+				csv.Configuration.Delimiter =
+					Settings.Culture.TextInfo.ListSeparator;
+
 				// First line containing the headers.
 				csv.WriteField(IOConventions.MeshName);
 				foreach (string name in type.DescriptorNames)
