@@ -60,12 +60,11 @@ namespace ShapeDatabase.IO
 		{
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
-			if (reader.EndOfStream)
-				throw new ArgumentException(Resources.EX_EndOfStream);
 
-			IDictionary<string, FeatureVector> featureVectors = GetFeatureVectors(reader);
-
-			return new FMBuilder(featureVectors).Build();
+			FMBuilder builder = new FMBuilder();
+			if (!reader.EndOfStream)
+				builder.AddFeatures(GetFeatureVectors(reader));
+			return builder.Build();
 		}
 
 		object IO.IReader.ConvertFile(StreamReader reader) => ConvertFile(reader);

@@ -264,10 +264,14 @@ namespace ShapeDatabase {
 			QueryResult[] queryResults = new QueryResult[queryItems];
 			int nextElement = -1;	// Increment returns the new value.
 
-			Parallel.ForEach(Settings.QueryLibrary.Meshes, mesh => {
-				int position = Interlocked.Increment(ref nextElement);
-				queryResults[position] = DatabaseFM.CalculateResults(mesh);
-			});
+			if (Settings.MeshLibrary.Count == 0)
+				foreach (MeshEntry entry in Settings.QueryLibrary.Meshes)
+					queryResults[++nextElement] = new QueryResult(entry.Name);
+			else
+				Parallel.ForEach(Settings.QueryLibrary.Meshes, mesh => {
+					int position = Interlocked.Increment(ref nextElement);
+					queryResults[position] = DatabaseFM.CalculateResults(mesh);
+				});
 
 			Console.WriteLine(I_EndProc_Query);
 
