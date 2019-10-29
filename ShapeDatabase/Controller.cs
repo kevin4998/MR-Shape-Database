@@ -56,24 +56,8 @@ namespace ShapeDatabase {
 			if (Settings.FileManager.TryRead(settingsFile, out TempSettings settings))
 				settings.Finalise();
 			// Start the application.
-			if (options.CleanStart) {
-				Console.WriteLine(I_StartClean);
-				string[] cachedDirs = new string[] {
-					Settings.ShapeFailedDir,
-					Settings.ShapeFinalDir,
-					Settings.ShapeTempDir,
-					Settings.FeatureVectorDir,
-					Settings.MeasurementsDir,
-					Settings.QueryDir
-				};
-				foreach (string dir in cachedDirs) {
-					DirectoryInfo info = new DirectoryInfo(dir);
-					if(info.Exists)			
-						info.Delete(true);
-				}
-				Console.WriteLine(I_EndClean);
-			}
-
+			if (options.CleanStart)
+				TryClean();
 			Console.WriteLine(I_EndProc_Input);
 			// Start program activity.
 			if (Settings.UseCacheData)
@@ -88,6 +72,8 @@ namespace ShapeDatabase {
 				QueryShapes(ExtractFeatures());
 			if (Settings.Mode.HasFlag(OperationModes.EVALUATE))
 				EvaluateQuery(QueryShapes(ExtractFeatures()));
+			if (Settings.Mode == OperationModes.VIEW)	// Special mode if you want to view unrefined shapes.
+				LoadNewFiles(options.ShapeDirectories, false);
 			if (Settings.Mode.HasFlag(OperationModes.VIEW))
 				ViewShapes(options.ShapeDirectories);
 			
@@ -109,6 +95,33 @@ namespace ShapeDatabase {
 		}
 
 
+		/// <summary>
+		/// Attempts to clean the solution if the parameter is set.
+		/// </summary>
+		static void TryClean() {
+			Console.WriteLine(I_StartClean);
+			string[] cachedDirs = new string[] {
+				Settings.ShapeFailedDir,
+				Settings.ShapeFinalDir,
+				Settings.ShapeTempDir,
+				Settings.FeatureVectorDir,
+				Settings.MeasurementsDir,
+				Settings.QueryDir
+			};
+			foreach (string dir in cachedDirs) {
+				DirectoryInfo info = new DirectoryInfo(dir);
+				if (info.Exists)
+					info.Delete(true);
+			}
+			string[] cachedFiles = new string[] {
+				Settings.SettingsFile
+			};
+			foreach (string file in cachedFiles) {
+				FileInfo info = new FileInfo(file);
+				if (info.Exists)
+					info.Delete();
+			}
+		}
 
 		/// <summary>
 		/// Refinement mode for the application.
@@ -189,8 +202,6 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
 		static void ViewShapes(IEnumerable<string> dirs) {
-			LoadNewFiles(dirs, false);
-
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 			// Notify the user of their options.
 			ShowShapeCount();

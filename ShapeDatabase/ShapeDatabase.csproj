@@ -96,7 +96,7 @@
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="for /r &quot;$(TargetDir)&quot; %25%25x in (*.dll) do move &quot;%25%25x&quot; &quot;$(TargetDir)Libs&quot;" />
+    <Exec Command="for /r &quot;$(TargetDir)&quot; %25%25x in (*.dll) do move &quot;%25%25x&quot; &quot;$(TargetDir)Libs&quot;&#xD;&#xA;move &quot;$(TargetDir)Accord.dll.config&quot; &quot;$(TargetDir)Libs/Accord.dll.config&quot;" />
   </Target>
 
 </Project>

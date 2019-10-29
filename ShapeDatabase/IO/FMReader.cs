@@ -90,7 +90,7 @@ namespace ShapeDatabase.IO
 				csv.Read();
 				csv.ReadHeader();
 				// Read the header, to see which measures there are.
-				IEnumerable<string> names = csv.Context.HeaderRecord;
+				string[] descNames = FilterDescriptors(csv.Context.HeaderRecord);
 				// Find the individual values.
 				while (csv.Read()) { 
 					// Check to see if there is an entry here.
@@ -98,7 +98,7 @@ namespace ShapeDatabase.IO
 						break;
 					// Collect all the descriptors from the CSV.
 					IList<IDescriptor> descriptors = new List<IDescriptor>();
-					foreach(string descName in names)
+					foreach(string descName in descNames)
 						if (csv.TryGetField(descName, out string serialisedDesc))
 							if (TryDeserialise(descName, serialisedDesc, out IDescriptor desc))
 								descriptors.Add(desc);
@@ -109,6 +109,15 @@ namespace ShapeDatabase.IO
 			}
 
 			return featureVectors;
+		}
+
+		// Get only the descriptors from the headers.
+		private static string[] FilterDescriptors(string[] names) {
+			// Name fix because the first element is the name not a descriptor
+			string[] descNames = new string[names.Length - 1];
+			for (int i = 0; i < descNames.Length; i++)
+				descNames[i++] = names[i];
+			return descNames;
 		}
 
 		private static bool TryDeserialise(string name, string serialised,
