@@ -75,7 +75,7 @@ namespace ShapeDatabase {
 			if (Settings.Mode == OperationModes.VIEW)	// Special mode if you want to view unrefined shapes.
 				LoadNewFiles(options.ShapeDirectories, false);
 			if (Settings.Mode.HasFlag(OperationModes.VIEW))
-				ViewShapes(options.ShapeDirectories);
+				ViewShapes();
 			
 			// Finalise the program.
 			settings = new TempSettings();
@@ -201,7 +201,7 @@ namespace ShapeDatabase {
 		/// and let the user view and analyse them themselves.
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
-		static void ViewShapes(IEnumerable<string> dirs) {
+		static void ViewShapes() {
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 			// Notify the user of their options.
 			ShowShapeCount();
