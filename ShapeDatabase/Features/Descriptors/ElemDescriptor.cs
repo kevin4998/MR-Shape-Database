@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,7 +74,9 @@ namespace ShapeDatabase.Features.Descriptors
 			if (string.IsNullOrEmpty(serialised))
 				throw new ArgumentNullException(nameof(serialised));
 
-			if (double.TryParse(serialised, out double value)) {
+			IFormatProvider format = Settings.Culture;
+			NumberStyles style = NumberStyles.Any;
+			if (double.TryParse(serialised, style, format, out double value)) {
 				desc = new ElemDescriptor(name, value);
 				return true;
 			}
