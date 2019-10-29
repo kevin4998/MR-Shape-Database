@@ -47,9 +47,9 @@ namespace ShapeDatabase.Refine {
 		/// <param name="mesh">The mesh to check for refinement.</param>
 		/// <returns><see langword="true"/> if a refinement operation is needed
 		/// for an optimal shape.</returns>
-		public bool RequireRefinement(Shapes.IMesh mesh)
-		{
-			if (mesh == null) throw new ArgumentNullException(nameof(mesh));
+		public bool RequireRefinement(Shapes.IMesh mesh) {
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
 			return mesh.VertexCount != Settings.RefineVertexNumber;
 		}
 		/// <summary>
@@ -77,8 +77,7 @@ namespace ShapeDatabase.Refine {
 			};
 
 			int i = 0;
-			while (meshDMesh3.VertexCount < Settings.RefineVertexNumber && i < Settings.MaxRefineIterations)
-			{
+			while (meshDMesh3.VertexCount < Settings.RefineVertexNumber && i < Settings.MaxRefineIterations) {
 				remesher.SetTargetEdgeLength(0.0001F);
 				remesher.BasicRemeshPass();
 				i++;
@@ -253,7 +252,7 @@ namespace ShapeDatabase.Refine {
 			OpenTK.Vector3d totalSum = new OpenTK.Vector3d();
 			double totalArea = 0;
 
-			foreach(Vector3 face in mesh.Faces) {
+			foreach (Vector3 face in mesh.Faces) {
 
 				Vector3[] vertices = mesh.GetVerticesFromFace(face);
 
@@ -276,7 +275,7 @@ namespace ShapeDatabase.Refine {
 				throw new ArgumentNullException(nameof(points));
 
 			Vector3 result = new Vector3();
-			for(int i = 2; i >= 0; i--)
+			for (int i = 2; i >= 0; i--)
 				result += points[i];
 			return result / 3;
 		}
@@ -319,7 +318,7 @@ namespace ShapeDatabase.Refine {
 															currentVector);
 				vectors[i] = newVector.AsVector();
 			}*/
-			
+
 
 			// Provide the new positions into the mesh.
 			Shapes.SimpleMesh simple = Shapes.SimpleMesh.CreateFrom(mesh);

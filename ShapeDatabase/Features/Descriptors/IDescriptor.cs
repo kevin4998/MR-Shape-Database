@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ShapeDatabase.Util;
 
-namespace ShapeDatabase.Features.Descriptors
-{
+namespace ShapeDatabase.Features.Descriptors {
 	/// <summary>
 	/// An interface to specify descriptions or features of shapes.
 	/// </summary>

@@ -1,21 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Collections.Generic;
 using OpenTK;
 using OpenTK.Graphics.OpenGL4;
 
 
-namespace ShapeDatabase.UI
-{
-	public class Shader
-	{
+namespace ShapeDatabase.UI {
+	public class Shader {
 		public int Handle { get; private set; }
 
 		private readonly Dictionary<string, int> _uniformLocations;
 
-		public Shader(string vertPath, string fragPath)
-		{
+		public Shader(string vertPath, string fragPath) {
 			// Load vertex shader and compile
 			// LoadSource is a simple function that just loads all text from the file whose path is given.
 			string shaderSource = LoadSource(vertPath);
@@ -64,8 +61,7 @@ namespace ShapeDatabase.UI
 			_uniformLocations = new Dictionary<string, int>();
 
 			// Loop over all the uniforms,
-			for (int i = 0; i < numberOfUniforms; i++)
-			{
+			for (int i = 0; i < numberOfUniforms; i++) {
 				// get the name of this uniform,
 				string key = GL.GetActiveUniform(Handle, i, out _, out _);
 
@@ -78,29 +74,25 @@ namespace ShapeDatabase.UI
 		}
 
 
-		private static void CompileShader(int shader)
-		{
+		private static void CompileShader(int shader) {
 			// Try to compile the shader
 			GL.CompileShader(shader);
 
 			// Check for compilation errors
 			GL.GetShader(shader, ShaderParameter.CompileStatus, out int code);
-			if (code != (int)All.True)
-			{
+			if (code != (int) All.True) {
 				// We can use `GL.GetShaderInfoLog(shader)` to get information about the error.
 				throw new Exception($"Error occurred whilst compiling Shader({shader})");
 			}
 		}
 
-		private static void LinkProgram(int program)
-		{
+		private static void LinkProgram(int program) {
 			// We link the program
 			GL.LinkProgram(program);
 
 			// Check for linking errors
 			GL.GetProgram(program, GetProgramParameterName.LinkStatus, out int code);
-			if (code != (int)All.True)
-			{
+			if (code != (int) All.True) {
 				// We can use `GL.GetProgramInfoLog(program)` to get information about the error.
 				throw new Exception($"Error occurred whilst linking Program({program})");
 			}
@@ -108,25 +100,21 @@ namespace ShapeDatabase.UI
 
 
 		// A wrapper function that enables the shader program.
-		public void Use()
-		{
+		public void Use() {
 			GL.UseProgram(Handle);
 		}
 
 
 		// The shader sources provided with this project use hardcoded layout(location)-s. If you want to do it dynamically,
 		// you can omit the layout(location=X) lines in the vertex shader, and use this in VertexAttribPointer instead of the hardcoded values.
-		public int GetAttribLocation(string attribName)
-		{
+		public int GetAttribLocation(string attribName) {
 			return GL.GetAttribLocation(Handle, attribName);
 		}
 
 
 		// Just loads the entire file into a string.
-		private static string LoadSource(string path)
-		{
-			using (StreamReader sr = new StreamReader(path, Encoding.UTF8))
-			{
+		private static string LoadSource(string path) {
+			using (StreamReader sr = new StreamReader(path, Encoding.UTF8)) {
 				return sr.ReadToEnd();
 			}
 		}
@@ -145,8 +133,7 @@ namespace ShapeDatabase.UI
 		/// </summary>
 		/// <param name="name">The name of the uniform</param>
 		/// <param name="data">The data to set</param>
-		public void SetInt(string name, int data)
-		{
+		public void SetInt(string name, int data) {
 			GL.UseProgram(Handle);
 		}
 
@@ -155,8 +142,7 @@ namespace ShapeDatabase.UI
 		/// </summary>
 		/// <param name="name">The name of the uniform</param>
 		/// <param name="data">The data to set</param>
-		public void SetFloat(string name, float data)
-		{
+		public void SetFloat(string name, float data) {
 			GL.UseProgram(Handle);
 			GL.Uniform1(_uniformLocations[name], data);
 		}
@@ -171,8 +157,7 @@ namespace ShapeDatabase.UI
 		///   The matrix is transposed before being sent to the shader.
 		///   </para>
 		/// </remarks>
-		public void SetMatrix4(string name, Matrix4 data)
-		{
+		public void SetMatrix4(string name, Matrix4 data) {
 			GL.UseProgram(Handle);
 			GL.UniformMatrix4(_uniformLocations[name], true, ref data);
 		}
@@ -182,8 +167,7 @@ namespace ShapeDatabase.UI
 		/// </summary>
 		/// <param name="name">The name of the uniform</param>
 		/// <param name="data">The data to set</param>
-		public void SetVector3(string name, Vector3 data)
-		{
+		public void SetVector3(string name, Vector3 data) {
 			GL.UseProgram(Handle);
 			GL.Uniform3(_uniformLocations[name], data);
 		}

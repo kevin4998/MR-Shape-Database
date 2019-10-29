@@ -36,7 +36,8 @@ namespace ShapeDatabase.IO {
 		#region --- Instance Methods ---
 
 		public GeometryMesh ConvertFile(StreamReader reader) {
-			if (reader == null) throw new ArgumentNullException(nameof(reader));
+			if (reader == null)
+				throw new ArgumentNullException(nameof(reader));
 
 			Thread.CurrentThread.CurrentCulture = Settings.Culture;
 			DMesh3 mesh = StandardMeshReader.ReadMesh(reader.BaseStream, "off");

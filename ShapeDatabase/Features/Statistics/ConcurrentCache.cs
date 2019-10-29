@@ -80,7 +80,7 @@ namespace ShapeDatabase.Features.Statistics {
 
 			if (!CacheLocks.TryGetValue(lockName, out object _lock))
 				lock (CacheLocks) {
-					if (!CacheLocks.TryGetValue(lockName, out _lock)) { 
+					if (!CacheLocks.TryGetValue(lockName, out _lock)) {
 						_lock = new object();
 						CacheLocks.Add(lockName, _lock);
 					}
@@ -104,7 +104,7 @@ namespace ShapeDatabase.Features.Statistics {
 
 
 		public override ICache<T> AddLazyValue(string name, Func<T, ICache<T>, object> provider) {
-			lock (GetLock(name)) { 
+			lock (GetLock(name)) {
 				base.AddLazyValue(name, provider);
 				Interlocked.Increment(ref version);
 				return this;
@@ -130,7 +130,7 @@ namespace ShapeDatabase.Features.Statistics {
 
 
 		public override void Clear() {
-			lock (CacheLocks) { 
+			lock (CacheLocks) {
 				base.Clear();
 			}
 		}

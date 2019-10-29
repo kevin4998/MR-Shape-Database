@@ -4,7 +4,7 @@ using CommandLine;
 using CommandLine.Text;
 
 namespace ShapeDatabase {
-	
+
 	/// <summary>
 	/// A custom options class for easier command line argument handling.
 	/// </summary>
@@ -66,8 +66,8 @@ namespace ShapeDatabase {
 		public static IEnumerable<Example> Examples {
 			get {
 				yield return new Example("Initial Library", new Options() { ShapeDirectories = new string[] { "Content/Shapes/Initial" } });
-				yield return new Example("Small Library",	new Options() { ShapeDirectories = new string[] { "Content/Shapes/Small" } });
-				yield return new Example("All Libraries",	new Options() { ShapeDirectories = new string[] { "Content/Shapes/Initial", "Content/Shapes/Original" } });
+				yield return new Example("Small Library", new Options() { ShapeDirectories = new string[] { "Content/Shapes/Small" } });
+				yield return new Example("All Libraries", new Options() { ShapeDirectories = new string[] { "Content/Shapes/Initial", "Content/Shapes/Original" } });
 			}
 		}
 

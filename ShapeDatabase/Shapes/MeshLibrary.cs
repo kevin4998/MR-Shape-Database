@@ -1,7 +1,7 @@
-﻿using ShapeDatabase.Features.Descriptors;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ShapeDatabase.Features.Descriptors;
 
 namespace ShapeDatabase.Shapes {
 
@@ -164,7 +164,7 @@ namespace ShapeDatabase.Shapes {
 		/// </summary>
 		/// <param name="name">The unique name for this shape.</param>
 		/// <param name="mesh">The actual 3 dimensional shape.</param>
-		public MeshEntry(string name, IMesh mesh) 
+		public MeshEntry(string name, IMesh mesh)
 			: this(name, null, mesh) { }
 		/// <summary>
 		/// Creates a new entry to be used in the <see cref="MeshLibrary"/>

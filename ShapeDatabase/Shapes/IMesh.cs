@@ -93,7 +93,7 @@ namespace ShapeDatabase.Shapes {
 				mesh.GetVertex((uint) face.Z)
 			};
 		}
-		
+
 
 		public static double GetTriArea(this IMesh mesh, uint pos) {
 			if (mesh == null)

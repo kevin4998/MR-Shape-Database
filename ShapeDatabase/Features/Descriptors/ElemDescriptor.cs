@@ -7,8 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ShapeDatabase.Util;
 
-namespace ShapeDatabase.Features.Descriptors
-{
+namespace ShapeDatabase.Features.Descriptors {
 	/// <summary>
 	/// A descriptor which can summarise the shape with a single value.
 	/// </summary>
@@ -33,7 +32,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <param name="value">Value of the descritor</param>
 		/// <exception cref="ArgumentNullException">If the name is <see langword="null"/>.
 		/// </exception>
-		public ElemDescriptor(string name, double value) 
+		public ElemDescriptor(string name, double value)
 			: base(name) {
 			Value = value;
 		}

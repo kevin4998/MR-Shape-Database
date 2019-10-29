@@ -12,9 +12,9 @@ namespace ShapeDatabase.Shapes {
 		float MaxY { get; }
 		float MaxZ { get; }
 
-		float Width { get; }	// X difference
-		float Height { get; }	// Y difference
-		float Depth { get; }	// Z difference
+		float Width { get; }    // X difference
+		float Height { get; }   // Y difference
+		float Depth { get; }    // Z difference
 
 		float Volume { get; }
 

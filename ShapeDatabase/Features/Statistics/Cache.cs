@@ -53,7 +53,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// </summary>
 		/// <param name="values">The collection of values to add to the cache.</param>
 		public Cache(params (string, object)[] values) {
-			foreach((string name, object value) in values)
+			foreach ((string name, object value) in values)
 				if (!string.IsNullOrEmpty(name))
 					CacheValues.Add(name, value);
 		}
@@ -74,7 +74,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// </summary>
 		/// <param name="providers">The collection of methods to add to the cache.</param>
 		public Cache(params (string, Func<T, ICache<T>, object>)[] providers) {
-			foreach((string name, Func<T, ICache<T>, object> provider) in providers)
+			foreach ((string name, Func<T, ICache<T>, object> provider) in providers)
 				if (!string.IsNullOrEmpty(name) && provider != null)
 					CacheProvider.Add(name, provider);
 		}
@@ -96,7 +96,7 @@ namespace ShapeDatabase.Features.Statistics {
 		public virtual ICache<T> AddValue(string name, object value) {
 			if (string.IsNullOrEmpty(name))
 				throw new ArgumentNullException(nameof(name));
-			
+
 			CacheValues.Add(name, value);
 			return this;
 		}

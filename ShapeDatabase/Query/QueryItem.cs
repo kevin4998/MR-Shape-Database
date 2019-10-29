@@ -103,10 +103,14 @@ namespace ShapeDatabase.Query {
 
 	public class QueryItemComparer : IComparer<QueryItem> {
 		public int Compare(QueryItem x, QueryItem y) {
-			if (x == y)		return 0;
-			if (x.IsNull)	return int.MaxValue;
-			if (y.IsNull)	return int.MinValue;
-			else			return x.CompareTo(y);
+			if (x == y)
+				return 0;
+			if (x.IsNull)
+				return int.MaxValue;
+			if (y.IsNull)
+				return int.MinValue;
+			else
+				return x.CompareTo(y);
 		}
 
 	}

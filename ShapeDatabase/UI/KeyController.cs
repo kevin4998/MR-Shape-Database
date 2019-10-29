@@ -1,8 +1,8 @@
-﻿using OpenTK;
-using OpenTK.Input;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using OpenTK;
+using OpenTK.Input;
 
 namespace ShapeDatabase.UI {
 
@@ -23,9 +23,9 @@ namespace ShapeDatabase.UI {
 		/// This can be used for checking timings.</param>
 		public delegate void KeyBindAction(KeyboardState input, FrameEventArgs e);
 
-		private IDictionary<Key, ICollection<KeyBindAction>> DownKeybinds	{ get; }
-		private IDictionary<Key, ICollection<KeyBindAction>> UpKeybinds	{ get; }
-		private IDictionary<Key, ICollection<KeyBindAction>> HoldKeybinds	{ get; }
+		private IDictionary<Key, ICollection<KeyBindAction>> DownKeybinds { get; }
+		private IDictionary<Key, ICollection<KeyBindAction>> UpKeybinds { get; }
+		private IDictionary<Key, ICollection<KeyBindAction>> HoldKeybinds { get; }
 
 		private readonly HashSet<Key> activeKeys;
 		private readonly HashSet<Key> onKeys;
@@ -35,12 +35,12 @@ namespace ShapeDatabase.UI {
 		/// Initialises a new Controller to manage keypresses and events.
 		/// </summary>
 		public KeyController() {
-			DownKeybinds	= new Dictionary<Key, ICollection<KeyBindAction>>();
-			UpKeybinds		= new Dictionary<Key, ICollection<KeyBindAction>>();
-			HoldKeybinds	= new Dictionary<Key, ICollection<KeyBindAction>>();
+			DownKeybinds = new Dictionary<Key, ICollection<KeyBindAction>>();
+			UpKeybinds = new Dictionary<Key, ICollection<KeyBindAction>>();
+			HoldKeybinds = new Dictionary<Key, ICollection<KeyBindAction>>();
 
-			activeKeys	= new HashSet<Key>();
-			onKeys		= new HashSet<Key>();
+			activeKeys = new HashSet<Key>();
+			onKeys = new HashSet<Key>();
 		}
 
 

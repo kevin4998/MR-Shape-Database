@@ -63,26 +63,26 @@ namespace ShapeDatabase.UI.Console {
 			// Cache values to identify the True Positive, etc. grid.
 			recordHolder.Cache
 				.AddLazyValue(
-					("Total",		() => CacheTotal())
+					("Total", () => CacheTotal())
 				).AddLazyValue(
-					("Relevant",	result => CacheRelevant(result)),
-					("Correct",		result => result.Count),
-					("TP",			result => CacheTP(result))
+					("Relevant", result => CacheRelevant(result)),
+					("Correct", result => result.Count),
+					("TP", result => CacheTP(result))
 				).AddLazyValue(
-					("Irrelevant",	(result, cache) => CacheIrrelevant(result, cache)),
-					("Incorrect",	(result, cache) => CacheIncorrect(result, cache)),
+					("Irrelevant", (result, cache) => CacheIrrelevant(result, cache)),
+					("Incorrect", (result, cache) => CacheIncorrect(result, cache)),
 
-					("FP",			(result, cache) => CacheFP(result, cache)),
-					("FN",			(result, cache) => CacheFN(result, cache)),
-					("TN",			(result, cache) => CacheTN(result, cache))
+					("FP", (result, cache) => CacheFP(result, cache)),
+					("FN", (result, cache) => CacheFN(result, cache)),
+					("TN", (result, cache) => CacheTN(result, cache))
 				);
 			// Calculate the Metrics.
 			recordHolder.AddMeasure(
-				("Accuracy",		(result, cache) => Accuracy(result, cache)),
-				("Precision",		(result, cache) => Precision(result, cache)),
-				("Recall",			(result, cache) => Recall(result, cache)),
-				("Specificity",		(result, cache) => Specificity(result, cache)),
-				("Sensitivity",		(result, cache) => Sensitivity(result, cache))
+				("Accuracy", (result, cache) => Accuracy(result, cache)),
+				("Precision", (result, cache) => Precision(result, cache)),
+				("Recall", (result, cache) => Recall(result, cache)),
+				("Specificity", (result, cache) => Specificity(result, cache)),
+				("Sensitivity", (result, cache) => Sensitivity(result, cache))
 			);
 			// Return the Record Holder.
 			return recordHolder;

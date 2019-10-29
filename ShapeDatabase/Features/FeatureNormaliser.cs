@@ -1,14 +1,13 @@
-﻿using Accord.Math;
-using ShapeDatabase.Features.Descriptors;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Accord.Math;
+using ShapeDatabase.Features.Descriptors;
 
-namespace ShapeDatabase.Features
-{
+namespace ShapeDatabase.Features {
 	/// <summary>
 	/// Class for normalising featurevectors
 	/// </summary>
@@ -30,8 +29,7 @@ namespace ShapeDatabase.Features
 		/// <summary>
 		/// Initialization of the featurenormaliser.
 		/// </summary>
-		public FeatureNormaliser()
-		{
+		public FeatureNormaliser() {
 			MinMaxValues = new Dictionary<string, (double, double)>();
 		}
 
@@ -40,8 +38,7 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="vector">The featurevector</param>
 		/// <returns>The normalised featurevector</returns>
-		public FeatureVector NormaliseVector(FeatureVector vector)
-		{
+		public FeatureVector NormaliseVector(FeatureVector vector) {
 			IDictionary<string, FeatureVector> singleDic = new Dictionary<string, FeatureVector>() { { "singleVec", vector} };
 			NormaliseVectors(ref singleDic);
 			return singleDic["singleVec"];
@@ -51,13 +48,15 @@ namespace ShapeDatabase.Features
 		/// Function for normalising featurevectors.
 		/// </summary>
 		/// <param name="vectors">The vectors to be normalised.</param>
-		public void NormaliseVectors(ref IDictionary<string, FeatureVector> vectors)
-		{
-			if (vectors == null) throw new ArgumentNullException(nameof(vectors));
-			if (vectors.Count == 0) return;
-			if (MinMaxValues.Count == 0) UpdateMinMaxDictionary(vectors);
-			
-			foreach(KeyValuePair<string, FeatureVector> pair in vectors.ToArray()) { 
+		public void NormaliseVectors(ref IDictionary<string, FeatureVector> vectors) {
+			if (vectors == null)
+				throw new ArgumentNullException(nameof(vectors));
+			if (vectors.Count == 0)
+				return;
+			if (MinMaxValues.Count == 0)
+				UpdateMinMaxDictionary(vectors);
+
+			foreach (KeyValuePair<string, FeatureVector> pair in vectors.ToArray()) {
 				string name = pair.Key;
 				FeatureVector vector = pair.Value;
 				IDescriptor[] normalisedDescriptors = new IDescriptor[vector.DescriptorCount];
@@ -65,20 +64,17 @@ namespace ShapeDatabase.Features
 				int descCount = 0;
 				foreach (IDescriptor desc in vector.Descriptors) {
 					//Normalisation for Elementary Descriptor.
-					if(desc is ElemDescriptor elemDesc) {
+					if (desc is ElemDescriptor elemDesc) {
 						string elemName = elemDesc.Name;
 						double elemValue = elemDesc.Value;
 						(double min, double max) = MinMaxValues[desc.Name];
 						double range = max - min;
 
-						if(range != 0)
-						{
+						if (range != 0) {
 							elemValue = Math.Max(min, elemValue);
 							elemValue = Math.Min(max, elemValue);
 							elemValue = (elemValue - min) / range;
-						}
-						else
-						{
+						} else {
 							elemValue = Math.Max(0, elemValue);
 							elemValue = Math.Min(1, elemValue);
 						}
@@ -88,7 +84,7 @@ namespace ShapeDatabase.Features
 							elemValue
 						);
 
-					//Normalisation for Histogram Descriptor.
+						//Normalisation for Histogram Descriptor.
 					} else if (desc is HistDescriptor histDesc)
 						normalisedDescriptors[descCount] = histDesc;
 
@@ -107,8 +103,7 @@ namespace ShapeDatabase.Features
 		/// Updates the MinMax dictionary, used for normalisation.
 		/// </summary>
 		/// <param name="vectors">The vectors</param>
-		public void UpdateMinMaxDictionary(IDictionary<string, FeatureVector> vectors)
-		{
+		public void UpdateMinMaxDictionary(IDictionary<string, FeatureVector> vectors) {
 			if (vectors == null)
 				throw new ArgumentNullException(nameof(vectors));
 			if (vectors.Count == 0)
@@ -116,19 +111,17 @@ namespace ShapeDatabase.Features
 
 			// Initialise descriptors if they had not been added before.
 			FeatureVector exampleVector = vectors.First().Value;
-			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>())
-			{
-				if(!MinMaxValues.ContainsKey(desc.Name))
+			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>()) {
+				if (!MinMaxValues.ContainsKey(desc.Name))
 					MinMaxValues[desc.Name] = (desc.Value, desc.Value);
 			}
 
 			// Iterate over all vectors and update the min and max of each descriptor.
 			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
-				foreach (ElemDescriptor desc in vector.Value.GetDescriptors<ElemDescriptor>())
-				{
+				foreach (ElemDescriptor desc in vector.Value.GetDescriptors<ElemDescriptor>()) {
 					double Min = (desc.Value < MinMaxValues[desc.Name].Item1) ? desc.Value : MinMaxValues[desc.Name].Item1;
 					double Max = (desc.Value > MinMaxValues[desc.Name].Item2) ? desc.Value : MinMaxValues[desc.Name].Item2;
-					MinMaxValues[desc.Name] = (Min, Max); 
+					MinMaxValues[desc.Name] = (Min, Max);
 				}
 		}
 	}

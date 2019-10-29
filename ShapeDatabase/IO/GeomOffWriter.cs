@@ -41,7 +41,7 @@ namespace ShapeDatabase.IO {
 				throw new ArgumentNullException(nameof(type));
 			if (string.IsNullOrEmpty(location))
 				throw new ArgumentNullException(nameof(location));
-			
+
 			IOWriteResult result = StandardMeshWriter.WriteMesh(
 										location,
 										type.Base,

@@ -102,7 +102,7 @@ namespace ShapeDatabase.Features.Statistics {
 			if (cache == null)
 				throw new ArgumentNullException(nameof(cache));
 
-			foreach((string name, object value) in values)
+			foreach ((string name, object value) in values)
 				if (!string.IsNullOrEmpty(name) && value != null)
 					cache.AddValue(name, value);
 

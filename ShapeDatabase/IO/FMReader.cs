@@ -1,23 +1,21 @@
-﻿using CsvHelper;
-using ShapeDatabase.Features;
-using ShapeDatabase.Features.Descriptors;
-using ShapeDatabase.IO;
-using ShapeDatabase.Properties;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using ShapeDatabase.Features;
+using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.IO;
+using ShapeDatabase.Properties;
 
-namespace ShapeDatabase.IO
-{
+namespace ShapeDatabase.IO {
 	/// <summary>
 	/// Class for creating a featuremanager out of a csv with featurevectors.
 	/// </summary>
-	class FMReader : IReader<FeatureManager>
-	{
+	class FMReader : IReader<FeatureManager> {
 		#region --- Properties ---
 
 		#region -- Static Properties --
@@ -56,8 +54,7 @@ namespace ShapeDatabase.IO
 		/// </summary>
 		/// <param name="reader">The streamreader of the csv</param>
 		/// <returns>A featuremanager</returns>
-		public FeatureManager ConvertFile(StreamReader reader)
-		{
+		public FeatureManager ConvertFile(StreamReader reader) {
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
 
@@ -78,8 +75,7 @@ namespace ShapeDatabase.IO
 		/// </summary>
 		/// <param name="reader">The streamreader of the csv</param>
 		/// <returns>Dictionary with featurevectors per meshname</returns>
-		private IDictionary<string, FeatureVector> GetFeatureVectors(StreamReader reader)
-		{
+		private IDictionary<string, FeatureVector> GetFeatureVectors(StreamReader reader) {
 			IDictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
 
 			using (CsvReader csv = new CsvReader(reader)) {
@@ -92,13 +88,13 @@ namespace ShapeDatabase.IO
 				// Read the header, to see which measures there are.
 				string[] descNames = FilterDescriptors(csv.Context.HeaderRecord);
 				// Find the individual values.
-				while (csv.Read()) { 
+				while (csv.Read()) {
 					// Check to see if there is an entry here.
 					if (!csv.TryGetField(IOConventions.MeshName, out string name))
 						break;
 					// Collect all the descriptors from the CSV.
 					IList<IDescriptor> descriptors = new List<IDescriptor>();
-					foreach(string descName in descNames)
+					foreach (string descName in descNames)
 						if (csv.TryGetField(descName, out string serialisedDesc))
 							if (TryDeserialise(descName, serialisedDesc, out IDescriptor desc))
 								descriptors.Add(desc);
@@ -122,7 +118,7 @@ namespace ShapeDatabase.IO
 
 		private static bool TryDeserialise(string name, string serialised,
 											out IDescriptor desc) {
-			try { 
+			try {
 				desc = DeserialiseDescriptor(name, serialised);
 				return true;
 			} catch (NotImplementedException _) {

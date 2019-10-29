@@ -46,13 +46,13 @@ namespace ShapeDatabase.IO {
 			using (CsvWriter csv = new CsvWriter(writer)) {
 				// First line specify our Measurement Names.
 				csv.WriteField(IOConventions.MeshName);
-				foreach(string name in records.MeasureNames)
+				foreach (string name in records.MeasureNames)
 					csv.WriteField(name);
 				csv.NextRecord();
 				// Next lines specify our entries.
-				foreach (Record record in records) { 
+				foreach (Record record in records) {
 					csv.WriteField(record.Name);
-					foreach((string _, object value) in record.Measures)
+					foreach ((string _, object value) in record.Measures)
 						csv.WriteField(value);
 					csv.NextRecord();
 				}

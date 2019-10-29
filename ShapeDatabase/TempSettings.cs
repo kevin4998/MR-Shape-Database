@@ -30,7 +30,7 @@ namespace ShapeDatabase {
 		/// </summary>
 		public IEnumerable<(string, double)> Weights {
 			get {
-				foreach(KeyValuePair<string, double> pair in weights)
+				foreach (KeyValuePair<string, double> pair in weights)
 					yield return (pair.Key, pair.Value);
 			}
 		}
@@ -85,11 +85,14 @@ namespace ShapeDatabase {
 
 			IList<(string, Action<T>)> variables = new List<(string, Action<T>)>();
 			foreach (PropertyInfo property in properties) {
-				if (!property.CanWrite) continue;
-				if (property.PropertyType != typeof(T)) continue;
-				if (Attribute.IsDefined(property, typeof(IgnoreAttribute))) continue;
+				if (!property.CanWrite)
+					continue;
+				if (property.PropertyType != typeof(T))
+					continue;
+				if (Attribute.IsDefined(property, typeof(IgnoreAttribute)))
+					continue;
 
-				try { 
+				try {
 					Delegate del = Delegate.CreateDelegate(typeof(Action<T>),
 														   property.GetSetMethod());
 					if (del is Action<T> action)
@@ -120,9 +123,12 @@ namespace ShapeDatabase {
 
 			IList<(string, Func<T>)> variables = new List<(string, Func<T>)>();
 			foreach (PropertyInfo property in properties) {
-				if (!property.CanRead) continue;
-				if (property.PropertyType != typeof(T)) continue;
-				if (Attribute.IsDefined(property, typeof(IgnoreAttribute))) continue;
+				if (!property.CanRead)
+					continue;
+				if (property.PropertyType != typeof(T))
+					continue;
+				if (Attribute.IsDefined(property, typeof(IgnoreAttribute)))
+					continue;
 
 				try {
 					Delegate del = Delegate.CreateDelegate(typeof(Func<T>),
@@ -172,7 +178,7 @@ namespace ShapeDatabase {
 				weightManager[pair.Key] = pair.Value;
 
 			(string, Action<int>)[] sVariables = SettingSetters<int>();
-			foreach((string name, Action<int> setter) in sVariables)
+			foreach ((string name, Action<int> setter) in sVariables)
 				if (variables.TryGetValue(name, out int value))
 					setter(value);
 
@@ -192,7 +198,7 @@ namespace ShapeDatabase {
 				weights[name] = weight;
 
 			(string, Func<int>)[] sVariables = SettingGetters<int>();
-			foreach((string name, Func<int> value) in sVariables)
+			foreach ((string name, Func<int> value) in sVariables)
 				variables[name] = value();
 
 			(string, Func<bool>)[] sFlow = SettingGetters<bool>();

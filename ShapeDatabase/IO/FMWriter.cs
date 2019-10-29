@@ -1,21 +1,19 @@
-﻿using CsvHelper;
-using ShapeDatabase.Features;
-using ShapeDatabase.Features.Descriptors;
-using ShapeDatabase.IO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using ShapeDatabase.Features;
+using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.IO;
 
-namespace ShapeDatabase.IO
-{
+namespace ShapeDatabase.IO {
 	/// <summary>
 	/// Class for writing the featurevectors of the featuremanager to a csv file.
 	/// </summary>
-	class FMWriter : IWriter<FeatureManager>
-	{
+	class FMWriter : IWriter<FeatureManager> {
 
 		#region --- Properties ---
 
@@ -41,8 +39,7 @@ namespace ShapeDatabase.IO
 
 		#region --- Instance Methods ---
 
-		public void WriteFile(FeatureManager type, StreamWriter writer)
-		{
+		public void WriteFile(FeatureManager type, StreamWriter writer) {
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
 			if (writer == null)

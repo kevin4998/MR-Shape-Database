@@ -56,7 +56,7 @@ namespace ShapeDatabase.Features.Statistics {
 			this.NameProvider = nameProvider
 				?? throw new ArgumentNullException(nameof(nameProvider));
 		}
-		
+
 		/// <summary>
 		/// Instantiates a new <see cref="RecordHolder"/> with the specified
 		/// measurements.
@@ -69,7 +69,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <see langword="null"/> or any of its properties is <see langword="null"/>.
 		/// </exception>
 		public RecordHolder(Func<T, string> nameProvider,
-							params (string, Func<T, object>)[] measures) 
+							params (string, Func<T, object>)[] measures)
 			: this(nameProvider) {
 			this.AddMeasure(measures);
 		}
@@ -114,7 +114,7 @@ namespace ShapeDatabase.Features.Statistics {
 			IsActive = false;
 			return this;
 		}
-		
+
 		/// <summary>
 		/// Creates a single record for a single item from the database.
 		/// This <see cref="Record"/> contains all the measurements which can be taken.

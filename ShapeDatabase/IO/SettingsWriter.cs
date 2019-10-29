@@ -45,7 +45,7 @@ namespace ShapeDatabase.IO {
 
 			// Weight values for Descriptors
 			foreach ((string name, double value) in type.Weights)
-				data[nameof(type.Weights)][name] =	value.ToString(Settings.Culture);
+				data[nameof(type.Weights)][name] = value.ToString(Settings.Culture);
 			// Variables and counts in Settings
 			foreach ((string name, int value) in type.Variables)
 				data[nameof(type.Variables)][name] = value.ToString(Settings.Culture);

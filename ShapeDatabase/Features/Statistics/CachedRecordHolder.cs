@@ -76,7 +76,7 @@ namespace ShapeDatabase.Features.Statistics {
 				string measureName,
 				Func<T, ICache<T>, object> provider,
 				bool overwrite = false) {
-			
+
 			if (measureName == null)
 				throw new ArgumentNullException(nameof(measureName));
 			if (provider == null)

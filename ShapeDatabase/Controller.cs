@@ -1,22 +1,21 @@
-﻿using CommandLine;
-using ShapeDatabase.Features.Statistics;
-using ShapeDatabase.IO;
-using ShapeDatabase.Shapes;
-using ShapeDatabase.UI;
-using ShapeDatabase.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using ShapeDatabase.Features.Descriptors;
+using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.IO;
-
-using static ShapeDatabase.Properties.Resources;
-using System.Threading.Tasks;
-using ShapeDatabase.Query;
 using System.Threading;
+using System.Threading.Tasks;
+using CommandLine;
+using ShapeDatabase.Features;
+using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.Features.Statistics;
+using ShapeDatabase.IO;
+using ShapeDatabase.Query;
+using ShapeDatabase.Shapes;
+using ShapeDatabase.UI;
 using ShapeDatabase.UI.Console;
+using static ShapeDatabase.Properties.Resources;
 
 namespace ShapeDatabase {
 
@@ -24,7 +23,7 @@ namespace ShapeDatabase {
 	/// The main application controller.
 	/// This object determines what gets performed and what won't.
 	/// </summary>
-    public static class Controller {
+	public static class Controller {
 
 		/// <summary>
 		/// Converts the given console arguments and
@@ -72,11 +71,11 @@ namespace ShapeDatabase {
 				QueryShapes(ExtractFeatures());
 			if (Settings.Mode.HasFlag(OperationModes.EVALUATE))
 				EvaluateQuery(QueryShapes(ExtractFeatures()));
-			if (Settings.Mode == OperationModes.VIEW)	// Special mode if you want to view unrefined shapes.
+			if (Settings.Mode == OperationModes.VIEW)   // Special mode if you want to view unrefined shapes.
 				LoadNewFiles(options.ShapeDirectories, false);
 			if (Settings.Mode.HasFlag(OperationModes.VIEW))
 				ViewShapes();
-			
+
 			// Finalise the program.
 			settings = new TempSettings();
 			settings.Initialise();
@@ -148,11 +147,11 @@ namespace ShapeDatabase {
 
 			RecordHolder<MeshEntry> recordHolder = new RecordHolder<MeshEntry>(
 				(MeshEntry entry) => entry.Name,
-				("Name",	 (MeshEntry entry) => entry.Name),
-				("Class",	 (MeshEntry entry) => entry.Class),
+				("Name",     (MeshEntry entry) => entry.Name),
+				("Class",    (MeshEntry entry) => entry.Class),
 				("Vertices", (MeshEntry entry) => entry.Mesh.VertexCount),
-				("Faces",	 (MeshEntry entry) => entry.Mesh.FaceCount),
-				("",						 _ => ""), // Empty line to seperate values.
+				("Faces",    (MeshEntry entry) => entry.Mesh.FaceCount),
+				("",                         _ => ""), // Empty line to seperate values.
 				("Min X",    (MeshEntry entry) => entry.Mesh.GetBoundingBox().MinX),
 				("Min Y",    (MeshEntry entry) => entry.Mesh.GetBoundingBox().MinY),
 				("Min Z",    (MeshEntry entry) => entry.Mesh.GetBoundingBox().MinZ),
@@ -163,7 +162,7 @@ namespace ShapeDatabase {
 				("Range X",  (MeshEntry entry) => entry.Mesh.GetBoundingBox().Width),
 				("Range Y",  (MeshEntry entry) => entry.Mesh.GetBoundingBox().Height),
 				("Range Z",  (MeshEntry entry) => entry.Mesh.GetBoundingBox().Depth),
-				("Volume",	 (MeshEntry entry) => entry.Mesh.GetBoundingBox().Volume)
+				("Volume",   (MeshEntry entry) => entry.Mesh.GetBoundingBox().Volume)
 			);
 			recordHolder.TakeSnapShot(Settings.MeshLibrary);
 
@@ -207,7 +206,7 @@ namespace ShapeDatabase {
 			ShowShapeCount();
 			// Ask the user for a specific value.
 			while (!Settings.DirectShutDown) {
-				Console.WriteLine();	// Empty line for clearance.
+				Console.WriteLine();    // Empty line for clearance.
 				Console.WriteLine(I_ShapeSelect_Prompt,
 								  Settings.ExitArguments.FirstOrDefault());
 				string input = Console.ReadLine();
@@ -227,8 +226,7 @@ namespace ShapeDatabase {
 		/// Mode for extracting featurevectors of the shapes, or reading them from a csv file.
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
-		static FeatureManager ExtractFeatures()
-		{
+		static FeatureManager ExtractFeatures() {
 			//LoadNewFiles(dirs, false);
 
 			string filename = Settings.FeatureVectorFile;
@@ -244,8 +242,8 @@ namespace ShapeDatabase {
 
 				Console.WriteLine(I_Feature_Imp, location);
 				return manager;
-			
-			// Recalculate if it is not there.
+
+				// Recalculate if it is not there.
 			} else {
 
 				Console.WriteLine(I_StartProc_Feature);
@@ -265,15 +263,14 @@ namespace ShapeDatabase {
 		/// Mode for comparing query shapes to the database shapes.
 		/// </summary>
 		/// <param name="featuremanager">The featuremanager of the complete database</param>
-		static QueryResult[] QueryShapes(FeatureManager DatabaseFM)
-		{
+		static QueryResult[] QueryShapes(FeatureManager DatabaseFM) {
 			Console.WriteLine(I_StartProc_Query);
 
 			LoadQueryFiles();
 
 			int queryItems = Settings.QueryLibrary.Meshes.Count;
 			QueryResult[] queryResults = new QueryResult[queryItems];
-			int nextElement = -1;	// Increment returns the new value.
+			int nextElement = -1;   // Increment returns the new value.
 
 			if (Settings.MeshLibrary.Count == 0)
 				foreach (MeshEntry entry in Settings.QueryLibrary.Meshes)
@@ -286,8 +283,7 @@ namespace ShapeDatabase {
 
 			Console.WriteLine(I_EndProc_Query);
 
-			if (Settings.SaveQueryResults)
-			{
+			if (Settings.SaveQueryResults) {
 				Console.WriteLine(I_Query_Exp);
 
 				string directory = Settings.QueryDir;
@@ -314,8 +310,7 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// Shows the user the results of the queries.
 		/// </summary>
-		static void ShowQueryResults(QueryResult[] results)
-		{
+		static void ShowQueryResults(QueryResult[] results) {
 			Console.WriteLine(I_QueryCount, results.Length);
 			foreach (QueryResult queryResult in results)
 				Console.WriteLine($"\t- {queryResult}");
@@ -371,8 +366,7 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// Processes the query shapes (and loads them in memory).
 		/// </summary>
-		static void LoadQueryFiles()
-		{
+		static void LoadQueryFiles() {
 			Directory.CreateDirectory(Settings.QueryDir);
 			Settings.FileManager.AddQueryDirectory(Settings.QueryDir);
 		}

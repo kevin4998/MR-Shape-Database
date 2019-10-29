@@ -1,18 +1,16 @@
-﻿using OpenTK;
-using ShapeDatabase.Shapes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using OpenTK;
+using ShapeDatabase.Shapes;
 
-namespace ShapeDatabase.IO
-{
+namespace ShapeDatabase.IO {
 	/// <summary>
 	/// Class for writing a mesh to an off file.
 	/// </summary>
-	class OFFWriter : IWriter<IMesh>
-	{
+	class OFFWriter : IWriter<IMesh> {
 		#region --- Properties ---
 
 		private static readonly Lazy<OFFWriter> lazy =
@@ -51,10 +49,10 @@ namespace ShapeDatabase.IO
 
 			writer.WriteLine("OFF");
 			writer.WriteLine($"{type.VertexCount} {type.FaceCount} 0");
-			foreach(Vector3 vertice in type.Vertices)
+			foreach (Vector3 vertice in type.Vertices)
 				writer.WriteLine($"{vertice.X} {vertice.Y} {vertice.Z}");
 
-			foreach(Vector3 face in type.Faces)
+			foreach (Vector3 face in type.Faces)
 				writer.WriteLine($"3 {face.X} {face.Y} {face.Z}");
 			IOConventions.WriteIfNormalised(type.IsNormalised, writer);
 		}

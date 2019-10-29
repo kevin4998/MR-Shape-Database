@@ -31,22 +31,22 @@ namespace ShapeDatabase.IO {
 			refiners.Add(NormalisationRefiner.Instance);
 		}
 		private static void PopulateReaders(IDictionary<Type, IReader> dic,
-											ISet<string> formats ) {
-			dic.Add(typeof(GeometryMesh),	GeomOffReader.Instance);
+											ISet<string> formats) {
+			dic.Add(typeof(GeometryMesh), GeomOffReader.Instance);
 			dic.Add(typeof(FeatureManager), FMReader.Instance);
-			dic.Add(typeof(TempSettings),	SettingsReader.Instance);
+			dic.Add(typeof(TempSettings), SettingsReader.Instance);
 
 			formats.UnionWith(GeomOffReader.Instance.SupportedFormats);
 			formats.UnionWith(FMReader.Instance.SupportedFormats);
 			formats.UnionWith(SettingsReader.Instance.SupportedFormats);
 		}
 		private static void PopulateWriters(IDictionary<Type, IWriter> dic) {
-			dic.Add(typeof(GeometryMesh),	GeomOffWriter.Instance);
-			dic.Add(typeof(IMesh),			OFFWriter.Instance);
-			dic.Add(typeof(IRecordHolder),	RecordsWriter.Instance);
-			dic.Add(typeof(FeatureManager),	FMWriter.Instance);
-			dic.Add(typeof(QueryResult[]),	QueryWriter.Instance);
-			dic.Add(typeof(TempSettings),	SettingsWriter.Instance);
+			dic.Add(typeof(GeometryMesh), GeomOffWriter.Instance);
+			dic.Add(typeof(IMesh), OFFWriter.Instance);
+			dic.Add(typeof(IRecordHolder), RecordsWriter.Instance);
+			dic.Add(typeof(FeatureManager), FMWriter.Instance);
+			dic.Add(typeof(QueryResult[]), QueryWriter.Instance);
+			dic.Add(typeof(TempSettings), SettingsWriter.Instance);
 		}
 
 		#endregion
@@ -104,7 +104,7 @@ namespace ShapeDatabase.IO {
 		/// any supported file extensions.</exception>
 		public void AddReader<T>(params IReader<T>[] readers) {
 			foreach (IReader<T> reader in readers)
-				if (reader != null) { 
+				if (reader != null) {
 					typeReaders.Add(typeof(T), reader);
 					formats.UnionWith(reader.SupportedFormats);
 				}
@@ -117,7 +117,7 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		/// <param name="refiners">The refiner which can normalise a shape in any way.</param>
 		public void AddRefiner(params IRefiner<IMesh>[] refiners) {
-			foreach(IRefiner<IMesh> refine in refiners)
+			foreach (IRefiner<IMesh> refine in refiners)
 				if (refine != null && !this.refiners.Contains(refine))
 					this.refiners.Add(refine);
 		}
@@ -130,7 +130,7 @@ namespace ShapeDatabase.IO {
 		/// <param name="writers">The collection of writers which can now be used
 		/// for serialisation purposes.</param>
 		public void AddWriter<T>(params IWriter<T>[] writers) {
-			foreach(IWriter<T> writer in writers)
+			foreach (IWriter<T> writer in writers)
 				if (writer != null)
 					typeWriters.Add(typeof(T), writer);
 		}
@@ -159,7 +159,7 @@ namespace ShapeDatabase.IO {
 			InfoMesh[] filemeshes;
 			byte attempts = 0;
 
-			while (files.Length != 0 && attempts++ < Settings.RefinementThreshold) { 
+			while (files.Length != 0 && attempts++ < Settings.RefinementThreshold) {
 
 				// Phase 2: Process files into meshes. (repeatable)
 
@@ -227,8 +227,7 @@ namespace ShapeDatabase.IO {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given directory does not exist.
 		/// </exception>
-		public void AddQueryDirectory(string filedir, bool async = false)
-		{
+		public void AddQueryDirectory(string filedir, bool async = false) {
 			if (string.IsNullOrEmpty(filedir))
 				throw new ArgumentNullException(nameof(filedir));
 
@@ -244,21 +243,17 @@ namespace ShapeDatabase.IO {
 
 			// Phase 3: Refine query meshes in parallel.
 
-			Parallel.For(0, QueryMeshes.Length, i =>
-			{
+			Parallel.For(0, QueryMeshes.Length, i => {
 				InfoMesh TempMesh = QueryMeshes[i];
 
 				bool RequiresRefinement = true;
 				int Attempt = 0;
 
-				while (RequiresRefinement && Attempt++ < Settings.RefinementThreshold)
-				{
+				while (RequiresRefinement && Attempt++ < Settings.RefinementThreshold) {
 					RequiresRefinement = false;
 
-					foreach (IRefiner<IMesh> refiner in refiners)
-					{
-						if (refiner.RequireRefinement(TempMesh.Mesh))
-						{
+					foreach (IRefiner<IMesh> refiner in refiners) {
+						if (refiner.RequireRefinement(TempMesh.Mesh)) {
 							refiner.RefineMesh(TempMesh.Mesh, TempMesh.Info);
 							TempMesh = ReadFile(TempMesh.Info);
 							RequiresRefinement = true;
@@ -270,8 +265,7 @@ namespace ShapeDatabase.IO {
 			});
 
 			// Phase 4: Add refined query meshes to library.
-			foreach (InfoMesh mesh in RefinedQueryMeshes)
-			{
+			foreach (InfoMesh mesh in RefinedQueryMeshes) {
 				MeshEntry entry =
 					new MeshEntry(mesh.Info.NameWithoutExtension(),
 								  mesh.Info.Directory.Name,
@@ -297,13 +291,13 @@ namespace ShapeDatabase.IO {
 				throw new ArgumentNullException(nameof(path));
 
 			// Check if there is a direct implementation for this class.
-			if (typeWriters.TryGetValue(type, out IWriter writer)) { 
+			if (typeWriters.TryGetValue(type, out IWriter writer)) {
 				writer.WriteFile(value, path);
 				return;
-			// Check if there is a more generic version for the class.
-			} else { 
+				// Check if there is a more generic version for the class.
+			} else {
 				foreach (KeyValuePair<Type, IWriter> pair in typeWriters)
-					if (pair.Key.IsAssignableFrom(type)) { 
+					if (pair.Key.IsAssignableFrom(type)) {
 						pair.Value.WriteFile(value, path);
 						return;
 					}
@@ -341,7 +335,7 @@ namespace ShapeDatabase.IO {
 			// Check if there is a direct implementation for this class.
 			if (typeReaders.TryGetValue(type, out IReader reader)
 				&& reader.Supports(extension))
-					return reader.ConvertFile(path);
+				return reader.ConvertFile(path);
 
 			// Check if there is a more generic version for the class.
 			foreach (KeyValuePair<Type, IReader> pair in typeReaders)
@@ -363,8 +357,10 @@ namespace ShapeDatabase.IO {
 		/// <returns>The value which should be in the path.</returns>
 		public T ReadObject<T>(string path) {
 			object result = ReadObject(typeof(T), path);
-			if (result is T value) return value;
-			else return default;
+			if (result is T value)
+				return value;
+			else
+				return default;
 		}
 
 		/// <summary>
@@ -377,13 +373,14 @@ namespace ShapeDatabase.IO {
 		/// <returns>If the value was successfully deserialised.</returns>
 		public bool TryRead<T>(string path, out T result) {
 			result = default;
-			if (string.IsNullOrEmpty(path) || !File.Exists(path)) return false;
+			if (string.IsNullOrEmpty(path) || !File.Exists(path))
+				return false;
 
-			try { 
+			try {
 				if (ReadObject(typeof(T), path) is T type) {
 					result = type;
 					return true;
-				} 
+				}
 			} catch (NotSupportedException) {
 				// We don't care about the exception since it didn't work.
 				// So ignore and continue.
@@ -459,7 +456,8 @@ namespace ShapeDatabase.IO {
 
 			foreach (FileInfo file in files) {
 				InfoMesh infoMesh = ReadFile(file);
-				if (InfoMesh.NULL != infoMesh) infoMeshes.Add(infoMesh);
+				if (InfoMesh.NULL != infoMesh)
+					infoMeshes.Add(infoMesh);
 			}
 
 			return infoMeshes.ToArray();
@@ -529,7 +527,7 @@ namespace ShapeDatabase.IO {
 		private FileInfo[] RefineFiles(params InfoMesh[] filemeshes) {
 			List<FileInfo> unrefinedFiles = new List<FileInfo>(filemeshes.Length);
 
-			foreach(InfoMesh infomesh in filemeshes)
+			foreach (InfoMesh infomesh in filemeshes)
 				if (!RefineFile(infomesh.Info, infomesh.Mesh))
 					unrefinedFiles.Add(infomesh.Info);
 
@@ -584,7 +582,7 @@ namespace ShapeDatabase.IO {
 			if (info == null || !info.Exists)
 				throw new ArgumentNullException(nameof(info));
 
-			bool isRefined = true;	// Holds if no refinement has been made.
+			bool isRefined = true;  // Holds if no refinement has been made.
 			foreach (IRefiner<IMesh> refiner in refiners) {
 				if (refiner.RequireRefinement(mesh)) {
 					refiner.RefineMesh(mesh, info);
@@ -615,8 +613,9 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		/// <param name="files">A collection of files which needs to be moved.</param>
 		private static void FailedShapes(params FileInfo[] files) {
-			foreach (FileInfo info in files) { 
-				if (info == null) continue;
+			foreach (FileInfo info in files) {
+				if (info == null)
+					continue;
 
 				string dir = Settings.ShapeFailedDir;
 				dir = Path.Combine(dir, info.Directory.Name);
@@ -690,8 +689,8 @@ namespace ShapeDatabase.IO {
 			IsNull = false;
 		}
 
-		private InfoMesh(FileInfo file, IMesh mesh, bool isNull) 
-			:this(file, mesh) {
+		private InfoMesh(FileInfo file, IMesh mesh, bool isNull)
+			: this(file, mesh) {
 			IsNull = isNull;
 		}
 
@@ -705,8 +704,8 @@ namespace ShapeDatabase.IO {
 
 		public bool Equals(InfoMesh obj) {
 			return this.IsNull
-				?   obj.IsNull
-				:  !obj.IsNull
+				? obj.IsNull
+				: !obj.IsNull
 					&& Info.Equals(obj.Info)
 					&& Mesh.Equals(obj.Mesh);
 		}
@@ -723,11 +722,11 @@ namespace ShapeDatabase.IO {
 
 		#region --- Operators ---
 
-		public static bool operator == (InfoMesh left, InfoMesh right) {
+		public static bool operator ==(InfoMesh left, InfoMesh right) {
 			return left.Equals(right);
 		}
 
-		public static bool operator != (InfoMesh left, InfoMesh right) {
+		public static bool operator !=(InfoMesh left, InfoMesh right) {
 			return !left.Equals(right);
 		}
 

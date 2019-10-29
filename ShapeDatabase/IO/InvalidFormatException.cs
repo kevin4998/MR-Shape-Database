@@ -68,9 +68,9 @@ namespace ShapeDatabase.IO {
 		/// <param name="info">The data for serializing or deserializing the object.</param>
 		/// <param name="context">The source and destination for the object.</param>
 		[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-		protected InvalidFormatException(SerializationInfo info, StreamingContext context) 
+		protected InvalidFormatException(SerializationInfo info, StreamingContext context)
 			: base(info, context) {
-			ActulFormat    = info.GetValue<string>(serFalse);
+			ActulFormat = info.GetValue<string>(serFalse);
 			ExpectedFormat = info.GetValue<string>(serTrue);
 		}
 

@@ -9,8 +9,7 @@ using ShapeDatabase.Util;
 
 namespace ShapeDatabase.UI {
 
-	public class Window : GameWindow
-	{
+	public class Window : GameWindow {
 
 		// Here we now have added the normals of the vertices
 		// Remember to define the layouts to the VAO's
@@ -38,16 +37,14 @@ namespace ShapeDatabase.UI {
 			LoadMesh(mesh);
 		}
 
-		protected void LoadMesh(IMesh mesh)
-		{
+		protected void LoadMesh(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
 
 			_vertices = new float[mesh.FaceCount * 18];
 			int i = 0;
 
-			foreach (Vector3 face in mesh.Faces)
-			{
+			foreach (Vector3 face in mesh.Faces) {
 
 				Vector3[] vertices = new Vector3[3] {
 					mesh.GetVertex((uint) face.X),
@@ -57,9 +54,8 @@ namespace ShapeDatabase.UI {
 
 				Vector3 Normal = Functions.GetNormal(vertices);
 
-				for (int j = 0; j < 3; j++)
-				{
-					_vertices[(i * 6) + (j * 6)]	 = vertices[j].X;
+				for (int j = 0; j < 3; j++) {
+					_vertices[(i * 6) + (j * 6)] = vertices[j].X;
 					_vertices[(i * 6) + (j * 6) + 1] = vertices[j].Y;
 					_vertices[(i * 6) + (j * 6) + 2] = vertices[j].Z;
 					_vertices[(i * 6) + (j * 6) + 3] = Math.Abs(Normal.X);
@@ -105,8 +101,7 @@ namespace ShapeDatabase.UI {
 			keybindings.RegisterHold(Key.Down, () => _angleX += 1.5);
 		}
 
-		protected override void OnLoad(EventArgs e)
-		{
+		protected override void OnLoad(EventArgs e) {
 			GL.ClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 
 			GL.Enable(EnableCap.DepthTest);
@@ -116,7 +111,7 @@ namespace ShapeDatabase.UI {
 			GL.BufferData(BufferTarget.ArrayBuffer, _vertices.Length * sizeof(float), _vertices, BufferUsageHint.StaticDraw);
 
 			_lightingShader = new Shader("Content/UI/shader.vert", "Content/UI/lighting.frag");
-			
+
 			_vaoModel = GL.GenVertexArray();
 			GL.BindVertexArray(_vaoModel);
 			GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
@@ -129,13 +124,12 @@ namespace ShapeDatabase.UI {
 			GL.EnableVertexAttribArray(normalLocation);
 			GL.VertexAttribPointer(normalLocation, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
 
-			_camera = new Camera(Vector3.UnitZ * 2, Width / (float)Height);
+			_camera = new Camera(Vector3.UnitZ * 2, Width / (float) Height);
 
 			base.OnLoad(e);
 		}
 
-		protected override void OnRenderFrame(FrameEventArgs e)
-		{
+		protected override void OnRenderFrame(FrameEventArgs e) {
 			GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
 			GL.BindVertexArray(_vaoModel);
@@ -161,8 +155,7 @@ namespace ShapeDatabase.UI {
 		}
 
 
-		protected override void OnUpdateFrame(FrameEventArgs e)
-		{
+		protected override void OnUpdateFrame(FrameEventArgs e) {
 			if (!Focused)
 				return;
 
@@ -170,8 +163,7 @@ namespace ShapeDatabase.UI {
 			base.OnUpdateFrame(e);
 		}
 
-		protected override void OnMouseMove(MouseMoveEventArgs e)
-		{
+		protected override void OnMouseMove(MouseMoveEventArgs e) {
 			base.OnMouseMove(e);
 		}
 
@@ -183,16 +175,14 @@ namespace ShapeDatabase.UI {
 		}
 
 
-		protected override void OnResize(EventArgs e)
-		{
+		protected override void OnResize(EventArgs e) {
 			GL.Viewport(0, 0, Width, Height);
-			_camera.AspectRatio = Width / (float)Height;
+			_camera.AspectRatio = Width / (float) Height;
 			base.OnResize(e);
 		}
 
 
-		protected override void OnUnload(EventArgs e)
-		{
+		protected override void OnUnload(EventArgs e) {
 			GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
 			GL.BindVertexArray(0);
 			GL.UseProgram(0);

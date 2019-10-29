@@ -115,7 +115,7 @@ namespace ShapeDatabase.Util {
 			VerifyVectorArray(points, 3);
 
 			double angle = Math.Acos(Vector3.Dot(Vector3.Normalize(points[1] - points[0]), Vector3.Normalize(points[2] - points[0])));
-			return double.IsNaN(angle) ? 0 : angle * 180/Math.PI;
+			return double.IsNaN(angle) ? 0 : angle * 180 / Math.PI;
 		}
 
 		/// <summary>
@@ -124,8 +124,7 @@ namespace ShapeDatabase.Util {
 		/// <param name="xValues">The values of the first array</param>
 		/// <param name="yValues">The values of the second array</param>
 		/// <returns>The EMD</returns>
-		public static double CalculateEMD(double[] xValues, double[] yValues)
-		{
+		public static double CalculateEMD(double[] xValues, double[] yValues) {
 			#region Parameter Checks
 			if (xValues == null)
 				throw new ArgumentNullException(nameof(xValues));
@@ -143,8 +142,7 @@ namespace ShapeDatabase.Util {
 			//Count the flow of each bin
 			double[] Distances = new double[xValues.Length];
 			Distances[0] = 0;
-			for (int i = 0; i < Distances.Length - 1; i++)
-			{
+			for (int i = 0; i < Distances.Length - 1; i++) {
 				Distances[i + 1] = xValues[i] + Distances[i] - yValues[i];
 			}
 

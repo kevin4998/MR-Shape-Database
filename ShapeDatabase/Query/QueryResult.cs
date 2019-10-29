@@ -82,12 +82,12 @@ namespace ShapeDatabase.Query {
 		public void AddItem(QueryItem item) {
 			if (item == null)
 				throw new ArgumentNullException(nameof(item));
-			
+
 			IList list = (IList) results;
 			if (list.IsSynchronized)
 				results.Add(item);
 			else
-				lock (list.SyncRoot) { 
+				lock (list.SyncRoot) {
 					results.Add(item);
 				}
 		}
@@ -121,7 +121,7 @@ namespace ShapeDatabase.Query {
 				lock (list.SyncRoot) {
 					return SafeBestResults(resultCount);
 				}
-			}
+		}
 
 		private QueryItem[] SafeBestResults(int resultCount) {
 			int count = Math.Min(resultCount, Count);

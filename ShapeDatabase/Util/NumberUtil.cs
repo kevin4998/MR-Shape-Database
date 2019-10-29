@@ -2,8 +2,7 @@
 using OpenTK;
 using ShapeDatabase.Properties;
 
-namespace ShapeDatabase.Util
-{
+namespace ShapeDatabase.Util {
 
 	/// <summary>
 	/// A class to provide extra functionalty on Arrays and numbers.
@@ -23,10 +22,8 @@ namespace ShapeDatabase.Util
 			float min = float.MaxValue;
 			float max = float.MinValue;
 
-			foreach (Vector3 vector in array)
-			{
-				for (int i = 0; i < 3; i++)
-				{
+			foreach (Vector3 vector in array) {
+				for (int i = 0; i < 3; i++) {
 					float value = vector[i];
 					min = min > value ? value : min;
 					max = max < value ? value : max;
@@ -53,12 +50,10 @@ namespace ShapeDatabase.Util
 			// Scale to [-1,1]
 			float dif = 2 / (max - min);
 
-			for (int i = array.Length - 1; i >= 0; i--)
-			{
+			for (int i = array.Length - 1; i >= 0; i--) {
 				Vector3 vector = array[i];
 				Vector3 next = new Vector3();
-				for (int j = 0; j < 3; j++)
-				{
+				for (int j = 0; j < 3; j++) {
 					next[j] = (vector[j] - min) * dif - 1.0f;
 				}
 				result[i] = next;
@@ -140,7 +135,7 @@ namespace ShapeDatabase.Util
 				vectors[i] = AsVector(matrix[i]);
 
 			return vectors;
-				
+
 		}
 
 		public static float[][] InvertVectorize(Vector3[] vector) {
@@ -179,7 +174,7 @@ namespace ShapeDatabase.Util
 			if (array == null)
 				throw new ArgumentNullException(nameof(array));
 			float[] floats = new float[array.Length];
-			for(int i = array.Length - 1; i >= 0; i--)
+			for (int i = array.Length - 1; i >= 0; i--)
 				floats[i] = Convert.ToSingle(array[i]);
 			return AsVector(floats);
 		}
@@ -201,7 +196,7 @@ namespace ShapeDatabase.Util
 				throw new ArgumentNullException(nameof(values));
 
 			T min = default;
-			foreach(T value in values)
+			foreach (T value in values)
 				min = min.CompareTo(value) <= 0 ? min : value;
 			return min;
 		}
@@ -216,7 +211,7 @@ namespace ShapeDatabase.Util
 			return max;
 		}
 
-		public static TGoal[] Cast<TFrom,TGoal>(this TFrom[] values,
+		public static TGoal[] Cast<TFrom, TGoal>(this TFrom[] values,
 								Converter<TFrom, TGoal> parser) {
 			return Array.ConvertAll(values, parser);
 		}

@@ -1,12 +1,12 @@
-﻿using ShapeDatabase.Features.Descriptors;
-using ShapeDatabase.Util;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features {
 
@@ -71,8 +71,7 @@ namespace ShapeDatabase.Features {
 		/// </summary>
 		/// <param name="vector">The other vector</param>
 		/// <returns>The PTD</returns>
-		public double Compare(FeatureVector vector) 
-		{
+		public double Compare(FeatureVector vector) {
 			/*if (vector == null)
 				throw new ArgumentNullException(nameof(vector));
 
@@ -146,8 +145,8 @@ namespace ShapeDatabase.Features {
 
 	public static class FeatureVectorEx {
 
-		public static IEnumerable<T> GetDescriptors<T>(this FeatureVector vector) 
-			where T : IDescriptor{
+		public static IEnumerable<T> GetDescriptors<T>(this FeatureVector vector)
+			where T : IDescriptor {
 			if (vector == null)
 				throw new ArgumentNullException(nameof(vector));
 

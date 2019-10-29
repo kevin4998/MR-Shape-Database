@@ -1,8 +1,7 @@
 ﻿using System;
 using OpenTK;
 
-namespace ShapeDatabase.UI
-{
+namespace ShapeDatabase.UI {
 	// This is the camera class as it could be set up after the tutorials on the website
 	// It is important to note there are a few ways you could have set up this camera, for example
 	// you could have also managed the player input inside the camera class, and a lot of the properties could have
@@ -10,8 +9,7 @@ namespace ShapeDatabase.UI
 
 	// TL;DR: This is just one of many ways in which we could have set up the camera
 	// Check out the web version if you don't know why we are doing a specific thing or want to know more about the code
-	public class Camera
-	{
+	public class Camera {
 		// Those vectors are directions pointing outwards from the camera to define how it rotated
 		private Vector3 _front = -Vector3.UnitZ;
 		private Vector3 _up = Vector3.UnitY;
@@ -24,8 +22,7 @@ namespace ShapeDatabase.UI
 												  // The field of view of the camera (radians)
 		private float _fov = MathHelper.PiOver2;
 
-		public Camera(Vector3 position, float aspectRatio)
-		{
+		public Camera(Vector3 position, float aspectRatio) {
 			Position = position;
 			AspectRatio = aspectRatio;
 		}
@@ -40,11 +37,9 @@ namespace ShapeDatabase.UI
 		public Vector3 Right => _right;
 
 		// We convert from degrees to radians as soon as the property is set to improve performance
-		public float Pitch
-		{
+		public float Pitch {
 			get => MathHelper.RadiansToDegrees(_pitch);
-			set
-			{
+			set {
 				// We clamp the pitch value between -89 and 89 to prevent the camera from going upside down, and a bunch
 				// of weird "bugs" when you are using euler angles for rotation.
 				// If you want to read more about this you can try researching a topic called gimbal lock
@@ -55,11 +50,9 @@ namespace ShapeDatabase.UI
 		}
 
 		// We convert from degrees to radians as soon as the property is set to improve performance
-		public float Yaw
-		{
+		public float Yaw {
 			get => MathHelper.RadiansToDegrees(_yaw);
-			set
-			{
+			set {
 				_yaw = MathHelper.DegreesToRadians(value);
 				UpdateVectors();
 			}
@@ -68,11 +61,9 @@ namespace ShapeDatabase.UI
 		// The field of view (FOV) is the vertical angle of the camera view, this has been discussed more in depth in a
 		// previous tutorial, but in this tutorial you have also learned how we can use this to simulate a zoom feature.
 		// We convert from degrees to radians as soon as the property is set to improve performance
-		public float Fov
-		{
+		public float Fov {
 			get => MathHelper.RadiansToDegrees(_fov);
-			set
-			{
+			set {
 				float angle = MathHelper.Clamp(value, 1f, 45f);
 				_fov = MathHelper.DegreesToRadians(angle);
 			}
@@ -87,24 +78,21 @@ namespace ShapeDatabase.UI
 		}
 
 		// Get the view matrix using the amazing LookAt function described more in depth on the web tutorials
-		public Matrix4 GetViewMatrix()
-		{
+		public Matrix4 GetViewMatrix() {
 			return Matrix4.LookAt(Position, Position + _front, _up);
 		}
 
 		// Get the projection matrix using the same method we have used up until this point
-		public Matrix4 GetProjectionMatrix()
-		{
+		public Matrix4 GetProjectionMatrix() {
 			return Matrix4.CreatePerspectiveFieldOfView(_fov, AspectRatio, 0.01f, 100f);
 		}
 
 		// This function is going to update the direction vertices using some of the math learned in the web tutorials
-		private void UpdateVectors()
-		{
+		private void UpdateVectors() {
 			// First the front matrix is calculated using some basic trigonometry
-			_front.X = (float)Math.Cos(_pitch) * (float)Math.Cos(_yaw);
-			_front.Y = (float)Math.Sin(_pitch);
-			_front.Z = (float)Math.Cos(_pitch) * (float)Math.Sin(_yaw);
+			_front.X = (float) Math.Cos(_pitch) * (float) Math.Cos(_yaw);
+			_front.Y = (float) Math.Sin(_pitch);
+			_front.Z = (float) Math.Cos(_pitch) * (float) Math.Sin(_yaw);
 
 			// We need to make sure the vectors are all normalized, as otherwise we would get some funky results
 			_front = Vector3.Normalize(_front);

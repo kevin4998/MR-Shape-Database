@@ -1,11 +1,11 @@
-﻿using ShapeDatabase.Properties;
-using ShapeDatabase.Util;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShapeDatabase.Properties;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Descriptors {
 
@@ -48,7 +48,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <param name="name">Name of the descriptor</param>
 		/// <param name="binsize">Bin width of the descriptor</param>
 		/// <param name="binvalues">Bin values of the descriptor</param>
-		public HistDescriptor(string name, double binsize, float[] binvalues) 
+		public HistDescriptor(string name, double binsize, float[] binvalues)
 			: base(name) {
 			BinSize = binsize;
 
@@ -90,7 +90,7 @@ namespace ShapeDatabase.Features.Descriptors {
 
 			for (int i = 1; i < BinValues.Length + 1; i++)
 				histValues[i] = BinValues[i - 1].ToString(format);
-			
+
 			return string.Join(HistSeperatorString, histValues);
 		}
 
@@ -123,10 +123,9 @@ namespace ShapeDatabase.Features.Descriptors {
 		}
 
 		public static HistDescriptor FromIntHistogram(string name, double binSize,
-													int[] histogram)
-		{
+													int[] histogram) {
 			return new HistDescriptor(name, binSize,
-								 Array.ConvertAll(histogram, x => (float)x));
+								 Array.ConvertAll(histogram, x => (float) x));
 		}
 
 #if DEBUG
@@ -145,7 +144,7 @@ namespace ShapeDatabase.Features.Descriptors {
 			return true;
 		}
 
-		#endif
+#endif
 
 		#endregion
 

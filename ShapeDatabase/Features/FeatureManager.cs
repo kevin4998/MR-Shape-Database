@@ -9,8 +9,7 @@ using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
 
-namespace ShapeDatabase.Features.Descriptors
-{
+namespace ShapeDatabase.Features.Descriptors {
 	/// <summary>
 	/// Class for calculating and/or importing featurevectors.
 	/// </summary>
@@ -71,7 +70,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// Constructor method of the featuremanager
 		/// </summary>
 		/// <param name="descriptorcalculators">The descriptor calculators that can be used to calculate the featurevectors</param>
-		public FeatureManager(params DescriptorCalculator[] descriptorcalculators) 
+		public FeatureManager(params DescriptorCalculator[] descriptorcalculators)
 			: this(null, descriptorcalculators) { }
 
 		/// <summary>
@@ -100,7 +99,8 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <exception cref="ArgumentNullException">If the given calculator is
 		/// <see langword="null"/>.</exception>
 		public void AddCalculator(DescriptorCalculator calculator) {
-			if (calculator == null) throw new ArgumentNullException(nameof(calculator));
+			if (calculator == null)
+				throw new ArgumentNullException(nameof(calculator));
 			DescriptorCalculators.Add(calculator);
 		}
 
@@ -110,7 +110,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// </summary>
 		/// <param name="library">The library of which the featurevectors should be calculated</param>
 		public void CalculateVectors(params MeshEntry[] library) {
-			foreach(MeshEntry entry in library)
+			foreach (MeshEntry entry in library)
 				CalculateVector(entry);
 
 			NormaliseVectors();
@@ -201,7 +201,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <returns>A collection which contains only descriptors from the left set
 		/// that were not present in the right one.</returns>
 		private static IEnumerable<IDescriptor> ExceptWith(
-			IEnumerable<IDescriptor> left,  IEnumerable<IDescriptor> right) {
+			IEnumerable<IDescriptor> left, IEnumerable<IDescriptor> right) {
 
 			return left.Except(right, DescriptorComparer.Instance);
 		}
@@ -217,8 +217,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// and ordered by their similarity. The <see cref="IList{T}"/> has a tuple
 		/// containing the name of the mesh as well as an indicator of similarity
 		/// represented as double. The results are ordered (best match first).</returns>
-		public QueryResult CalculateResults(MeshEntry mesh)
-		{
+		public QueryResult CalculateResults(MeshEntry mesh) {
 			FeatureVector queryVector = CreateVector(mesh);
 			queryVector = FeatureNormaliser.Instance.NormaliseVector(queryVector);
 

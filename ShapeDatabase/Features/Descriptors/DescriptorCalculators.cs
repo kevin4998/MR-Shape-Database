@@ -1,26 +1,24 @@
-﻿using ShapeDatabase.Features.Descriptors;
-using ShapeDatabase.Shapes;
-using ShapeDatabase.Util;
-using System;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenTK;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using Accord.Statistics.Analysis;
 using Accord.Statistics.Models.Regression.Linear;
-using System.Threading;
+using OpenTK;
+using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.Refine;
-using System.Collections;
+using ShapeDatabase.Shapes;
+using ShapeDatabase.Util;
 
-namespace ShapeDatabase.Features
-{
+namespace ShapeDatabase.Features {
 	/// <summary>
 	/// Class for defining all descriptor calculator methods
 	/// </summary>
-	public static class DescriptorCalculators
-	{
+	public static class DescriptorCalculators {
 		#region --- Properties ---
 
 		/// <summary>
@@ -62,7 +60,7 @@ namespace ShapeDatabase.Features
 				yield return "AngleVertices";
 			}
 		}
-		
+
 		#endregion
 
 		#region --- Elementary Descriptors ---
@@ -72,8 +70,7 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
 		/// <returns>The elementary descriptor with the calculated value</returns>
-		public static ElemDescriptor SurfaceArea(IMesh mesh)
-		{
+		public static ElemDescriptor SurfaceArea(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
 
@@ -90,8 +87,7 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
 		/// <returns>The elementary descriptor with the calculated value</returns>
-		public static ElemDescriptor BoundingBoxVolume(IMesh mesh)
-		{
+		public static ElemDescriptor BoundingBoxVolume(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
 
@@ -103,22 +99,18 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
 		/// <returns>The elementary descriptor with the calculated value</returns>
-		public static ElemDescriptor Diameter(IMesh mesh)
-		{
+		public static ElemDescriptor Diameter(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
 
 			float biggestDiameter = 0;
 
-			Parallel.For(0, mesh.VertexCount - 1, i =>
-			{
-				Parallel.For(i + 1, mesh.VertexCount, j =>
-				{
+			Parallel.For(0, mesh.VertexCount - 1, i => {
+				Parallel.For(i + 1, mesh.VertexCount, j => {
 					float distance = Vector3.Distance(mesh.GetVertex((uint) i), mesh.GetVertex((uint) j));
 					float tempDiameter;
 
-					do
-					{
+					do {
 						tempDiameter = biggestDiameter;
 						if (distance <= biggestDiameter)
 							break;
@@ -137,8 +129,7 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
 		/// <returns>The elementary descriptor with the calculated value</returns>
-		public static ElemDescriptor Eccentricity(IMesh mesh)
-		{
+		public static ElemDescriptor Eccentricity(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
 
@@ -207,8 +198,7 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
-		public static HistDescriptor DistanceBarycenter(IMesh mesh)
-		{
+		public static HistDescriptor DistanceBarycenter(IMesh mesh) {
 			double binSize = 0.15;
 			int[] binValues = new int[Settings.BinsPerHistogram];
 
@@ -219,7 +209,7 @@ namespace ShapeDatabase.Features
 				int bin = Math.Min((int)(distance / binSize), binValues.Length - 1);
 				Interlocked.Increment(ref binValues[bin]);
 			});
-					   
+
 			return HistDescriptor.FromIntHistogram("DistanceBarycenter", binSize, binValues);
 		}
 
@@ -228,8 +218,7 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
-		public static HistDescriptor DistanceVertices(IMesh mesh)
-		{
+		public static HistDescriptor DistanceVertices(IMesh mesh) {
 			double binSize = 0.25;
 			int[] binValues = new int[Settings.BinsPerHistogram];
 
@@ -249,13 +238,11 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
-		public static HistDescriptor SquareRootTriangles(IMesh mesh)
-		{
+		public static HistDescriptor SquareRootTriangles(IMesh mesh) {
 			double binSize = 0.125;
 			int[] binValues = new int[Settings.BinsPerHistogram];
 
-			Parallel.For(0, Settings.ValuesPerHistogram, i =>
-			{
+			Parallel.For(0, Settings.ValuesPerHistogram, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
 				Vector3[] randomVertices = GetRandomVertices(mesh, random, 3);
 				double area = Math.Sqrt(Functions.GetTriArea(randomVertices));
@@ -271,8 +258,7 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
-		public static HistDescriptor CubeRootTetrahedron(IMesh mesh)
-		{
+		public static HistDescriptor CubeRootTetrahedron(IMesh mesh) {
 			double binSize = 0.075;
 			int[] binValues = new int[Settings.BinsPerHistogram];
 
@@ -292,8 +278,7 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
 		/// <returns>The histogram descriptor with the calculated histogram</returns>
-		public static HistDescriptor AngleVertices(IMesh mesh)
-		{
+		public static HistDescriptor AngleVertices(IMesh mesh) {
 			double binSize = 18;
 			int[] binValues = new int[Settings.BinsPerHistogram];
 
@@ -329,12 +314,11 @@ namespace ShapeDatabase.Features
 		/// <param name="random">The (threadsafe) random generator</param>
 		/// <param name="numberOfVertices">The number of random vertices</param>
 		/// <returns>An array containing the random vertices</returns>
-		private static Vector3[] GetRandomVertices(IMesh mesh, Random random, int numberOfVertices)
-		{
+		private static Vector3[] GetRandomVertices(IMesh mesh, Random random, int numberOfVertices) {
 			Vector3[] vertices = new Vector3[numberOfVertices];
 			uint[] randomNumbers = new uint[numberOfVertices];
 
-			for(int i = 0; i < numberOfVertices; i++) {
+			for (int i = 0; i < numberOfVertices; i++) {
 
 				uint newIndex = random.NextUint(mesh.VertexCount);
 				if (ContainsValue(randomNumbers, i, newIndex)) {
@@ -350,7 +334,7 @@ namespace ShapeDatabase.Features
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private static bool ContainsValue(uint[] array, int maxPos, uint value) {
-			for(; maxPos >= 0; maxPos--)
+			for (; maxPos >= 0; maxPos--)
 				if (array[maxPos] == value)
 					return true;
 			return false;

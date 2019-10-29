@@ -46,7 +46,8 @@ namespace ShapeDatabase.IO {
 
 				string text = lastLine.Substring(2);
 				found = NORMALISED_DATA.Equals(text, StringComparison.OrdinalIgnoreCase);
-				if (found) break;
+				if (found)
+					break;
 			}
 
 			return found;
