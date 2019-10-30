@@ -20,7 +20,7 @@ namespace ShapeDatabase.Shapes {
 		public uint NormalCount => (uint) Base.VertexCount;
 
 		private readonly Lazy<IBoundingBox> lazy;
-		private readonly int[] weightedvertexarray;
+		private readonly uint[] weightedvertexarray;
 
 		public IEnumerable<Vector3> Vertices {
 			get {
@@ -94,14 +94,14 @@ namespace ShapeDatabase.Shapes {
 			{
 				throw new ArgumentNullException();
 			}
-			int index = rand.Next(0, int.MaxValue);
-			Vector3 face = GetFace((uint)weightedvertexarray[index]);
+			int index = rand.Next(0, 1000000);
+			Vector3 face = GetFace(weightedvertexarray[index]);
 			index = rand.Next(0, 3);
 			Vector3 vertex = GetVertex((uint)face[index]);
 			return vertex;
 		}
 
-		private int[] SetWeightedVertexArray()
+		private uint[] SetWeightedVertexArray()
 		{
 			double surfaceArea = 0;
 			for (int i = 0; i < FaceCount; i++)
@@ -109,17 +109,19 @@ namespace ShapeDatabase.Shapes {
 				surfaceArea += MeshEx.GetTriArea(this, GetFace((uint)i));
 			}
 
-			int[] WeightedVertexArray = new int[int.MaxValue];
+			uint[] WeightedVertexArray = new uint[1000000];
 
 			double currentTotal = 0;
-			for (int i = 0; i < FaceCount; i++)
+			for (uint i = 0; i < FaceCount; i++)
 			{
-				double endTotal = currentTotal + MeshEx.GetTriArea(this, GetFace((uint)i)) / surfaceArea * int.MaxValue;
-				for (int j = (int)Math.Ceiling(currentTotal); j < currentTotal + endTotal; j++)
+				double test = MeshEx.GetTriArea(this, GetFace((uint)i));
+				double endTotal = currentTotal + MeshEx.GetTriArea(this, GetFace((uint)i)) / surfaceArea * 999999;
+				
+				for (int j = (int)Math.Ceiling(currentTotal); j < endTotal; j++)
 				{
 					WeightedVertexArray[j] = i;
 				}
-				currentTotal += endTotal;
+				currentTotal = endTotal;
 			}
 
 			return WeightedVertexArray;
