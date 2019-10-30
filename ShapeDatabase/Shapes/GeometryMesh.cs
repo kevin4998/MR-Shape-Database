@@ -20,6 +20,7 @@ namespace ShapeDatabase.Shapes {
 		public uint NormalCount => (uint) Base.VertexCount;
 
 		private readonly Lazy<IBoundingBox> lazy;
+		private readonly int[] weightedvertexarray;
 
 		public IEnumerable<Vector3> Vertices {
 			get {
@@ -52,6 +53,7 @@ namespace ShapeDatabase.Shapes {
 			IsNormalised = normalised;
 
 			lazy = new Lazy<IBoundingBox>(InitializeBoundingBox);
+			weightedvertexarray = SetWeightedVertexArray();
 		}
 
 		#endregion
@@ -84,6 +86,43 @@ namespace ShapeDatabase.Shapes {
 		public double GetTriArea(uint tID)
 		{
 			return Base.GetTriArea(Convert.ToInt32(tID));
+		}
+
+		public Vector3 GetRandomVertex(Random rand)
+		{
+			if (rand == null)
+			{
+				throw new ArgumentNullException();
+			}
+			int index = rand.Next(0, int.MaxValue);
+			Vector3 face = GetFace((uint)weightedvertexarray[index]);
+			index = rand.Next(0, 3);
+			Vector3 vertex = GetVertex((uint)face[index]);
+			return vertex;
+		}
+
+		private int[] SetWeightedVertexArray()
+		{
+			double surfaceArea = 0;
+			for (int i = 0; i < FaceCount; i++)
+			{
+				surfaceArea += MeshEx.GetTriArea(this, GetFace((uint)i));
+			}
+
+			int[] WeightedVertexArray = new int[int.MaxValue];
+
+			double currentTotal = 0;
+			for (int i = 0; i < FaceCount; i++)
+			{
+				double endTotal = currentTotal + MeshEx.GetTriArea(this, GetFace((uint)i)) / surfaceArea * int.MaxValue;
+				for (int j = (int)Math.Ceiling(currentTotal); j < currentTotal + endTotal; j++)
+				{
+					WeightedVertexArray[j] = i;
+				}
+				currentTotal += endTotal;
+			}
+
+			return WeightedVertexArray;
 		}
 
 		public static GeometryMesh Create(g3.DMesh3 mesh) {

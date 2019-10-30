@@ -27,6 +27,7 @@ namespace ShapeDatabase.Shapes {
 		Vector3 GetFace(uint pos);
 		Vector3 GetNormal(uint pos);
 
+		Vector3 GetRandomVertex(Random rand);
 	}
 
 	public static class MeshEx {

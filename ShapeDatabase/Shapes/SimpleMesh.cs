@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using OpenTK;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Shapes {
 
@@ -25,6 +26,7 @@ namespace ShapeDatabase.Shapes {
 		public uint EdgeCount	=> (uint) edges.Length;
 		public uint NormalCount => (uint) normals.Length;
 
+		private readonly int[] weightedvertexarray;
 
 		public IEnumerable<Vector3> Vertices {
 			get { return vertices; }
@@ -61,6 +63,7 @@ namespace ShapeDatabase.Shapes {
 			this.faces	  = AsArray(faces,	  true);
 			this.edges	  = AsArray(edges,	  false);
 			this.normals  = AsArray(normals,  false);
+			weightedvertexarray = SetWeightedVertexArray();
 			IsNormalised = normalised;
 		}
 
@@ -84,6 +87,19 @@ namespace ShapeDatabase.Shapes {
 			return vertices[pos];
 		}
 
+		public Vector3 GetRandomVertex(Random rand)
+		{
+			if (rand == null)
+			{
+				throw new ArgumentNullException();
+			}
+			int index = rand.Next(0, int.MaxValue);
+			Vector3 face = GetFace((uint)weightedvertexarray[index]);
+			index = rand.Next(0, 3);
+			Vector3 vertex = GetVertex((uint)face[index]);
+			return vertex;
+		}
+
 
 		public void SetFace(uint pos, Vector3 value) {
 			faces[pos] = value;
@@ -93,6 +109,30 @@ namespace ShapeDatabase.Shapes {
 		}
 		public void SetVertex(uint pos, Vector3 value) {
 			vertices[pos] = value;
+		}
+
+		private int[] SetWeightedVertexArray()
+		{
+			double surfaceArea = 0;
+			for (int i = 0; i < FaceCount; i++)
+			{
+				surfaceArea += MeshEx.GetTriArea(this, GetFace((uint)i));
+			}
+
+			int[] WeightedVertexArray = new int[int.MaxValue];
+
+			double currentTotal = 0;
+			for(int i = 0; i < FaceCount; i++)
+			{
+				double endTotal = currentTotal + MeshEx.GetTriArea(this, GetFace((uint)i))/surfaceArea * int.MaxValue;
+				for (int j = (int)Math.Ceiling(currentTotal); j < currentTotal + endTotal; j++)
+				{
+					WeightedVertexArray[j] = i;
+				}
+				currentTotal += endTotal;
+			}
+
+			return WeightedVertexArray;
 		}
 
 		#endregion

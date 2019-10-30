@@ -332,17 +332,14 @@ namespace ShapeDatabase.Features
 		private static Vector3[] GetRandomVertices(IMesh mesh, Random random, int numberOfVertices)
 		{
 			Vector3[] vertices = new Vector3[numberOfVertices];
-			uint[] randomNumbers = new uint[numberOfVertices];
-
 			for(int i = 0; i < numberOfVertices; i++) {
 
-				uint newIndex = random.NextUint(mesh.VertexCount);
-				if (ContainsValue(randomNumbers, i, newIndex)) {
-					i--;
-					continue;
+				Vector3 newRandomVertex = mesh.GetRandomVertex(random);
+				while (vertices.Contains(newRandomVertex)) 
+				{
+					newRandomVertex = mesh.GetRandomVertex(random);
 				}
-
-				vertices[i] = mesh.GetVertex(newIndex);
+				vertices[i] = newRandomVertex;
 			}
 
 			return vertices;
