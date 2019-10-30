@@ -63,7 +63,7 @@ namespace ShapeDatabase.Shapes {
 			this.faces	  = AsArray(faces,	  true);
 			this.edges	  = AsArray(edges,	  false);
 			this.normals  = AsArray(normals,  false);
-			weightedvertexarray = SetWeightedVertexArray();
+			weightedvertexarray = MeshEx.SetWeightedVertexArray(this);
 			IsNormalised = normalised;
 		}
 
@@ -89,17 +89,8 @@ namespace ShapeDatabase.Shapes {
 
 		public Vector3 GetRandomVertex(Random rand)
 		{
-			if (rand == null)
-			{
-				throw new ArgumentNullException();
-			}
-			int index = rand.Next(0, 1000000);
-			Vector3 face = GetFace(weightedvertexarray[index]);
-			index = rand.Next(0, 3);
-			Vector3 vertex = GetVertex((uint)face[index]);
-			return vertex;
+			return MeshEx.GetRandomVertex(this, rand, weightedvertexarray);
 		}
-
 
 		public void SetFace(uint pos, Vector3 value) {
 			faces[pos] = value;
@@ -109,32 +100,6 @@ namespace ShapeDatabase.Shapes {
 		}
 		public void SetVertex(uint pos, Vector3 value) {
 			vertices[pos] = value;
-		}
-
-		private uint[] SetWeightedVertexArray()
-		{
-			double surfaceArea = 0;
-			for (int i = 0; i < FaceCount; i++)
-			{
-				surfaceArea += MeshEx.GetTriArea(this, GetFace((uint)i));
-			}
-
-			uint[] WeightedVertexArray = new uint[1000000];
-
-			double currentTotal = 0;
-			for (uint i = 0; i < FaceCount; i++)
-			{
-				double test = MeshEx.GetTriArea(this, GetFace((uint)i));
-				double endTotal = currentTotal + MeshEx.GetTriArea(this, GetFace((uint)i)) / surfaceArea * 999999;
-
-				for (int j = (int)Math.Ceiling(currentTotal); j < endTotal; j++)
-				{
-					WeightedVertexArray[j] = i;
-				}
-				currentTotal = endTotal;
-			}
-
-			return WeightedVertexArray;
 		}
 
 		#endregion

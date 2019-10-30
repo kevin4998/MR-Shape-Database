@@ -140,6 +140,11 @@ namespace ShapeDatabase {
 		public static MeshLibrary QueryLibrary => FileManager.QueryMeshes;
 
 		/// <summary>
+		/// Size of the weighted vertex array.
+		/// </summary>
+		public static int WeightedVertexArraySize { get; set; } = 100000;
+
+		/// <summary>
 		/// Refine shapes to this number of vertices.
 		/// </summary>
 		public static int RefineVertexNumber { get; set; } = 5250;
