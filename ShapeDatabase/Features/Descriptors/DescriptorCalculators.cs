@@ -344,15 +344,6 @@ namespace ShapeDatabase.Features
 
 			return vertices;
 		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		private static bool ContainsValue(uint[] array, int maxPos, uint value) {
-			for(; maxPos >= 0; maxPos--)
-				if (array[maxPos] == value)
-					return true;
-			return false;
-		}
-
 		#endregion
 
 	}
