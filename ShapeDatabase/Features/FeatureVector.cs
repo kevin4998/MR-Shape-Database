@@ -95,7 +95,7 @@ namespace ShapeDatabase.Features {
 			DescriptorComparer comparer = DescriptorComparer.Instance;
 			IEnumerator<IDescriptor> pdescs = primary.Descriptors.GetEnumerator();
 			IEnumerator<IDescriptor> sdescs = secondary.Descriptors.GetEnumerator();
-
+			 
 			double sumCubedElem = 0;
 			double sumHist = 0;
 			int countHist = 0;
