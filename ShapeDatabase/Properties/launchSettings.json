@@ -2,7 +2,6 @@
   "profiles": {
     "ShapeDatabase": {
       "commandName": "Project",
-      "commandLineArgs": "view -d \"Content/Shapes/Initial\"",
       "nativeDebugging": true
     }
   }

@@ -15,11 +15,12 @@
     <PackageProjectUrl>https://github.com/kevin4998/MR-Shape-Database</PackageProjectUrl>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <ApplicationIcon />
+    <AssemblyName>ShapeDatabase-Library</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <WarningLevel>2</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <Optimize>false</Optimize>
     <OutputPath></OutputPath>
     <DocumentationFile></DocumentationFile>
@@ -70,13 +71,5 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="echo start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y&#xD;&#xA;start XCOPY /D &quot;$(ProjectDir)Content&quot; /D &quot;$(TargetDir)Content&quot; /s /e /k /r /y" />
-  </Target>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if not exist &quot;$(TargetDir)Libs&quot; mkdir &quot;$(TargetDir)Libs&quot;&#xD;&#xA;for /r &quot;$(TargetDir)&quot; %25%25x in (*.dll) do move &quot;%25%25x&quot; &quot;$(TargetDir)Libs&quot;&#xD;&#xA;move &quot;$(TargetDir)Accord.dll.config&quot; &quot;$(TargetDir)Libs/Accord.dll.config&quot;" />
-  </Target>
 
 </Project>
