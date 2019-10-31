@@ -92,11 +92,11 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="echo start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y&#xD;&#xA;start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y" />
+    <Exec Command="echo start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y&#xD;&#xA;start XCOPY /D &quot;$(ProjectDir)Content&quot; /D &quot;$(TargetDir)Content&quot; /s /e /k /r /y" />
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="for /r &quot;$(TargetDir)&quot; %25%25x in (*.dll) do move &quot;%25%25x&quot; &quot;$(TargetDir)Libs&quot;&#xD;&#xA;move &quot;$(TargetDir)Accord.dll.config&quot; &quot;$(TargetDir)Libs/Accord.dll.config&quot;" />
+    <Exec Command="if not exist &quot;$(TargetDir)Libs&quot; mkdir &quot;$(TargetDir)Libs&quot;&#xD;&#xA;for /r &quot;$(TargetDir)&quot; %25%25x in (*.dll) do move &quot;%25%25x&quot; &quot;$(TargetDir)Libs&quot;&#xD;&#xA;move &quot;$(TargetDir)Accord.dll.config&quot; &quot;$(TargetDir)Libs/Accord.dll.config&quot;" />
   </Target>
 
 </Project>
