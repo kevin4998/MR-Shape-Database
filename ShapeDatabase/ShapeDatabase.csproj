@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net48</TargetFramework>
-    <StartupObject>ShapeDatabase.Program</StartupObject>
+    <StartupObject></StartupObject>
     <Authors>Kevin Westerbaan; Guus de Jonge</Authors>
     <Company />
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -14,6 +14,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/kevin4998/MR-Shape-Database</PackageProjectUrl>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <ApplicationIcon />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,15 +24,6 @@
     <OutputPath></OutputPath>
     <DocumentationFile></DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Content\Vectors\" />
-    <Folder Include="Content\Shapes\Final\" />
-    <Folder Include="Content\Shapes\Failed\" />
-    <Folder Include="Content\Shapes\Temp\" />
-    <Folder Include="Content\Shapes\All\" />
-    <Folder Include="Content\Shapes\Small\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Accord.MachineLearning" Version="3.8.0" />
@@ -77,18 +69,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Content\UI\shader.frag">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\UI\shader.vert">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-		<None Update="Content\UI\lighting.frag">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">

@@ -4,7 +4,7 @@ using System.Diagnostics;
 using OpenTK;
 using OpenTK.Input;
 
-namespace ShapeDatabase.UI {
+namespace ShapeDatabase.UI.Window {
 
 	/// <summmary>
 	/// An object with the purpose of managing Keyboard interaction.

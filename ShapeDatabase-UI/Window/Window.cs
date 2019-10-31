@@ -7,7 +7,7 @@ using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.Util;
 
-namespace ShapeDatabase.UI {
+namespace ShapeDatabase.UI.Window {
 
 	public class Window : GameWindow {
 

@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShapeDatabase", "ShapeDatabase\ShapeDatabase.csproj", "{6447C117-0911-4586-B708-A6023356507F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeDatabase-UI", "ShapeDatabase-UI\ShapeDatabase-UI.csproj", "{DD966ED7-8D22-4F1E-BE06-4DDE20A60BB4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6447C117-0911-4586-B708-A6023356507F} = {6447C117-0911-4586-B708-A6023356507F}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{6447C117-0911-4586-B708-A6023356507F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6447C117-0911-4586-B708-A6023356507F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6447C117-0911-4586-B708-A6023356507F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD966ED7-8D22-4F1E-BE06-4DDE20A60BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD966ED7-8D22-4F1E-BE06-4DDE20A60BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD966ED7-8D22-4F1E-BE06-4DDE20A60BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD966ED7-8D22-4F1E-BE06-4DDE20A60BB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

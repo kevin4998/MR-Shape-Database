@@ -100,12 +100,6 @@ namespace ShapeDatabase {
 		#region --- Flow Properties ---
 
 		/// <summary>
-		/// The current processes which needs to be executed.
-		/// </summary>
-		public static OperationModes Mode { get; set; } = OperationModes.VIEW;
-
-
-		/// <summary>
 		/// If Debug messages should be visible in the console.
 		/// </summary>
 		public static bool ShowDebug { get; set; } = false;
@@ -196,12 +190,6 @@ namespace ShapeDatabase {
 		/// should be shown/saved.
 		/// </summary>
 		public static int KBestResults { get; set; } = 5;
-
-
-		/// <summary>
-		/// A collection of strings which will force the program to stop.
-		/// </summary>
-		public static ICollection<string> ExitArguments => A_ExitArgs.Split(A_ExitSep.ToCharArray());
 
 		#endregion
 

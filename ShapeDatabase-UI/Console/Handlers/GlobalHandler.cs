@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
 
 using static System.Console;
-using static ShapeDatabase.Properties.Resources;
+using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
 
@@ -30,6 +31,11 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			string settingsFile = Settings.SettingsFile;
 			if (Settings.FileManager.TryRead(settingsFile, out TempSettings settings))
 				settings.Finalise();
+			// Add previously refined files.
+			string finalDir = Settings.ShapeFinalDir;
+			if (!Directory.Exists(finalDir))
+				Directory.CreateDirectory(finalDir);
+			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
 
 			return 0;
 		}

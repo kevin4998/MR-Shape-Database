@@ -6,7 +6,7 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL4;
 
 
-namespace ShapeDatabase.UI {
+namespace ShapeDatabase.UI.Window {
 	public class Shader {
 		public int Handle { get; private set; }
 

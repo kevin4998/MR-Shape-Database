@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
 
 using static System.Console;
-using static ShapeDatabase.Properties.Resources;
+using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
 
@@ -12,6 +13,23 @@ namespace ShapeDatabase.UI.Console.Handlers {
 	/// The class which should handle viewing different shapes.
 	/// </summary>
 	public static class ViewHandler {
+
+		/// <summary>
+		/// A collection of strings which will force the program to stop.
+		/// </summary>
+		public static ICollection<string> ExitArguments => A_ExitArgs.Split(A_ExitSep.ToCharArray());
+
+		/// <summary>
+		/// Checks if the specified argument is the command to exit the application.
+		/// </summary>
+		/// <param name="argument">The command line which could exit the console
+		/// or ask for a mesh.</param>
+		/// <returns><see langword="true"/> if it is used to exit the application.
+		/// </returns>
+		public static bool IsExitArgument(string argument) {
+			return argument != null
+				&& ExitArguments.Contains(argument.ToLower(Settings.Culture));
+		}
 
 
 		/// <summary>
@@ -54,10 +72,10 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			Settings.DirectShutDown = false;
 			do {
 				WriteLine();    // Empty line for clearance.
-				WriteLine(I_ShapeSelect_Prompt, Settings.ExitArguments.FirstOrDefault());
+				WriteLine(I_ShapeSelect_Prompt, ExitArguments.FirstOrDefault());
 
 				string input = ReadLine();
-				if (Settings.ExitArguments.Contains(input.ToLower(Settings.Culture)))
+				if (IsExitArgument(input))
 					Settings.DirectShutDown = true;
 				else if (meshes.Names.Contains(input))
 					RunWindow(meshes[input].Mesh);
@@ -71,7 +89,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="mesh"></param>
 		private static void RunWindow(IMesh mesh) {
-			using (Window window = new Window(800, 600, A_WindowName, mesh)) {
+			using (Window.Window window = new Window.Window(800, 600, A_WindowName, mesh)) {
 				window.Run(60.0);
 			}
 		}

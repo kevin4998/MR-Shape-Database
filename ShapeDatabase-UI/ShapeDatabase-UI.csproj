@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD966ED7-8D22-4F1E-BE06-4DDE20A60BB4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ShapeDatabase.UI</RootNamespace>
+    <AssemblyName>ShapeDatabase-UI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommandLine, Version=2.6.0.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommandLineParser.2.6.0\lib\net461\CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=3.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.1.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Console\Handlers\CleanHandler.cs" />
+    <Compile Include="Console\Handlers\EvaluateHandler.cs" />
+    <Compile Include="Console\Handlers\FeatureHandler.cs" />
+    <Compile Include="Console\Handlers\GlobalHandler.cs" />
+    <Compile Include="Console\Handlers\MeasureHandler.cs" />
+    <Compile Include="Console\Handlers\QueryHandler.cs" />
+    <Compile Include="Console\Handlers\RefineHandler.cs" />
+    <Compile Include="Console\Handlers\ViewHandler.cs" />
+    <Compile Include="Console\Verbs\BaseOptions.cs" />
+    <Compile Include="Console\Verbs\ModeOptions.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Camera.cs" />
+    <Compile Include="Window\KeyController.cs" />
+    <Compile Include="Window\Shader.cs" />
+    <Compile Include="Window\Window.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Content\Query\LDB_101.off" />
+    <None Include="Content\Query\LDB_102.off" />
+    <None Include="Content\Shapes\Initial\Bridge\m1784.off" />
+    <None Include="Content\Shapes\Initial\Bridge\m1785.off" />
+    <None Include="Content\Shapes\Initial\Chair\LDB_101.off" />
+    <None Include="Content\Shapes\Initial\Chair\LDB_102.off" />
+    <None Include="Content\Shapes\Initial\FourLeg\m94.off" />
+    <None Include="Content\Shapes\Initial\Human\m127.off" />
+    <None Include="Content\Shapes\Initial\Sign\m1674.off" />
+    <None Include="Content\Shapes\Small\Airplane\LDB_61.off" />
+    <None Include="Content\Shapes\Small\Airplane\LDB_62.off" />
+    <None Include="Content\Shapes\Small\Airplane\LDB_63.off" />
+    <None Include="Content\Shapes\Small\Airplane\LDB_64.off" />
+    <None Include="Content\Shapes\Small\Airplane\LDB_65.off" />
+    <None Include="Content\Shapes\Small\Airplane\PSB_1200.off" />
+    <None Include="Content\Shapes\Small\Airplane\PSB_1201.off" />
+    <None Include="Content\Shapes\Small\Airplane\PSB_1202.off" />
+    <None Include="Content\Shapes\Small\Airplane\PSB_1203.off" />
+    <None Include="Content\Shapes\Small\Airplane\PSB_1204.off" />
+    <None Include="Content\Shapes\Small\Ant\LDB_81.off" />
+    <None Include="Content\Shapes\Small\Ant\LDB_82.off" />
+    <None Include="Content\Shapes\Small\Ant\LDB_83.off" />
+    <None Include="Content\Shapes\Small\Ant\LDB_84.off" />
+    <None Include="Content\Shapes\Small\Ant\LDB_85.off" />
+    <None Include="Content\Shapes\Small\Ant\PSB_0.off" />
+    <None Include="Content\Shapes\Small\Ant\PSB_1.off" />
+    <None Include="Content\Shapes\Small\Ant\PSB_2.off" />
+    <None Include="Content\Shapes\Small\Ant\PSB_3.off" />
+    <None Include="Content\Shapes\Small\Ant\PSB_4.off" />
+    <None Include="Content\Shapes\Small\Armadillo\LDB_281.off" />
+    <None Include="Content\Shapes\Small\Armadillo\LDB_282.off" />
+    <None Include="Content\Shapes\Small\Armadillo\LDB_283.off" />
+    <None Include="Content\Shapes\Small\Armadillo\LDB_284.off" />
+    <None Include="Content\Shapes\Small\Armadillo\LDB_285.off" />
+    <None Include="Content\Shapes\Small\Bearing\LDB_341.off" />
+    <None Include="Content\Shapes\Small\Bearing\LDB_342.off" />
+    <None Include="Content\Shapes\Small\Bearing\LDB_343.off" />
+    <None Include="Content\Shapes\Small\Bearing\LDB_344.off" />
+    <None Include="Content\Shapes\Small\Bearing\LDB_345.off" />
+    <None Include="Content\Shapes\Small\Bird\LDB_241.off" />
+    <None Include="Content\Shapes\Small\Bird\LDB_242.off" />
+    <None Include="Content\Shapes\Small\Bird\LDB_243.off" />
+    <None Include="Content\Shapes\Small\Bird\LDB_244.off" />
+    <None Include="Content\Shapes\Small\Bird\LDB_245.off" />
+    <None Include="Content\Shapes\Small\Bird\PSB_27.off" />
+    <None Include="Content\Shapes\Small\Bird\PSB_28.off" />
+    <None Include="Content\Shapes\Small\Bird\PSB_30.off" />
+    <None Include="Content\Shapes\Small\Bird\PSB_31.off" />
+    <None Include="Content\Shapes\Small\Bird\PSB_35.off" />
+    <None Include="Content\Shapes\Small\Bust\LDB_301.off" />
+    <None Include="Content\Shapes\Small\Bust\LDB_302.off" />
+    <None Include="Content\Shapes\Small\Bust\LDB_303.off" />
+    <None Include="Content\Shapes\Small\Bust\LDB_304.off" />
+    <None Include="Content\Shapes\Small\Bust\LDB_305.off" />
+    <None Include="Content\Shapes\Small\Car\PSB_1510.off" />
+    <None Include="Content\Shapes\Small\Car\PSB_1512.off" />
+    <None Include="Content\Shapes\Small\Car\PSB_1518.off" />
+    <None Include="Content\Shapes\Small\Car\PSB_1521.off" />
+    <None Include="Content\Shapes\Small\Car\PSB_1522.off" />
+    <None Include="Content\Shapes\Small\Chair\LDB_101.off" />
+    <None Include="Content\Shapes\Small\Chair\LDB_102.off" />
+    <None Include="Content\Shapes\Small\Chair\LDB_103.off" />
+    <None Include="Content\Shapes\Small\Chair\LDB_104.off" />
+    <None Include="Content\Shapes\Small\Chair\LDB_105.off" />
+    <None Include="Content\Shapes\Small\Chair\LDB_106.off" />
+    <None Include="Content\Shapes\Small\Chair\PSB_800.off" />
+    <None Include="Content\Shapes\Small\Chair\PSB_801.off" />
+    <None Include="Content\Shapes\Small\Chair\PSB_802.off" />
+    <None Include="Content\Shapes\Small\Chair\PSB_803.off" />
+    <None Include="Content\Shapes\Small\Chair\PSB_804.off" />
+    <None Include="Content\Shapes\Small\Cup\LDB_21.off" />
+    <None Include="Content\Shapes\Small\Cup\LDB_22.off" />
+    <None Include="Content\Shapes\Small\Cup\LDB_23.off" />
+    <None Include="Content\Shapes\Small\Cup\LDB_24.off" />
+    <None Include="Content\Shapes\Small\Cup\LDB_25.off" />
+    <None Include="Content\Shapes\Small\Cup\PSB_494.off" />
+    <None Include="Content\Shapes\Small\Cup\PSB_495.off" />
+    <None Include="Content\Shapes\Small\Cup\PSB_497.off" />
+    <None Include="Content\Shapes\Small\Cup\PSB_498.off" />
+    <None Include="Content\Shapes\Small\Cup\PSB_504.off" />
+    <None Include="Content\Shapes\Small\Fish\LDB_221.off" />
+    <None Include="Content\Shapes\Small\Fish\LDB_222.off" />
+    <None Include="Content\Shapes\Small\Fish\LDB_223.off" />
+    <None Include="Content\Shapes\Small\Fish\LDB_224.off" />
+    <None Include="Content\Shapes\Small\Fish\LDB_225.off" />
+    <None Include="Content\Shapes\Small\Fish\PSB_65.off" />
+    <None Include="Content\Shapes\Small\Fish\PSB_66.off" />
+    <None Include="Content\Shapes\Small\Fish\PSB_68.off" />
+    <None Include="Content\Shapes\Small\Fish\PSB_71.off" />
+    <None Include="Content\Shapes\Small\Fish\PSB_73.off" />
+    <None Include="Content\Shapes\Small\Flower\PSB_978.off" />
+    <None Include="Content\Shapes\Small\Flower\PSB_980.off" />
+    <None Include="Content\Shapes\Small\Flower\PSB_981.off" />
+    <None Include="Content\Shapes\Small\Flower\PSB_983.off" />
+    <None Include="Content\Shapes\Small\Flower\PSB_986.off" />
+    <None Include="Content\Shapes\Small\FourLeg\LDB_381.off" />
+    <None Include="Content\Shapes\Small\FourLeg\LDB_382.off" />
+    <None Include="Content\Shapes\Small\FourLeg\LDB_383.off" />
+    <None Include="Content\Shapes\Small\FourLeg\LDB_384.off" />
+    <None Include="Content\Shapes\Small\FourLeg\LDB_385.off" />
+    <None Include="Content\Shapes\Small\FourLeg\PSB_100.off" />
+    <None Include="Content\Shapes\Small\FourLeg\PSB_86.off" />
+    <None Include="Content\Shapes\Small\FourLeg\PSB_87.off" />
+    <None Include="Content\Shapes\Small\FourLeg\PSB_90.off" />
+    <None Include="Content\Shapes\Small\FourLeg\PSB_94.off" />
+    <None Include="Content\Shapes\Small\Glasses\LDB_41.off" />
+    <None Include="Content\Shapes\Small\Glasses\LDB_42.off" />
+    <None Include="Content\Shapes\Small\Glasses\LDB_43.off" />
+    <None Include="Content\Shapes\Small\Glasses\LDB_44.off" />
+    <None Include="Content\Shapes\Small\Glasses\LDB_45.off" />
+    <None Include="Content\Shapes\Small\Glasses\PSB_581.off" />
+    <None Include="Content\Shapes\Small\Glasses\PSB_582.off" />
+    <None Include="Content\Shapes\Small\Glasses\PSB_583.off" />
+    <None Include="Content\Shapes\Small\Glasses\PSB_584.off" />
+    <None Include="Content\Shapes\Small\Glasses\PSB_586.off" />
+    <None Include="Content\Shapes\Small\Gun\PSB_650.off" />
+    <None Include="Content\Shapes\Small\Gun\PSB_652.off" />
+    <None Include="Content\Shapes\Small\Gun\PSB_653.off" />
+    <None Include="Content\Shapes\Small\Gun\PSB_660.off" />
+    <None Include="Content\Shapes\Small\Gun\PSB_661.off" />
+    <None Include="Content\Shapes\Small\Hand\LDB_181.off" />
+    <None Include="Content\Shapes\Small\Hand\LDB_182.off" />
+    <None Include="Content\Shapes\Small\Hand\LDB_183.off" />
+    <None Include="Content\Shapes\Small\Hand\LDB_184.off" />
+    <None Include="Content\Shapes\Small\Hand\LDB_185.off" />
+    <None Include="Content\Shapes\Small\Hand\PSB_323.off" />
+    <None Include="Content\Shapes\Small\Hand\PSB_324.off" />
+    <None Include="Content\Shapes\Small\Hand\PSB_328.off" />
+    <None Include="Content\Shapes\Small\Hand\PSB_329.off" />
+    <None Include="Content\Shapes\Small\Hand\PSB_330.off" />
+    <None Include="Content\Shapes\Small\Hourglass\PSB_592.off" />
+    <None Include="Content\Shapes\Small\Hourglass\PSB_593.off" />
+    <None Include="Content\Shapes\Small\Hourglass\PSB_594.off" />
+    <None Include="Content\Shapes\Small\Hourglass\PSB_595.off" />
+    <None Include="Content\Shapes\Small\Hourglass\PSB_597.off" />
+    <None Include="Content\Shapes\Small\Human\LDB_1.off" />
+    <None Include="Content\Shapes\Small\Human\LDB_2.off" />
+    <None Include="Content\Shapes\Small\Human\LDB_3.off" />
+    <None Include="Content\Shapes\Small\Human\LDB_4.off" />
+    <None Include="Content\Shapes\Small\Human\LDB_5.off" />
+    <None Include="Content\Shapes\Small\Human\PSB_122.off" />
+    <None Include="Content\Shapes\Small\Human\PSB_132.off" />
+    <None Include="Content\Shapes\Small\Human\PSB_137.off" />
+    <None Include="Content\Shapes\Small\Human\PSB_142.off" />
+    <None Include="Content\Shapes\Small\Human\PSB_153.off" />
+    <None Include="Content\Shapes\Small\IceCream\PSB_750.off" />
+    <None Include="Content\Shapes\Small\IceCream\PSB_751.off" />
+    <None Include="Content\Shapes\Small\IceCream\PSB_752.off" />
+    <None Include="Content\Shapes\Small\IceCream\PSB_753.off" />
+    <None Include="Content\Shapes\Small\IceCream\PSB_756.off" />
+    <None Include="Content\Shapes\Small\Lamp\PSB_616.off" />
+    <None Include="Content\Shapes\Small\Lamp\PSB_617.off" />
+    <None Include="Content\Shapes\Small\Lamp\PSB_618.off" />
+    <None Include="Content\Shapes\Small\Lamp\PSB_621.off" />
+    <None Include="Content\Shapes\Small\Lamp\PSB_624.off" />
+    <None Include="Content\Shapes\Small\Mech\LDB_321.off" />
+    <None Include="Content\Shapes\Small\Mech\LDB_322.off" />
+    <None Include="Content\Shapes\Small\Mech\LDB_323.off" />
+    <None Include="Content\Shapes\Small\Mech\LDB_324.off" />
+    <None Include="Content\Shapes\Small\Mech\LDB_325.off" />
+    <None Include="Content\Shapes\Small\Octopus\LDB_121.off" />
+    <None Include="Content\Shapes\Small\Octopus\LDB_122.off" />
+    <None Include="Content\Shapes\Small\Octopus\LDB_123.off" />
+    <None Include="Content\Shapes\Small\Octopus\LDB_124.off" />
+    <None Include="Content\Shapes\Small\Octopus\LDB_125.off" />
+    <None Include="Content\Shapes\Small\Plier\LDB_201.off" />
+    <None Include="Content\Shapes\Small\Plier\LDB_202.off" />
+    <None Include="Content\Shapes\Small\Plier\LDB_203.off" />
+    <None Include="Content\Shapes\Small\Plier\LDB_204.off" />
+    <None Include="Content\Shapes\Small\Plier\LDB_205.off" />
+    <None Include="Content\Shapes\Small\Screen\PSB_550.off" />
+    <None Include="Content\Shapes\Small\Screen\PSB_552.off" />
+    <None Include="Content\Shapes\Small\Screen\PSB_554.off" />
+    <None Include="Content\Shapes\Small\Screen\PSB_558.off" />
+    <None Include="Content\Shapes\Small\Screen\PSB_559.off" />
+    <None Include="Content\Shapes\Small\Table\LDB_141.off" />
+    <None Include="Content\Shapes\Small\Table\LDB_142.off" />
+    <None Include="Content\Shapes\Small\Table\LDB_143.off" />
+    <None Include="Content\Shapes\Small\Table\LDB_144.off" />
+    <None Include="Content\Shapes\Small\Table\LDB_145.off" />
+    <None Include="Content\Shapes\Small\Table\PSB_874.off" />
+    <None Include="Content\Shapes\Small\Table\PSB_875.off" />
+    <None Include="Content\Shapes\Small\Table\PSB_877.off" />
+    <None Include="Content\Shapes\Small\Table\PSB_881.off" />
+    <None Include="Content\Shapes\Small\Table\PSB_882.off" />
+    <None Include="Content\Shapes\Small\Teddy\LDB_161.off" />
+    <None Include="Content\Shapes\Small\Teddy\LDB_162.off" />
+    <None Include="Content\Shapes\Small\Teddy\LDB_163.off" />
+    <None Include="Content\Shapes\Small\Teddy\LDB_164.off" />
+    <None Include="Content\Shapes\Small\Teddy\LDB_165.off" />
+    <None Include="Content\Shapes\Small\Vase\LDB_361.off" />
+    <None Include="Content\Shapes\Small\Vase\LDB_362.off" />
+    <None Include="Content\Shapes\Small\Vase\LDB_363.off" />
+    <None Include="Content\Shapes\Small\Vase\LDB_364.off" />
+    <None Include="Content\Shapes\Small\Vase\LDB_365.off" />
+    <None Include="Content\Shapes\Small\Vase\PSB_531.off" />
+    <None Include="Content\Shapes\Small\Vase\PSB_536.off" />
+    <None Include="Content\Shapes\Small\Vase\PSB_539.off" />
+    <None Include="Content\Shapes\Small\Vase\PSB_542.off" />
+    <None Include="Content\Shapes\Small\Vase\PSB_545.off" />
+    <None Include="Content\UI\lighting.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\UI\shader.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\UI\shader.vert">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShapeDatabase\ShapeDatabase.csproj">
+      <Project>{6447c117-0911-4586-b708-a6023356507f}</Project>
+      <Name>ShapeDatabase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Shapes\Initial\Bridge\m1784_info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Shapes\Initial\Bridge\m1784_thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Shapes\Initial\Bridge\m1785_info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Shapes\Initial\Bridge\m1785_thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Shapes\Initial\FourLeg\m94_info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Shapes\Initial\FourLeg\m94_thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Shapes\All\" />
+    <Folder Include="Content\Shapes\Failed\" />
+    <Folder Include="Content\Shapes\Final\" />
+    <Folder Include="Content\Shapes\Temp\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

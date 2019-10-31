@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A_ExitArgs" xml:space="preserve">
+    <value>exit,quit,stop</value>
+    <comment>A list of different names which will stop the application. The elements are seperated using the A_ExitSep variable. At least 1 element should be in the list.</comment>
+  </data>
+  <data name="A_ExitSep" xml:space="preserve">
+    <value>,</value>
+    <comment>The seperated between the exit commands in the A_ExitArgs list.</comment>
+  </data>
+  <data name="A_WindowName" xml:space="preserve">
+    <value>Multimedia Retrieval - K. Westerbaan &amp; G. de Jonge</value>
+    <comment>The title of the window which will be created by the application.</comment>
+  </data>
+  <data name="EX_NoMesh" xml:space="preserve">
+    <value>Mesh not found!</value>
+    <comment>The exception which is given when a mesh is being retrieved which is not stored in our library.</comment>
+  </data>
+  <data name="F_DateFormat" xml:space="preserve">
+    <value>yyyy-MM-dd-HH-mm-ss</value>
+    <comment>The format which is being used to visualise dates on exported files.</comment>
+  </data>
+  <data name="F_File_Measure" xml:space="preserve">
+    <value>{0}_{1}</value>
+    <comment>The format for the names of measurement/statistic files.</comment>
+  </data>
+  <data name="I_EndLoad_Mesh" xml:space="preserve">
+    <value>Done loading meshes.</value>
+    <comment>Notify the user that meshes have finished loading in for visualisation.</comment>
+  </data>
+  <data name="I_EndProc_Clean" xml:space="preserve">
+    <value>Finished cleaning directories!</value>
+    <comment>Notify the user that old data has been deleted.</comment>
+  </data>
+  <data name="I_EndProc_Evaluate" xml:space="preserve">
+    <value>Done evaluating query results.</value>
+    <comment>Notify that the evaluation of query results have finished.</comment>
+  </data>
+  <data name="I_EndProc_Feature" xml:space="preserve">
+    <value>Done extracting descriptors.</value>
+    <comment>Notify the user that the descriptors for all shapes have been calculated.</comment>
+  </data>
+  <data name="I_EndProc_Input" xml:space="preserve">
+    <value>Done converting input!</value>
+    <comment>Notify the end of input argument conversion.</comment>
+  </data>
+  <data name="I_EndProc_Measure" xml:space="preserve">
+    <value>Done measuring meshes.</value>
+    <comment>Notify that the meshes have finished being measured for statistic calculation.</comment>
+  </data>
+  <data name="I_EndProc_Query" xml:space="preserve">
+    <value>Done with the query.</value>
+    <comment>Notify the user that the query pipeline has ended.</comment>
+  </data>
+  <data name="I_EndProc_Refine" xml:space="preserve">
+    <value>Done processing meshes.</value>
+    <comment>Notify that the meshes have finished processing.</comment>
+  </data>
+  <data name="I_Evaluation_Exp" xml:space="preserve">
+    <value>Evaluation exported to: {0}</value>
+    <comment>Notify that evaluation results have been saved to a specified file.</comment>
+  </data>
+  <data name="I_ExitPropmt" xml:space="preserve">
+    <value>Press enter to exit the application.</value>
+    <comment>Notify that an action needs to be taken to close the application.</comment>
+  </data>
+  <data name="I_Feature_Exp" xml:space="preserve">
+    <value>FeatureVectors exported to: {0}</value>
+    <comment>Notify that the featuress have been saved to a specified file.</comment>
+  </data>
+  <data name="I_Feature_Imp" xml:space="preserve">
+    <value>FeatureVectors imported from: {0}</value>
+    <comment>Notify that the features have been reloaded from the specified file.</comment>
+  </data>
+  <data name="I_Measure_Exp" xml:space="preserve">
+    <value>Statistics exported to: {0}</value>
+    <comment>Notify that the measurements have been saved to a specified file.</comment>
+  </data>
+  <data name="I_QueryCount" xml:space="preserve">
+    <value>{0} Query Results:</value>
+    <comment>Notify the user about the amount of query results which have been generated by the application.</comment>
+  </data>
+  <data name="I_Query_Exp" xml:space="preserve">
+    <value>Exporting the query results to: {0}.</value>
+    <comment>Notify that the query results have been saved to a specified file.</comment>
+  </data>
+  <data name="I_Query_Imp" xml:space="preserve">
+    <value>Query results imported from: {0}</value>
+    <comment>Notify that the query results from a previous attempt have been reloaded.</comment>
+  </data>
+  <data name="I_ShapeCount" xml:space="preserve">
+    <value>{0} Shapes are available:</value>
+    <comment>Notify the user about the amount of shapes which have been loaded before enumerating the list.</comment>
+  </data>
+  <data name="I_ShapeSelect_Prompt" xml:space="preserve">
+    <value>Please select a shape, or write down {0} to exit the program.</value>
+    <comment>Notify that an action needs to be taken to view a specific shape or exit the application.</comment>
+  </data>
+  <data name="I_StartLoad_Mesh" xml:space="preserve">
+    <value>Start loading meshes.</value>
+    <comment>Notify the user that meshes are being loaded in for visualisation.</comment>
+  </data>
+  <data name="I_StartProc_Clean" xml:space="preserve">
+    <value>Cleaning directories!</value>
+    <comment>Notify the user that old data is being deleted.</comment>
+  </data>
+  <data name="I_StartProc_Evaluate" xml:space="preserve">
+    <value>Start evaluating query results.</value>
+    <comment>Notify that the evaluation process has started calculating metrics on the query results.</comment>
+  </data>
+  <data name="I_StartProc_Feature" xml:space="preserve">
+    <value>Start extracting descriptors.</value>
+    <comment>Notify the user that the descriptors for all shapes are being calculated.</comment>
+  </data>
+  <data name="I_StartProc_Input" xml:space="preserve">
+    <value>Starting converting input!</value>
+    <comment>Notify that the conversion of input arguments is in process.</comment>
+  </data>
+  <data name="I_StartProc_Measure" xml:space="preserve">
+    <value>Start measuring meshes.</value>
+    <comment>Notify that the meshes are now being measured for statistic calculation.</comment>
+  </data>
+  <data name="I_StartProc_Query" xml:space="preserve">
+    <value>Starting the query.</value>
+    <comment>Notify that the query pipeline has started.</comment>
+  </data>
+  <data name="I_StartProc_Refine" xml:space="preserve">
+    <value>Start processing meshes.</value>
+    <comment>Notify that the meshes are now being processed.</comment>
+  </data>
+  <data name="I_StartUp" xml:space="preserve">
+    <value>Startin Up!</value>
+    <comment>Notify that the application has started up.</comment>
+  </data>
+  <data name="I_UnknownCommand" xml:space="preserve">
+    <value>Unknown command: {0}</value>
+    <comment>Notify the user that the given action cannot be completed by this application.</comment>
+  </data>
+</root>

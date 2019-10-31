@@ -5,7 +5,7 @@ using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.UI.Console.Verbs;
 
 using static System.Console;
-using static ShapeDatabase.Properties.Resources;
+using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
 
