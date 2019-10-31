@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -15,6 +16,8 @@ using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI;
 using ShapeDatabase.UI.Console;
+using ShapeDatabase.UI.Console.Handlers;
+using ShapeDatabase.UI.Console.Verbs;
 using static ShapeDatabase.Properties.Resources;
 
 namespace ShapeDatabase {
@@ -33,9 +36,18 @@ namespace ShapeDatabase {
 		public static void ProcessArguments(string[] args) {
 			Console.WriteLine(I_StartProc_Input);
 
-			Parser.Default.ParseArguments<Options>(args)
-				.WithNotParsed(OnErrors)
-				.WithParsed(OnParsedValues);
+			Parser.Default.ParseArguments<CleanOptions, ViewOptions, RefineOptions,
+										  MeasureOptions, FeatureOptions, QueryOptions,
+										  EvaluateOptions>(args)
+						  .MapResult(
+							(BaseOptions	options) => GlobalHandler .Start(options),
+							(CleanOptions   options) => CleanHandler  .Start(options),
+							(ViewOptions    options) => ViewHandler   .Start(options),
+							(RefineOptions  options) => RefineHandler .Start(options),
+							(MeasureOptions options) => MeasureHandler.Start(options),
+							(FeatureOptions options) => FeatureHandler.Start(options),
+							(IEnumerable<Error> err) => OnErrors(err)
+						   );
 		}
 
 
@@ -88,9 +100,10 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="errors">A collection of generated errors
 		/// by the Parser package.</param>
-		static void OnErrors(IEnumerable<Error> errors) {
+		static int OnErrors(IEnumerable<Error> errors) {
 			foreach (Error error in errors)
 				Console.WriteLine(error.ToString());
+			return 1;
 		}
 
 

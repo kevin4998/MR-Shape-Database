@@ -44,11 +44,12 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>
-		public static void Start(CleanOptions options) {
+		public static int Start(CleanOptions options) {
 			WriteLine(I_StartClean);
 			CleanFiles();
 			CleanDirectories();
 			WriteLine(I_EndClean);
+			return 0;
 		}
 
 

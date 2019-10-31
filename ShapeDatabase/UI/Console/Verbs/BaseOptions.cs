@@ -10,12 +10,17 @@ namespace ShapeDatabase.UI.Console.Verbs {
 	public abstract class BaseOptions {
 
 		/// <summary>
+		/// If the culture for this application is specified.
+		/// </summary>
+		public bool HasCulture => Culture != null;
+
+		/// <summary>
 		/// The culture in which the files were written.
 		/// Needed for the conversion process.
 		/// </summary>
 		[Option('c', "culture",
 			Required = false,
-			Default = "en",
+			Default  = null,
 			HelpText = "The culture in which the files have been written.")]
 		public string Culture { get; set; }
 
@@ -24,9 +29,18 @@ namespace ShapeDatabase.UI.Console.Verbs {
 		/// </summary>
 		[Option('a', "all",
 			Required = false,
-			Default = false,
+			Default  = false,
 			HelpText = "If debug messages should be shown in console.")]
 		public bool DebugMessages { get; set; }
+
+		/// <summary>
+		/// Describes if the application should automatically exit when it is done.
+		/// </summary>
+		[Option("exit",
+			Required = false,
+			Default  = false,
+			HelpText = "If the application should automatically exit when it is done.")]
+		public bool AutoExit { get; set; }
 
 	}
 

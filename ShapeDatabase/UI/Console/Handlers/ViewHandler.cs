@@ -19,7 +19,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>
-		public static void Start(ViewOptions options) {
+		public static int Start(ViewOptions options) {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 			// Load in new shapes to view.
@@ -30,6 +30,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			ShowShapeCount();
 			// Prompt them to choose a file.
 			DisplayShapes();
+			return 0;
 		}
 
 
@@ -50,7 +51,8 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		private static void DisplayShapes() {
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
-			while (!Settings.DirectShutDown) {
+			Settings.DirectShutDown = false;
+			do {
 				WriteLine();    // Empty line for clearance.
 				WriteLine(I_ShapeSelect_Prompt, Settings.ExitArguments.FirstOrDefault());
 
@@ -61,7 +63,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 					RunWindow(meshes[input].Mesh);
 				else
 					WriteLine(I_UnknownCommand, input);
-			}
+			} while (!Settings.DirectShutDown);
 		}
 
 		/// <summary>

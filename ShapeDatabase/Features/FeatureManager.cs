@@ -110,6 +110,17 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// </summary>
 		/// <param name="library">The library of which the featurevectors should be calculated</param>
 		public void CalculateVectors(params MeshEntry[] library) {
+			CalculateVectors((IEnumerable<MeshEntry>) library);
+		}
+
+		/// <summary>
+		/// Calculate the featurevectores of all meshes in a library using all descriptor calculators of the featuremanager
+		/// </summary>
+		/// <param name="library">The library of which the featurevectors should be calculated</param>
+		public void CalculateVectors(IEnumerable<MeshEntry> library) {
+			if (library == null)
+				throw new ArgumentNullException(nameof(library));
+
 			foreach (MeshEntry entry in library)
 				CalculateVector(entry);
 
