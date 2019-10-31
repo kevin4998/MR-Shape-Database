@@ -11,7 +11,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A specific reader which can convert files to the geomtry 3 mesh format.
 	/// </summary>
-	public class GeomOffReader : IReader<GeometryMesh> {
+	class GeomOffReader : IReader<GeometryMesh> {
 
 		#region --- Properties ---
 

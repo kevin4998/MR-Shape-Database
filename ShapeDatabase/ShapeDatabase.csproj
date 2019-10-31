@@ -17,7 +17,6 @@
     <Folder Include="Content\Shapes\Final\" />
     <Folder Include="Content\Shapes\Failed\" />
     <Folder Include="Content\Shapes\Temp\" />
-    <Folder Include="UI\" />
     <Folder Include="Content\Shapes\All\" />
     <Folder Include="Content\Shapes\Small\" />
   </ItemGroup>
@@ -28,6 +27,7 @@
     <PackageReference Include="CommandLineParser" Version="2.6.0" />
     <PackageReference Include="CsvHelper" Version="12.1.2" />
     <PackageReference Include="geometry3Sharp" Version="1.0.324" />
+    <PackageReference Include="ini-parser" Version="2.5.2" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

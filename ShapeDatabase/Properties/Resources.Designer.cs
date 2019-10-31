@@ -97,6 +97,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to evaluations.csv.
+        /// </summary>
+        internal static string D_EvaluationFile {
+            get {
+                return ResourceManager.GetString("D_EvaluationFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed.
         /// </summary>
         internal static string D_FailedDir {
@@ -178,6 +187,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to settings.ini.
+        /// </summary>
+        internal static string D_SettingsFile {
+            get {
+                return ResourceManager.GetString("D_SettingsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shapes.
         /// </summary>
         internal static string D_ShapesDir {
@@ -192,6 +210,15 @@ namespace ShapeDatabase.Properties {
         internal static string D_TempDir {
             get {
                 return ResourceManager.GetString("D_TempDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not cast an object of type {0} to type {1}..
+        /// </summary>
+        internal static string EX_Cast {
+            get {
+                return ResourceManager.GetString("EX_Cast", resourceCulture);
             }
         }
         
@@ -309,6 +336,15 @@ namespace ShapeDatabase.Properties {
         internal static string EX_Missing_Ext {
             get {
                 return ResourceManager.GetString("EX_Missing_Ext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mesh not found!.
+        /// </summary>
+        internal static string EX_NoMesh {
+            get {
+                return ResourceManager.GetString("EX_NoMesh", resourceCulture);
             }
         }
         

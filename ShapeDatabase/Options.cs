@@ -102,6 +102,11 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// Describes that the user wants to query shapes.
 		/// </summary>
-		QUERY = 16
+		QUERY = 16,
+		/// <summary>
+		/// Describes that the application should evaluate the results of queries
+		/// and analyse the data.
+		/// </summary>
+		EVALUATE
 	}
 }

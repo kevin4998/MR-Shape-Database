@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ShapeDatabase.IO
@@ -14,7 +15,7 @@ namespace ShapeDatabase.IO
 	/// <summary>
 	/// Class for writing the query results to a csv file.
 	/// </summary>
-	public class QueryWriter : IWriter<QueryResult[]>
+	class QueryWriter : IWriter<QueryResult[]>
 	{
 
 		#region --- Properties ---
@@ -28,7 +29,7 @@ namespace ShapeDatabase.IO
 		public static QueryWriter Instance => lazy.Value;
 
 
-		public ICollection<string> SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
 
@@ -51,6 +52,8 @@ namespace ShapeDatabase.IO
 				throw new ArgumentNullException(nameof(writer));
 
 			using (CsvWriter csv = new CsvWriter(writer)) {
+				//csv.Configuration.Delimiter = ";";
+
 				// Header of the CSV file.
 				csv.WriteField(IOConventions.MeshName);
 				for (int i = 1; i <= Settings.KBestResults; i++)

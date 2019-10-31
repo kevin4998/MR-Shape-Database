@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ShapeDatabase.Properties;
 using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Statistics {
@@ -11,8 +12,6 @@ namespace ShapeDatabase.Features.Statistics {
 	public class Record : IEquatable<Record>, IEnumerable<object> {
 
 		#region --- Properties ---
-
-		private const string EX_CAST = "Could not cast an object of type {0} to type {1}.";
 
 		/// <summary>
 		/// The time when this record was created.
@@ -86,7 +85,8 @@ namespace ShapeDatabase.Features.Statistics {
 					return true;
 				} else {
 					throw new InvalidCastException(
-						string.Format(Settings.Culture, EX_CAST,
+						string.Format(Settings.Culture,
+							Resources.EX_Cast,
 							typeof(T).Name,
 							result == null ? "NULL" : result.GetType().Name)
 					);
