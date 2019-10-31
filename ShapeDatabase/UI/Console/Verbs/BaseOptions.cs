@@ -47,7 +47,7 @@ namespace ShapeDatabase.UI.Console.Verbs {
 	/// <summary>
 	/// Properties that work on options which make use of newly loaded shapes.
 	/// </summary>
-	public abstract class ShapeOptions {
+	public abstract class ShapeOptions : BaseOptions {
 
 		/// <summary>
 		/// If any directories with shapes has been specified.
@@ -79,6 +79,43 @@ namespace ShapeDatabase.UI.Console.Verbs {
 			HelpText = "If new shapes should overwrite cached ones.")]
 		public bool Overwrite { get; set; }
 
+
+	}
+
+	/// <summary>
+	/// Properties that work on options which need to calculate new results based
+	/// of previous operations.
+	/// </summary>
+	public abstract class CalculateOptions : BaseOptions {
+
+		/// <summary>
+		/// Describes if previously stored data should be loaded.
+		/// </summary>
+		public bool ShouldImport => Import ?? Settings.UseCacheData;
+		/// <summary>
+		/// Describes if the results from the operations should be saved to a file.
+		/// </summary>
+		public bool ShouldExport => Export ?? Settings.UseCacheData;
+
+		/// <summary>
+		/// Describes if previously stored data should be loaded.
+		/// Classes should use <see cref="ShouldImport"/> over this method.
+		/// </summary>
+		[Option('i', "import",
+			Required = false,
+			Default  = null,
+			HelpText = "If previously stored data should be loaded.")]
+		public bool? Import { get; set; }
+
+		/// <summary>
+		/// Describes if the results from the operations should be saved to a file.
+		/// Classes should use <see cref="ShouldExport"/> over this method.
+		/// </summary>
+		[Option('e', "export",
+			Required = false,
+			Default  = null,
+			HelpText = "If the settings file should be cleaned.")]
+		public bool? Export { get; set; }
 
 	}
 

@@ -7,7 +7,18 @@ namespace ShapeDatabase.UI.Console.Verbs {
 	/// The options to clean and remove all existing files for a new restart.
 	/// </summary>
 	[Verb("clean", HelpText = "Delete all cached data for a clean restart.")]
-	public class CleanOptions { }
+	public class CleanOptions {
+
+		/// <summary>
+		/// Descibes if the settings file should be cleaned.
+		/// </summary>
+		[Option("settings",
+			Required = false,
+			Default  = false,
+			HelpText = "If the settings file should be cleaned.")]
+		public bool CleanSettings { get; set; }
+
+	}
 
 	/// <summary>
 	/// The options to display a collection of shapes to the user.
@@ -31,18 +42,18 @@ namespace ShapeDatabase.UI.Console.Verbs {
 	/// The options to calculate features for the current shapes for comparison.
 	/// </summary>
 	[Verb("feature", HelpText = "Calculate features for all the current shapes.")]
-	public class FeatureOptions : BaseOptions { }
+	public class FeatureOptions : CalculateOptions { }
 
 	/// <summary>
 	/// The options to compare shapes for similarity.
 	/// </summary>
 	[Verb("query", HelpText = "Compare existing shapes with query shapes to find the most similar.")]
-	public class QueryOptions : BaseOptions { }
+	public class QueryOptions : CalculateOptions { }
 
 	/// <summary>
 	/// The options to evaluate the last made query for different metrics.
 	/// </summary>
 	[Verb("evaluate", HelpText = "Evaluate the precision of querried results.")]
-	public class EvaluateOptions : BaseOptions { }
+	public class EvaluateOptions : CalculateOptions { }
 
 }

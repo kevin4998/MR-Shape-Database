@@ -26,7 +26,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
-			WriteLine(I_StartMeasure);
+			WriteLine(I_StartProc_Measure);
 			// Load in new shapes to measure.
 			if (options.HasDirectories)
 				foreach (string dir in options.ShapeDirectories)
@@ -38,7 +38,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			SaveMetrics(recordHolder);
 			// Notify the user of the refined shapes.
 			WriteLine(I_ShapeCount, Settings.MeshLibrary.Count);
-			WriteLine(I_EndMeasure);
+			WriteLine(I_EndProc_Measure);
 			return 0;
 		}
 

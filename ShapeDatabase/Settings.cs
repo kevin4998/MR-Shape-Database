@@ -19,6 +19,12 @@ namespace ShapeDatabase {
 		#region --- File Structure ---
 
 		/// <summary>
+		/// The location where all the generated content will be stored in.
+		/// </summary>
+		public static string ContentDir { get; } =
+			D_ContentDir;
+
+		/// <summary>
 		/// The location where all the shapes are definined.
 		/// These are the unmodified files as originally retrieved online.
 		/// </summary>

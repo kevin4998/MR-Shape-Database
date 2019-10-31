@@ -10,6 +10,7 @@ namespace ShapeDatabase.UI.Console {
 	/// <summary>
 	/// A class with the responsibilty of handling all the evaluation operations.
 	/// </summary>
+	[Obsolete("Use the EvaluationHandler in ShapeDatabase.UI.Console.Handlers")]
 	public static class EvaluationHandler {
 
 		private static MeshLibrary StoredMeshes => Settings.MeshLibrary;

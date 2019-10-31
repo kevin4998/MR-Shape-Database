@@ -25,6 +25,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 				yield return Settings.FeatureVectorDir;
 				yield return Settings.MeasurementsDir;
 				yield return Settings.QueryDir;
+				yield return Settings.ContentDir;
 			}
 		}
 
@@ -45,10 +46,14 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>
 		public static int Start(CleanOptions options) {
-			WriteLine(I_StartClean);
-			CleanFiles();
+			if (options == null)
+				throw new ArgumentNullException(nameof(options));
+
+			WriteLine(I_StartProc_Clean);
+			if (options.CleanSettings)
+				CleanFiles();
 			CleanDirectories();
-			WriteLine(I_EndClean);
+			WriteLine(I_EndProc_Clean);
 			return 0;
 		}
 

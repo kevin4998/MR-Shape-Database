@@ -40,13 +40,15 @@ namespace ShapeDatabase {
 										  MeasureOptions, FeatureOptions, QueryOptions,
 										  EvaluateOptions>(args)
 						  .MapResult(
-							(BaseOptions	options) => GlobalHandler .Start(options),
-							(CleanOptions   options) => CleanHandler  .Start(options),
-							(ViewOptions    options) => ViewHandler   .Start(options),
-							(RefineOptions  options) => RefineHandler .Start(options),
-							(MeasureOptions options) => MeasureHandler.Start(options),
-							(FeatureOptions options) => FeatureHandler.Start(options),
-							(IEnumerable<Error> err) => OnErrors(err)
+							(BaseOptions	 options) => GlobalHandler  .Start(options),
+							(CleanOptions    options) => CleanHandler   .Start(options),
+							(ViewOptions     options) => ViewHandler    .Start(options),
+							(RefineOptions   options) => RefineHandler  .Start(options),
+							(MeasureOptions  options) => MeasureHandler .Start(options),
+							(FeatureOptions  options) => FeatureHandler .Start(options),
+							(QueryOptions	 options) => QueryHandler   .Start(options),
+							(EvaluateOptions options) => EvaluateHandler.Start(options),
+							(IEnumerable<Error>  err) => OnErrors(err)
 						   );
 		}
 
@@ -111,7 +113,7 @@ namespace ShapeDatabase {
 		/// Attempts to clean the solution if the parameter is set.
 		/// </summary>
 		static void TryClean() {
-			Console.WriteLine(I_StartClean);
+			Console.WriteLine(I_StartProc_Clean);
 			string[] cachedDirs = new string[] {
 				Settings.ShapeFailedDir,
 				Settings.ShapeFinalDir,
@@ -142,9 +144,9 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
 		static void RefineShapes(IEnumerable<string> dirs) {
-			Console.WriteLine(I_StartProc_Mesh);
+			Console.WriteLine(I_StartProc_Refine);
 			LoadNewFiles(dirs, true);
-			Console.WriteLine(I_EndProc_Mesh);
+			Console.WriteLine(I_EndProc_Refine);
 			ShowShapeCount();
 		}
 
@@ -155,7 +157,7 @@ namespace ShapeDatabase {
 		/// </summary>
 		/// <param name="dirs">The directories containing shapes.</param>
 		static void MeasureShapes(IEnumerable<string> dirs) {
-			Console.WriteLine(I_StartMeasure);
+			Console.WriteLine(I_StartProc_Measure);
 			LoadNewFiles(dirs, false);
 
 			RecordHolder<MeshEntry> recordHolder = new RecordHolder<MeshEntry>(
@@ -179,7 +181,7 @@ namespace ShapeDatabase {
 			);
 			recordHolder.TakeSnapShot(Settings.MeshLibrary);
 
-			Console.WriteLine(I_EndMeasure);
+			Console.WriteLine(I_EndProc_Measure);
 
 			// Preparation data to construct path and filename.
 			CultureInfo culture = Settings.Culture;

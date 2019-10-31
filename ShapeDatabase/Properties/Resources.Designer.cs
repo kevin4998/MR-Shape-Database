@@ -394,15 +394,6 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Finished cleaning directories!.
-        /// </summary>
-        internal static string I_EndClean {
-            get {
-                return ResourceManager.GetString("I_EndClean", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Done loading meshes..
         /// </summary>
         internal static string I_EndLoad_Mesh {
@@ -412,11 +403,20 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Done measuring meshes..
+        ///   Looks up a localized string similar to Finished cleaning directories!.
         /// </summary>
-        internal static string I_EndMeasure {
+        internal static string I_EndProc_Clean {
             get {
-                return ResourceManager.GetString("I_EndMeasure", resourceCulture);
+                return ResourceManager.GetString("I_EndProc_Clean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done evaluating query results..
+        /// </summary>
+        internal static string I_EndProc_Evaluate {
+            get {
+                return ResourceManager.GetString("I_EndProc_Evaluate", resourceCulture);
             }
         }
         
@@ -439,11 +439,11 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Done processing meshes..
+        ///   Looks up a localized string similar to Done measuring meshes..
         /// </summary>
-        internal static string I_EndProc_Mesh {
+        internal static string I_EndProc_Measure {
             get {
-                return ResourceManager.GetString("I_EndProc_Mesh", resourceCulture);
+                return ResourceManager.GetString("I_EndProc_Measure", resourceCulture);
             }
         }
         
@@ -453,6 +453,24 @@ namespace ShapeDatabase.Properties {
         internal static string I_EndProc_Query {
             get {
                 return ResourceManager.GetString("I_EndProc_Query", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done processing meshes..
+        /// </summary>
+        internal static string I_EndProc_Refine {
+            get {
+                return ResourceManager.GetString("I_EndProc_Refine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evaluation exported to: {0}.
+        /// </summary>
+        internal static string I_Evaluation_Exp {
+            get {
+                return ResourceManager.GetString("I_Evaluation_Exp", resourceCulture);
             }
         }
         
@@ -493,11 +511,20 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Exporting the query results..
+        ///   Looks up a localized string similar to Exporting the query results to: {0}..
         /// </summary>
         internal static string I_Query_Exp {
             get {
                 return ResourceManager.GetString("I_Query_Exp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Query results imported from: {0}.
+        /// </summary>
+        internal static string I_Query_Imp {
+            get {
+                return ResourceManager.GetString("I_Query_Imp", resourceCulture);
             }
         }
         
@@ -529,15 +556,6 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cleaning directories!.
-        /// </summary>
-        internal static string I_StartClean {
-            get {
-                return ResourceManager.GetString("I_StartClean", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Start loading meshes..
         /// </summary>
         internal static string I_StartLoad_Mesh {
@@ -547,11 +565,20 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start measuring meshes..
+        ///   Looks up a localized string similar to Cleaning directories!.
         /// </summary>
-        internal static string I_StartMeasure {
+        internal static string I_StartProc_Clean {
             get {
-                return ResourceManager.GetString("I_StartMeasure", resourceCulture);
+                return ResourceManager.GetString("I_StartProc_Clean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start evaluating query results..
+        /// </summary>
+        internal static string I_StartProc_Evaluate {
+            get {
+                return ResourceManager.GetString("I_StartProc_Evaluate", resourceCulture);
             }
         }
         
@@ -574,11 +601,11 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start processing meshes..
+        ///   Looks up a localized string similar to Start measuring meshes..
         /// </summary>
-        internal static string I_StartProc_Mesh {
+        internal static string I_StartProc_Measure {
             get {
-                return ResourceManager.GetString("I_StartProc_Mesh", resourceCulture);
+                return ResourceManager.GetString("I_StartProc_Measure", resourceCulture);
             }
         }
         
@@ -588,6 +615,15 @@ namespace ShapeDatabase.Properties {
         internal static string I_StartProc_Query {
             get {
                 return ResourceManager.GetString("I_StartProc_Query", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start processing meshes..
+        /// </summary>
+        internal static string I_StartProc_Refine {
+            get {
+                return ResourceManager.GetString("I_StartProc_Refine", resourceCulture);
             }
         }
         

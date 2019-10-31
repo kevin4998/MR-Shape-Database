@@ -21,14 +21,14 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
-			WriteLine(I_StartProc_Mesh);
+			WriteLine(I_StartProc_Refine);
 			// Refine newly provided shapes.
 			if (options.HasDirectories)
 				foreach (string dir in options.ShapeDirectories)
 					Settings.FileManager.AddDirectory(dir);
 			// Notify the user of the refined shapes.
 			WriteLine(I_ShapeCount, Settings.MeshLibrary.Count);
-			WriteLine(I_EndProc_Mesh);
+			WriteLine(I_EndProc_Refine);
 			return 0;
 		}
 
