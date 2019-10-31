@@ -71,14 +71,6 @@ namespace ShapeDatabase.Features {
 		/// <returns>The PTD</returns>
 		public double Compare(FeatureVector vector) 
 		{
-			/*if (vector == null)
-				throw new ArgumentNullException(nameof(vector));
-
-			(double[] X_values, double[] X_weights) = CreatePTDArray(Descriptors);
-			(double[] Y_values, double[] Y_weights) = CreatePTDArray(vector.Descriptors);
-
-			return Functions.CalculatePTD(X_values, X_weights, Y_values, Y_weights);*/
-
 			return Compare(this, vector);
 		}
 
@@ -100,42 +92,57 @@ namespace ShapeDatabase.Features {
 			if (secondary == null)
 				throw new ArgumentNullException(nameof(secondary));
 
-			WeightManager weights = Settings.Weights;
 			DescriptorComparer comparer = DescriptorComparer.Instance;
 			IEnumerator<IDescriptor> pdescs = primary.Descriptors.GetEnumerator();
 			IEnumerator<IDescriptor> sdescs = secondary.Descriptors.GetEnumerator();
-
-			double sum = 0;
-			int count = 0;
+			 
+			double sumCubedElem = 0;
+			double sumHist = 0;
+			int countHist = 0;
 			bool hasNext = true;
 			hasNext &= pdescs.MoveNext();
 			hasNext &= sdescs.MoveNext();
 
-			while (hasNext) {
+			while (hasNext)
+			{
 				IDescriptor pdesc = pdescs.Current;
 				IDescriptor sdesc = sdescs.Current;
 
 				int dif = comparer.Compare(pdesc, sdesc);
-				if (dif == 0) {
-					sum += pdesc.Compare(sdesc) * weights[pdesc.Name];
-					count++;
+				if (dif == 0)
+				{
+					if(pdesc is ElemDescriptor)
+					{
+						sumCubedElem += Math.Pow(pdesc.Compare(sdesc), 2);
+					}
+					else
+					{
+						sumHist += pdesc.Compare(sdesc);
+						countHist = 0;
+					}
 
 					hasNext &= pdescs.MoveNext();
 					hasNext &= sdescs.MoveNext();
 					continue;
 
 					// The primary one is beind so increment that side.
-				} else if (dif < 0) {
+				}
+				else if (dif < 0)
+				{
 					hasNext &= pdescs.MoveNext();
 
 					// The secondary one is beind so increment that side.
-				} else if (dif > 0) {
+				}
+				else if (dif > 0)
+				{
 					hasNext &= sdescs.MoveNext();
 				}
 			}
-			// Equals weight function.
-			return (count == 0) ? 0 : sum / count;
 
+			double L2 = Math.Sqrt(sumCubedElem);
+			double distance = (sumHist + L2) / (countHist + 1);
+
+			return distance;
 		}
 
 		#endregion
