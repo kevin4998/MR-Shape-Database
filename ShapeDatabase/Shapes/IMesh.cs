@@ -125,9 +125,17 @@ namespace ShapeDatabase.Shapes {
 
 		public static Vector3 GetRandomVertex(this IMesh mesh, Random rand, uint[] weightedvertexarray)
 		{
-			if (mesh == null || rand == null || weightedvertexarray == null)
+			if (mesh == null)
 			{
-				throw new ArgumentNullException();
+				throw new ArgumentNullException(nameof(mesh));
+			}
+			if(rand == null)
+			{
+				throw new ArgumentNullException(nameof(rand));
+			}
+			if(weightedvertexarray == null)
+			{
+				throw new ArgumentNullException(nameof(weightedvertexarray));
 			}
 
 			int index = rand.Next(0, Settings.WeightedVertexArraySize);
@@ -143,7 +151,7 @@ namespace ShapeDatabase.Shapes {
 		{
 			if (mesh == null)
 			{
-				throw new ArgumentNullException();
+				throw new ArgumentNullException(nameof(mesh));
 			}
 
 			double surfaceArea = 0;

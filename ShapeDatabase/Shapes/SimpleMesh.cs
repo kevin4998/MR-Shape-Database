@@ -63,7 +63,7 @@ namespace ShapeDatabase.Shapes {
 			this.faces	  = AsArray(faces,	  true);
 			this.edges	  = AsArray(edges,	  false);
 			this.normals  = AsArray(normals,  false);
-			weightedvertexarray = MeshEx.SetWeightedVertexArray(this);
+			weightedvertexarray = this.SetWeightedVertexArray();
 			IsNormalised = normalised;
 		}
 

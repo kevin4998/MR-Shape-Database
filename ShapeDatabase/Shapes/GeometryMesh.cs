@@ -53,7 +53,7 @@ namespace ShapeDatabase.Shapes {
 			IsNormalised = normalised;
 
 			lazy = new Lazy<IBoundingBox>(InitializeBoundingBox);
-			weightedvertexarray = MeshEx.SetWeightedVertexArray(this);
+			weightedvertexarray = this.SetWeightedVertexArray();
 		}
 
 		#endregion
