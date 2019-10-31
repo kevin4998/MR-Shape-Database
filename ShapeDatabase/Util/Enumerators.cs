@@ -10,6 +10,17 @@ namespace ShapeDatabase.Util {
 	/// </summary>
 	public static class Enumerators {
 
+		public static IEnumerable<TReturn> ConvertTo<TCurrent, TReturn>(
+			this IEnumerable<TCurrent> enumerable, Converter<TCurrent, TReturn> converter) {
+			if (enumerable == null)
+				throw new ArgumentNullException(nameof(enumerable));
+			if (converter == null)
+				throw new ArgumentNullException(nameof(converter));
+
+			foreach (TCurrent current in enumerable)
+				yield return converter(current);
+		}
+
 		/// <summary>
 		/// Changes the type provided from this enumerator during its usage.
 		/// </summary>

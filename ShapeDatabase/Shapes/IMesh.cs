@@ -123,20 +123,14 @@ namespace ShapeDatabase.Shapes {
 			return mesh.GetTriArea(points);
 		}
 
-		public static Vector3 GetRandomVertex(this IMesh mesh, Random rand, uint[] weightedvertexarray)
-		{
+		public static Vector3 GetRandomVertex(this IMesh mesh, Random rand,
+											  uint[] weightedvertexarray) {
 			if (mesh == null)
-			{
 				throw new ArgumentNullException(nameof(mesh));
-			}
 			if(rand == null)
-			{
 				throw new ArgumentNullException(nameof(rand));
-			}
 			if(weightedvertexarray == null)
-			{
 				throw new ArgumentNullException(nameof(weightedvertexarray));
-			}
 
 			int index = rand.Next(0, Settings.WeightedVertexArraySize);
 			Vector3 face = mesh.GetFace(weightedvertexarray[index]);
@@ -147,16 +141,13 @@ namespace ShapeDatabase.Shapes {
 			return vertex;
 		}
 
-		public static uint[] SetWeightedVertexArray(this IMesh mesh)
-		{
+		public static uint[] SetWeightedVertexArray(this IMesh mesh) {
 			if (mesh == null)
-			{
 				throw new ArgumentNullException(nameof(mesh));
-			}
 
 			double surfaceArea = 0;
 			for (int i = 0; i < mesh.FaceCount; i++)
-				surfaceArea += GetTriArea(mesh, mesh.GetFace((uint)i));
+				surfaceArea += GetTriArea(mesh, mesh.GetFace(i));
 
 			uint[] WeightedVertexArray = new uint[Settings.WeightedVertexArraySize];
 
