@@ -23,7 +23,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>
-		public static int Start(QueryOptions options) {
+		public static void Start(QueryOptions options) {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
@@ -37,7 +37,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			ShowQueryResults(results);
 
 			WriteLine(I_EndProc_Query);
-			return 0;
 		}
 
 

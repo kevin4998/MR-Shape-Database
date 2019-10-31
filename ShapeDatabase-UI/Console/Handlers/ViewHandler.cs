@@ -37,7 +37,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>
-		public static int Start(ViewOptions options) {
+		public static void Start(ViewOptions options) {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 			// Load in new shapes to view.
@@ -48,7 +48,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			ShowShapeCount();
 			// Prompt them to choose a file.
 			DisplayShapes();
-			return 0;
 		}
 
 

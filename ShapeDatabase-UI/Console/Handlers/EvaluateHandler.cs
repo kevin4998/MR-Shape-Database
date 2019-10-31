@@ -57,7 +57,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>
-		public static int Start(EvaluateOptions options) {
+		public static void Start(EvaluateOptions options) {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
@@ -70,7 +70,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 				SaveEvaluation(records);
 
 			WriteLine(I_EndProc_Evaluate);
-			return 0;
 		}
 
 

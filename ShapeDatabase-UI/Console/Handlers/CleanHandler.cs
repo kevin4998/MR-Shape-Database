@@ -45,7 +45,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>
-		public static int Start(CleanOptions options) {
+		public static void Start(CleanOptions options) {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
@@ -54,7 +54,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 				CleanFiles();
 			CleanDirectories();
 			WriteLine(I_EndProc_Clean);
-			return 0;
 		}
 
 

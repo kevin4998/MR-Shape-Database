@@ -19,7 +19,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>
-		public static int Start(BaseOptions options) {
+		public static void Start(BaseOptions options) {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 			// Convert Options value to Settings.
@@ -36,8 +36,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (!Directory.Exists(finalDir))
 				Directory.CreateDirectory(finalDir);
 			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
-
-			return 0;
 		}
 
 	}

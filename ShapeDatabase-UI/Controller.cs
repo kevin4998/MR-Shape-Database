@@ -25,17 +25,15 @@ namespace ShapeDatabase.UI {
 			Parser.Default.ParseArguments<CleanOptions, ViewOptions, RefineOptions,
 										  MeasureOptions, FeatureOptions, QueryOptions,
 										  EvaluateOptions>(args)
-				  .MapResult(
-					(BaseOptions	 options) => GlobalHandler  .Start(options),
-					(CleanOptions    options) => CleanHandler   .Start(options),
-					(ViewOptions     options) => ViewHandler    .Start(options),
-					(RefineOptions   options) => RefineHandler  .Start(options),
-					(MeasureOptions  options) => MeasureHandler .Start(options),
-					(FeatureOptions  options) => FeatureHandler .Start(options),
-					(QueryOptions	 options) => QueryHandler   .Start(options),
-					(EvaluateOptions options) => EvaluateHandler.Start(options),
-					(IEnumerable<Error>  err) => OnErrors(err)
-				  );
+				.WithParsed<BaseOptions>(GlobalHandler.Start)
+				.WithParsed<CleanOptions>(CleanHandler.Start)
+				.WithParsed<ViewOptions>(ViewHandler.Start)
+				.WithParsed<RefineOptions>(RefineHandler.Start)
+				.WithParsed<MeasureOptions>(MeasureHandler.Start)
+				.WithParsed<FeatureOptions>(FeatureHandler.Start)
+				.WithParsed<QueryOptions>(QueryHandler.Start)
+				.WithParsed<EvaluateOptions>(EvaluateHandler.Start)
+				.WithNotParsed(OnErrors);
 		}
 
 		/// <summary>
@@ -44,10 +42,9 @@ namespace ShapeDatabase.UI {
 		/// </summary>
 		/// <param name="errors">A collection of generated errors
 		/// by the Parser package.</param>
-		static int OnErrors(IEnumerable<Error> errors) {
+		static void OnErrors(IEnumerable<Error> errors) {
 			foreach (Error error in errors)
 				WriteLine(error.ToString());
-			return 1;
 		}
 
 	}

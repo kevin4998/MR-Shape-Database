@@ -33,7 +33,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>
-		public static int Start(FeatureOptions options) {
+		public static void Start(FeatureOptions options) {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
@@ -42,7 +42,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options.ShouldExport)
 				SaveFeatures(manager);
 			WriteLine(I_EndProc_Feature);
-			return 0;
 		}
 
 
