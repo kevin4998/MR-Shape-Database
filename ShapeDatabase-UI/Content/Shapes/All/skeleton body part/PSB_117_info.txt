@@ -1,0 +1,14 @@
+mid: 117
+url: http://deep.sitenest.net/freemodels/character/3dm-Slim.zip
+ref_url: 
+format: xthreexds 
+pid: 47982
+polygons: 4316
+connected_components: 61
+average_dihedral_angle: 0.620596
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.219052, ymax = 0.975, zmax = 0.198712
+avg_depth: 1.495012
+center: (0.122580,0.545786,0.087540)
+scale: 0.508449
+principle_axes: (0.000130,0.999343,-0.036248), (1.000000,-0.000109,0.000567), (0.000563,-0.036248,-0.999343)
+principle_values: (0.083511,0.002734,0.000731)

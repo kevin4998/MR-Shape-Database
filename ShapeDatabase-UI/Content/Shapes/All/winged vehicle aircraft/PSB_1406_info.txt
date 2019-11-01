@@ -1,0 +1,14 @@
+mid: 1406
+url: http://www.geocities.com/SouthBeach/1856/x-wing.wrl
+ref_url: http://www.geocities.com/SouthBeach/1856/aaron.html
+format: wrl 
+pid: 12108
+polygons: 894
+connected_components: 33
+average_dihedral_angle: 2.65498
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.206902, zmax = 0.512072
+avg_depth: 2.908421
+center: (0.733746,0.119188,0.266888)
+scale: 0.340391
+principle_axes: (0.999865,0.016451,0.000169), (-0.000096,-0.004409,0.999990), (-0.016452,0.999855,0.004407)
+principle_values: (0.024053,0.013817,0.001991)

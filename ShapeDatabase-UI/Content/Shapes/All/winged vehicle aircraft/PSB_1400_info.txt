@@ -1,0 +1,14 @@
+mid: 1400
+url: http://hiwaay.net/~crispen/worlds/shuttle/2/shuttle_body.wrl.gz
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7765
+polygons: 5323
+connected_components: 226
+average_dihedral_angle: 0.482124
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.630113, ymax = 0.975, zmax = 0.383652
+avg_depth: 1.480088
+center: (0.327526,0.607161,0.091139)
+scale: 0.475039
+principle_axes: (-0.000105,0.997864,0.065319), (1.000000,0.000087,0.000283), (0.000276,0.065319,-0.997864)
+principle_values: (0.053242,0.009903,0.003885)

@@ -1,0 +1,14 @@
+mid: 943
+url: http://www.prism.gatech.edu/~gt2041c/vrml/dining.wrl
+ref_url: http://www.prism.gatech.edu/~gt2041c/vrml/
+format: wrl 
+pid: 5927
+polygons: 258
+connected_components: 29
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.564243, zmax = 0.934402
+avg_depth: 1.346930
+center: (0.491629,0.316318,0.507498)
+scale: 0.748661
+principle_axes: (-0.948756,0.013520,-0.315720), (-0.315669,0.005863,0.948851), (-0.014680,-0.999891,0.001295)
+principle_values: (0.069328,0.063743,0.017937)

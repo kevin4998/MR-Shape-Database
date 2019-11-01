@@ -1,0 +1,14 @@
+mid: 1032
+url: http://www.eot.ahpcc.unm.edu/Training/technology/vr_workshop/Our_worlds/worlds6-23/My%20Worlds7/devon1.wrl
+ref_url: http://www.eot.ahpcc.unm.edu/Training/technology/vr_workshop/Our_worlds/default.htm
+format: wrl 
+pid: 3541
+polygons: 156
+connected_components: 9
+average_dihedral_angle: 1.02732
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.892086, ymax = 0.897381, zmax = 0.975
+avg_depth: 1.143116
+center: (0.480462,0.541512,0.535177)
+scale: 0.751219
+principle_axes: (-0.615237,0.002279,0.788339), (-0.100156,0.991667,-0.081030), (-0.781954,-0.128809,-0.609882)
+principle_values: (0.068997,0.060111,0.022394)

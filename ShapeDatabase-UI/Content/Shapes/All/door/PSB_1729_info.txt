@@ -1,0 +1,14 @@
+mid: 1729
+url: http://www.rdservice.de/German/produkte/VRCreator/library/Architecture%20-%20Interior/Door%203.wrl
+ref_url: http://www.rdservice.de/German/produkte/VRCreator/library/Architecture%20-%20Interior/architecture_interior.htm
+format: wrl 
+pid: 33783
+polygons: 564
+connected_components: 31
+average_dihedral_angle: 1.4467
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.691337, ymax = 0.975, zmax = 0.190569
+avg_depth: 1.745872
+center: (0.358961,0.459835,0.064130)
+scale: 0.616162
+principle_axes: (0.000882,0.999769,-0.021485), (-0.999231,0.000039,-0.039212), (0.039202,-0.021503,-0.999000)
+principle_values: (0.071752,0.036531,0.000744)

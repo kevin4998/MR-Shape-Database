@@ -1,0 +1,14 @@
+mid: 1382
+url: http://www.elfworks.com/objects/lis-jupiter2.zip
+ref_url: http://www.elfworks.com/html/body_free3d.htm
+format: lwo 
+pid: 28339
+polygons: 14044
+connected_components: 60
+average_dihedral_angle: 0.379586
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.283379, zmax = 0.975
+avg_depth: 1.048832
+center: (0.499561,0.134421,0.504361)
+scale: 0.675372
+principle_axes: (0.055551,-0.005180,-0.998442), (0.998456,-0.000038,0.055552), (-0.000325,-0.999987,0.005170)
+principle_values: (0.058862,0.057727,0.006304)

@@ -1,0 +1,14 @@
+mid: 214
+url: http://philliphansel.com/avatars/sphere_man.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6073
+polygons: 3519
+connected_components: 19
+average_dihedral_angle: 0.372969
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.29314, ymax = 0.975, zmax = 0.225712
+avg_depth: 1.256983
+center: (0.159070,0.516115,0.093858)
+scale: 0.454626
+principle_axes: (-0.000000,0.999332,-0.036544), (-1.000000,-0.000000,0.000000), (-0.000000,-0.036544,-0.999332)
+principle_values: (0.066018,0.003659,0.000662)

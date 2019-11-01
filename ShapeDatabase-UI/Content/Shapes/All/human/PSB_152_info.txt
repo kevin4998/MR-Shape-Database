@@ -1,0 +1,14 @@
+mid: 152
+url: http://www.gerf.org/~nixon/e-scout.zip
+ref_url: http://www.gerf.org/~nixon/bikescout.html
+format: xthreexds 
+pid: 28118
+polygons: 20512
+connected_components: 64
+average_dihedral_angle: 0.513003
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.375511, ymax = 0.975, zmax = 0.249312
+avg_depth: 2.342411
+center: (0.199100,0.589932,0.129104)
+scale: 0.461836
+principle_axes: (0.016044,0.999639,-0.021569), (-0.999863,0.015955,-0.004312), (-0.003967,0.021635,0.999758)
+principle_values: (0.061634,0.006066,0.001327)

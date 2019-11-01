@@ -1,0 +1,14 @@
+mid: 1154
+url: http://mowat.virtualave.net/p74740gs.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26456
+polygons: 1000
+connected_components: 10
+average_dihedral_angle: 0.905872
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.849758, ymax = 0.284141, zmax = 0.975
+avg_depth: 1.099722
+center: (0.437328,0.093740,0.477690)
+scale: 0.481205
+principle_axes: (-0.000627,-0.067590,0.997713), (-1.000000,0.000030,-0.000627), (0.000012,-0.997713,-0.067590)
+principle_values: (0.046893,0.023669,0.001534)

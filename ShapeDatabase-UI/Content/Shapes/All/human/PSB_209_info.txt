@@ -1,0 +1,14 @@
+mid: 209
+url: http://www.avatara.com/avatars2/pedro.wrl
+ref_url: http://www.avatara.com/avatars2/avatars1_list.html
+format: wrl 
+pid: 4347
+polygons: 1296
+connected_components: 29
+average_dihedral_angle: 1.21786
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.381943, ymax = 0.975, zmax = 0.311037
+avg_depth: 2.583454
+center: (0.207273,0.539739,0.159004)
+scale: 0.523467
+principle_axes: (0.014429,0.999459,0.029556), (-0.999896,0.014415,0.000674), (0.000248,-0.029563,0.999563)
+principle_values: (0.075232,0.006388,0.002657)

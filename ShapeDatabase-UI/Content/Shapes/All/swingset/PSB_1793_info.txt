@@ -1,0 +1,14 @@
+mid: 1793
+url: http://www.geometrek.com/members/kapiti/objects/swing.wrl
+ref_url: http://home.t-online.de/home/kiwano6/models.htm
+format: wrl 
+pid: 1742
+polygons: 372
+connected_components: 10
+average_dihedral_angle: 1.27
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.83835, zmax = 0.625002
+avg_depth: 1.163674
+center: (0.499999,0.453589,0.322168)
+scale: 0.900269
+principle_axes: (1.000000,-0.000152,-0.000001), (-0.000152,-0.999968,-0.008031), (0.000001,0.008031,-0.999968)
+principle_values: (0.132752,0.070925,0.016470)

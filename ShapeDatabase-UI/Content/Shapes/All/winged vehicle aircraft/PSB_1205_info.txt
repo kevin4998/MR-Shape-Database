@@ -1,0 +1,14 @@
+mid: 1205
+url: http://www.rccad.com/Gallery/Vrml/Saab-fantasi.wrl
+ref_url: http://www.rccad.com/Gallery_Exotic14.htm
+format: wrl 
+pid: 1076
+polygons: 556
+connected_components: 8
+average_dihedral_angle: 0.407787
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.774295, zmax = 0.21695
+avg_depth: 1.712687
+center: (0.644901,0.399834,0.106086)
+scale: 0.413884
+principle_axes: (0.999343,-0.000968,0.036227), (-0.000980,-0.999999,0.000317), (0.036227,-0.000353,-0.999344)
+principle_values: (0.035731,0.017072,0.000962)

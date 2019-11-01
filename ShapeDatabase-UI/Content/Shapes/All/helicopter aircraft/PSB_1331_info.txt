@@ -1,0 +1,14 @@
+mid: 1331
+url: http://www.inside3d.com/ghoul/3dm/heli/heli.wrl
+ref_url: http://www.inside3d.com/ghoul/3dm/3dm.html
+format: wrl 
+pid: 8670
+polygons: 51
+connected_components: 8
+average_dihedral_angle: 0.973377
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.283365, zmax = 0.746885
+avg_depth: 1.225534
+center: (0.595494,0.229697,0.383788)
+scale: 0.493162
+principle_axes: (0.999972,-0.000795,0.007470), (-0.007463,0.008125,0.999939), (0.000856,0.999967,-0.008119)
+principle_values: (0.043181,0.025814,0.005386)

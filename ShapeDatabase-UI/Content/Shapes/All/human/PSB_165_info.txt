@@ -1,0 +1,14 @@
+mid: 165
+url: http://www.avatara.com/avatars2/bizguy.wrl
+ref_url: http://www.avatara.com/avatars2/avatars1_list.html
+format: wrl 
+pid: 4336
+polygons: 1748
+connected_components: 728
+average_dihedral_angle: 0.807141
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.336125, ymax = 0.975, zmax = 0.198377
+avg_depth: 2.663322
+center: (0.174052,0.506222,0.098256)
+scale: 0.462177
+principle_axes: (0.002537,0.999942,-0.010480), (-0.999192,0.002115,-0.040130), (0.040106,-0.010574,-0.999139)
+principle_values: (0.060703,0.005324,0.001342)

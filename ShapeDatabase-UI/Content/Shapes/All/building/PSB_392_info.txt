@@ -1,0 +1,14 @@
+mid: 392
+url: http://chipper.cs.bham.ac.uk/~ug29dlr/vrml/house.wrl
+ref_url: http://chipper.cs.bham.ac.uk/~ug29dlr/vrml.html
+format: wrl 
+pid: 10140
+polygons: 80
+connected_components: 13
+average_dihedral_angle: 1.27887
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.816667, ymax = 0.975, zmax = 0.341667
+avg_depth: 1.630311
+center: (0.387438,0.332781,0.183333)
+scale: 0.647380
+principle_axes: (-0.966148,0.257987,-0.000000), (0.257987,0.966148,-0.000001), (0.000000,-0.000001,-1.000000)
+principle_values: (0.069638,0.036172,0.010931)

@@ -1,0 +1,14 @@
+mid: 1286
+url: http://www.rccad.com/Gallery/Vrml/P-38Lightning.wrl
+ref_url: http://www.rccad.com/Gallery_MultiFuselages.htm
+format: wrl 
+pid: 33312
+polygons: 428
+connected_components: 8
+average_dihedral_angle: 0.306984
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.584867, ymax = 0.975, zmax = 0.139
+avg_depth: 1.232288
+center: (0.271950,0.500010,0.053852)
+scale: 0.425819
+principle_axes: (-0.000053,1.000000,0.000000), (-0.997936,-0.000053,-0.064213), (0.064213,0.000004,-0.997936)
+principle_values: (0.038976,0.018137,0.000120)

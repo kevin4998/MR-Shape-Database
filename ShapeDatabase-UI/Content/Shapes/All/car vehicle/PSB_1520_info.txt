@@ -1,0 +1,14 @@
+mid: 1520
+url: http://mowat.virtualave.net/testeros.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26037
+polygons: 904
+connected_components: 174
+average_dihedral_angle: 2.74963
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.523352, ymax = 0.975, zmax = 0.255299
+avg_depth: 1.680775
+center: (0.279936,0.460872,0.165318)
+scale: 0.644471
+principle_axes: (0.034837,-0.998618,0.039351), (0.999369,0.034537,-0.008275), (0.006904,0.039614,0.999191)
+principle_values: (0.084898,0.028759,0.002801)

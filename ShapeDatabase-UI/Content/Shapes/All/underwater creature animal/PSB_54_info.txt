@@ -1,0 +1,14 @@
+mid: 54
+url: http://homepage.mac.com/woodland/archives/pinkSalmonP1obj.zip
+ref_url: http://www1.udn.ne.jp/~woodland/landscape/model/
+format: obj 
+pid: 25083
+polygons: 34598
+connected_components: 523
+average_dihedral_angle: 0.0767031
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.254899, ymax = 0.371143, zmax = 0.975
+avg_depth: 1.229027
+center: (0.153943,0.189686,0.553378)
+scale: 0.455921
+principle_axes: (-0.176354,-0.045866,0.983258), (-0.019827,-0.998546,-0.050136), (0.984127,-0.028337,0.175188)
+principle_values: (0.057657,0.004540,0.001598)

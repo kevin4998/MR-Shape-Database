@@ -1,0 +1,14 @@
+mid: 1588
+url: http://www.3dmodelz.com/Free/Vehicles-free/dls/Train-Caboose.zip
+ref_url: 
+format: xthreexds 
+pid: 48032
+polygons: 7716
+connected_components: 135
+average_dihedral_angle: 1.20213
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.269842, ymax = 0.433029, zmax = 0.975
+avg_depth: 1.820759
+center: (0.147369,0.221349,0.516099)
+scale: 0.526999
+principle_axes: (-0.002659,0.042703,0.999084), (-0.001126,-0.999087,0.042700), (0.999996,-0.001011,0.002704)
+principle_values: (0.057746,0.013849,0.005307)

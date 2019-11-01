@@ -1,0 +1,14 @@
+mid: 1670
+url: http://www.ocnus.com/models/Buildings/speedLimitSign30.wrl.gz
+ref_url: http://www.ocnus.com/models/Buildings/
+format: wrl 
+pid: 17685
+polygons: 217
+connected_components: 15
+average_dihedral_angle: 1.17818
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.335607, ymax = 0.975, zmax = 0.0685362
+avg_depth: 1.220968
+center: (0.180890,0.655898,0.044048)
+scale: 0.416660
+principle_axes: (0.000679,0.999982,-0.005998), (-0.999999,0.000671,-0.001280), (-0.001276,0.005999,0.999981)
+principle_values: (0.056721,0.005287,0.000086)

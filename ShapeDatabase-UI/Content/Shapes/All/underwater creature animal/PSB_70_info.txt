@@ -1,0 +1,14 @@
+mid: 70
+url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/obj/dolphin.wrl
+ref_url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/ocean.wrl
+format: wrl 
+pid: 14884
+polygons: 560
+connected_components: 10
+average_dihedral_angle: 0.617948
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.454415, ymax = 0.266076, zmax = 0.975
+avg_depth: 1.214208
+center: (0.239760,0.099321,0.529995)
+scale: 0.423872
+principle_axes: (-0.000024,-0.001825,0.999998), (0.999995,0.003045,0.000029), (0.003045,-0.999994,-0.001825)
+principle_values: (0.054353,0.003980,0.001835)

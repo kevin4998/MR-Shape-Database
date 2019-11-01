@@ -1,0 +1,14 @@
+mid: 139
+url: http://www.3dcafe.com/models/hero1.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 26795
+polygons: 24200
+connected_components: 40
+average_dihedral_angle: 0.169386
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.523247, ymax = 0.975, zmax = 0.246838
+avg_depth: 2.521031
+center: (0.278485,0.564454,0.131230)
+scale: 0.441270
+principle_axes: (-0.006137,0.999063,-0.042831), (0.999976,0.006267,0.002885), (0.003151,-0.042812,-0.999078)
+principle_values: (0.043958,0.012644,0.002201)

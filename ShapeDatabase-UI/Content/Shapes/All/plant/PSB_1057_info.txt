@@ -1,0 +1,14 @@
+mid: 1057
+url: http://mowat.virtualave.net/leaves.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26566
+polygons: 2212
+connected_components: 325
+average_dihedral_angle: 0.550169
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.853683, zmax = 0.901006
+avg_depth: 2.504367
+center: (0.467791,0.590033,0.456707)
+scale: 0.615787
+principle_axes: (0.741470,-0.458396,0.489996), (0.555088,0.829315,-0.064136), (0.376961,-0.319546,-0.869362)
+principle_values: (0.045428,0.034300,0.023672)

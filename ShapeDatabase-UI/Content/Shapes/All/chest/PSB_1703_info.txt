@@ -1,0 +1,14 @@
+mid: 1703
+url: http://www.3dcafe.com/models/chestv2.wrl
+ref_url: http://www.3dcafe.com/asp/househld.asp
+format: wrl 
+pid: 39161
+polygons: 276
+connected_components: 8
+average_dihedral_angle: 1.342
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.747, ymax = 0.928059, zmax = 0.975
+avg_depth: 1.727362
+center: (0.365956,0.369568,0.503273)
+scale: 0.932435
+principle_axes: (0.000399,-0.001374,0.999999), (0.267398,-0.963585,-0.001430), (-0.963586,-0.267398,0.000017)
+principle_values: (0.104414,0.082388,0.039699)

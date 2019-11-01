@@ -1,0 +1,14 @@
+mid: 259
+url: http://www.webslave.dircon.co.uk/worlds/datman.wrl
+ref_url: http://www.webslave.dircon.co.uk/galleryvrml.html
+format: wrl 
+pid: 10095
+polygons: 728
+connected_components: 19
+average_dihedral_angle: 0.757528
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.389217, ymax = 0.975, zmax = 0.618324
+avg_depth: 1.443768
+center: (0.203280,0.495311,0.367094)
+scale: 0.512657
+principle_axes: (0.035058,0.998139,0.049890), (-0.201954,-0.041815,0.978502), (-0.978767,0.044380,-0.200112)
+principle_values: (0.064677,0.009705,0.006995)

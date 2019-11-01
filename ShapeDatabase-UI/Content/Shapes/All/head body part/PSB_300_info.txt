@@ -1,0 +1,14 @@
+mid: 300
+url: http://ligwww.epfl.ch/~lengagne/wrl/Face.wrl.gz
+ref_url: http://ligwww.epfl.ch/~lengagne/dipl2000.html
+format: wrl 
+pid: 34039
+polygons: 1654
+connected_components: 3
+average_dihedral_angle: 0.332312
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.339934, xmax = 0.643101, ymax = 0.762701, zmax = 0.936753
+avg_depth: 1.054839
+center: (0.334258,0.373673,0.669599)
+scale: 0.557524
+principle_axes: (-0.997586,0.067797,0.015004), (-0.069431,-0.970995,-0.228796), (-0.000943,-0.229286,0.973359)
+principle_values: (0.030959,0.029813,0.021546)

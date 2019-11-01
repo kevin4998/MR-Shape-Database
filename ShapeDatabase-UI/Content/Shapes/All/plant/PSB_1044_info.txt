@@ -1,0 +1,14 @@
+mid: 1044
+url: http://www.3dcafe.com/models/treernd4.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 28931
+polygons: 3702
+connected_components: 1845
+average_dihedral_angle: 3.13867
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.615355, ymax = 0.975, zmax = 0.622829
+avg_depth: 1.433963
+center: (0.335488,0.575609,0.341300)
+scale: 0.428164
+principle_axes: (0.034415,-0.998141,-0.050309), (-0.269916,-0.057752,0.961150), (-0.962269,-0.019499,-0.271402)
+principle_values: (0.027972,0.012435,0.012049)

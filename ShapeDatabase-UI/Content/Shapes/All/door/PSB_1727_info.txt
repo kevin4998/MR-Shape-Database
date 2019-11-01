@@ -1,0 +1,14 @@
+mid: 1727
+url: http://www.3dcafe.com/models/doorfrnt.zip
+ref_url: http://www.3dcafe.com/asp/hou2_pic.asp
+format: 3ds 
+pid: 28391
+polygons: 7332
+connected_components: 32
+average_dihedral_angle: 0.348651
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.756079, ymax = 0.975, zmax = 0.121945
+avg_depth: 1.862304
+center: (0.391122,0.496508,0.074508)
+scale: 0.678831
+principle_axes: (0.000555,-0.999999,0.001486), (1.000000,0.000555,-0.000027), (-0.000026,-0.001486,-0.999999)
+principle_values: (0.082242,0.047636,0.000271)

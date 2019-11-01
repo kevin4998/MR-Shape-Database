@@ -1,0 +1,14 @@
+mid: 1794
+url: http://mowat.virtualave.net/swingset.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26105
+polygons: 544
+connected_components: 11
+average_dihedral_angle: 0.8813
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.777716, ymax = 0.715404, zmax = 0.975
+avg_depth: 1.176632
+center: (0.397898,0.386815,0.504237)
+scale: 0.822909
+principle_axes: (0.999954,0.009577,0.000027), (-0.005196,0.540149,0.841554), (-0.008045,0.841515,-0.540174)
+principle_values: (0.099800,0.043495,0.041205)

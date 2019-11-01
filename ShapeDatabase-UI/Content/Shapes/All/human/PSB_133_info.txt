@@ -1,0 +1,14 @@
+mid: 133
+url: http://www.finearts.art.vcu.edu/VRML/VRML2/kulwalk.WRL
+ref_url: http://www.finearts.art.vcu.edu/VRML/vrmlaniintro.html
+format: wrl 
+pid: 2043
+polygons: 4253
+connected_components: 62
+average_dihedral_angle: 0.488309
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.334878, ymax = 0.975, zmax = 0.215259
+avg_depth: 2.650701
+center: (0.179768,0.501905,0.116475)
+scale: 0.418460
+principle_axes: (-0.000027,0.999988,-0.004891), (1.000000,0.000026,-0.000218), (-0.000218,-0.004891,-0.999988)
+principle_values: (0.049108,0.004656,0.001524)

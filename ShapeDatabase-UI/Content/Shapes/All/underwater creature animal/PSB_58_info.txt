@@ -1,0 +1,14 @@
+mid: 58
+url: http://www.mtl.t.u-tokyo.ac.jp/~takeo/teddy/teddy.zip
+ref_url: http://www.mtl.t.u-tokyo.ac.jp/~takeo/teddy/teddy/teddy.html
+format: obj 
+pid: 30123
+polygons: 950
+connected_components: 1
+average_dihedral_angle: 0.331937
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.537049, ymax = 0.500211, zmax = 0.975
+avg_depth: 1.049988
+center: (0.283044,0.203420,0.568772)
+scale: 0.511874
+principle_axes: (-0.063325,0.003826,0.997986), (-0.205548,-0.978603,-0.009291), (-0.976596,0.205722,-0.062756)
+principle_values: (0.050391,0.012583,0.010226)

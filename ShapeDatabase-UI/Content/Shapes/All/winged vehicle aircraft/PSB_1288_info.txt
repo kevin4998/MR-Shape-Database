@@ -1,0 +1,14 @@
+mid: 1288
+url: http://www.rccad.com/Gallery/Vrml/Sl-24.wrl
+ref_url: http://www.rccad.com/Gallery_MultiFuselages3.htm
+format: wrl 
+pid: 34321
+polygons: 2674
+connected_components: 9
+average_dihedral_angle: 0.333141
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.690907, ymax = 0.975, zmax = 0.240696
+avg_depth: 1.625986
+center: (0.330021,0.500032,0.145449)
+scale: 0.467832
+principle_axes: (-0.000038,-1.000000,0.000034), (-0.999820,0.000037,-0.018968), (-0.018968,0.000035,0.999820)
+principle_values: (0.034062,0.026772,0.001039)

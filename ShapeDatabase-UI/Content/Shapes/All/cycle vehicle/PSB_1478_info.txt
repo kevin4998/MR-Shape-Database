@@ -1,0 +1,14 @@
+mid: 1478
+url: http://www.cs.reading.ac.uk/archive/cs/ug/ssu94021/models/bike.wrl
+ref_url: http://www.cs.reading.ac.uk/archive/cs/ug/ssu94021/models/
+format: wrl 
+pid: 5652
+polygons: 5049
+connected_components: 115
+average_dihedral_angle: 0.696619
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.611666, zmax = 0.223576
+avg_depth: 1.764854
+center: (0.478299,0.274070,0.117234)
+scale: 0.570545
+principle_axes: (-0.995917,-0.090126,0.005186), (0.090212,-0.995727,0.019736), (-0.003385,-0.020123,-0.999792)
+principle_values: (0.071885,0.022469,0.000565)

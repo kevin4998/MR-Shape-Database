@@ -1,0 +1,14 @@
+mid: 327
+url: http://www.3dcafe.com/models/hand2.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27176
+polygons: 768
+connected_components: 1
+average_dihedral_angle: 0.413051
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.775154, ymax = 0.395345, zmax = 0.975
+avg_depth: 1.270463
+center: (0.465670,0.210288,0.510776)
+scale: 0.577951
+principle_axes: (0.119887,0.143051,-0.982427), (0.992041,-0.055622,0.112961), (0.038485,0.988151,0.148581)
+principle_values: (0.058691,0.028312,0.006449)

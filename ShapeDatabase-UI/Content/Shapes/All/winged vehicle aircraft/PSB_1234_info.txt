@@ -1,0 +1,14 @@
+mid: 1234
+url: http://ciel.me.cmu.edu/soji/aircraft/ea6b.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 879
+polygons: 492
+connected_components: 15
+average_dihedral_angle: 0.64005
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.852419, ymax = 0.234919, zmax = 0.975
+avg_depth: 1.142656
+center: (0.438751,0.093299,0.526888)
+scale: 0.478974
+principle_axes: (0.000534,-0.050779,-0.998710), (1.000000,0.000225,0.000523), (0.000198,-0.998710,0.050779)
+principle_values: (0.050910,0.018410,0.001146)

@@ -1,0 +1,14 @@
+mid: 150
+url: http://www.3dcafe.com/models/child3y.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27093
+polygons: 3012
+connected_components: 56
+average_dihedral_angle: 0.469555
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.237902, ymax = 0.975, zmax = 0.384098
+avg_depth: 1.332330
+center: (0.150196,0.534703,0.205426)
+scale: 0.468460
+principle_axes: (0.008150,0.999827,0.016741), (-0.006241,0.016793,-0.999840), (0.999947,-0.008044,-0.006377)
+principle_values: (0.062215,0.006763,0.001445)

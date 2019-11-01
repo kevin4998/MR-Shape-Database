@@ -1,0 +1,14 @@
+mid: 372
+url: http://home.snafu.de/hg/vrml/texcoordmap.wrl
+ref_url: http://home.snafu.de/hg/vrml/
+format: wrl 
+pid: 17661
+polygons: 1419
+connected_components: 2
+average_dihedral_angle: 0.246655
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.490952, ymax = 0.975, zmax = 0.363395
+avg_depth: 1.042658
+center: (0.262252,0.471075,0.198665)
+scale: 0.601976
+principle_axes: (0.026206,-0.999211,-0.029832), (-0.999341,-0.025437,-0.025885), (0.025105,0.030491,-0.999220)
+principle_values: (0.077803,0.014095,0.008866)

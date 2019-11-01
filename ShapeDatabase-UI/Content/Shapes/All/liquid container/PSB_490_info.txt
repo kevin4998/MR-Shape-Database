@@ -1,0 +1,14 @@
+mid: 490
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1998/mvalenci/Hw5/hw5.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1998/mvalenci/Hw5/?D=D
+format: wrl 
+pid: 36351
+polygons: 1076
+connected_components: 3
+average_dihedral_angle: 0.325108
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.363345, ymax = 0.975, zmax = 0.363345
+avg_depth: 1.488093
+center: (0.194071,0.452083,0.194336)
+scale: 0.552982
+principle_axes: (-0.000531,-1.000000,0.000518), (-0.999850,0.000540,0.017333), (0.017333,0.000509,0.999850)
+principle_values: (0.067271,0.010696,0.010694)

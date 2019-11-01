@@ -1,0 +1,14 @@
+mid: 1365
+url: http://fraktali.849pm.com/programs/dxf/Enterpr.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27788
+polygons: 1196
+connected_components: 19
+average_dihedral_angle: 0.474434
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.750444, zmax = 0.201007
+avg_depth: 1.244544
+center: (0.526248,0.384567,0.090663)
+scale: 0.543806
+principle_axes: (0.990428,0.019633,-0.136629), (0.019669,-0.999806,-0.001083), (-0.136624,-0.001614,-0.990622)
+principle_values: (0.063574,0.022867,0.000942)

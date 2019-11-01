@@ -1,0 +1,14 @@
+mid: 168
+url: http://zing.ncsl.nist.gov/~gseidman/vrml/manchild/man.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~pscheng
+format: wrl 
+pid: 45213
+polygons: 5476
+connected_components: 201
+average_dihedral_angle: 0.435617
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.392552, ymax = 0.975, zmax = 0.212955
+avg_depth: 1.321539
+center: (0.216355,0.494370,0.119244)
+scale: 0.467889
+principle_axes: (-0.098546,0.994174,0.043673), (0.963929,0.106268,-0.244023), (-0.247242,0.018050,-0.968786)
+principle_values: (0.060509,0.005755,0.001460)

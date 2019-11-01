@@ -1,0 +1,14 @@
+mid: 1174
+url: http://ciel.me.cmu.edu/soji/aircraft/f104.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 902
+polygons: 552
+connected_components: 1
+average_dihedral_angle: 0.586588
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.512874, ymax = 0.217563, zmax = 0.975
+avg_depth: 1.125814
+center: (0.268937,0.078569,0.610509)
+scale: 0.430161
+principle_axes: (0.000001,0.094333,0.995541), (1.000000,-0.000002,-0.000001), (-0.000002,-0.995541,0.094333)
+principle_values: (0.046411,0.010522,0.001802)

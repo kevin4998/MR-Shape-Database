@@ -1,0 +1,14 @@
+mid: 967
+url: http://www.3dcafe.com/models/aqua12_s.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: xthreexds 
+pid: 29079
+polygons: 16912
+connected_components: 567
+average_dihedral_angle: 0.45831
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.200176, ymax = 0.471886, zmax = 0.975
+avg_depth: 1.779745
+center: (0.118695,0.165222,0.507724)
+scale: 0.417142
+principle_axes: (-0.005623,0.151995,0.988365), (0.010941,-0.988312,0.152049), (0.999924,0.011669,0.003894)
+principle_values: (0.043037,0.007890,0.000863)

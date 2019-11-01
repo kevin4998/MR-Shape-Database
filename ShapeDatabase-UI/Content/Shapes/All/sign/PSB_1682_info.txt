@@ -1,0 +1,14 @@
+mid: 1682
+url: http://64.198.60.83/baument/Models/Billboard10x20.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 26510
+polygons: 8804
+connected_components: 45
+average_dihedral_angle: 0.597067
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.852742, zmax = 0.357307
+avg_depth: 2.226908
+center: (0.503998,0.545823,0.202705)
+scale: 0.620380
+principle_axes: (-0.999999,0.000828,0.001041), (0.000938,0.993938,0.109935), (0.000944,-0.109935,0.993938)
+principle_values: (0.085062,0.030044,0.001237)

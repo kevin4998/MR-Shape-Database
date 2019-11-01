@@ -1,0 +1,14 @@
+mid: 59
+url: http://web.nps.navy.mil/~brutzman/kelp/models/fishschool.wrl
+ref_url: http://web.nps.navy.mil/~brutzman/kelp/models/
+format: wrl 
+pid: 3340
+polygons: 1680
+connected_components: 1596
+average_dihedral_angle: 0.456963
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.225, ymax = 0.225, zmax = 0.975
+avg_depth: 20.055481
+center: (0.125018,0.124881,0.484179)
+scale: 0.428483
+principle_axes: (-0.000129,0.001988,-0.999998), (0.999938,-0.011145,-0.000151), (-0.011146,-0.999936,-0.001987)
+principle_values: (0.055657,0.001558,0.001485)

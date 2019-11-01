@@ -1,0 +1,14 @@
+mid: 101
+url: http://tecfa.unige.ch/vrml/objects/furniture/cochon.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/furniture/
+format: wrl 
+pid: 3635
+polygons: 2204
+connected_components: 27
+average_dihedral_angle: 0.555082
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.408786, ymax = 0.685159, zmax = 0.975
+avg_depth: 2.249493
+center: (0.216999,0.326687,0.549087)
+scale: 0.563603
+principle_axes: (-0.000751,0.271156,0.962535), (-0.003783,-0.962529,0.271151), (0.999993,-0.003438,0.001749)
+principle_values: (0.058505,0.018758,0.011699)

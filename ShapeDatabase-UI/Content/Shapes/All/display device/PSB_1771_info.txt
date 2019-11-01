@@ -1,0 +1,14 @@
+mid: 1771
+url: http://deep.sitenest.net/freemodels/computers/3dm-appl.zip
+ref_url: 
+format: xthreexds 
+pid: 48249
+polygons: 5270
+connected_components: 48
+average_dihedral_angle: 0.572056
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.777486, ymax = 0.4214, zmax = 0.975
+avg_depth: 1.982054
+center: (0.407230,0.160991,0.420946)
+scale: 0.618736
+principle_axes: (0.379017,0.195324,-0.904541), (0.814582,-0.534224,0.225964), (-0.439091,-0.822468,-0.361588)
+principle_values: (0.077246,0.017461,0.011298)

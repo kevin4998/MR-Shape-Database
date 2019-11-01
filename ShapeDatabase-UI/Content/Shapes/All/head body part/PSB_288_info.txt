@@ -1,0 +1,14 @@
+mid: 288
+url: http://www.ubd.edu.bn/SHBIE/def/webfound/images/brain.wrl
+ref_url: http://www.ubd.edu.bn/SHBIE/def/webfound/vrmlsamp.htm
+format: wrl 
+pid: 8276
+polygons: 1208
+connected_components: 3
+average_dihedral_angle: 0.57491
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.775985, ymax = 0.854975, zmax = 0.975
+avg_depth: 1.144753
+center: (0.401027,0.479660,0.465085)
+scale: 0.780385
+principle_axes: (-0.003918,-0.263005,-0.964786), (0.999973,-0.007002,-0.002152), (-0.006190,-0.964769,0.263026)
+principle_values: (0.068015,0.047385,0.040518)

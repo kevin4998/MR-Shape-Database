@@ -1,0 +1,14 @@
+mid: 1683
+url: http://www.3dcafe.com/models/billboar.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27821
+polygons: 5896
+connected_components: 27
+average_dihedral_angle: 0.357724
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.970492, ymax = 0.975, zmax = 0.358657
+avg_depth: 1.479615
+center: (0.494070,0.569190,0.091216)
+scale: 0.685278
+principle_axes: (1.000000,-0.000592,0.000002), (-0.000592,-0.999615,0.027755), (-0.000014,-0.027755,-0.999615)
+principle_values: (0.076586,0.054397,0.002412)

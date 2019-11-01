@@ -1,0 +1,14 @@
+mid: 412
+url: http://cyberplaces.com/book/chaptr18/main.wrl
+ref_url: http://cyberplaces.com/book/chaptr18/ch18add.htm
+format: wrl 
+pid: 9439
+polygons: 2820
+connected_components: 186
+average_dihedral_angle: 1.35836
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.12811, zmax = 0.511585
+avg_depth: 1.944188
+center: (0.519622,0.039882,0.305383)
+scale: 0.451420
+principle_axes: (0.992425,0.002244,0.122829), (-0.122801,-0.009884,0.992382), (0.003441,-0.999949,-0.009534)
+principle_values: (0.050379,0.012245,0.000864)

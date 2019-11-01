@@ -1,0 +1,14 @@
+mid: 166
+url: http://www.avatara.com/avatars2/stan.wrl
+ref_url: http://www.avatara.com/avatars2/avatars1_list.html
+format: wrl 
+pid: 4355
+polygons: 1698
+connected_components: 744
+average_dihedral_angle: 0.741926
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.295275, ymax = 0.975, zmax = 0.322111
+avg_depth: 2.479662
+center: (0.155734,0.506563,0.164250)
+scale: 0.476905
+principle_axes: (0.003620,0.999916,0.012444), (-0.958877,-0.000061,0.283821), (0.283798,-0.012960,0.958796)
+principle_values: (0.063676,0.004735,0.001606)

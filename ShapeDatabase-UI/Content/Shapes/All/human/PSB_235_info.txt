@@ -1,0 +1,14 @@
+mid: 235
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/matt01.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/?D=D
+format: wrl 
+pid: 39447
+polygons: 812
+connected_components: 1
+average_dihedral_angle: 0.430165
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.849048, ymax = 0.975, zmax = 0.247928
+avg_depth: 1.076593
+center: (0.439073,0.516718,0.104952)
+scale: 0.549075
+principle_axes: (-0.005321,0.999928,-0.010716), (0.999977,0.005276,-0.004164), (0.004108,0.010738,0.999934)
+principle_values: (0.064855,0.025337,0.001791)

@@ -1,0 +1,14 @@
+mid: 1403
+url: ftp://avalon.viewpoint.com/pub/objects/space/StarWars/tifight1_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47761
+polygons: 1680
+connected_components: 24
+average_dihedral_angle: 1.02403
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.612346, zmax = 0.857474
+avg_depth: 2.443961
+center: (0.500000,0.318833,0.439571)
+scale: 0.878494
+principle_axes: (0.999538,-0.030380,-0.000014), (0.000094,0.002615,0.999997), (0.030380,0.999535,-0.002617)
+principle_values: (0.134860,0.043222,0.027106)

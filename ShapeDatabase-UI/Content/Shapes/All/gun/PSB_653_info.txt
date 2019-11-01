@@ -1,0 +1,14 @@
+mid: 653
+url: http://64.198.60.83/baument/Models/sixshooter.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25390
+polygons: 4300
+connected_components: 8
+average_dihedral_angle: 0.591623
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.466906, zmax = 0.16723
+avg_depth: 1.855798
+center: (0.559146,0.296312,0.095164)
+scale: 0.502170
+principle_axes: (0.929164,-0.369666,-0.001284), (-0.369666,-0.929144,-0.006185), (-0.001093,-0.006221,0.999980)
+principle_values: (0.072896,0.005345,0.000589)

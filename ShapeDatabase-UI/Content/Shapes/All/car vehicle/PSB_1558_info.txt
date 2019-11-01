@@ -1,0 +1,14 @@
+mid: 1558
+url: ftp://avalon.viewpoint.com/pub/objects/vehicles/cars/mg47_dxf.zip
+ref_url: 
+format: dxf 
+pid: 47791
+polygons: 11791
+connected_components: 736
+average_dihedral_angle: 0.674252
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.347265, ymax = 0.307098, zmax = 0.975
+avg_depth: 2.225503
+center: (0.184875,0.142350,0.479485)
+scale: 0.551932
+principle_axes: (0.000126,0.010701,-0.999943), (-0.999995,-0.003190,-0.000160), (0.003191,-0.999938,-0.010701)
+principle_values: (0.078274,0.008305,0.003196)

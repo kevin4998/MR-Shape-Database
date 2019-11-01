@@ -1,0 +1,14 @@
+mid: 1228
+url: http://www.rccad.com/Gallery/Vrml/XI-5.wrl
+ref_url: http://www.rccad.com/Gallery_Exotic11.htm
+format: wrl 
+pid: 40682
+polygons: 368
+connected_components: 12
+average_dihedral_angle: 0.325194
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.705579, zmax = 0.16931
+avg_depth: 1.386905
+center: (0.657952,0.365293,0.062009)
+scale: 0.356030
+principle_axes: (0.999968,-0.000015,0.007949), (0.000015,1.000000,0.000008), (0.007949,0.000008,-0.999968)
+principle_values: (0.028632,0.014095,0.000378)

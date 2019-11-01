@@ -1,0 +1,14 @@
+mid: 1510
+url: http://www.3dcafe.com/../models/formula2.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: xthreexds 
+pid: 30542
+polygons: 109357
+connected_components: 69
+average_dihedral_angle: 0.599808
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.488036, ymax = 0.245331, zmax = 0.975
+avg_depth: 2.038284
+center: (0.258973,0.098137,0.442255)
+scale: 0.552226
+principle_axes: (0.001220,0.059295,-0.998240), (-0.999998,0.001807,-0.001115), (-0.001738,-0.998239,-0.059297)
+principle_values: (0.067780,0.016439,0.002213)

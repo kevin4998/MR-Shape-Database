@@ -1,0 +1,14 @@
+mid: 1586
+url: http://www.geocities.com/area51/cavern/7565/spotlite.wrl
+ref_url: http://www.geocities.com/Area51/Cavern/7565/vrml.htm
+format: wrl 
+pid: 456
+polygons: 10614
+connected_components: 193
+average_dihedral_angle: 1.13424
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.30341, ymax = 0.377149, zmax = 0.975
+avg_depth: 3.641774
+center: (0.164480,0.168973,0.426293)
+scale: 0.499777
+principle_axes: (0.002143,0.138759,-0.990324), (-0.994520,0.103811,0.012393), (-0.104526,-0.984870,-0.138221)
+principle_values: (0.061247,0.007127,0.006157)

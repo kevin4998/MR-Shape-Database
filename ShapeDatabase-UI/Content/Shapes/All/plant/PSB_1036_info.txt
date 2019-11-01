@@ -1,0 +1,14 @@
+mid: 1036
+url: http://www.amazing3d.com/free/a3pln3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 46893
+polygons: 401
+connected_components: 15
+average_dihedral_angle: 1.31668
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.58416, ymax = 0.975, zmax = 0.364351
+avg_depth: 1.237653
+center: (0.281447,0.496613,0.185205)
+scale: 0.506666
+principle_axes: (-0.072805,0.994480,-0.075560), (-0.942329,-0.093406,-0.321391), (-0.326675,0.047803,0.943927)
+principle_values: (0.062351,0.011445,0.003655)

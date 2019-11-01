@@ -1,0 +1,14 @@
+mid: 742
+url: http://www.ocnus.com/models/Machines/coarseGear.wrl.gz
+ref_url: http://www.ocnus.com/models/Machines/
+format: wrl 
+pid: 17839
+polygons: 508
+connected_components: 1
+average_dihedral_angle: 1.46784
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.975, zmax = 0.201045
+avg_depth: 1.135248
+center: (0.500000,0.500000,0.113023)
+scale: 0.748189
+principle_axes: (-0.658948,0.752189,0.000000), (-0.752189,-0.658948,-0.000000), (0.000000,-0.000000,1.000000)
+principle_values: (0.072349,0.072349,0.005802)

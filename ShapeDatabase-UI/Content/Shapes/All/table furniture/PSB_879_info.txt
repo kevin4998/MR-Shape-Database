@@ -1,0 +1,14 @@
+mid: 879
+url: http://mowat.virtualave.net/table11.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26085
+polygons: 556
+connected_components: 1
+average_dihedral_angle: 0.96602
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.38125, zmax = 0.500002
+avg_depth: 1.513252
+center: (0.500000,0.279312,0.262502)
+scale: 0.770762
+principle_axes: (-1.000000,-0.000000,-0.000001), (0.000001,0.000001,-1.000000), (-0.000000,1.000000,0.000001)
+principle_values: (0.125066,0.025850,0.013263)

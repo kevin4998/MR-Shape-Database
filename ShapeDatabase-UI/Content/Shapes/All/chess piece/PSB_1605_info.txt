@@ -1,0 +1,14 @@
+mid: 1605
+url: http://www.geometrek.com/web3d/deepmatrix/world/hub/chessGZ.wrl
+ref_url: http://www.geometrek.com/web3d/deepmatrix/world/hub/
+format: wrl 
+pid: 6738
+polygons: 168
+connected_components: 1
+average_dihedral_angle: 0.52949
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.658333, ymax = 0.975, zmax = 0.658333
+avg_depth: 1.077857
+center: (0.341725,0.417810,0.365039)
+scale: 0.662260
+principle_axes: (0.000625,-0.988501,-0.151212), (0.014979,0.151204,-0.988389), (-0.999888,0.001647,-0.014901)
+principle_values: (0.068936,0.029020,0.021359)

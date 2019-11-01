@@ -1,0 +1,14 @@
+mid: 304
+url: http://www.vision.caltech.edu/bouguetj/ICCV98/head.wrl.gz
+ref_url: http://www.vision.caltech.edu/bouguetj/ICCV98/gallery.html
+format: wrl 
+pid: 45177
+polygons: 37922
+connected_components: 1
+average_dihedral_angle: 0.176796
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.846242, ymax = 0.975, zmax = 0.697501
+avg_depth: 1.095427
+center: (0.440712,0.448313,0.421445)
+scale: 0.706944
+principle_axes: (0.167659,-0.799892,-0.576249), (0.985065,0.112676,0.130198), (-0.039215,-0.589472,0.806837)
+principle_values: (0.076994,0.055181,0.005957)

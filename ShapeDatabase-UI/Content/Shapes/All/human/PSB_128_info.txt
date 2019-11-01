@@ -1,0 +1,14 @@
+mid: 128
+url: http://www.avatara.com/avatars/woman2.wrl
+ref_url: http://www.avatara.com/avatars/avatars3_list.html
+format: wrl 
+pid: 17054
+polygons: 853
+connected_components: 5
+average_dihedral_angle: 0.593628
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.284853, ymax = 0.975, zmax = 0.242942
+avg_depth: 1.247804
+center: (0.155096,0.545503,0.124673)
+scale: 0.439980
+principle_axes: (-0.005923,0.999911,0.011931), (-0.984614,-0.007915,0.174564), (-0.174643,0.010713,-0.984574)
+principle_values: (0.055474,0.004291,0.001331)

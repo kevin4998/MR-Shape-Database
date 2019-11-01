@@ -1,0 +1,14 @@
+mid: 622
+url: http://fraktali.849pm.com/programs/wrl/object/Cityscape.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32070
+polygons: 88
+connected_components: 3
+average_dihedral_angle: 0.959932
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0992186, ymax = 0.975, zmax = 0.20127
+avg_depth: 1.032665
+center: (0.062126,0.465370,0.073745)
+scale: 0.603649
+principle_axes: (-0.000017,-0.998659,-0.051773), (0.000478,0.051773,-0.998659), (-1.000000,0.000042,-0.000477)
+principle_values: (0.113503,0.000840,0.000189)

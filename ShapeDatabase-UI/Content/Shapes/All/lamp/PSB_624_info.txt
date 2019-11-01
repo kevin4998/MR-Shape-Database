@@ -1,0 +1,14 @@
+mid: 624
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/lighting/streetLamp_001.wrl
+ref_url: http://www.elsevier.nl/cgi-bin/cas/tree/store/specom/cas_free/browse/browse.cgi?year=1997&volume=21&issue=1-2
+format: wrl 
+pid: 36009
+polygons: 76
+connected_components: 4
+average_dihedral_angle: 1.428
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.171154, ymax = 0.975, zmax = 0.368539
+avg_depth: 1.043803
+center: (0.098077,0.575213,0.117414)
+scale: 0.648495
+principle_axes: (0.000000,0.982564,0.185925), (0.000000,0.185925,-0.982564), (1.000000,-0.000000,0.000000)
+principle_values: (0.117430,0.006326,0.000602)

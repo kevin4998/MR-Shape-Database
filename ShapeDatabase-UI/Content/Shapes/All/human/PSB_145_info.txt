@@ -1,0 +1,14 @@
+mid: 145
+url: http://www.3dcafe.com/models/r96012.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27006
+polygons: 25506
+connected_components: 3
+average_dihedral_angle: 0.225354
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.375543, ymax = 0.975, zmax = 0.504207
+avg_depth: 1.055761
+center: (0.181723,0.513128,0.267050)
+scale: 0.491980
+principle_axes: (0.020681,0.999374,-0.028688), (-0.584901,-0.011178,-0.811027), (-0.810841,0.033552,0.584304)
+principle_values: (0.061113,0.011967,0.001326)

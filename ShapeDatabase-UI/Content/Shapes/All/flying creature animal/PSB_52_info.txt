@@ -1,0 +1,14 @@
+mid: 52
+url: http://www.igs.net/~mascott/vrml/isrs/worlds/s_flyingduck.wrl
+ref_url: http://www.igs.net/~mascott/vrml/isrs/pages/duck.htm
+format: wrl 
+pid: 42877
+polygons: 578
+connected_components: 7
+average_dihedral_angle: 0.621237
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.620667, zmax = 0.909953
+avg_depth: 1.532703
+center: (0.481275,0.280346,0.477145)
+scale: 0.510616
+principle_axes: (-0.020201,-0.448638,-0.893485), (-0.980822,0.182173,-0.069298), (0.193858,0.874950,-0.443714)
+principle_values: (0.038136,0.020489,0.015068)

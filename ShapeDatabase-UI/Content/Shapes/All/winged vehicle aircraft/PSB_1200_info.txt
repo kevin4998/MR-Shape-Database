@@ -1,0 +1,14 @@
+mid: 1200
+url: http://ciel.me.cmu.edu/soji/aircraft/tornado_1.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 917
+polygons: 450
+connected_components: 69
+average_dihedral_angle: 0.701776
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.483721, ymax = 0.300411, zmax = 0.975
+avg_depth: 1.932722
+center: (0.254890,0.114654,0.652986)
+scale: 0.385759
+principle_axes: (-0.001299,0.173248,0.984877), (0.999995,0.003184,0.000759), (0.003004,-0.984873,0.173251)
+principle_values: (0.036866,0.007502,0.002570)

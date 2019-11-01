@@ -1,0 +1,14 @@
+mid: 1660
+url: http://www.arch.usyd.edu.au/kcdc/journal/vol3/dcnet/whyte/model.wrl
+ref_url: http://www.arch.usyd.edu.au/kcdc/journal/vol3/dcnet/whyte/model.html
+format: wrl 
+pid: 11359
+polygons: 4217
+connected_components: 142
+average_dihedral_angle: 1.40732
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.063385, zmax = 0.925
+avg_depth: 1.792658
+center: (0.477421,0.027463,0.491629)
+scale: 0.567707
+principle_axes: (0.818914,-0.001256,-0.573915), (0.573916,0.001035,0.818914), (-0.000435,-0.999999,0.001569)
+principle_values: (0.061976,0.036057,0.000049)

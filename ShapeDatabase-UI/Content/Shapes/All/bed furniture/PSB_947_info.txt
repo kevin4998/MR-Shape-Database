@@ -1,0 +1,14 @@
+mid: 947
+url: http://fraktali.849pm.com/programs/wrl/object/Bedroom.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32120
+polygons: 584
+connected_components: 67
+average_dihedral_angle: 1.39081
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.721994, ymax = 0.445454, zmax = 0.975
+avg_depth: 1.293820
+center: (0.373524,0.183613,0.481298)
+scale: 0.834370
+principle_axes: (-0.000008,0.041737,-0.999129), (1.000000,0.000019,-0.000007), (0.000018,-0.999129,-0.041737)
+principle_values: (0.129241,0.052422,0.007030)

@@ -1,0 +1,14 @@
+mid: 660
+url: http://www.avatara.com/avatars2/revolvr.wrl
+ref_url: http://www.avatara.com/avatars2/avatars1_list.html
+format: wrl 
+pid: 4348
+polygons: 3260
+connected_components: 970
+average_dihedral_angle: 1.42963
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.15705, ymax = 0.526839, zmax = 0.975
+avg_depth: 4.116100
+center: (0.089406,0.404651,0.475784)
+scale: 0.412333
+principle_axes: (0.005694,-0.312673,-0.949844), (0.006614,0.949850,-0.312635), (-0.999962,0.004502,-0.007476)
+principle_values: (0.052817,0.004547,0.000601)

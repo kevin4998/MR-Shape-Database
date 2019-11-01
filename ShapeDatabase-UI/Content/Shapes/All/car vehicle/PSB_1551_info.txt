@@ -1,0 +1,14 @@
+mid: 1551
+url: http://www.3dheaven.net/Modelle/cars/X2.zip
+ref_url: 
+format: xthreexds 
+pid: 47075
+polygons: 35465
+connected_components: 128
+average_dihedral_angle: 0.453496
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.267007, zmax = 0.44911
+avg_depth: 2.138851
+center: (0.470951,0.123358,0.237336)
+scale: 0.571303
+principle_axes: (-0.998734,0.050300,-0.000311), (0.000285,-0.000525,-1.000000), (-0.050300,-0.998734,0.000510)
+principle_values: (0.071062,0.019297,0.003399)

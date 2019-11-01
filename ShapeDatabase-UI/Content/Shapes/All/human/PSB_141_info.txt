@@ -1,0 +1,14 @@
+mid: 141
+url: http://www.3dcafe.com/models/man4.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 26934
+polygons: 3012
+connected_components: 56
+average_dihedral_angle: 0.461939
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.325015, ymax = 0.975, zmax = 0.324737
+avg_depth: 1.319373
+center: (0.213428,0.524378,0.176923)
+scale: 0.440902
+principle_axes: (0.011959,0.999882,0.009598), (-0.242613,0.012214,-0.970046), (-0.970049,0.009272,0.242731)
+principle_values: (0.057536,0.004992,0.001718)

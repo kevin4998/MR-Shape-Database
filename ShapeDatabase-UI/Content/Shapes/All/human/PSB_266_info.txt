@@ -1,0 +1,14 @@
+mid: 266
+url: http://www.cs.iupui.edu/~aharris/mm/figure/andy.wrl
+ref_url: http://www.cs.iupui.edu/~aharris/vrml/
+format: wrl 
+pid: 44172
+polygons: 2168
+connected_components: 15
+average_dihedral_angle: 0.488799
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.31278, ymax = 0.975, zmax = 0.893268
+avg_depth: 1.346717
+center: (0.168890,0.545358,0.503865)
+scale: 0.515243
+principle_axes: (-0.032072,0.991356,0.127219), (-0.077461,0.124436,-0.989199), (-0.996479,-0.041580,0.072801)
+principle_values: (0.050864,0.025616,0.005224)

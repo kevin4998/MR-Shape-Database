@@ -1,0 +1,14 @@
+mid: 301
+url: http://ligwww.epfl.ch/~lengagne/wrl/FaceTmp.wrl.gz
+ref_url: http://ligwww.epfl.ch/~lengagne/dipl2000.html
+format: wrl 
+pid: 34041
+polygons: 34333
+connected_components: 13
+average_dihedral_angle: 0.161128
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.754541, ymax = 0.975, zmax = 0.633547
+avg_depth: 1.068517
+center: (0.317961,0.477074,0.386253)
+scale: 0.619863
+principle_axes: (0.418124,-0.902948,-0.099280), (-0.366047,-0.067453,-0.928149), (-0.831374,-0.424422,0.358725)
+principle_values: (0.054547,0.029042,0.018477)

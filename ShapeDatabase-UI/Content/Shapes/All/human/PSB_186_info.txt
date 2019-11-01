@@ -1,0 +1,14 @@
+mid: 186
+url: http://cs1.cs.nyu.edu/wanghua/project/wrl/man.wrl
+ref_url: http://cs1.cs.nyu.edu/wanghua/project/wrl/
+format: wrl 
+pid: 5890
+polygons: 564
+connected_components: 6
+average_dihedral_angle: 0.581714
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.322825, ymax = 0.975, zmax = 0.182462
+avg_depth: 1.196556
+center: (0.172923,0.508014,0.094868)
+scale: 0.449563
+principle_axes: (0.014968,0.999797,0.013478), (-0.999882,0.014919,0.003746), (-0.003544,0.013533,-0.999902)
+principle_values: (0.058944,0.004628,0.001280)

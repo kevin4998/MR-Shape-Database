@@ -1,0 +1,14 @@
+mid: 1513
+url: http://www.rccad.com/Gallery/Vrml/Lotus.wrl
+ref_url: http://www.rccad.com/Gallery_Full8.htm
+format: wrl 
+pid: 40716
+polygons: 20844
+connected_components: 138
+average_dihedral_angle: 0.313472
+bounding_box: xmin = 0.0655421, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.420125, zmax = 0.288298
+avg_depth: 2.911186
+center: (0.616088,0.222231,0.102119)
+scale: 0.443852
+principle_axes: (0.999680,0.001580,0.025250), (0.001538,-0.999997,0.001659), (0.025252,-0.001620,-0.999680)
+principle_values: (0.054274,0.005470,0.002101)

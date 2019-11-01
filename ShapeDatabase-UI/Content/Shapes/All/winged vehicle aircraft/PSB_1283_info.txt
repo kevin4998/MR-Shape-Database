@@ -1,0 +1,14 @@
+mid: 1283
+url: http://www.rccad.com/Gallery/Vrml/Ultraliviano.wrl
+ref_url: http://www.rccad.com/Gallery_Exotic.htm
+format: wrl 
+pid: 6430
+polygons: 368
+connected_components: 8
+average_dihedral_angle: 0.418227
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.0302714, xmax = 0.542551, ymax = 0.975, zmax = 0.196045
+avg_depth: 1.096386
+center: (0.247544,0.500000,0.102608)
+scale: 0.446132
+principle_axes: (0.000000,1.000000,0.000000), (-0.994205,0.000000,-0.107499), (-0.107499,-0.000000,0.994205)
+principle_values: (0.042844,0.015476,0.000297)

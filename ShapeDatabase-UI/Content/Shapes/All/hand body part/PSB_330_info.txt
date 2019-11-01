@@ -1,0 +1,14 @@
+mid: 330
+url: http://www.3dcafe.com/models/bot.zip
+ref_url: http://www.3dcafe.com/asp/sci_pics.asp
+format: lwo 
+pid: 29192
+polygons: 1710
+connected_components: 83
+average_dihedral_angle: 0.713464
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.39912, zmax = 0.522038
+avg_depth: 1.682160
+center: (0.510213,0.218118,0.294880)
+scale: 0.663810
+principle_axes: (0.985744,0.008398,-0.168043), (0.144431,-0.554554,0.819518), (0.086307,0.832106,0.547861)
+principle_values: (0.102366,0.010138,0.008355)

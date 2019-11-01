@@ -1,0 +1,14 @@
+mid: 693
+url: http://www.digitalanimators.com/Images/3dmodels/Lance.zip
+ref_url: http://www.digitalanimators.com/HTM/Resources/3dModels/Replica.htm
+format: lwo 
+pid: 28562
+polygons: 259
+connected_components: 3
+average_dihedral_angle: 0.819304
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.110751, ymax = 0.975, zmax = 0.119326
+avg_depth: 1.203499
+center: (0.067748,0.315321,0.074482)
+scale: 0.360848
+principle_axes: (0.000732,-0.999991,-0.004188), (-0.003269,-0.004190,0.999986), (-0.999994,-0.000718,-0.003272)
+principle_values: (0.048671,0.000235,0.000200)

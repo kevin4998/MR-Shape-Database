@@ -1,0 +1,14 @@
+mid: 992
+url: http://mowat.virtualave.net/tallplnt.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26052
+polygons: 644
+connected_components: 22
+average_dihedral_angle: 1.01879
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.914445, ymax = 0.510263, zmax = 0.975
+avg_depth: 1.209030
+center: (0.486511,0.289592,0.493179)
+scale: 0.527547
+principle_axes: (-0.989177,-0.086707,-0.118371), (-0.090738,-0.272497,0.957868), (0.115309,-0.958242,-0.261680)
+principle_values: (0.032577,0.025624,0.020238)

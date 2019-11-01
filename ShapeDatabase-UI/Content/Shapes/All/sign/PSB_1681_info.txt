@@ -1,0 +1,14 @@
+mid: 1681
+url: ftp://avalon.viewpoint.com/pub/objects/misc/moosign_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47616
+polygons: 13032
+connected_components: 14
+average_dihedral_angle: 1.09165
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.416613, ymax = 0.975, zmax = 0.0576314
+avg_depth: 1.282115
+center: (0.218335,0.649374,0.043894)
+scale: 0.360838
+principle_axes: (0.014375,0.999583,0.025045), (0.999897,-0.014368,-0.000468), (0.000108,-0.025049,0.999686)
+principle_values: (0.041114,0.004627,0.000053)

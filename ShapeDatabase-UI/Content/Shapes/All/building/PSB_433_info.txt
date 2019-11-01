@@ -1,0 +1,14 @@
+mid: 433
+url: http://www.batista.org/house.wrl
+ref_url: http://www.batista.org/frmain.htm
+format: wrl 
+pid: 324
+polygons: 4236
+connected_components: 168
+average_dihedral_angle: 1.34535
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.224068, zmax = 0.888636
+avg_depth: 3.146188
+center: (0.526969,0.055408,0.476141)
+scale: 0.571993
+principle_axes: (0.906556,-0.002921,0.422076), (-0.422076,0.000604,0.906560), (-0.002903,-0.999996,-0.000685)
+principle_values: (0.054455,0.040419,0.002172)

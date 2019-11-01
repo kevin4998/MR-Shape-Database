@@ -1,0 +1,14 @@
+mid: 578
+url: http://www.3dcafe.com/models/c64chip.zip
+ref_url: http://www.3dcafe.com/asp/elec_pic.asp
+format: xthreexds 
+pid: 27943
+polygons: 1010
+connected_components: 37
+average_dihedral_angle: 1.04342
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.331379, zmax = 0.455626
+avg_depth: 1.535596
+center: (0.497701,0.229262,0.240373)
+scale: 0.602100
+principle_axes: (-1.000000,-0.000511,-0.000256), (0.000255,0.002575,-0.999997), (-0.000512,0.999997,0.002575)
+principle_values: (0.080742,0.018973,0.005480)

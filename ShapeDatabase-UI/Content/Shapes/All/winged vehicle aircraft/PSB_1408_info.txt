@@ -1,0 +1,14 @@
+mid: 1408
+url: http://www.3dcafe.com/models/xwing.zip
+ref_url: http://www.3dcafe.com/asp/sci_pics.asp
+format: xthreexds 
+pid: 25529
+polygons: 2496
+connected_components: 9
+average_dihedral_angle: 1.14821
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.831649, ymax = 0.350929, zmax = 0.975
+avg_depth: 1.414022
+center: (0.428324,0.188126,0.284827)
+scale: 0.515382
+principle_axes: (-1.000000,0.000000,0.000004), (-0.000004,-0.016538,-0.999863), (0.000000,-0.999863,0.016538)
+principle_values: (0.045958,0.031544,0.006072)

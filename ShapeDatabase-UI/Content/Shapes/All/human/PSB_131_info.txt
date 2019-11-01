@@ -1,0 +1,14 @@
+mid: 131
+url: http://www.csv.ica.uni-stuttgart.de/homes/js/maennle-guido-kramann/man.wrl
+ref_url: http://www.csv.ica.uni-stuttgart.de/homes/js/maennle-guido-kramann/
+format: wrl 
+pid: 17519
+polygons: 3012
+connected_components: 56
+average_dihedral_angle: 0.461332
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.322927, ymax = 0.197527, zmax = 0.975
+avg_depth: 1.375298
+center: (0.172066,0.136465,0.526085)
+scale: 0.440829
+principle_axes: (-0.008965,0.010244,0.999907), (0.999897,-0.011131,0.009079), (0.011223,0.999886,-0.010143)
+principle_values: (0.057735,0.004741,0.000957)

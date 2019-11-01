@@ -1,0 +1,14 @@
+mid: 696
+url: http://www.3dcafe.com/../models/sword6.zip
+ref_url: http://www.3dcafe.com/../asp/weapons.asp
+format: xthreexds 
+pid: 30589
+polygons: 11655
+connected_components: 53
+average_dihedral_angle: 0.602872
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.297264, ymax = 0.139376, zmax = 0.975
+avg_depth: 1.796052
+center: (0.161420,0.082125,0.783335)
+scale: 0.257587
+principle_axes: (0.000288,-0.000464,1.000000), (1.000000,0.000396,-0.000288), (0.000396,-1.000000,-0.000465)
+principle_values: (0.028398,0.001341,0.000279)

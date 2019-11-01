@@ -1,0 +1,14 @@
+mid: 418
+url: http://maewest.itc.virginia.edu/~wmr5a/VRML/temple/temple.wrl
+ref_url: http://maewest.itc.virginia.edu/cgi-bin/wrap/wmr5a/VRML/temple/
+format: wrl 
+pid: 20845
+polygons: 2836
+connected_components: 79
+average_dihedral_angle: 1.2609
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.713878, ymax = 0.643535, zmax = 0.975
+avg_depth: 2.420995
+center: (0.369208,0.194830,0.498277)
+scale: 0.799580
+principle_axes: (-0.024488,0.006508,-0.999679), (-0.999700,0.000449,0.024491), (-0.000609,-0.999979,-0.006495)
+principle_values: (0.077867,0.055162,0.040312)

@@ -1,0 +1,14 @@
+mid: 396
+url: http://telias.free.fr/zipsz/models_3ds/kiosk.zip
+ref_url: 
+format: xthreexds 
+pid: 47971
+polygons: 470
+connected_components: 50
+average_dihedral_angle: 1.40403
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.949627, ymax = 0.975, zmax = 0.825751
+avg_depth: 1.721232
+center: (0.481242,0.385561,0.428710)
+scale: 0.897028
+principle_axes: (-0.018610,-0.999775,0.010188), (-0.502460,0.000542,-0.864600), (0.864400,-0.021209,-0.502357)
+principle_values: (0.110665,0.048142,0.046133)

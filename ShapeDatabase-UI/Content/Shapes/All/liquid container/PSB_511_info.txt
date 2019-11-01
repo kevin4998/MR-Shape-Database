@@ -1,0 +1,14 @@
+mid: 511
+url: http://www.3dcafe.com/models/pail.zip
+ref_url: http://www.3dcafe.com/asp/ind_pic.asp
+format: 3ds 
+pid: 28765
+polygons: 790
+connected_components: 40
+average_dihedral_angle: 2.09978
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.952202, ymax = 0.975, zmax = 0.920673
+avg_depth: 1.808187
+center: (0.488775,0.491594,0.486537)
+scale: 0.930927
+principle_axes: (0.003334,0.992767,0.120012), (0.999992,-0.003043,-0.002615), (0.002230,-0.120020,0.992769)
+principle_values: (0.089866,0.067538,0.065928)

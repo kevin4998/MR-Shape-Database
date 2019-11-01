@@ -1,0 +1,14 @@
+mid: 423
+url: http://students.cs.byu.edu/~petersek/nauvoo/blacksmith/blacksmith2.wrl
+ref_url: http://students.cs.byu.edu/~petersek/nauvoo/VirtNauv.html
+format: wrl 
+pid: 11534
+polygons: 48
+connected_components: 3
+average_dihedral_angle: 1.43511
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.309109, zmax = 0.390835
+avg_depth: 1.018359
+center: (0.489291,0.166087,0.205677)
+scale: 0.655677
+principle_axes: (-0.999880,0.009774,-0.011978), (-0.012097,-0.012158,0.999853), (0.009627,0.999878,0.012275)
+principle_values: (0.100644,0.017209,0.004934)

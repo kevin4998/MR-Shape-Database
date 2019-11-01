@@ -1,0 +1,14 @@
+mid: 1360
+url: http://mowat.virtualave.net/belknap.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26966
+polygons: 4231
+connected_components: 314
+average_dihedral_angle: 0.781666
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.439815, ymax = 0.2326, zmax = 0.975
+avg_depth: 1.897153
+center: (0.232484,0.131404,0.472405)
+scale: 0.404415
+principle_axes: (0.000388,-0.150788,0.988566), (1.000000,-0.000361,-0.000448), (0.000424,0.988566,0.150788)
+principle_values: (0.042567,0.010149,0.001963)

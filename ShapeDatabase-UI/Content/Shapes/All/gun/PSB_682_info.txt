@@ -1,0 +1,14 @@
+mid: 682
+url: http://www.3dheaven.net/Modelle/weapons/w_m4a1.zip
+ref_url: 
+format: xthreexds 
+pid: 47432
+polygons: 926
+connected_components: 33
+average_dihedral_angle: 0.821807
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.090654, zmax = 0.299704
+avg_depth: 1.565578
+center: (0.491371,0.057734,0.145415)
+scale: 0.377354
+principle_axes: (-0.997907,0.002843,0.064607), (-0.064669,-0.043932,-0.996939), (0.000004,-0.999030,0.044024)
+principle_values: (0.044681,0.002428,0.000145)

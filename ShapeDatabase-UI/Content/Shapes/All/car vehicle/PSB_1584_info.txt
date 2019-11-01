@@ -1,0 +1,14 @@
+mid: 1584
+url: http://mowat.virtualave.net/traincar.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 25993
+polygons: 316
+connected_components: 8
+average_dihedral_angle: 1.23979
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.508051, zmax = 0.376302
+avg_depth: 1.386966
+center: (0.500000,0.329996,0.204100)
+scale: 0.606501
+principle_axes: (1.000000,-0.000000,0.000000), (0.000000,0.999795,-0.020231), (-0.000000,0.020231,0.999795)
+principle_values: (0.065362,0.023689,0.011356)

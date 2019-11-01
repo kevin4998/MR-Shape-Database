@@ -1,0 +1,14 @@
+mid: 509
+url: ftp://avalon.viewpoint.com/pub/objects/misc/teacup_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47654
+polygons: 11812
+connected_components: 46
+average_dihedral_angle: 0.0975903
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.889272, zmax = 0.714346
+avg_depth: 1.654621
+center: (0.396659,0.436279,0.369436)
+scale: 0.815729
+principle_axes: (0.256699,0.966489,-0.002159), (0.966453,-0.256708,-0.008395), (-0.008668,0.000068,-0.999962)
+principle_values: (0.073197,0.054826,0.043272)

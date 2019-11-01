@@ -1,0 +1,14 @@
+mid: 869
+url: ftp://avalon.viewpoint.com/pub/objects/architecture/other/Stoshlf_dxf.zip
+ref_url: 
+format: dxf 
+pid: 47152
+polygons: 4261
+connected_components: 29
+average_dihedral_angle: 1.49706
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.421521, ymax = 0.975, zmax = 0.388557
+avg_depth: 2.344541
+center: (0.223484,0.475929,0.206301)
+scale: 0.618175
+principle_axes: (-0.002337,-0.999997,0.000036), (-0.000491,0.000037,1.000000), (0.999997,-0.002337,0.000491)
+principle_values: (0.081432,0.014292,0.013333)

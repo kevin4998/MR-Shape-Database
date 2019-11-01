@@ -1,0 +1,14 @@
+mid: 661
+url: http://www.3dheaven.net/Modelle/weapons/w_deagle.zip
+ref_url: 
+format: xthreexds 
+pid: 47416
+polygons: 668
+connected_components: 13
+average_dihedral_angle: 0.774851
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.151189, zmax = 0.54785
+avg_depth: 2.197757
+center: (0.402641,0.083211,0.259336)
+scale: 0.471566
+principle_axes: (-0.915639,0.014919,0.401725), (0.400021,-0.065257,0.914180), (-0.039854,-0.997757,-0.053784)
+principle_values: (0.058493,0.010449,0.000938)

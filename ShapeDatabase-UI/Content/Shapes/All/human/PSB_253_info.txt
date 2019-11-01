@@ -1,0 +1,14 @@
+mid: 253
+url: http://cepcairo.bizland.com/free/Nat_amer.zip
+ref_url: 
+format: xthreexds 
+pid: 48454
+polygons: 23197
+connected_components: 28
+average_dihedral_angle: 0.297794
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.7175, ymax = 0.975, zmax = 0.24255
+avg_depth: 1.670793
+center: (0.371430,0.548135,0.117950)
+scale: 0.461379
+principle_axes: (0.000505,0.999999,-0.001486), (-0.999999,0.000507,0.001432), (-0.001433,-0.001485,-0.999998)
+principle_values: (0.052877,0.012342,0.001761)

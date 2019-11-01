@@ -1,0 +1,14 @@
+mid: 1322
+url: ftp://avalon.viewpoint.com/pub/objects/aircraft/helicopters/non_military/hughes_500_obj.zip
+ref_url: 
+format: obj 
+pid: 47960
+polygons: 1270
+connected_components: 20
+average_dihedral_angle: 0.661717
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.858476, ymax = 0.975, zmax = 0.290439
+avg_depth: 1.336193
+center: (0.441459,0.518083,0.192625)
+scale: 0.352883
+principle_axes: (0.003030,-0.997879,-0.065027), (0.999994,0.002931,0.001613), (-0.001419,-0.065032,0.997882)
+principle_values: (0.032993,0.010953,0.003153)

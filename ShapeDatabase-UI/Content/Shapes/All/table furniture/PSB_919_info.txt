@@ -1,0 +1,14 @@
+mid: 919
+url: http://hiwaay.net/~crispen/worlds/furniture/end_table.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7717
+polygons: 124
+connected_components: 8
+average_dihedral_angle: 1.4248
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.855996, ymax = 0.975, zmax = 0.90372
+avg_depth: 1.371386
+center: (0.441909,0.839813,0.462906)
+scale: 0.880623
+principle_axes: (-0.067619,0.004683,0.997700), (0.997710,-0.001289,0.067626), (0.001602,0.999988,-0.004585)
+principle_values: (0.089799,0.086176,0.043324)

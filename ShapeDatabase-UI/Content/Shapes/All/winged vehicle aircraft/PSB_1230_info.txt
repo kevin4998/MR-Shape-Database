@@ -1,0 +1,14 @@
+mid: 1230
+url: http://www.topedge.com/panels/aircraft/hangar/vrml/f16/f16-a.wrl
+ref_url: http://www.topedge.com/panels/aircraft/hangar/yaaphavr.html
+format: wrl 
+pid: 5520
+polygons: 4325
+connected_components: 16
+average_dihedral_angle: 0.178502
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.614959, zmax = 0.311299
+avg_depth: 1.116407
+center: (0.384394,0.320052,0.111538)
+scale: 0.427036
+principle_axes: (-0.998917,0.000535,0.046524), (-0.000534,-1.000000,0.000039), (-0.046524,-0.000014,-0.998917)
+principle_values: (0.043549,0.010028,0.001653)

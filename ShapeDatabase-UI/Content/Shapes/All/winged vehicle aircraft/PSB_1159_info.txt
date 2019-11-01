@@ -1,0 +1,14 @@
+mid: 1159
+url: ftp://avalon.viewpoint.com/pub/objects/aircraft/planes/non_military/boeing_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 48207
+polygons: 6881
+connected_components: 51
+average_dihedral_angle: 0.387476
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.922454, ymax = 0.41384, zmax = 0.975
+avg_depth: 1.263713
+center: (0.471331,0.143291,0.480134)
+scale: 0.484941
+principle_axes: (-0.004823,-0.142914,0.989723), (0.999988,0.000454,0.004939), (0.001155,-0.989735,-0.142910)
+principle_values: (0.047741,0.021103,0.002125)

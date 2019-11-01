@@ -1,0 +1,14 @@
+mid: 1652
+url: http://www.clr.utoronto.ca/PEOPLE/BOHUS/VRML/CAMPUS/D2.wrl
+ref_url: http://www.clr.utoronto.ca/PEOPLE/BOHUS/VRML/CAMPUS/
+format: wrl 
+pid: 17437
+polygons: 3112
+connected_components: 296
+average_dihedral_angle: 0.917297
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.856228, ymax = 0.185283, zmax = 0.975
+avg_depth: 1.679934
+center: (0.475114,0.064490,0.479030)
+scale: 0.589471
+principle_axes: (0.504355,-0.019608,-0.863274), (-0.863305,-0.032511,-0.503634), (0.018191,-0.999279,0.033324)
+principle_values: (0.085385,0.016730,0.000584)

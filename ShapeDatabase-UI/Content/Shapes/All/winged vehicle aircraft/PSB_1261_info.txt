@@ -1,0 +1,14 @@
+mid: 1261
+url: http://www.rccad.com/Gallery/Vrml/FA-18D.wrl
+ref_url: 
+format: wrl 
+pid: 47915
+polygons: 652
+connected_components: 10
+average_dihedral_angle: 0.424316
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.719979, zmax = 0.249154
+avg_depth: 1.505647
+center: (0.634957,0.372613,0.091747)
+scale: 0.396556
+principle_axes: (0.999626,-0.000930,0.027316), (0.000917,0.999999,0.000480), (0.027317,0.000454,-0.999627)
+principle_values: (0.037897,0.011035,0.001256)

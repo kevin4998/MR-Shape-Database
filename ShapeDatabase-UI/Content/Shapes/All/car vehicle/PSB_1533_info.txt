@@ -1,0 +1,14 @@
+mid: 1533
+url: http://www.forwarddesign.com/objects/vehicles/Thunder.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: lwo 
+pid: 25500
+polygons: 14462
+connected_components: 52
+average_dihedral_angle: 0.486046
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.384654, ymax = 0.287474, zmax = 0.975
+avg_depth: 1.329727
+center: (0.204570,0.146866,0.496903)
+scale: 0.597955
+principle_axes: (0.000209,0.012050,0.999927), (-0.999999,0.001626,0.000190), (-0.001624,-0.999926,0.012051)
+principle_values: (0.082369,0.014300,0.004090)

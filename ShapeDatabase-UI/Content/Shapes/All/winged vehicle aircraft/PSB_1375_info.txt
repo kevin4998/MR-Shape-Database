@@ -1,0 +1,14 @@
+mid: 1375
+url: http://www.cse.ucsc.edu/classes/cmps080v/Fall97/projects/scott_eva/plan9b/vrml/saucer_training.wrl
+ref_url: http://www.cse.ucsc.edu/classes/cmps080v/Fall97/projects/scott_eva/plan9b/html/saucer_desc.htm
+format: wrl 
+pid: 11371
+polygons: 3431
+connected_components: 44
+average_dihedral_angle: 0.33918
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.827817, ymax = 0.410352, zmax = 0.975
+avg_depth: 2.333373
+center: (0.432220,0.236010,0.428948)
+scale: 0.488068
+principle_axes: (0.996710,-0.001219,0.081043), (0.081051,0.018892,-0.996531), (-0.000316,0.999821,0.018929)
+principle_values: (0.030817,0.030683,0.004189)

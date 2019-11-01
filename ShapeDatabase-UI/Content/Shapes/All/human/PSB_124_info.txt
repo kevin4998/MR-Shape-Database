@@ -1,0 +1,14 @@
+mid: 124
+url: http://mowat.virtualave.net/wsuitstd.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 25819
+polygons: 862
+connected_components: 6
+average_dihedral_angle: 0.568204
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.299149, ymax = 0.975, zmax = 0.234196
+avg_depth: 1.339219
+center: (0.162558,0.531760,0.087602)
+scale: 0.427278
+principle_axes: (-0.011496,0.999928,-0.003423), (0.996191,0.011157,-0.086486), (-0.086442,-0.004404,-0.996247)
+principle_values: (0.051727,0.004474,0.001453)

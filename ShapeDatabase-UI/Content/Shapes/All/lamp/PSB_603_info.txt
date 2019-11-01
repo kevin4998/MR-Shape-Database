@@ -1,0 +1,14 @@
+mid: 603
+url: http://www.igs.net/~mascott/vrml/toulamp.wrl
+ref_url: http://www.igs.net/~mascott/vrml/vrtalk.htm
+format: wrl 
+pid: 10859
+polygons: 328
+connected_components: 4
+average_dihedral_angle: 0.713008
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.583322, ymax = 0.846549, zmax = 0.975
+avg_depth: 1.265574
+center: (0.304161,0.405599,0.588809)
+scale: 0.635850
+principle_axes: (-0.000000,0.882284,0.470717), (0.000001,-0.470717,0.882284), (1.000000,0.000000,-0.000001)
+principle_values: (0.069618,0.030620,0.012562)

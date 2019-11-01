@@ -1,0 +1,14 @@
+mid: 1539
+url: http://www.maxnet.ru/aks/new_web/model_arch/Lamborghini-Diablo-DXF.zip
+ref_url: http://www.maxnet.ru/aks/models_R.html
+format: dxf 
+pid: 25328
+polygons: 16515
+connected_components: 21
+average_dihedral_angle: 0.611437
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.47597, ymax = 0.281105, zmax = 0.975
+avg_depth: 1.785518
+center: (0.250501,0.150026,0.414209)
+scale: 0.610321
+principle_axes: (-0.000084,0.049783,-0.998760), (1.000000,-0.000012,-0.000084), (-0.000016,-0.998760,-0.049783)
+principle_values: (0.083030,0.017377,0.004182)

@@ -1,0 +1,14 @@
+mid: 1661
+url: http://www.dmi.tut.fi/web3d/ttkk/ttkk.wrl
+ref_url: http://www.dmi.tut.fi/web3d/
+format: wrl 
+pid: 11356
+polygons: 2022
+connected_components: 27
+average_dihedral_angle: 1.01452
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.840902, ymax = 0.0788145, zmax = 0.975
+avg_depth: 1.277720
+center: (0.447439,0.050131,0.492674)
+scale: 0.620965
+principle_axes: (-0.155999,-0.008911,-0.987717), (0.987757,-0.000665,-0.156000), (0.000733,-0.999960,0.008906)
+principle_values: (0.065410,0.047693,0.000059)

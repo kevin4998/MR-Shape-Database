@@ -1,0 +1,14 @@
+mid: 317
+url: http://svr-www.eng.cam.ac.uk/~prdsm2/VRML/paulo_tex.wrl
+ref_url: http://www-svr.eng.cam.ac.uk/~prdsm2/
+format: wrl 
+pid: 11189
+polygons: 1440
+connected_components: 1
+average_dihedral_angle: 0.37245
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.71974, ymax = 0.975, zmax = 0.879966
+avg_depth: 1.030191
+center: (0.365329,0.516388,0.481179)
+scale: 0.778271
+principle_axes: (0.240593,-0.864048,0.442195), (0.913426,0.355636,0.197928), (-0.328280,0.356293,0.874807)
+principle_values: (0.062387,0.048905,0.043305)

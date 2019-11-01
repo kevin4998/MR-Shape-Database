@@ -1,0 +1,14 @@
+mid: 1685
+url: ftp://avalon.viewpoint.com/pub/objects/misc/billbrds_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47559
+polygons: 1344
+connected_components: 46
+average_dihedral_angle: 1.2289
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.807462, ymax = 0.975, zmax = 0.306966
+avg_depth: 1.833901
+center: (0.411803,0.678265,0.165095)
+scale: 0.533265
+principle_axes: (-0.999917,0.009966,-0.008223), (-0.009968,-0.999950,0.000221), (-0.008220,0.000303,0.999966)
+principle_values: (0.050290,0.033430,0.002574)

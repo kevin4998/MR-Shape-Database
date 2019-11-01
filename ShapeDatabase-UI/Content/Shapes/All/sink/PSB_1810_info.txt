@@ -1,0 +1,14 @@
+mid: 1810
+url: http://www.amazing3d.com/free/sink3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47552
+polygons: 1068
+connected_components: 10
+average_dihedral_angle: 0.361995
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.41852, zmax = 0.644469
+avg_depth: 1.110858
+center: (0.501762,0.157273,0.316621)
+scale: 0.622130
+principle_axes: (0.999961,0.007071,-0.005199), (-0.006083,0.131374,-0.991314), (-0.006327,0.991308,0.131412)
+principle_values: (0.065670,0.034923,0.005589)

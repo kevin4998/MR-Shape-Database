@@ -1,0 +1,14 @@
+mid: 681
+url: http://www.3dheaven.net/Modelle/weapons/g3sg1.zip
+ref_url: 
+format: xthreexds 
+pid: 47411
+polygons: 1160
+connected_components: 28
+average_dihedral_angle: 0.821927
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.0865097, zmax = 0.284788
+avg_depth: 1.479873
+center: (0.618293,0.050937,0.166479)
+scale: 0.301552
+principle_axes: (0.985107,-0.014462,-0.171333), (-0.171936,-0.091588,-0.980841), (-0.001508,0.995692,-0.092710)
+principle_values: (0.034570,0.002113,0.000140)

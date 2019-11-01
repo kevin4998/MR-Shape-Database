@@ -1,0 +1,14 @@
+mid: 1741
+url: http://www.forwarddesign.com/objects/house/Tenishoe.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: lwo 
+pid: 25287
+polygons: 3638
+connected_components: 12
+average_dihedral_angle: 0.420621
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.361267, ymax = 0.485637, zmax = 0.975
+avg_depth: 1.183192
+center: (0.214194,0.191616,0.540653)
+scale: 0.551154
+principle_axes: (0.025673,0.131055,0.991043), (0.270905,0.953361,-0.133089), (-0.962264,0.271896,-0.011028)
+principle_values: (0.063760,0.013357,0.008095)

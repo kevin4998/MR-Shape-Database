@@ -1,0 +1,14 @@
+mid: 1156
+url: http://fraktali.849pm.com/programs/dxf/airplane.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27828
+polygons: 2472
+connected_components: 7
+average_dihedral_angle: 0.156214
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.21293, zmax = 0.832103
+avg_depth: 1.533518
+center: (0.499999,0.076647,0.438561)
+scale: 0.430627
+principle_axes: (-0.000001,-0.085484,0.996340), (-1.000000,0.000000,-0.000001), (0.000000,-0.996340,-0.085484)
+principle_values: (0.031175,0.024606,0.001110)

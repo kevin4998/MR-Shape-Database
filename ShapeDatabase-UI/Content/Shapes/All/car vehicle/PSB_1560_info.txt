@@ -1,0 +1,14 @@
+mid: 1560
+url: http://hyperserver.engga.uwo.ca/es029/Multimedia/lego.wrl
+ref_url: http://hyperserver.engga.uwo.ca/es029/lego.htm
+format: wrl 
+pid: 11342
+polygons: 43584
+connected_components: 27
+average_dihedral_angle: 0.837722
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.630625, zmax = 0.671904
+avg_depth: 3.996946
+center: (0.482218,0.323441,0.260021)
+scale: 0.665053
+principle_axes: (-0.999826,-0.001470,0.018576), (0.002023,-0.999555,0.029777), (-0.018524,-0.029809,-0.999384)
+principle_values: (0.081850,0.024080,0.014098)

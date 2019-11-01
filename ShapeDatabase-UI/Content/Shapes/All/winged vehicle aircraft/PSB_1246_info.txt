@@ -1,0 +1,14 @@
+mid: 1246
+url: http://ciel.me.cmu.edu/soji/aircraft/t4blue.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 916
+polygons: 784
+connected_components: 30
+average_dihedral_angle: 0.620451
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.811475, ymax = 0.332582, zmax = 0.975
+avg_depth: 1.211619
+center: (0.418250,0.112253,0.581489)
+scale: 0.460579
+principle_axes: (-0.000006,0.114218,0.993456), (-1.000000,0.000058,-0.000013), (-0.000059,-0.993456,0.114218)
+principle_values: (0.043770,0.016259,0.002585)

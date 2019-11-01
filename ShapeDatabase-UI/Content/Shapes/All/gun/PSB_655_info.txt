@@ -1,0 +1,14 @@
+mid: 655
+url: http://mowat.virtualave.net/gun.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26660
+polygons: 704
+connected_components: 8
+average_dihedral_angle: 0.865037
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.148819, ymax = 0.575499, zmax = 0.975
+avg_depth: 1.169947
+center: (0.087202,0.434019,0.386955)
+scale: 0.554078
+principle_axes: (0.001381,-0.235476,-0.971879), (0.005597,-0.971863,0.235480), (-0.999983,-0.005765,-0.000024)
+principle_values: (0.084086,0.009625,0.001408)

@@ -1,0 +1,14 @@
+mid: 1497
+url: http://64.198.60.83/baument/Models/lorespickup.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25805
+polygons: 7234
+connected_components: 22
+average_dihedral_angle: 0.473978
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.327574, zmax = 0.342892
+avg_depth: 1.671580
+center: (0.463041,0.175680,0.183719)
+scale: 0.567783
+principle_axes: (-0.999015,0.044367,-0.000414), (0.000411,-0.000082,-1.000000), (-0.044367,-0.999015,0.000064)
+principle_values: (0.078951,0.011257,0.004982)

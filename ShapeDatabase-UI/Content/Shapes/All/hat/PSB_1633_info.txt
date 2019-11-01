@@ -1,0 +1,14 @@
+mid: 1633
+url: http://64.198.60.83/baument/Models/trojan4b.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 25690
+polygons: 2653
+connected_components: 7
+average_dihedral_angle: 0.513974
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.505742, ymax = 0.849176, zmax = 0.975
+avg_depth: 1.208571
+center: (0.270358,0.425947,0.525311)
+scale: 0.634620
+principle_axes: (-0.002599,0.537961,0.842965), (0.030528,0.842618,-0.537646), (-0.999531,0.024337,-0.018613)
+principle_values: (0.054194,0.037914,0.017226)

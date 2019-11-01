@@ -1,0 +1,14 @@
+mid: 1642
+url: http://www.ocnus.com/models/Tools/ladder2.wrl.gz
+ref_url: http://www.ocnus.com/models/Tools/
+format: wrl 
+pid: 17904
+polygons: 360
+connected_components: 30
+average_dihedral_angle: 1.5493
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.551308, ymax = 0.22101, zmax = 0.975
+avg_depth: 1.432778
+center: (0.255095,0.120040,0.565760)
+scale: 0.552153
+principle_axes: (-0.432806,-0.040581,0.900573), (0.000013,0.998986,0.045022), (-0.901487,0.019497,-0.432367)
+principle_values: (0.088868,0.004023,0.001104)

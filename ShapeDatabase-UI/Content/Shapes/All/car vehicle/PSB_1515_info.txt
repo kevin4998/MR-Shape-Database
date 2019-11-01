@@ -1,0 +1,14 @@
+mid: 1515
+url: http://www.geometrek.com/web3d/deepmatrix/world/hub/indyGZ.wrl
+ref_url: http://www.geometrek.com/web3d/deepmatrix/world/hub/
+format: wrl 
+pid: 6743
+polygons: 391
+connected_components: 13
+average_dihedral_angle: 1.01128
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.496361, ymax = 0.238391, zmax = 0.975
+avg_depth: 1.206651
+center: (0.260617,0.117627,0.592386)
+scale: 0.586418
+principle_axes: (0.005461,0.072215,0.997374), (-0.999985,0.000233,0.005458), (0.000162,-0.997389,0.072215)
+principle_values: (0.077356,0.018458,0.002093)

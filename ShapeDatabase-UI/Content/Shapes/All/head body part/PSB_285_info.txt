@@ -1,0 +1,14 @@
+mid: 285
+url: http://www.biomag.uni-jena.de/bigbrain.wrl
+ref_url: http://www.biomag.uni-jena.de/vrml.htm
+format: wrl 
+pid: 2945
+polygons: 22403
+connected_components: 2
+average_dihedral_angle: 0.601217
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.829295, ymax = 0.975, zmax = 0.957515
+avg_depth: 2.332196
+center: (0.426154,0.541862,0.587188)
+scale: 0.707526
+principle_axes: (0.099097,-0.821036,0.562209), (-0.983609,0.004711,0.180255), (-0.150645,-0.570856,-0.807112)
+principle_values: (0.058925,0.041000,0.033848)

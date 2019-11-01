@@ -1,0 +1,14 @@
+mid: 1609
+url: http://www.cs.technion.ac.il/~cs236606/vrml/pawn.wrl
+ref_url: http://www.cs.technion.ac.il/~cs236606/vrml/
+format: wrl 
+pid: 4755
+polygons: 304
+connected_components: 1
+average_dihedral_angle: 0.67046
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.526367, ymax = 0.975, zmax = 0.526367
+avg_depth: 1.139237
+center: (0.275684,0.388302,0.275684)
+scale: 0.647602
+principle_axes: (0.000000,-1.000000,0.000000), (-0.947644,-0.000000,-0.319328), (-0.319328,0.000000,0.947644)
+principle_values: (0.092159,0.013468,0.013468)

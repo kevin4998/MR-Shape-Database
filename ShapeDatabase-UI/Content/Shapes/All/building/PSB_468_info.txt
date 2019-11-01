@@ -1,0 +1,14 @@
+mid: 468
+url: http://64.198.60.83/baument/Models/litehouse1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 25687
+polygons: 5898
+connected_components: 615
+average_dihedral_angle: 1.13107
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.531559, ymax = 0.975, zmax = 0.213636
+avg_depth: 1.973586
+center: (0.241904,0.299533,0.120125)
+scale: 0.549223
+principle_axes: (0.337352,-0.941365,0.005053), (0.941355,0.337376,0.005279), (-0.006674,0.002976,0.999973)
+principle_values: (0.077545,0.014315,0.002773)

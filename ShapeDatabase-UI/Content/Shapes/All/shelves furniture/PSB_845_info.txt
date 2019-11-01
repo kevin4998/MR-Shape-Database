@@ -1,0 +1,14 @@
+mid: 845
+url: http://mowat.virtualave.net/bkcs0004.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26960
+polygons: 88
+connected_components: 7
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.785639, ymax = 0.975, zmax = 0.263024
+avg_depth: 1.874043
+center: (0.404862,0.495710,0.106877)
+scale: 0.762528
+principle_axes: (-0.000074,-1.000000,0.000947), (-1.000000,0.000073,-0.000536), (0.000536,-0.000947,-0.999999)
+principle_values: (0.089070,0.067099,0.006037)

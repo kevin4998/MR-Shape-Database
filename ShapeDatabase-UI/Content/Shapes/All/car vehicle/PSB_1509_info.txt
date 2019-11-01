@@ -1,0 +1,14 @@
+mid: 1509
+url: http://www.3dcafe.com/models/rc_4.zip
+ref_url: http://www.3dcafe.com/asp/toy_pics.asp
+format: xthreexds 
+pid: 29255
+polygons: 95045
+connected_components: 70
+average_dihedral_angle: 0.310604
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.552566, ymax = 0.386434, zmax = 0.975
+avg_depth: 2.281453
+center: (0.290661,0.169973,0.605725)
+scale: 0.571947
+principle_axes: (-0.005448,0.023237,0.999715), (-0.999974,0.004511,-0.005554), (-0.004639,-0.999720,0.023212)
+principle_values: (0.075776,0.017215,0.004566)

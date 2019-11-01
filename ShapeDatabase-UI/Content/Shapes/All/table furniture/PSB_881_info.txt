@@ -1,0 +1,14 @@
+mid: 881
+url: http://mowat.virtualave.net/endtable.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26792
+polygons: 86
+connected_components: 7
+average_dihedral_angle: 1.5707
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.658333, zmax = 0.341667
+avg_depth: 1.310590
+center: (0.500000,0.536758,0.183333)
+scale: 0.657972
+principle_axes: (-1.000000,-0.000000,-0.000000), (-0.000000,1.000000,0.000000), (0.000000,0.000000,-1.000000)
+principle_values: (0.092529,0.024943,0.007627)

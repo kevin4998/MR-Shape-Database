@@ -1,0 +1,14 @@
+mid: 404
+url: http://www.flair-twl.de/download/HagiaSophia.wrl
+ref_url: http://www.flair-twl.de/GreatBuildings.htm
+format: wrl 
+pid: 40801
+polygons: 2752
+connected_components: 190
+average_dihedral_angle: 1.40267
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.427949, zmax = 0.745506
+avg_depth: 3.338962
+center: (0.397079,0.161238,0.433329)
+scale: 0.485469
+principle_axes: (-0.980391,0.150516,0.127196), (-0.127526,0.007498,-0.991807), (-0.150236,-0.988579,0.011844)
+principle_values: (0.037151,0.021537,0.008853)

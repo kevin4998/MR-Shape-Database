@@ -1,0 +1,14 @@
+mid: 938
+url: http://hiwaay.net/~crispen/worlds/cafe/1/table.wrl.gz
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7667
+polygons: 840
+connected_components: 7
+average_dihedral_angle: 0.934992
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.87475, ymax = 0.876735, zmax = 0.975
+avg_depth: 1.211070
+center: (0.456594,0.447321,0.764616)
+scale: 0.734139
+principle_axes: (0.034774,-0.013541,0.999303), (0.883858,-0.466284,-0.037075), (0.466461,0.884531,-0.004247)
+principle_values: (0.096753,0.032430,0.030306)

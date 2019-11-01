@@ -1,0 +1,14 @@
+mid: 456
+url: http://cic.nist.gov/vrml/exc/house/House.wrl
+ref_url: http://cic.nist.gov/vrml/equip.html
+format: wrl 
+pid: 9902
+polygons: 703
+connected_components: 53
+average_dihedral_angle: 1.635
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.484462, zmax = 0.942795
+avg_depth: 1.282973
+center: (0.465837,0.235473,0.395772)
+scale: 0.728274
+principle_axes: (0.795387,0.029262,-0.605396), (0.597373,-0.206757,0.774853), (0.102495,0.977955,0.181932)
+principle_values: (0.094160,0.044883,0.013035)

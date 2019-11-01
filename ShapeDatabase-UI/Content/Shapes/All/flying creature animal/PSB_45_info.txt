@@ -1,0 +1,14 @@
+mid: 45
+url: http://www.3dcafe.com/models/eagle2.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: xthreexds 
+pid: 27419
+polygons: 33072
+connected_components: 3
+average_dihedral_angle: 0.135238
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.290348, zmax = 0.486435
+avg_depth: 1.052063
+center: (0.500547,0.231169,0.220642)
+scale: 0.449973
+principle_axes: (0.999998,-0.000735,0.001865), (0.001993,0.463746,-0.885966), (-0.000214,0.885968,0.463746)
+principle_values: (0.052603,0.009974,0.001972)

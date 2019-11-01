@@ -1,0 +1,14 @@
+mid: 440
+url: http://www.flash.net/~jeeber/mainbuilding.WRL
+ref_url: http://www.flash.net/~jeeber/3dbuilding.html
+format: wrl 
+pid: 11763
+polygons: 906
+connected_components: 1
+average_dihedral_angle: 1.54362
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.651804, ymax = 0.465722, zmax = 0.975
+avg_depth: 1.798919
+center: (0.305996,0.225998,0.606624)
+scale: 0.611227
+principle_axes: (-0.100482,0.098901,0.990011), (0.994355,-0.024092,0.103329), (-0.034070,-0.994806,0.095922)
+principle_values: (0.058847,0.034203,0.009120)

@@ -1,0 +1,14 @@
+mid: 949
+url: http://www.3dcafe.com/models/bed01.zip
+ref_url: http://www.3dcafe.com/asp/hou1_pic.asp
+format: 3ds 
+pid: 28612
+polygons: 1388
+connected_components: 10
+average_dihedral_angle: 1.15473
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.956207, ymax = 0.975, zmax = 0.489954
+avg_depth: 1.807868
+center: (0.482292,0.312431,0.256786)
+scale: 0.785112
+principle_axes: (-0.999933,0.011366,-0.002062), (-0.011379,-0.999914,0.006566), (-0.001987,0.006589,0.999976)
+principle_values: (0.118119,0.028477,0.025400)

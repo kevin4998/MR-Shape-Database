@@ -1,0 +1,14 @@
+mid: 439
+url: http://www.princeton.edu/~perry/scenes/177ext.wrl.gz
+ref_url: http://www.princeton.edu/~perry/vrml.html
+format: wrl 
+pid: 11727
+polygons: 532
+connected_components: 45
+average_dihedral_angle: 1.57668
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.588834, ymax = 0.191202, zmax = 0.975
+avg_depth: 1.331550
+center: (0.310026,0.074017,0.504586)
+scale: 0.517767
+principle_axes: (0.024639,0.048971,0.998496), (0.999655,0.007843,-0.025053), (0.009058,-0.998769,0.048760)
+principle_values: (0.060250,0.022321,0.001110)

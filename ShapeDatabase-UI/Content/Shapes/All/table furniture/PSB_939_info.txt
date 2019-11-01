@@ -1,0 +1,14 @@
+mid: 939
+url: http://www.cs.ucf.edu/courses/ids5937/vrml97/examples/dinette.wrl
+ref_url: http://longwood.cs.ucf.edu/courses/ids5937/notes.html
+format: wrl 
+pid: 10159
+polygons: 604
+connected_components: 48
+average_dihedral_angle: 1.55493
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.443316, zmax = 0.975
+avg_depth: 1.256233
+center: (0.500071,0.224640,0.499992)
+scale: 0.586808
+principle_axes: (-0.695884,0.000000,-0.718155), (-0.718155,-0.000042,0.695884), (-0.000030,1.000000,0.000029)
+principle_values: (0.046442,0.046435,0.010617)

@@ -1,0 +1,14 @@
+mid: 676
+url: http://www.buckrogers.demon.co.uk/3d/speargun.zip
+ref_url: http://www.yahoo.com/Computers_and_Internet/Internet/World_Wide_Web/Virtual_Reality_Modeling_Language__VRML_/
+format: obj 
+pid: 25338
+polygons: 910
+connected_components: 7
+average_dihedral_angle: 0.629612
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.194667, ymax = 0.269866, zmax = 0.975
+avg_depth: 1.338552
+center: (0.096545,0.204041,0.400505)
+scale: 0.481892
+principle_axes: (-0.002250,-0.044820,-0.998993), (-0.042583,0.998093,-0.044683), (-0.999090,-0.042439,0.004155)
+principle_values: (0.071816,0.002063,0.001117)

@@ -1,0 +1,14 @@
+mid: 1226
+url: http://www.web3d.org/TaskGroups/x3d/translation/X3D-Examples.tar.gz
+ref_url: http://www.ai.sri.com/geovrml/archive/msg00885.html
+format: wrl 
+pid: 35623
+polygons: 318
+connected_components: 1
+average_dihedral_angle: 0.673771
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.254792, zmax = 0.504379
+avg_depth: 1.119061
+center: (0.364611,0.082196,0.264797)
+scale: 0.394031
+principle_axes: (-0.997843,0.065641,-0.000569), (0.000576,0.000094,-1.000000), (-0.065641,-0.997843,-0.000131)
+principle_values: (0.042466,0.006506,0.001260)

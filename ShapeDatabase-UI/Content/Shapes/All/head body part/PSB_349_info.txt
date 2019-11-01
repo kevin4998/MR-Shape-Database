@@ -1,0 +1,14 @@
+mid: 349
+url: http://www.3dcafe.com/models/female27.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: lwo 
+pid: 27189
+polygons: 51893
+connected_components: 53
+average_dihedral_angle: 0.0932268
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.716152, ymax = 0.975, zmax = 0.797975
+avg_depth: 1.890797
+center: (0.374116,0.628050,0.380603)
+scale: 0.705170
+principle_axes: (-0.003353,0.972817,0.231552), (0.163660,0.228965,-0.959578), (-0.986511,0.034679,-0.159979)
+principle_values: (0.050926,0.041932,0.035138)

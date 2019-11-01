@@ -1,0 +1,14 @@
+mid: 1493
+url: http://deep.sitenest.net/freemodels/transport/3dm-jeep.zip
+ref_url: 
+format: xthreexds 
+pid: 48472
+polygons: 116955
+connected_components: 385
+average_dihedral_angle: 0.797486
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.546734, ymax = 0.470867, zmax = 0.975
+avg_depth: 3.573835
+center: (0.308839,0.202954,0.543248)
+scale: 0.622471
+principle_axes: (-0.031742,0.043799,0.998536), (-0.998412,0.045136,-0.033718), (-0.046547,-0.998020,0.042297)
+principle_values: (0.082343,0.018007,0.006831)

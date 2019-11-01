@@ -1,0 +1,14 @@
+mid: 1173
+url: http://www.rccad.com/Gallery/Vrml/FA-18E.wrl
+ref_url: http://www.rccad.com/Gallery_Jets.htm
+format: wrl 
+pid: 33045
+polygons: 4856
+connected_components: 21
+average_dihedral_angle: 0.328445
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.790161, zmax = 0.261539
+avg_depth: 1.531290
+center: (0.629586,0.407580,0.109183)
+scale: 0.407498
+principle_axes: (0.981674,-0.187749,0.032663), (-0.187862,-0.982195,0.000415), (-0.032004,0.006544,0.999466)
+principle_values: (0.030579,0.022267,0.000864)

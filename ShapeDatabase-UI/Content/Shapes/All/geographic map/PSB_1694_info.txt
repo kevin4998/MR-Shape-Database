@@ -1,0 +1,14 @@
+mid: 1694
+url: http://mowat.virtualave.net/usa_map.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 25918
+polygons: 1104
+connected_components: 1
+average_dihedral_angle: 1.26605
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.650252, zmax = 0.0825813
+avg_depth: 1.047317
+center: (0.492601,0.354743,0.053791)
+scale: 0.551381
+principle_axes: (0.998189,-0.060160,-0.000000), (0.060160,0.998189,-0.000000), (0.000000,0.000000,1.000000)
+principle_values: (0.066348,0.022029,0.000696)

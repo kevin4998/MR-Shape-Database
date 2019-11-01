@@ -1,0 +1,14 @@
+mid: 559
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/computer.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/
+format: wrl 
+pid: 45752
+polygons: 749
+connected_components: 17
+average_dihedral_angle: 1.00357
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.919118, ymax = 0.975, zmax = 0.875703
+avg_depth: 2.628861
+center: (0.472352,0.435229,0.584268)
+scale: 0.834128
+principle_axes: (0.000212,-0.847079,-0.531467), (-0.896964,0.234803,-0.374598), (-0.442104,-0.476786,0.759749)
+principle_values: (0.078049,0.056354,0.056113)

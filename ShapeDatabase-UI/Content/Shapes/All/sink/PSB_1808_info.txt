@@ -1,0 +1,14 @@
+mid: 1808
+url: http://deep.sitenest.net/freemodels/bathroom/3dm-bidet.zip
+ref_url: 
+format: xthreexds 
+pid: 46880
+polygons: 7250
+connected_components: 12
+average_dihedral_angle: 0.375317
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.759655, ymax = 0.975, zmax = 0.893507
+avg_depth: 1.251577
+center: (0.392345,0.511135,0.402338)
+scale: 0.750486
+principle_axes: (-0.000273,-0.778950,0.627086), (-0.000043,-0.627086,-0.778950), (1.000000,-0.000239,0.000137)
+principle_values: (0.067955,0.047185,0.034786)

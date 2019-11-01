@@ -1,0 +1,14 @@
+mid: 1085
+url: http://www.3dcafe.com/models/redwood1.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 28946
+polygons: 36512
+connected_components: 8309
+average_dihedral_angle: 0.972869
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.421462, ymax = 0.975, zmax = 0.436807
+avg_depth: 10.654120
+center: (0.215664,0.515215,0.236106)
+scale: 0.306549
+principle_axes: (-0.025148,-0.974347,0.223641), (-0.789425,-0.117897,-0.602419), (-0.613331,0.191697,0.766209)
+principle_values: (0.011776,0.008277,0.005865)

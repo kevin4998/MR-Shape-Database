@@ -1,0 +1,14 @@
+mid: 401
+url: http://www.btinternet.com/~tobor/j2.zip
+ref_url: http://www.tobor22.free-online.co.uk/eagle1.zip
+format: 3ds 
+pid: 26656
+polygons: 13373
+connected_components: 133
+average_dihedral_angle: 0.862617
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.20617, zmax = 0.975
+avg_depth: 1.817565
+center: (0.520263,0.055273,0.497626)
+scale: 0.590470
+principle_axes: (-0.348052,0.008959,-0.937432), (0.937271,0.024178,-0.347761), (0.019550,-0.999668,-0.016812)
+principle_values: (0.050891,0.047071,0.001760)

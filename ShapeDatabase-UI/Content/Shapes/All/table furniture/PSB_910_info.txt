@@ -1,0 +1,14 @@
+mid: 910
+url: http://eureka.lucia.it/vrml/joust/terza/zip/monopoli.zip
+ref_url: http://eureka.lucia.it/vrml/joust/terza/gir2/gir2.html
+format: wrl 
+pid: 35039
+polygons: 1136
+connected_components: 88
+average_dihedral_angle: 2.60235
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.546104, zmax = 0.762046
+avg_depth: 2.964615
+center: (0.498368,0.449528,0.395921)
+scale: 0.689722
+principle_axes: (-0.999820,0.002739,-0.018749), (-0.018716,0.011555,0.999758), (0.002955,0.999929,-0.011502)
+principle_values: (0.081330,0.031477,0.020839)

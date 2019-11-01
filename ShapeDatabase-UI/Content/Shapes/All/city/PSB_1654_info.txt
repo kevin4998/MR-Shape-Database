@@ -1,0 +1,14 @@
+mid: 1654
+url: http://www.planet9.com/earth/sf/unionsquare/unionsquare.wrl
+ref_url: http://www.planet9.com/sfcitymenu.htm
+format: wrl 
+pid: 20425
+polygons: 9290
+connected_components: 181
+average_dihedral_angle: 1.10186
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.210119, zmax = 0.973098
+avg_depth: 1.904110
+center: (0.506590,0.070071,0.486226)
+scale: 0.539832
+principle_axes: (0.764718,0.034838,0.643423), (0.640598,0.066719,-0.764973), (0.069578,-0.997163,-0.028704)
+principle_values: (0.059211,0.024121,0.000841)

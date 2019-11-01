@@ -1,0 +1,14 @@
+mid: 685
+url: http://deep.sitenest.net/freemodels/q3/3dm-q3shotgun.zip
+ref_url: 
+format: xthreexds 
+pid: 48365
+polygons: 550
+connected_components: 14
+average_dihedral_angle: 0.768894
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.187948, ymax = 0.337259, zmax = 0.975
+avg_depth: 1.360469
+center: (0.106808,0.228489,0.501431)
+scale: 0.466543
+principle_axes: (0.000884,-0.063690,-0.997969), (-0.014588,0.997863,-0.063697), (0.999893,0.014615,-0.000047)
+principle_values: (0.065038,0.003576,0.001769)

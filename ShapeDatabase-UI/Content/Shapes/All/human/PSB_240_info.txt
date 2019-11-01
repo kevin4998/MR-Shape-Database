@@ -1,0 +1,14 @@
+mid: 240
+url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/neutral_male.wrl
+ref_url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/
+format: wrl 
+pid: 46686
+polygons: 1352
+connected_components: 20
+average_dihedral_angle: 0.526568
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.903961, ymax = 0.975, zmax = 0.192413
+avg_depth: 1.779226
+center: (0.464483,0.547920,0.094955)
+scale: 0.470210
+principle_axes: (0.000021,0.999981,0.006221), (-1.000000,0.000021,0.000014), (-0.000014,0.006221,-0.999981)
+principle_values: (0.059718,0.012043,0.001289)

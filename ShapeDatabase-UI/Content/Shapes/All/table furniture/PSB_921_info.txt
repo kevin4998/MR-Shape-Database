@@ -1,0 +1,14 @@
+mid: 921
+url: http://www.ocnus.com/models/Furniture/table.wrl.gz
+ref_url: http://www.ocnus.com/models/Furniture/
+format: wrl 
+pid: 17789
+polygons: 3680
+connected_components: 5
+average_dihedral_angle: 0.32526
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.468679, zmax = 0.975
+avg_depth: 1.048143
+center: (0.500000,0.430629,0.500000)
+scale: 0.684322
+principle_axes: (0.760536,-0.000000,-0.649295), (-0.649295,-0.000000,-0.760536), (0.000000,1.000000,-0.000000)
+principle_values: (0.060230,0.060230,0.008024)

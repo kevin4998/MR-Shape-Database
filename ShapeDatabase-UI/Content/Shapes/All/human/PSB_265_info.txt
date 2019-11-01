@@ -1,0 +1,14 @@
+mid: 265
+url: http://www.softy3d.com/models/creature-3ds.zip
+ref_url: http://www.softy3d.com/es/galeria.htm
+format: xthreexds 
+pid: 28919
+polygons: 32530
+connected_components: 1
+average_dihedral_angle: 0.10443
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.380248, ymax = 0.825978, zmax = 0.975
+avg_depth: 1.109343
+center: (0.245347,0.396328,0.496952)
+scale: 0.564995
+principle_axes: (0.056739,-0.475739,-0.877755), (-0.353952,0.812481,-0.463241), (-0.933541,-0.336966,0.122289)
+principle_values: (0.073478,0.020320,0.003709)

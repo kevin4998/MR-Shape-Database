@@ -1,0 +1,14 @@
+mid: 230
+url: http://www.philc.serveftp.net/files/freestuff/maid2.zip
+ref_url: http://www.users.globalnet.co.uk/~pcooke/graphics/examples.htm
+format: obj 
+pid: 29309
+polygons: 28711
+connected_components: 45
+average_dihedral_angle: 0.265926
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.900784, ymax = 0.975, zmax = 0.215395
+avg_depth: 1.484090
+center: (0.462980,0.548375,0.131796)
+scale: 0.464908
+principle_axes: (0.000790,0.999974,-0.007143), (0.999999,-0.000800,-0.001342), (-0.001347,-0.007142,-0.999974)
+principle_values: (0.060967,0.012455,0.001224)

@@ -1,0 +1,14 @@
+mid: 155
+url: http://web3d.about.com/library/graphics/sandyavatar.wrl
+ref_url: http://web3d.about.com/library/weekly/aa090199.htm
+format: wrl 
+pid: 2855
+polygons: 2576
+connected_components: 1
+average_dihedral_angle: 0.444109
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.511014, ymax = 0.975, zmax = 0.201783
+avg_depth: 1.206172
+center: (0.271113,0.478350,0.110020)
+scale: 0.480182
+principle_axes: (0.032368,0.999164,0.024979), (0.999476,-0.032343,-0.001432), (0.000623,-0.025013,0.999687)
+principle_values: (0.058984,0.009199,0.002120)

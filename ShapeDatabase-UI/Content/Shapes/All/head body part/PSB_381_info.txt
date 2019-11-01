@@ -1,0 +1,14 @@
+mid: 381
+url: http://www.cs.utexas.edu/users/bajaj/graphics99/lecspdf/vrml/wrls/opt-skull.wrl
+ref_url: http://www.cs.utexas.edu/users/bajaj/graphics99/lecspdf/vrml/vrml.html
+format: wrl 
+pid: 9635
+polygons: 22104
+connected_components: 1
+average_dihedral_angle: 0.259425
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.840512, ymax = 0.965945, zmax = 0.975
+avg_depth: 1.807806
+center: (0.436040,0.530429,0.470585)
+scale: 0.744530
+principle_axes: (-0.084065,0.546534,-0.833207), (-0.978008,0.114917,0.174052), (-0.190875,-0.829515,-0.524855)
+principle_values: (0.060842,0.050069,0.045724)

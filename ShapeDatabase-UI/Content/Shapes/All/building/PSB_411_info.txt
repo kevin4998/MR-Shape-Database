@@ -1,0 +1,14 @@
+mid: 411
+url: http://www.arch.usyd.edu.au/~amas1928/3Dvrml.WRL
+ref_url: http://www.arch.usyd.edu.au/~amas1928/archicad.htm
+format: wrl 
+pid: 11463
+polygons: 3922
+connected_components: 73
+average_dihedral_angle: 1.26317
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.703571, zmax = 0.450489
+avg_depth: 2.056194
+center: (0.499900,0.364057,0.176194)
+scale: 0.623089
+principle_axes: (-0.999993,0.000241,-0.003807), (-0.000260,-0.999987,0.005046), (0.003806,-0.005047,-0.999980)
+principle_values: (0.059388,0.027131,0.019521)

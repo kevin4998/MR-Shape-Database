@@ -1,0 +1,14 @@
+mid: 1503
+url: http://www.3dspline.com/3ds_meshes/3ds_dragster.zip
+ref_url: 
+format: xthreexds 
+pid: 25067
+polygons: 50685
+connected_components: 784
+average_dihedral_angle: 0.599234
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.216294, zmax = 0.201974
+avg_depth: 2.110803
+center: (0.330350,0.093687,0.113981)
+scale: 0.410527
+principle_axes: (-0.997087,0.076274,-0.000883), (-0.000540,0.004525,0.999990), (-0.076277,-0.997077,0.004471)
+principle_values: (0.063645,0.002193,0.001359)

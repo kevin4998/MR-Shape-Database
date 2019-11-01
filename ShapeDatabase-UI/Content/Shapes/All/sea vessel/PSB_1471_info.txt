@@ -1,0 +1,14 @@
+mid: 1471
+url: http://www.dataship.com/vrml/r7_2.wrl
+ref_url: http://www.dataship.com/vrml/vrml_index.html
+format: wrl 
+pid: 9521
+polygons: 3552
+connected_components: 8
+average_dihedral_angle: 0.133502
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.350313, zmax = 0.453156
+avg_depth: 1.421068
+center: (0.484214,0.129374,0.239078)
+scale: 0.531617
+principle_axes: (-0.999220,-0.039477,-0.000001), (0.000001,0.000003,-1.000000), (0.039477,-0.999220,-0.000003)
+principle_values: (0.059394,0.018244,0.003451)

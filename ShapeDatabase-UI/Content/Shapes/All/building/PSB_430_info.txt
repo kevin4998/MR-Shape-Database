@@ -1,0 +1,14 @@
+mid: 430
+url: http://www.3dcafe.com/models/sauna.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: 3ds 
+pid: 27833
+polygons: 2832
+connected_components: 137
+average_dihedral_angle: 1.32722
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.452011, zmax = 0.72239
+avg_depth: 3.383671
+center: (0.463472,0.176998,0.358805)
+scale: 0.601503
+principle_axes: (-0.988144,0.082545,-0.129450), (-0.146217,-0.248876,0.957435), (-0.046815,-0.965011,-0.257995)
+principle_values: (0.061459,0.029149,0.011100)

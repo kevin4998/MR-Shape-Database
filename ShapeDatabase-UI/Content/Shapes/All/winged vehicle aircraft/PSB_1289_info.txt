@@ -1,0 +1,14 @@
+mid: 1289
+url: http://www.rccad.com/Gallery/Vrml/P-38L.wrl
+ref_url: http://www.rccad.com/Gallery_MultiFuselages2.htm
+format: wrl 
+pid: 36273
+polygons: 9746
+connected_components: 28
+average_dihedral_angle: 0.214922
+bounding_box: xmin = 0.0489927, ymin = 0.025, zmin = 0.025, xmax = 0.740259, ymax = 0.975, zmax = 0.235926
+avg_depth: 1.549675
+center: (0.328760,0.500012,0.135839)
+scale: 0.430049
+principle_axes: (-0.999856,0.001069,-0.016929), (0.001069,0.999999,0.000015), (-0.016929,0.000003,0.999857)
+principle_values: (0.028339,0.027139,0.000948)

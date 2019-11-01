@@ -1,0 +1,14 @@
+mid: 1456
+url: http://www.nyscedii.buffalo.edu/pages/2001hsworkshop/group3/boat6.wrl
+ref_url: http://www.nyscedii.buffalo.edu/pages/sum_2001_wksp_day_1.php3
+format: wrl 
+pid: 3573
+polygons: 935
+connected_components: 20
+average_dihedral_angle: 0.885606
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.882844, ymax = 0.975, zmax = 0.270117
+avg_depth: 2.302508
+center: (0.481314,0.300983,0.147559)
+scale: 0.623891
+principle_axes: (0.972644,-0.232299,-0.000000), (-0.232299,-0.972644,-0.000002), (-0.000000,-0.000002,1.000000)
+principle_values: (0.056784,0.049394,0.005697)

@@ -1,0 +1,14 @@
+mid: 727
+url: http://tecfa.unige.ch/vrml/objects/3Name3D/10cleavr.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/3Name3D/
+format: wrl 
+pid: 3681
+polygons: 1346
+connected_components: 5
+average_dihedral_angle: 0.450263
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.442857, ymax = 0.975, zmax = 0.0810714
+avg_depth: 1.028294
+center: (0.246304,0.593180,0.052478)
+scale: 0.490875
+principle_axes: (-0.162936,0.986635,-0.001644), (0.986637,0.162936,-0.000040), (-0.000228,0.001628,0.999999)
+principle_values: (0.065005,0.010277,0.000134)

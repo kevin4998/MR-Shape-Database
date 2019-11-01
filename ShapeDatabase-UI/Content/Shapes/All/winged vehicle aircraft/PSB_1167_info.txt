@@ -1,0 +1,14 @@
+mid: 1167
+url: http://fraktali.849pm.com/programs/dxf/f15.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27443
+polygons: 3992
+connected_components: 423
+average_dihedral_angle: 1.15972
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.697772, ymax = 0.283484, zmax = 0.975
+avg_depth: 1.379757
+center: (0.361549,0.125492,0.381241)
+scale: 0.445912
+principle_axes: (0.000860,0.031041,-0.999518), (-1.000000,0.000016,-0.000860), (-0.000011,0.999518,0.031041)
+principle_values: (0.045165,0.014019,0.001272)

@@ -1,0 +1,14 @@
+mid: 1544
+url: http://www.3dcafe.com/../models/ferrari.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: xthreexds 
+pid: 30546
+polygons: 116378
+connected_components: 1695
+average_dihedral_angle: 0.422555
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.479827, ymax = 0.252097, zmax = 0.975
+avg_depth: 3.002744
+center: (0.249785,0.118378,0.458042)
+scale: 0.527359
+principle_axes: (0.001201,0.015539,-0.999879), (-0.999995,-0.002985,-0.001248), (0.003004,-0.999875,-0.015535)
+principle_values: (0.064866,0.015877,0.002434)

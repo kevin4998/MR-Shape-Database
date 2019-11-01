@@ -1,0 +1,14 @@
+mid: 371
+url: http://www.inspeck.com/support/download/fichiers/zip/obj_mask.zip
+ref_url: 
+format: obj 
+pid: 48356
+polygons: 61334
+connected_components: 7
+average_dihedral_angle: 0.122468
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.857362, ymax = 0.975, zmax = 0.956683
+avg_depth: 1.050775
+center: (0.448143,0.517742,0.468792)
+scale: 0.809305
+principle_axes: (-0.071302,-0.885398,0.459332), (0.997039,-0.076561,0.007192), (-0.028799,-0.458485,-0.888235)
+principle_values: (0.069941,0.053588,0.044844)

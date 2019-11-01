@@ -1,0 +1,14 @@
+mid: 323
+url: http://www.cis.upenn.edu/~pito/images/h.all.smooth.wrl
+ref_url: http://www.cis.upenn.edu/~pito/object-gallery.html
+format: wrl 
+pid: 10627
+polygons: 86361
+connected_components: 2
+average_dihedral_angle: 0.0502244
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.351535, ymax = 0.975, zmax = 0.370544
+avg_depth: 1.043303
+center: (0.207467,0.463979,0.208777)
+scale: 0.495541
+principle_axes: (-0.008853,-0.999198,-0.039058), (0.646285,0.024088,-0.762716), (-0.763045,0.031995,-0.645553)
+principle_values: (0.055921,0.011003,0.003646)

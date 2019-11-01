@@ -1,0 +1,14 @@
+mid: 1125
+url: http://www.rccad.com/Gallery/Vrml/Stearman.wrl
+ref_url: http://www.rccad.com/Gallery_BiPlanes1.htm
+format: wrl 
+pid: 33697
+polygons: 656
+connected_components: 8
+average_dihedral_angle: 0.705609
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.799082, ymax = 0.975, zmax = 0.274375
+avg_depth: 1.384012
+center: (0.304206,0.500015,0.133100)
+scale: 0.557031
+principle_axes: (-0.000089,1.000000,-0.000008), (-0.992360,-0.000087,0.123379), (-0.123379,-0.000019,-0.992360)
+principle_values: (0.051344,0.033065,0.007956)

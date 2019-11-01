@@ -1,0 +1,14 @@
+mid: 1308
+url: http://www.3dcafe.com/models/hilo.zip
+ref_url: http://www.3dcafe.com/asp/air_pic.asp
+format: xthreexds 
+pid: 26384
+polygons: 116777
+connected_components: 36
+average_dihedral_angle: 0.199833
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.915335, ymax = 0.251275, zmax = 0.975
+avg_depth: 1.690139
+center: (0.431224,0.126582,0.476178)
+scale: 0.380944
+principle_axes: (0.000504,-0.088639,-0.996064), (0.999998,0.001784,0.000347), (0.001746,-0.996062,0.088640)
+principle_values: (0.034078,0.011964,0.002565)

@@ -1,0 +1,14 @@
+mid: 1601
+url: http://www.oesi.com/oesi/Showcase/VRML/chess/bishop_white.wrl
+ref_url: http://www.oesi.com/oesi/Showcase/VRML/chess/bishop.htm
+format: wrl 
+pid: 8375
+polygons: 13450
+connected_components: 1
+average_dihedral_angle: 0.211151
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.556126, ymax = 0.975, zmax = 0.55481
+avg_depth: 1.354629
+center: (0.290569,0.372340,0.289551)
+scale: 0.650200
+principle_axes: (-0.000014,-0.999998,0.002149), (1.000000,-0.000015,-0.000679), (-0.000679,-0.002149,-0.999997)
+principle_values: (0.089852,0.014380,0.014224)

@@ -1,0 +1,14 @@
+mid: 1806
+url: http://www.sdsu.edu/~boyns/vrml/demo/slot.wrl
+ref_url: http://www.sdsu.edu/~boyns/vrml/
+format: wrl 
+pid: 707
+polygons: 190
+connected_components: 9
+average_dihedral_angle: 0.757399
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.845189, ymax = 0.975, zmax = 0.495696
+avg_depth: 1.259788
+center: (0.376104,0.481819,0.240974)
+scale: 0.798954
+principle_axes: (0.115002,0.989326,-0.089486), (0.992830,-0.117430,-0.022347), (0.032617,0.086275,0.995737)
+principle_values: (0.086772,0.058728,0.026157)

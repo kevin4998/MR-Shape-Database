@@ -1,0 +1,14 @@
+mid: 1277
+url: http://www.rccad.com/Gallery/Vrml/F3j.wrl
+ref_url: http://www.rccad.com/Gallery_Gliders1.htm
+format: wrl 
+pid: 38609
+polygons: 4224
+connected_components: 3
+average_dihedral_angle: 0.0870668
+bounding_box: xmin = 0.0252794, ymin = 0.025, zmin = 0.0277941, xmax = 0.47961, ymax = 0.975, zmax = 0.118603
+avg_depth: 1.024896
+center: (0.222628,0.500000,0.049567)
+scale: 0.429617
+principle_axes: (0.000000,-1.000000,0.000000), (-0.995974,-0.000000,-0.089639), (-0.089639,0.000000,0.995974)
+principle_values: (0.053355,0.008005,0.000097)

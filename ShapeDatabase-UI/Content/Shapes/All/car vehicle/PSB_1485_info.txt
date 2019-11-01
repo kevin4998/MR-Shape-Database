@@ -1,0 +1,14 @@
+mid: 1485
+url: http://www.maxnet.ru/aks/new_web/model_arch/88-Mitsubishi-Pajero-DXF.zip
+ref_url: http://www.maxnet.ru/aks/models_R.html
+format: dxf 
+pid: 25090
+polygons: 12263
+connected_components: 7
+average_dihedral_angle: 0.738786
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.422203, ymax = 0.460334, zmax = 0.975
+avg_depth: 1.400073
+center: (0.226625,0.223659,0.528038)
+scale: 0.645183
+principle_axes: (0.024331,0.072000,0.997108), (0.999556,0.015383,-0.025502), (0.017174,-0.997286,0.071594)
+principle_values: (0.082102,0.018758,0.011895)

@@ -1,0 +1,14 @@
+mid: 572
+url: http://www.dform.com/projects/space/vrml/dformtv.wrl
+ref_url: http://www.nomadicsltd.com/tools/raw_favormarks_and_bookrites.html
+format: wrl 
+pid: 854
+polygons: 1851
+connected_components: 9
+average_dihedral_angle: 0.445657
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.572616, ymax = 0.975, zmax = 0.808839
+avg_depth: 1.208601
+center: (0.230276,0.465061,0.623402)
+scale: 0.522013
+principle_axes: (-0.286920,0.834325,0.470720), (-0.569234,-0.543710,0.616728), (-0.770487,0.090998,-0.630927)
+principle_values: (0.034057,0.021598,0.018496)

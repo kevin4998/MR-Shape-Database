@@ -1,0 +1,14 @@
+mid: 1075
+url: http://web.webstore.fr/alpix/vrml/plant.wrl
+ref_url: http://web.webstore.fr/alpix/vrml/
+format: wrl 
+pid: 20328
+polygons: 1132
+connected_components: 11
+average_dihedral_angle: 0.498175
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.362593, ymax = 0.975, zmax = 0.640251
+avg_depth: 1.158062
+center: (0.210938,0.240641,0.207661)
+scale: 0.534207
+principle_axes: (-0.112150,-0.983960,-0.138725), (0.319584,0.096473,-0.942634), (-0.940898,0.150051,-0.303638)
+principle_values: (0.074611,0.009469,0.005781)

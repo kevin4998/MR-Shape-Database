@@ -1,0 +1,14 @@
+mid: 674
+url: http://www.3dcafe.com/../models/swatrifl.zip
+ref_url: http://www.3dcafe.com/../asp/weapons.asp
+format: 3ds 
+pid: 30595
+polygons: 15199
+connected_components: 16
+average_dihedral_angle: 0.198832
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.071835, ymax = 0.254259, zmax = 0.975
+avg_depth: 1.172657
+center: (0.048065,0.153860,0.472841)
+scale: 0.422901
+principle_axes: (0.000757,0.074579,0.997215), (0.002037,0.997213,-0.074581), (0.999998,-0.002088,-0.000603)
+principle_values: (0.058730,0.002164,0.000259)

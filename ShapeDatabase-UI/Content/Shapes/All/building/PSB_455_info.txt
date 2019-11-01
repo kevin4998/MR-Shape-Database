@@ -1,0 +1,14 @@
+mid: 455
+url: http://cheetah.ma.iup.edu/courses/ls499/south6th/clark2.wrl
+ref_url: http://cheetah.ma.iup.edu/courses/ls499/south6th/index.html
+format: wrl 
+pid: 754
+polygons: 70
+connected_components: 2
+average_dihedral_angle: 1.38791
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.715909, ymax = 0.543182, zmax = 0.975
+avg_depth: 1.166197
+center: (0.390807,0.273460,0.593082)
+scale: 0.744612
+principle_axes: (0.024790,0.043694,0.998737), (0.999632,0.009922,-0.025246), (-0.011012,0.998996,-0.043432)
+principle_values: (0.089837,0.040093,0.017918)

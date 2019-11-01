@@ -1,0 +1,14 @@
+mid: 338
+url: http://cepcairo.bizland.com/free/L_hand1.zip
+ref_url: 
+format: xthreexds 
+pid: 48352
+polygons: 3090
+connected_components: 1
+average_dihedral_angle: 0.230904
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.489372, ymax = 0.367234, zmax = 0.975
+avg_depth: 1.128384
+center: (0.277671,0.251398,0.481367)
+scale: 0.495137
+principle_axes: (0.016608,-0.090156,0.995789), (0.946237,0.323194,0.013479), (-0.323049,0.942028,0.090677)
+principle_values: (0.058217,0.012589,0.002658)

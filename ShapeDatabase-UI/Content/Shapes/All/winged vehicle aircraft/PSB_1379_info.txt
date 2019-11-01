@@ -1,0 +1,14 @@
+mid: 1379
+url: http://www.ultradrive.com/files/FPassaro_Vree_lwo.zip
+ref_url: http://www.ultradrive.com/b5_3d_index.htm
+format: lwo 
+pid: 25173
+polygons: 1858
+connected_components: 10
+average_dihedral_angle: 0.279941
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.974987, ymax = 0.113092, zmax = 0.975
+avg_depth: 2.907798
+center: (0.499867,0.056095,0.500029)
+scale: 0.531180
+principle_axes: (0.092528,0.000000,0.995710), (-0.995710,0.000134,0.092528), (-0.000134,-1.000000,0.000013)
+principle_values: (0.041594,0.041590,0.000692)

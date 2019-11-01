@@ -1,0 +1,14 @@
+mid: 1271
+url: http://www.rccad.com/Gallery/Vrml/ForeverFlier.wrl
+ref_url: http://www.rccad.com/Gallery_Gliders3.htm
+format: wrl 
+pid: 17369
+polygons: 524
+connected_components: 6
+average_dihedral_angle: 0.435307
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.449345, ymax = 0.975, zmax = 0.168981
+avg_depth: 1.261543
+center: (0.190543,0.500005,0.070687)
+scale: 0.407870
+principle_axes: (-0.000007,1.000000,0.000001), (-0.970904,-0.000007,-0.239470), (-0.239470,-0.000002,0.970904)
+principle_values: (0.049318,0.005949,0.000238)

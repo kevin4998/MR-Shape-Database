@@ -1,0 +1,14 @@
+mid: 766
+url: http://www.nwginc.com/img/i01.wrl
+ref_url: http://www.nwginc.com/wrml2.html
+format: wrl 
+pid: 9349
+polygons: 1220
+connected_components: 62
+average_dihedral_angle: 2.8661
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.574172, zmax = 0.498422
+avg_depth: 2.917858
+center: (0.467260,0.426972,0.247531)
+scale: 0.634264
+principle_axes: (-0.998089,0.044886,-0.042464), (0.052585,0.977914,-0.202282), (0.032446,-0.204129,-0.978406)
+principle_values: (0.084517,0.022953,0.013567)

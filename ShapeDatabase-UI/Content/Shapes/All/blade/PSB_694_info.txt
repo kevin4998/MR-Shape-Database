@@ -1,0 +1,14 @@
+mid: 694
+url: http://www.3dcafe.com/models/sword.lwo
+ref_url: http://www.3dcafe.com/asp/sci_pics.asp
+format: lwo 
+pid: 29110
+polygons: 5667
+connected_components: 154
+average_dihedral_angle: 0.458592
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.325319, ymax = 0.975, zmax = 0.109
+avg_depth: 1.267812
+center: (0.175085,0.648432,0.069176)
+scale: 0.426733
+principle_axes: (0.001143,0.999999,0.001163), (0.999999,-0.001143,0.000276), (-0.000277,-0.001163,0.999999)
+principle_values: (0.059420,0.001739,0.000156)

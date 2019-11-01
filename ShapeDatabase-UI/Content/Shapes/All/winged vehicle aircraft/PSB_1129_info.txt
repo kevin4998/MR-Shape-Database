@@ -1,0 +1,14 @@
+mid: 1129
+url: http://www.3dspline.com/3ds_meshes/biplane2_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 25253
+polygons: 6272
+connected_components: 15
+average_dihedral_angle: 0.808813
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.346551, zmax = 0.699508
+avg_depth: 1.334009
+center: (0.499952,0.209180,0.466338)
+scale: 0.465866
+principle_axes: (0.999994,0.001853,-0.002905), (0.002896,0.004623,0.999985), (-0.001866,0.999988,-0.004617)
+principle_values: (0.038782,0.023844,0.003829)

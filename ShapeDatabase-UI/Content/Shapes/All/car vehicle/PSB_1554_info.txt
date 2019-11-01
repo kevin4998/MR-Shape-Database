@@ -1,0 +1,14 @@
+mid: 1554
+url: http://www.episteme.com/vrml/simple_worlds/corvette.wrl
+ref_url: http://www.episteme.com/vrml/simple_worlds/worlds.html
+format: wrl 
+pid: 9173
+polygons: 3762
+connected_components: 422
+average_dihedral_angle: 0.782288
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.726597, ymax = 0.2937, zmax = 0.975
+avg_depth: 1.440123
+center: (0.379529,0.174992,0.485638)
+scale: 0.632731
+principle_axes: (-0.481980,0.042921,-0.875130), (-0.875559,0.014072,0.482907), (0.033042,0.998979,0.030798)
+principle_values: (0.087311,0.017597,0.003516)

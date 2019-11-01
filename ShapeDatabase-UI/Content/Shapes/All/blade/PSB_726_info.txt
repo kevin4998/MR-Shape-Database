@@ -1,0 +1,14 @@
+mid: 726
+url: http://www.3dcafe.com/models/cleaver2.zip
+ref_url: http://www.3dcafe.com/asp/hou1_pic.asp
+format: 3ds 
+pid: 28724
+polygons: 817
+connected_components: 2
+average_dihedral_angle: 0.397296
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0653404, ymax = 0.31723, zmax = 0.975
+avg_depth: 1.023980
+center: (0.045397,0.195476,0.588871)
+scale: 0.482788
+principle_axes: (0.000127,-0.129661,0.991558), (-0.000160,0.991558,0.129661), (1.000000,0.000175,-0.000105)
+principle_values: (0.071208,0.005068,0.000110)

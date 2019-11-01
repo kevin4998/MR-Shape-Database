@@ -1,0 +1,14 @@
+mid: 679
+url: http://deep.sitenest.net/freemodels/weapons/3dm-shotgun.zip
+ref_url: 
+format: xthreexds 
+pid: 47099
+polygons: 3774
+connected_components: 12
+average_dihedral_angle: 0.492845
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.078136, ymax = 0.243081, zmax = 0.975
+avg_depth: 1.199018
+center: (0.051645,0.189389,0.459843)
+scale: 0.492771
+principle_axes: (0.000268,-0.071237,-0.997459), (-0.000796,0.997459,-0.071237), (1.000000,0.000813,0.000210)
+principle_values: (0.078428,0.001378,0.000220)

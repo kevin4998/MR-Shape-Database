@@ -1,0 +1,14 @@
+mid: 1417
+url: http://www.3dcafe.com/models/predator.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 28830
+polygons: 17822
+connected_components: 323
+average_dihedral_angle: 0.767447
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.748954, ymax = 0.442453, zmax = 0.975
+avg_depth: 3.138454
+center: (0.387190,0.177627,0.528098)
+scale: 0.587891
+principle_axes: (-0.013366,0.066031,0.997728), (-0.999906,-0.003838,-0.013141), (0.002962,-0.997810,0.066076)
+principle_values: (0.051997,0.031357,0.009621)

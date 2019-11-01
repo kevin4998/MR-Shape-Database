@@ -1,0 +1,14 @@
+mid: 413
+url: http://www.geocities.com/BourbonStreet/1855/Athenanike.wrl
+ref_url: http://www.geocities.com/BourbonStreet/1855/shrine.html
+format: wrl 
+pid: 11898
+polygons: 7282
+connected_components: 22
+average_dihedral_angle: 1.24512
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.880604, zmax = 0.882794
+avg_depth: 3.504571
+center: (0.497021,0.341378,0.456896)
+scale: 0.847055
+principle_axes: (0.010977,-0.999933,-0.003648), (-0.999939,-0.010973,-0.001219), (0.001179,0.003662,-0.999993)
+principle_values: (0.086135,0.059162,0.045538)

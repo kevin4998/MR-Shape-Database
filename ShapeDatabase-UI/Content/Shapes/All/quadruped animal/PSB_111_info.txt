@@ -1,0 +1,14 @@
+mid: 111
+url: http://cepcairo.bizland.com/free/Rabbit.zip
+ref_url: 
+format: xthreexds 
+pid: 48231
+polygons: 2442
+connected_components: 3
+average_dihedral_angle: 0.330999
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.414531, ymax = 0.678081, zmax = 0.975
+avg_depth: 1.121067
+center: (0.219756,0.303140,0.472613)
+scale: 0.598494
+principle_axes: (-0.000060,-0.288032,-0.957621), (0.000044,-0.957621,0.288032), (-1.000000,-0.000025,0.000070)
+principle_values: (0.068812,0.019571,0.011594)

@@ -1,0 +1,14 @@
+mid: 607
+url: http://fraktali.849pm.com/programs/dxf/archlamp.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27213
+polygons: 1709
+connected_components: 67
+average_dihedral_angle: 0.794943
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.345388, ymax = 0.975, zmax = 0.843612
+avg_depth: 1.272487
+center: (0.185892,0.579732,0.518543)
+scale: 0.708731
+principle_axes: (-0.000921,0.823222,0.567718), (-0.007415,-0.567708,0.823196), (0.999972,-0.003452,0.006627)
+principle_values: (0.122421,0.019796,0.003641)

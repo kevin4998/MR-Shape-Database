@@ -1,0 +1,14 @@
+mid: 1550
+url: http://www.3dheaven.net/Modelle/cars/viper.zip
+ref_url: 
+format: xthreexds 
+pid: 47065
+polygons: 17526
+connected_components: 23
+average_dihedral_angle: 0.278391
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.454282, ymax = 0.268448, zmax = 0.975
+avg_depth: 1.537816
+center: (0.239651,0.126644,0.506170)
+scale: 0.585752
+principle_axes: (0.000017,0.025894,-0.999665), (1.000000,0.000041,0.000018), (0.000042,-0.999665,-0.025894)
+principle_values: (0.072253,0.018686,0.003676)

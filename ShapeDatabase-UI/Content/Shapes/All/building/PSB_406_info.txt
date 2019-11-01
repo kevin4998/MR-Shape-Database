@@ -1,0 +1,14 @@
+mid: 406
+url: http://www.csi.it/cupola/vrml/cupola_flat/guarini_flat.wrl
+ref_url: http://www.csi.it/cupola/eng/models/allmodel.htm
+format: wrl 
+pid: 41671
+polygons: 13978
+connected_components: 146
+average_dihedral_angle: 1.64147
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.703779, ymax = 0.975, zmax = 0.678502
+avg_depth: 5.173654
+center: (0.365083,0.288782,0.352424)
+scale: 0.571471
+principle_axes: (0.897877,0.030816,-0.439167), (0.438586,0.023948,0.898370), (-0.038202,0.999238,-0.007987)
+principle_values: (0.030583,0.030409,0.025444)

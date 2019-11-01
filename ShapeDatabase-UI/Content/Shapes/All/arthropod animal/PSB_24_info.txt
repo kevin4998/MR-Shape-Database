@@ -1,0 +1,14 @@
+mid: 24
+url: http://www.3dcafe.com/models/spiderv1.wrl
+ref_url: http://www.3dcafe.com/asp/animals.asp
+format: wrl 
+pid: 689
+polygons: 284
+connected_components: 11
+average_dihedral_angle: 0.95505
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.42875, zmax = 0.85625
+avg_depth: 1.215199
+center: (0.499820,0.263294,0.455700)
+scale: 0.518102
+principle_axes: (-0.001146,-0.054783,-0.998498), (-0.999999,0.000285,0.001132), (0.000222,0.998498,-0.054783)
+principle_values: (0.045523,0.027673,0.006192)

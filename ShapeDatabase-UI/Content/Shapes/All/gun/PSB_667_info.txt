@@ -1,0 +1,14 @@
+mid: 667
+url: http://cepcairo.bizland.com/free/Colt.zip
+ref_url: 
+format: xthreexds 
+pid: 47848
+polygons: 1500
+connected_components: 6
+average_dihedral_angle: 0.758221
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.115473, ymax = 0.421568, zmax = 0.975
+avg_depth: 1.562384
+center: (0.070242,0.310966,0.423251)
+scale: 0.442695
+principle_axes: (0.000007,-0.276657,-0.960969), (0.000059,0.960969,-0.276657), (-1.000000,0.000054,-0.000023)
+principle_values: (0.062259,0.005861,0.000332)

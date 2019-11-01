@@ -1,0 +1,14 @@
+mid: 1687
+url: ftp://avalon.viewpoint.com/pub/objects/geography/africa_obj.zip
+ref_url: 
+format: obj 
+pid: 47389
+polygons: 393
+connected_components: 1
+average_dihedral_angle: 0.832654
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.873775, ymax = 0.975, zmax = 0.130129
+avg_depth: 1.046161
+center: (0.452784,0.567895,0.106019)
+scale: 0.634045
+principle_axes: (-0.530402,0.847743,0.002504), (-0.847746,-0.530395,-0.002829), (-0.001070,-0.003624,0.999993)
+principle_values: (0.075506,0.036596,0.001105)

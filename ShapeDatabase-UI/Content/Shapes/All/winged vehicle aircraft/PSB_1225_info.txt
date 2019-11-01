@@ -1,0 +1,14 @@
+mid: 1225
+url: http://www.rccad.com/Gallery/Vrml/F-177.wrl
+ref_url: http://www.lucia.it/vrml/presentazioni/assembla/images/111john.wrl
+format: wrl 
+pid: 34009
+polygons: 340
+connected_components: 66
+average_dihedral_angle: 0.764768
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.731328, zmax = 0.180143
+avg_depth: 2.279865
+center: (0.486206,0.378150,0.061475)
+scale: 0.374174
+principle_axes: (0.999764,-0.000249,0.021712), (0.000273,0.999999,-0.001074), (0.021711,-0.001080,-0.999764)
+principle_values: (0.033227,0.010965,0.000495)

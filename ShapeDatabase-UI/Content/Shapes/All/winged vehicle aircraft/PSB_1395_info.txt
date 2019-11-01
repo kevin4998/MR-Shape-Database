@@ -1,0 +1,14 @@
+mid: 1395
+url: http://spaceflight.nasa.gov/gallery/vrml/station/orbiter.wrl
+ref_url: http://spaceflight.nasa.gov/gallery/vrml/station/parts.html
+format: wrl 
+pid: 1028
+polygons: 1221
+connected_components: 35
+average_dihedral_angle: 0.447833
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.37302, ymax = 0.975, zmax = 0.620744
+avg_depth: 1.605972
+center: (0.308757,0.565509,0.317644)
+scale: 0.437803
+principle_axes: (-0.051186,0.998084,0.034764), (-0.043890,0.032528,-0.998507), (0.997724,0.052636,-0.042140)
+principle_values: (0.044892,0.009626,0.003002)

@@ -1,0 +1,14 @@
+mid: 1425
+url: http://www.3dheaven.net/Modelle/military/m1a1.zip
+ref_url: 
+format: xthreexds 
+pid: 47919
+polygons: 12533
+connected_components: 48
+average_dihedral_angle: 1.12992
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.342396, ymax = 0.249532, zmax = 0.975
+avg_depth: 2.842194
+center: (0.183424,0.127930,0.388425)
+scale: 0.422732
+principle_axes: (0.004503,0.005782,-0.999973), (-0.999984,0.003427,-0.004483), (0.003401,0.999977,0.005797)
+principle_values: (0.037803,0.010757,0.002986)

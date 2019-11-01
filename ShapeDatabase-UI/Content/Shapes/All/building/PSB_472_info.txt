@@ -1,0 +1,14 @@
+mid: 472
+url: http://www.rit.edu/~pch2015/vrml/lighthouse/lighthouse.wrl
+ref_url: http://www.rit.edu/~pch2015/vrml/
+format: wrl 
+pid: 9766
+polygons: 704
+connected_components: 3
+average_dihedral_angle: 0.571955
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.479545, ymax = 0.975, zmax = 0.479545
+avg_depth: 1.131057
+center: (0.252273,0.355587,0.252273)
+scale: 0.624185
+principle_axes: (-0.000000,-1.000000,-0.000000), (0.503226,0.000000,-0.864155), (-0.864155,0.000000,-0.503226)
+principle_values: (0.091373,0.009412,0.009412)

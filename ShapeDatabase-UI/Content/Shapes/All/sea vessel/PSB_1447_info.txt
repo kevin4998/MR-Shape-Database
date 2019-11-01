@@ -1,0 +1,14 @@
+mid: 1447
+url: http://cepcairo.bizland.com/free/Oiltankr.zip
+ref_url: 
+format: xthreexds 
+pid: 47952
+polygons: 6000
+connected_components: 7
+average_dihedral_angle: 0.404954
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.121877, ymax = 0.179082, zmax = 0.975
+avg_depth: 1.104115
+center: (0.073526,0.077743,0.458431)
+scale: 0.502387
+principle_axes: (-0.000163,0.036811,-0.999322), (-0.003953,0.999314,0.036811), (-0.999992,-0.003956,0.000017)
+principle_values: (0.077080,0.001221,0.000789)

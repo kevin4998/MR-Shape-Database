@@ -1,0 +1,14 @@
+mid: 1662
+url: http://members.xoom.it/lapsus/virtual/vrml/arco.wrl
+ref_url: http://members.xoom.it/lapsus/virtual/index.html
+format: wrl 
+pid: 14209
+polygons: 17394
+connected_components: 1284
+average_dihedral_angle: 1.2532
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.0798889, zmax = 0.928504
+avg_depth: 1.319372
+center: (0.500390,0.033299,0.454945)
+scale: 0.564683
+principle_axes: (-0.022006,-0.010660,0.999701), (0.999758,-0.000121,0.022006), (0.000113,-0.999943,-0.010660)
+principle_values: (0.046481,0.045104,0.000229)

@@ -1,0 +1,14 @@
+mid: 699
+url: http://www.3dcafe.com/../models/lngsword.zip
+ref_url: http://www.3dcafe.com/../asp/weapons.asp
+format: xthreexds 
+pid: 30608
+polygons: 1112
+connected_components: 5
+average_dihedral_angle: 0.582322
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.19693, ymax = 0.196831, zmax = 0.975
+avg_depth: 1.158347
+center: (0.110840,0.110909,0.736373)
+scale: 0.348305
+principle_axes: (-0.000712,-0.000097,1.000000), (-0.999942,-0.010745,-0.000713), (0.010745,-0.999942,-0.000089)
+principle_values: (0.044258,0.000892,0.000891)

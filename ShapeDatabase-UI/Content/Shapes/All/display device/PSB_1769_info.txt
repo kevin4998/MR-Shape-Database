@@ -1,0 +1,14 @@
+mid: 1769
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1999/arcolman/Hw3/computer.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1999/arcolman/Hw3/?D=D
+format: wrl 
+pid: 42893
+polygons: 76
+connected_components: 4
+average_dihedral_angle: 1.41665
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.703571, ymax = 0.975, zmax = 0.74881
+avg_depth: 1.982054
+center: (0.364286,0.479836,0.450184)
+scale: 0.777094
+principle_axes: (0.000001,-0.976102,-0.217312), (1.000000,0.000001,0.000001), (-0.000001,-0.217312,0.976102)
+principle_values: (0.082121,0.042264,0.039730)

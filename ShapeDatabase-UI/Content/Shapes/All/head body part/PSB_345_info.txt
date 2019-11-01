@@ -1,0 +1,14 @@
+mid: 345
+url: http://didaskalia.berkeley.edu/stagecraft/mask_mm/mask.wrl
+ref_url: http://didaskalia.berkeley.edu/stagecraft/mask_mm/rotmask1.html
+format: wrl 
+pid: 2204
+polygons: 4801
+connected_components: 5
+average_dihedral_angle: 0.241254
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.956833, ymax = 0.975, zmax = 0.901069
+avg_depth: 1.745099
+center: (0.535443,0.606483,0.426492)
+scale: 0.758447
+principle_axes: (-0.017989,0.872860,0.487639), (-0.029227,0.487050,-0.872885), (0.999411,0.029954,-0.016750)
+principle_values: (0.071143,0.040814,0.037424)

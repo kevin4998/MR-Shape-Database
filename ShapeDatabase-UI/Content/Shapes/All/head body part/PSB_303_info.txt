@@ -1,0 +1,14 @@
+mid: 303
+url: http://www9.informatik.uni-erlangen.de/Persons/Campagna/data/swen.wrl.gz
+ref_url: http://www9.informatik.uni-erlangen.de/Persons/Campagna/deutsch.html
+format: wrl 
+pid: 442
+polygons: 316498
+connected_components: 1
+average_dihedral_angle: 0.181259
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.657586, ymax = 0.975, zmax = 0.82368
+avg_depth: 1.169168
+center: (0.333803,0.430723,0.415745)
+scale: 0.704110
+principle_axes: (0.160659,-0.692660,-0.703144), (0.073041,-0.702101,0.708321), (-0.984304,-0.165157,-0.062207)
+principle_values: (0.053680,0.040039,0.033911)

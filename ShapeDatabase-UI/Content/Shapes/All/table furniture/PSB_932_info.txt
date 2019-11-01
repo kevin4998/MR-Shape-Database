@@ -1,0 +1,14 @@
+mid: 932
+url: http://www.rpi.edu/~citrit/Article/round_table.wrl
+ref_url: http://www.rpi.edu/~citrit/Article/results.html
+format: wrl 
+pid: 8147
+polygons: 20594
+connected_components: 6
+average_dihedral_angle: 0.184996
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.620207, zmax = 0.975
+avg_depth: 1.468798
+center: (0.498729,0.513690,0.499161)
+scale: 0.650972
+principle_axes: (-0.758294,-0.012128,-0.651800), (0.651806,0.003990,-0.758375), (-0.011798,0.999918,-0.004879)
+principle_values: (0.047120,0.047096,0.027079)

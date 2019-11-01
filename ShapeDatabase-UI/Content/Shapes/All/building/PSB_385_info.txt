@@ -1,0 +1,14 @@
+mid: 385
+url: http://fraktali.849pm.com/programs/wrl/object/Architecture.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32250
+polygons: 918
+connected_components: 40
+average_dihedral_angle: 0.917071
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.899, ymax = 0.975, zmax = 0.626562
+avg_depth: 1.681811
+center: (0.478902,0.254493,0.302964)
+scale: 0.641520
+principle_axes: (0.993526,0.100201,-0.053535), (0.113106,-0.916576,0.383530), (-0.010639,-0.387102,-0.921975)
+principle_values: (0.059843,0.032722,0.023968)

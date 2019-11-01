@@ -1,0 +1,14 @@
+mid: 1486
+url: http://www.maxnet.ru/aks/new_web/model_arch/Toyota-LandCruiser-DXF.zip
+ref_url: http://www.maxnet.ru/aks/models_R.html
+format: dxf 
+pid: 25191
+polygons: 11230
+connected_components: 13
+average_dihedral_angle: 0.332247
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.442566, ymax = 0.396692, zmax = 0.975
+avg_depth: 1.224634
+center: (0.233786,0.207666,0.484951)
+scale: 0.632094
+principle_axes: (0.000038,0.077022,-0.997029), (1.000000,-0.000010,0.000037), (-0.000007,-0.997029,-0.077022)
+principle_values: (0.084279,0.016154,0.009564)

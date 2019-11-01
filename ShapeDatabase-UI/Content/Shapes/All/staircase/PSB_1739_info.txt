@@ -1,0 +1,14 @@
+mid: 1739
+url: http://www.ualg.pt/uceh/vrml/escadas.wrl
+ref_url: http://www.ualg.pt/uceh/vrml/
+format: wrl 
+pid: 6293
+polygons: 3886
+connected_components: 97
+average_dihedral_angle: 0.831529
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.97416, ymax = 0.869807, zmax = 0.975
+avg_depth: 1.463631
+center: (0.520075,0.380884,0.523401)
+scale: 0.759370
+principle_axes: (-0.679577,0.545029,0.491038), (0.569207,-0.030514,0.821628), (-0.462795,-0.837862,0.289498)
+principle_values: (0.090272,0.056577,0.011918)

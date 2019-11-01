@@ -1,0 +1,14 @@
+mid: 1076
+url: http://lonewolf.tierranet.com/download/bonsai1.zip
+ref_url: http://lonewolf.tierranet.com/archives.html
+format: dxf 
+pid: 25177
+polygons: 15303
+connected_components: 3455
+average_dihedral_angle: 0.852799
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.478641, ymax = 0.975, zmax = 0.6511
+avg_depth: 1.211095
+center: (0.215785,0.607236,0.388791)
+scale: 0.503591
+principle_axes: (-0.142608,-0.954561,-0.261680), (-0.358706,-0.196565,0.912520), (-0.922493,0.223998,-0.314375)
+principle_values: (0.047219,0.023455,0.003976)

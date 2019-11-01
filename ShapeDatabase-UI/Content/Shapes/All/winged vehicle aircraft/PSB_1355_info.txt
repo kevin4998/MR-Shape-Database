@@ -1,0 +1,14 @@
+mid: 1355
+url: http://www.ocnus.com/models/DXF/enterprise.wrl.gz
+ref_url: http://www.ocnus.com/models/DXF/
+format: wrl 
+pid: 17731
+polygons: 13354
+connected_components: 111
+average_dihedral_angle: 0.258192
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.859252, ymax = 0.975, zmax = 0.328011
+avg_depth: 1.181810
+center: (0.383531,0.567959,0.162220)
+scale: 0.530239
+principle_axes: (-0.594481,0.794780,0.122132), (-0.803806,-0.591535,-0.063106), (-0.022090,0.135686,-0.990506)
+principle_values: (0.068895,0.014738,0.003375)

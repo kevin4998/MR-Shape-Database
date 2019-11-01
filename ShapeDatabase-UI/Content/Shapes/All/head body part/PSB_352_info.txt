@@ -1,0 +1,14 @@
+mid: 352
+url: http://www.miralab.unige.ch/~sumedha/PAVR/Welcome.wrl
+ref_url: http://miralabwww.unige.ch/~sumedha/PAVR/Pavr.html
+format: wrl 
+pid: 2786
+polygons: 1197
+connected_components: 13
+average_dihedral_angle: 0.445657
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.747311, ymax = 0.975, zmax = 0.941067
+avg_depth: 1.146786
+center: (0.385050,0.499442,0.484575)
+scale: 0.831040
+principle_axes: (-0.003728,-0.910120,0.414329), (-0.009841,0.414345,0.910067), (-0.999945,-0.000684,-0.010501)
+principle_values: (0.074073,0.060162,0.042666)

@@ -1,0 +1,14 @@
+mid: 113
+url: http://mowat.virtualave.net/skeleton.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26215
+polygons: 11092
+connected_components: 325
+average_dihedral_angle: 0.850076
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.326302, ymax = 0.975, zmax = 0.168733
+avg_depth: 1.731544
+center: (0.176884,0.551923,0.100032)
+scale: 0.480576
+principle_axes: (-0.002419,0.999040,0.043750), (-0.999997,-0.002449,0.000622), (-0.000728,0.043749,-0.999042)
+principle_values: (0.073802,0.002803,0.000618)

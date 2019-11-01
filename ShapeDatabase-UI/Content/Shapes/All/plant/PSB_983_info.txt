@@ -1,0 +1,14 @@
+mid: 983
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/Blissful_Farm/animal/flowerVRML.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/Blissful_Farm/animal/?D=A
+format: wrl 
+pid: 46124
+polygons: 74
+connected_components: 7
+average_dihedral_angle: 0.779455
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.97343, ymax = 0.832675, zmax = 0.975
+avg_depth: 1.372777
+center: (0.542194,0.561905,0.580921)
+scale: 0.559615
+principle_axes: (-0.238076,-0.175007,0.955349), (-0.957953,-0.119873,-0.260684), (-0.160142,0.977243,0.139110)
+principle_values: (0.032794,0.032710,0.024091)

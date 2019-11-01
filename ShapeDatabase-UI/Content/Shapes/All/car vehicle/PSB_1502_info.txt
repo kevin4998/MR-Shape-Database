@@ -1,0 +1,14 @@
+mid: 1502
+url: http://www.ocnus.com/models/DXF/indy_car.wrl.gz
+ref_url: http://www.ocnus.com/models/DXF/
+format: wrl 
+pid: 17739
+polygons: 7120
+connected_components: 266
+average_dihedral_angle: 0.543789
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.206406, zmax = 0.504835
+avg_depth: 1.495256
+center: (0.493597,0.106065,0.264855)
+scale: 0.548952
+principle_axes: (0.997272,-0.073796,-0.001541), (-0.001564,-0.000258,-0.999999), (-0.073795,-0.997273,0.000373)
+principle_values: (0.065779,0.019252,0.001669)

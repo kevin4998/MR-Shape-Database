@@ -1,0 +1,14 @@
+mid: 883
+url: http://www.npac.syr.edu/projects/tutorials/VRML/examples/h_z/VRML2.0_EXAMPLES/samples/prototype.wrl
+ref_url: http://www.npac.syr.edu/users/gcf/cps616basicvrml2april97/index.html
+format: wrl 
+pid: 277
+polygons: 172
+connected_components: 5
+average_dihedral_angle: 1.2852
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.975, zmax = 0.975
+avg_depth: 1.180754
+center: (0.500000,0.699423,0.500000)
+scale: 1.100576
+principle_axes: (0.992353,-0.000001,-0.123433), (0.123433,0.000001,0.992353), (0.000001,1.000000,-0.000001)
+principle_values: (0.121086,0.121086,0.083128)

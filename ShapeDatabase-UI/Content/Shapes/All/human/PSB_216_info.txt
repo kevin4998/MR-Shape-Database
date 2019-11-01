@@ -1,0 +1,14 @@
+mid: 216
+url: http://www.kk.mah.se/students/wshop99/avatar/gallery/Lucia.wrl
+ref_url: http://www.kk.mah.se/students/wshop99/avatar/gallery/
+format: wrl 
+pid: 7193
+polygons: 17521
+connected_components: 153
+average_dihedral_angle: 0.410785
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.384915, ymax = 0.975, zmax = 0.491858
+avg_depth: 2.277353
+center: (0.199680,0.524000,0.278807)
+scale: 0.451601
+principle_axes: (0.032527,0.982661,-0.182536), (-0.129801,0.185239,0.974083), (-0.991006,0.007991,-0.133576)
+principle_values: (0.053745,0.005511,0.004561)

@@ -1,0 +1,14 @@
+mid: 1388
+url: http://sol.stsci.edu/~mutchler/models/vrHSTax.wrl
+ref_url: http://sol.stsci.edu/~mutchler/vrHST.html
+format: wrl 
+pid: 11004
+polygons: 789
+connected_components: 16
+average_dihedral_angle: 0.813252
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.654779, ymax = 0.975, zmax = 0.948476
+avg_depth: 1.710655
+center: (0.336600,0.364836,0.501939)
+scale: 0.551251
+principle_axes: (0.000755,-0.998333,0.057714), (0.999857,0.001730,0.016846), (-0.016918,0.057693,0.998191)
+principle_values: (0.055746,0.018410,0.015546)

@@ -1,0 +1,14 @@
+mid: 940
+url: http://www.cs.ucf.edu/~bmiller/vrml/dinette5.wrl
+ref_url: http://longwood.cs.ucf.edu/~bmiller
+format: wrl 
+pid: 2303
+polygons: 652
+connected_components: 45
+average_dihedral_angle: 1.50031
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.628823, zmax = 0.975
+avg_depth: 1.697012
+center: (0.500125,0.337483,0.499934)
+scale: 0.658223
+principle_axes: (0.731404,0.000037,0.681944), (-0.681944,-0.000110,0.731404), (-0.000102,1.000000,0.000055)
+principle_values: (0.054657,0.054584,0.010716)

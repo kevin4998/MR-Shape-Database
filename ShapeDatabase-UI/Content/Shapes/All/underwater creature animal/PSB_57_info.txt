@@ -1,0 +1,14 @@
+mid: 57
+url: http://homepage.mac.com/woodland/archives/trout_p2_180801.zip
+ref_url: http://www1.udn.ne.jp/~woodland/landscape/model/
+format: obj 
+pid: 25326
+polygons: 36468
+connected_components: 87
+average_dihedral_angle: 0.0771269
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.143963, ymax = 0.389443, zmax = 0.975
+avg_depth: 1.164986
+center: (0.084725,0.205272,0.556335)
+scale: 0.445698
+principle_axes: (0.000276,-0.054008,0.998540), (0.000971,-0.998540,-0.054008), (-0.999999,-0.000985,0.000224)
+principle_values: (0.059494,0.004599,0.000695)

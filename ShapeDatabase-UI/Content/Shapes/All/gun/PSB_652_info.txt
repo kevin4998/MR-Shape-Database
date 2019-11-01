@@ -1,0 +1,14 @@
+mid: 652
+url: http://www.forwarddesign.com/objects/misc/Handgun.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: lwo 
+pid: 25183
+polygons: 10200
+connected_components: 1149
+average_dihedral_angle: 1.04246
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.194431, ymax = 0.704267, zmax = 0.975
+avg_depth: 2.937897
+center: (0.103998,0.450038,0.390351)
+scale: 0.573019
+principle_axes: (0.000170,-0.544756,-0.838595), (-0.003738,-0.838589,0.544751), (0.999993,-0.003042,0.002179)
+principle_values: (0.078228,0.019472,0.002254)

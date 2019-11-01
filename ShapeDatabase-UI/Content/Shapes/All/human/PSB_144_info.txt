@@ -1,0 +1,14 @@
+mid: 144
+url: http://www.3dcafe.com/models/baseballplayer.zip
+ref_url: http://www.3dcafe.com/asp/spo_pics.asp
+format: dxf 
+pid: 26962
+polygons: 1302
+connected_components: 16
+average_dihedral_angle: 0.563095
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.332412, ymax = 0.975, zmax = 0.204358
+avg_depth: 1.620736
+center: (0.180440,0.521570,0.097899)
+scale: 0.426598
+principle_axes: (-0.005508,0.999951,0.008197), (0.999342,0.005210,0.035905), (0.035860,0.008389,-0.999322)
+principle_values: (0.054165,0.006094,0.001572)

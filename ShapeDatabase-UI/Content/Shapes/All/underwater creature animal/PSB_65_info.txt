@@ -1,0 +1,14 @@
+mid: 65
+url: http://cepcairo.bizland.com/free/Goldfish.zip
+ref_url: 
+format: xthreexds 
+pid: 47146
+polygons: 1930
+connected_components: 3
+average_dihedral_angle: 0.316782
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.399816, ymax = 0.604595, zmax = 0.975
+avg_depth: 1.130541
+center: (0.212402,0.304903,0.568865)
+scale: 0.462524
+principle_axes: (0.000072,-0.093466,0.995622), (0.000019,-0.995622,-0.093466), (1.000000,0.000025,-0.000070)
+principle_values: (0.048108,0.013924,0.002404)

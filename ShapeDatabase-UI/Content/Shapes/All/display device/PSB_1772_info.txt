@@ -1,0 +1,14 @@
+mid: 1772
+url: http://deep.sitenest.net/freemodels/computers/3dm-towersys.zip
+ref_url: 
+format: xthreexds 
+pid: 48315
+polygons: 34133
+connected_components: 153
+average_dihedral_angle: 0.559767
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.929395, ymax = 0.533106, zmax = 0.975
+avg_depth: 1.982054
+center: (0.513837,0.255512,0.489640)
+scale: 0.725772
+principle_axes: (0.982647,-0.116430,-0.144389), (0.094418,-0.356063,0.929680), (-0.159655,-0.927180,-0.338891)
+principle_values: (0.073081,0.054485,0.020050)

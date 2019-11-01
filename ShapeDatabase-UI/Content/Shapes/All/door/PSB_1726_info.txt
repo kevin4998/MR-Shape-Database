@@ -1,0 +1,14 @@
+mid: 1726
+url: http://mowat.virtualave.net/door.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26805
+polygons: 183
+connected_components: 9
+average_dihedral_angle: 1.1028
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.950965, ymax = 0.975, zmax = 0.15807
+avg_depth: 1.321288
+center: (0.495956,0.515016,0.076908)
+scale: 0.758927
+principle_axes: (0.981723,-0.190195,-0.006816), (-0.190242,-0.981712,-0.007031), (-0.005354,0.008199,-0.999952)
+principle_values: (0.084471,0.077326,0.000999)

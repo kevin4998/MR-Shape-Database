@@ -1,0 +1,14 @@
+mid: 1476
+url: http://tecfa.unige.ch/vrml/objects/acuris/Mtbike.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/acuris/?D=A
+format: wrl 
+pid: 46458
+polygons: 916
+connected_components: 3
+average_dihedral_angle: 1.17136
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.299675, ymax = 0.574723, zmax = 0.975
+avg_depth: 1.231204
+center: (0.159761,0.270564,0.490242)
+scale: 0.528886
+principle_axes: (0.002195,-0.032478,-0.999470), (-0.010693,-0.999416,0.032453), (0.999940,-0.010616,0.002541)
+principle_values: (0.063766,0.019192,0.000624)

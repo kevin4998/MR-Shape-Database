@@ -1,0 +1,14 @@
+mid: 1304
+url: http://www.ocnus.com/models/DXF/chopper.wrl.gz
+ref_url: http://www.ocnus.com/models/DXF/
+format: wrl 
+pid: 17725
+polygons: 2094
+connected_components: 11
+average_dihedral_angle: 0.497587
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.266506, ymax = 0.373271, zmax = 0.975
+avg_depth: 1.155207
+center: (0.142489,0.223610,0.545767)
+scale: 0.433099
+principle_axes: (0.014169,-0.181867,0.983221), (-0.019838,-0.983177,-0.181573), (-0.999703,0.016932,0.017538)
+principle_values: (0.045239,0.008971,0.003429)

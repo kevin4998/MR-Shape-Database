@@ -1,0 +1,14 @@
+mid: 160
+url: http://www.alaska.net/~dennism/geometrek/avs/head/DMMarcgz.wrl
+ref_url: http://www.treksites.com/jsp/search_category.jsp?category_id=35
+format: wrl 
+pid: 39055
+polygons: 1627
+connected_components: 24
+average_dihedral_angle: 0.469591
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.367933, ymax = 0.975, zmax = 0.409963
+avg_depth: 1.462034
+center: (0.194032,0.543708,0.108968)
+scale: 0.451893
+principle_axes: (0.023306,0.998794,0.043222), (-0.946956,0.035916,-0.319350), (0.320517,0.033486,-0.946651)
+principle_values: (0.054348,0.006983,0.002610)

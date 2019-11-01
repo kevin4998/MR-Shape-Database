@@ -1,0 +1,14 @@
+mid: 1118
+url: http://www.fns.co.jp/avs/VRML/gallery/kittyHawk.wrl.gz
+ref_url: http://www.fns.co.jp/avs/VRML/gallery/
+format: wrl 
+pid: 10752
+polygons: 20408
+connected_components: 110
+average_dihedral_angle: 0.222979
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.231623, zmax = 0.526884
+avg_depth: 1.486539
+center: (0.499417,0.139564,0.273317)
+scale: 0.487191
+principle_axes: (-1.000000,-0.000469,0.000181), (-0.000240,0.128800,-0.991671), (0.000442,-0.991670,-0.128800)
+principle_values: (0.058467,0.009015,0.004787)

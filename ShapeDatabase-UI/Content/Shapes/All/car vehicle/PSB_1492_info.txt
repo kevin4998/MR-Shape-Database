@@ -1,0 +1,14 @@
+mid: 1492
+url: http://www.3dcafe.com/models/legocar.zip
+ref_url: http://www.3dcafe.com/asp/toy_pics.asp
+format: xthreexds 
+pid: 29266
+polygons: 10880
+connected_components: 248
+average_dihedral_angle: 0.995258
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.499502, ymax = 0.59359, zmax = 0.975
+avg_depth: 3.653739
+center: (0.262651,0.183237,0.423669)
+scale: 0.526894
+principle_axes: (0.008106,0.024742,0.999661), (0.999719,0.022075,-0.008653), (0.022282,-0.999450,0.024556)
+principle_values: (0.051479,0.017952,0.006494)

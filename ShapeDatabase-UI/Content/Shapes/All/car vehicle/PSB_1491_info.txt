@@ -1,0 +1,14 @@
+mid: 1491
+url: http://www.3dcafe.com/models/jeep2.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 28821
+polygons: 116942
+connected_components: 1257
+average_dihedral_angle: 0.761471
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.528541, ymax = 0.46558, zmax = 0.975
+avg_depth: 3.588996
+center: (0.244919,0.202777,0.457198)
+scale: 0.619445
+principle_axes: (0.032926,0.044273,-0.998477), (0.998353,0.045512,0.034940), (0.046989,-0.997982,-0.042701)
+principle_values: (0.082313,0.017911,0.006728)

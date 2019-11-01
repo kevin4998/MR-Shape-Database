@@ -1,0 +1,14 @@
+mid: 1684
+url: http://fraktali.849pm.com/programs/wrl/Sign.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32586
+polygons: 76
+connected_components: 3
+average_dihedral_angle: 1.36923
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.94233, zmax = 0.104207
+avg_depth: 1.072614
+center: (0.499400,0.651154,0.056256)
+scale: 0.656107
+principle_axes: (0.999978,0.006558,-0.000079), (-0.006559,0.999971,-0.003822), (0.000054,0.003822,0.999993)
+principle_values: (0.082694,0.042504,0.000767)

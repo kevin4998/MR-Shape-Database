@@ -1,0 +1,14 @@
+mid: 691
+url: http://www.3dspecial.com/images/sword+.zip
+ref_url: http://www.3dspecial.com/index.html
+format: obj 
+pid: 25006
+polygons: 16488
+connected_components: 34
+average_dihedral_angle: 0.236279
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.115882, ymax = 0.975, zmax = 0.236604
+avg_depth: 1.177580
+center: (0.069928,0.563533,0.130751)
+scale: 0.417106
+principle_axes: (0.000057,1.000000,0.000452), (-0.000463,0.000452,-1.000000), (-1.000000,0.000056,0.000463)
+principle_values: (0.058344,0.000758,0.000048)

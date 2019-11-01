@@ -1,0 +1,14 @@
+mid: 203
+url: http://fraktali.849pm.com/programs/wrl/Alien.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 33366
+polygons: 938
+connected_components: 8
+average_dihedral_angle: 0.498444
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.342608, ymax = 0.975, zmax = 0.234325
+avg_depth: 1.324085
+center: (0.187577,0.548819,0.130889)
+scale: 0.431536
+principle_axes: (0.000585,0.999797,0.020126), (0.953993,-0.006592,0.299756), (0.299828,0.019024,-0.953804)
+principle_values: (0.057370,0.004033,0.001141)

@@ -1,0 +1,14 @@
+mid: 1583
+url: http://www.3dcafe.com/avatar/toytrain.wrl
+ref_url: http://www.3dcafe.com/asp/vrml.asp
+format: wrl 
+pid: 674
+polygons: 573
+connected_components: 11
+average_dihedral_angle: 1.08901
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.323572, ymax = 0.567857, zmax = 0.975
+avg_depth: 1.468250
+center: (0.178309,0.240262,0.455416)
+scale: 0.574371
+principle_axes: (-0.002307,0.162721,-0.986669), (0.008346,-0.986635,-0.162735), (0.999963,0.008610,-0.000918)
+principle_values: (0.066223,0.017134,0.007210)

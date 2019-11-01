@@ -1,0 +1,14 @@
+mid: 1576
+url: http://cic.nist.gov/vrml/exc/dumptruck.wrl
+ref_url: http://cic.nist.gov/vrml/equip.html
+format: wrl 
+pid: 9900
+polygons: 7038
+connected_components: 108
+average_dihedral_angle: 0.948116
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.379927, zmax = 0.318182
+avg_depth: 2.506238
+center: (0.452455,0.174753,0.172522)
+scale: 0.535046
+principle_axes: (-0.999899,0.014230,0.000318), (-0.013291,-0.925449,-0.378639), (-0.005094,-0.378605,0.925544)
+principle_values: (0.069949,0.007627,0.007411)

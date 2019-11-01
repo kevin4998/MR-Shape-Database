@@ -1,0 +1,14 @@
+mid: 1175
+url: http://www.afrigraph.org/Tutorials/OpenGL/Examples.zip
+ref_url: http://www.afrigraph.org/gronly.htm?page=tutorials_content.htm
+format: obj 
+pid: 28130
+polygons: 4592
+connected_components: 24
+average_dihedral_angle: 0.359673
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.665258, ymax = 0.321351, zmax = 0.975
+avg_depth: 1.233858
+center: (0.345795,0.101048,0.378294)
+scale: 0.441683
+principle_axes: (0.000192,0.045010,-0.998987), (-1.000000,0.000253,-0.000181), (-0.000245,-0.998986,-0.045010)
+principle_values: (0.042848,0.013831,0.001835)

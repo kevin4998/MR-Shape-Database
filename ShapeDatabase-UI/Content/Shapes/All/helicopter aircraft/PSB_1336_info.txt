@@ -1,0 +1,14 @@
+mid: 1336
+url: http://home.netscape.com/comprod/products/navigator/live3d/examples/helicopter/helicopter.wrl.gz
+ref_url: http://www.pocos-net.com.br/personal/dc/vrml.htm
+format: wrl 
+pid: 9809
+polygons: 2319
+connected_components: 15
+average_dihedral_angle: 0.387442
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.740421, ymax = 0.286153, zmax = 0.975
+avg_depth: 1.165790
+center: (0.384634,0.147943,0.567537)
+scale: 0.387920
+principle_axes: (-0.005561,-0.018787,0.999808), (-0.999055,0.043193,-0.004746), (-0.043095,-0.998890,-0.019010)
+principle_values: (0.030045,0.008766,0.006565)

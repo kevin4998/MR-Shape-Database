@@ -1,0 +1,14 @@
+mid: 1648
+url: http://www.bentley.com/modelcity/vrml/mcp_b.wrl
+ref_url: http://www.bentley.com/modelcity/
+format: wrl 
+pid: 1200
+polygons: 7853
+connected_components: 399
+average_dihedral_angle: 1.27027
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.230267, zmax = 0.641048
+avg_depth: 2.247969
+center: (0.509919,0.061239,0.374244)
+scale: 0.519874
+principle_axes: (-0.998112,0.002693,0.061361), (0.061410,0.061941,0.996189), (0.001118,-0.998076,0.061989)
+principle_values: (0.052096,0.029261,0.001231)

@@ -1,0 +1,14 @@
+mid: 391
+url: http://content.schmoozer.net/Schmoozer/MitsuB/Things/Buildings/VRML/BldgChruchLuddite_0.wrl
+ref_url: http://content.schmoozer.net/Schmoozer/MitsuB/Things/Buildings/VRML/
+format: wrl 
+pid: 4781
+polygons: 274
+connected_components: 33
+average_dihedral_angle: 1.43343
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.608136, ymax = 0.804944, zmax = 0.975
+avg_depth: 1.369412
+center: (0.279602,0.272595,0.485805)
+scale: 0.672124
+principle_axes: (0.007202,-0.043484,0.999028), (0.051578,-0.997708,-0.043798), (0.998643,0.051843,-0.004942)
+principle_values: (0.071422,0.026638,0.024141)

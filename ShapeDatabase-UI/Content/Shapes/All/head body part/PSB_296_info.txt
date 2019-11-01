@@ -1,0 +1,14 @@
+mid: 296
+url: http://www.epm.ornl.gov/~flanery/wrl/face1.wrl
+ref_url: http://www.epm.ornl.gov/vis/avrc.html
+format: wrl 
+pid: 2461
+polygons: 1458
+connected_components: 9
+average_dihedral_angle: 0.30465
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.534138, ymax = 0.975, zmax = 0.594769
+avg_depth: 1.106780
+center: (0.285068,0.501078,0.370054)
+scale: 0.573380
+principle_axes: (0.009071,-0.944706,-0.327792), (-0.999410,-0.019423,0.028320), (-0.033121,0.327342,-0.944325)
+principle_values: (0.054955,0.022608,0.011131)

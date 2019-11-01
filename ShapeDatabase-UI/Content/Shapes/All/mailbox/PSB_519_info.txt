@@ -1,0 +1,14 @@
+mid: 519
+url: http://mowat.virtualave.net/mailbox.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26533
+polygons: 264
+connected_components: 6
+average_dihedral_angle: 1.44649
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.142348, ymax = 0.975, zmax = 0.596192
+avg_depth: 1.655978
+center: (0.083559,0.713535,0.341187)
+scale: 0.434559
+principle_axes: (-0.005479,0.884207,0.467062), (-0.002431,-0.467080,0.884212), (-0.999982,-0.003709,-0.004708)
+principle_values: (0.049722,0.013811,0.001136)

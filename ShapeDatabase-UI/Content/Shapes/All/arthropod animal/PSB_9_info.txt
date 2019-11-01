@@ -1,0 +1,14 @@
+mid: 9
+url: http://members.tripod.de/vrml_truespace/butterfly.wrl
+ref_url: http://members.tripod.de/vrml_truespace/e_index.htm
+format: wrl 
+pid: 21176
+polygons: 902
+connected_components: 24
+average_dihedral_angle: 0.523092
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.830435, ymax = 0.975, zmax = 0.482593
+avg_depth: 1.122715
+center: (0.359385,0.500077,0.316542)
+scale: 0.500621
+principle_axes: (0.001424,-0.999999,-0.000037), (-0.988663,-0.001413,0.150146), (0.150146,0.000177,0.988664)
+principle_values: (0.041773,0.030636,0.005229)

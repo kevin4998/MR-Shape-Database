@@ -1,0 +1,14 @@
+mid: 102
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/Blissful_Farm/animal/pigVRML.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/Blissful_Farm/animal/?D=A
+format: wrl 
+pid: 46136
+polygons: 226
+connected_components: 4
+average_dihedral_angle: 0.645293
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.401002, ymax = 0.450621, zmax = 0.975
+avg_depth: 1.083745
+center: (0.212957,0.240095,0.468483)
+scale: 0.543008
+principle_axes: (0.001973,0.089143,0.996017), (-0.013244,-0.995929,0.089161), (-0.999910,0.013367,0.000785)
+principle_values: (0.055920,0.013337,0.011298)

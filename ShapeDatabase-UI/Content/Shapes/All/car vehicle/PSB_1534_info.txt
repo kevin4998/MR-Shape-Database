@@ -1,0 +1,14 @@
+mid: 1534
+url: http://www.3dcafe.com/../models/freecoup.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: lwo 
+pid: 30541
+polygons: 36397
+connected_components: 479
+average_dihedral_angle: 1.38641
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.443392, ymax = 0.3396, zmax = 0.975
+avg_depth: 1.860206
+center: (0.232841,0.173279,0.537058)
+scale: 0.656246
+principle_axes: (-0.005935,0.007225,0.999956), (-0.999981,-0.001377,-0.005926), (0.001334,-0.999973,0.007233)
+principle_values: (0.089792,0.020832,0.006113)

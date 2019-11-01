@@ -1,0 +1,14 @@
+mid: 1514
+url: http://www.3dheaven.net/Modelle/cars/f1.zip
+ref_url: 
+format: xthreexds 
+pid: 47028
+polygons: 36856
+connected_components: 112
+average_dihedral_angle: 0.26284
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.457041, ymax = 0.260765, zmax = 0.975
+avg_depth: 2.058167
+center: (0.225666,0.124525,0.562698)
+scale: 0.542199
+principle_axes: (-0.012304,0.029845,0.999479), (-0.999911,-0.005573,-0.012143), (0.005208,-0.999539,0.029911)
+principle_values: (0.072487,0.012468,0.001803)

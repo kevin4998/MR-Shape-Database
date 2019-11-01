@@ -1,0 +1,14 @@
+mid: 1391
+url: ftp://avalon.viewpoint.com/pub/objects/space/b-eyes2_obj.zip
+ref_url: 
+format: obj 
+pid: 48609
+polygons: 2978
+connected_components: 25
+average_dihedral_angle: 0.753663
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.282298, zmax = 0.380853
+avg_depth: 1.165494
+center: (0.499807,0.194913,0.205908)
+scale: 0.415900
+principle_axes: (1.000000,-0.000198,0.000884), (-0.000895,-0.063190,0.998001), (0.000142,0.998001,0.063190)
+principle_values: (0.046280,0.007888,0.002636)

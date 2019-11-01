@@ -1,0 +1,14 @@
+mid: 1145
+url: http://www.cepegypt.com/Airplane.zip
+ref_url: 
+format: xthreexds 
+pid: 46758
+polygons: 73748
+connected_components: 426
+average_dihedral_angle: 0.564282
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.723003, ymax = 0.278512, zmax = 0.975
+avg_depth: 2.741953
+center: (0.374020,0.147144,0.416301)
+scale: 0.415437
+principle_axes: (0.999997,0.000307,-0.002605), (0.002623,-0.109329,0.994002), (0.000020,-0.994006,-0.109329)
+principle_values: (0.032113,0.018140,0.001677)

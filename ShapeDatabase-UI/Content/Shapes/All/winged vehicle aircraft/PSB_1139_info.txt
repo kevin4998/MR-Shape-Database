@@ -1,0 +1,14 @@
+mid: 1139
+url: http://www.rccad.com/Gallery/Vrml/WrightFly.wrl
+ref_url: 
+format: wrl 
+pid: 46991
+polygons: 4234
+connected_components: 97
+average_dihedral_angle: 0.794688
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.647434, ymax = 0.975, zmax = 0.274384
+avg_depth: 1.571552
+center: (0.345170,0.499912,0.173013)
+scale: 0.497656
+principle_axes: (-0.000033,-1.000000,-0.000093), (0.988464,-0.000047,0.151457), (0.151457,0.000087,-0.988464)
+principle_values: (0.053693,0.014509,0.005510)

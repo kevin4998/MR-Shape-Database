@@ -1,0 +1,14 @@
+mid: 1136
+url: http://www.rccad.com/Gallery/Vrml/autogiro.wrl
+ref_url: http://www.rccad.com/Gallery_Helicopters1.htm
+format: wrl 
+pid: 34076
+polygons: 1628
+connected_components: 9
+average_dihedral_angle: 0.45203
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.559108, ymax = 0.975, zmax = 0.233333
+avg_depth: 1.293385
+center: (0.220038,0.500014,0.124527)
+scale: 0.381464
+principle_axes: (-0.000120,1.000000,0.000009), (-0.999154,-0.000121,0.041115), (-0.041115,0.000004,-0.999154)
+principle_values: (0.023866,0.018725,0.003423)

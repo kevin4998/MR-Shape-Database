@@ -1,0 +1,14 @@
+mid: 708
+url: http://www.3dcafe.com/models/excalibe.zip
+ref_url: 
+format: xthreexds 
+pid: 48229
+polygons: 3668
+connected_components: 16
+average_dihedral_angle: 0.391242
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.444273, ymax = 0.975, zmax = 0.064188
+avg_depth: 1.227411
+center: (0.234363,0.571686,0.044572)
+scale: 0.416375
+principle_axes: (-0.002094,0.999998,-0.000118), (-0.999998,-0.002094,-0.000002), (0.000002,-0.000118,-1.000000)
+principle_values: (0.054434,0.004182,0.000040)

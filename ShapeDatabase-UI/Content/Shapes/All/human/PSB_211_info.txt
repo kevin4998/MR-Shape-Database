@@ -1,0 +1,14 @@
+mid: 211
+url: http://zing.ncsl.nist.gov/~gseidman/vrml/manchild/morph.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~pscheng
+format: wrl 
+pid: 45211
+polygons: 5476
+connected_components: 201
+average_dihedral_angle: 0.443351
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.339967, ymax = 0.975, zmax = 0.228073
+avg_depth: 1.290420
+center: (0.186833,0.513959,0.114943)
+scale: 0.447163
+principle_axes: (-0.081490,0.992661,0.089349), (0.962053,0.101765,-0.253176), (-0.260411,0.065327,-0.963285)
+principle_values: (0.058771,0.004337,0.001273)

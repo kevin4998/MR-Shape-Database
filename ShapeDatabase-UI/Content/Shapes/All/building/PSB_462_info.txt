@@ -1,0 +1,14 @@
+mid: 462
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/efarrar/Hw6/barn.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/efarrar/Hw6/?D=D
+format: wrl 
+pid: 40044
+polygons: 22
+connected_components: 2
+average_dihedral_angle: 0.612443
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.680247, ymax = 0.60382, zmax = 0.975
+avg_depth: 1.067962
+center: (0.349870,0.330338,0.489120)
+scale: 0.837171
+principle_axes: (-0.007881,0.004353,0.999959), (0.999149,0.040511,0.007698), (0.040475,-0.999170,0.004669)
+principle_values: (0.106386,0.048923,0.027589)

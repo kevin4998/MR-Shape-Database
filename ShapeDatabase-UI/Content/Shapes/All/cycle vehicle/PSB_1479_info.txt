@@ -1,0 +1,14 @@
+mid: 1479
+url: http://www.3dcafe.com/../models/motrcycl.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: xthreexds 
+pid: 30506
+polygons: 22065
+connected_components: 317
+average_dihedral_angle: 0.656002
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.5752, zmax = 0.48223
+avg_depth: 2.604589
+center: (0.503827,0.260477,0.254755)
+scale: 0.450084
+principle_axes: (0.992315,0.123486,-0.007903), (0.123566,-0.992280,0.010536), (-0.006541,-0.011432,-0.999913)
+principle_values: (0.049893,0.012080,0.001492)

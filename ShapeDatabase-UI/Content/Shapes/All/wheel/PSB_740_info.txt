@@ -1,0 +1,14 @@
+mid: 740
+url: http://www.3dcafe.com/../models/wheellw.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: lwo 
+pid: 30472
+polygons: 7556
+connected_components: 64
+average_dihedral_angle: 0.394484
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.975, zmax = 0.477833
+avg_depth: 1.946096
+center: (0.499864,0.499987,0.275845)
+scale: 0.808697
+principle_axes: (0.002261,-0.999997,0.000042), (-0.999997,-0.002261,0.000345), (0.000345,0.000043,1.000000)
+principle_values: (0.075376,0.074875,0.020902)

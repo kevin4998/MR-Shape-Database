@@ -1,0 +1,14 @@
+mid: 1301
+url: http://ciel.me.cmu.edu/soji/aircraft/f117.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 903
+polygons: 144
+connected_components: 1
+average_dihedral_angle: 0.54621
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.64902, ymax = 0.136765, zmax = 0.975
+avg_depth: 1.034079
+center: (0.337011,0.058028,0.537416)
+scale: 0.435692
+principle_axes: (-0.000004,0.006866,0.999976), (-1.000000,-0.000000,-0.000004), (0.000000,-0.999976,0.006866)
+principle_values: (0.039639,0.016172,0.000522)

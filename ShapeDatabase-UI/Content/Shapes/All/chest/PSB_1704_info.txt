@@ -1,0 +1,14 @@
+mid: 1704
+url: http://userpage.fu-berlin.de/~tinamue/vrml/treasure_nearest.wrl
+ref_url: http://userpage.fu-berlin.de/~tinamue/cgi-bin/vrml.cgi?vrml
+format: wrl 
+pid: 4944
+polygons: 7638
+connected_components: 59
+average_dihedral_angle: 0.307597
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.849831, ymax = 0.975, zmax = 0.72195
+avg_depth: 2.739787
+center: (0.434412,0.333743,0.353355)
+scale: 0.741670
+principle_axes: (-0.999963,0.007487,0.004334), (-0.005730,-0.948520,0.316666), (0.006482,0.316630,0.948527)
+principle_values: (0.062880,0.054081,0.038454)

@@ -1,0 +1,14 @@
+mid: 1701
+url: http://eureka.lucia.it/vrml/joust/terza/zip/invy.zip
+ref_url: http://eureka.lucia.it/vrml/joust/terza/gir1/gir1.html
+format: wrl 
+pid: 35104
+polygons: 46
+connected_components: 2
+average_dihedral_angle: 1.37561
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.671554, zmax = 0.512961
+avg_depth: 1.186602
+center: (0.500001,0.350016,0.268981)
+scale: 0.840837
+principle_axes: (-1.000000,0.000001,-0.000000), (0.000001,1.000000,0.000008), (0.000000,0.000008,-1.000000)
+principle_values: (0.104080,0.048881,0.032527)

@@ -1,0 +1,14 @@
+mid: 1467
+url: http://www.3dcafe.com/models/lasub.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 28861
+polygons: 1076
+connected_components: 18
+average_dihedral_angle: 1.18168
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.159527, ymax = 0.294733, zmax = 0.975
+avg_depth: 1.389823
+center: (0.092845,0.097384,0.506849)
+scale: 0.439537
+principle_axes: (0.000125,0.002973,-0.999996), (-0.006841,-0.999972,-0.002974), (-0.999977,0.006841,-0.000104)
+principle_values: (0.060192,0.001315,0.000929)

@@ -1,0 +1,14 @@
+mid: 1569
+url: http://www.3dcafe.com/models/wagon2.zip
+ref_url: 
+format: xthreexds 
+pid: 47543
+polygons: 16122
+connected_components: 165
+average_dihedral_angle: 0.437219
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.542435, zmax = 0.324979
+avg_depth: 1.528260
+center: (0.356049,0.271904,0.178456)
+scale: 0.521100
+principle_axes: (0.991678,-0.128501,0.007920), (-0.128648,-0.991442,0.022173), (-0.005003,0.023007,0.999723)
+principle_values: (0.046658,0.018465,0.008947)

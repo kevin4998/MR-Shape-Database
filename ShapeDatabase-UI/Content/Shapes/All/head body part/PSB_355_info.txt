@@ -1,0 +1,14 @@
+mid: 355
+url: http://www.aiai.ed.ac.uk/~bat/GA/SC-MODEL/IMRIE/MODEL/mm_wrl.zip
+ref_url: http://www.aiai.ed.ac.uk/~bat/GA/SC-MODEL/IMRIE/MODEL/?D=D
+format: wrl 
+pid: 31328
+polygons: 34712
+connected_components: 1
+average_dihedral_angle: 0.0990729
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.583424, ymax = 0.975, zmax = 0.783781
+avg_depth: 1.053973
+center: (0.299772,0.553493,0.371175)
+scale: 0.717226
+principle_axes: (0.007026,0.991757,-0.127939), (-0.013032,-0.127841,-0.991709), (0.999890,-0.008635,-0.012027)
+principle_values: (0.073941,0.035188,0.023865)

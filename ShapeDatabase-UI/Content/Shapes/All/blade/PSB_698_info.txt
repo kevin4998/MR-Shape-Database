@@ -1,0 +1,14 @@
+mid: 698
+url: http://www.3dcafe.com/../models/saber2.zip
+ref_url: http://www.3dcafe.com/../asp/weapons.asp
+format: lwo 
+pid: 30600
+polygons: 7507
+connected_components: 8
+average_dihedral_angle: 0.209771
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.290328, ymax = 0.975, zmax = 0.107227
+avg_depth: 1.089260
+center: (0.160754,0.384870,0.066898)
+scale: 0.462356
+principle_axes: (-0.151546,-0.988450,0.000013), (0.988403,-0.151539,0.009759), (0.009644,-0.001492,-0.999952)
+principle_values: (0.070285,0.001222,0.000104)

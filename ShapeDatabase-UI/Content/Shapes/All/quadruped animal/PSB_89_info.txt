@@ -1,0 +1,14 @@
+mid: 89
+url: http://www.3dcafe.com/models/pitbull.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: xthreexds 
+pid: 27349
+polygons: 25030
+connected_components: 23
+average_dihedral_angle: 0.267768
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.366076, ymax = 0.832384, zmax = 0.975
+avg_depth: 1.292631
+center: (0.193291,0.440601,0.512308)
+scale: 0.642763
+principle_axes: (0.003803,-0.569339,-0.822094), (0.000464,0.822101,-0.569342), (-0.999993,-0.001784,-0.003390)
+principle_values: (0.090047,0.021170,0.007604)

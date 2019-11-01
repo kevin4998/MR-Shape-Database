@@ -1,0 +1,14 @@
+mid: 41
+url: http://cepcairo.bizland.com/free/Dove.zip
+ref_url: 
+format: xthreexds 
+pid: 47056
+polygons: 3709
+connected_components: 1
+average_dihedral_angle: 0.356071
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.147249, zmax = 0.467716
+avg_depth: 1.065586
+center: (0.499993,0.112825,0.286956)
+scale: 0.409327
+principle_axes: (-1.000000,0.000002,-0.000018), (-0.000018,0.060538,0.998166), (0.000003,0.998166,-0.060538)
+principle_values: (0.046089,0.006259,0.000644)

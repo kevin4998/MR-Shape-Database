@@ -1,0 +1,14 @@
+mid: 1142
+url: http://cepcairo.bizland.com/free/Wright.zip
+ref_url: 
+format: xthreexds 
+pid: 47346
+polygons: 2498
+connected_components: 44
+average_dihedral_angle: 0.881499
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.22184, zmax = 0.517098
+avg_depth: 1.479430
+center: (0.499987,0.131996,0.246104)
+scale: 0.497653
+principle_axes: (1.000000,0.000007,-0.000067), (-0.000067,0.137733,-0.990469), (-0.000003,-0.990469,-0.137733)
+principle_values: (0.059638,0.009726,0.005241)

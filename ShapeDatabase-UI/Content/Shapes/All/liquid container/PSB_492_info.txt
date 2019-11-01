@@ -1,0 +1,14 @@
+mid: 492
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2000/japley/Hw4/pin.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2000/japley/Hw4/?D=D
+format: wrl 
+pid: 43573
+polygons: 728
+connected_components: 1
+average_dihedral_angle: 0.324272
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.295008, ymax = 0.295005, zmax = 0.975
+avg_depth: 1.014739
+center: (0.160004,0.160002,0.554112)
+scale: 0.516516
+principle_axes: (-0.000000,-0.000000,1.000000), (-0.999978,-0.006642,-0.000000), (0.006642,-0.999978,-0.000000)
+principle_values: (0.069620,0.005266,0.005266)

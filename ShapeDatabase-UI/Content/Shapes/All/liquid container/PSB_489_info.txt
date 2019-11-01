@@ -1,0 +1,14 @@
+mid: 489
+url: http://philliphansel.com/avatars/miller.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3492
+polygons: 1055
+connected_components: 4
+average_dihedral_angle: 0.394601
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.343244, ymax = 0.975, zmax = 0.328845
+avg_depth: 2.583120
+center: (0.181873,0.368880,0.175912)
+scale: 0.502275
+principle_axes: (0.000991,-0.999991,-0.004114), (0.103250,0.004195,-0.994647), (-0.994655,-0.000561,-0.103254)
+principle_values: (0.057954,0.008271,0.008268)

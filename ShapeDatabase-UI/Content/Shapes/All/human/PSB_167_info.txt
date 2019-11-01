@@ -1,0 +1,14 @@
+mid: 167
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/Blissful_Farm/animal/farmerDrivingCarVRML.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/Blissful_Farm/animal/?D=A
+format: wrl 
+pid: 46120
+polygons: 856
+connected_components: 3
+average_dihedral_angle: 0.512217
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.356041, ymax = 0.975, zmax = 0.500596
+avg_depth: 1.229951
+center: (0.168748,0.504043,0.266835)
+scale: 0.541706
+principle_axes: (0.024670,0.999662,-0.008257), (0.091649,0.005963,0.995774), (0.995486,-0.025322,-0.091470)
+principle_values: (0.063755,0.013897,0.005924)

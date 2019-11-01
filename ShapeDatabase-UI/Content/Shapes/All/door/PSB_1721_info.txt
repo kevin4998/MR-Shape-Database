@@ -1,0 +1,14 @@
+mid: 1721
+url: http://www.3dcafe.com/models/door3.zip
+ref_url: http://www.3dcafe.com/asp/hou2_pic.asp
+format: 3ds 
+pid: 27800
+polygons: 1446
+connected_components: 5
+average_dihedral_angle: 0.678359
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.566616, ymax = 0.975, zmax = 0.125402
+avg_depth: 1.184467
+center: (0.300678,0.490745,0.047575)
+scale: 0.662078
+principle_axes: (-0.001342,0.999999,-0.000164), (0.999986,0.001343,0.005165), (-0.005165,0.000157,0.999987)
+principle_values: (0.088741,0.034027,0.000367)

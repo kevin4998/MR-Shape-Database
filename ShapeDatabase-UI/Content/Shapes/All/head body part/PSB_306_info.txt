@@ -1,0 +1,14 @@
+mid: 306
+url: http://www.benjaminremembered.com/welcome/matrix/public/wrl/face3/energy.wrl
+ref_url: http://www.benjaminremembered.com/welcome/matrix/public/oldindex.html
+format: wrl 
+pid: 6544
+polygons: 6226
+connected_components: 2
+average_dihedral_angle: 0.190163
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.718866, ymax = 0.975, zmax = 0.786722
+avg_depth: 1.214251
+center: (0.358469,0.489685,0.430936)
+scale: 0.703589
+principle_axes: (-0.177485,0.965714,-0.189463), (0.944289,0.221334,0.243577), (0.277160,-0.135676,-0.951196)
+principle_values: (0.072566,0.034256,0.027799)

@@ -1,0 +1,14 @@
+mid: 1420
+url: http://www.geocities.com/area51/cavern/7565/gzippanzerIV.wrl
+ref_url: http://www.geocities.com/Area51/Cavern/7565/vrml.htm
+format: wrl 
+pid: 464
+polygons: 19631
+connected_components: 272
+average_dihedral_angle: 1.08534
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.454941, ymax = 0.418347, zmax = 0.975
+avg_depth: 2.963671
+center: (0.244078,0.184182,0.481819)
+scale: 0.555911
+principle_axes: (-0.000559,0.017163,-0.999853), (0.999910,0.013406,-0.000329), (-0.013398,0.999763,0.017169)
+principle_values: (0.060270,0.019144,0.007133)

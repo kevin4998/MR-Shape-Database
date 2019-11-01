@@ -1,0 +1,14 @@
+mid: 1651
+url: http://www.blaxxun.com/vrml/home/home2.wrl
+ref_url: http://www.blaxxun.com/support/developerguide/developer/contact/3d/bsp/tile.64.wrl
+format: wrl 
+pid: 16823
+polygons: 1337
+connected_components: 221
+average_dihedral_angle: 1.47377
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.301324, zmax = 0.975
+avg_depth: 1.734856
+center: (0.477721,0.071875,0.487595)
+scale: 0.755042
+principle_axes: (0.981422,-0.029918,-0.189515), (0.189256,-0.011320,0.981863), (-0.031520,-0.999488,-0.005447)
+principle_values: (0.081576,0.068996,0.002623)

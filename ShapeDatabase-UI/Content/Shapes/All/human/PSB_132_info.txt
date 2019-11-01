@@ -1,0 +1,14 @@
+mid: 132
+url: http://home.netscape.com/comprod/products/navigator/live3d/examples/woman/womboom.wrl.gz
+ref_url: http://pcb4122.univ-lemans.fr/vrml/seattle/seattle.html
+format: wrl 
+pid: 1937
+polygons: 4049
+connected_components: 57
+average_dihedral_angle: 0.394788
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.196376, ymax = 0.303506, zmax = 0.975
+avg_depth: 1.465110
+center: (0.115832,0.165211,0.519926)
+scale: 0.434269
+principle_axes: (0.030601,-0.005107,-0.999519), (-0.013546,0.999893,-0.005524), (-0.999440,-0.013708,-0.030528)
+principle_values: (0.055137,0.004720,0.001237)

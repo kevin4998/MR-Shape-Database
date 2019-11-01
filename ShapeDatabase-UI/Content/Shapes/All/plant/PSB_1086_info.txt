@@ -1,0 +1,14 @@
+mid: 1086
+url: http://fraktali.849pm.com/programs/dxf/3ds/fir.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: 3ds 
+pid: 26883
+polygons: 6856
+connected_components: 512
+average_dihedral_angle: 0.455398
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.322071, ymax = 0.975, zmax = 0.333301
+avg_depth: 1.754747
+center: (0.162825,0.477181,0.171110)
+scale: 0.423100
+principle_axes: (-0.019282,0.999537,-0.023532), (-0.922150,-0.008684,0.386735), (-0.386351,-0.029157,-0.921891)
+principle_values: (0.047974,0.002997,0.002510)

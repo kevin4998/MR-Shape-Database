@@ -1,0 +1,14 @@
+mid: 1091
+url: http://www.3dcafe.com/models/lw-palmx.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: lwo 
+pid: 29102
+polygons: 3814
+connected_components: 21
+average_dihedral_angle: 0.26506
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.563717, ymax = 0.975, zmax = 0.638287
+avg_depth: 1.476672
+center: (0.287607,0.700835,0.318311)
+scale: 0.564814
+principle_axes: (0.231596,0.923480,0.305856), (-0.563657,-0.128866,0.815895), (-0.792877,0.361356,-0.490681)
+principle_values: (0.072891,0.015358,0.010603)

@@ -1,0 +1,14 @@
+mid: 442
+url: http://www.tritekltd.com/parallel/estate1a/eng.wrl
+ref_url: http://www.tritekltd.com/
+format: wrl 
+pid: 1825
+polygons: 38276
+connected_components: 1867
+average_dihedral_angle: 1.0445
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.276442, zmax = 0.784205
+avg_depth: 2.355809
+center: (0.491218,0.096960,0.376435)
+scale: 0.444302
+principle_axes: (0.992943,0.038881,-0.112036), (-0.113664,0.042563,-0.992607), (0.033825,-0.998337,-0.046682)
+principle_values: (0.038233,0.018978,0.003950)

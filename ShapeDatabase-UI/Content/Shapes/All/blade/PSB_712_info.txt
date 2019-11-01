@@ -1,0 +1,14 @@
+mid: 712
+url: http://deep.sitenest.net/freemodels/weapons/3dm-cleimor.zip
+ref_url: 
+format: xthreexds 
+pid: 47069
+polygons: 9314
+connected_components: 23
+average_dihedral_angle: 0.396407
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.0565, zmax = 0.209008
+avg_depth: 1.137194
+center: (0.585272,0.040730,0.116840)
+scale: 0.445563
+principle_axes: (1.000000,0.000001,-0.000826), (0.000826,-0.000147,1.000000), (0.000001,-1.000000,-0.000147)
+principle_values: (0.066808,0.000379,0.000018)

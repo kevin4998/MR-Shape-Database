@@ -1,0 +1,14 @@
+mid: 290
+url: http://www.tnt.uni-hannover.de/~grau/person/v1/oliver_grau.wrl.gz
+ref_url: http://www.tnt.uni-hannover.de/~grau/person/overview.html
+format: wrl 
+pid: 11265
+polygons: 1420
+connected_components: 1
+average_dihedral_angle: 0.266284
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.516636, zmax = 0.937999
+avg_depth: 1.050692
+center: (0.566685,0.224788,0.515241)
+scale: 0.559260
+principle_axes: (-0.120732,-0.269472,-0.955410), (0.986964,0.070600,-0.144631), (0.106426,-0.960417,0.257435)
+principle_values: (0.058716,0.028401,0.004463)

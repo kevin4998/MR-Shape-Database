@@ -1,0 +1,14 @@
+mid: 227
+url: http://www.geocities.com/Paris/Tower/5121/prof.zip
+ref_url: http://www.geocities.com/Paris/Tower/5121/3d.html
+format: lwo 
+pid: 28277
+polygons: 15968
+connected_components: 2520
+average_dihedral_angle: 0.806524
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.891272, ymax = 0.975, zmax = 0.271889
+avg_depth: 3.981611
+center: (0.461215,0.667097,0.129672)
+scale: 0.523731
+principle_axes: (0.011694,0.999792,-0.016735), (0.999891,-0.011843,-0.008824), (-0.009021,-0.016630,-0.999821)
+principle_values: (0.069628,0.007957,0.002927)

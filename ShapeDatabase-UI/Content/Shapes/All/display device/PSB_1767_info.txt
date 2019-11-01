@@ -1,0 +1,14 @@
+mid: 1767
+url: http://www.amazing3d.com/free/hncmp3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47331
+polygons: 5109
+connected_components: 13
+average_dihedral_angle: 0.730665
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.648602, zmax = 0.66988
+avg_depth: 1.982054
+center: (0.499991,0.184657,0.188306)
+scale: 0.738595
+principle_axes: (-1.000000,-0.000120,0.000136), (-0.000181,0.646174,-0.763190), (0.000004,-0.763190,-0.646174)
+principle_values: (0.076309,0.058081,0.017514)

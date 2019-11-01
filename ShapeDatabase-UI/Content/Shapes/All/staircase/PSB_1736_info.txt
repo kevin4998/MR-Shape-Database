@@ -1,0 +1,14 @@
+mid: 1736
+url: http://www.cs.uleth.ca/~wismath/packages/wrl/1b2.wrl.gz
+ref_url: http://www.cs.uleth.ca/~wismath/packages/wrl/wrl.html
+format: wrl 
+pid: 4232
+polygons: 684
+connected_components: 99
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.878061, ymax = 0.878061, zmax = 0.975
+avg_depth: 1.573275
+center: (0.421588,0.502934,0.476655)
+scale: 0.849196
+principle_axes: (0.700299,0.713838,0.004051), (-0.052425,0.057089,-0.996992), (0.711922,-0.697980,-0.077403)
+principle_values: (0.112840,0.073527,0.013594)

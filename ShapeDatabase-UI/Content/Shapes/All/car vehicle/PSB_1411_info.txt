@@ -1,0 +1,14 @@
+mid: 1411
+url: http://www.ocnus.com/models/Military/m1a2.wrl.gz
+ref_url: http://www.ocnus.com/models/Military/
+format: wrl 
+pid: 17860
+polygons: 1368
+connected_components: 34
+average_dihedral_angle: 0.991908
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.294267, zmax = 0.392094
+avg_depth: 1.563449
+center: (0.599787,0.155001,0.208379)
+scale: 0.452354
+principle_axes: (0.999989,0.003975,-0.002528), (-0.002541,0.003163,-0.999992), (-0.003967,0.999987,0.003173)
+principle_values: (0.041272,0.014586,0.004399)

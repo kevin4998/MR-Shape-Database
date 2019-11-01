@@ -1,0 +1,14 @@
+mid: 1212
+url: http://www.3dcafe.com/models/f16.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: 3ds 
+pid: 26203
+polygons: 2513
+connected_components: 352
+average_dihedral_angle: 0.558644
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.625576, ymax = 0.318204, zmax = 0.975
+avg_depth: 1.292599
+center: (0.325189,0.107416,0.360185)
+scale: 0.417013
+principle_axes: (0.000076,0.031266,-0.999511), (-1.000000,-0.000073,-0.000078), (0.000076,-0.999511,-0.031266)
+principle_values: (0.041448,0.009817,0.001908)

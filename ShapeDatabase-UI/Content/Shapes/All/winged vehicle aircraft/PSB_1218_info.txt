@@ -1,0 +1,14 @@
+mid: 1218
+url: http://mowat.virtualave.net/pf15c1l.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26400
+polygons: 400
+connected_components: 17
+average_dihedral_angle: 0.751265
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.692906, ymax = 0.226508, zmax = 0.975
+avg_depth: 1.100603
+center: (0.358980,0.076623,0.360887)
+scale: 0.444544
+principle_axes: (-0.000036,0.036599,-0.999330), (0.999999,-0.001267,-0.000082), (0.001269,0.999329,0.036599)
+principle_values: (0.045294,0.013952,0.001036)

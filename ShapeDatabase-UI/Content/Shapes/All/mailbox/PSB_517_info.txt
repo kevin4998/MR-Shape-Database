@@ -1,0 +1,14 @@
+mid: 517
+url: http://www.ocnus.com/models/Household/mailbox.wrl.gz
+ref_url: http://www.ocnus.com/models/Household/
+format: wrl 
+pid: 17808
+polygons: 112
+connected_components: 7
+average_dihedral_angle: 1.4784
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.394445, ymax = 0.975, zmax = 0.132667
+avg_depth: 1.526951
+center: (0.195506,0.648015,0.078386)
+scale: 0.389705
+principle_axes: (-0.174680,0.984624,0.001535), (0.984621,0.174684,-0.002661), (0.002889,-0.001047,0.999995)
+principle_values: (0.048015,0.006544,0.000844)

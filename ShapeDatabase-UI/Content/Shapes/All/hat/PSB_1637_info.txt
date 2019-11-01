@@ -1,0 +1,14 @@
+mid: 1637
+url: http://cepcairo.bizland.com/free/Helm_grm.zip
+ref_url: 
+format: xthreexds 
+pid: 47181
+polygons: 2000
+connected_components: 1
+average_dihedral_angle: 0.148336
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.784695, ymax = 0.681205, zmax = 0.975
+avg_depth: 1.422907
+center: (0.404836,0.378127,0.449113)
+scale: 0.738723
+principle_axes: (-0.000105,0.380594,0.924742), (-1.000000,0.000169,-0.000183), (-0.000226,-0.924742,0.380594)
+principle_values: (0.064280,0.045914,0.029693)

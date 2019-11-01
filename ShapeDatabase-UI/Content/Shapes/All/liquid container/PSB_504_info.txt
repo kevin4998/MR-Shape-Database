@@ -1,0 +1,14 @@
+mid: 504
+url: http://www.ocnus.com/models/Household/mug.wrl.gz
+ref_url: http://www.ocnus.com/models/Household/
+format: wrl 
+pid: 17811
+polygons: 3450
+connected_components: 1
+average_dihedral_angle: 0.231875
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.736967, zmax = 0.770261
+avg_depth: 1.553383
+center: (0.437714,0.365736,0.397631)
+scale: 0.764836
+principle_axes: (-0.999995,-0.003156,0.000003), (0.003156,-0.999995,-0.000019), (-0.000003,0.000019,-1.000000)
+principle_values: (0.061180,0.045470,0.043930)

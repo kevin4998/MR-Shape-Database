@@ -1,0 +1,14 @@
+mid: 1386
+url: http://www.3dmodelz.com/Free/Vehicles-free/dls/UFO.zip
+ref_url: 
+format: xthreexds 
+pid: 48046
+polygons: 3384
+connected_components: 9
+average_dihedral_angle: 0.307028
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.361415, zmax = 0.931763
+avg_depth: 1.619568
+center: (0.499974,0.170575,0.478482)
+scale: 0.507352
+principle_axes: (0.956287,0.000076,0.292430), (-0.292384,-0.017432,0.956142), (-0.005171,0.999848,0.016647)
+principle_values: (0.037792,0.033744,0.006588)

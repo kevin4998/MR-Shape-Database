@@ -1,0 +1,14 @@
+mid: 663
+url: http://www.3dheaven.net/Modelle/weapons/w_glock18.zip
+ref_url: 
+format: xthreexds 
+pid: 47430
+polygons: 922
+connected_components: 18
+average_dihedral_angle: 0.809011
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.13951, zmax = 0.558544
+avg_depth: 2.151149
+center: (0.504299,0.072515,0.376272)
+scale: 0.555353
+principle_axes: (-0.957031,0.001280,-0.289983), (-0.289971,0.005850,0.957018), (0.002921,0.999982,-0.005227)
+principle_values: (0.078713,0.012474,0.000944)

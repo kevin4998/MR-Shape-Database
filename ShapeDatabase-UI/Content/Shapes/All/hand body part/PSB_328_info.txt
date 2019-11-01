@@ -1,0 +1,14 @@
+mid: 328
+url: http://www.digitalanimators.com/Images/3dmodels/Cartoon.zip
+ref_url: http://www.digitalanimators.com/HTM/Resources/3dModels/3dmisc2.htm
+format: lwo 
+pid: 28500
+polygons: 12072
+connected_components: 1
+average_dihedral_angle: 0.103842
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.850934, zmax = 0.263156
+avg_depth: 1.098733
+center: (0.529883,0.391234,0.126405)
+scale: 0.580251
+principle_axes: (0.992288,-0.118837,0.035250), (-0.118833,-0.992912,-0.002223), (-0.035264,0.001983,0.999376)
+principle_values: (0.051076,0.040973,0.003358)

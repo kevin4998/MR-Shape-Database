@@ -1,0 +1,14 @@
+mid: 158
+url: http://philliphansel.com/avatars/xpac.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3498
+polygons: 935
+connected_components: 24
+average_dihedral_angle: 0.791544
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.366645, ymax = 0.975, zmax = 0.23908
+avg_depth: 2.125173
+center: (0.194610,0.566781,0.125627)
+scale: 0.451923
+principle_axes: (0.004894,0.999900,-0.013298), (-0.999981,0.004845,-0.003711), (0.003646,-0.013316,-0.999905)
+principle_values: (0.055435,0.006788,0.002201)

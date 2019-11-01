@@ -1,0 +1,14 @@
+mid: 1620
+url: http://www.avatara.com/avatars2/dragi.wrl
+ref_url: http://www.avatara.com/avatars2/avatars2_list.html
+format: wrl 
+pid: 17088
+polygons: 888
+connected_components: 44
+average_dihedral_angle: 1.50466
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.805832, ymax = 0.975, zmax = 0.929061
+avg_depth: 2.396872
+center: (0.415593,0.425104,0.482494)
+scale: 0.615696
+principle_axes: (-0.060023,-0.899961,-0.431818), (0.998150,-0.058317,-0.017202), (0.009701,0.432052,-0.901797)
+principle_values: (0.077982,0.018780,0.012094)

@@ -1,0 +1,14 @@
+mid: 88
+url: http://www.avatara.com/avatars2/dog.wrl
+ref_url: http://www.avatara.com/avatars2/avatars2_list.html
+format: wrl 
+pid: 17086
+polygons: 3220
+connected_components: 4
+average_dihedral_angle: 0.432615
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.244397, ymax = 0.617999, zmax = 0.975
+avg_depth: 1.179796
+center: (0.133497,0.341890,0.593196)
+scale: 0.491009
+principle_axes: (0.009891,0.417037,0.908835), (-0.004372,0.908889,-0.417015), (0.999942,-0.000151,-0.010813)
+principle_values: (0.050953,0.015107,0.003812)

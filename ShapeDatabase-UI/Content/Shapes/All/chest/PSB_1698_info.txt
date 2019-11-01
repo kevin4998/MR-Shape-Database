@@ -1,0 +1,14 @@
+mid: 1698
+url: http://64.198.60.83/baument/Models/medbox1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 26228
+polygons: 2632
+connected_components: 33
+average_dihedral_angle: 0.974458
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.66516, zmax = 0.66709
+avg_depth: 1.568574
+center: (0.500506,0.390243,0.344762)
+scale: 0.856367
+principle_axes: (1.000000,0.000440,-0.000790), (0.000729,0.124346,0.992239), (-0.000534,0.992239,-0.124346)
+principle_values: (0.098577,0.050002,0.044135)

@@ -1,0 +1,14 @@
+mid: 373
+url: http://www.3dcafe.com/models/womantorso.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: 3ds 
+pid: 27101
+polygons: 3166
+connected_components: 1
+average_dihedral_angle: 0.145492
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.511348, ymax = 0.975, zmax = 0.381509
+avg_depth: 1.009920
+center: (0.268174,0.471539,0.188867)
+scale: 0.611886
+principle_axes: (0.000000,0.999204,0.039902), (-1.000000,0.000000,0.000000), (-0.000000,0.039902,-0.999204)
+principle_values: (0.074074,0.018536,0.010202)

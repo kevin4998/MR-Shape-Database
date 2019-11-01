@@ -1,0 +1,14 @@
+mid: 1356
+url: http://www.txdirect.net/users/riker/1701d.wrl
+ref_url: http://www.txdirect.net/users/riker
+format: wrl 
+pid: 1823
+polygons: 3301
+connected_components: 31
+average_dihedral_angle: 0.342958
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.614445, zmax = 0.688768
+avg_depth: 1.434583
+center: (0.502871,0.317820,0.367660)
+scale: 0.589145
+principle_axes: (-0.902095,0.427987,-0.055244), (0.170093,0.470293,0.865963), (0.396602,0.771785,-0.497047)
+principle_values: (0.074507,0.027541,0.000789)

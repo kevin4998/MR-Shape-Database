@@ -1,0 +1,14 @@
+mid: 918
+url: http://hiwaay.net/~crispen/worlds/furniture/coffee_table.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7716
+polygons: 124
+connected_components: 8
+average_dihedral_angle: 1.42293
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.374845, zmax = 0.484823
+avg_depth: 1.265235
+center: (0.499276,0.336580,0.254519)
+scale: 0.622335
+principle_axes: (1.000000,0.000291,0.000211), (-0.000211,0.001107,0.999999), (-0.000291,0.999999,-0.001107)
+principle_values: (0.087751,0.019843,0.003498)

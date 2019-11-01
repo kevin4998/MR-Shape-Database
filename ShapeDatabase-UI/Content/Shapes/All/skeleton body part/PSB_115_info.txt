@@ -1,0 +1,14 @@
+mid: 115
+url: http://xw2k.sdct.itl.nist.gov/brady/VRML_demo/cyberanatomy/skeletonAnimated.wrl
+ref_url: http://xw2k.sdct.itl.nist.gov/brady/VRML_demo/cyberanatomy/
+format: wrl 
+pid: 3716
+polygons: 5399
+connected_components: 133
+average_dihedral_angle: 0.953747
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.467031, ymax = 0.975, zmax = 0.704194
+avg_depth: 1.532672
+center: (0.205996,0.568853,0.444495)
+scale: 0.467951
+principle_axes: (-0.056445,0.997422,0.044307), (0.623402,0.069873,-0.778773), (-0.779862,-0.016337,-0.625739)
+principle_values: (0.054714,0.017523,0.003432)

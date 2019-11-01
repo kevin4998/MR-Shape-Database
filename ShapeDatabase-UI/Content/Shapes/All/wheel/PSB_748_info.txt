@@ -1,0 +1,14 @@
+mid: 748
+url: http://www.velocity.net/~shadow55/cutter.wrl
+ref_url: http://www.velocity.net/~shadow55/advanced-3d-design-vrml.htm
+format: wrl 
+pid: 8717
+polygons: 2490
+connected_components: 1
+average_dihedral_angle: 0.548023
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.975, zmax = 0.375898
+avg_depth: 1.260545
+center: (0.502221,0.500015,0.151298)
+scale: 0.668474
+principle_axes: (0.999874,0.015447,0.003612), (-0.015447,0.999881,-0.000073), (0.003613,-0.000017,-0.999993)
+principle_values: (0.055954,0.055599,0.009971)

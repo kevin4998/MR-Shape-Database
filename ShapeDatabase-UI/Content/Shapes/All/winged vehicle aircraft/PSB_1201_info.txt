@@ -1,0 +1,14 @@
+mid: 1201
+url: http://www.3dspline.com/3ds_meshes/harrier_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 25156
+polygons: 11310
+connected_components: 124
+average_dihedral_angle: 0.321527
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.677761, zmax = 0.322062
+avg_depth: 2.033778
+center: (0.493017,0.351396,0.197384)
+scale: 0.410034
+principle_axes: (-0.999998,-0.000146,0.002140), (0.000146,-1.000000,-0.000006), (-0.002140,0.000006,-0.999998)
+principle_values: (0.038346,0.012193,0.001793)

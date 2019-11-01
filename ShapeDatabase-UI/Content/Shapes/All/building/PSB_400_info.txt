@@ -1,0 +1,14 @@
+mid: 400
+url: http://www.well.com/user/spidaman/vrml/temple.wrl.gz
+ref_url: http://www.well.com/user/spidaman/vrml/
+format: wrl 
+pid: 14042
+polygons: 840
+connected_components: 35
+average_dihedral_angle: 1.30774
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.778448, ymax = 0.788603, zmax = 0.975
+avg_depth: 2.402631
+center: (0.401394,0.195932,0.504486)
+scale: 0.687575
+principle_axes: (-0.001633,0.061797,-0.998087), (-0.999951,0.009676,0.002235), (-0.009795,-0.998042,-0.061778)
+principle_values: (0.057971,0.037894,0.029092)

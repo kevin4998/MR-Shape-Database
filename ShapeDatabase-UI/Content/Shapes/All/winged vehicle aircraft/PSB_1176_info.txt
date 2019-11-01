@@ -1,0 +1,14 @@
+mid: 1176
+url: http://www.3dcafe.com/models/f4_2.zip
+ref_url: http://www.3dcafe.com/asp/air_pic.asp
+format: xthreexds 
+pid: 26125
+polygons: 642
+connected_components: 80
+average_dihedral_angle: 3.14155
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.804891, ymax = 0.220564, zmax = 0.975
+avg_depth: 1.666853
+center: (0.415719,0.067131,0.538327)
+scale: 0.435541
+principle_axes: (-0.003855,0.040969,0.999153), (0.999993,0.000500,0.003838), (0.000342,-0.999160,0.040971)
+principle_values: (0.043053,0.013464,0.001157)

@@ -1,0 +1,14 @@
+mid: 153
+url: http://www.gerf.org/~nixon/e-pilot.zip
+ref_url: http://www.gerf.org/~nixon/tie-pilot.html
+format: xthreexds 
+pid: 28122
+polygons: 18860
+connected_components: 57
+average_dihedral_angle: 0.448753
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.326118, ymax = 0.975, zmax = 0.22299
+avg_depth: 2.201429
+center: (0.175061,0.601388,0.113039)
+scale: 0.448961
+principle_axes: (0.000353,0.999800,0.019994), (-0.999999,0.000320,0.001654), (-0.001647,0.019994,-0.999799)
+principle_values: (0.060404,0.004250,0.001623)

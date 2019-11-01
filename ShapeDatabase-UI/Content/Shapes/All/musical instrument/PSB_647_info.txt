@@ -1,0 +1,14 @@
+mid: 647
+url: http://cepcairo.bizland.com/free/Piano_gr.zip
+ref_url: 
+format: xthreexds 
+pid: 48113
+polygons: 6480
+connected_components: 102
+average_dihedral_angle: 0.986266
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.563392, ymax = 0.395156, zmax = 0.975
+avg_depth: 2.025596
+center: (0.252073,0.304660,0.518208)
+scale: 0.569600
+principle_axes: (0.283458,-0.096979,0.954069), (-0.958356,-0.064657,0.278159), (-0.034711,0.993184,0.111268)
+principle_values: (0.066889,0.020123,0.005190)

@@ -1,0 +1,14 @@
+mid: 1054
+url: http://w1.520.telia.com/~u52015187/downloads/tree2.zip
+ref_url: 
+format: xthreexds 
+pid: 47906
+polygons: 6042
+connected_components: 3544
+average_dihedral_angle: 0.187577
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.874154, ymax = 0.975, zmax = 0.859642
+avg_depth: 1.528121
+center: (0.460629,0.529887,0.453664)
+scale: 0.576523
+principle_axes: (-0.179281,0.982860,0.042943), (-0.029091,0.038335,-0.998841), (-0.983368,-0.180323,0.021719)
+principle_values: (0.059469,0.017723,0.017454)

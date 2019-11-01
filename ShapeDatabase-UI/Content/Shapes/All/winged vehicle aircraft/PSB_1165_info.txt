@@ -1,0 +1,14 @@
+mid: 1165
+url: http://www.robotgroup.org/lubbock/vrml/777.wrl
+ref_url: http://www.robotgroup.org/lubbock/vrml/
+format: wrl 
+pid: 9048
+polygons: 768
+connected_components: 8
+average_dihedral_angle: 0.576298
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.794583, zmax = 0.271841
+avg_depth: 1.330404
+center: (0.514680,0.409827,0.093523)
+scale: 0.458183
+principle_axes: (-0.997163,0.000319,-0.075270), (0.000306,1.000000,0.000180), (0.075270,0.000157,-0.997163)
+principle_values: (0.050033,0.013813,0.001018)

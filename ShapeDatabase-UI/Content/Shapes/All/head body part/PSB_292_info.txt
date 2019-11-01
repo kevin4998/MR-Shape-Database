@@ -1,0 +1,14 @@
+mid: 292
+url: http://www.avatara.com/avatars/ian2.wrl
+ref_url: http://www.avatara.com/avatars/avatars3_list.html
+format: wrl 
+pid: 17041
+polygons: 808
+connected_components: 2
+average_dihedral_angle: 0.273046
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.633738, ymax = 0.975, zmax = 0.476942
+avg_depth: 1.031208
+center: (0.330104,0.481252,0.255605)
+scale: 0.595087
+principle_axes: (-0.005681,-0.978463,0.206345), (-0.999980,0.006147,0.001616), (-0.002850,-0.206331,-0.978478)
+principle_values: (0.067854,0.025156,0.006303)

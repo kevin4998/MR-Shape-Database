@@ -1,0 +1,14 @@
+mid: 1717
+url: http://64.198.60.83/baument/Models/door1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 26344
+polygons: 1617
+connected_components: 17
+average_dihedral_angle: 0.751244
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.521695, ymax = 0.975, zmax = 0.115777
+avg_depth: 1.410501
+center: (0.272388,0.509590,0.059130)
+scale: 0.594160
+principle_axes: (0.002981,0.999888,0.014651), (-0.999995,0.002971,0.000643), (-0.000600,0.014653,-0.999892)
+principle_values: (0.078041,0.023774,0.000515)

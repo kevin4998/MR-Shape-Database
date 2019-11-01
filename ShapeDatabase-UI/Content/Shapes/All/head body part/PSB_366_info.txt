@@ -1,0 +1,14 @@
+mid: 366
+url: http://www-white.media.mit.edu/~cwren/wren.wrl
+ref_url: http://www-white.media.mit.edu/~cwren/
+format: wrl 
+pid: 96
+polygons: 5951
+connected_components: 1
+average_dihedral_angle: 0.213028
+bounding_box: xmin = 0.025, ymin = 0.26627, zmin = 0.025, xmax = 0.465963, ymax = 0.975, zmax = 0.474444
+avg_depth: 1.057905
+center: (0.233018,0.608424,0.222920)
+scale: 0.506043
+principle_axes: (-0.018988,0.984993,0.171548), (0.207405,0.171727,-0.963064), (0.978071,-0.017293,0.207553)
+principle_values: (0.043375,0.014081,0.010245)

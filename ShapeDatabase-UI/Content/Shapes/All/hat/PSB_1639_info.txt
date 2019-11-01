@@ -1,0 +1,14 @@
+mid: 1639
+url: http://cepcairo.bizland.com/free/Helm_rom.zip
+ref_url: 
+format: xthreexds 
+pid: 48370
+polygons: 4000
+connected_components: 4
+average_dihedral_angle: 0.227245
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.664693, ymax = 0.975, zmax = 0.892742
+avg_depth: 1.538696
+center: (0.344833,0.578306,0.474244)
+scale: 0.654611
+principle_axes: (-0.003852,0.262879,0.964821), (-0.000803,-0.964829,0.262878), (-0.999992,-0.000238,-0.003928)
+principle_values: (0.048939,0.033165,0.029158)

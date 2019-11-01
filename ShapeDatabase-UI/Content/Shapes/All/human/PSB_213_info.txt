@@ -1,0 +1,14 @@
+mid: 213
+url: http://philliphansel.com/avatars/cyl_man.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6062
+polygons: 760
+connected_components: 18
+average_dihedral_angle: 1.25634
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.295623, ymax = 0.975, zmax = 0.219917
+avg_depth: 1.471205
+center: (0.160312,0.519448,0.091400)
+scale: 0.460945
+principle_axes: (-0.000000,0.999322,-0.036819), (1.000000,0.000000,-0.000000), (-0.000000,-0.036819,-0.999322)
+principle_values: (0.067246,0.003803,0.000786)

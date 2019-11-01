@@ -1,0 +1,14 @@
+mid: 538
+url: http://hiwaay.net/~crispen/worlds/furniture/spitoon.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7720
+polygons: 638
+connected_components: 19
+average_dihedral_angle: 0.646092
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.539535, zmax = 0.974583
+avg_depth: 1.884833
+center: (0.514345,0.251084,0.485542)
+scale: 0.745899
+principle_axes: (0.707276,-0.024998,-0.706495), (-0.706714,0.000086,-0.707499), (-0.017746,-0.999688,0.017605)
+principle_values: (0.061589,0.055352,0.029321)

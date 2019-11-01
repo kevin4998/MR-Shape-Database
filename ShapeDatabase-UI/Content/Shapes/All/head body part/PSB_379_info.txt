@@ -1,0 +1,14 @@
+mid: 379
+url: http://www.avatara.com/avatars2/skully.wrl
+ref_url: http://www.avatara.com/avatars2/avatars1_list.html
+format: wrl 
+pid: 4351
+polygons: 1246
+connected_components: 2
+average_dihedral_angle: 0.463944
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.680752, ymax = 0.975, zmax = 0.83208
+avg_depth: 1.262488
+center: (0.352802,0.510418,0.487044)
+scale: 0.723110
+principle_axes: (0.000963,-0.808274,0.588806), (-0.017077,-0.588734,-0.808146), (-0.999854,0.009277,0.014369)
+principle_values: (0.069708,0.035246,0.033529)

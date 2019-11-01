@@ -1,0 +1,14 @@
+mid: 1274
+url: http://www.rccad.com/Gallery/Vrml/Cessna_Card.wrl
+ref_url: http://www.videogames.com/n64/shoot/battlezone/index.html
+format: wrl 
+pid: 32980
+polygons: 684
+connected_components: 7
+average_dihedral_angle: 0.283834
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.651634, ymax = 0.975, zmax = 0.156416
+avg_depth: 1.297146
+center: (0.314569,0.500011,0.095762)
+scale: 0.412663
+principle_axes: (-0.000076,1.000000,-0.000002), (-0.993302,-0.000075,0.115545), (0.115545,0.000011,0.993302)
+principle_values: (0.034617,0.020036,0.001206)

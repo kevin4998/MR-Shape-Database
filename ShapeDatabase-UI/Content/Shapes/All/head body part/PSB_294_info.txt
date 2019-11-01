@@ -1,0 +1,14 @@
+mid: 294
+url: http://ligwww.epfl.ch/~fua/faces/wrl/Rachel.init.wrl
+ref_url: http://ligwww.epfl.ch/~fua/faces/index.html
+format: wrl 
+pid: 13505
+polygons: 1790
+connected_components: 3
+average_dihedral_angle: 0.31745
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.906001, ymax = 0.975, zmax = 0.67721
+avg_depth: 1.051897
+center: (0.465501,0.488283,0.408861)
+scale: 0.720977
+principle_axes: (1.000000,-0.000015,-0.000006), (-0.000016,-0.969397,-0.245498), (0.000002,-0.245498,0.969397)
+principle_values: (0.056977,0.052874,0.028485)

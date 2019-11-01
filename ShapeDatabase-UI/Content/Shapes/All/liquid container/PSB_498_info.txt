@@ -1,0 +1,14 @@
+mid: 498
+url: http://mowat.virtualave.net/chaglass.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26898
+polygons: 720
+connected_components: 1
+average_dihedral_angle: 0.320218
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.871244, zmax = 0.975
+avg_depth: 1.039276
+center: (0.500000,0.499919,0.500000)
+scale: 0.866816
+principle_axes: (-0.000000,1.000000,-0.000000), (-0.997538,-0.000000,0.070124), (0.070124,0.000000,0.997538)
+principle_values: (0.079241,0.063332,0.063332)

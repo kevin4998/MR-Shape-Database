@@ -1,0 +1,14 @@
+mid: 25
+url: http://cepcairo.bizland.com/free/BK_WIDOW.zip
+ref_url: 
+format: xthreexds 
+pid: 46903
+polygons: 2494
+connected_components: 1
+average_dihedral_angle: 0.379344
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.817473, ymax = 0.502402, zmax = 0.975
+avg_depth: 1.133353
+center: (0.421287,0.330628,0.404612)
+scale: 0.428305
+principle_axes: (0.001295,-0.094723,-0.995503), (-0.999999,0.000122,-0.001313), (0.000245,0.995504,-0.094722)
+principle_values: (0.034648,0.022582,0.005952)

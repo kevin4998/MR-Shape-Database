@@ -1,0 +1,14 @@
+mid: 995
+url: http://fraktali.849pm.com/programs/dxf/fern.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27784
+polygons: 8448
+connected_components: 3746
+average_dihedral_angle: 0.281677
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.868916, ymax = 0.932844, zmax = 0.975
+avg_depth: 1.756886
+center: (0.440672,0.268343,0.420708)
+scale: 0.551927
+principle_axes: (0.015947,0.999482,0.027950), (-0.518780,-0.015626,0.854765), (-0.854759,0.028130,-0.518262)
+principle_values: (0.037199,0.023341,0.021790)

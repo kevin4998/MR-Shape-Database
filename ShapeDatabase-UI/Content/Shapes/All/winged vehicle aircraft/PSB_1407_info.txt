@@ -1,0 +1,14 @@
+mid: 1407
+url: http://ednet.gsfc.nasa.gov/Mathews/Objects/x_wing.wrl
+ref_url: http://ednet.gsfc.nasa.gov/Mathews/Objects/off2vrml.html
+format: wrl 
+pid: 1631
+polygons: 6073
+connected_components: 19
+average_dihedral_angle: 0.656607
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.814695, ymax = 0.975, zmax = 0.251859
+avg_depth: 1.850283
+center: (0.419576,0.722339,0.141863)
+scale: 0.464210
+principle_axes: (0.010540,0.999610,0.025865), (0.999944,-0.010504,-0.001558), (0.001286,-0.025880,0.999664)
+principle_values: (0.036642,0.031693,0.003657)

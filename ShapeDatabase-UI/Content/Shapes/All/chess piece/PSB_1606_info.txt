@@ -1,0 +1,14 @@
+mid: 1606
+url: http://www.lucia.it/vrml/gallery/cavallo.wrl
+ref_url: http://www.lucia.it/vrml/p_gallery_e.html
+format: wrl 
+pid: 8800
+polygons: 4750
+connected_components: 2
+average_dihedral_angle: 0.305759
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.629581, ymax = 0.975, zmax = 0.622556
+avg_depth: 1.132987
+center: (0.335793,0.354340,0.325594)
+scale: 0.658047
+principle_axes: (-0.022596,-0.999716,-0.007552), (-0.999700,0.022666,-0.009315), (0.009483,0.007339,-0.999928)
+principle_values: (0.084272,0.022775,0.015705)

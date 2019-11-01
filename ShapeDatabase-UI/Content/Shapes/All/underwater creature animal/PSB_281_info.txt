@@ -1,0 +1,14 @@
+mid: 281
+url: http://www.3dcafe.com/models/turtle4.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: dxf 
+pid: 27269
+polygons: 20198
+connected_components: 1
+average_dihedral_angle: 0.505913
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.77783, zmax = 0.246816
+avg_depth: 1.183359
+center: (0.509417,0.401393,0.170093)
+scale: 0.539326
+principle_axes: (0.999746,-0.001432,0.022475), (-0.001430,-0.999999,-0.000102), (-0.022475,-0.000070,0.999747)
+principle_values: (0.048881,0.028418,0.003259)

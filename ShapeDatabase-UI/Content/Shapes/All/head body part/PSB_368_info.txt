@@ -1,0 +1,14 @@
+mid: 368
+url: http://www.3dcafe.com/models/ahead.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27225
+polygons: 5728
+connected_components: 8
+average_dihedral_angle: 0.168798
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.710689, ymax = 0.975, zmax = 0.91419
+avg_depth: 1.149335
+center: (0.367882,0.562684,0.528225)
+scale: 0.783899
+principle_axes: (0.000507,-0.812866,0.582451), (0.999999,-0.000478,-0.001538), (0.001529,0.582451,0.812865)
+principle_values: (0.078730,0.042837,0.040314)

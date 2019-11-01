@@ -1,0 +1,14 @@
+mid: 857
+url: http://www.cs.reading.ac.uk/archive/cs/ug/ssu94021/models/pigholes.wrl
+ref_url: http://www.cs.reading.ac.uk/archive/cs/ug/ssu94021/models/
+format: wrl 
+pid: 5667
+polygons: 168
+connected_components: 14
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.668611, zmax = 0.331583
+avg_depth: 3.430383
+center: (0.500183,0.347287,0.156004)
+scale: 0.692255
+principle_axes: (1.000000,0.000968,-0.000141), (-0.000968,0.999999,0.000364), (-0.000141,0.000364,-1.000000)
+principle_values: (0.084392,0.039812,0.010305)

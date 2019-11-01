@@ -1,0 +1,14 @@
+mid: 1239
+url: http://www.robotgroup.org/lubbock/vrml/F-15I.wrl
+ref_url: http://www.robotgroup.org/lubbock/vrml/
+format: wrl 
+pid: 9058
+polygons: 676
+connected_components: 9
+average_dihedral_angle: 0.50276
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.768339, zmax = 0.24777
+avg_depth: 1.469708
+center: (0.608614,0.396670,0.087555)
+scale: 0.436189
+principle_axes: (0.999007,-0.000003,0.044543), (0.000005,1.000000,-0.000056), (-0.044543,0.000056,0.999007)
+principle_values: (0.042914,0.015045,0.000945)

@@ -1,0 +1,14 @@
+mid: 1634
+url: http://www.3dcafe.com/models/helmet_w.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: 3ds 
+pid: 28823
+polygons: 11562
+connected_components: 6
+average_dihedral_angle: 0.177722
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.927438, ymax = 0.685583, zmax = 0.975
+avg_depth: 2.045002
+center: (0.478774,0.351010,0.465591)
+scale: 0.713673
+principle_axes: (-0.012721,-0.112403,-0.993581), (-0.999915,-0.001236,0.012942), (0.002683,-0.993662,0.112377)
+principle_values: (0.070550,0.044744,0.019367)

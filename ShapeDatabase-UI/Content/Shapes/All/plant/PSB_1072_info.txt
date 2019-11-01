@@ -1,0 +1,14 @@
+mid: 1072
+url: http://www.3dcafe.com/models/birch02.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 29075
+polygons: 1296
+connected_components: 65
+average_dihedral_angle: 0.82018
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.477147, ymax = 0.975, zmax = 0.538707
+avg_depth: 1.220740
+center: (0.308196,0.575064,0.257074)
+scale: 0.482399
+principle_axes: (-0.062627,0.997066,-0.044005), (0.212758,0.056415,0.975475), (0.975096,0.051729,-0.215667)
+principle_values: (0.055337,0.010521,0.005493)

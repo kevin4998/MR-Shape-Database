@@ -1,0 +1,14 @@
+mid: 239
+url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/sailor_moon.wrl
+ref_url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/
+format: wrl 
+pid: 46684
+polygons: 831
+connected_components: 21
+average_dihedral_angle: 0.565752
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.73491, ymax = 0.975, zmax = 0.216618
+avg_depth: 1.321254
+center: (0.378736,0.551531,0.119508)
+scale: 0.468028
+principle_axes: (0.006375,0.999643,-0.025939), (-0.999980,0.006379,0.000076), (-0.000241,-0.025938,-0.999664)
+principle_values: (0.062060,0.010777,0.001043)

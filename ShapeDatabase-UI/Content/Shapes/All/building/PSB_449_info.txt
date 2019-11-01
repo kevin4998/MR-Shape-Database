@@ -1,0 +1,14 @@
+mid: 449
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/efarrar/Hw4/house.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/efarrar/Hw4/?D=D
+format: wrl 
+pid: 39857
+polygons: 328
+connected_components: 14
+average_dihedral_angle: 1.34786
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.680584, ymax = 0.524678, zmax = 0.975
+avg_depth: 1.332779
+center: (0.351783,0.254439,0.499578)
+scale: 0.653404
+principle_axes: (0.008036,-0.098622,0.995093), (-0.999946,-0.007287,0.007353), (-0.006526,0.995098,0.098675)
+principle_values: (0.060254,0.039327,0.013691)

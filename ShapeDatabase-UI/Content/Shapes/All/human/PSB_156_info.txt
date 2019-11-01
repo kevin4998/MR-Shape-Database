@@ -1,0 +1,14 @@
+mid: 156
+url: http://ovrt.nist.gov/projects/vrml/h-anim/mangloss35.wrl
+ref_url: http://www.itl.nist.gov/iaui/ovrt/vrmlexamples.html
+format: wrl 
+pid: 31551
+polygons: 33324
+connected_components: 55
+average_dihedral_angle: 0.235818
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.409514, ymax = 0.975, zmax = 0.211205
+avg_depth: 1.222386
+center: (0.229375,0.532845,0.097363)
+scale: 0.464646
+principle_axes: (0.003868,0.999312,-0.036890), (0.999744,-0.003041,0.022436), (0.022308,-0.036968,-0.999067)
+principle_values: (0.060640,0.006683,0.001308)

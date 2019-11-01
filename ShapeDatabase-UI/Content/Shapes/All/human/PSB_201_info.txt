@@ -1,0 +1,14 @@
+mid: 201
+url: http://www.softy3d.com/models/body-3ds.zip
+ref_url: http://www.softy3d.com/es/galeria.htm
+format: 3ds 
+pid: 28855
+polygons: 32574
+connected_components: 1
+average_dihedral_angle: 0.139668
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.637925, ymax = 0.254555, zmax = 0.975
+avg_depth: 1.201271
+center: (0.329370,0.133764,0.420177)
+scale: 0.543228
+principle_axes: (0.001817,0.067860,-0.997693), (-0.999997,-0.001664,-0.001934), (-0.001791,0.997693,0.067857)
+principle_values: (0.063208,0.022445,0.002188)

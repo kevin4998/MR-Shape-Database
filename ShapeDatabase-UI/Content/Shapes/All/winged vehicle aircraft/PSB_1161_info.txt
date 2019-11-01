@@ -1,0 +1,14 @@
+mid: 1161
+url: http://www.topedge.com/panels/aircraft/hangar/vrml/boeing/767-wa.wrl
+ref_url: http://www.topedge.com/panels/aircraft/hangar/yaaphavr.html
+format: wrl 
+pid: 5517
+polygons: 1692
+connected_components: 131
+average_dihedral_angle: 0.604026
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.931591, ymax = 0.32614, zmax = 0.975
+avg_depth: 1.219274
+center: (0.477966,0.099305,0.554417)
+scale: 0.470806
+principle_axes: (0.003894,0.079824,0.996801), (-0.999992,0.000501,0.003867), (-0.000191,-0.996809,0.079825)
+principle_values: (0.048732,0.020210,0.001545)

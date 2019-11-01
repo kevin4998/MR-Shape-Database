@@ -1,0 +1,14 @@
+mid: 1149
+url: http://www.3dcafe.com/models/kc10.zip
+ref_url: http://www.3dcafe.com/asp/air_pic.asp
+format: xthreexds 
+pid: 26358
+polygons: 5874
+connected_components: 42
+average_dihedral_angle: 0.568185
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.305634, zmax = 0.769297
+avg_depth: 1.338902
+center: (0.567710,0.114253,0.395478)
+scale: 0.469970
+principle_axes: (0.995564,0.094050,0.002602), (0.002367,0.002610,-0.999994), (0.094056,-0.995564,-0.002376)
+principle_values: (0.055242,0.011761,0.001627)

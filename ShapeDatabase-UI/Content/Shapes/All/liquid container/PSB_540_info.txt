@@ -1,0 +1,14 @@
+mid: 540
+url: http://www.ocnus.com/models/Buildings/urn2.wrl.gz
+ref_url: http://www.ocnus.com/models/Buildings/
+format: wrl 
+pid: 17699
+polygons: 604
+connected_components: 1
+average_dihedral_angle: 0.757548
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.931966, ymax = 0.803261, zmax = 0.975
+avg_depth: 1.413764
+center: (0.481962,0.427798,0.494609)
+scale: 0.789506
+principle_axes: (-0.005228,0.999981,-0.003228), (0.998265,0.005408,0.058633), (0.058649,-0.002916,-0.998274)
+principle_values: (0.072409,0.051834,0.046328)

@@ -1,0 +1,14 @@
+mid: 100
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/creatures/ipig1l.wrl
+ref_url: http://visinfo.zib.de/IRS_HTML/IRS_dqex.html
+format: wrl 
+pid: 35204
+polygons: 1208
+connected_components: 1
+average_dihedral_angle: 0.424811
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.558031, ymax = 0.458469, zmax = 0.975
+avg_depth: 1.108085
+center: (0.291303,0.210208,0.521506)
+scale: 0.575693
+principle_axes: (-0.001210,0.169840,-0.985471), (0.075232,-0.982663,-0.169449), (0.997165,0.074345,0.011588)
+principle_values: (0.063814,0.013721,0.013478)

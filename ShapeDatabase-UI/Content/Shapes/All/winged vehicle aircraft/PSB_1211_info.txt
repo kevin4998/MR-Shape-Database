@@ -1,0 +1,14 @@
+mid: 1211
+url: http://www.3dcafe.com/models/bd5_2.zip
+ref_url: http://www.3dcafe.com/asp/air_pic.asp
+format: 3ds 
+pid: 25736
+polygons: 852
+connected_components: 111
+average_dihedral_angle: 0.34591
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.918098, ymax = 0.317775, zmax = 0.975
+avg_depth: 1.718659
+center: (0.608017,0.108761,0.501385)
+scale: 0.434699
+principle_axes: (0.018039,0.007031,0.999813), (-0.981341,-0.191328,0.019051), (0.191426,-0.981501,0.003449)
+principle_values: (0.029369,0.024762,0.001321)

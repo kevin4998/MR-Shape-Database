@@ -1,0 +1,14 @@
+mid: 488
+url: http://www.geometrek.com/about/demo/sig99demo/sig99demo.zip
+ref_url: http://www.geometrek.com/about/demo/sig99demo/download.html
+format: wrl 
+pid: 33905
+polygons: 284
+connected_components: 1
+average_dihedral_angle: 0.527612
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.375332, zmax = 0.375214
+avg_depth: 1.006628
+center: (0.416715,0.200175,0.200107)
+scale: 0.599846
+principle_axes: (-1.000000,-0.000203,0.000000), (0.000002,-0.011104,-0.999938), (-0.000203,0.999938,-0.011104)
+principle_values: (0.073672,0.012347,0.012347)

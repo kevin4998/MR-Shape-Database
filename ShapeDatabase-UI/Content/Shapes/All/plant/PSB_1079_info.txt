@@ -1,0 +1,14 @@
+mid: 1079
+url: http://www.folkarts.com/vrml/tree.wrl
+ref_url: http://www.geom.umn.edu/~daeron/bin/legitlist.cgi
+format: wrl 
+pid: 9927
+polygons: 260
+connected_components: 13
+average_dihedral_angle: 1.26047
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.291, ymax = 0.975, zmax = 0.277981
+avg_depth: 2.585931
+center: (0.158000,0.458490,0.151491)
+scale: 0.340183
+principle_axes: (-0.000000,-1.000000,-0.000000), (-0.003826,-0.000000,0.999993), (0.999993,-0.000000,0.003826)
+principle_values: (0.031836,0.002522,0.002522)

@@ -1,0 +1,14 @@
+mid: 935
+url: http://philliphansel.com/gallery/glass_table_blue.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3444
+polygons: 241
+connected_components: 3
+average_dihedral_angle: 1.40427
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.876203, ymax = 0.975, zmax = 0.876186
+avg_depth: 1.278930
+center: (0.450590,0.680367,0.450607)
+scale: 0.818343
+principle_axes: (-0.000340,1.000000,-0.000020), (-0.375593,-0.000109,0.926785), (-0.926785,-0.000322,-0.375593)
+principle_values: (0.126585,0.033291,0.033290)

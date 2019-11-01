@@ -1,0 +1,14 @@
+mid: 1699
+url: http://www.3dcafe.com/models/casket2.zip
+ref_url: http://www.3dcafe.com/asp/horo_pic.asp
+format: 3ds 
+pid: 28177
+polygons: 15324
+connected_components: 81
+average_dihedral_angle: 0.318773
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.523268, zmax = 0.593021
+avg_depth: 2.360058
+center: (0.497387,0.276022,0.309272)
+scale: 0.686064
+principle_axes: (-0.999997,-0.002157,0.000696), (0.000472,0.102062,0.994778), (-0.002217,0.994776,-0.102061)
+principle_values: (0.080922,0.024597,0.023077)

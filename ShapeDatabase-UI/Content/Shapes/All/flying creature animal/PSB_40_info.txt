@@ -1,0 +1,14 @@
+mid: 40
+url: http://cepcairo.bizland.com/free/Bldeagle.zip
+ref_url: 
+format: xthreexds 
+pid: 46915
+polygons: 5390
+connected_components: 3
+average_dihedral_angle: 0.402757
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.284845, zmax = 0.347879
+avg_depth: 1.067513
+center: (0.499995,0.194324,0.198884)
+scale: 0.409418
+principle_axes: (-1.000000,-0.000000,-0.000007), (-0.000006,0.652823,0.757511), (0.000005,0.757511,-0.652823)
+principle_values: (0.047547,0.003891,0.001956)

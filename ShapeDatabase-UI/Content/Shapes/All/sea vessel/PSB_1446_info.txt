@@ -1,0 +1,14 @@
+mid: 1446
+url: http://www.rccad.com/Gallery/Vrml/BattlesShip.wrl
+ref_url: 
+format: wrl 
+pid: 48017
+polygons: 10530
+connected_components: 129
+average_dihedral_angle: 0.515615
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.159904, zmax = 0.244612
+avg_depth: 2.339073
+center: (0.515757,0.092505,0.107081)
+scale: 0.383285
+principle_axes: (-0.999911,0.000165,-0.013378), (-0.013379,-0.008285,0.999876), (0.000054,0.999966,0.008287)
+principle_values: (0.047607,0.001468,0.001202)

@@ -1,0 +1,14 @@
+mid: 1371
+url: http://philliphansel.com/avatars/enterprise_active.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6097
+polygons: 2565
+connected_components: 77
+average_dihedral_angle: 0.417309
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.42152, ymax = 0.220545, zmax = 0.975
+avg_depth: 2.121041
+center: (0.222401,0.172932,0.548897)
+scale: 0.476682
+principle_axes: (0.001542,-0.002844,0.999995), (0.999998,-0.001435,-0.001546), (0.001440,0.999995,0.002842)
+principle_values: (0.053857,0.013754,0.001804)

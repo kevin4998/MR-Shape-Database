@@ -1,0 +1,14 @@
+mid: 853
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/furniture/bookShelf0.wrl
+ref_url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/furniture/?D=D
+format: wrl 
+pid: 35915
+polygons: 228
+connected_components: 2
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.755769, ymax = 0.975, zmax = 0.207692
+avg_depth: 1.761563
+center: (0.390384,0.510207,0.090848)
+scale: 0.733086
+principle_axes: (-0.000000,-0.999997,0.002645), (1.000000,-0.000000,-0.000000), (-0.000000,-0.002645,-0.999997)
+principle_values: (0.081943,0.061687,0.004231)

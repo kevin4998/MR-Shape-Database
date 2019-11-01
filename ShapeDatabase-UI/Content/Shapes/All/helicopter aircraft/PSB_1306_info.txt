@@ -1,0 +1,14 @@
+mid: 1306
+url: http://www.buckrogers.demon.co.uk/3d/heliwithseats.zip
+ref_url: http://www.yahoo.com/Computers_and_Internet/Internet/World_Wide_Web/Virtual_Reality_Modeling_Language__VRML_/
+format: obj 
+pid: 25269
+polygons: 17806
+connected_components: 65
+average_dihedral_angle: 0.392792
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.751962, ymax = 0.310837, zmax = 0.975
+avg_depth: 1.720514
+center: (0.388843,0.149952,0.658695)
+scale: 0.381786
+principle_axes: (0.055855,-0.149131,0.987239), (0.839306,0.542566,0.034474), (0.540783,-0.826669,-0.155472)
+principle_values: (0.043484,0.004475,0.003723)

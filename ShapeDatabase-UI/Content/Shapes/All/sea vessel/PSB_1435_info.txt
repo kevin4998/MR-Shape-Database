@@ -1,0 +1,14 @@
+mid: 1435
+url: http://www.3dcafe.com/models/osa2.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 28858
+polygons: 4887
+connected_components: 389
+average_dihedral_angle: 0.926273
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.21916, ymax = 0.403522, zmax = 0.975
+avg_depth: 1.654106
+center: (0.122368,0.134768,0.427315)
+scale: 0.419602
+principle_axes: (-0.000508,-0.004631,-0.999989), (-0.061497,0.998097,-0.004591), (0.998107,0.061494,-0.000791)
+principle_values: (0.049874,0.003543,0.003275)

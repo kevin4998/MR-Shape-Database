@@ -1,0 +1,14 @@
+mid: 1655
+url: http://www.bentley.com/modelcity/vrml/mcp_mag.wrl
+ref_url: http://ligwww.epfl.ch/~pkeller/files/links.html
+format: wrl 
+pid: 21073
+polygons: 16111
+connected_components: 1187
+average_dihedral_angle: 1.39282
+bounding_box: xmin = 0.0484247, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.362786, zmax = 0.625857
+avg_depth: 4.417295
+center: (0.493133,0.074904,0.378251)
+scale: 0.607992
+principle_axes: (0.989283,-0.048615,-0.137682), (0.141793,0.094806,0.985346), (-0.034849,-0.994308,0.100683)
+principle_values: (0.079377,0.023717,0.002236)

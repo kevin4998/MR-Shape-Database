@@ -1,0 +1,14 @@
+mid: 1147
+url: http://www.ocnus.com/models/Vehicles/dc10.wrl.gz
+ref_url: http://www.ocnus.com/models/Vehicles/
+format: wrl 
+pid: 17958
+polygons: 2320
+connected_components: 8
+average_dihedral_angle: 0.403805
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.33131, zmax = 0.884672
+avg_depth: 1.125240
+center: (0.570973,0.114475,0.454840)
+scale: 0.482370
+principle_axes: (-0.995916,-0.090280,-0.000019), (0.000003,0.000176,-1.000000), (0.090280,-0.995916,-0.000175)
+principle_values: (0.050791,0.018985,0.001747)

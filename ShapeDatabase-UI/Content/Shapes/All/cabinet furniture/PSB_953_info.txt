@@ -1,0 +1,14 @@
+mid: 953
+url: http://fraktali.849pm.com/programs/wrl/object/Bathroom.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32134
+polygons: 334
+connected_components: 15
+average_dihedral_angle: 1.11473
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.55137, zmax = 0.376232
+avg_depth: 2.085828
+center: (0.499957,0.305725,0.207947)
+scale: 0.693288
+principle_axes: (-1.000000,0.000002,0.000096), (-0.000020,0.972547,-0.232708), (0.000094,0.232708,0.972547)
+principle_values: (0.089797,0.022679,0.018851)

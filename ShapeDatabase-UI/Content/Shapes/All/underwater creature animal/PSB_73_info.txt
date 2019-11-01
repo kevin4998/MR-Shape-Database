@@ -1,0 +1,14 @@
+mid: 73
+url: http://hiwaay.net/~crispen/vrml/dolphin.wrl
+ref_url: http://hiwaay.net/~crispen/vrml/examples.html
+format: wrl 
+pid: 406
+polygons: 564
+connected_components: 1
+average_dihedral_angle: 0.407404
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.610865, zmax = 0.376181
+avg_depth: 1.020248
+center: (0.526072,0.304026,0.200014)
+scale: 0.526236
+principle_axes: (-0.994801,0.101831,-0.001044), (-0.101832,-0.994802,0.000275), (-0.001010,0.000380,0.999999)
+principle_values: (0.063654,0.013859,0.004309)

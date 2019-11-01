@@ -1,0 +1,14 @@
+mid: 367
+url: http://fraktali.849pm.com/programs/dxf/blueeyed.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27201
+polygons: 1852
+connected_components: 14
+average_dihedral_angle: 0.353013
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.603323, ymax = 0.975, zmax = 0.630986
+avg_depth: 1.300270
+center: (0.314281,0.630210,0.349434)
+scale: 0.644636
+principle_axes: (0.025559,0.916244,-0.399805), (-0.999518,0.030473,0.005939), (0.017625,0.399461,0.916581)
+principle_values: (0.059981,0.027318,0.020669)

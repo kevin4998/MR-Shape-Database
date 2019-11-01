@@ -1,0 +1,14 @@
+mid: 370
+url: http://cepcairo.bizland.com/free/Head_f2.zip
+ref_url: 
+format: xthreexds 
+pid: 47171
+polygons: 10543
+connected_components: 84
+average_dihedral_angle: 0.368836
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.517741, ymax = 0.975, zmax = 0.646433
+avg_depth: 1.124532
+center: (0.271360,0.566243,0.331683)
+scale: 0.608106
+principle_axes: (0.000068,0.999613,0.027835), (0.000120,0.027835,-0.999613), (-1.000000,0.000072,-0.000118)
+principle_values: (0.051979,0.027909,0.017593)

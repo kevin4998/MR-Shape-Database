@@ -1,0 +1,14 @@
+mid: 458
+url: http://vase.essex.ac.uk/demos/theatre/theatre-full.wrl
+ref_url: http://vase.essex.ac.uk/demos/theatre/
+format: wrl 
+pid: 10457
+polygons: 1760
+connected_components: 70
+average_dihedral_angle: 1.60126
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.274765, zmax = 0.595892
+avg_depth: 3.288413
+center: (0.556329,0.104336,0.290779)
+scale: 0.583109
+principle_axes: (0.982416,0.018459,-0.185790), (-0.184387,-0.060383,-0.980997), (0.029327,-0.998005,0.055918)
+principle_values: (0.068480,0.022270,0.005256)

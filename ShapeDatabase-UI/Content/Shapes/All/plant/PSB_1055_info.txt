@@ -1,0 +1,14 @@
+mid: 1055
+url: http://www.3dheaven.net/Modelle/plants/treepack1.zip
+ref_url: 
+format: xthreexds 
+pid: 48070
+polygons: 17804
+connected_components: 7573
+average_dihedral_angle: 0.273457
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.494956, ymax = 0.975, zmax = 0.51276
+avg_depth: 1.808428
+center: (0.285445,0.725987,0.229786)
+scale: 0.373944
+principle_axes: (0.167368,0.978136,-0.123442), (0.751985,-0.207626,-0.625627), (-0.637578,0.011883,-0.770294)
+principle_values: (0.026391,0.008347,0.006073)

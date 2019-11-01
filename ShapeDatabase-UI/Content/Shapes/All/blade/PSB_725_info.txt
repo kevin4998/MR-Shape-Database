@@ -1,0 +1,14 @@
+mid: 725
+url: http://www.3dcafe.com/models/knives.zip
+ref_url: http://www.3dcafe.com/asp/hou2_pic.asp
+format: 3ds 
+pid: 28678
+polygons: 516
+connected_components: 2
+average_dihedral_angle: 1.07723
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.269783, zmax = 0.0872343
+avg_depth: 1.059933
+center: (0.457242,0.171114,0.057241)
+scale: 0.474747
+principle_axes: (-0.993822,-0.110989,-0.000423), (-0.110989,0.993799,0.006770), (0.000331,-0.006775,0.999977)
+principle_values: (0.067357,0.004399,0.000136)

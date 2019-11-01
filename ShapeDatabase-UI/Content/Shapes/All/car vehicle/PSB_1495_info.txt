@@ -1,0 +1,14 @@
+mid: 1495
+url: http://www.ocnus.com/models/Vehicles/pickup.wrl.gz
+ref_url: http://www.ocnus.com/models/Vehicles/
+format: wrl 
+pid: 17969
+polygons: 13402
+connected_components: 81
+average_dihedral_angle: 0.47893
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.451866, zmax = 0.35359
+avg_depth: 2.063301
+center: (0.485181,0.238458,0.156763)
+scale: 0.577731
+principle_axes: (-0.999972,-0.000005,-0.007527), (-0.000005,1.000000,-0.000115), (0.007527,-0.000115,-0.999972)
+principle_values: (0.076553,0.015215,0.004307)

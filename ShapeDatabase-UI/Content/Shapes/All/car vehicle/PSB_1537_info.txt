@@ -1,0 +1,14 @@
+mid: 1537
+url: http://www.avatara.com/avatars/batcar2.wrl
+ref_url: http://www.avatara.com/avatars/avatars2_list.html
+format: wrl 
+pid: 17010
+polygons: 1416
+connected_components: 306
+average_dihedral_angle: 2.19711
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.353505, ymax = 0.198131, zmax = 0.975
+avg_depth: 2.041563
+center: (0.189249,0.105096,0.469387)
+scale: 0.562899
+principle_axes: (0.000022,0.028911,-0.999582), (-1.000000,0.000230,-0.000015), (0.000229,0.999582,0.028911)
+principle_values: (0.076144,0.011331,0.001974)

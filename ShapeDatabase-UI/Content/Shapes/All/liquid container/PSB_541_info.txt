@@ -1,0 +1,14 @@
+mid: 541
+url: http://www.amazing3d.com/free/a3pott1.zip
+ref_url: 
+format: xthreexds 
+pid: 46905
+polygons: 1196
+connected_components: 574
+average_dihedral_angle: 0.467881
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.890313, ymax = 0.975, zmax = 0.890699
+avg_depth: 1.872284
+center: (0.456512,0.490031,0.461350)
+scale: 0.908407
+principle_axes: (-0.001100,0.999955,0.009381), (-0.321505,-0.009236,0.946863), (0.946907,-0.001974,0.321501)
+principle_values: (0.079696,0.064023,0.063886)

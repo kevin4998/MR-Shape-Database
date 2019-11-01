@@ -1,0 +1,14 @@
+mid: 978
+url: http://www.3dcafe.com/models/sunflwr.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: xthreexds 
+pid: 28939
+polygons: 3966
+connected_components: 384
+average_dihedral_angle: 1.09967
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.410114, ymax = 0.975, zmax = 0.465016
+avg_depth: 3.665144
+center: (0.272624,0.717760,0.235750)
+scale: 0.295107
+principle_axes: (0.092388,0.995487,0.021667), (0.261967,-0.003307,-0.965071), (0.960644,-0.094837,0.261091)
+principle_values: (0.022978,0.007593,0.000906)

@@ -1,0 +1,14 @@
+mid: 287
+url: http://www.npac.syr.edu/projects/3Dvisiblehuman/VRML/brain.wrl
+ref_url: http://www.npac.syr.edu/projects/3Dvisiblehuman/VRML/
+format: wrl 
+pid: 6345
+polygons: 65035
+connected_components: 9
+average_dihedral_angle: 0.409934
+bounding_box: xmin = 0.153583, ymin = 0.0864135, zmin = 0.181133, xmax = 0.614949, ymax = 0.975, zmax = 0.761574
+avg_depth: 1.309990
+center: (0.387211,0.347580,0.486397)
+scale: 0.496281
+principle_axes: (0.049755,-0.850941,-0.522899), (0.013437,0.524070,-0.851569), (-0.998671,-0.035344,-0.037509)
+principle_values: (0.031041,0.018591,0.015830)

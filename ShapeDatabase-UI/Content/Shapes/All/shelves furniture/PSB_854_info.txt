@@ -1,0 +1,14 @@
+mid: 854
+url: http://tecfa.unige.ch/guides/vrml/examples/eai/tic-tac-toe/tictactoe.wrl
+ref_url: http://tecfa.unige.ch/guides/vrml/examples/eai/tic-tac-toe/?D=D
+format: wrl 
+pid: 38008
+polygons: 204
+connected_components: 27
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.974269, ymax = 0.975, zmax = 0.193419
+avg_depth: 1.992881
+center: (0.499634,0.500000,0.084569)
+scale: 0.784276
+principle_axes: (-0.707400,-0.706813,0.000000), (0.706813,-0.707400,0.000000), (0.000000,-0.000000,-1.000000)
+principle_values: (0.085596,0.085576,0.003013)

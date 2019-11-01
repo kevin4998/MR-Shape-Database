@@ -1,0 +1,14 @@
+mid: 466
+url: http://www.flair-twl.de/download/HongkongShanghaiBank.wrl
+ref_url: http://www.flair-twl.de/GreatBuildings.htm
+format: wrl 
+pid: 40783
+polygons: 66620
+connected_components: 2812
+average_dihedral_angle: 1.36766
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.694002, ymax = 0.975, zmax = 0.665378
+avg_depth: 6.392824
+center: (0.351465,0.422004,0.280914)
+scale: 0.509916
+principle_axes: (0.007268,-0.996592,0.082174), (-0.973140,-0.025958,-0.228747), (-0.230100,0.078304,0.970012)
+principle_values: (0.059485,0.012765,0.007982)

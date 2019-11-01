@@ -1,0 +1,14 @@
+mid: 33
+url: http://www.3dcafe.com/models/sparrow.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: dxf 
+pid: 27302
+polygons: 6164
+connected_components: 31
+average_dihedral_angle: 0.402314
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.541498, ymax = 0.692456, zmax = 0.975
+avg_depth: 1.890929
+center: (0.283062,0.380024,0.581111)
+scale: 0.451177
+principle_axes: (-0.000534,-0.438192,-0.898881), (-0.004419,0.898874,-0.438186), (0.999990,0.003738,-0.002417)
+principle_values: (0.038854,0.011273,0.009328)

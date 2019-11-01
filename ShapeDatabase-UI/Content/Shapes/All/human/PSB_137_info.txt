@@ -1,0 +1,14 @@
+mid: 137
+url: http://www.3dcafe.com/models/honey.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: dxf 
+pid: 26561
+polygons: 3254
+connected_components: 4
+average_dihedral_angle: 0.427758
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.410334, ymax = 0.975, zmax = 0.232007
+avg_depth: 1.238286
+center: (0.217321,0.528675,0.116309)
+scale: 0.481252
+principle_axes: (0.000590,0.999895,-0.014445), (-1.000000,0.000600,0.000649), (0.000658,0.014444,0.999895)
+principle_values: (0.065400,0.006092,0.001454)

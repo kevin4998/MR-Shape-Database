@@ -1,0 +1,14 @@
+mid: 1092
+url: http://fraktali.849pm.com/programs/wrl/object/Vegetation1.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31165
+polygons: 638
+connected_components: 9
+average_dihedral_angle: 1.01861
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.747408, zmax = 0.933538
+avg_depth: 1.362584
+center: (0.502676,0.550706,0.521166)
+scale: 0.571603
+principle_axes: (-0.323928,0.810375,0.488225), (0.748078,-0.096526,0.656554), (0.579181,0.577906,-0.574956)
+principle_values: (0.040007,0.029427,0.026215)

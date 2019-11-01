@@ -1,0 +1,14 @@
+mid: 1787
+url: http://www.3dcafe.com/models/goldgate.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27616
+polygons: 29792
+connected_components: 3679
+average_dihedral_angle: 0.537576
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.120375, zmax = 0.0675424
+avg_depth: 1.334007
+center: (0.522006,0.057352,0.046218)
+scale: 0.501406
+principle_axes: (-0.999992,-0.003968,-0.000005), (0.003968,-0.999992,-0.001108), (0.000001,0.001108,-0.999999)
+principle_values: (0.074110,0.000369,0.000030)

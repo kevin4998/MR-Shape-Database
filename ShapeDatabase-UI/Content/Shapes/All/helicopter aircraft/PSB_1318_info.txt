@@ -1,0 +1,14 @@
+mid: 1318
+url: http://www.rccad.com/Gallery/Vrml/Hover1.wrl
+ref_url: http://www.rccad.com/Gallery_Helicopters1.htm
+format: wrl 
+pid: 34072
+polygons: 2056
+connected_components: 13
+average_dihedral_angle: 0.194907
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.75913, zmax = 0.250313
+avg_depth: 1.667787
+center: (0.405969,0.391875,0.107580)
+scale: 0.322635
+principle_axes: (-0.996982,0.000043,-0.077630), (0.000027,1.000000,0.000208), (0.077630,0.000205,-0.996982)
+principle_values: (0.030085,0.010899,0.001409)

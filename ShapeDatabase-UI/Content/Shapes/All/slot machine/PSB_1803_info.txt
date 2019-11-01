@@ -1,0 +1,14 @@
+mid: 1803
+url: http://www.dcs.ed.ac.uk/home/objects/vrml/slotMachine.wrl.gz
+ref_url: http://www.dcs.ed.ac.uk/home/objects/vrml/?D=D
+format: 
+pid: 31618
+polygons: 1209
+connected_components: 21
+average_dihedral_angle: 0.718028
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.735526, ymax = 0.975, zmax = 0.853947
+avg_depth: 1.852978
+center: (0.366763,0.330580,0.372371)
+scale: 0.667403
+principle_axes: (-0.056964,0.941160,-0.333126), (-0.992996,-0.018817,0.116636), (0.103505,0.337437,0.935641)
+principle_values: (0.064040,0.029443,0.025500)

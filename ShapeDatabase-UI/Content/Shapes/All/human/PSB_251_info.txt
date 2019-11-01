@@ -1,0 +1,14 @@
+mid: 251
+url: http://cepcairo.bizland.com/free/Alien.zip
+ref_url: 
+format: xthreexds 
+pid: 48322
+polygons: 16126
+connected_components: 1
+average_dihedral_angle: 0.197204
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.742238, ymax = 0.975, zmax = 0.190046
+avg_depth: 1.102480
+center: (0.383614,0.535372,0.101415)
+scale: 0.502761
+principle_axes: (0.000015,0.999764,0.021714), (-1.000000,0.000015,-0.000008), (0.000008,0.021714,-0.999764)
+principle_values: (0.066320,0.012012,0.001087)

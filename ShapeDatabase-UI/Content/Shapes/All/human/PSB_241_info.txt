@@ -1,0 +1,14 @@
+mid: 241
+url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/lear_woman.wrl
+ref_url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/
+format: wrl 
+pid: 46687
+polygons: 874
+connected_components: 23
+average_dihedral_angle: 0.5417
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.798532, ymax = 0.975, zmax = 0.336804
+avg_depth: 1.411538
+center: (0.415639,0.438531,0.207643)
+scale: 0.541650
+principle_axes: (0.011291,-0.997831,-0.064856), (0.999917,0.010870,0.006848), (-0.006128,-0.064928,0.997871)
+principle_values: (0.070057,0.016438,0.003004)

@@ -1,0 +1,14 @@
+mid: 250
+url: http://cepcairo.bizland.com/free/P_male.zip
+ref_url: 
+format: xthreexds 
+pid: 47990
+polygons: 20349
+connected_components: 88
+average_dihedral_angle: 0.290212
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.718992, ymax = 0.975, zmax = 0.185819
+avg_depth: 1.399130
+center: (0.372041,0.521421,0.092537)
+scale: 0.526759
+principle_axes: (0.002956,0.999776,0.020961), (-0.999995,0.002933,0.001141), (-0.001079,0.020964,-0.999780)
+principle_values: (0.072420,0.010875,0.001276)

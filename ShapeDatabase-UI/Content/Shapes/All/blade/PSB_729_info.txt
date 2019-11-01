@@ -1,0 +1,14 @@
+mid: 729
+url: http://www.3dcafe.com/../models/pike.zip
+ref_url: http://www.3dcafe.com/../asp/weapons.asp
+format: lwo 
+pid: 30605
+polygons: 3508
+connected_components: 1
+average_dihedral_angle: 0.313216
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0603418, ymax = 0.975, zmax = 0.320585
+avg_depth: 1.057583
+center: (0.042425,0.651134,0.190624)
+scale: 0.350909
+principle_axes: (-0.000528,0.998897,0.046961), (-0.003888,0.046959,-0.998889), (0.999992,0.000710,-0.003859)
+principle_values: (0.044576,0.003236,0.000038)

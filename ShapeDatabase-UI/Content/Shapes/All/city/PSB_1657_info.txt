@@ -1,0 +1,14 @@
+mid: 1657
+url: http://www.netro.com/netrop.wrl
+ref_url: http://www.netro.com/
+format: wrl 
+pid: 2412
+polygons: 2136
+connected_components: 119
+average_dihedral_angle: 1.37999
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.500146, ymax = 0.215775, zmax = 0.975
+avg_depth: 1.848282
+center: (0.247343,0.041653,0.597655)
+scale: 0.471237
+principle_axes: (-0.027892,0.023550,0.999333), (-0.998825,0.038974,-0.028796), (-0.039626,-0.998963,0.022436)
+principle_values: (0.053729,0.013338,0.001135)

@@ -1,0 +1,14 @@
+mid: 1268
+url: http://www.rccad.com/Gallery/Vrml/bluebird.wrl
+ref_url: http://www.rccad.com/Gallery_Exotic14.htm
+format: wrl 
+pid: 1071
+polygons: 376
+connected_components: 5
+average_dihedral_angle: 0.423652
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.571529, ymax = 0.975, zmax = 0.105528
+avg_depth: 1.135750
+center: (0.225114,0.500019,0.079539)
+scale: 0.383013
+principle_axes: (-0.000064,1.000000,-0.000011), (-0.995875,-0.000062,0.090730), (0.090730,0.000016,0.995875)
+principle_values: (0.034756,0.015730,0.000219)

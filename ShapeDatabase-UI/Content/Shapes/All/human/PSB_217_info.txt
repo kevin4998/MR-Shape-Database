@@ -1,0 +1,14 @@
+mid: 217
+url: http://hiwaay.net/~crispen/worlds/avatar/pf.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7646
+polygons: 1835
+connected_components: 114
+average_dihedral_angle: 0.915825
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.326559, ymax = 0.975, zmax = 0.291927
+avg_depth: 2.468964
+center: (0.152990,0.594477,0.145207)
+scale: 0.416735
+principle_axes: (-0.010301,0.998872,0.046357), (0.992070,0.016016,-0.124660), (0.125261,-0.044705,0.991116)
+principle_values: (0.055160,0.003006,0.002119)

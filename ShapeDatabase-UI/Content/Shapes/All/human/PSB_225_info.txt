@@ -1,0 +1,14 @@
+mid: 225
+url: http://www.3dcafe.com/models/ffigure.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27056
+polygons: 36118
+connected_components: 8
+average_dihedral_angle: 0.205858
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.894042, ymax = 0.975, zmax = 0.171856
+avg_depth: 1.163578
+center: (0.457510,0.553920,0.090879)
+scale: 0.521193
+principle_axes: (-0.005857,0.998270,0.058508), (-0.999981,-0.005961,0.001609), (-0.001955,0.058497,-0.998286)
+principle_values: (0.057292,0.026767,0.000933)

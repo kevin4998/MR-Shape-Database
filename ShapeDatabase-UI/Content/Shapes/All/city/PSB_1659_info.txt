@@ -1,0 +1,14 @@
+mid: 1659
+url: http://www.kaosuk.co.uk/VRML/mycity.wrl
+ref_url: http://www.kaosuk.co.uk/VRML/
+format: wrl 
+pid: 4082
+polygons: 10712
+connected_components: 243
+average_dihedral_angle: 0.716205
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.345009, zmax = 0.975
+avg_depth: 1.958695
+center: (0.497019,0.065285,0.455601)
+scale: 0.674618
+principle_axes: (-0.685237,0.054946,-0.726244), (0.728251,0.065415,-0.682181), (0.010024,-0.996344,-0.084839)
+principle_values: (0.066943,0.058401,0.004671)

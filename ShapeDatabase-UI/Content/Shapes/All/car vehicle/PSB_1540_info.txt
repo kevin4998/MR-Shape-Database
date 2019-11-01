@@ -1,0 +1,14 @@
+mid: 1540
+url: http://64.198.60.83/baument/Models/car1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25919
+polygons: 16860
+connected_components: 25
+average_dihedral_angle: 0.529876
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.264994, zmax = 0.420549
+avg_depth: 1.598199
+center: (0.532818,0.133045,0.222978)
+scale: 0.618976
+principle_axes: (0.999333,0.036524,-0.000690), (-0.000705,0.000387,-1.000000), (0.036524,-0.999333,-0.000412)
+principle_values: (0.083734,0.018396,0.003777)

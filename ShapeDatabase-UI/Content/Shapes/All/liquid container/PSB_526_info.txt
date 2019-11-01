@@ -1,0 +1,14 @@
+mid: 526
+url: http://web.uvic.ca/educ/lfrancis/web/testlathe4.wrl
+ref_url: http://web.uvic.ca/educ/lfrancis/web/VRML-Examples.html
+format: wrl 
+pid: 10062
+polygons: 226
+connected_components: 1
+average_dihedral_angle: 0.460536
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.658894, zmax = 0.5
+avg_depth: 1.171167
+center: (0.500041,0.288191,0.262500)
+scale: 0.657848
+principle_axes: (1.000000,-0.000797,0.000000), (-0.000797,-1.000000,-0.000000), (-0.000000,-0.000000,1.000000)
+principle_values: (0.056440,0.038801,0.017666)

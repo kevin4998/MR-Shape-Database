@@ -1,0 +1,14 @@
+mid: 563
+url: http://mowat.virtualave.net/monitor.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26509
+polygons: 258
+connected_components: 3
+average_dihedral_angle: 0.563829
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.85625, zmax = 0.7375
+avg_depth: 1.326091
+center: (0.500000,0.438663,0.405248)
+scale: 1.017003
+principle_axes: (-1.000000,-0.000000,0.000000), (0.000000,-0.999593,-0.028516), (0.000000,-0.028516,0.999593)
+principle_values: (0.112702,0.090352,0.063448)

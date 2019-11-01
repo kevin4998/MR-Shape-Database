@@ -1,0 +1,14 @@
+mid: 579
+url: http://www.intoronto.com/origami/origami.wrl
+ref_url: http://www.barn.org/(Empty%20Reference!)http://www.newswise.com/articles/2002/7/BARCOD2.SHP.html?sc=wire
+format: wrl 
+pid: 38756
+polygons: 576
+connected_components: 48
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.757037, ymax = 0.175486, zmax = 0.975
+avg_depth: 2.114296
+center: (0.387525,0.129433,0.498537)
+scale: 0.571191
+principle_axes: (0.361070,-0.000171,-0.932539), (0.932538,0.000860,0.361070), (0.000741,-1.000000,0.000470)
+principle_values: (0.066414,0.024674,0.001068)

@@ -1,0 +1,14 @@
+mid: 1522
+url: http://www.3dcafe.com/../models/jaguar2.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: xthreexds 
+pid: 30534
+polygons: 4713
+connected_components: 25
+average_dihedral_angle: 0.275458
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.408249, ymax = 0.285988, zmax = 0.975
+avg_depth: 1.570648
+center: (0.216439,0.139651,0.490784)
+scale: 0.588661
+principle_axes: (-0.013093,0.020301,0.999708), (-0.999914,0.000464,-0.013105), (-0.000730,-0.999794,0.020293)
+principle_values: (0.076584,0.016023,0.004666)

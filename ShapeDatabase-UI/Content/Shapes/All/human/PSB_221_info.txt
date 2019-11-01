@@ -1,0 +1,14 @@
+mid: 221
+url: http://www.buckrogers.demon.co.uk/3d/wetsuitman3.zip
+ref_url: http://www.yahoo.com/Computers_and_Internet/Internet/World_Wide_Web/Virtual_Reality_Modeling_Language__VRML_/
+format: obj 
+pid: 25463
+polygons: 21121
+connected_components: 20
+average_dihedral_angle: 0.254607
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.926982, ymax = 0.975, zmax = 0.211372
+avg_depth: 1.151763
+center: (0.475991,0.554336,0.098573)
+scale: 0.551269
+principle_axes: (0.000319,0.999647,-0.026571), (-1.000000,0.000322,0.000127), (-0.000136,-0.026571,-0.999647)
+principle_values: (0.073183,0.018271,0.001517)

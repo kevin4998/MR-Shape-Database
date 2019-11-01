@@ -1,0 +1,14 @@
+mid: 8
+url: http://deep.sitenest.net/freemodels/character/3dm-Buzzbee.zip
+ref_url: 
+format: xthreexds 
+pid: 46960
+polygons: 698
+connected_components: 25
+average_dihedral_angle: 0.862038
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.478489, ymax = 0.975, zmax = 0.834222
+avg_depth: 1.357012
+center: (0.259449,0.530949,0.382537)
+scale: 0.538173
+principle_axes: (-0.014898,0.993744,-0.110688), (-0.026943,-0.111059,-0.993449), (-0.999526,-0.011818,0.028429)
+principle_values: (0.047236,0.027579,0.011026)

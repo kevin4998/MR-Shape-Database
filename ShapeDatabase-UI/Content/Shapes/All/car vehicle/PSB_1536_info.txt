@@ -1,0 +1,14 @@
+mid: 1536
+url: http://www.albany.net/~camsys/vrml/viper.wrl
+ref_url: http://www.albany.net/~camsys/sbsample.html
+format: wrl 
+pid: 10993
+polygons: 3653
+connected_components: 660
+average_dihedral_angle: 0.424289
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.629503, ymax = 0.975, zmax = 0.500356
+avg_depth: 1.151728
+center: (0.335937,0.483403,0.264858)
+scale: 0.661985
+principle_axes: (-0.503495,-0.860762,-0.074717), (0.024223,0.072381,-0.997083), (-0.863659,0.503836,0.015593)
+principle_values: (0.094032,0.021459,0.006785)

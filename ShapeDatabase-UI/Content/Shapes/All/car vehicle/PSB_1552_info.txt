@@ -1,0 +1,14 @@
+mid: 1552
+url: http://www.cs.technion.ac.il/~cs236606/vrml/porche.wrl
+ref_url: http://www.cs.technion.ac.il/~cs236606/vrml/
+format: wrl 
+pid: 4756
+polygons: 10474
+connected_components: 8
+average_dihedral_angle: 0.426389
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.323204, zmax = 0.418813
+avg_depth: 1.335815
+center: (0.509602,0.151027,0.221826)
+scale: 0.568213
+principle_axes: (-0.999881,0.015455,0.000269), (-0.000251,0.001179,-0.999999), (-0.015455,-0.999880,-0.001175)
+principle_values: (0.068358,0.014902,0.005303)

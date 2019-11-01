@@ -1,0 +1,14 @@
+mid: 628
+url: http://www.3dcafe.com/models/prcision.zip
+ref_url: http://www.electricfunstuff.com/jgdc/resources/terrain1.zip
+format: xthreexds 
+pid: 28895
+polygons: 20186
+connected_components: 119
+average_dihedral_angle: 0.649629
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.290442, zmax = 0.0752997
+avg_depth: 1.714175
+center: (0.350572,0.159122,0.052368)
+scale: 0.423546
+principle_axes: (-0.999457,-0.029476,-0.014751), (0.029093,-0.999250,0.025561), (-0.015494,0.025118,0.999564)
+principle_values: (0.062214,0.002957,0.000188)

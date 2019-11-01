@@ -1,0 +1,14 @@
+mid: 1673
+url: http://www.ocnus.com/models/Buildings/yieldSign.wrl.gz
+ref_url: http://www.ocnus.com/models/Buildings/
+format: wrl 
+pid: 17701
+polygons: 86
+connected_components: 8
+average_dihedral_angle: 1.25663
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.429, ymax = 0.975, zmax = 0.072555
+avg_depth: 1.065359
+center: (0.226997,0.591314,0.049610)
+scale: 0.545864
+principle_axes: (-0.000015,0.999997,0.002496), (-1.000000,-0.000015,0.000005), (-0.000005,0.002496,-0.999997)
+principle_values: (0.090191,0.002931,0.000148)

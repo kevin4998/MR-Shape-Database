@@ -1,0 +1,14 @@
+mid: 1626
+url: http://fraktali.849pm.com/programs/wrl/Graduation.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32933
+polygons: 190
+connected_components: 5
+average_dihedral_angle: 0.698866
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.438829, zmax = 0.962357
+avg_depth: 1.453529
+center: (0.501341,0.339043,0.494277)
+scale: 0.508679
+principle_axes: (-0.994625,0.068571,0.077579), (0.077160,-0.008738,0.996980), (0.069042,0.997608,0.003400)
+principle_values: (0.033701,0.029315,0.009539)

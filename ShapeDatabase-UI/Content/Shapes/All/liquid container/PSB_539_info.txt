@@ -1,0 +1,14 @@
+mid: 539
+url: http://www.vit.iit.nrc.ca/3D/models_3D/all_models/vase15_T5k1.wrl
+ref_url: http://www.vit.iit.nrc.ca/3D/Pages_HTML/3D_Models.html
+format: wrl 
+pid: 8537
+polygons: 5004
+connected_components: 1
+average_dihedral_angle: 0.193385
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.753297, ymax = 0.975, zmax = 0.7528
+avg_depth: 1.073012
+center: (0.389097,0.502528,0.390657)
+scale: 0.764657
+principle_axes: (-0.005910,0.999902,-0.012701), (-0.718187,-0.013082,-0.695728), (-0.695826,0.005010,0.718193)
+principle_values: (0.078765,0.035511,0.035067)

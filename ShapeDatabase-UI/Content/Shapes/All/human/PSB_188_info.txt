@@ -1,0 +1,14 @@
+mid: 188
+url: http://www.cis.upenn.edu/~beitler/vrml/human/max/age3/max_age3_001.wrl
+ref_url: http://www.cis.upenn.edu/~beitler/children/
+format: wrl 
+pid: 141
+polygons: 3360
+connected_components: 75
+average_dihedral_angle: 0.580693
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.309395, ymax = 0.975, zmax = 0.193661
+avg_depth: 2.735212
+center: (0.169226,0.592492,0.105301)
+scale: 0.370683
+principle_axes: (-0.027659,0.999223,0.028064), (0.999615,0.027589,0.002908), (0.002132,0.028133,-0.999602)
+principle_values: (0.043934,0.003536,0.001161)

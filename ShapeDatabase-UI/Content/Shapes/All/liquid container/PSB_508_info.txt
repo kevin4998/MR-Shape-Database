@@ -1,0 +1,14 @@
+mid: 508
+url: http://64.198.60.83/baument/Models/Coffeecup1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 25645
+polygons: 1988
+connected_components: 3
+average_dihedral_angle: 0.285067
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.809506, zmax = 0.624925
+avg_depth: 1.684739
+center: (0.360002,0.366625,0.324197)
+scale: 0.749907
+principle_axes: (-0.234829,-0.972027,0.004311), (0.971864,-0.234869,-0.017795), (-0.018310,-0.000011,-0.999832)
+principle_values: (0.066383,0.050230,0.031917)

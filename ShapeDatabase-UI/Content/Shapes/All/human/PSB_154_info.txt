@@ -1,0 +1,14 @@
+mid: 154
+url: http://www.gamespot.com/3dgallery/prince.wrl
+ref_url: http://www.inx.de/~hg/worlds.htm
+format: wrl 
+pid: 2823
+polygons: 730
+connected_components: 30
+average_dihedral_angle: 0.816321
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.316961, ymax = 0.975, zmax = 0.239042
+avg_depth: 2.015846
+center: (0.169764,0.509991,0.113244)
+scale: 0.418477
+principle_axes: (-0.005495,0.999331,-0.036171), (-0.999533,-0.006576,-0.029852), (0.030070,-0.035990,-0.998900)
+principle_values: (0.052967,0.003766,0.001369)

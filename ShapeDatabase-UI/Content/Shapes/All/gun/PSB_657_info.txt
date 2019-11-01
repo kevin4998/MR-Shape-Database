@@ -1,0 +1,14 @@
+mid: 657
+url: http://www.digitalanimators.com/Images/3dmodels/bubblegun.zip
+ref_url: http://www.digitalanimators.com/HTM/Resources/3dModels/3dmisc2.htm
+format: lwo 
+pid: 28498
+polygons: 36520
+connected_components: 8
+average_dihedral_angle: 0.161266
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.230622, ymax = 0.7468, zmax = 0.975
+avg_depth: 1.433797
+center: (0.127655,0.499608,0.427813)
+scale: 0.561806
+principle_axes: (-0.000399,-0.349693,-0.936864), (0.000650,0.936864,-0.349693), (-1.000000,0.000748,0.000146)
+principle_values: (0.065342,0.024456,0.002915)

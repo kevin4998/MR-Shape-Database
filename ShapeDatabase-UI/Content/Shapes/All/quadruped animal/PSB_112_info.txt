@@ -1,0 +1,14 @@
+mid: 112
+url: http://www.cs.columbia.edu/~amiller/bunny7.wrl.gz
+ref_url: http://www.cs.columbia.edu/~amiller/bunny.html
+format: wrl 
+pid: 11778
+polygons: 15294
+connected_components: 1
+average_dihedral_angle: 0.214961
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.937056, ymax = 0.975, zmax = 0.655766
+avg_depth: 1.126921
+center: (0.423164,0.600793,0.314553)
+scale: 0.735588
+principle_axes: (0.636485,0.770845,-0.026168), (0.760350,-0.621402,0.189016), (0.129441,-0.140203,-0.981625)
+principle_values: (0.081549,0.039967,0.023929)

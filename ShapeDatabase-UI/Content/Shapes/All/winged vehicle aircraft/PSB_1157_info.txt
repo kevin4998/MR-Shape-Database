@@ -1,0 +1,14 @@
+mid: 1157
+url: http://www.rccad.com/Gallery/Vrml/md-80.wrl
+ref_url: http://www.rccad.com/Gallery_Full9.htm
+format: wrl 
+pid: 38641
+polygons: 2088
+connected_components: 13
+average_dihedral_angle: 0.199299
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.70371, zmax = 0.185832
+avg_depth: 1.376283
+center: (0.563574,0.364355,0.067528)
+scale: 0.395784
+principle_axes: (0.996699,-0.000001,0.081180), (0.000001,1.000000,-0.000001), (0.081180,-0.000001,-0.996699)
+principle_values: (0.047100,0.007335,0.001088)

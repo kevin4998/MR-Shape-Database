@@ -1,0 +1,14 @@
+mid: 1811
+url: http://mowat.virtualave.net/satdish.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26263
+polygons: 1358
+connected_components: 465
+average_dihedral_angle: 1.60815
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.819672, ymax = 0.975, zmax = 0.767315
+avg_depth: 1.184473
+center: (0.422336,0.563614,0.456729)
+scale: 0.603832
+principle_axes: (0.000001,-0.872120,0.489292), (-1.000000,-0.000001,0.000001), (-0.000000,-0.489292,-0.872120)
+principle_values: (0.047606,0.043407,0.008563)

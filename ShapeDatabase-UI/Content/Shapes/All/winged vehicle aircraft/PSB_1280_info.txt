@@ -1,0 +1,14 @@
+mid: 1280
+url: http://www.rccad.com/Gallery/Vrml/Cirus.wrl
+ref_url: 
+format: wrl 
+pid: 48076
+polygons: 324
+connected_components: 11
+average_dihedral_angle: 0.642295
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.447754, ymax = 0.975, zmax = 0.136879
+avg_depth: 1.062427
+center: (0.186265,0.498870,0.063466)
+scale: 0.437236
+principle_axes: (-0.000636,-1.000000,-0.000373), (-0.987065,0.000688,-0.160319), (-0.160319,-0.000266,0.987065)
+principle_values: (0.050666,0.010542,0.000253)

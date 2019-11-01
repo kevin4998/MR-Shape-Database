@@ -1,0 +1,14 @@
+mid: 523
+url: http://64.198.60.83/baument/Models/oiltank3.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 26213
+polygons: 9244
+connected_components: 64
+average_dihedral_angle: 0.5562
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.41198, zmax = 0.350033
+avg_depth: 1.313350
+center: (0.503082,0.194515,0.170020)
+scale: 0.541122
+principle_axes: (-0.999930,0.011790,-0.000775), (-0.011597,-0.966766,0.255401), (0.002262,0.255393,0.966835)
+principle_values: (0.065463,0.010574,0.007796)

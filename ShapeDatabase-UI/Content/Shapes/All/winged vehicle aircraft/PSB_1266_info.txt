@@ -1,0 +1,14 @@
+mid: 1266
+url: http://www.rccad.com/Gallery/Vrml/Xr-23.wrl
+ref_url: 
+format: wrl 
+pid: 48296
+polygons: 5808
+connected_components: 20
+average_dihedral_angle: 0.516439
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.685512, zmax = 0.200851
+avg_depth: 1.905342
+center: (0.480934,0.355252,0.074853)
+scale: 0.352563
+principle_axes: (-0.999677,-0.000029,-0.025399), (-0.000028,1.000000,-0.000057), (0.025399,-0.000057,-0.999677)
+principle_values: (0.030539,0.009313,0.000596)

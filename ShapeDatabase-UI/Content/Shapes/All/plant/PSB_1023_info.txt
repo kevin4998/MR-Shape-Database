@@ -1,0 +1,14 @@
+mid: 1023
+url: http://www.3dcafe.com/models/flower05_s.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: xthreexds 
+pid: 29056
+polygons: 3236
+connected_components: 250
+average_dihedral_angle: 0.496508
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.96653, ymax = 0.813317, zmax = 0.975
+avg_depth: 1.826488
+center: (0.491929,0.345186,0.503718)
+scale: 0.455568
+principle_axes: (-0.687311,-0.051760,-0.724516), (0.149110,-0.986269,-0.070992), (0.710893,0.156826,-0.685592)
+principle_values: (0.024662,0.022807,0.017574)

@@ -1,0 +1,14 @@
+mid: 29
+url: http://cepcairo.bizland.com/free/Parakeet.zip
+ref_url: 
+format: xthreexds 
+pid: 47183
+polygons: 5878
+connected_components: 3
+average_dihedral_angle: 0.301992
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.346738, ymax = 0.914682, zmax = 0.975
+avg_depth: 1.191458
+center: (0.185869,0.536185,0.618414)
+scale: 0.501742
+principle_axes: (0.000000,0.651412,0.758724), (0.000007,0.758724,-0.651412), (1.000000,-0.000005,0.000005)
+principle_values: (0.067105,0.007103,0.006313)

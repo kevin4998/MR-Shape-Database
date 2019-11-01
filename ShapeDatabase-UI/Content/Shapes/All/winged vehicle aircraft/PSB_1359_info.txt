@@ -1,0 +1,14 @@
+mid: 1359
+url: http://mowat.virtualave.net/enterpri.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26789
+polygons: 508
+connected_components: 7
+average_dihedral_angle: 0.759867
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.471212, ymax = 0.356061, zmax = 0.975
+avg_depth: 1.297874
+center: (0.248424,0.213075,0.501439)
+scale: 0.500485
+principle_axes: (-0.000117,0.146112,0.989268), (0.999996,-0.002844,0.000538), (0.002892,0.989264,-0.146111)
+principle_values: (0.052103,0.015122,0.008014)

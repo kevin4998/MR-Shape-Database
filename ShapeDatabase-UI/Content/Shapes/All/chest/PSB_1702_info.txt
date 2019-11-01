@@ -1,0 +1,14 @@
+mid: 1702
+url: http://www.ddj.com/ftp/1996/1996.07/vrml.zip/CHSTFULL.WRL
+ref_url: http://www.ddj.com/ftp/1996/1996.07/vrml.zip/
+format: wrl 
+pid: 3785
+polygons: 100
+connected_components: 10
+average_dihedral_angle: 1.43616
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.620522, zmax = 0.517746
+avg_depth: 1.150055
+center: (0.500000,0.306989,0.267566)
+scale: 0.832975
+principle_axes: (-1.000000,-0.000000,-0.000000), (-0.000000,0.998735,0.050283), (0.000000,0.050283,-0.998735)
+principle_values: (0.102887,0.045416,0.032189)

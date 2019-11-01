@@ -1,0 +1,14 @@
+mid: 1468
+url: http://www.rccad.com/Gallery/Vrml/SubmarineJ.wrl
+ref_url: http://www.rccad.com/Gallery_NonFlying.htm
+format: wrl 
+pid: 33432
+polygons: 684
+connected_components: 13
+average_dihedral_angle: 0.415768
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.227148, zmax = 0.178993
+avg_depth: 1.753214
+center: (0.486862,0.126073,0.101021)
+scale: 0.381462
+principle_axes: (-0.999957,0.000021,-0.009289), (0.000049,0.999995,-0.003032), (0.009289,-0.003032,-0.999952)
+principle_values: (0.049148,0.000920,0.000901)

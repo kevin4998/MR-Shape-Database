@@ -1,0 +1,14 @@
+mid: 76
+url: http://www.avatara.com/avatars2/greatwhite.wrl
+ref_url: http://www.avatara.com/avatars2/avatars2_list.html
+format: wrl 
+pid: 17093
+polygons: 3164
+connected_components: 2
+average_dihedral_angle: 0.531738
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.39593, ymax = 0.35314, zmax = 0.975
+avg_depth: 1.060309
+center: (0.210469,0.183529,0.570997)
+scale: 0.442376
+principle_axes: (0.000038,-0.055526,0.998457), (0.000461,0.998457,0.055526), (-1.000000,0.000458,0.000064)
+principle_values: (0.055115,0.004013,0.003071)

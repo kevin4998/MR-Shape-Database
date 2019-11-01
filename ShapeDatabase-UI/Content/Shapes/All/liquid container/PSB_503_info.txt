@@ -1,0 +1,14 @@
+mid: 503
+url: http://134.220.1.9/sebe/engineering/anemo-cover_pr1.wrl
+ref_url: http://134.220.1.9/sebe/engineering/anemo-cover_p.wrl
+format: wrl 
+pid: 16229
+polygons: 1550
+connected_components: 3
+average_dihedral_angle: 0.281365
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.885303, ymax = 0.975, zmax = 0.570795
+avg_depth: 1.503772
+center: (0.455152,0.540789,0.268679)
+scale: 0.823645
+principle_axes: (-0.000048,0.999868,-0.016223), (-1.000000,-0.000048,0.000000), (0.000001,-0.016223,-0.999868)
+principle_values: (0.072532,0.071173,0.029757)

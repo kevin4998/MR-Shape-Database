@@ -1,0 +1,14 @@
+mid: 66
+url: http://venus.cis.rl.ac.uk/goldfish.wrl
+ref_url: http://venus.cis.rl.ac.uk/emma.html
+format: wrl 
+pid: 11771
+polygons: 8198
+connected_components: 27
+average_dihedral_angle: 0.445895
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.445705, ymax = 0.547553, zmax = 0.975
+avg_depth: 1.962112
+center: (0.242335,0.294752,0.601143)
+scale: 0.494394
+principle_axes: (-0.030328,-0.232703,0.972075), (0.030065,0.971870,0.233592), (-0.999088,0.036310,-0.022479)
+principle_values: (0.058183,0.008532,0.005738)
