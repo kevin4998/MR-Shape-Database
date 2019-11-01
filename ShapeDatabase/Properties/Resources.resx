@@ -209,7 +209,7 @@
     <value>The provided arrays do not have the same size, all should be of the same length. Expected Size: {0}, Given Size {1}.</value>
     <comment>The exception which is given when 2 or more arrays are provided of different lengths when all should have the exact same element count.</comment>
   </data>
-  <data name="EX_Empty_Array" xml:space="preserve">
+  <data name="EX_Array_Empty" xml:space="preserve">
     <value>The given array is empty, this method does not accept arrays without values.</value>
     <comment>The exception which is given when an empty array is provided while its values are important.</comment>
   </data>
@@ -240,5 +240,9 @@
   <data name="D_SettingsFile" xml:space="preserve">
     <value>settings.ini</value>
     <comment>The file where all the application settings will be stored in.</comment>
+  </data>
+  <data name="EX_Array_Size" xml:space="preserve">
+    <value>Invalid array size, expected length '{0}' but got one of length '{1}'.</value>
+    <comment>The exception which is given when an array is provided of an invalid length.</comment>
   </data>
 </root>

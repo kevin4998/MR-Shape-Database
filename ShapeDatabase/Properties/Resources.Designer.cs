@@ -187,6 +187,24 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The given array is empty, this method does not accept arrays without values..
+        /// </summary>
+        internal static string EX_Array_Empty {
+            get {
+                return ResourceManager.GetString("EX_Array_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid array size, expected length &apos;{0}&apos; but got one of length &apos;{1}&apos;..
+        /// </summary>
+        internal static string EX_Array_Size {
+            get {
+                return ResourceManager.GetString("EX_Array_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not cast an object of type {0} to type {1}..
         /// </summary>
         internal static string EX_Cast {
@@ -210,15 +228,6 @@ namespace ShapeDatabase.Properties {
         internal static string EX_Dubble_Snapshot {
             get {
                 return ResourceManager.GetString("EX_Dubble_Snapshot", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The given array is empty, this method does not accept arrays without values..
-        /// </summary>
-        internal static string EX_Empty_Array {
-            get {
-                return ResourceManager.GetString("EX_Empty_Array", resourceCulture);
             }
         }
         

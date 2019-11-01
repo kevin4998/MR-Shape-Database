@@ -134,7 +134,7 @@ namespace ShapeDatabase.Features.Descriptors {
 			if (histogram == null)
 				throw new ArgumentNullException(nameof(histogram));
 			if (histogram.Length == 0)
-				throw new ArgumentException(Resources.EX_Empty_Array, nameof(histogram));
+				throw new ArgumentException(Resources.EX_Array_Empty, nameof(histogram));
 			// Verify that the next value is always between 0 and 1
 			for (int i = 1; i < histogram.Length; i++)
 				if (histogram[i] < 0 || histogram[i] > 1)

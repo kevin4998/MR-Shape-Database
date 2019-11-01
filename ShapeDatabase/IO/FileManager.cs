@@ -35,10 +35,12 @@ namespace ShapeDatabase.IO {
 			dic.Add(typeof(GeometryMesh), GeomOffReader.Instance);
 			dic.Add(typeof(FeatureManager), FMReader.Instance);
 			dic.Add(typeof(TempSettings), SettingsReader.Instance);
+			dic.Add(typeof(QueryResult[]), QueryReader.Instance);
 
 			formats.UnionWith(GeomOffReader.Instance.SupportedFormats);
 			formats.UnionWith(FMReader.Instance.SupportedFormats);
 			formats.UnionWith(SettingsReader.Instance.SupportedFormats);
+			formats.UnionWith(QueryReader.Instance.SupportedFormats);
 		}
 		private static void PopulateWriters(IDictionary<Type, IWriter> dic) {
 			dic.Add(typeof(GeometryMesh), GeomOffWriter.Instance);
