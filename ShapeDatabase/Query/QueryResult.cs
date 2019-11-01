@@ -18,7 +18,7 @@ namespace ShapeDatabase.Query {
 	/// database items.
 	/// </summary>
 	[DebuggerDisplay("{QueryName}: {Count} comparisons")]
-	public class QueryResult {
+	public class QueryResult : System.IComparable<QueryResult> {
 
 		#region --- Properties ---
 
@@ -139,6 +139,12 @@ namespace ShapeDatabase.Query {
 				QueryName,
 				string.Join(", ", Results)
 			);
+		}
+
+		public int CompareTo(QueryResult other) {
+			if (other == null)
+				throw new ArgumentNullException(nameof(other));
+			return QueryName.CompareTo(other.QueryName);
 		}
 
 		#endregion
