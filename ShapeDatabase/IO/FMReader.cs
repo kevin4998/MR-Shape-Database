@@ -111,7 +111,7 @@ namespace ShapeDatabase.IO {
 		private static string[] FilterDescriptors(string[] names) {
 			// Name fix because the first element is the name not a descriptor
 			string[] descNames = new string[names.Length - 1];
-			for (int i = 0; i < descNames.Length; i++)
+			for (int i = 0; i < descNames.Length;)
 				descNames[i++] = names[i];
 			return descNames;
 		}

@@ -25,13 +25,13 @@ namespace ShapeDatabase.UI {
 			Parser.Default.ParseArguments<CleanOptions, ViewOptions, RefineOptions,
 										  MeasureOptions, FeatureOptions, QueryOptions,
 										  EvaluateOptions>(args)
-				.WithParsed<BaseOptions>(GlobalHandler.Start)
-				.WithParsed<CleanOptions>(CleanHandler.Start)
-				.WithParsed<ViewOptions>(ViewHandler.Start)
-				.WithParsed<RefineOptions>(RefineHandler.Start)
-				.WithParsed<MeasureOptions>(MeasureHandler.Start)
-				.WithParsed<FeatureOptions>(FeatureHandler.Start)
-				.WithParsed<QueryOptions>(QueryHandler.Start)
+				.WithParsed<BaseOptions>	(GlobalHandler	.Start)
+				.WithParsed<CleanOptions>	(CleanHandler	.Start)
+				.WithParsed<ViewOptions>	(ViewHandler	.Start)
+				.WithParsed<RefineOptions>	(RefineHandler	.Start)
+				.WithParsed<MeasureOptions>	(MeasureHandler	.Start)
+				.WithParsed<FeatureOptions>	(FeatureHandler	.Start)
+				.WithParsed<QueryOptions>	(QueryHandler	.Start)
 				.WithParsed<EvaluateOptions>(EvaluateHandler.Start)
 				.WithNotParsed(OnErrors);
 		}
