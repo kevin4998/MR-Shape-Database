@@ -33,6 +33,7 @@ namespace ShapeDatabase.UI {
 				.WithParsed<FeatureOptions>	(FeatureHandler	.Start)
 				.WithParsed<QueryOptions>	(QueryHandler	.Start)
 				.WithParsed<EvaluateOptions>(EvaluateHandler.Start)
+				.WithParsed<BaseOptions>	(ExitHandler	.Start)
 				.WithNotParsed(OnErrors);
 		}
 

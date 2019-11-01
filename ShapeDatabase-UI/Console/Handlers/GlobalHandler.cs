@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
-using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
-
-using static System.Console;
-using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
 
@@ -15,7 +11,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 	public static class GlobalHandler {
 
 		/// <summary>
-		/// The operation to view refined and unrefined shapes.
+		/// The operation to load in initial settings for this application.
 		/// </summary>
 		/// <param name="options">The options object which contains extra information
 		/// which helps during the exeuction of this modus.</param>

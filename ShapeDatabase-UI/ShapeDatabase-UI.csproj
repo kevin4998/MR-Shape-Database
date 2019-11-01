@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Console\Handlers\CleanHandler.cs" />
     <Compile Include="Console\Handlers\EvaluateHandler.cs" />
+    <Compile Include="Console\Handlers\ExitHandler.cs" />
     <Compile Include="Console\Handlers\FeatureHandler.cs" />
     <Compile Include="Console\Handlers\GlobalHandler.cs" />
     <Compile Include="Console\Handlers\MeasureHandler.cs" />
