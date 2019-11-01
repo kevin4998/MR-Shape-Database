@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.Features.Statistics;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using HNSW.Net;
 using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.Query;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features {
 
@@ -54,7 +55,7 @@ namespace ShapeDatabase.Features {
 
 			using (MetricsEventListener listener =
 				new MetricsEventListener(EventSources.GraphBuildEventSource.Instance)) {
-				world.BuildGraph(vectors, new Random(), parameters);
+				world.BuildGraph(vectors, RandomUtil.ThreadSafeRandom, parameters);
 			}
 		}
 

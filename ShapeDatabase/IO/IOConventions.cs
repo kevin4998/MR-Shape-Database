@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using CsvHelper;
 using ShapeDatabase.Properties;
 
 namespace ShapeDatabase.IO {
@@ -19,6 +20,7 @@ namespace ShapeDatabase.IO {
 		/// The word to describe the name of a mesh.
 		/// </summary>
 		public static string MeshName => Resources.F_MeshName;
+
 
 		/// <summary>
 		/// Check if at the end of a given stream it is mentioned that
@@ -68,6 +70,71 @@ namespace ShapeDatabase.IO {
 				writer.WriteLine();
 				writer.WriteLine($"# {NORMALISED_DATA}");
 			}
+		}
+
+
+		/// <summary>
+		/// A constructor which will create CSV readers all having the same format
+		/// convention.
+		/// </summary>
+		/// <param name="writer">The stream which will provide the underlying
+		/// file access for CSV methods.</param>
+		/// <returns>A <see cref="CsvHelper.CsvReader"/> which was created
+		/// based on the underlying stream. The caller of this method needs
+		/// to provide disposing of this writer.</returns>
+		public static CsvReader CsvReader(StreamReader reader) {
+			if (reader == null)
+				throw new ArgumentNullException(nameof(reader));
+
+			CsvReader csv = new CsvReader(reader);
+			csv.Configuration.Delimiter =
+				Settings.Culture.TextInfo.ListSeparator;
+			csv.Configuration.IgnoreBlankLines = true;
+			return csv;
+		}
+
+		/// <summary>
+		/// A constructor which will create CSV writers all having the same format
+		/// convention.
+		/// </summary>
+		/// <param name="writer">The stream which will provide the underlying
+		/// file access for CSV methods.</param>
+		/// <returns>A <see cref="CsvHelper.CsvWriter"/> which was created
+		/// based on the underlying stream. The caller of this method needs
+		/// to provide disposing of this writer.</returns>
+		public static CsvWriter CsvWriter(StreamWriter writer) {
+			if (writer == null)
+				throw new ArgumentNullException(nameof(writer));
+
+			CsvWriter csv = new CsvWriter(writer);
+			csv.Configuration.Delimiter =
+				Settings.Culture.TextInfo.ListSeparator;
+			return csv;
+		}
+
+
+		/// <summary>
+		/// Filters a CSV header by removing the name of the entry from the collection.
+		/// </summary>
+		/// <param name="reader">The csv reader containing the header.</param>
+		/// <returns>A new array of headers without the name header.</returns>
+		public static string[] FilterHeader(CsvReader reader) {
+			if (reader == null)
+				throw new ArgumentNullException(nameof(reader));
+			return FilterHeader(reader.Context.HeaderRecord);
+		}
+
+		/// <summary>
+		/// Filters a CSV header by removing the name of the entry from the collection.
+		/// </summary>
+		/// <param name="header">The collection of headers in the CSV file.</param>
+		/// <returns>A new array of headers without the name header.</returns>
+		public static string[] FilterHeader(string[] header) {
+			// Name fix because the first element is the name not a descriptor
+			string[] descNames = new string[header.Length - 1];
+			for (int i = 0; i < descNames.Length;)
+				descNames[i++] = header[i];
+			return descNames;
 		}
 
 	}

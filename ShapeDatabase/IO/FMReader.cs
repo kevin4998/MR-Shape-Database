@@ -11,11 +11,14 @@ using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 using ShapeDatabase.Properties;
 
+using static ShapeDatabase.IO.IOConventions;
+
 namespace ShapeDatabase.IO {
 	/// <summary>
 	/// Class for creating a featuremanager out of a csv with featurevectors.
 	/// </summary>
 	class FMReader : IReader<FeatureManager> {
+
 		#region --- Properties ---
 
 		#region -- Static Properties --
@@ -78,19 +81,16 @@ namespace ShapeDatabase.IO {
 		private IDictionary<string, FeatureVector> GetFeatureVectors(StreamReader reader) {
 			IDictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
 
-			using (CsvReader csv = new CsvReader(reader)) {
-				csv.Configuration.Delimiter =
-					Settings.Culture.TextInfo.ListSeparator;
-				csv.Configuration.IgnoreBlankLines = true;
+			using (CsvReader csv = CsvReader(reader)) {
 				// Csv syntax for reading headers.
 				csv.Read();
 				csv.ReadHeader();
 				// Read the header, to see which measures there are.
-				string[] descNames = FilterDescriptors(csv.Context.HeaderRecord);
+				string[] descNames = FilterHeader(csv);
 				// Find the individual values.
 				while (csv.Read()) {
 					// Check to see if there is an entry here.
-					if (!csv.TryGetField(IOConventions.MeshName, out string name))
+					if (!csv.TryGetField(MeshName, out string name))
 						break;
 					// Collect all the descriptors from the CSV.
 					IList<IDescriptor> descriptors = new List<IDescriptor>();
@@ -105,15 +105,6 @@ namespace ShapeDatabase.IO {
 			}
 
 			return featureVectors;
-		}
-
-		// Get only the descriptors from the headers.
-		private static string[] FilterDescriptors(string[] names) {
-			// Name fix because the first element is the name not a descriptor
-			string[] descNames = new string[names.Length - 1];
-			for (int i = 0; i < descNames.Length;)
-				descNames[i++] = names[i];
-			return descNames;
 		}
 
 		private static bool TryDeserialise(string name, string serialised,

@@ -7,7 +7,7 @@ namespace ShapeDatabase.UI.Console.Verbs {
 	/// The options to clean and remove all existing files for a new restart.
 	/// </summary>
 	[Verb("clean", HelpText = "Delete all cached data for a clean restart.")]
-	public class CleanOptions {
+	public class CleanOptions : BaseOptions {
 
 		/// <summary>
 		/// Descibes if the settings file should be cleaned.

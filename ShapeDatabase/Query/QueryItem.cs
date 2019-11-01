@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
@@ -67,6 +68,55 @@ namespace ShapeDatabase.Query {
 
 		public override string ToString() {
 			return $"{MeshName} ({MeshDistance})";
+		}
+
+		#endregion
+
+		#region --- Static Methods ---
+
+		/// <summary>
+		/// Converts the string representation into QueryItem with the distance
+		/// from its original reference item. And returns a boolean to identify
+		/// if this conversion process has succeeded.
+		/// </summary>
+		/// <param name="serialised">The string representation of this item.</param>
+		/// <param name="item">The reconstructed query item if it was successful,
+		/// otherwise a default NULL query item.</param>
+		/// <returns>If the conversion process was successful.</returns>
+		public static bool TryParse(string serialised, out QueryItem item) {
+			try {
+				item = FromString(serialised);
+				return true;
+			} catch (ArgumentException ex) {
+				item = default;
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Converts the string representation into QueryItem with the distance
+		/// from its original reference item.
+		/// </summary>
+		/// <param name="serialised">The string representation of this item.</param>
+		/// <returns>The reconstructed query item if it was successful.</returns>
+		public static QueryItem FromString(string serialised) {
+			if (string.IsNullOrEmpty(serialised))
+				throw new ArgumentNullException(nameof(serialised));
+			const string formatRegex = "^\\w+ \\((0|([1-9][0-9]*)((\\.|\\,)[0-9]+)?\\)$";
+			if (!Regex.IsMatch(serialised, formatRegex))
+				throw new ArgumentException();
+
+			string[] args = serialised.Split(' ');
+			if (args.Length != 2)
+				throw new ArgumentException();
+
+			string name = args[0];
+			string number = args[1].Substring(1, args[1].Length - 2);
+
+			if (!double.TryParse(number, out double distance))
+				throw new ArgumentException();
+
+			return new QueryItem(name, distance);
 		}
 
 		#endregion

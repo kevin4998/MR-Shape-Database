@@ -371,6 +371,6 @@ for /r "$(TargetDir)" %25%25x in (*.config) do move "%25%25x" "$(TargetDir)Libs"
 for /r "$(TargetDir)" %25%25x in (*.xml) do move "%25%25x" "$(TargetDir)Libs"
 for /r "$(TargetDir)" %25%25x in (*.pdb) do move "%25%25x" "$(TargetDir)Libs"
 move "$(TargetDir)Libs\\$(TargetFileName).config" "$(TargetDir)$(TargetFileName).config"
-start $(TargetDir)start.bat</PostBuildEvent>
+:: start $(TargetDir)start.bat</PostBuildEvent>
   </PropertyGroup>
 </Project>
