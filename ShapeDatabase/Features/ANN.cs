@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
@@ -11,31 +12,66 @@ using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.Query;
 
 namespace ShapeDatabase.Features {
+
 	/// <summary>
 	/// Class for performing Approximate Nearest Neighbour (ANN) searches
 	/// </summary>
 	public class ANN {
+
+		#region --- Properties ---
+
 		/// <summary>
 		/// The world to which a query vector will be compared.
 		/// </summary>
 		private readonly SmallWorld<NamedFeatureVector, double> world;
 
+		#endregion
+
+		#region --- Constructor Methods ---
+
 		/// <summary>
-		/// Initializes the ANN class, given all featuresvectors to which a query will be compared.
+		/// Initializes the ANN class, given all featuresvectors to which
+		/// a query will be compared.
+		/// </summary>
+		/// <param name="database">All featurevectors from the database.</param>
+		public ANN(IDictionary<string, FeatureVector> database)
+			:this(database.Select(x => new NamedFeatureVector(x.Key, x.Value))) { }
+
+		/// <summary>
+		/// Initializes the ANN class, given all featuresvectors to which
+		/// a query will be compared.
 		/// </summary>
 		/// <param name="database">All featurevectors of its world.</param>
 		public ANN(IEnumerable<NamedFeatureVector> database) {
 			IReadOnlyList<NamedFeatureVector> vectors = database.ToList().AsReadOnly();
 			world = new SmallWorld<NamedFeatureVector, double>(ANNDistance);
 
-			SmallWorld<NamedFeatureVector, double>.Parameters parameters = new SmallWorld<NamedFeatureVector, double>.Parameters
+			SmallWorld<NamedFeatureVector, double>.Parameters parameters =
+				new SmallWorld<NamedFeatureVector, double>.Parameters
 			{
 				EnableDistanceCacheForConstruction = true
 			};
 
-			using (MetricsEventListener listener = new MetricsEventListener(EventSources.GraphBuildEventSource.Instance)) {
+			using (MetricsEventListener listener =
+				new MetricsEventListener(EventSources.GraphBuildEventSource.Instance)) {
 				world.BuildGraph(vectors, new Random(), parameters);
 			}
+		}
+
+		#endregion
+
+		#region --- Methods ---
+
+		/// <summary>
+		/// Perform ANN search on the class' world, given a vector, returning the (approximate) k-best results.
+		/// </summary>
+		/// <param name="name">The name of the querried object.</param>
+		/// <param name="vector">The featurevector for comparison between vectors.</param>
+		/// <param name="kBest">How many results should be returned.</param>
+		/// <returns>The best results for the specified item in a
+		/// <see cref="QueryResult"/> object.</returns>
+		public QueryResult RunANNQuery(string name, FeatureVector vector, int kBest) {
+			return RunANNQuery(new NamedFeatureVector(name, vector), kBest);
 		}
 
 		/// <summary>
@@ -66,6 +102,8 @@ namespace ShapeDatabase.Features {
 		private static double ANNDistance(NamedFeatureVector vector1, NamedFeatureVector vector2) {
 			return vector1.FeatureVector.Compare(vector2.FeatureVector);
 		}
+
+		#endregion
 
 		/// <summary>
 		/// Eventlistener used for building the world.

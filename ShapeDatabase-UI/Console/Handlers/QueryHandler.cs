@@ -81,16 +81,13 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		private static QueryResult[] ProcessQuery(FeatureManager manager) {
 			int queryItems = Settings.QueryLibrary.Meshes.Count;
 			QueryResult[] queryResults = new QueryResult[queryItems];
-			int nextElement = -1;   // Increment returns the new value.
+			int nextElement = 0;
 
 			if (Settings.MeshLibrary.Count == 0)
 				foreach (MeshEntry entry in Settings.QueryLibrary.Meshes)
-					queryResults[++nextElement] = new QueryResult(entry.Name);
+					queryResults[nextElement++] = new QueryResult(entry.Name);
 			else
-				Parallel.ForEach(Settings.QueryLibrary.Meshes, mesh => {
-					int position = Interlocked.Increment(ref nextElement);
-					queryResults[position] = manager.CalculateResults(mesh);
-				});
+				queryResults = manager.CalculateResults(Settings.QueryLibrary.Meshes);
 
 			return queryResults;
 		}
