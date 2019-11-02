@@ -27,6 +27,7 @@ namespace ShapeDatabase.Shapes {
 		Vector3 GetFace(uint pos);
 		Vector3 GetNormal(uint pos);
 
+		Vector3 GetRandomVertex(Random rand);
 	}
 
 	public static class MeshEx {
@@ -104,6 +105,16 @@ namespace ShapeDatabase.Shapes {
 			return mesh.GetTriArea(mesh.GetVerticesFromFace(pos));
 		}
 
+		public static double GetTriArea(this IMesh mesh, Vector3[] points)
+		{
+			if (mesh == null)
+				throw new ArgumentNullException(nameof(mesh));
+			if (points == null || points.Length != 3)
+				throw new ArgumentNullException(nameof(points));
+
+			return Functions.GetTriArea(points);
+		}
+
 		public static double GetTriArea(this IMesh mesh, Vector3 face) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
@@ -112,13 +123,55 @@ namespace ShapeDatabase.Shapes {
 			return mesh.GetTriArea(points);
 		}
 
-		public static double GetTriArea(this IMesh mesh, Vector3[] points) {
+		public static Vector3 GetRandomVertex(this IMesh mesh, Random rand, uint[] weightedvertexarray)
+		{
 			if (mesh == null)
+			{
 				throw new ArgumentNullException(nameof(mesh));
-			if (points == null || points.Length != 3)
-				throw new ArgumentNullException(nameof(points));
+			}
+			if(rand == null)
+			{
+				throw new ArgumentNullException(nameof(rand));
+			}
+			if(weightedvertexarray == null)
+			{
+				throw new ArgumentNullException(nameof(weightedvertexarray));
+			}
 
-			return Functions.GetTriArea(points);
+			int index = rand.Next(0, Settings.WeightedVertexArraySize);
+			Vector3 face = mesh.GetFace(weightedvertexarray[index]);
+
+			index = rand.Next(0, 3);
+			Vector3 vertex = mesh.GetVertex((uint)face[index]);
+
+			return vertex;
+		}
+
+		public static uint[] SetWeightedVertexArray(this IMesh mesh)
+		{
+			if (mesh == null)
+			{
+				throw new ArgumentNullException(nameof(mesh));
+			}
+
+			double surfaceArea = 0;
+			for (int i = 0; i < mesh.FaceCount; i++)
+				surfaceArea += GetTriArea(mesh, mesh.GetFace((uint)i));
+
+			uint[] WeightedVertexArray = new uint[Settings.WeightedVertexArraySize];
+
+			double currentTotal = 0;
+			for (uint i = 0; i < mesh.FaceCount; i++)
+			{
+				double endTotal = currentTotal + GetTriArea(mesh, mesh.GetFace(i)) / surfaceArea * (Settings.WeightedVertexArraySize - 1);
+
+				for (int j = (int)Math.Ceiling(currentTotal); j < endTotal; j++)
+					WeightedVertexArray[j] = i;
+
+				currentTotal = endTotal;
+			}
+
+			return WeightedVertexArray;
 		}
 	}
 
