@@ -25,7 +25,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 				yield return Settings.FeatureVectorDir;
 				yield return Settings.MeasurementsDir;
 				yield return Settings.QueryDir;
-				yield return Settings.ContentDir;
 			}
 		}
 
