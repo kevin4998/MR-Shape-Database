@@ -50,7 +50,7 @@ namespace ShapeDatabase.Util.Collections {
 		/// <exception cref="ArgumentNullException">If the given collection does not
 		/// exist.</exception>
 		public WeightedCollection(IEnumerable<T> collection) 
-			: this(collection, _ => 1) { }
+			: this(collection, Enumerators.Infinite(0d)) { }
 
 		/// <summary>
 		/// Initialises a new weighted collection with the provided items,
@@ -108,10 +108,15 @@ namespace ShapeDatabase.Util.Collections {
 		public void Add(T item, double weight) {
 			collection.Add(item);
 			int length = Count;
-			double[] newWeights = new double[length + 1];
-			Array.Copy(weights, 0, newWeights, 0, length);
-			newWeights[length] = newWeights[length - 1] + weight;
-			weights = newWeights;
+			if (length == 0) {
+				weights = new double[] { weight };
+			} else {
+				double[] newWeights = new double[length + 1];
+				Array.Copy(weights, 0, newWeights, 0, length);
+				newWeights[length] = newWeights[length - 1] + weight;
+				weights = newWeights;
+			}
+
 		}
 
 		public bool AddWeight(T item, double weight) {

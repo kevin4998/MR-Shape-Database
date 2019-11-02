@@ -8,68 +8,59 @@ using static ShapeDatabase.Util.Functions;
 
 namespace ShapeDatabase.Shapes {
 
-	public class GeometryMesh : IMesh {
+	public class GeometryMesh : AbstractMesh {
 
 		#region --- Properties ---
 
 		public g3.DMesh3 Base { get; }
-		public bool IsNormalised { get; }
+		private bool normalised;
 
-		public uint VertexCount => (uint) Base.VertexCount;
-		public uint FaceCount => (uint) Base.TriangleCount;
-		public uint EdgeCount => 0;
-		public uint NormalCount => (uint) Base.VertexCount;
+		public override bool IsNormalised {
+			get => normalised;
+			set => throw new InvalidOperationException();
+		}
 
-		private readonly Lazy<IBoundingBox> lazyBB;
-		private readonly Lazy<IWeightedCollection<Vector3>> lazyVertices;
+		public override uint VertexCount => (uint) Base.VertexCount;
+		public override uint FaceCount => (uint) Base.TriangleCount;
+		public override uint EdgeCount => 0;
+		public override uint NormalCount => (uint) Base.VertexCount;
 
-		public IEnumerable<Vector3> Vertices {
+		public override IEnumerable<Vector3> Vertices {
 			get {
 				for (int i = 0; i < VertexCount; i++)
 					yield return VectorConvert(Base.GetVertex(i));
 			}
+			set => throw new InvalidOperationException();
 		}
-		public IEnumerable<Vector3> Faces {
+		public override IEnumerable<Vector3> Faces {
 			get {
 				for (int i = 0; i < FaceCount; i++)
 					yield return VectorConvert(Base.GetTriangle(i));
 			}
+			set => throw new InvalidOperationException();
 		}
-		public IEnumerable<Vector3> Edges => System.Linq.Enumerable.Empty<Vector3>();
-		public IEnumerable<Vector3> Normals {
+		public override IEnumerable<Vector3> Edges {
+			get => System.Linq.Enumerable.Empty<Vector3>();
+			set => throw new InvalidOperationException();
+		}
+		public override IEnumerable<Vector3> Normals {
 			get {
 				if (Base.HasVertexNormals)
 					for (int i = 0; i < NormalCount; i++)
 						yield return VectorConvert(Base.GetVertexNormal(i));
 				yield break;
 			}
+			set => throw new InvalidOperationException();
 		}
 
 		#endregion
 
 		#region --- Constructor Methods ---
 
-		public GeometryMesh(g3.DMesh3 mesh, bool normalised = false) {
+		public GeometryMesh(g3.DMesh3 mesh, bool normalised = false) 
+			: base() {
 			Base = mesh ?? throw new ArgumentNullException(nameof(mesh));
-			IsNormalised = normalised;
-
-			lazyBB = new Lazy<IBoundingBox>(InitializeBoundingBox);
-			lazyVertices = new Lazy<IWeightedCollection<Vector3>>(
-				() => {
-					IWeightedCollection<Vector3> col =
-						new WeightedCollection<Vector3>();
-
-					foreach (Vector3 face in Faces) {
-						Vector3[] vertices = this.GetVerticesFromFace(face);
-						double area = this.GetTriArea(vertices);
-
-						foreach(Vector3 vertice in vertices)
-							col.AddWeight(vertice, area);
-					}
-
-					return col;
-				}
-			);
+			this.normalised = normalised;
 		}
 
 		#endregion
@@ -78,51 +69,20 @@ namespace ShapeDatabase.Shapes {
 
 		#region -- Instance Methods --
 
-		private IBoundingBox InitializeBoundingBox() {
-			return AABB.FromMesh(this);
-		}
-
-		public IBoundingBox GetBoundingBox() {
-			return lazyBB.Value;
-		}
-
-		public Vector3 GetVertex(uint pos) {
+		public override Vector3 GetVertex(uint pos) {
 			return VectorConvert(Base.GetVertex(Convert.ToInt32(pos)));
 		}
 
-		public Vector3 GetFace(uint pos) {
+		public override Vector3 GetFace(uint pos) {
 			return VectorConvert(Base.GetTriangle(Convert.ToInt32(pos)));
 		}
 
-		public Vector3 GetNormal(uint pos) {
+		public override Vector3 GetNormal(uint pos) {
 			return VectorConvert(Base.GetVertexNormal(Convert.ToInt32(pos)));
 		}
 
 		public double GetTriArea(uint tID) {
 			return Base.GetTriArea(Convert.ToInt32(tID));
-		}
-
-		public Vector3 GetRandomVertex(Random random) =>
-			GetRandomVertices(1, random)[0];
-
-		public Vector3[] GetRandomVertices(int count, Random random) {
-			if (random == null)
-				throw new ArgumentNullException(nameof(random));
-			if (count < 0)
-				throw new ArgumentException(
-					string.Format(
-						Settings.Culture,
-						Resources.EX_ExpPosValue,
-						count
-					),
-					nameof(count)
-				);
-
-
-			Vector3[] array = new Vector3[count];
-			for (int i = count - 1; i >= 0; i--)
-				array[i] = lazyVertices.Value.GetElement(random);
-			return array;
 		}
 
 		public static GeometryMesh Create(g3.DMesh3 mesh) {

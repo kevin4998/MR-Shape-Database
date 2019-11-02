@@ -23,6 +23,7 @@ namespace ShapeDatabase.Shapes {
 		IEnumerable<Vector3> Normals { get; }
 
 		IBoundingBox GetBoundingBox();
+		IWeightedCollection<Vector3> GetWeights();
 
 		Vector3 GetVertex(uint pos);
 		Vector3 GetFace(uint pos);
@@ -128,22 +129,20 @@ namespace ShapeDatabase.Shapes {
 				throw new ArgumentNullException(nameof(mesh));
 			if (rand == null)
 				throw new ArgumentNullException(nameof(rand));
+			if (count < 0)
+				throw new ArgumentException(
+					string.Format(
+						Settings.Culture,
+						Resources.EX_ExpPosValue,
+						count
+					),
+					nameof(count)
+				);
 
-			IWeightedCollection<Vector3> col =
-						new WeightedCollection<Vector3>();
-
-			foreach (Vector3 face in mesh.Faces) {
-				Vector3[] vertices = mesh.GetVerticesFromFace(face);
-				double area = mesh.GetTriArea(vertices);
-
-				foreach (Vector3 vertice in vertices)
-					col.AddWeight(vertice, area);
-			}
-
-			Vector3[] array = new Vector3[count];
-			for(int i = count - 1; i >= 0; i--)
-				array[i] = col.GetElement(rand);
-			return array;
+			Vector3[] vertices = new Vector3[count--];
+			while (count >= 0)
+				vertices[count--] = mesh.GetWeights().GetElement(rand);
+			return vertices;
 		}
 
 		public static Vector3 GetRandomVertex(this IMesh mesh, Random rand)

@@ -205,7 +205,7 @@ namespace ShapeDatabase.Features {
 
 			Parallel.For(0, Settings.ValuesPerHistogram, i => {
 				Random random = RandomUtil.ThreadSafeRandom;
-				Vector3 randomVertice = GetRandomVertice(mesh, random);
+				Vector3 randomVertice = GetRandomVertex(mesh, random);
 				float distance = randomVertice.Length;
 				int bin = Math.Min((int)(distance / binSize), binValues.Length - 1);
 				Interlocked.Increment(ref binValues[bin]);
@@ -304,7 +304,7 @@ namespace ShapeDatabase.Features {
 		/// <param name="mesh">The mesh of which the random vertices will be taken</param>
 		/// <param name="random">The (threadsafe) random generator</param>
 		/// <returns>A Single Vector3 which is a random vertex position.</returns>
-		private static Vector3 GetRandomVertice(IMesh mesh, Random random)
+		private static Vector3 GetRandomVertex(IMesh mesh, Random random)
 			=> GetRandomVertices(mesh, random, 1)[0];
 
 		/// <summary>

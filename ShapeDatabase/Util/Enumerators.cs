@@ -87,6 +87,10 @@ namespace ShapeDatabase.Util {
 				yield return enumerator.Current;
 		}
 
+		public static IEnumerable<T> Infinite<T>(T item) {
+			while (true) yield return item;
+		}
+
 	}
 
 	class TypeEnumerator<TGoal> : IEnumerator<TGoal> {
