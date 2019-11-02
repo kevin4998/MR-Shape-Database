@@ -31,7 +31,7 @@ namespace ShapeDatabase.Util.Collections {
 		/// A combination of all the weights of the items in this collection.
 		/// This can be used for retrieving items with <see cref="Random"/>.
 		/// </summary>
-		uint TotalWeight { get; }
+		double TotalWeight { get; }
 
 		/// <summary>
 		/// Provides a new item to the collection with the specified weight.
@@ -42,7 +42,7 @@ namespace ShapeDatabase.Util.Collections {
 		/// from the collection.</param>
 		/// <exception cref="ArgumentException">If the value of the weight is below 0.
 		/// Weights may only have positive values.</exception>
-		void Add(T item, uint weight);
+		void Add(T item, double weight);
 
 		/// <summary>
 		/// Increments the weight of the specified item.
@@ -56,7 +56,7 @@ namespace ShapeDatabase.Util.Collections {
 		/// <see langword="false"/> if it was newly added.</returns>
 		/// <exception cref="ArgumentException">If the value of the weight is below 0.
 		/// Weights may only have positive values.</exception>
-		bool AddWeight(T item, uint weight);
+		bool AddWeight(T item, double weight);
 
 		/// <summary>
 		/// Provides a random item from the collection where return chance is based
@@ -108,7 +108,7 @@ namespace ShapeDatabase.Util.Collections {
 		/// </exception>
 		/// <exception cref="ArgumentException">If the value of the weight is below 0.
 		/// Weights may only have positive values.</exception>
-		public static void Add<T>(this IWeightedCollection<T> collection, T item, int weight) {
+		public static void Add<T>(this IWeightedCollection<T> collection, T item, double weight) {
 			if (collection == null)
 				throw new ArgumentNullException(nameof(collection));
 			if (weight < 0)

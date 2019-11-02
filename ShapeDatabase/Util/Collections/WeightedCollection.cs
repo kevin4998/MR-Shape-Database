@@ -19,11 +19,11 @@ namespace ShapeDatabase.Util.Collections {
 
 		#region --- Properties ---
 
-		private uint[] weights;
+		private double[] weights;
 		private readonly IList<T> collection;
 
 		public int Count => weights.Length;
-		public uint TotalWeight => weights[weights.Length - 1];
+		public double TotalWeight => weights[weights.Length - 1];
 
 		public object SyncRoot { get; } = new object();
 		public bool IsReadOnly => false;
@@ -38,7 +38,7 @@ namespace ShapeDatabase.Util.Collections {
 		/// </summary>
 		public WeightedCollection() {
 			collection = new List<T>();
-			weights = Array.Empty<uint>();
+			weights = Array.Empty<double>();
 		}
 
 		/// <summary>
@@ -62,7 +62,7 @@ namespace ShapeDatabase.Util.Collections {
 		/// an individual item.</param>
 		/// <exception cref="ArgumentNullException">If the given collection or
 		/// weight function does not exist.</exception>
-		public WeightedCollection(IEnumerable<T> collection, Converter<T, int> weightFunction)
+		public WeightedCollection(IEnumerable<T> collection, Converter<T, double> weightFunction)
 			: this(collection, collection.ConvertTo(weightFunction)) { }
 
 		/// <summary>
@@ -77,17 +77,17 @@ namespace ShapeDatabase.Util.Collections {
 		/// enumerable.</param>
 		/// <exception cref="ArgumentNullException">If any of the given collections
 		/// does not exist.</exception>
-		public WeightedCollection(IEnumerable<T> collection, IEnumerable<int> weights) {
+		public WeightedCollection(IEnumerable<T> collection, IEnumerable<double> weights) {
 			if (collection == null)
 				throw new ArgumentNullException(nameof(collection));
 			if (weights == null)
 				throw new ArgumentNullException(nameof(weights));
 
 			IEnumerator<T> itemEnumerator = collection.GetEnumerator();
-			IEnumerator<int> weightEnumerator = weights.GetEnumerator();
+			IEnumerator<double> weightEnumerator = weights.GetEnumerator();
 
-			List<T>    itemList   = new List<T>();
-			List<uint> weightList = new List<uint>();
+			List<T>		 itemList   = new List<T>();
+			List<double> weightList = new List<double>();
 			uint lastWeight = 0;
 
 			while (itemEnumerator.MoveNext() && weightEnumerator.MoveNext()) {
@@ -105,16 +105,16 @@ namespace ShapeDatabase.Util.Collections {
 
 		public void Add(T item) => Add(item, 1);
 
-		public void Add(T item, uint weight) {
+		public void Add(T item, double weight) {
 			collection.Add(item);
 			int length = Count;
-			uint[] newWeights = new uint[length + 1];
+			double[] newWeights = new double[length + 1];
 			Array.Copy(weights, 0, newWeights, 0, length);
 			newWeights[length] = newWeights[length - 1] + weight;
 			weights = newWeights;
 		}
 
-		public bool AddWeight(T item, uint weight) {
+		public bool AddWeight(T item, double weight) {
 			int index = collection.IndexOf(item);
 			// If it is not present add the item.
 			if (index == -1) {
@@ -133,7 +133,7 @@ namespace ShapeDatabase.Util.Collections {
 			if (random == null)
 				throw new ArgumentNullException(nameof(random));
 
-			uint value = random.NextUint(TotalWeight);
+			double value = random.NextDouble() * TotalWeight;
 			int pos = Array.BinarySearch(weights, value);
 			if (pos < 0)
 				pos = ~pos;
@@ -150,7 +150,7 @@ namespace ShapeDatabase.Util.Collections {
 
 			collection.RemoveAt(index);
 			int length = Count;
-			uint[] newWeights = new uint[length - 1];
+			double[] newWeights = new double[length - 1];
 			Array.Copy(weights, 0, newWeights, 0, index++);	// +1 To ignore this element.
 			Array.Copy(weights, index, newWeights, index, length - index);
 			weights = newWeights;
@@ -160,7 +160,7 @@ namespace ShapeDatabase.Util.Collections {
 
 		public void Clear() {
 			collection.Clear();
-			weights = Array.Empty<uint>();
+			weights = Array.Empty<double>();
 		}
 
 

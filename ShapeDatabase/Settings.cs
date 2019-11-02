@@ -159,25 +159,16 @@ namespace ShapeDatabase {
 		public static WeightManager Weights => WeightManager.Instance;
 
 		/// <summary>
-		/// Size of the weighted vertex array.
-		/// </summary>
-		public static int WeightedVertexArraySize { get; set; } = 100000;
-
-		/// <summary>
 		/// Refine shapes to this number of vertices.
 		/// </summary>
 		public static int RefineVertexNumber { get; set; } = 5250;
 
 		/// <summary>
 		/// Maximum number of refinement steps per shape.
+		/// If any more is required then we assume the shape can't
+		/// be refined.
 		/// </summary>
 		public static int MaxRefineIterations { get; set; } = 20;
-
-		/// <summary>
-		/// The maximum number of times that any form of refinement will
-		/// be performed on a mesh before concluding that it can't be fixed.
-		/// </summary>
-		public static int RefinementThreshold { get; set; } = 16;
 
 		/// <summary>
 		/// Number of values per histogram descriptor.

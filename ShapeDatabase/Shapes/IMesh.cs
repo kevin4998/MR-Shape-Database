@@ -4,6 +4,7 @@ using System.Net.NetworkInformation;
 using OpenTK;
 using ShapeDatabase.Properties;
 using ShapeDatabase.Util;
+using ShapeDatabase.Util.Collections;
 
 namespace ShapeDatabase.Shapes {
 
@@ -26,8 +27,6 @@ namespace ShapeDatabase.Shapes {
 		Vector3 GetVertex(uint pos);
 		Vector3 GetFace(uint pos);
 		Vector3 GetNormal(uint pos);
-
-		Vector3 GetRandomVertex(Random rand);
 	}
 
 	public static class MeshEx {
@@ -123,47 +122,32 @@ namespace ShapeDatabase.Shapes {
 			return mesh.GetTriArea(points);
 		}
 
-		public static Vector3 GetRandomVertex(this IMesh mesh, Random rand,
-											  uint[] weightedvertexarray) {
+
+		public static Vector3[] GetRandomVertices(this IMesh mesh, int count, Random rand) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
-			if(rand == null)
+			if (rand == null)
 				throw new ArgumentNullException(nameof(rand));
-			if(weightedvertexarray == null)
-				throw new ArgumentNullException(nameof(weightedvertexarray));
 
-			int index = rand.Next(0, Settings.WeightedVertexArraySize);
-			Vector3 face = mesh.GetFace(weightedvertexarray[index]);
+			IWeightedCollection<Vector3> col =
+						new WeightedCollection<Vector3>();
 
-			index = rand.Next(0, 3);
-			Vector3 vertex = mesh.GetVertex((uint)face[index]);
+			foreach (Vector3 face in mesh.Faces) {
+				Vector3[] vertices = mesh.GetVerticesFromFace(face);
+				double area = mesh.GetTriArea(vertices);
 
-			return vertex;
-		}
-
-		public static uint[] SetWeightedVertexArray(this IMesh mesh) {
-			if (mesh == null)
-				throw new ArgumentNullException(nameof(mesh));
-
-			double surfaceArea = 0;
-			for (int i = 0; i < mesh.FaceCount; i++)
-				surfaceArea += GetTriArea(mesh, mesh.GetFace(i));
-
-			uint[] WeightedVertexArray = new uint[Settings.WeightedVertexArraySize];
-
-			double currentTotal = 0;
-			for (uint i = 0; i < mesh.FaceCount; i++)
-			{
-				double endTotal = currentTotal + GetTriArea(mesh, mesh.GetFace(i)) / surfaceArea * (Settings.WeightedVertexArraySize - 1);
-
-				for (int j = (int)Math.Ceiling(currentTotal); j < endTotal; j++)
-					WeightedVertexArray[j] = i;
-
-				currentTotal = endTotal;
+				foreach (Vector3 vertice in vertices)
+					col.AddWeight(vertice, area);
 			}
 
-			return WeightedVertexArray;
+			Vector3[] array = new Vector3[count];
+			for(int i = count - 1; i >= 0; i--)
+				array[i] = col.GetElement(rand);
+			return array;
 		}
+
+		public static Vector3 GetRandomVertex(this IMesh mesh, Random rand)
+			=> GetRandomVertices(mesh, 1, rand)[0];
 	}
 
 }

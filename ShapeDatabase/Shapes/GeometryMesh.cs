@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using g3;
 using OpenTK;
+using ShapeDatabase.Properties;
+using ShapeDatabase.Util.Collections;
 using static ShapeDatabase.Util.Functions;
 
 namespace ShapeDatabase.Shapes {
@@ -19,8 +20,8 @@ namespace ShapeDatabase.Shapes {
 		public uint EdgeCount => 0;
 		public uint NormalCount => (uint) Base.VertexCount;
 
-		private readonly Lazy<IBoundingBox> lazy;
-		private readonly uint[] weightedvertexarray;
+		private readonly Lazy<IBoundingBox> lazyBB;
+		private readonly Lazy<IWeightedCollection<Vector3>> lazyVertices;
 
 		public IEnumerable<Vector3> Vertices {
 			get {
@@ -34,7 +35,7 @@ namespace ShapeDatabase.Shapes {
 					yield return VectorConvert(Base.GetTriangle(i));
 			}
 		}
-		public IEnumerable<Vector3> Edges => Enumerable.Empty<Vector3>();
+		public IEnumerable<Vector3> Edges => System.Linq.Enumerable.Empty<Vector3>();
 		public IEnumerable<Vector3> Normals {
 			get {
 				if (Base.HasVertexNormals)
@@ -52,8 +53,23 @@ namespace ShapeDatabase.Shapes {
 			Base = mesh ?? throw new ArgumentNullException(nameof(mesh));
 			IsNormalised = normalised;
 
-			lazy = new Lazy<IBoundingBox>(InitializeBoundingBox);
-			weightedvertexarray = this.SetWeightedVertexArray();
+			lazyBB = new Lazy<IBoundingBox>(InitializeBoundingBox);
+			lazyVertices = new Lazy<IWeightedCollection<Vector3>>(
+				() => {
+					IWeightedCollection<Vector3> col =
+						new WeightedCollection<Vector3>();
+
+					foreach (Vector3 face in Faces) {
+						Vector3[] vertices = this.GetVerticesFromFace(face);
+						double area = this.GetTriArea(vertices);
+
+						foreach(Vector3 vertice in vertices)
+							col.AddWeight(vertice, area);
+					}
+
+					return col;
+				}
+			);
 		}
 
 		#endregion
@@ -67,7 +83,7 @@ namespace ShapeDatabase.Shapes {
 		}
 
 		public IBoundingBox GetBoundingBox() {
-			return lazy.Value;
+			return lazyBB.Value;
 		}
 
 		public Vector3 GetVertex(uint pos) {
@@ -86,9 +102,27 @@ namespace ShapeDatabase.Shapes {
 			return Base.GetTriArea(Convert.ToInt32(tID));
 		}
 
-		public Vector3 GetRandomVertex(Random rand)
-		{
-			return MeshEx.GetRandomVertex(this, rand, weightedvertexarray);
+		public Vector3 GetRandomVertex(Random random) =>
+			GetRandomVertices(1, random)[0];
+
+		public Vector3[] GetRandomVertices(int count, Random random) {
+			if (random == null)
+				throw new ArgumentNullException(nameof(random));
+			if (count < 0)
+				throw new ArgumentException(
+					string.Format(
+						Settings.Culture,
+						Resources.EX_ExpPosValue,
+						count
+					),
+					nameof(count)
+				);
+
+
+			Vector3[] array = new Vector3[count];
+			for (int i = count - 1; i >= 0; i--)
+				array[i] = lazyVertices.Value.GetElement(random);
+			return array;
 		}
 
 		public static GeometryMesh Create(g3.DMesh3 mesh) {

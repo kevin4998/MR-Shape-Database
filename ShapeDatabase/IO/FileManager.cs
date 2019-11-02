@@ -161,7 +161,7 @@ namespace ShapeDatabase.IO {
 			InfoMesh[] filemeshes;
 			byte attempts = 0;
 
-			while (files.Length != 0 && attempts++ < Settings.RefinementThreshold) {
+			while (files.Length != 0 && attempts++ < Settings.MaxRefineIterations) {
 
 				// Phase 2: Process files into meshes. (repeatable)
 
@@ -251,7 +251,7 @@ namespace ShapeDatabase.IO {
 				bool RequiresRefinement = true;
 				int Attempt = 0;
 
-				while (RequiresRefinement && Attempt++ < Settings.RefinementThreshold) {
+				while (RequiresRefinement && Attempt++ < Settings.MaxRefineIterations) {
 					RequiresRefinement = false;
 
 					foreach (IRefiner<IMesh> refiner in refiners) {

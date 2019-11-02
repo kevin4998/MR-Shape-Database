@@ -19,6 +19,7 @@ namespace ShapeDatabase.Features {
 	/// Class for defining all descriptor calculator methods
 	/// </summary>
 	public static class DescriptorCalculators {
+
 		#region --- Properties ---
 
 		/// <summary>
@@ -303,9 +304,8 @@ namespace ShapeDatabase.Features {
 		/// <param name="mesh">The mesh of which the random vertices will be taken</param>
 		/// <param name="random">The (threadsafe) random generator</param>
 		/// <returns>A Single Vector3 which is a random vertex position.</returns>
-		private static Vector3 GetRandomVertice(IMesh mesh, Random random) {
-			return mesh.GetVertex(random.NextUint(mesh.VertexCount));
-		}
+		private static Vector3 GetRandomVertice(IMesh mesh, Random random)
+			=> GetRandomVertices(mesh, random, 1)[0];
 
 		/// <summary>
 		/// Method for getting a certain number of random vertices from a mesh
@@ -315,29 +315,7 @@ namespace ShapeDatabase.Features {
 		/// <param name="numberOfVertices">The number of random vertices</param>
 		/// <returns>An array containing the random vertices</returns>
 		private static Vector3[] GetRandomVertices(IMesh mesh, Random random, int numberOfVertices) {
-			Vector3[] vertices = new Vector3[numberOfVertices];
-			uint[] randomNumbers = new uint[numberOfVertices];
-
-			for (int i = 0; i < numberOfVertices; i++) {
-
-				uint newIndex = random.NextUint(mesh.VertexCount);
-				if (ContainsValue(randomNumbers, i, newIndex)) {
-					i--;
-					continue;
-				}
-
-				vertices[i] = mesh.GetVertex(newIndex);
-			}
-
-			return vertices;
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		private static bool ContainsValue(uint[] array, int maxPos, uint value) {
-			for (; maxPos >= 0; maxPos--)
-				if (array[maxPos] == value)
-					return true;
-			return false;
+			return mesh.GetRandomVertices(numberOfVertices, random);
 		}
 
 		#endregion
