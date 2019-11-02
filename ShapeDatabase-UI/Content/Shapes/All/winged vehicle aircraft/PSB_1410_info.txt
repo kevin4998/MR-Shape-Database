@@ -1,0 +1,14 @@
+mid: 1410
+url: http://www.rccad.com/Gallery/Vrml/X-Wing.wrl
+ref_url: 
+format: wrl 
+pid: 48306
+polygons: 9528
+connected_components: 145
+average_dihedral_angle: 0.672359
+bounding_box: xmin = 0.131484, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.738559, zmax = 0.237466
+avg_depth: 2.599674
+center: (0.661753,0.381669,0.119376)
+scale: 0.376925
+principle_axes: (0.999978,-0.001114,0.006475), (-0.001115,-0.999999,0.000082), (0.006475,-0.000089,-0.999979)
+principle_values: (0.024847,0.020626,0.002098)

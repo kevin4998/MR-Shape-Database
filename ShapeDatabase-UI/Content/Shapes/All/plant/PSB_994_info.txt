@@ -1,0 +1,14 @@
+mid: 994
+url: http://mowat.virtualave.net/brdleaf.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26931
+polygons: 454
+connected_components: 22
+average_dihedral_angle: 0.754532
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.64508, zmax = 0.863712
+avg_depth: 1.529632
+center: (0.482688,0.334139,0.459470)
+scale: 0.490805
+principle_axes: (-0.059646,-0.998170,0.009966), (0.995824,-0.060191,-0.068644), (-0.069118,-0.005831,-0.997591)
+principle_values: (0.034403,0.020543,0.016828)

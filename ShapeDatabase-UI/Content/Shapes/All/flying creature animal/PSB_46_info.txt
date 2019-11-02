@@ -1,0 +1,14 @@
+mid: 46
+url: http://hiwaay.net/~crispen/vrmlworks/tutorials/walk_animation/gull.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7627
+polygons: 1094
+connected_components: 13
+average_dihedral_angle: 0.479707
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.322111, zmax = 0.704876
+avg_depth: 1.109194
+center: (0.495049,0.263907,0.426019)
+scale: 0.380486
+principle_axes: (-0.999130,-0.041615,0.002766), (0.001779,0.023718,0.999717), (-0.041669,0.998852,-0.023623)
+principle_values: (0.029602,0.013417,0.003949)

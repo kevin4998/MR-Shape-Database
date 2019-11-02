@@ -1,0 +1,14 @@
+mid: 448
+url: http://fraktali.849pm.com/programs/wrl/Samara.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32697
+polygons: 1530
+connected_components: 21
+average_dihedral_angle: 1.72855
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.714563, ymax = 0.975, zmax = 0.899309
+avg_depth: 3.262714
+center: (0.349864,0.348863,0.454575)
+scale: 0.710723
+principle_axes: (-0.179075,-0.015061,0.983720), (-0.351921,-0.932745,-0.078344), (0.918740,-0.360221,0.161731)
+principle_values: (0.056280,0.045336,0.033254)

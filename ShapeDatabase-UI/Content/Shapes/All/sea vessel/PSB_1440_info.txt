@@ -1,0 +1,14 @@
+mid: 1440
+url: http://www-eng.llnl.gov/dsed/documents/vis/sdnieta96/fig0b.wrl
+ref_url: http://www-eng.llnl.gov/dsed/documents/vis/sdnieta96/
+format: wrl 
+pid: 9114
+polygons: 5977
+connected_components: 185
+average_dihedral_angle: 0.728366
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.221908, zmax = 0.262171
+avg_depth: 1.833327
+center: (0.561587,0.096457,0.139486)
+scale: 0.411857
+principle_axes: (0.999996,-0.000174,0.002729), (-0.002734,-0.085396,0.996343), (-0.000060,0.996347,0.085396)
+principle_values: (0.052231,0.003109,0.000773)

@@ -1,0 +1,14 @@
+mid: 483
+url: http://www.ocnus.com/models/Food/tabasco.wrl.gz
+ref_url: http://www.ocnus.com/models/Food/
+format: wrl 
+pid: 17770
+polygons: 620
+connected_components: 6
+average_dihedral_angle: 0.43472
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.261391, ymax = 0.975, zmax = 0.261391
+avg_depth: 1.139527
+center: (0.143744,0.457770,0.143182)
+scale: 0.555309
+principle_axes: (-0.002871,-0.999996,0.000085), (0.999996,-0.002871,0.000846), (0.000845,-0.000088,-1.000000)
+principle_values: (0.081197,0.004729,0.004727)

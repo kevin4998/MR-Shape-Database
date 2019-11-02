@@ -1,0 +1,14 @@
+mid: 619
+url: http://www.elfworks.com/objects/flexiknee.zip
+ref_url: http://www.elfworks.com/html/body_free3d.htm
+format: lwo 
+pid: 28353
+polygons: 696
+connected_components: 1
+average_dihedral_angle: 0.51359
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.174245, ymax = 0.975, zmax = 0.174245
+avg_depth: 1.025622
+center: (0.099622,0.606000,0.099622)
+scale: 0.529037
+principle_axes: (-0.000000,1.000000,-0.000000), (0.998185,0.000000,-0.060215), (-0.060215,-0.000000,-0.998185)
+principle_values: (0.086009,0.000890,0.000889)

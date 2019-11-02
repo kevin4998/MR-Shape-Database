@@ -1,0 +1,14 @@
+mid: 443
+url: http://dev.zaptech.com/new/houseplans/VRML/schemea/shmaster1.wrl
+ref_url: http://dev.zaptech.com/new/houseplans/
+format: wrl 
+pid: 22264
+polygons: 417
+connected_components: 19
+average_dihedral_angle: 1.52196
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.578512, ymax = 0.464669, zmax = 0.975
+avg_depth: 1.288409
+center: (0.322715,0.220375,0.494861)
+scale: 0.697904
+principle_axes: (0.087762,-0.042171,-0.995248), (0.987315,-0.129027,0.092529), (-0.132316,-0.990744,0.030312)
+principle_values: (0.084253,0.031314,0.013892)

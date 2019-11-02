@@ -1,0 +1,14 @@
+mid: 1563
+url: http://cpni.com/velocity/wrl/Fow.wrl
+ref_url: http://cpni.com/velocity/MTM.htm
+format: wrl 
+pid: 470
+polygons: 1114
+connected_components: 24
+average_dihedral_angle: 0.983665
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.698706, ymax = 0.503489, zmax = 0.975
+avg_depth: 1.650229
+center: (0.361118,0.239877,0.503562)
+scale: 0.697201
+principle_axes: (-0.000180,0.034363,0.999409), (0.999997,-0.002322,0.000260), (0.002330,0.999407,-0.034362)
+principle_values: (0.089593,0.031706,0.012365)

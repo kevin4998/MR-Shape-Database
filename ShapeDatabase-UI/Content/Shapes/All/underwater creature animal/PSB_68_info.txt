@@ -1,0 +1,14 @@
+mid: 68
+url: http://www.zucco.com/vrml/fish-1.wrl
+ref_url: http://www.zucco.com/graphics.html
+format: wrl 
+pid: 11339
+polygons: 1098
+connected_components: 2
+average_dihedral_angle: 0.592327
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.278519, zmax = 0.18743
+avg_depth: 1.304945
+center: (0.490994,0.145941,0.107122)
+scale: 0.345366
+principle_axes: (-0.999987,-0.002667,0.004280), (-0.002632,0.999962,0.008252), (-0.004302,0.008240,-0.999957)
+principle_values: (0.035529,0.002334,0.001292)

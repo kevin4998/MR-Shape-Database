@@ -1,0 +1,14 @@
+mid: 1401
+url: http://mitglied.lycos.de/Mesh_Factor_Y/meshes/tie_fi.zip
+ref_url: http://mitglied.lycos.de/Mesh_Factor_Y/meshes/meshes.htm
+format: xthreexds 
+pid: 25051
+polygons: 27535
+connected_components: 64
+average_dihedral_angle: 0.578623
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.771761, ymax = 0.975, zmax = 0.85058
+avg_depth: 2.276945
+center: (0.397834,0.500077,0.437380)
+scale: 0.820480
+principle_axes: (1.000000,-0.000025,0.000022), (-0.000025,-0.999999,0.001186), (-0.000022,0.001186,0.999999)
+principle_values: (0.101797,0.052713,0.032001)

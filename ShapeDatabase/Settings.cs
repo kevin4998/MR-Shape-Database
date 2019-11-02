@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using ShapeDatabase.Features;
 using ShapeDatabase.IO;
 using ShapeDatabase.Shapes;
-
+using ShapeDatabase.Util.Attributes;
 using static ShapeDatabase.Properties.Resources;
 
 namespace ShapeDatabase {
@@ -14,8 +15,14 @@ namespace ShapeDatabase {
 	public static class Settings {
 
 		// Responsible for IO operations.
-		// Knowing where to save files and retrive them.
+		// Knowing where to save files and retrieve them.
 		#region --- File Structure ---
+
+		/// <summary>
+		/// The location where all the generated content will be stored in.
+		/// </summary>
+		public static string ContentDir { get; } =
+			D_ContentDir;
 
 		/// <summary>
 		/// The location where all the shapes are definined.
@@ -62,11 +69,6 @@ namespace ShapeDatabase {
 
 
 		/// <summary>
-		/// States whether the featuremanager should be created by reading a vectorfile.
-		/// </summary>
-		public static bool ReadVectorFile { get; set; } = false;
-
-		/// <summary>
 		/// The file name of the feature vectors/descriptors.
 		/// </summary>
 		public static string FeatureVectorFile { get; set; } = D_FeatureFile;
@@ -81,17 +83,21 @@ namespace ShapeDatabase {
 		/// </summary>
 		public static string QueryResultsFile { get; set; } = D_QueryFile;
 
+		/// <summary>
+		/// The file name of the application settings file.
+		/// </summary>
+		public static string SettingsFile { get; set; } = D_SettingsFile;
+
+		/// <summary>
+		/// The file name of the query evaluation results.
+		/// </summary>
+		public static string EvaluationFile { get; set; } = D_EvaluationFile;
+
 		#endregion
 
 		// Responsible for determining application executions.
 		// Which action to take and if data should be showno rn ot.
 		#region --- Flow Properties ---
-
-		/// <summary>
-		/// The current processes which needs to be executed.
-		/// </summary>
-		public static OperationModes Mode { get; set; } = OperationModes.VIEW;
-
 
 		/// <summary>
 		/// If Debug messages should be visible in the console.
@@ -101,17 +107,25 @@ namespace ShapeDatabase {
 		/// <summary>
 		/// Describes if the application should be active.
 		/// </summary>
+		[Ignore]
 		public static bool Active { get; set; } = true;
+
+		/// <summary>
+		/// Describes if all the functionality of the application should cease at once.
+		/// </summary>
+		[Ignore]
+		public static bool DirectShutDown { get; set; } = false;
+
+		/// <summary>
+		/// Describes if cache values should be read and used to speed up the process.
+		/// </summary>
+		public static bool UseCacheData { get; set; } = true;
 
 		/// <summary>
 		/// States whether the query results should be saved (in QueryDir)
 		/// </summary>
 		public static bool SaveQueryResults { get; set; } = true;
 
-		/// <summary>
-		/// Describes if all the functionality of the application should cease at once.
-		/// </summary>
-		public static bool DirectShutDown { get; set; } = false;
 
 		#endregion
 
@@ -140,6 +154,11 @@ namespace ShapeDatabase {
 		public static MeshLibrary QueryLibrary => FileManager.QueryMeshes;
 
 		/// <summary>
+		/// A collection of all the weights for the different Descriptors.
+		/// </summary>
+		public static WeightManager Weights => WeightManager.Instance;
+
+		/// <summary>
 		/// Size of the weighted vertex array.
 		/// </summary>
 		public static int WeightedVertexArraySize { get; set; } = 100000;
@@ -153,6 +172,12 @@ namespace ShapeDatabase {
 		/// Maximum number of refinement steps per shape.
 		/// </summary>
 		public static int MaxRefineIterations { get; set; } = 20;
+
+		/// <summary>
+		/// The maximum number of times that any form of refinement will
+		/// be performed on a mesh before concluding that it can't be fixed.
+		/// </summary>
+		public static int RefinementThreshold { get; set; } = 16;
 
 		/// <summary>
 		/// Number of values per histogram descriptor.
@@ -169,12 +194,6 @@ namespace ShapeDatabase {
 		/// should be shown/saved.
 		/// </summary>
 		public static int KBestResults { get; set; } = 5;
-
-
-		/// <summary>
-		/// A collection of strings which will force the program to stop.
-		/// </summary>
-		public static ICollection<string> ExitArguments => A_ExitArgs.Split(A_ExitSep.ToCharArray());
 
 		#endregion
 

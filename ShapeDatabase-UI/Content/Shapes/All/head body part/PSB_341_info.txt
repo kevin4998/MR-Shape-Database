@@ -1,0 +1,14 @@
+mid: 341
+url: http://ligwww.epfl.ch/~fua/faces/wrl/Daniel.init.wrl
+ref_url: http://ligwww.epfl.ch/~fua/faces/index.html
+format: wrl 
+pid: 13502
+polygons: 3604
+connected_components: 9
+average_dihedral_angle: 0.301025
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.677855, ymax = 0.975, zmax = 0.821646
+avg_depth: 1.095061
+center: (0.340925,0.553387,0.428760)
+scale: 0.747009
+principle_axes: (0.013468,0.812344,-0.583023), (-0.093703,0.581536,0.808106), (0.995509,0.043747,0.083952)
+principle_values: (0.068786,0.039615,0.034474)

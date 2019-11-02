@@ -1,0 +1,14 @@
+mid: 1564
+url: ftp://avalon.viewpoint.com/pub/objects/vehicles/trucks/dodge_obj.zip
+ref_url: 
+format: obj 
+pid: 47822
+polygons: 2697
+connected_components: 90
+average_dihedral_angle: 0.938219
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.655094, ymax = 0.573295, zmax = 0.975
+avg_depth: 1.886580
+center: (0.340226,0.296825,0.519128)
+scale: 0.665505
+principle_axes: (0.000526,0.002561,-0.999997), (1.000000,-0.000677,0.000524), (0.000675,0.999996,0.002561)
+principle_values: (0.082453,0.026919,0.015813)

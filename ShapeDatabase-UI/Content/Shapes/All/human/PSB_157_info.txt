@@ -1,0 +1,14 @@
+mid: 157
+url: http://fraktali.849pm.com/programs/wrl/Manwalk.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32863
+polygons: 1430
+connected_components: 16
+average_dihedral_angle: 0.501006
+bounding_box: xmin = 0.395717, ymin = 0.0367074, zmin = 0.025, xmax = 0.656239, ymax = 0.69296, zmax = 0.197533
+avg_depth: 1.693828
+center: (0.514685,0.358757,0.097644)
+scale: 0.317875
+principle_axes: (-0.022080,0.999636,0.015518), (-0.999551,-0.021758,-0.020576), (0.020231,0.015965,-0.999668)
+principle_values: (0.027820,0.003520,0.000823)

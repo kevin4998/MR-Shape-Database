@@ -1,0 +1,14 @@
+mid: 1799
+url: http://www.stonecarver.com/VRML/Goth-fp.wrl
+ref_url: http://www.stonecarver.com/ironcad.html
+format: wrl 
+pid: 9137
+polygons: 768
+connected_components: 9
+average_dihedral_angle: 1.2434
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.542648, ymax = 0.413435, zmax = 0.975
+avg_depth: 1.292908
+center: (0.200151,0.120488,0.504683)
+scale: 0.584229
+principle_axes: (-0.005833,-0.001390,0.999982), (-0.818288,0.574795,-0.003974), (-0.574779,-0.818296,-0.004490)
+principle_values: (0.065749,0.026557,0.007448)

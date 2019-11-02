@@ -1,0 +1,14 @@
+mid: 403
+url: http://www.3dcafe.com/models/palace01.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27836
+polygons: 89968
+connected_components: 1149
+average_dihedral_angle: 0.940435
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.54843, zmax = 0.975
+avg_depth: 3.587877
+center: (0.499982,0.197640,0.499785)
+scale: 0.624654
+principle_axes: (-0.999999,0.000115,-0.001199), (-0.001199,0.000048,0.999999), (-0.000116,-1.000000,0.000048)
+principle_values: (0.048001,0.047910,0.011257)

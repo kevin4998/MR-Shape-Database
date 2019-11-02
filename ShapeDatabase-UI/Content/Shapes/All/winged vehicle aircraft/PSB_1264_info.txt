@@ -1,0 +1,14 @@
+mid: 1264
+url: http://www.rccad.com/Gallery/Vrml/cobra2.wrl
+ref_url: 
+format: wrl 
+pid: 48093
+polygons: 1996
+connected_components: 10
+average_dihedral_angle: 0.276013
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.857277, ymax = 0.975, zmax = 0.248069
+avg_depth: 1.384590
+center: (0.532283,0.500027,0.086252)
+scale: 0.432107
+principle_axes: (0.999516,-0.000901,0.031083), (0.000900,1.000000,0.000058), (0.031083,0.000030,-0.999517)
+principle_values: (0.030890,0.023957,0.001569)

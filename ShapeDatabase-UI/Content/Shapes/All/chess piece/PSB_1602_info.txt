@@ -1,0 +1,14 @@
+mid: 1602
+url: http://mowat.virtualave.net/king.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26585
+polygons: 3080
+connected_components: 1445
+average_dihedral_angle: 0.0612417
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.405044, ymax = 0.975, zmax = 0.405044
+avg_depth: 1.418028
+center: (0.215022,0.371333,0.215022)
+scale: 0.589225
+principle_axes: (0.000000,-1.000000,-0.000000), (-0.005890,0.000000,-0.999983), (0.999983,0.000000,-0.005890)
+principle_values: (0.085966,0.007307,0.007307)

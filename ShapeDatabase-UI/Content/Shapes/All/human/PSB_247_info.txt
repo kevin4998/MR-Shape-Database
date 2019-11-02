@@ -1,0 +1,14 @@
+mid: 247
+url: http://www.3dcafe.com/models/crystal.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: lwo 
+pid: 27064
+polygons: 51119
+connected_components: 13494
+average_dihedral_angle: 0.788649
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.892567, zmax = 0.194155
+avg_depth: 5.346850
+center: (0.497807,0.700003,0.070277)
+scale: 0.374100
+principle_axes: (-0.007748,0.992799,-0.119539), (-0.999958,-0.008274,-0.003911), (0.004872,-0.119503,-0.992822)
+principle_values: (0.041157,0.006498,0.001295)

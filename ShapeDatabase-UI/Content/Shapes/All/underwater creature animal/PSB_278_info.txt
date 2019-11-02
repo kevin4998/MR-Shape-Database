@@ -1,0 +1,14 @@
+mid: 278
+url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/obj/turtle.wrl
+ref_url: http://www.atom.co.jp/vrml2/ocean/oceanWalk.gz/ocean.wrl
+format: wrl 
+pid: 14887
+polygons: 646
+connected_components: 12
+average_dihedral_angle: 0.669786
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.201787, zmax = 0.960987
+avg_depth: 1.612845
+center: (0.500114,0.090952,0.461683)
+scale: 0.509162
+principle_axes: (0.004189,0.016539,0.999854), (-0.999991,0.000241,0.004186), (-0.000172,-0.999863,0.016540)
+principle_values: (0.041146,0.031888,0.001317)

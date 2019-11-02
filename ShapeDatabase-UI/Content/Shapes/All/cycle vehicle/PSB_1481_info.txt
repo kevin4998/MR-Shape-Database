@@ -1,0 +1,14 @@
+mid: 1481
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2001/lxie/Hw2/motor.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2001/lxie/Hw2/?D=D
+format: wrl 
+pid: 43920
+polygons: 1038
+connected_components: 9
+average_dihedral_angle: 0.717847
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.348108, ymax = 0.578948, zmax = 0.975
+avg_depth: 1.876775
+center: (0.186491,0.275473,0.475876)
+scale: 0.535702
+principle_axes: (0.000019,0.057269,-0.998359), (-0.000377,-0.998359,-0.057269), (-1.000000,0.000378,0.000003)
+principle_values: (0.063478,0.016490,0.001629)

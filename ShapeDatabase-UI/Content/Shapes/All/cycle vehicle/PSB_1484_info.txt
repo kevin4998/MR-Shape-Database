@@ -1,0 +1,14 @@
+mid: 1484
+url: http://www.inside3d.com/ghoul/3dm/chopper/chopper.WRL
+ref_url: http://www.inside3d.com/ghoul/3dm/3dm.html
+format: wrl 
+pid: 8666
+polygons: 180
+connected_components: 7
+average_dihedral_angle: 0.923217
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.41663, ymax = 0.556002, zmax = 0.975
+avg_depth: 1.228398
+center: (0.219780,0.259098,0.539245)
+scale: 0.538785
+principle_axes: (0.000280,-0.053759,-0.998554), (-0.018455,-0.998384,0.053744), (-0.999830,0.018413,-0.001271)
+principle_values: (0.067412,0.013288,0.003337)

@@ -1,0 +1,14 @@
+mid: 1697
+url: ftp://avalon.viewpoint.com/pub/objects/geography/southamerica_obj.zip
+ref_url: 
+format: obj 
+pid: 47428
+polygons: 484
+connected_components: 1
+average_dihedral_angle: 0.826651
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.61279, ymax = 0.975, zmax = 0.101534
+avg_depth: 1.038307
+center: (0.276697,0.576803,0.084308)
+scale: 0.543281
+principle_axes: (0.140780,0.989999,0.009083), (-0.990035,0.140805,-0.002124), (-0.003382,-0.008694,0.999956)
+principle_values: (0.064654,0.021886,0.000575)

@@ -1,0 +1,14 @@
+mid: 651
+url: http://www.3dspecial.com/images/gun+.zip
+ref_url: http://www.3dspecial.com/index.html
+format: lwo 
+pid: 25015
+polygons: 130
+connected_components: 4
+average_dihedral_angle: 1.06125
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.268671, ymax = 0.639117, zmax = 0.975
+avg_depth: 1.166237
+center: (0.130169,0.432884,0.561670)
+scale: 0.664213
+principle_axes: (-0.053554,-0.311131,0.948857), (-0.087343,0.948038,0.305932), (-0.994738,-0.066492,-0.077947)
+principle_values: (0.104271,0.021199,0.003398)

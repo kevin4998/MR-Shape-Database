@@ -1,0 +1,14 @@
+mid: 252
+url: http://cepcairo.bizland.com/free/Kong.zip
+ref_url: 
+format: xthreexds 
+pid: 48392
+polygons: 19304
+connected_components: 28
+average_dihedral_angle: 0.262929
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.970692, zmax = 0.253422
+avg_depth: 1.256879
+center: (0.499766,0.528589,0.128957)
+scale: 0.533321
+principle_axes: (0.000569,0.999604,0.028124), (-1.000000,0.000551,0.000630), (-0.000614,0.028124,-0.999604)
+principle_values: (0.056555,0.023747,0.002865)

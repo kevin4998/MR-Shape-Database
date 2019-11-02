@@ -1,0 +1,14 @@
+mid: 1582
+url: http://deep.sitenest.net/freemodels/transport/3dm-train.zip
+ref_url: 
+format: xthreexds 
+pid: 48004
+polygons: 16328
+connected_components: 42
+average_dihedral_angle: 0.963713
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.194938, ymax = 0.273211, zmax = 0.975
+avg_depth: 1.737943
+center: (0.110027,0.128737,0.493273)
+scale: 0.515160
+principle_axes: (0.000358,0.025281,-0.999680), (-0.001295,-0.999680,-0.025281), (-0.999999,0.001304,-0.000325)
+principle_values: (0.070779,0.005336,0.002933)

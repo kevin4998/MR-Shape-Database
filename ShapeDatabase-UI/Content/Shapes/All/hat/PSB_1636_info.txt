@@ -1,0 +1,14 @@
+mid: 1636
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/jwoodrin/Hw2/kabuto.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/jwoodrin/Hw2/?D=D
+format: wrl 
+pid: 38121
+polygons: 848
+connected_components: 1
+average_dihedral_angle: 0.343424
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.893712, ymax = 0.898678, zmax = 0.975
+avg_depth: 1.354070
+center: (0.459374,0.469906,0.480324)
+scale: 0.762927
+principle_axes: (0.000092,0.671441,0.741058), (-1.000000,0.000168,-0.000028), (0.000143,0.741058,-0.671441)
+principle_values: (0.077217,0.053591,0.023158)

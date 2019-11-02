@@ -1,0 +1,14 @@
+mid: 743
+url: http://www.ocnus.com/models/Machines/fineGear.wrl.gz
+ref_url: http://www.ocnus.com/models/Machines/
+format: wrl 
+pid: 17843
+polygons: 1020
+connected_components: 1
+average_dihedral_angle: 1.52809
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.975, zmax = 0.111379
+avg_depth: 1.232303
+center: (0.500000,0.500000,0.068189)
+scale: 0.717046
+principle_axes: (-0.337381,0.941368,0.000000), (-0.941368,-0.337381,-0.000000), (-0.000000,-0.000000,1.000000)
+principle_values: (0.069260,0.069260,0.001443)

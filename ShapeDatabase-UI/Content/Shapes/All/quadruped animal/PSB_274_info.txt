@@ -1,0 +1,14 @@
+mid: 274
+url: http://www.3dcafe.com/models/dino.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: 3ds 
+pid: 27448
+polygons: 47904
+connected_components: 3
+average_dihedral_angle: 0.103833
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.349877, zmax = 0.912624
+avg_depth: 1.127028
+center: (0.517204,0.212809,0.578497)
+scale: 0.523595
+principle_axes: (-0.751855,-0.137122,0.644913), (-0.644108,-0.056203,-0.762867), (-0.140852,0.988958,0.046065)
+principle_values: (0.059148,0.020197,0.005379)

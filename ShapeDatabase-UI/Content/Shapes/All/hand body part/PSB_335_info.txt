@@ -1,0 +1,14 @@
+mid: 335
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/hand.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/?D=D
+format: wrl 
+pid: 40982
+polygons: 15855
+connected_components: 1
+average_dihedral_angle: 0.16861
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.576129, ymax = 0.975, zmax = 0.67506
+avg_depth: 1.236437
+center: (0.309424,0.585314,0.337936)
+scale: 0.672027
+principle_axes: (-0.207724,0.927849,0.309752), (0.199891,-0.269714,0.941965), (-0.957546,-0.257585,0.129443)
+principle_values: (0.088661,0.022675,0.013466)

@@ -1,0 +1,14 @@
+mid: 127
+url: http://www.avatara.com/avatars/artman2.wrl
+ref_url: http://www.avatara.com/avatars/avatars3_list.html
+format: wrl 
+pid: 17033
+polygons: 1796
+connected_components: 174
+average_dihedral_angle: 0.749571
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.305485, ymax = 0.975, zmax = 0.180612
+avg_depth: 2.238556
+center: (0.169360,0.521162,0.093961)
+scale: 0.404078
+principle_axes: (0.001325,0.999965,0.008213), (0.999977,-0.001271,-0.006627), (-0.006616,0.008222,-0.999944)
+principle_values: (0.053634,0.003848,0.001106)

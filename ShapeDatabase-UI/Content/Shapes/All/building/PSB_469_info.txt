@@ -1,0 +1,14 @@
+mid: 469
+url: http://www.3dcafe.com/models/lighthouse2.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27841
+polygons: 3346
+connected_components: 8
+average_dihedral_angle: 0.601378
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.493215, ymax = 0.975, zmax = 0.89231
+avg_depth: 1.330005
+center: (0.275799,0.350052,0.557472)
+scale: 0.703228
+principle_axes: (-0.074694,0.627345,0.775151), (-0.105238,0.768023,-0.631716), (0.991638,0.128761,-0.008654)
+principle_values: (0.084014,0.033551,0.018201)

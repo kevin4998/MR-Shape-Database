@@ -1,0 +1,14 @@
+mid: 1527
+url: http://www.bergen.org/Present/TechnologyHighSchool/vrmls/MazdaMX62.wrl
+ref_url: http://www.bergen.org/Present/TechnologyHighSchool/vrmls/
+format: wrl 
+pid: 4500
+polygons: 14450
+connected_components: 45
+average_dihedral_angle: 0.383802
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.333125, zmax = 0.90681
+avg_depth: 2.322792
+center: (0.475293,0.184772,0.454004)
+scale: 0.550450
+principle_axes: (0.757499,0.010620,0.652750), (0.645432,0.137984,-0.751251), (0.098047,-0.990378,-0.097668)
+principle_values: (0.066211,0.014034,0.004774)

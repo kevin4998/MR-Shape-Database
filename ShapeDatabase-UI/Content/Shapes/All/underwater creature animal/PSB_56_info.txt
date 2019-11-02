@@ -1,0 +1,14 @@
+mid: 56
+url: http://homepage.mac.com/woodland/archives/sakuraMasuP3r3.zip
+ref_url: http://www1.udn.ne.jp/~woodland/landscape/model/
+format: obj 
+pid: 25248
+polygons: 10950
+connected_components: 33
+average_dihedral_angle: 0.134903
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.168956, ymax = 0.367452, zmax = 0.975
+avg_depth: 1.159009
+center: (0.096822,0.193966,0.557479)
+scale: 0.440068
+principle_axes: (0.000398,-0.044470,0.999011), (0.002822,-0.999007,-0.044471), (-0.999996,-0.002837,0.000272)
+principle_values: (0.056327,0.004234,0.000831)

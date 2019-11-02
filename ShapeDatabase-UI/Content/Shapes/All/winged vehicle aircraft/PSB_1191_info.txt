@@ -1,0 +1,14 @@
+mid: 1191
+url: http://www.topedge.com/panels/aircraft/hangar/vrml/a10/a10-a.wrl
+ref_url: http://www.topedge.com/panels/aircraft/hangar/yaaphavr.html
+format: wrl 
+pid: 5512
+polygons: 2444
+connected_components: 10
+average_dihedral_angle: 0.344365
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.89012, zmax = 0.17626
+avg_depth: 1.329526
+center: (0.499994,0.374760,0.071351)
+scale: 0.444480
+principle_axes: (0.005271,0.999398,-0.034276), (-0.999986,0.005265,-0.000288), (0.000108,-0.034278,-0.999412)
+principle_values: (0.033762,0.029313,0.000816)

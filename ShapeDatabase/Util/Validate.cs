@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ShapeDatabase.Util {
-	
+
 	/// <summary>
 	/// A class containing methods for validating input data or arguments.
 	/// </summary>
@@ -59,10 +59,10 @@ namespace ShapeDatabase.Util {
 		/// <exception cref="ArgumentNullException">If any of the given arguments
 		/// is <see langword="null"/>.</exception>
 		public static IEnumerable<T>[] NonNull<T>(params IEnumerable<T>[] values) {
-			foreach(IEnumerable<T> enums in values) { 
+			foreach (IEnumerable<T> enums in values) {
 				if (enums == null)
 					throw new ArgumentNullException(nameof(values));
-				foreach(T value in enums)
+				foreach (T value in enums)
 					if (value == null)
 						throw new ArgumentNullException(nameof(values));
 			}

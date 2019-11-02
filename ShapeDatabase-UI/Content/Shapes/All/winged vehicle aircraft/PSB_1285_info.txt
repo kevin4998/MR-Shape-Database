@@ -1,0 +1,14 @@
+mid: 1285
+url: http://www.psnw.com/~alcald/ash25-2.wrl
+ref_url: http://www.psnw.com/~alcald/
+format: wrl 
+pid: 9195
+polygons: 1408
+connected_components: 7
+average_dihedral_angle: 0.2598
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.383862, ymax = 0.352986, zmax = 0.975
+avg_depth: 1.117825
+center: (0.169395,0.166918,0.502810)
+scale: 0.356898
+principle_axes: (0.010306,0.323830,0.946059), (-0.992036,-0.115465,0.050329), (-0.125535,0.939043,-0.320061)
+principle_values: (0.040243,0.006677,0.000214)

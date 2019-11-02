@@ -19,9 +19,9 @@ namespace ShapeDatabase.Shapes {
 		public float MinZ { get; }
 		public float MaxZ { get; }
 
-		public float Width  => MaxX - MinX;
+		public float Width => MaxX - MinX;
 		public float Height => MaxY - MinY;
-		public float Depth  => MaxZ - MinZ;
+		public float Depth => MaxZ - MinZ;
 		public float Volume => Width * Height * Depth;
 
 		public Vector3 Min {

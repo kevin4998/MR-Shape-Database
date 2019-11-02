@@ -1,0 +1,14 @@
+mid: 1460
+url: http://www.3dcafe.com/../models/greekshp.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: 3ds 
+pid: 30583
+polygons: 9510
+connected_components: 74
+average_dihedral_angle: 0.683745
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.677889, ymax = 0.518839, zmax = 0.975
+avg_depth: 1.957447
+center: (0.356353,0.150854,0.494933)
+scale: 0.466185
+principle_axes: (-0.000024,0.027139,0.999632), (-0.013790,-0.999537,0.027136), (-0.999905,0.013785,-0.000398)
+principle_values: (0.045884,0.009807,0.008036)

@@ -1,0 +1,14 @@
+mid: 1714
+url: http://deep.sitenest.net/freemodels/doors/3dm-door1.zip
+ref_url: 
+format: xthreexds 
+pid: 48321
+polygons: 1772
+connected_components: 15
+average_dihedral_angle: 0.969723
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.485632, ymax = 0.975, zmax = 0.0670163
+avg_depth: 1.784784
+center: (0.255561,0.491036,0.037024)
+scale: 0.563509
+principle_axes: (-0.000077,-0.999999,0.001265), (1.000000,-0.000076,0.000677), (-0.000677,0.001265,0.999999)
+principle_values: (0.076161,0.016755,0.000053)

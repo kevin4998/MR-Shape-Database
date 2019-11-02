@@ -1,0 +1,14 @@
+mid: 1607
+url: http://mowat.virtualave.net/pawn.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26441
+polygons: 1600
+connected_components: 40
+average_dihedral_angle: 0.111104
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.518792, ymax = 0.975, zmax = 0.518792
+avg_depth: 1.448837
+center: (0.271896,0.375232,0.271896)
+scale: 0.658370
+principle_axes: (0.000000,-1.000000,0.000000), (0.007370,0.000000,0.999973), (-0.999973,-0.000000,0.007370)
+principle_values: (0.092492,0.014255,0.014255)

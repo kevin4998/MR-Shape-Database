@@ -1,0 +1,14 @@
+mid: 218
+url: http://www.geocities.com/ResearchTriangle/2298/catsm.wrl
+ref_url: http://www.geocities.com/ResearchTriangle/2298/download.htm
+format: wrl 
+pid: 10705
+polygons: 1862
+connected_components: 8
+average_dihedral_angle: 0.548662
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.750381, ymax = 0.975, zmax = 0.494502
+avg_depth: 1.191697
+center: (0.406624,0.545685,0.244485)
+scale: 0.524585
+principle_axes: (0.058087,0.990776,0.122429), (-0.992491,0.044089,0.114096), (-0.107646,0.128137,-0.985897)
+principle_values: (0.069355,0.011896,0.004082)

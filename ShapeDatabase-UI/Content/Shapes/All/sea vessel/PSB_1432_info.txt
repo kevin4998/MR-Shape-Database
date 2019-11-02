@@ -1,0 +1,14 @@
+mid: 1432
+url: http://www.worldwar1.com/vrml/objects/petard.wrl
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1719
+polygons: 822
+connected_components: 41
+average_dihedral_angle: 0.981337
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.262155, zmax = 0.119449
+avg_depth: 1.583794
+center: (0.476546,0.054710,0.072229)
+scale: 0.416287
+principle_axes: (-0.999648,0.026543,-0.000003), (0.000268,0.010190,0.999948), (0.026542,0.999596,-0.010194)
+principle_values: (0.056309,0.000710,0.000687)

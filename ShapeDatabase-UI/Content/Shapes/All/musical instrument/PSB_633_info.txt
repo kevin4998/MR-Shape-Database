@@ -1,0 +1,14 @@
+mid: 633
+url: http://www.pnwboces.org/academy/97/vrml/GUITAR.WRL
+ref_url: http://www.pnwboces.org/academy/97/vrml.htm
+format: wrl 
+pid: 9803
+polygons: 1728
+connected_components: 98
+average_dihedral_angle: 2.57577
+bounding_box: xmin = 0.0603453, ymin = 0.0574414, zmin = 0.025, xmax = 0.483885, ymax = 0.975, zmax = 0.0857617
+avg_depth: 2.817502
+center: (0.272290,0.431025,0.055580)
+scale: 0.455355
+principle_axes: (-0.001978,-0.999827,-0.018474), (-0.999996,0.002019,-0.002218), (-0.002255,-0.018470,0.999827)
+principle_values: (0.061538,0.006748,0.000401)

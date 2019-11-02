@@ -1,0 +1,14 @@
+mid: 374
+url: http://cepcairo.bizland.com/free/Torso_m2.zip
+ref_url: 
+format: xthreexds 
+pid: 47317
+polygons: 1770
+connected_components: 2
+average_dihedral_angle: 0.226484
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.551195, ymax = 0.975, zmax = 0.307288
+avg_depth: 1.047998
+center: (0.288398,0.461558,0.171859)
+scale: 0.600777
+principle_axes: (0.000345,1.000000,0.000542), (1.000000,-0.000345,-0.000441), (-0.000441,0.000542,-1.000000)
+principle_values: (0.074702,0.017199,0.007425)

@@ -1,21 +1,19 @@
-﻿using CsvHelper;
-using ShapeDatabase.Features;
-using ShapeDatabase.Features.Descriptors;
-using ShapeDatabase.IO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using ShapeDatabase.Features;
+using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.IO;
 
-namespace ShapeDatabase.IO
-{
+namespace ShapeDatabase.IO {
 	/// <summary>
 	/// Class for writing the featurevectors of the featuremanager to a csv file.
 	/// </summary>
-	public class FMWriter : IWriter<FeatureManager>
-	{
+	class FMWriter : IWriter<FeatureManager> {
 
 		#region --- Properties ---
 
@@ -26,7 +24,7 @@ namespace ShapeDatabase.IO
 		/// Provides a writer to convert <see cref="FeatureManager"/>s into csv.
 		/// </summary>
 		public static FMWriter Instance => lazy.Value;
-		public ICollection<string> SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
 
@@ -41,19 +39,18 @@ namespace ShapeDatabase.IO
 
 		#region --- Instance Methods ---
 
-		/// <summary>
-		/// Writes featurevectors to a csv file.
-		/// </summary>
-		/// <param name="type">The featuremanager containing the featurevectors</param>
-		/// <param name="location">The streamwriter to be used</param>
-		public void WriteFile(FeatureManager type, StreamWriter writer)
-		{
+		public void WriteFile(FeatureManager type, StreamWriter writer) {
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
+			if (type.FeatureCount == 0)
+				return;
 
 			using (CsvWriter csv = new CsvWriter(writer)) {
+				csv.Configuration.Delimiter =
+					Settings.Culture.TextInfo.ListSeparator;
+
 				// First line containing the headers.
 				csv.WriteField(IOConventions.MeshName);
 				foreach (string name in type.DescriptorNames)
@@ -71,7 +68,7 @@ namespace ShapeDatabase.IO
 			}
 		}
 
-		void IO.IWriter.WriteFile(object type, StreamWriter writer)
+		void IWriter.WriteFile(object type, StreamWriter writer)
 			=> WriteFile(type as FeatureManager, writer);
 
 		#endregion

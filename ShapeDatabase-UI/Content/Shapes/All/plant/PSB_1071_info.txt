@@ -1,0 +1,14 @@
+mid: 1071
+url: http://www.3dcafe.com/models/crippled.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 29065
+polygons: 1812
+connected_components: 86
+average_dihedral_angle: 0.575695
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.954665, ymax = 0.701217, zmax = 0.975
+avg_depth: 1.597787
+center: (0.571940,0.330289,0.482017)
+scale: 0.528982
+principle_axes: (0.782570,-0.058452,0.619813), (-0.532741,-0.578023,0.618123), (-0.322135,0.813924,0.483483)
+principle_values: (0.048109,0.022460,0.013432)

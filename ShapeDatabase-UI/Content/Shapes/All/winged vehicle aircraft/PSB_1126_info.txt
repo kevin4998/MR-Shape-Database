@@ -1,0 +1,14 @@
+mid: 1126
+url: http://www.rccad.com/Gallery/Vrml/Ultimate10-300.wrl
+ref_url: http://www.rccad.com/Gallery_BiPlanes1.htm
+format: wrl 
+pid: 33704
+polygons: 1316
+connected_components: 8
+average_dihedral_angle: 0.230337
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.788134, ymax = 0.975, zmax = 0.236106
+avg_depth: 1.319310
+center: (0.374975,0.500006,0.115785)
+scale: 0.534410
+principle_axes: (-0.000031,1.000000,-0.000000), (-0.994099,-0.000030,0.108479), (0.108479,0.000003,0.994099)
+principle_values: (0.053306,0.024771,0.005742)

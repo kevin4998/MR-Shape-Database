@@ -1,0 +1,14 @@
+mid: 1744
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/jwoodrin/Hw6/ddrrage/right_shoe.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/jwoodrin/Hw6/ddrrage/?D=D
+format: wrl 
+pid: 41567
+polygons: 476
+connected_components: 1
+average_dihedral_angle: 0.221003
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.519373, ymax = 0.402078, zmax = 0.975
+avg_depth: 1.003219
+center: (0.263022,0.183867,0.460447)
+scale: 0.618053
+principle_axes: (0.157461,0.095570,-0.982890), (-0.923739,0.366166,-0.112381), (-0.349160,-0.925629,-0.145939)
+principle_values: (0.070246,0.018086,0.015372)

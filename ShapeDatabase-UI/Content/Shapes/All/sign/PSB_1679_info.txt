@@ -1,0 +1,14 @@
+mid: 1679
+url: http://www.amazing3d.com/free/pkmtr3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47381
+polygons: 786
+connected_components: 10
+average_dihedral_angle: 0.764091
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.154414, ymax = 0.975, zmax = 0.0840225
+avg_depth: 1.297210
+center: (0.090469,0.683294,0.049767)
+scale: 0.455755
+principle_axes: (0.000646,0.999995,0.003073), (0.999875,-0.000695,0.015813), (0.015815,0.003062,-0.999870)
+principle_values: (0.073544,0.000750,0.000244)

@@ -1,0 +1,14 @@
+mid: 81
+url: http://www.3dcafe.com/avatar/shark.wrl
+ref_url: http://www.3dcafe.com/asp/vrml.asp
+format: wrl 
+pid: 662
+polygons: 1673
+connected_components: 46
+average_dihedral_angle: 0.875889
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.4145, ymax = 0.291, zmax = 0.975
+avg_depth: 1.115535
+center: (0.216407,0.113771,0.573472)
+scale: 0.401318
+principle_axes: (-0.000085,-0.069467,0.997584), (0.999051,0.043434,0.003110), (0.043545,-0.996638,-0.069397)
+principle_values: (0.047017,0.002739,0.002214)

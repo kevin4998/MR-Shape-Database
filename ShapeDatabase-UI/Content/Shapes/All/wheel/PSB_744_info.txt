@@ -1,0 +1,14 @@
+mid: 744
+url: http://www.mt.luth.se/~petert/distributed/models/gear.wrl.gz
+ref_url: http://www.mt.luth.se/~petert/distributed/distributed.html
+format: wrl 
+pid: 2338
+polygons: 7442
+connected_components: 1
+average_dihedral_angle: 0.296821
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.974701, ymax = 0.975, zmax = 0.413226
+avg_depth: 1.548010
+center: (0.499721,0.500005,0.219116)
+scale: 0.752821
+principle_axes: (-0.318690,0.947859,0.000002), (-0.947859,-0.318690,-0.000004), (0.000003,0.000003,-1.000000)
+principle_values: (0.066923,0.066922,0.018842)

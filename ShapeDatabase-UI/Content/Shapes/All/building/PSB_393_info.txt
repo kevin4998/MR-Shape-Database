@@ -1,0 +1,14 @@
+mid: 393
+url: http://mowat.virtualave.net/gazebo.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26728
+polygons: 326
+connected_components: 26
+average_dihedral_angle: 1.43208
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.635937, zmax = 0.847742
+avg_depth: 1.659020
+center: (0.499051,0.253151,0.435835)
+scale: 0.685125
+principle_axes: (-0.960562,0.122867,0.249447), (-0.251150,0.001683,-0.967947), (-0.119348,-0.992422,0.029241)
+principle_values: (0.043021,0.042960,0.040164)

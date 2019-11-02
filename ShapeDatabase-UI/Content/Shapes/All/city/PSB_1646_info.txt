@@ -1,0 +1,14 @@
+mid: 1646
+url: http://www.ehongkong.com.hk/vrml/cwb/cwb_tsq.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/links.html
+format: wrl 
+pid: 1114
+polygons: 10335
+connected_components: 657
+average_dihedral_angle: 1.30415
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.223656, zmax = 0.895154
+avg_depth: 1.831192
+center: (0.466488,0.052568,0.488361)
+scale: 0.551295
+principle_axes: (-0.999506,0.027544,-0.015157), (-0.014806,0.012905,0.999807), (-0.027734,-0.999537,0.012491)
+principle_values: (0.053281,0.040738,0.001770)

@@ -1,0 +1,14 @@
+mid: 1788
+url: http://www.flair-twl.de/download/BrooklynBridge.wrl
+ref_url: http://www.flair-twl.de/GreatBuildings.htm
+format: wrl 
+pid: 40946
+polygons: 916
+connected_components: 22
+average_dihedral_angle: 1.32231
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.233194, ymax = 0.066519, zmax = 0.975
+avg_depth: 1.057042
+center: (0.133795,0.029817,0.513770)
+scale: 0.627281
+principle_axes: (-0.013976,-0.001559,0.999901), (-0.999902,0.000739,-0.013975), (-0.000718,-0.999999,-0.001569)
+principle_values: (0.106779,0.002990,0.000040)

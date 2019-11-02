@@ -1,0 +1,14 @@
+mid: 1287
+url: http://www.rccad.com/Gallery/Vrml/TheFly.wrl
+ref_url: http://www.rccad.com/Gallery_MultiFuselages3.htm
+format: wrl 
+pid: 34284
+polygons: 1188
+connected_components: 8
+average_dihedral_angle: 0.214734
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.468476, ymax = 0.975, zmax = 0.115832
+avg_depth: 1.221334
+center: (0.243221,0.500007,0.054728)
+scale: 0.405378
+principle_axes: (-0.000021,1.000000,-0.000000), (-0.999975,-0.000021,-0.007082), (-0.007082,0.000000,0.999975)
+principle_values: (0.043759,0.008831,0.000170)

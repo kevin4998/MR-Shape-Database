@@ -1,0 +1,14 @@
+mid: 220
+url: http://www.buckrogers.demon.co.uk/3d/workman_bb.zip
+ref_url: http://www.yahoo.com/Computers_and_Internet/Internet/World_Wide_Web/Virtual_Reality_Modeling_Language__VRML_/
+format: obj 
+pid: 25235
+polygons: 25465
+connected_components: 36
+average_dihedral_angle: 0.285434
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.929319, ymax = 0.975, zmax = 0.225058
+avg_depth: 1.370409
+center: (0.477194,0.547516,0.114769)
+scale: 0.557445
+principle_axes: (-0.001131,0.999711,-0.024018), (0.999999,0.001136,0.000194), (0.000222,-0.024018,-0.999712)
+principle_values: (0.073529,0.018732,0.001770)

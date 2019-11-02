@@ -1,0 +1,14 @@
+mid: 82
+url: http://www.3dcafe.com/models/kingcobra.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: 3ds 
+pid: 27381
+polygons: 8276
+connected_components: 3
+average_dihedral_angle: 0.238196
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.78087, zmax = 0.650372
+avg_depth: 1.103014
+center: (0.638191,0.199297,0.425277)
+scale: 0.677431
+principle_axes: (-0.086005,-0.782268,-0.616977), (0.863036,0.250902,-0.438425), (0.497767,-0.570180,0.653546)
+principle_values: (0.058108,0.041997,0.026347)

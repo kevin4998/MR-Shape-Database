@@ -90,7 +90,7 @@ namespace ShapeDatabase.IO {
 		/// <param name="info">The data for serializing or deserializing the object.</param>
 		/// <param name="context">The source and destination for the object.</param>
 		[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-		protected G3WriterException(SerializationInfo info, StreamingContext context) 
+		protected G3WriterException(SerializationInfo info, StreamingContext context)
 			: base(info, context) {
 			Result = info.GetValue<IOWriteResult>(serCode);
 		}

@@ -1,0 +1,14 @@
+mid: 989
+url: http://cheetah.ma.iup.edu/courses/ls499/iupsouth/objects/tallpotplant.wrl
+ref_url: http://www.ma.iup.edu/courses/ls499/south/dining-old.wrl
+format: wrl 
+pid: 14914
+polygons: 1024
+connected_components: 59
+average_dihedral_angle: 0.703106
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.721648, ymax = 0.975, zmax = 0.659686
+avg_depth: 2.351797
+center: (0.359642,0.424424,0.345816)
+scale: 0.466548
+principle_axes: (-0.003297,-0.999731,0.022973), (-0.979687,-0.001377,-0.200529), (0.200506,-0.023167,-0.979418)
+principle_values: (0.048290,0.010801,0.008906)

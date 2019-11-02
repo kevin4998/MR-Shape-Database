@@ -1,0 +1,14 @@
+mid: 1213
+url: http://mowat.virtualave.net/psu15s.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26354
+polygons: 504
+connected_components: 1
+average_dihedral_angle: 0.740876
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.45763, ymax = 0.17575, zmax = 0.975
+avg_depth: 1.159093
+center: (0.241345,0.056572,0.379934)
+scale: 0.376127
+principle_axes: (0.000106,0.012089,-0.999927), (1.000000,0.000069,0.000107), (0.000070,-0.999927,-0.012089)
+principle_values: (0.041401,0.004481,0.000676)

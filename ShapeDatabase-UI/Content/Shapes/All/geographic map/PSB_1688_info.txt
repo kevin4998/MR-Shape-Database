@@ -1,0 +1,14 @@
+mid: 1688
+url: http://www.3dcafe.com/models/asia.zip
+ref_url: http://www.3dcafe.com/asp/geo_pic.asp
+format: 3ds 
+pid: 28140
+polygons: 6424
+connected_components: 18
+average_dihedral_angle: 1.13302
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.770825, zmax = 0.0585426
+avg_depth: 1.071912
+center: (0.478313,0.455383,0.041771)
+scale: 0.505959
+principle_axes: (-0.936028,-0.351927,-0.000000), (-0.351927,0.936028,0.000000), (-0.000000,-0.000000,1.000000)
+principle_values: (0.050122,0.023951,0.000238)

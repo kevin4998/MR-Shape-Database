@@ -1,0 +1,14 @@
+mid: 1656
+url: http://www.helsinkiarena2000.fi/maailmat/wrl/stocka_y.wrl
+ref_url: http://oddens.geog.uu.nl/Old/mapsatl3.htm
+format: wrl 
+pid: 2263
+polygons: 17091
+connected_components: 278
+average_dihedral_angle: 1.09353
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.0934959, zmax = 0.842903
+avg_depth: 2.202294
+center: (0.548552,0.033788,0.491109)
+scale: 0.506341
+principle_axes: (0.990663,-0.007978,-0.136100), (0.136097,-0.000915,0.990695), (-0.008028,-0.999968,0.000179)
+principle_values: (0.046935,0.026560,0.000079)

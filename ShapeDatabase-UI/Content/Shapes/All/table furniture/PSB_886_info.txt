@@ -1,0 +1,14 @@
+mid: 886
+url: http://www.3dcafe.com/models/ctable01.zip
+ref_url: http://www.3dcafe.com/asp/hou1_pic.asp
+format: xthreexds 
+pid: 28545
+polygons: 2432
+connected_components: 199
+average_dihedral_angle: 1.512
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.461865, zmax = 0.711496
+avg_depth: 1.658538
+center: (0.499998,0.372761,0.368247)
+scale: 0.642205
+principle_axes: (1.000000,0.000005,-0.000002), (-0.000002,0.000000,-1.000000), (-0.000005,1.000000,0.000000)
+principle_values: (0.060603,0.038767,0.017896)

@@ -1,0 +1,14 @@
+mid: 1252
+url: http://www.rccad.com/Gallery/Vrml/Su-35s1.wrl
+ref_url: 
+format: wrl 
+pid: 46909
+polygons: 4854
+connected_components: 41
+average_dihedral_angle: 0.301444
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.604361, zmax = 0.239457
+avg_depth: 1.761000
+center: (0.575228,0.314386,0.080008)
+scale: 0.340265
+principle_axes: (0.999823,-0.000875,0.018801), (-0.000880,-1.000000,0.000287), (0.018801,-0.000304,-0.999823)
+principle_values: (0.028016,0.007225,0.000729)

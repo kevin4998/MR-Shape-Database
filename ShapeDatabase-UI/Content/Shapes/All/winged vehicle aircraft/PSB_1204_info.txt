@@ -1,0 +1,14 @@
+mid: 1204
+url: http://ciel.me.cmu.edu/soji/aircraft/thunder.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 897
+polygons: 588
+connected_components: 51
+average_dihedral_angle: 0.916736
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.666722, ymax = 0.333278, zmax = 0.975
+avg_depth: 1.193721
+center: (0.345866,0.129939,0.645027)
+scale: 0.436647
+principle_axes: (-0.000012,0.095441,0.995435), (1.000000,0.000051,0.000007), (0.000050,-0.995435,0.095441)
+principle_values: (0.043453,0.011573,0.002709)

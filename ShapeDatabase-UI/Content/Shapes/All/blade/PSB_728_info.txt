@@ -1,0 +1,14 @@
+mid: 728
+url: http://www.amazing3d.com/free/cleve3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47235
+polygons: 818
+connected_components: 4
+average_dihedral_angle: 0.361734
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.125536, ymax = 0.31855, zmax = 0.975
+avg_depth: 1.025387
+center: (0.075699,0.200696,0.552027)
+scale: 0.490240
+principle_axes: (0.000861,-0.146148,0.989262), (-0.000616,0.989262,0.146149), (-0.999999,-0.000735,0.000761)
+principle_values: (0.071019,0.005497,0.000351)

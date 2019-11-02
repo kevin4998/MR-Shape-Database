@@ -1,0 +1,14 @@
+mid: 264
+url: http://www.3dcafe.com/models/woman9.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 26978
+polygons: 17547
+connected_components: 17
+average_dihedral_angle: 0.256991
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.335492, ymax = 0.38114, zmax = 0.975
+avg_depth: 1.279143
+center: (0.184525,0.242137,0.455819)
+scale: 0.444424
+principle_axes: (-0.005213,0.060127,-0.998177), (-0.964419,-0.264155,-0.010875), (-0.264328,0.962604,0.059364)
+principle_values: (0.053828,0.005556,0.002558)

@@ -1,0 +1,14 @@
+mid: 1090
+url: http://64.198.60.83/baument/Models/bentpalm.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 25465
+polygons: 10928
+connected_components: 9
+average_dihedral_angle: 0.645081
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.69057, zmax = 0.759382
+avg_depth: 1.487312
+center: (0.386320,0.592341,0.336687)
+scale: 0.409825
+principle_axes: (-0.735481,0.677406,-0.013713), (-0.003749,-0.024307,-0.999698), (0.677535,0.735207,-0.020417)
+principle_values: (0.038524,0.015536,0.006818)

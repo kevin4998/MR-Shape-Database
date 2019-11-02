@@ -1,0 +1,14 @@
+mid: 1450
+url: http://www.alaska.net/~dennism/vrml/worlds/2_0/sailboat.wrl
+ref_url: http://www.b5crusade.com
+format: wrl 
+pid: 39093
+polygons: 156
+connected_components: 12
+average_dihedral_angle: 1.57984
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.238483, ymax = 0.843388, zmax = 0.975
+avg_depth: 1.384207
+center: (0.131763,0.208630,0.473971)
+scale: 0.507299
+principle_axes: (-0.000012,0.084126,0.996455), (0.000099,-0.996455,0.084126), (-1.000000,-0.000100,-0.000004)
+principle_values: (0.049163,0.024913,0.002528)

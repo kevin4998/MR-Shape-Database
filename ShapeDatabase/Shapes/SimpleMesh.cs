@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using OpenTK;
-using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Shapes {
 
@@ -22,11 +21,10 @@ namespace ShapeDatabase.Shapes {
 		public bool IsNormalised { get; set; }
 
 		public uint VertexCount => (uint) vertices.Length;
-		public uint FaceCount	=> (uint) faces.Length;
-		public uint EdgeCount	=> (uint) edges.Length;
+		public uint FaceCount => (uint) faces.Length;
+		public uint EdgeCount => (uint) edges.Length;
 		public uint NormalCount => (uint) normals.Length;
 
-		private readonly uint[] weightedvertexarray;
 
 		public IEnumerable<Vector3> Vertices {
 			get { return vertices; }
@@ -60,10 +58,9 @@ namespace ShapeDatabase.Shapes {
 						  IEnumerable<Vector3> normals = null,
 						  bool normalised = false) {
 			this.vertices = AsArray(vertices, true);
-			this.faces	  = AsArray(faces,	  true);
-			this.edges	  = AsArray(edges,	  false);
-			this.normals  = AsArray(normals,  false);
-			weightedvertexarray = this.SetWeightedVertexArray();
+			this.faces = AsArray(faces, true);
+			this.edges = AsArray(edges, false);
+			this.normals = AsArray(normals, false);
 			IsNormalised = normalised;
 		}
 
@@ -87,10 +84,6 @@ namespace ShapeDatabase.Shapes {
 			return vertices[pos];
 		}
 
-		public Vector3 GetRandomVertex(Random rand)
-		{
-			return MeshEx.GetRandomVertex(this, rand, weightedvertexarray);
-		}
 
 		public void SetFace(uint pos, Vector3 value) {
 			faces[pos] = value;
@@ -122,7 +115,7 @@ namespace ShapeDatabase.Shapes {
 		}
 
 		public static SimpleMesh CreateFrom(IMesh mesh) {
-			return (mesh is SimpleMesh simple) ? simple : new SimpleMesh(mesh); 
+			return (mesh is SimpleMesh simple) ? simple : new SimpleMesh(mesh);
 		}
 
 		#endregion

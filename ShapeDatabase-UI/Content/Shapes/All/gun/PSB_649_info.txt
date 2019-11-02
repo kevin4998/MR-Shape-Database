@@ -1,0 +1,14 @@
+mid: 649
+url: http://www.worldwar1.com/vrml/objects/steyr.wrl.gz
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1700
+polygons: 1945
+connected_components: 160
+average_dihedral_angle: 0.639877
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.68525, zmax = 0.138763
+avg_depth: 2.538021
+center: (0.399315,0.457441,0.081616)
+scale: 0.594062
+principle_axes: (-0.885811,-0.464046,-0.000574), (0.464044,-0.885809,0.002325), (0.001587,-0.001793,-0.999997)
+principle_values: (0.085358,0.018532,0.000980)

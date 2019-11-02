@@ -1,0 +1,14 @@
+mid: 678
+url: http://www.amazing3d.com/free/ruger3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47481
+polygons: 2216
+connected_components: 25
+average_dihedral_angle: 0.468451
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0662417, ymax = 0.212036, zmax = 0.975
+avg_depth: 1.211421
+center: (0.045573,0.147442,0.433479)
+scale: 0.447323
+principle_axes: (-0.000128,0.119398,0.992846), (-0.001996,0.992844,-0.119399), (-0.999998,-0.001997,0.000111)
+principle_values: (0.064083,0.001360,0.000139)

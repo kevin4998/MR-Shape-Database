@@ -1,0 +1,14 @@
+mid: 205
+url: http://philliphansel.com/avatars/juggler.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3488
+polygons: 1242
+connected_components: 22
+average_dihedral_angle: 0.582579
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.383616, ymax = 0.975, zmax = 0.231815
+avg_depth: 1.697186
+center: (0.204585,0.518986,0.117026)
+scale: 0.463686
+principle_axes: (0.003870,0.999964,-0.007609), (0.999986,-0.003899,-0.003709), (-0.003739,-0.007594,-0.999964)
+principle_values: (0.058035,0.008092,0.001838)

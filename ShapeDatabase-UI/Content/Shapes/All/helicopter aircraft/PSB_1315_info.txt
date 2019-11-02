@@ -1,0 +1,14 @@
+mid: 1315
+url: http://www.rccad.com/Gallery/Vrml/AH-84A.wrl
+ref_url: http://www.rccad.com/Gallery_Helicopters1.htm
+format: wrl 
+pid: 34045
+polygons: 844
+connected_components: 8
+average_dihedral_angle: 0.738989
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.752246, ymax = 0.975, zmax = 0.226254
+avg_depth: 1.916916
+center: (0.356305,0.500015,0.109514)
+scale: 0.310866
+principle_axes: (-0.996988,0.000265,-0.077557), (0.000261,1.000000,0.000053), (0.077557,0.000033,-0.996988)
+principle_values: (0.024449,0.010114,0.001832)

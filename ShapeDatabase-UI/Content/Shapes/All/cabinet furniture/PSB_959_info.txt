@@ -1,0 +1,14 @@
+mid: 959
+url: http://deep.sitenest.net/freemodels/office/3dm-dispunit.zip
+ref_url: 
+format: xthreexds 
+pid: 47916
+polygons: 1712
+connected_components: 36
+average_dihedral_angle: 0.714668
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.420781, ymax = 0.975, zmax = 0.211007
+avg_depth: 2.672112
+center: (0.223458,0.503559,0.114847)
+scale: 0.608465
+principle_axes: (0.000005,-0.999972,-0.007526), (-0.999999,0.000008,-0.001709), (-0.001709,-0.007526,0.999970)
+principle_values: (0.084051,0.018295,0.004830)

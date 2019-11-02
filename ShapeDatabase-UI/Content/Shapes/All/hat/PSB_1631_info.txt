@@ -1,0 +1,14 @@
+mid: 1631
+url: http://cepcairo.bizland.com/free/Cwboyhat.zip
+ref_url: 
+format: xthreexds 
+pid: 47024
+polygons: 3414
+connected_components: 23
+average_dihedral_angle: 0.312638
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.854637, ymax = 0.488631, zmax = 0.975
+avg_depth: 1.301404
+center: (0.432976,0.188060,0.533440)
+scale: 0.586249
+principle_axes: (0.043416,0.008745,0.999019), (-0.998757,-0.024140,0.043616), (0.024498,-0.999670,0.007686)
+principle_values: (0.048066,0.037216,0.009974)

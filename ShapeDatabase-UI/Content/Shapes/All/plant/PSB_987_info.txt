@@ -1,0 +1,14 @@
+mid: 987
+url: http://www.3dheaven.net/Modelle/plants/Rose1.zip
+ref_url: 
+format: xthreexds 
+pid: 48016
+polygons: 982
+connected_components: 37
+average_dihedral_angle: 0.24871
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.553203, ymax = 0.400042, zmax = 0.975
+avg_depth: 1.486840
+center: (0.258790,0.185831,0.782732)
+scale: 0.392798
+principle_axes: (-0.040391,0.142001,0.989042), (-0.983226,0.170552,-0.064641), (-0.177862,-0.975063,0.132730)
+principle_values: (0.037262,0.007759,0.005208)

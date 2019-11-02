@@ -1,0 +1,14 @@
+mid: 745
+url: http://www.dig.bris.ac.uk/virtual_lib/wrls/Basic_Comps/rTpul02c.wrl
+ref_url: http://www.dig.bris.ac.uk/virtual_lib
+format: wrl 
+pid: 2389
+polygons: 1660
+connected_components: 1
+average_dihedral_angle: 1.20263
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.973661, ymax = 0.975, zmax = 0.529196
+avg_depth: 1.412450
+center: (0.499454,0.503166,0.236182)
+scale: 0.780994
+principle_axes: (0.047802,0.998849,-0.003838), (0.998857,-0.047802,0.000158), (0.000026,0.003842,0.999993)
+principle_values: (0.067042,0.066488,0.027832)

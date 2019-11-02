@@ -1,0 +1,14 @@
+mid: 871
+url: http://www.dmc.dit.ie/guests/eirenet/eirenet/eirenet/thic/art/128x128/t3.wrl
+ref_url: http://www.dmc.dit.ie/guests/eirenet/eirenet/eirenet/thic/art/128x128/gallery2.wrl
+format: wrl 
+pid: 16328
+polygons: 184
+connected_components: 16
+average_dihedral_angle: 3.07612
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.895906, ymax = 0.975, zmax = 0.892876
+avg_depth: 2.822729
+center: (0.452914,0.754640,0.468291)
+scale: 0.738980
+principle_axes: (-0.070375,0.996052,0.054112), (0.728658,0.088378,-0.679151), (0.681252,0.008366,0.732001)
+principle_values: (0.069056,0.052824,0.035378)

@@ -1,0 +1,14 @@
+mid: 1528
+url: http://www.3dheaven.net/Modelle/cars/bmw.zip
+ref_url: 
+format: xthreexds 
+pid: 46895
+polygons: 37254
+connected_components: 230
+average_dihedral_angle: 0.506174
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.374326, ymax = 0.280749, zmax = 0.975
+avg_depth: 2.837210
+center: (0.199332,0.146627,0.522339)
+scale: 0.522173
+principle_axes: (0.000079,0.032405,0.999475), (1.000000,0.000357,-0.000090), (0.000360,-0.999475,0.032405)
+principle_values: (0.064580,0.011953,0.003745)

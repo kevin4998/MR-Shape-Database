@@ -1,0 +1,14 @@
+mid: 1647
+url: http://www.cyberedge.com/vrml/praca6a.wrl
+ref_url: http://www.cyberedge.com/vrml/v1.html
+format: wrl 
+pid: 11733
+polygons: 9152
+connected_components: 375
+average_dihedral_angle: 1.05996
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.323101, zmax = 0.722926
+avg_depth: 1.680434
+center: (0.450029,0.085275,0.357321)
+scale: 0.650725
+principle_axes: (-0.998733,0.049715,0.007797), (-0.010439,-0.053116,-0.998534), (-0.049228,-0.997350,0.053568)
+principle_values: (0.072873,0.039813,0.003984)

@@ -1,0 +1,14 @@
+mid: 1294
+url: http://www.rccad.com/Gallery/Vrml/hoxi.wrl
+ref_url: http://www.lucia.it/vrml/presentazioni/assembla/images/111john.wrl
+format: wrl 
+pid: 33988
+polygons: 352
+connected_components: 8
+average_dihedral_angle: 0.400284
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.43938, ymax = 0.975, zmax = 0.11004
+avg_depth: 1.428756
+center: (0.228439,0.499268,0.066572)
+scale: 0.339988
+principle_axes: (-0.000216,-1.000000,-0.000284), (0.999997,-0.000217,0.002266), (-0.002266,-0.000283,0.999997)
+principle_values: (0.033103,0.007473,0.000244)

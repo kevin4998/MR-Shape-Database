@@ -1,0 +1,14 @@
+mid: 970
+url: http://web.uvic.ca/educ/lfrancis/web/flowers.wrl
+ref_url: http://web.uvic.ca/educ/lfrancis/web/VRML-Examples.html
+format: wrl 
+pid: 10060
+polygons: 2292
+connected_components: 402
+average_dihedral_angle: 1.57079
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.493717, ymax = 0.975, zmax = 0.793381
+avg_depth: 1.605590
+center: (0.303657,0.619154,0.403894)
+scale: 0.503918
+principle_axes: (-0.148722,0.700157,0.698328), (0.388355,0.690798,-0.609900), (0.909429,-0.180494,0.374647)
+principle_values: (0.049650,0.021634,0.002808)

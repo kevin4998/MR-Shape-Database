@@ -1,0 +1,14 @@
+mid: 1613
+url: http://www.cs.technion.ac.il/~cs236606/vrml/queen.wrl
+ref_url: http://www.cs.technion.ac.il/~cs236606/vrml/
+format: wrl 
+pid: 4758
+polygons: 560
+connected_components: 1
+average_dihedral_angle: 0.76234
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.43672, ymax = 0.975, zmax = 0.43672
+avg_depth: 1.086337
+center: (0.230860,0.367423,0.230860)
+scale: 0.589309
+principle_axes: (-0.000000,-1.000000,-0.000000), (0.121220,-0.000000,0.992626), (0.992626,-0.000000,-0.121220)
+principle_values: (0.083928,0.008713,0.008713)

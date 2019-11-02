@@ -1,0 +1,14 @@
+mid: 1573
+url: http://www.3dcafe.com/../models/18wheel.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: 3ds 
+pid: 30570
+polygons: 2788
+connected_components: 162
+average_dihedral_angle: 0.935817
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.287592, ymax = 0.322961, zmax = 0.975
+avg_depth: 1.457318
+center: (0.156586,0.171393,0.460368)
+scale: 0.582883
+principle_axes: (0.001052,-0.061199,-0.998125), (-0.020398,-0.997919,0.061165), (-0.999791,0.020295,-0.002298)
+principle_values: (0.087064,0.007653,0.005239)

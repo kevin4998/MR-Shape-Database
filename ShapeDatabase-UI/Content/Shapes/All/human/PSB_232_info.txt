@@ -1,0 +1,14 @@
+mid: 232
+url: http://www.geo-metricks.com/geo-shop/free-stuff/zeb/zeb.zip
+ref_url: http://www.geo-metricks.com/geo-shop/free-stuff/zeb/?D=D
+format: wrl 
+pid: 31113
+polygons: 854
+connected_components: 1
+average_dihedral_angle: 0.544701
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.892351, ymax = 0.975, zmax = 0.292537
+avg_depth: 1.168409
+center: (0.458661,0.440650,0.123045)
+scale: 0.567137
+principle_axes: (0.000020,0.999076,-0.042972), (1.000000,-0.000024,-0.000070), (-0.000071,-0.042972,-0.999076)
+principle_values: (0.070777,0.021068,0.002979)

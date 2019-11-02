@@ -1,0 +1,14 @@
+mid: 257
+url: http://www.3dheaven.net/Modelle/counterstrike/c_arctic_orginal.zip
+ref_url: 
+format: xthreexds 
+pid: 47079
+polygons: 721
+connected_components: 4
+average_dihedral_angle: 0.657181
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.409814, ymax = 0.899138, zmax = 0.975
+avg_depth: 1.306694
+center: (0.193081,0.512885,0.498377)
+scale: 0.499197
+principle_axes: (-0.082150,0.996346,0.023367), (-0.368234,-0.052132,0.928270), (0.926097,0.067653,0.371171)
+principle_values: (0.050608,0.022983,0.003764)

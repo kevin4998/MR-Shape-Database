@@ -1,0 +1,14 @@
+mid: 1555
+url: http://www.fantastic.ukart.com/53dmodels/auto/L1zm.zip
+ref_url: http://www.fantasticarts.com/3dmodels/auto/L1ZM.htm
+format: 3ds 
+pid: 27572
+polygons: 30255
+connected_components: 87
+average_dihedral_angle: 0.72823
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.419218, zmax = 0.322279
+avg_depth: 2.044768
+center: (0.476602,0.181439,0.176336)
+scale: 0.505419
+principle_axes: (-0.997705,0.067544,-0.004655), (-0.067269,-0.996726,-0.044850), (-0.007669,-0.044434,0.998983)
+principle_values: (0.055842,0.008868,0.006911)

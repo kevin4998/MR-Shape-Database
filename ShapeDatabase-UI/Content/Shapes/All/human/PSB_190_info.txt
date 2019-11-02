@@ -1,0 +1,14 @@
+mid: 190
+url: http://www.houseof3d.com/cookieMK1.wrl.gz
+ref_url: http://www.houseof3d.com/
+format: wrl 
+pid: 1960
+polygons: 1777
+connected_components: 29
+average_dihedral_angle: 0.564582
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.462848, ymax = 0.975, zmax = 0.456327
+avg_depth: 1.770212
+center: (0.241923,0.459076,0.241300)
+scale: 0.542477
+principle_axes: (-0.023577,-0.999305,-0.028876), (0.717733,0.003187,-0.696311), (0.695919,-0.037142,0.717159)
+principle_values: (0.075751,0.011170,0.005632)

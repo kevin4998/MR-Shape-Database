@@ -1,0 +1,14 @@
+mid: 1475
+url: http://www.bergen.org/Present/TechnologyHighSchool/vrmls/bike.WRL
+ref_url: http://www.bergen.org/Present/TechnologyHighSchool/vrmls/
+format: wrl 
+pid: 4504
+polygons: 12065
+connected_components: 39
+average_dihedral_angle: 0.909136
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.513449, zmax = 0.232333
+avg_depth: 1.575214
+center: (0.516465,0.241146,0.129039)
+scale: 0.572605
+principle_axes: (-0.997943,-0.064111,0.000284), (0.064112,-0.997939,0.002564), (-0.000119,-0.002577,-0.999997)
+principle_values: (0.077828,0.014237,0.000319)

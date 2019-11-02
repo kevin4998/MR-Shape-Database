@@ -1,0 +1,14 @@
+mid: 176
+url: http://www.rjensen.freeserve.co.uk/docs/actor3.wrl
+ref_url: http://www.rjensen.freeserve.co.uk/docs/work.html
+format: wrl 
+pid: 6750
+polygons: 1288
+connected_components: 33
+average_dihedral_angle: 0.498609
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.432787, ymax = 0.975, zmax = 0.194575
+avg_depth: 1.575836
+center: (0.228877,0.527126,0.102160)
+scale: 0.479561
+principle_axes: (-0.001209,0.999760,0.021878), (0.999998,0.001172,0.001688), (0.001662,0.021879,-0.999759)
+principle_values: (0.062652,0.009347,0.001398)

@@ -1,0 +1,14 @@
+mid: 1575
+url: http://deep.sitenest.net/freemodels/transport/3dm-truck.zip
+ref_url: 
+format: xthreexds 
+pid: 48047
+polygons: 92176
+connected_components: 328
+average_dihedral_angle: 0.66732
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.397204, ymax = 0.472813, zmax = 0.975
+avg_depth: 3.393024
+center: (0.210943,0.248409,0.515134)
+scale: 0.637542
+principle_axes: (0.004695,-0.021354,0.999761), (0.033337,-0.999213,-0.021499), (-0.999433,-0.033430,0.003979)
+principle_values: (0.087834,0.014932,0.011648)

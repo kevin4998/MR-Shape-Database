@@ -1,0 +1,14 @@
+mid: 136
+url: http://mowat.virtualave.net/mscasstd.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26501
+polygons: 869
+connected_components: 6
+average_dihedral_angle: 0.531118
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.290972, ymax = 0.975, zmax = 0.205733
+avg_depth: 1.273328
+center: (0.158522,0.493525,0.088966)
+scale: 0.474417
+principle_axes: (-0.000681,0.999680,-0.025282), (0.997789,0.002360,0.066425), (-0.066463,0.025181,0.997471)
+principle_values: (0.065800,0.004038,0.001166)

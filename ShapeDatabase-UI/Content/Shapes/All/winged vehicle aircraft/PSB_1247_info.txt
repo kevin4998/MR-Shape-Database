@@ -1,0 +1,14 @@
+mid: 1247
+url: http://mowat.virtualave.net/pa4e1l.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26454
+polygons: 1546
+connected_components: 1
+average_dihedral_angle: 0.487092
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.680532, ymax = 0.338948, zmax = 0.975
+avg_depth: 1.188741
+center: (0.352866,0.103499,0.578514)
+scale: 0.458706
+principle_axes: (-0.000467,0.137769,0.990464), (1.000000,0.000075,0.000461), (0.000011,-0.990464,0.137769)
+principle_values: (0.048922,0.012312,0.002784)

@@ -1,0 +1,14 @@
+mid: 162
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/jwoodrin/Hw6/ddrrage/model.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/jwoodrin/Hw6/ddrrage/?D=D
+format: wrl 
+pid: 41584
+polygons: 6988
+connected_components: 20
+average_dihedral_angle: 0.253139
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.356469, ymax = 0.975, zmax = 0.253653
+avg_depth: 1.716489
+center: (0.190829,0.472360,0.160356)
+scale: 0.471750
+principle_axes: (-0.000906,-0.999995,-0.002991), (0.999995,-0.000915,0.003134), (0.003137,0.002988,-0.999991)
+principle_values: (0.061833,0.005662,0.001453)

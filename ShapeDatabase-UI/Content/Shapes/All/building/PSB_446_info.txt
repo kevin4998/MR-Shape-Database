@@ -1,0 +1,14 @@
+mid: 446
+url: http://www.3dcafe.com/models/housedcl.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27851
+polygons: 35236
+connected_components: 1084
+average_dihedral_angle: 1.12801
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.278717, zmax = 0.690334
+avg_depth: 1.516024
+center: (0.491214,0.078612,0.288995)
+scale: 0.452268
+principle_axes: (-0.982701,0.036543,0.181561), (-0.170795,0.200262,-0.964740), (-0.071614,-0.979061,-0.190556)
+principle_values: (0.040008,0.017471,0.003262)

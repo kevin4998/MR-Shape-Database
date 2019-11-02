@@ -1,0 +1,14 @@
+mid: 1383
+url: http://ftp.uni-erlangen.de/pub/amiga/aminet/gfx/3dobj/ufopart1.lha
+ref_url: http://ftp.uni-erlangen.de/pub/amiga/aminet/gfx/3dobj/
+format: lwo 
+pid: 28996
+polygons: 31296
+connected_components: 57
+average_dihedral_angle: 3.14083
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.241709, zmax = 0.975
+avg_depth: 2.284556
+center: (0.499999,0.123096,0.499999)
+scale: 0.595392
+principle_axes: (0.722749,-0.000000,-0.691111), (-0.691111,0.000003,-0.722749), (0.000002,1.000000,0.000002)
+principle_values: (0.052271,0.052271,0.001193)

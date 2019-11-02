@@ -1,0 +1,14 @@
+mid: 516
+url: http://www.geometrek.com/members/kapiti/objects/mail.wrl
+ref_url: http://home.t-online.de/home/kiwano6/models.htm
+format: wrl 
+pid: 1732
+polygons: 110
+connected_components: 6
+average_dihedral_angle: 1.32645
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.225463, ymax = 0.975, zmax = 0.520332
+avg_depth: 1.493331
+center: (0.122964,0.659508,0.281451)
+scale: 0.454304
+principle_axes: (0.006888,0.998835,0.047758), (0.006498,-0.047803,0.998836), (0.999955,-0.006570,-0.006820)
+principle_values: (0.046554,0.018001,0.003250)

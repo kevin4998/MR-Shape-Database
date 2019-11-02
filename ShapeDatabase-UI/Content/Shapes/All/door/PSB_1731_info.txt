@@ -1,0 +1,14 @@
+mid: 1731
+url: http://deep.sitenest.net/freemodels/doors/3dm-garagedr.zip
+ref_url: 
+format: xthreexds 
+pid: 48330
+polygons: 4084
+connected_components: 18
+average_dihedral_angle: 1.12136
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.935516, zmax = 0.136363
+avg_depth: 1.308101
+center: (0.501239,0.513921,0.052987)
+scale: 0.746763
+principle_axes: (0.999650,-0.012861,0.023103), (0.013039,0.999886,-0.007568), (0.023003,-0.007866,-0.999704)
+principle_values: (0.082453,0.074742,0.000412)

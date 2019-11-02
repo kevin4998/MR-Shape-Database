@@ -1,0 +1,14 @@
+mid: 427
+url: http://64.198.60.83/baument/Models/cottage2.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 26265
+polygons: 16975
+connected_components: 164
+average_dihedral_angle: 0.47897
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.950112, zmax = 0.945193
+avg_depth: 2.248678
+center: (0.512788,0.572160,0.497577)
+scale: 0.859610
+principle_axes: (-0.239444,-0.253792,0.937153), (-0.967820,0.139344,-0.209544), (0.077406,0.957169,0.278990)
+principle_values: (0.072718,0.069079,0.052352)

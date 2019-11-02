@@ -1,0 +1,14 @@
+mid: 1500
+url: http://fraktali.849pm.com/programs/wrl/object/Vehicles2.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31018
+polygons: 3260
+connected_components: 7
+average_dihedral_angle: 0.45135
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.427681, ymax = 0.380906, zmax = 0.975
+avg_depth: 1.346271
+center: (0.226317,0.182725,0.486987)
+scale: 0.607034
+principle_axes: (-0.000079,0.001334,-0.999999), (-1.000000,-0.000112,0.000079), (0.000112,-0.999999,-0.001334)
+principle_values: (0.081639,0.017641,0.006013)

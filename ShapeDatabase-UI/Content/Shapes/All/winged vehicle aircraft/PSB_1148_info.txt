@@ -1,0 +1,14 @@
+mid: 1148
+url: http://www.3dspline.com/3ds_meshes/c5_cargo_3ds.zip
+ref_url: 
+format: 3ds 
+pid: 25245
+polygons: 11365
+connected_components: 221
+average_dihedral_angle: 0.88462
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.900516, ymax = 0.287476, zmax = 0.975
+avg_depth: 1.651086
+center: (0.461913,0.129282,0.521280)
+scale: 0.451932
+principle_axes: (0.007667,-0.148758,0.988844), (0.999971,0.001471,-0.007532), (-0.000334,0.988872,0.148765)
+principle_values: (0.032764,0.028911,0.001573)

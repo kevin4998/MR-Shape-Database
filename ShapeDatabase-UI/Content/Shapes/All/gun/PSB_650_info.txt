@@ -1,0 +1,14 @@
+mid: 650
+url: http://www.worldwar1.com/vrml/objects/luger.wrl.gz
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1706
+polygons: 2464
+connected_components: 39
+average_dihedral_angle: 0.613762
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.660075, zmax = 0.158238
+avg_depth: 2.646987
+center: (0.342991,0.447268,0.094161)
+scale: 0.484649
+principle_axes: (-0.847064,-0.531479,0.003563), (0.531487,-0.847065,0.001685), (-0.002123,-0.003321,-0.999992)
+principle_values: (0.054049,0.018640,0.001406)

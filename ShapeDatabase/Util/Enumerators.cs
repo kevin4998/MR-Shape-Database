@@ -200,7 +200,7 @@ namespace ShapeDatabase.Util {
 		/// </param>
 		/// <exception cref="ArgumentNullException">If any of the provided parameters
 		/// is equal to <see langword="null"/>.</exception>
-		public ConvertEnumerator(IEnumerator<TBase> enumerator, Func<TBase, TGoal> converter) 
+		public ConvertEnumerator(IEnumerator<TBase> enumerator, Func<TBase, TGoal> converter)
 			: base(enumerator) {
 			Converter = converter ?? throw new ArgumentNullException(nameof(converter));
 		}
@@ -213,7 +213,7 @@ namespace ShapeDatabase.Util {
 		public override TGoal Current { get; protected set; } = default;
 
 		public TripleCombineEnumerator(IEnumerator<TBase> enumerator,
-									   Func<TBase, TBase, TBase, TGoal> converter) 
+									   Func<TBase, TBase, TBase, TGoal> converter)
 			: base(enumerator) {
 			Converter = converter ?? throw new ArgumentNullException(nameof(converter));
 		}
@@ -221,7 +221,7 @@ namespace ShapeDatabase.Util {
 		public override bool MoveNext() {
 			TBase[] values = new TBase[3];
 			bool result = true;
-			for(int i = 0; result && i < 3; i++)
+			for (int i = 0; result && i < 3; i++)
 				if (result = Enumerator.MoveNext())
 					values[i] = Enumerator.Current;
 			if (result)

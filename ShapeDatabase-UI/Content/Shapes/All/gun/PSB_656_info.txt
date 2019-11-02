@@ -1,0 +1,14 @@
+mid: 656
+url: http://fraktali.849pm.com/programs/dxf/3ds/p08luger.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: xthreexds 
+pid: 26924
+polygons: 31098
+connected_components: 69
+average_dihedral_angle: 0.564516
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.1677, ymax = 0.573957, zmax = 0.975
+avg_depth: 3.962655
+center: (0.096070,0.373225,0.295911)
+scale: 0.408722
+principle_axes: (-0.006139,-0.561877,-0.827198), (-0.006287,-0.827176,0.561908), (0.999961,-0.008650,-0.001546)
+principle_values: (0.042780,0.012341,0.000892)

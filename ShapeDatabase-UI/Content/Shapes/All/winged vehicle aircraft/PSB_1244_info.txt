@@ -1,0 +1,14 @@
+mid: 1244
+url: http://ciel.me.cmu.edu/soji/aircraft/mrg2000.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 909
+polygons: 442
+connected_components: 33
+average_dihedral_angle: 0.627587
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.609074, ymax = 0.288889, zmax = 0.975
+avg_depth: 1.186259
+center: (0.317029,0.072301,0.655868)
+scale: 0.406368
+principle_axes: (0.000067,0.080428,0.996760), (-1.000000,0.000038,0.000064), (-0.000032,-0.996760,0.080428)
+principle_values: (0.041283,0.008728,0.002749)

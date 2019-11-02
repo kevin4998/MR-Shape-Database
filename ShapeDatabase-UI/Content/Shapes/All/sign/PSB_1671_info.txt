@@ -1,0 +1,14 @@
+mid: 1671
+url: http://www.ocnus.com/models/Buildings/stopSign.wrl.gz
+ref_url: http://www.ocnus.com/models/Buildings/
+format: wrl 
+pid: 17688
+polygons: 113
+connected_components: 6
+average_dihedral_angle: 0.628312
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.338838, ymax = 0.975, zmax = 0.0755324
+avg_depth: 1.000000
+center: (0.182089,0.564059,0.050766)
+scale: 0.505072
+principle_axes: (0.000734,0.999998,0.001757), (1.000000,-0.000735,0.000550), (0.000551,0.001756,-0.999998)
+principle_values: (0.077202,0.003168,0.000181)

@@ -1,0 +1,14 @@
+mid: 648
+url: http://www.engr.mun.ca/~holden/rubberband/gun.wrl
+ref_url: http://www.engr.mun.ca/~holden/rubberband/
+format: wrl 
+pid: 11270
+polygons: 2428
+connected_components: 14
+average_dihedral_angle: 0.978322
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.613562, zmax = 0.128121
+avg_depth: 1.297082
+center: (0.341318,0.395934,0.062266)
+scale: 0.523551
+principle_axes: (-0.959299,-0.282363,0.004102), (-0.282013,0.958660,0.037935), (-0.014644,0.035235,-0.999272)
+principle_values: (0.077852,0.012279,0.000779)

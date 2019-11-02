@@ -1,0 +1,14 @@
+mid: 248
+url: http://www.3dcafe.com/models/jen.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27044
+polygons: 897
+connected_components: 10
+average_dihedral_angle: 0.611338
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.917266, ymax = 0.975, zmax = 0.171275
+avg_depth: 1.156421
+center: (0.471003,0.568336,0.088446)
+scale: 0.518601
+principle_axes: (-0.000110,0.999895,0.014500), (-1.000000,-0.000106,-0.000249), (0.000248,0.014500,-0.999895)
+principle_values: (0.067909,0.017359,0.001077)

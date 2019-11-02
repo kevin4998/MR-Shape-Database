@@ -1,0 +1,14 @@
+mid: 305
+url: http://philliphansel.com/avatars/myface2000.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6105
+polygons: 2158
+connected_components: 3
+average_dihedral_angle: 0.1922
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.618382, ymax = 0.975, zmax = 0.395997
+avg_depth: 1.033606
+center: (0.324867,0.485036,0.212807)
+scale: 0.608538
+principle_axes: (-0.006876,-0.983617,0.180142), (0.999830,-0.003683,0.018054), (-0.017095,0.180235,0.983475)
+principle_values: (0.068175,0.027816,0.005189)

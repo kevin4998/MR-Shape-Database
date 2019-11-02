@@ -1,0 +1,14 @@
+mid: 1162
+url: http://hiwaay.net/~crispen/worlds/747/1/747.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7632
+polygons: 5706
+connected_components: 3
+average_dihedral_angle: 0.336327
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.830816, ymax = 0.975, zmax = 0.273857
+avg_depth: 1.121057
+center: (0.427908,0.469236,0.095108)
+scale: 0.481953
+principle_axes: (0.000000,0.996283,-0.086138), (1.000000,-0.000000,0.000000), (0.000000,-0.086138,-0.996283)
+principle_values: (0.048884,0.021094,0.001150)

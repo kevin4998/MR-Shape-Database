@@ -1,0 +1,14 @@
+mid: 1214
+url: http://mowat.virtualave.net/pf5xj1l.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26391
+polygons: 1752
+connected_components: 1
+average_dihedral_angle: 0.464491
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.622627, ymax = 0.222624, zmax = 0.975
+avg_depth: 1.178958
+center: (0.323813,0.064955,0.373291)
+scale: 0.435176
+principle_axes: (-0.000002,0.050663,-0.998716), (-1.000000,0.000026,0.000003), (-0.000026,-0.998716,-0.050663)
+principle_values: (0.046695,0.010767,0.001269)

@@ -1,0 +1,14 @@
+mid: 421
+url: http://cepcairo.bizland.com/free/Parthnon.zip
+ref_url: 
+format: xthreexds 
+pid: 47185
+polygons: 11000
+connected_components: 60
+average_dihedral_angle: 1.13883
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.587413, ymax = 0.32854, zmax = 0.975
+avg_depth: 2.471044
+center: (0.306666,0.188915,0.501277)
+scale: 0.634167
+principle_axes: (-0.000772,-0.002124,0.999997), (1.000000,0.000461,0.000773), (-0.000463,0.999998,0.002123)
+principle_values: (0.077186,0.027296,0.007800)

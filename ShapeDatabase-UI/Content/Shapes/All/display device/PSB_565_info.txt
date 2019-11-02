@@ -1,0 +1,14 @@
+mid: 565
+url: http://www.3dcafe.com/models/tv_bigsc.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 28432
+polygons: 1576
+connected_components: 34
+average_dihedral_angle: 1.16321
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.897931, ymax = 0.975, zmax = 0.469919
+avg_depth: 2.492246
+center: (0.461991,0.510188,0.295922)
+scale: 0.839589
+principle_axes: (0.002515,-0.996916,0.078439), (0.999997,0.002526,0.000050), (-0.000248,0.078439,0.996919)
+principle_values: (0.102497,0.073410,0.015433)

@@ -1,0 +1,14 @@
+mid: 27
+url: http://www.avatara.com/avatars2/birdy.wrl
+ref_url: http://www.avatara.com/avatars2/avatars2_list.html
+format: wrl 
+pid: 17077
+polygons: 1024
+connected_components: 26
+average_dihedral_angle: 1.26058
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.925179, ymax = 0.906447, zmax = 0.975
+avg_depth: 2.115308
+center: (0.478058,0.393027,0.533613)
+scale: 0.670567
+principle_axes: (0.004270,-0.944768,0.327713), (-0.975940,0.067504,0.207325), (0.217996,0.320713,0.921749)
+principle_values: (0.054827,0.035117,0.031932)

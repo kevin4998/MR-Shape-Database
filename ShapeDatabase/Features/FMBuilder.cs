@@ -1,9 +1,9 @@
-﻿using ShapeDatabase.Features.Descriptors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShapeDatabase.Features.Descriptors;
 
 namespace ShapeDatabase.Features {
 
@@ -32,7 +32,7 @@ namespace ShapeDatabase.Features {
 		/// Constructor of the FMBuilder, given only descriptor calculator delegates.
 		/// </summary>
 		/// <param name="calculators">The descriptor calculator delegates to be added to the FMBuilder</param>
-		public FMBuilder(params FeatureManager.DescriptorCalculator[] calculators) 
+		public FMBuilder(params FeatureManager.DescriptorCalculator[] calculators)
 			: this(new Dictionary<string, FeatureVector>(), calculators) { }
 
 		/// <summary>
@@ -40,7 +40,7 @@ namespace ShapeDatabase.Features {
 		/// </summary>
 		/// <param name="vectors">The featurevectors to be added to the FMBuilder</param>
 		/// <param name="calculators">The descriptor calculator delegates to be added to the FMBuilder</param>
-		public FMBuilder(Dictionary<string, FeatureVector> vectors,
+		public FMBuilder(IDictionary<string, FeatureVector> vectors,
 						 params FeatureManager.DescriptorCalculator[] calculators) {
 			Values = vectors ?? throw new ArgumentNullException(nameof(vectors));
 			Calculators = new List<FeatureManager.DescriptorCalculator>();
@@ -56,7 +56,7 @@ namespace ShapeDatabase.Features {
 		// Add the calculators which are already defined here so it should not be
 		// repeated in all the builder constructors.
 		private void AddLocalCalculators() {
-			foreach(FeatureManager.DescriptorCalculator calculator
+			foreach (FeatureManager.DescriptorCalculator calculator
 					in DescriptorCalculators.Descriptors)
 				Calculators.Add(calculator);
 		}
@@ -68,7 +68,7 @@ namespace ShapeDatabase.Features {
 		/// <param name="calculators">The descriptor calculators to be added</param>
 		public void AddCalculators(params FeatureManager.DescriptorCalculator[] calculators) {
 			if (calculators != null)
-				foreach(FeatureManager.DescriptorCalculator calculator in calculators)
+				foreach (FeatureManager.DescriptorCalculator calculator in calculators)
 					if (calculator != null)
 						Calculators.Add(calculator);
 		}
@@ -78,9 +78,10 @@ namespace ShapeDatabase.Features {
 		/// </summary>
 		/// <param name="vectors">The featurevectors to be added</param>
 		public void AddFeatures(IDictionary<string, FeatureVector> vectors) {
-			if (vectors == null) throw new ArgumentNullException(nameof(vectors));
+			if (vectors == null)
+				throw new ArgumentNullException(nameof(vectors));
 
-			foreach(KeyValuePair<string, FeatureVector> vector in vectors)
+			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
 				Values.Add(vector);
 		}
 
@@ -92,7 +93,7 @@ namespace ShapeDatabase.Features {
 			if (vectors == null || vectors.Length == 0)
 				return;
 
-			foreach((string meshName, FeatureVector values) in vectors)
+			foreach ((string meshName, FeatureVector values) in vectors)
 				if (!string.IsNullOrEmpty(meshName) && values != null)
 					Values.Add(meshName, values);
 		}

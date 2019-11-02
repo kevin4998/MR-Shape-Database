@@ -1,0 +1,14 @@
+mid: 686
+url: http://www.3dheaven.net/Modelle/weapons/awp.zip
+ref_url: 
+format: xthreexds 
+pid: 48150
+polygons: 1721
+connected_components: 88
+average_dihedral_angle: 1.00144
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.10846, zmax = 0.256575
+avg_depth: 2.615846
+center: (0.412594,0.048213,0.155552)
+scale: 0.359323
+principle_axes: (-0.988747,0.000014,-0.149595), (-0.149573,-0.017007,0.988604), (0.002530,-0.999855,-0.016818)
+principle_values: (0.046969,0.001225,0.000118)

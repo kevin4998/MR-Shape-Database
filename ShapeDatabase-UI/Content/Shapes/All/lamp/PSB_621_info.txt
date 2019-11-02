@@ -1,0 +1,14 @@
+mid: 621
+url: http://www.3dcafe.com/models/lantern.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 28470
+polygons: 1528
+connected_components: 7
+average_dihedral_angle: 0.568971
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.144523, ymax = 0.975, zmax = 0.144523
+avg_depth: 1.278402
+center: (0.085027,0.515732,0.084730)
+scale: 0.659497
+principle_axes: (0.000777,1.000000,-0.000092), (-0.999460,0.000780,0.032852), (-0.032852,-0.000067,-0.999460)
+principle_values: (0.123163,0.000513,0.000512)

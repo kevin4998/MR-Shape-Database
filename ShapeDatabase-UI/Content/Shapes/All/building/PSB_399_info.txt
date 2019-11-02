@@ -1,0 +1,14 @@
+mid: 399
+url: http://www.cs.brandeis.edu/~lewang/cs155/hw5.wrl
+ref_url: http://www.cs.brandeis.edu/~lewang/cs155/hw5.html
+format: wrl 
+pid: 11503
+polygons: 13542
+connected_components: 298
+average_dihedral_angle: 0.7942
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.607391, zmax = 0.971631
+avg_depth: 2.288694
+center: (0.500007,0.175135,0.501496)
+scale: 0.673333
+principle_axes: (0.000025,0.008598,-0.999963), (-1.000000,-0.000027,-0.000025), (0.000027,-0.999963,-0.008598)
+principle_values: (0.059255,0.057862,0.016920)

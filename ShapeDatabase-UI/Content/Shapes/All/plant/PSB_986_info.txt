@@ -1,0 +1,14 @@
+mid: 986
+url: http://i31www.ira.uka.de/~linter/gallery/wrl/flower.wrl.gz
+ref_url: http://i31www.ira.uka.de/~linter/gallery/wrl.html
+format: wrl 
+pid: 8240
+polygons: 13512
+connected_components: 1314
+average_dihedral_angle: 0.316518
+bounding_box: xmin = 0.151273, ymin = 0.152172, zmin = 0.025, xmax = 0.581172, ymax = 0.608205, zmax = 0.913329
+avg_depth: 2.355649
+center: (0.366294,0.321296,0.708436)
+scale: 0.421065
+principle_axes: (0.014772,-0.234519,0.971999), (0.634619,0.753411,0.172135), (-0.772684,0.614307,0.159960)
+principle_values: (0.048207,0.005636,0.003787)

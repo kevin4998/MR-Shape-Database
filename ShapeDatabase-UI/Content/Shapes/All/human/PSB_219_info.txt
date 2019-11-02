@@ -1,0 +1,14 @@
+mid: 219
+url: http://hjem.get2net.dk/jbrandtp/MEE.WRL
+ref_url: http://hjem.get2net.dk/jbrandtp/VRMLDK.HTM
+format: wrl 
+pid: 10788
+polygons: 616
+connected_components: 37
+average_dihedral_angle: 2.06812
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.897757, ymax = 0.975, zmax = 0.185763
+avg_depth: 2.527065
+center: (0.462411,0.579794,0.088807)
+scale: 0.555846
+principle_axes: (-0.007380,0.999762,0.020531), (0.999967,0.007451,-0.003377), (0.003529,-0.020506,0.999784)
+principle_values: (0.079608,0.017568,0.001329)

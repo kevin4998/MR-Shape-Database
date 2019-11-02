@@ -1,0 +1,14 @@
+mid: 514
+url: http://www.nyx.net/~cmaarbj/vrml/mailbox.wrl
+ref_url: http://www.nyx.net/~cmaarbj/vrml/
+format: wrl 
+pid: 11502
+polygons: 59
+connected_components: 6
+average_dihedral_angle: 1.309
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.337572, ymax = 0.975, zmax = 0.575545
+avg_depth: 1.304101
+center: (0.174787,0.709916,0.330199)
+scale: 0.530156
+principle_axes: (0.007443,0.998657,0.051268), (-0.006859,-0.051217,0.998664), (0.999949,-0.007785,0.006468)
+principle_values: (0.044346,0.030279,0.008827)

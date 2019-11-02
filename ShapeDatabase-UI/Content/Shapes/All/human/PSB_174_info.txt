@@ -1,0 +1,14 @@
+mid: 174
+url: http://philliphansel.com/avatars/newman_ifs.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6088
+polygons: 2308
+connected_components: 21
+average_dihedral_angle: 0.450067
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.405801, ymax = 0.975, zmax = 0.233696
+avg_depth: 1.653610
+center: (0.217734,0.545062,0.100285)
+scale: 0.511945
+principle_axes: (-0.003238,0.999833,-0.017990), (0.999962,0.003383,0.008052), (0.008112,-0.017963,-0.999806)
+principle_values: (0.071915,0.008329,0.001329)

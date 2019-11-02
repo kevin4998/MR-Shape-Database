@@ -1,0 +1,14 @@
+mid: 709
+url: http://deep.sitenest.net/freemodels/weapons/3dm-sword2.zip
+ref_url: 
+format: xthreexds 
+pid: 47109
+polygons: 13168
+connected_components: 7
+average_dihedral_angle: 0.365653
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.229792, ymax = 0.0764313, zmax = 0.975
+avg_depth: 1.310202
+center: (0.127470,0.050684,0.645066)
+scale: 0.441843
+principle_axes: (-0.000052,-0.000070,1.000000), (-1.000000,0.000002,-0.000052), (-0.000002,-1.000000,-0.000070)
+principle_values: (0.063118,0.001214,0.000052)

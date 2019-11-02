@@ -1,0 +1,14 @@
+mid: 975
+url: http://www.ocnus.com/models/Toys/flower.wrl.gz
+ref_url: http://www.ocnus.com/models/Toys/
+format: wrl 
+pid: 17924
+polygons: 460
+connected_components: 8
+average_dihedral_angle: 0.862487
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.636954, ymax = 0.975, zmax = 0.199078
+avg_depth: 1.409185
+center: (0.347236,0.635156,0.105881)
+scale: 0.357089
+principle_axes: (0.010334,0.999716,-0.021470), (0.995521,-0.008268,0.094180), (0.093976,-0.022347,-0.995324)
+principle_values: (0.032637,0.011728,0.000972)

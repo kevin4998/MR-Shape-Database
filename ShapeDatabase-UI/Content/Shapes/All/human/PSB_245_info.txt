@@ -1,0 +1,14 @@
+mid: 245
+url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/division_guy.wrl
+ref_url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/
+format: wrl 
+pid: 46691
+polygons: 862
+connected_components: 22
+average_dihedral_angle: 0.553573
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.916742, ymax = 0.975, zmax = 0.184659
+avg_depth: 1.340393
+center: (0.475820,0.549151,0.090359)
+scale: 0.503406
+principle_axes: (-0.013407,0.999573,-0.025950), (0.999903,0.013498,0.003326), (-0.003675,0.025903,0.999658)
+principle_values: (0.064848,0.018877,0.000956)

@@ -1,0 +1,14 @@
+mid: 626
+url: http://www.ocnus.com/models/Music/stratocaster.wrl.gz
+ref_url: http://www.ocnus.com/models/Music/
+format: wrl 
+pid: 17871
+polygons: 8660
+connected_components: 94
+average_dihedral_angle: 1.11775
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.640331, zmax = 0.0845778
+avg_depth: 1.615710
+center: (0.355325,0.279616,0.050511)
+scale: 0.446641
+principle_axes: (-0.859914,-0.510362,-0.008862), (0.509904,-0.859677,0.030873), (-0.023375,0.022029,0.999484)
+principle_values: (0.068954,0.003293,0.000193)

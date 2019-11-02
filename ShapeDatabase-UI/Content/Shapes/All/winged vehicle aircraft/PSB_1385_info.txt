@@ -1,0 +1,14 @@
+mid: 1385
+url: http://www.amazing3d.com/free/ufo3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47623
+polygons: 20663
+connected_components: 44
+average_dihedral_angle: 0.149432
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.312997, zmax = 0.975
+avg_depth: 1.228538
+center: (0.500337,0.142461,0.499591)
+scale: 0.581147
+principle_axes: (0.114040,-0.000193,-0.993476), (0.993476,0.000026,0.114040), (0.000004,-1.000000,0.000195)
+principle_values: (0.047047,0.047046,0.004555)

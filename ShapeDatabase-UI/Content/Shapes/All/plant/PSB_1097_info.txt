@@ -1,0 +1,14 @@
+mid: 1097
+url: http://www.cineca.it/manuali/worlds/answers/palmface.wrl
+ref_url: http://www.cineca.it/manuali/worlds/answers/
+format: wrl 
+pid: 7054
+polygons: 31
+connected_components: 2
+average_dihedral_angle: -1.#IND
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.418527, ymax = 0.975, zmax = 0.02842
+avg_depth: 1.018786
+center: (0.220359,0.653079,0.027604)
+scale: 0.397080
+principle_axes: (-0.026379,0.999637,0.005423), (-0.999652,-0.026375,-0.000735), (-0.000591,-0.005441,0.999985)
+principle_values: (0.051931,0.005775,0.000001)

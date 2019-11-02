@@ -1,0 +1,14 @@
+mid: 416
+url: http://www.geocities.com/BourbonStreet/1855/Parthenon.wrl
+ref_url: http://www.geocities.com/BourbonStreet/1855/shrine.html
+format: wrl 
+pid: 11896
+polygons: 13542
+connected_components: 99
+average_dihedral_angle: 0.862118
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.515574, ymax = 0.412632, zmax = 0.975
+avg_depth: 6.047035
+center: (0.270985,0.208130,0.503751)
+scale: 0.587481
+principle_axes: (0.003521,0.004947,0.999982), (0.959571,0.281425,-0.004771), (-0.281443,0.959571,-0.003757)
+principle_values: (0.065851,0.015680,0.015239)

@@ -1,0 +1,14 @@
+mid: 12
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/creatures/Flyer0.wrl
+ref_url: http://visinfo.zib.de/IRS_HTML/IRS_dqex.html
+format: wrl 
+pid: 35382
+polygons: 500
+connected_components: 18
+average_dihedral_angle: 0.975316
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.377544, zmax = 0.563472
+avg_depth: 1.157643
+center: (0.497764,0.191515,0.321089)
+scale: 0.508698
+principle_axes: (-0.999420,-0.030571,-0.014974), (0.024958,-0.358904,-0.933041), (0.023150,-0.932874,0.359459)
+principle_values: (0.059720,0.015134,0.006552)

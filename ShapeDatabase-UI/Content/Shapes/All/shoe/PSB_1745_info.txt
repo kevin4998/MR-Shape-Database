@@ -1,0 +1,14 @@
+mid: 1745
+url: http://www.tnt.uni-hannover.de/project/3dmod/multview/wrl-models/schuh/schuh.wrl
+ref_url: http://www.tnt.uni-hannover.de/project/3dmod/multview/examples.html
+format: wrl 
+pid: 7859
+polygons: 684
+connected_components: 1
+average_dihedral_angle: 0.419778
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.901402, ymax = 0.975, zmax = 0.57233
+avg_depth: 1.018633
+center: (0.448221,0.527722,0.233320)
+scale: 0.709532
+principle_axes: (-0.646757,0.710000,0.278577), (0.108208,0.446978,-0.887976), (0.754981,0.544161,0.365914)
+principle_values: (0.104390,0.020425,0.015306)

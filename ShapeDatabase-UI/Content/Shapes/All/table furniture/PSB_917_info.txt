@@ -1,0 +1,14 @@
+mid: 917
+url: http://violet.csa.iisc.ernet.in/Resources/examples/Table02.wrl
+ref_url: http://violet.csa.iisc.ernet.in/Resources/examples/
+format: wrl 
+pid: 5860
+polygons: 172
+connected_components: 5
+average_dihedral_angle: 1.2852
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.405, zmax = 0.658333
+avg_depth: 1.068399
+center: (0.500000,0.368846,0.341666)
+scale: 0.692991
+principle_axes: (-1.000000,-0.000000,-0.000000), (-0.000000,0.000001,1.000000), (-0.000000,1.000000,-0.000001)
+principle_values: (0.091861,0.040159,0.005901)

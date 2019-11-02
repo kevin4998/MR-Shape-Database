@@ -1,0 +1,14 @@
+mid: 451
+url: http://www.flair-twl.de/download/BreuerHouse.wrl
+ref_url: http://www.flair-twl.de/GreatBuildings.htm
+format: wrl 
+pid: 40949
+polygons: 1696
+connected_components: 85
+average_dihedral_angle: 1.58852
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.246661, zmax = 0.537424
+avg_depth: 2.438422
+center: (0.526920,0.112350,0.261039)
+scale: 0.528638
+principle_axes: (-0.998674,-0.029986,0.041854), (-0.039354,-0.079601,-0.996050), (0.033199,-0.996376,0.078316)
+principle_values: (0.063572,0.014412,0.004279)

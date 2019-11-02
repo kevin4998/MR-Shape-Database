@@ -1,0 +1,14 @@
+mid: 1470
+url: http://www.3dcafe.com/avatar/uss_la.wrl
+ref_url: http://www.3dcafe.com/asp/vrml.asp
+format: wrl 
+pid: 675
+polygons: 270
+connected_components: 2
+average_dihedral_angle: 0.541958
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.122405, ymax = 0.164154, zmax = 0.975
+avg_depth: 1.030811
+center: (0.076525,0.070993,0.499269)
+scale: 0.464558
+principle_axes: (0.008562,0.007502,0.999935), (-0.175453,-0.984448,0.008888), (-0.984451,0.175518,0.007113)
+principle_values: (0.068672,0.000913,0.000684)

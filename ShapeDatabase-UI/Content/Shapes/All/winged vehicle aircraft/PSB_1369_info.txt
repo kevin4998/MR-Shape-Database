@@ -1,0 +1,14 @@
+mid: 1369
+url: http://www.rccad.com/Gallery/Vrml/Uss.wrl
+ref_url: http://www.rccad.com/Gallery_StarShips1.htm
+format: wrl 
+pid: 38578
+polygons: 1720
+connected_components: 9
+average_dihedral_angle: 0.394571
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.405352, zmax = 0.200913
+avg_depth: 1.290176
+center: (0.461465,0.215318,0.120826)
+scale: 0.482734
+principle_axes: (-0.999470,0.000484,0.032557), (0.000476,1.000000,-0.000253), (0.032557,0.000237,0.999470)
+principle_values: (0.063858,0.006729,0.002341)

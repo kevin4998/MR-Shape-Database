@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShapeDatabase.Features
-{
+namespace ShapeDatabase.Features {
 	/// <summary>
 	/// Class for storing a mesh name and corresponding featurevector
 	/// </summary>
-	public struct NamedFeatureVector : IEquatable<NamedFeatureVector>
-	{
+	public struct NamedFeatureVector : IEquatable<NamedFeatureVector> {
 		/// <summary>
 		/// Name of the featurevector
 		/// </summary>
@@ -26,36 +24,30 @@ namespace ShapeDatabase.Features
 		/// </summary>
 		/// <param name="name">The name</param>
 		/// <param name="featurevector">The featurevector</param>
-		public NamedFeatureVector(string name, FeatureVector featurevector)
-		{
+		public NamedFeatureVector(string name, FeatureVector featurevector) {
 			Name = name;
 			FeatureVector = featurevector;
 		}
 
-		public override bool Equals(object obj)
-		{
+		public override bool Equals(object obj) {
 			return obj != null
 				&& obj is NamedFeatureVector
-				&& Equals((NamedFeatureVector)obj);
+				&& Equals((NamedFeatureVector) obj);
 		}
 
-		public override int GetHashCode()
-		{
+		public override int GetHashCode() {
 			return Name.GetHashCode();
 		}
 
-		public bool Equals(NamedFeatureVector other)
-		{
+		public bool Equals(NamedFeatureVector other) {
 			return other.Name == Name;
 		}
 
-		public static bool operator ==(NamedFeatureVector left, NamedFeatureVector right)
-		{
+		public static bool operator ==(NamedFeatureVector left, NamedFeatureVector right) {
 			return left.Equals(right);
 		}
 
-		public static bool operator !=(NamedFeatureVector left, NamedFeatureVector right)
-		{
+		public static bool operator !=(NamedFeatureVector left, NamedFeatureVector right) {
 			return !(left == right);
 		}
 	}

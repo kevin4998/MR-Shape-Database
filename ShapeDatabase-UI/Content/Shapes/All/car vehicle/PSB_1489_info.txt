@@ -1,0 +1,14 @@
+mid: 1489
+url: http://www.maxnet.ru/aks/new_web/model_arch/88-Suzuki-Samurai-DXF.zip
+ref_url: http://www.maxnet.ru/aks/models_R.html
+format: dxf 
+pid: 25076
+polygons: 3352
+connected_components: 6
+average_dihedral_angle: 0.464961
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.505159, ymax = 0.495657, zmax = 0.975
+avg_depth: 1.289303
+center: (0.263075,0.235709,0.504659)
+scale: 0.642281
+principle_axes: (-0.015788,0.063136,0.997880), (-0.999814,0.010058,-0.016455), (-0.011075,-0.997954,0.062966)
+principle_values: (0.078746,0.021050,0.012111)

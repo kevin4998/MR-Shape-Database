@@ -1,0 +1,14 @@
+mid: 1431
+url: http://www.worldwar1.com/vrml/objects/goodhope.wrl
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1718
+polygons: 960
+connected_components: 55
+average_dihedral_angle: 0.881293
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.318517, zmax = 0.176693
+avg_depth: 1.734587
+center: (0.498017,0.058803,0.100847)
+scale: 0.424029
+principle_axes: (-0.999652,0.026389,-0.000000), (0.000000,0.000000,-1.000000), (0.026389,0.999652,0.000000)
+principle_values: (0.054276,0.001286,0.001043)

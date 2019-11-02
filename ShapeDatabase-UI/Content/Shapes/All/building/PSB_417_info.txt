@@ -1,0 +1,14 @@
+mid: 417
+url: http://www.connix.com/~dennis/vrml/dph.wrl
+ref_url: http://www.connix.com/~dennis/dennis.htm
+format: wrl 
+pid: 1661
+polygons: 1818
+connected_components: 46
+average_dihedral_angle: 1.22544
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.300662, zmax = 0.697346
+avg_depth: 1.685198
+center: (0.356774,0.135308,0.360193)
+scale: 0.527960
+principle_axes: (-0.990404,0.012513,0.137633), (-0.137644,0.000001,-0.990482), (-0.012394,-0.999922,0.001721)
+principle_values: (0.034747,0.030445,0.010279)

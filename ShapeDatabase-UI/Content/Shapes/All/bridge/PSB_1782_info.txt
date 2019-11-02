@@ -1,0 +1,14 @@
+mid: 1782
+url: http://www.flair-twl.de/StA/Fu%DFgaengerbrueckeSchlaich.WRL
+ref_url: http://www.flair-twl.de/studienarbeit.htm
+format: wrl 
+pid: 41082
+polygons: 9617
+connected_components: 66
+average_dihedral_angle: 0.518574
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.144142, zmax = 0.353362
+avg_depth: 1.982054
+center: (0.473315,0.041394,0.189737)
+scale: 0.623763
+principle_axes: (-0.999558,0.029661,-0.001994), (-0.001914,0.002701,0.999995), (-0.029667,-0.999556,0.002643)
+principle_values: (0.103838,0.009078,0.000607)

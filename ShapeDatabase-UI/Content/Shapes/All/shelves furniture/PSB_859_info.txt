@@ -1,0 +1,14 @@
+mid: 859
+url: http://64.198.60.83/baument/Models/binshelving.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 26079
+polygons: 4716
+connected_components: 99
+average_dihedral_angle: 0.873019
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.677822, ymax = 0.975, zmax = 0.322313
+avg_depth: 5.016007
+center: (0.346821,0.501099,0.182217)
+scale: 0.653968
+principle_axes: (0.001467,0.999993,-0.003453), (-0.999999,0.001469,0.000748), (-0.000753,-0.003452,-0.999994)
+principle_values: (0.080601,0.035014,0.006162)

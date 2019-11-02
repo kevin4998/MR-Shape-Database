@@ -1,0 +1,14 @@
+mid: 1081
+url: http://w1.520.telia.com/~u52015187/downloads/Conifer.zip
+ref_url: 
+format: xthreexds 
+pid: 47863
+polygons: 10145
+connected_components: 2666
+average_dihedral_angle: 1.29306
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.740435, ymax = 0.975, zmax = 0.73724
+avg_depth: 1.727583
+center: (0.367844,0.365794,0.401126)
+scale: 0.455756
+principle_axes: (-0.000001,-1.000000,-0.000000), (-0.541151,0.000001,-0.840925), (-0.840925,0.000000,0.541151)
+principle_values: (0.048820,0.007701,0.007701)

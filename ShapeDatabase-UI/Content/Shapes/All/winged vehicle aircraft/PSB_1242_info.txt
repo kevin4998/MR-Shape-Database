@@ -1,0 +1,14 @@
+mid: 1242
+url: http://www.robotgroup.org/lubbock/vrml/T-38A.wrl
+ref_url: http://www.robotgroup.org/lubbock/vrml/
+format: wrl 
+pid: 9073
+polygons: 608
+connected_components: 8
+average_dihedral_angle: 0.487408
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.0295766, xmax = 0.975, ymax = 0.594074, zmax = 0.235287
+avg_depth: 1.560444
+center: (0.624315,0.309530,0.066155)
+scale: 0.374797
+principle_axes: (0.999987,0.000011,0.005179), (-0.000012,1.000000,0.000162), (0.005179,0.000162,-0.999987)
+principle_values: (0.039190,0.006452,0.000941)

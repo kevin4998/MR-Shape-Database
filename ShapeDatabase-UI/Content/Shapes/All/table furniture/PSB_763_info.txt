@@ -1,0 +1,14 @@
+mid: 763
+url: http://www.3dcafe.com/models/typwritr.zip
+ref_url: http://www.3dcafe.com/asp/ind_pic.asp
+format: xthreexds 
+pid: 28190
+polygons: 136
+connected_components: 13
+average_dihedral_angle: 1.5194
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.95451, zmax = 0.658334
+avg_depth: 1.381791
+center: (0.477603,0.620238,0.297534)
+scale: 0.714768
+principle_axes: (-0.996391,0.083666,-0.014303), (0.083862,0.996382,-0.013759), (0.013100,-0.014909,-0.999803)
+principle_values: (0.084487,0.040755,0.024529)

@@ -1,0 +1,14 @@
+mid: 1480
+url: http://www.3dcafe.com/../models/gp2.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: lwo 
+pid: 30508
+polygons: 18238
+connected_components: 221
+average_dihedral_angle: 0.495384
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.446434, ymax = 0.63483, zmax = 0.975
+avg_depth: 2.229981
+center: (0.236054,0.280085,0.534838)
+scale: 0.521187
+principle_axes: (-0.000721,0.038268,0.999267), (-0.013125,-0.999182,0.038255), (-0.999914,0.013088,-0.001222)
+principle_values: (0.062170,0.015907,0.004498)

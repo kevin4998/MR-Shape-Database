@@ -1,0 +1,14 @@
+mid: 952
+url: http://www.houseof3d.com/house/building/doors/door1.wrl
+ref_url: http://www.houseof3d.com/
+format: wrl 
+pid: 1962
+polygons: 580
+connected_components: 10
+average_dihedral_angle: 0.684465
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.567857, ymax = 0.975, zmax = 0.788393
+avg_depth: 1.329848
+center: (0.295671,0.555187,0.463827)
+scale: 0.902758
+principle_axes: (0.001925,0.980114,-0.198427), (-0.004377,0.198434,0.980104), (0.999989,-0.001019,0.004672)
+principle_values: (0.090725,0.076423,0.045070)

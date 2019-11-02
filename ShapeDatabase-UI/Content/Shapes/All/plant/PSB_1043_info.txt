@@ -1,0 +1,14 @@
+mid: 1043
+url: http://www.zenstar.com/objects/tree2.obj.zip
+ref_url: http://www.zenstar.com/dxfobj.html
+format: obj 
+pid: 28792
+polygons: 14248
+connected_components: 6158
+average_dihedral_angle: 0.88259
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.900875, ymax = 0.975, zmax = 0.906661
+avg_depth: 1.570923
+center: (0.478899,0.583045,0.485170)
+scale: 0.497989
+principle_axes: (0.249896,0.962820,-0.102611), (-0.013292,-0.102552,-0.994639), (0.968181,-0.249920,0.012829)
+principle_values: (0.039883,0.018407,0.015715)

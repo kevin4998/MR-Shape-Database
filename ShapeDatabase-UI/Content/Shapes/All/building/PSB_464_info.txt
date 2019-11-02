@@ -1,0 +1,14 @@
+mid: 464
+url: http://www.3dcafe.com/models/chrysler.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27636
+polygons: 12810
+connected_components: 818
+average_dihedral_angle: 1.50498
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.347449, ymax = 0.975, zmax = 0.296305
+avg_depth: 6.145840
+center: (0.184540,0.362225,0.160906)
+scale: 0.471902
+principle_axes: (0.000151,-0.999999,-0.001030), (-0.999983,-0.000145,-0.005824), (0.005824,0.001031,-0.999983)
+principle_values: (0.058264,0.004416,0.003891)

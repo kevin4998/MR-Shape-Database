@@ -1,0 +1,14 @@
+mid: 1427
+url: http://www.worldwar1.com/vrml/objects/seydlitz.wrl
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1716
+polygons: 1084
+connected_components: 54
+average_dihedral_angle: 1.09037
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.219739, zmax = 0.1816
+avg_depth: 1.940483
+center: (0.493096,0.048109,0.103332)
+scale: 0.380252
+principle_axes: (0.999789,-0.020345,0.002965), (-0.002872,0.004600,0.999985), (0.020358,0.999782,-0.004540)
+principle_values: (0.045279,0.001170,0.000466)

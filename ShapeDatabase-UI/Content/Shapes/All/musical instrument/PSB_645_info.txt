@@ -1,0 +1,14 @@
+mid: 645
+url: http://www.3dcafe.com/avatar/piano.wrl
+ref_url: http://www.3dcafe.com/asp/vrml.asp
+format: wrl 
+pid: 650
+polygons: 266
+connected_components: 70
+average_dihedral_angle: 1.11024
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.635996, ymax = 0.724688, zmax = 0.975
+avg_depth: 1.351945
+center: (0.296005,0.364012,0.501664)
+scale: 0.613995
+principle_axes: (0.284139,-0.272431,0.919264), (-0.949905,-0.210160,0.231328), (-0.130172,0.938943,0.318498)
+principle_values: (0.066624,0.029738,0.010561)

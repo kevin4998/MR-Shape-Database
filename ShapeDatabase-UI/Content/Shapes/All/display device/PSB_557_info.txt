@@ -1,0 +1,14 @@
+mid: 557
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/efarrar/Hw1/hw1.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2002/efarrar/Hw1/?D=D
+format: wrl 
+pid: 39797
+polygons: 28
+connected_components: 1
+average_dihedral_angle: 1.24525
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.908721, ymax = 0.820349, zmax = 0.975
+avg_depth: 1.000000
+center: (0.466861,0.392076,0.557220)
+scale: 1.034509
+principle_axes: (0.000000,0.220624,0.975359), (-1.000000,0.000000,0.000000), (0.000000,0.975359,-0.220624)
+principle_values: (0.117318,0.083181,0.073322)

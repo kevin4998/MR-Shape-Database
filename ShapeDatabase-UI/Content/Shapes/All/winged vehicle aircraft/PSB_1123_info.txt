@@ -1,0 +1,14 @@
+mid: 1123
+url: http://www.rccad.com/Gallery/Vrml/bipe1.wrl
+ref_url: http://www.rccad.com/Gallery_BiPlanes1.htm
+format: wrl 
+pid: 33678
+polygons: 1756
+connected_components: 10
+average_dihedral_angle: 0.301709
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.697675, ymax = 0.975, zmax = 0.318427
+avg_depth: 1.367948
+center: (0.323301,0.500024,0.210317)
+scale: 0.497174
+principle_axes: (-0.000156,1.000000,-0.000010), (-0.997958,-0.000156,-0.063880), (-0.063880,0.000000,0.997958)
+principle_values: (0.051509,0.018809,0.004145)

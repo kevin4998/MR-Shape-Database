@@ -1,0 +1,14 @@
+mid: 1567
+url: http://cpni.com/velocity/wrl/Wagon.wrl
+ref_url: http://cpni.com/velocity/MTM.htm
+format: wrl 
+pid: 469
+polygons: 216
+connected_components: 14
+average_dihedral_angle: 0.969786
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.499179, ymax = 0.679485, zmax = 0.975
+avg_depth: 1.469536
+center: (0.262360,0.298456,0.503299)
+scale: 0.688673
+principle_axes: (-0.000335,0.162987,0.986628), (-0.000477,-0.986628,0.162987), (-1.000000,0.000416,-0.000408)
+principle_values: (0.077533,0.026974,0.022899)

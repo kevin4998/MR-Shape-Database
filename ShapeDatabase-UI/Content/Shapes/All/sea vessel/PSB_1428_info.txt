@@ -1,0 +1,14 @@
+mid: 1428
+url: http://www.worldwar1.com/vrml/objects/lion.wrl
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1715
+polygons: 1083
+connected_components: 62
+average_dihedral_angle: 1.10195
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.239868, zmax = 0.14634
+avg_depth: 1.948898
+center: (0.490658,0.056163,0.085669)
+scale: 0.382181
+principle_axes: (-0.999835,0.018178,-0.000006), (-0.000004,0.000113,1.000000), (0.018178,0.999835,-0.000113)
+principle_values: (0.046340,0.000880,0.000736)

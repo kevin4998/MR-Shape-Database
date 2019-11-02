@@ -1,0 +1,14 @@
+mid: 639
+url: http://www.3dcafe.com/models/guitar7.zip
+ref_url: http://www.electricfunstuff.com/jgdc/resources/terrain1.zip
+format: 3ds 
+pid: 28907
+polygons: 45776
+connected_components: 208
+average_dihedral_angle: 0.681692
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.365667, zmax = 0.1635
+avg_depth: 2.257770
+center: (0.353376,0.195037,0.098781)
+scale: 0.434122
+principle_axes: (-0.997607,0.002078,-0.069114), (-0.002132,-0.999997,0.000710), (-0.069112,0.000856,0.997609)
+principle_values: (0.051999,0.007310,0.002282)

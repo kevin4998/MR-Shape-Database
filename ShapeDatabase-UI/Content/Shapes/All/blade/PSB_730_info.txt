@@ -1,0 +1,14 @@
+mid: 730
+url: http://telias.free.fr/zipsz/models_3ds/greek_pelekys.zip
+ref_url: 
+format: xthreexds 
+pid: 46821
+polygons: 18714
+connected_components: 7
+average_dihedral_angle: 0.218995
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0955961, ymax = 0.975, zmax = 0.417401
+avg_depth: 1.123073
+center: (0.060420,0.647213,0.221179)
+scale: 0.459454
+principle_axes: (0.000157,1.000000,0.000058), (-0.000094,0.000058,-1.000000), (1.000000,-0.000157,-0.000094)
+principle_values: (0.063275,0.008164,0.000095)

@@ -1,0 +1,14 @@
+mid: 1127
+url: http://www.rccad.com/Gallery/Vrml/camel.wrl
+ref_url: http://www.rccad.com/Gallery_BiPlanes1.htm
+format: wrl 
+pid: 33708
+polygons: 520
+connected_components: 12
+average_dihedral_angle: 0.512966
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.811053, ymax = 0.975, zmax = 0.219704
+avg_depth: 1.324014
+center: (0.256454,0.500001,0.120535)
+scale: 0.529117
+principle_axes: (0.000024,1.000000,0.000001), (-0.996043,0.000024,0.088871), (0.088871,-0.000003,0.996043)
+principle_values: (0.050428,0.031533,0.004466)

@@ -1,0 +1,14 @@
+mid: 148
+url: http://www.3dcafe.com/models/debbie.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27062
+polygons: 7707
+connected_components: 18
+average_dihedral_angle: 0.669555
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.537379, ymax = 0.975, zmax = 0.218602
+avg_depth: 1.281818
+center: (0.274372,0.518413,0.101698)
+scale: 0.494981
+principle_axes: (-0.060662,0.997839,0.025263), (0.997215,0.061685,-0.041919), (-0.043387,0.022650,-0.998802)
+principle_values: (0.067426,0.008238,0.001243)

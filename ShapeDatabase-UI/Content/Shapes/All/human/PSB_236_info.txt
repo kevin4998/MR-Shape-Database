@@ -1,0 +1,14 @@
+mid: 236
+url: http://www-vrl.engin.umich.edu/project/football/vrml/stand_geo.wrl
+ref_url: http://www.ville-grenoble.fr/nrj/fr/fr/pres_vignette.html
+format: wrl 
+pid: 41746
+polygons: 5537
+connected_components: 55
+average_dihedral_angle: 0.482589
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.956304, zmax = 0.262472
+avg_depth: 1.809129
+center: (0.500475,0.566869,0.118943)
+scale: 0.488166
+principle_axes: (-0.001098,0.999501,-0.031559), (-0.999989,-0.001240,-0.004488), (0.004525,-0.031554,-0.999492)
+principle_values: (0.059134,0.017580,0.001407)

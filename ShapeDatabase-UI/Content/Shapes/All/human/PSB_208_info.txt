@@ -1,0 +1,14 @@
+mid: 208
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Hanim/groups.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Hanim/?D=D
+format: wrl 
+pid: 42246
+polygons: 694
+connected_components: 1
+average_dihedral_angle: 0.551885
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.368732, ymax = 0.975, zmax = 0.179024
+avg_depth: 1.176253
+center: (0.196463,0.519604,0.092335)
+scale: 0.452905
+principle_axes: (0.001087,0.999892,-0.014637), (-0.999999,0.001090,0.000170), (-0.000186,-0.014636,-0.999893)
+principle_values: (0.058746,0.004771,0.000941)

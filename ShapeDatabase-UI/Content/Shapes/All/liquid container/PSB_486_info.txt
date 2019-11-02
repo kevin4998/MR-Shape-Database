@@ -1,0 +1,14 @@
+mid: 486
+url: http://www.3dcafe.com/models/beer.zip
+ref_url: http://www.3dcafe.com/asp/hou1_pic.asp
+format: xthreexds 
+pid: 28733
+polygons: 3894
+connected_components: 4
+average_dihedral_angle: 0.323011
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.301499, ymax = 0.975, zmax = 0.302639
+avg_depth: 1.657083
+center: (0.177538,0.458314,0.169490)
+scale: 0.558986
+principle_axes: (0.029950,-0.999412,0.016668), (-0.466327,0.000779,0.884612), (0.884106,0.034267,0.466029)
+principle_values: (0.076277,0.007060,0.006832)

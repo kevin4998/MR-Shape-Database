@@ -1,0 +1,14 @@
+mid: 242
+url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/hohoho.wrl
+ref_url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/
+format: wrl 
+pid: 46688
+polygons: 880
+connected_components: 23
+average_dihedral_angle: 0.555019
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.868253, ymax = 0.975, zmax = 0.441164
+avg_depth: 1.546772
+center: (0.448052,0.484696,0.240488)
+scale: 0.463286
+principle_axes: (-0.003028,-0.999865,-0.016119), (-0.999765,0.003373,-0.021428), (-0.021479,-0.016051,0.999640)
+principle_values: (0.050056,0.014846,0.003838)

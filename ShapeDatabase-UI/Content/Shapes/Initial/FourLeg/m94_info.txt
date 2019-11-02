@@ -1,0 +1,14 @@
+mid: 94
+url: http://www.3dcafe.com/models/leopard.zip
+ref_url: http://www.3dcafe.com/asp/anml_pic.asp
+format: 3ds 
+pid: 27378
+polygons: 6328
+connected_components: 36
+average_dihedral_angle: 0.322531
+bounding_box: xmin = -3.97463e+007, ymin = -1.7221e+008, zmin = -4.54395e+008, xmax = 5.58662e+007, ymax = 2.1099e+007, zmax = 8.0494e+006
+avg_depth: 1.476986
+center: (8113077.922260,-46536067.671931,-185557664.379070)
+scale: 218075600.000000
+principle_axes: (0.003912,0.168441,0.985704), (0.000257,0.985711,-0.168444), (0.999992,-0.000912,-0.003813)
+principle_values: (11272604387283076.000000,2115399081346412.200000,566514161382464.750000)

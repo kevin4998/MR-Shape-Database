@@ -1,0 +1,14 @@
+mid: 1300
+url: ftp://avalon.viewpoint.com/pub/objects/military/planes/stealth_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47478
+polygons: 76
+connected_components: 15
+average_dihedral_angle: 1.14886
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.723517, ymax = 0.173779, zmax = 0.975
+avg_depth: 1.550025
+center: (0.374259,0.047203,0.474782)
+scale: 0.433858
+principle_axes: (-0.000004,0.019746,-0.999805), (1.000000,0.000021,-0.000003), (0.000020,-0.999805,-0.019746)
+principle_values: (0.036686,0.018224,0.001155)

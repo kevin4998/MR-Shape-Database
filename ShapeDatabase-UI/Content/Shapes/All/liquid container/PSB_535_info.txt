@@ -1,0 +1,14 @@
+mid: 535
+url: http://www.ipm.sci-nnov.ru/~demidov/VRML/Splines/bak/Vase.wrl
+ref_url: http://www.ipm.sci-nnov.ru/~demidov/VRML/Splines/bak/?D=D
+format: wrl 
+pid: 36834
+polygons: 320
+connected_components: 1
+average_dihedral_angle: 0.276688
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.674141, ymax = 0.975, zmax = 0.674141
+avg_depth: 1.054214
+center: (0.349571,0.549690,0.349571)
+scale: 0.675032
+principle_axes: (0.000002,1.000000,-0.000001), (-0.327358,-0.000001,-0.944900), (0.944900,-0.000002,-0.327358)
+principle_values: (0.068544,0.025517,0.025517)

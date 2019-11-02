@@ -1,0 +1,14 @@
+mid: 1208
+url: http://www.avatara.com/avatars/jet12.wrl
+ref_url: http://www.avatara.com/avatars/avatars2_list.html
+format: wrl 
+pid: 17021
+polygons: 519
+connected_components: 50
+average_dihedral_angle: 0.862289
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.718596, ymax = 0.21885, zmax = 0.975
+avg_depth: 1.361036
+center: (0.350618,0.096636,0.471228)
+scale: 0.406721
+principle_axes: (0.045332,0.089142,-0.994987), (-0.998641,0.029698,-0.042837), (-0.025730,-0.995576,-0.090367)
+principle_values: (0.031221,0.018076,0.001370)

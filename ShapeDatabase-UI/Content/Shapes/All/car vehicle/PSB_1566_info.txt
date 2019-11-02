@@ -1,0 +1,14 @@
+mid: 1566
+url: http://www.3dcafe.com/../models/wagon3.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: 3ds 
+pid: 30475
+polygons: 46968
+connected_components: 95
+average_dihedral_angle: 0.237842
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.360658, zmax = 0.512375
+avg_depth: 2.062164
+center: (0.701234,0.185983,0.283138)
+scale: 0.411605
+principle_axes: (0.896474,0.012044,-0.442932), (0.443049,-0.038963,0.895650), (-0.006471,-0.999168,-0.040266)
+principle_values: (0.025943,0.015511,0.008307)

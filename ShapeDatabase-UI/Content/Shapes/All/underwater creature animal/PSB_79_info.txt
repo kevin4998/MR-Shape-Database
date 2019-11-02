@@ -1,0 +1,14 @@
+mid: 79
+url: http://web.nps.navy.mil/~brutzman/kelp/models/shark2.1.gz.wrl
+ref_url: http://web.nps.navy.mil/~brutzman/kelp/models/
+format: wrl 
+pid: 3363
+polygons: 226
+connected_components: 10
+average_dihedral_angle: 0.231051
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.256171, zmax = 0.300958
+avg_depth: 1.032339
+center: (0.523472,0.093528,0.186737)
+scale: 0.433807
+principle_axes: (0.991591,-0.030955,-0.125657), (0.128994,0.158248,0.978937), (-0.010418,-0.986914,0.160911)
+principle_values: (0.058612,0.001494,0.001235)

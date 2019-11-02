@@ -18,7 +18,7 @@ namespace ShapeDatabase.Query {
 	/// database items.
 	/// </summary>
 	[DebuggerDisplay("{QueryName}: {Count} comparisons")]
-	public class QueryResult {
+	public class QueryResult : System.IComparable<QueryResult> {
 
 		#region --- Properties ---
 
@@ -74,6 +74,7 @@ namespace ShapeDatabase.Query {
 			results.Clear();
 		}
 
+
 		/// <summary>
 		/// A new compared item to add to the collection.
 		/// </summary>
@@ -81,12 +82,12 @@ namespace ShapeDatabase.Query {
 		public void AddItem(QueryItem item) {
 			if (item == null)
 				throw new ArgumentNullException(nameof(item));
-			
+
 			IList list = (IList) results;
 			if (list.IsSynchronized)
 				results.Add(item);
 			else
-				lock (list.SyncRoot) { 
+				lock (list.SyncRoot) {
 					results.Add(item);
 				}
 		}
@@ -99,6 +100,7 @@ namespace ShapeDatabase.Query {
 		/// item. The larger the distance the further it is from the reference item.
 		/// </param>
 		public void AddItem(string name, double distance) => AddItem(new QueryItem(name, distance));
+
 
 		/// <summary>
 		/// Gives the best results from the query object as an array.
@@ -119,7 +121,7 @@ namespace ShapeDatabase.Query {
 				lock (list.SyncRoot) {
 					return SafeBestResults(resultCount);
 				}
-			}
+		}
 
 		private QueryItem[] SafeBestResults(int resultCount) {
 			int count = Math.Min(resultCount, Count);
@@ -127,6 +129,22 @@ namespace ShapeDatabase.Query {
 			for (int i = 0; i < count; i++)
 				result[i] = results[i];
 			return result;
+		}
+
+
+		public override string ToString() {
+			return string.Format(
+				Settings.Culture,
+				"{0} : {1}",
+				QueryName,
+				string.Join(", ", Results)
+			);
+		}
+
+		public int CompareTo(QueryResult other) {
+			if (other == null)
+				throw new ArgumentNullException(nameof(other));
+			return QueryName.CompareTo(other.QueryName);
 		}
 
 		#endregion

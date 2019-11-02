@@ -1,0 +1,14 @@
+mid: 552
+url: http://64.198.60.83/baument/Models/monitor1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: xthreexds 
+pid: 25337
+polygons: 636
+connected_components: 8
+average_dihedral_angle: 0.948252
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.897519, ymax = 0.905778, zmax = 0.975
+avg_depth: 2.035133
+center: (0.458844,0.402298,0.587024)
+scale: 0.831856
+principle_axes: (0.011044,0.618283,0.785878), (0.429004,-0.712849,0.554799), (-0.903235,-0.331018,0.273119)
+principle_values: (0.074852,0.057709,0.056624)

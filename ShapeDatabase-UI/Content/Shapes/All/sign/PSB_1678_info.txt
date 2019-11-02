@@ -1,0 +1,14 @@
+mid: 1678
+url: http://mowat.virtualave.net/stop0001.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26121
+polygons: 1022
+connected_components: 13
+average_dihedral_angle: 0.790997
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.209241, ymax = 0.975, zmax = 0.0454041
+avg_depth: 1.985258
+center: (0.117063,0.707425,0.038131)
+scale: 0.464007
+principle_axes: (0.000138,0.999913,0.013186), (-1.000000,0.000140,-0.000135), (-0.000136,-0.013186,0.999913)
+principle_values: (0.072228,0.001378,0.000033)

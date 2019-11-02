@@ -1,0 +1,14 @@
+mid: 606
+url: http://mowat.virtualave.net/desklamp.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26816
+polygons: 145
+connected_components: 24
+average_dihedral_angle: 0.988672
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.838636, ymax = 0.975, zmax = 0.458987
+avg_depth: 1.335382
+center: (0.460606,0.428627,0.243090)
+scale: 0.810298
+principle_axes: (-0.401250,0.915966,0.002052), (0.915893,0.401245,-0.011959), (0.011777,0.002919,0.999926)
+principle_values: (0.147235,0.016960,0.008602)

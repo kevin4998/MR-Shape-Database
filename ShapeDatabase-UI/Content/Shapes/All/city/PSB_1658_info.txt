@@ -1,0 +1,14 @@
+mid: 1658
+url: http://www.3dcafe.com/models/parlemnt.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27592
+polygons: 16061
+connected_components: 2741
+average_dihedral_angle: 1.00774
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.198499, zmax = 0.755089
+avg_depth: 1.279937
+center: (0.502303,0.037228,0.390200)
+scale: 0.569531
+principle_axes: (1.000000,0.000097,-0.000014), (0.000014,0.000036,1.000000), (0.000097,-1.000000,0.000036)
+principle_values: (0.059065,0.037906,0.000180)

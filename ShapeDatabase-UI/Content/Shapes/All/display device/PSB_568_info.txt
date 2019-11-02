@@ -1,0 +1,14 @@
+mid: 568
+url: http://fraktali.849pm.com/programs/wrl/object/Household.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31784
+polygons: 104
+connected_components: 6
+average_dihedral_angle: 1.46221
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.970164, zmax = 0.410889
+avg_depth: 2.129120
+center: (0.500003,0.479410,0.242776)
+scale: 0.881519
+principle_axes: (-0.000569,-0.999678,-0.025368), (1.000000,-0.000569,0.000019), (-0.000033,-0.025368,0.999678)
+principle_values: (0.098433,0.093489,0.018697)

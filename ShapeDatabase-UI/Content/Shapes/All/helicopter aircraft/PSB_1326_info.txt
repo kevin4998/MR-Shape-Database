@@ -1,0 +1,14 @@
+mid: 1326
+url: http://www.topedge.com/panels/aircraft/hangar/vrml/ah64/ah64-wa.wrl
+ref_url: http://www.topedge.com/panels/aircraft/hangar/yaaphavr.html
+format: wrl 
+pid: 5514
+polygons: 2709
+connected_components: 188
+average_dihedral_angle: 1.30841
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.30347, zmax = 0.840149
+avg_depth: 1.406844
+center: (0.485823,0.165101,0.434816)
+scale: 0.458551
+principle_axes: (-0.998801,-0.042450,-0.024365), (0.025001,-0.014523,-0.999582), (0.042079,-0.998993,0.015567)
+principle_values: (0.050551,0.011596,0.004279)

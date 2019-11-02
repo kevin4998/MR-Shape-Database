@@ -1,0 +1,14 @@
+mid: 1060
+url: http://mowat.virtualave.net/knob.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26582
+polygons: 940
+connected_components: 132
+average_dihedral_angle: 0.682751
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.616934, ymax = 0.975, zmax = 0.573635
+avg_depth: 2.351174
+center: (0.280543,0.497675,0.252361)
+scale: 0.480580
+principle_axes: (-0.214744,0.949755,0.227709), (-0.831443,-0.055448,-0.552837), (-0.512433,-0.308045,0.801574)
+principle_values: (0.040362,0.021334,0.007691)

@@ -1,0 +1,14 @@
+mid: 175
+url: http://www.csv.ica.uni-stuttgart.de/homes/js/lauf.wrl
+ref_url: http://www.csv.ica.uni-stuttgart.de/homes/js/
+format: wrl 
+pid: 7066
+polygons: 1079
+connected_components: 23
+average_dihedral_angle: 0.479983
+bounding_box: xmin = 0.0251185, ymin = 0.0417866, zmin = 0.031331, xmax = 0.335592, ymax = 0.970208, zmax = 0.333036
+avg_depth: 1.316082
+center: (0.176958,0.490819,0.165179)
+scale: 0.458890
+principle_axes: (0.002263,0.998736,-0.050220), (-0.920945,0.021651,0.389090), (-0.389685,-0.045370,-0.919830)
+principle_values: (0.058265,0.005461,0.002274)

@@ -1,0 +1,14 @@
+mid: 28
+url: http://64.198.60.83/baument/Models/raven1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 25670
+polygons: 11660
+connected_components: 9
+average_dihedral_angle: 0.263054
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.468681, ymax = 0.578224, zmax = 0.975
+avg_depth: 1.411713
+center: (0.245069,0.313573,0.452777)
+scale: 0.488668
+principle_axes: (-0.008228,0.446701,0.894645), (-0.988712,-0.137485,0.059554), (-0.149603,0.884057,-0.442790)
+principle_values: (0.047634,0.010716,0.009545)

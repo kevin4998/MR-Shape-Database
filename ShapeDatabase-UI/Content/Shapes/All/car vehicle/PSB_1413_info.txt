@@ -1,0 +1,14 @@
+mid: 1413
+url: http://www.geo-metricks.com/geo-shop/free-stuff/warrior/warrior.zip
+ref_url: http://www.geo-metricks.com/geo-shop/free-stuff/warrior/?D=D
+format: xthreexds 
+pid: 25031
+polygons: 566
+connected_components: 13
+average_dihedral_angle: 1.18416
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.465796, ymax = 0.404605, zmax = 0.975
+avg_depth: 1.299633
+center: (0.245398,0.194576,0.472406)
+scale: 0.600660
+principle_axes: (-0.000000,0.057133,-0.998367), (-1.000000,-0.000004,0.000000), (-0.000004,0.998367,0.057133)
+principle_values: (0.068212,0.022529,0.011713)

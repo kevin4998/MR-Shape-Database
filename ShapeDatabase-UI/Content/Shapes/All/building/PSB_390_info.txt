@@ -1,0 +1,14 @@
+mid: 390
+url: http://www.ipf.tuwien.ac.at/lehre/fue96/meiseldorf/meiseldorf.wrl
+ref_url: http://www.ipf.tuwien.ac.at/lehre/fue96/grp1_fue96.html
+format: wrl 
+pid: 20423
+polygons: 45
+connected_components: 6
+average_dihedral_angle: 0.763506
+bounding_box: xmin = 0.025, ymin = 0.0322348, zmin = 0.025, xmax = 0.846817, ymax = 0.752337, zmax = 0.952219
+avg_depth: 1.134458
+center: (0.437777,0.335225,0.490948)
+scale: 0.710474
+principle_axes: (0.419353,0.142797,0.896522), (0.808366,0.390691,-0.440346), (-0.413143,0.909379,0.048405)
+principle_values: (0.075628,0.030019,0.026159)

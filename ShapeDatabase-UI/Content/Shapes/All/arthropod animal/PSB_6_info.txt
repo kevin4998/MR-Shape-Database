@@ -1,0 +1,14 @@
+mid: 6
+url: http://www.ento.vt.edu/~sharov/3d/bee.wrl
+ref_url: http://www.ento.vt.edu/~sharov/3d/virtual.html
+format: wrl 
+pid: 1676
+polygons: 17998
+connected_components: 99
+average_dihedral_angle: 0.370088
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.668147, ymax = 0.702228, zmax = 0.975
+avg_depth: 1.517903
+center: (0.346545,0.471517,0.457433)
+scale: 0.591241
+principle_axes: (0.000097,0.205624,-0.978631), (0.999976,0.006789,0.001526), (-0.006958,0.978607,0.205619)
+principle_values: (0.061138,0.020581,0.019824)

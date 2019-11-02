@@ -1,0 +1,14 @@
+mid: 689
+url: http://rusf.ru/lukian/vrml/vlad/sword1.wrl
+ref_url: http://rusf.ru/lukian/vrml.htm
+format: wrl 
+pid: 19209
+polygons: 364
+connected_components: 2
+average_dihedral_angle: 0.779968
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.887269, ymax = 0.975, zmax = 0.202834
+avg_depth: 1.220021
+center: (0.263813,0.287953,0.107677)
+scale: 0.391379
+principle_axes: (-0.670984,-0.736142,0.088743), (0.635471,-0.632594,-0.442721), (0.382044,-0.240665,0.892257)
+principle_values: (0.059780,0.001150,0.001074)

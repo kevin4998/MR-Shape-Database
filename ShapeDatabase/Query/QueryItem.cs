@@ -2,9 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using ShapeDatabase.IO;
 using ShapeDatabase.Properties;
 using ShapeDatabase.Shapes;
 
@@ -66,7 +69,96 @@ namespace ShapeDatabase.Query {
 		}
 
 		public override string ToString() {
-			return $"{MeshName} ({MeshDistance})";
+			return string.Format(
+				Settings.Culture,
+				"{0} ({1})",
+				MeshName,
+				MeshDistance.ToString(Settings.Culture)
+			);
+		}
+
+		#endregion
+
+		#region --- Static Methods ---
+
+		/// <summary>
+		/// Converts the string representation into QueryItem with the distance
+		/// from its original reference item. And returns a boolean to identify
+		/// if this conversion process has succeeded.
+		/// </summary>
+		/// <param name="serialised">The string representation of this item.</param>
+		/// <param name="item">The reconstructed query item if it was successful,
+		/// otherwise a default NULL query item.</param>
+		/// <returns>If the conversion process was successful.</returns>
+		public static bool TryParse(string serialised, out QueryItem item)
+			=> TryParse(serialised, NumberStyles.Any, Settings.Culture, out item);
+
+		/// <summary>
+		/// Converts the string representation into QueryItem with the distance
+		/// from its original reference item. And returns a boolean to identify
+		/// if this conversion process has succeeded.
+		/// </summary>
+		/// <param name="serialised">The string representation of this item.</param>
+		/// <param name="style">The style for which numbers are allowed.</param>
+		/// <param name="format">The format to recognise numbers.</param>
+		/// <param name="item">The reconstructed query item if it was successful,
+		/// otherwise a default NULL query item.</param>
+		/// <returns>If the conversion process was successful.</returns>
+		public static bool TryParse(string serialised, NumberStyles style,
+									IFormatProvider format, out QueryItem item) {
+			try {
+				item = FromString(serialised, style, format);
+				return true;
+			} catch (ArgumentException ex) {
+				item = default;
+				return false;
+			}
+		}
+
+
+		/// <summary>
+		/// Converts the string representation into QueryItem with the distance
+		/// from its original reference item.
+		/// </summary>
+		/// <param name="serialised">The string representation of this item.</param>
+		/// <returns>The reconstructed query item if it was successful.</returns>
+		public static QueryItem FromString(string serialised)
+			=> FromString(serialised, NumberStyles.Any, Settings.Culture);
+
+		/// <summary>
+		/// Converts the string representation into QueryItem with the distance
+		/// from its original reference item.
+		/// </summary>
+		/// <param name="serialised">The string representation of this item.</param>
+		/// <param name="style">The style for which numbers are allowed.</param>
+		/// <param name="format">The format to recognise numbers.</param>
+		/// <returns>The reconstructed query item if it was successful.</returns>
+		public static QueryItem FromString(string serialised, NumberStyles style,
+											IFormatProvider format) {
+			if (string.IsNullOrEmpty(serialised))
+				throw new ArgumentNullException(nameof(serialised));
+			const string formatRegex = "^\\w+ \\((0|([1-9][0-9]*))((\\.|\\,)[0-9]+)?\\)$";
+			if (!Regex.IsMatch(serialised, formatRegex))
+				throw new InvalidFormatException(serialised, formatRegex);
+
+			string[] args = serialised.Split(' ');
+			if (args.Length != 2)
+				throw new ArgumentException(
+					string.Format(
+						Settings.Culture,
+						Resources.EX_Array_Size,
+						args.Length,
+						2
+					)
+				);
+
+			string name = args[0];
+			string number = args[1].Substring(1, args[1].Length - 2);
+
+			if (!double.TryParse(number, style, format, out double distance))
+				throw new InvalidFormatException(number, "decimal number");
+
+			return new QueryItem(name, distance);
 		}
 
 		#endregion
@@ -103,10 +195,14 @@ namespace ShapeDatabase.Query {
 
 	public class QueryItemComparer : IComparer<QueryItem> {
 		public int Compare(QueryItem x, QueryItem y) {
-			if (x == y)		return 0;
-			if (x.IsNull)	return int.MaxValue;
-			if (y.IsNull)	return int.MinValue;
-			else			return x.CompareTo(y);
+			if (x == y)
+				return 0;
+			if (x.IsNull)
+				return int.MaxValue;
+			if (y.IsNull)
+				return int.MinValue;
+			else
+				return x.CompareTo(y);
 		}
 
 	}

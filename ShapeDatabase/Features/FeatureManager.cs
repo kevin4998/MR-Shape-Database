@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,7 @@ using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
 
-namespace ShapeDatabase.Features.Descriptors
-{
+namespace ShapeDatabase.Features.Descriptors {
 	/// <summary>
 	/// Class for calculating and/or importing featurevectors.
 	/// </summary>
@@ -38,6 +38,10 @@ namespace ShapeDatabase.Features.Descriptors
 		/// A collection of all the saved feature vectors in this manager.
 		/// </summary>
 		public IEnumerable<FeatureVector> FeatureVectors => features.Values;
+		/// <summary>
+		/// The total amount of features stored in this manager.
+		/// </summary>
+		public int FeatureCount => features.Count;
 		/// <summary>
 		/// IList of all descriptor calculater delegates.
 		/// </summary>
@@ -67,7 +71,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// Constructor method of the featuremanager
 		/// </summary>
 		/// <param name="descriptorcalculators">The descriptor calculators that can be used to calculate the featurevectors</param>
-		public FeatureManager(params DescriptorCalculator[] descriptorcalculators) 
+		public FeatureManager(params DescriptorCalculator[] descriptorcalculators)
 			: this(null, descriptorcalculators) { }
 
 		/// <summary>
@@ -96,7 +100,8 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <exception cref="ArgumentNullException">If the given calculator is
 		/// <see langword="null"/>.</exception>
 		public void AddCalculator(DescriptorCalculator calculator) {
-			if (calculator == null) throw new ArgumentNullException(nameof(calculator));
+			if (calculator == null)
+				throw new ArgumentNullException(nameof(calculator));
 			DescriptorCalculators.Add(calculator);
 		}
 
@@ -106,7 +111,18 @@ namespace ShapeDatabase.Features.Descriptors
 		/// </summary>
 		/// <param name="library">The library of which the featurevectors should be calculated</param>
 		public void CalculateVectors(params MeshEntry[] library) {
-			foreach(MeshEntry entry in library)
+			CalculateVectors((IEnumerable<MeshEntry>) library);
+		}
+
+		/// <summary>
+		/// Calculate the featurevectores of all meshes in a library using all descriptor calculators of the featuremanager
+		/// </summary>
+		/// <param name="library">The library of which the featurevectors should be calculated</param>
+		public void CalculateVectors(IEnumerable<MeshEntry> library) {
+			if (library == null)
+				throw new ArgumentNullException(nameof(library));
+
+			foreach (MeshEntry entry in library)
 				CalculateVector(entry);
 
 			NormaliseVectors();
@@ -138,6 +154,7 @@ namespace ShapeDatabase.Features.Descriptors
 			}
 		}
 
+
 		/// <summary>
 		/// Updates the min and max values and normalises the database meshes.
 		/// </summary>
@@ -145,6 +162,11 @@ namespace ShapeDatabase.Features.Descriptors
 			FeatureNormaliser.Instance.UpdateMinMaxDictionary(features);
 			FeatureNormaliser.Instance.NormaliseVectors(ref features);
 		}
+
+		public FeatureVector NormaliseVector(FeatureVector vector) {
+			return FeatureNormaliser.Instance.NormaliseVector(vector);
+		}
+
 
 		/// <summary>
 		/// Expands an already existing vector with new information if
@@ -197,10 +219,11 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <returns>A collection which contains only descriptors from the left set
 		/// that were not present in the right one.</returns>
 		private static IEnumerable<IDescriptor> ExceptWith(
-			IEnumerable<IDescriptor> left,  IEnumerable<IDescriptor> right) {
+			IEnumerable<IDescriptor> left, IEnumerable<IDescriptor> right) {
 
 			return left.Except(right, DescriptorComparer.Instance);
 		}
+
 
 
 		/// <summary>
@@ -209,19 +232,50 @@ namespace ShapeDatabase.Features.Descriptors
 		/// similarity.
 		/// </summary>
 		/// <param name="mesh">The mesh that should be compared with all other meshes in the database.</param>
-		/// <returns>A <see cref="IList{T}"/> containing all the meshes in this manager
-		/// and ordered by their similarity. The <see cref="IList{T}"/> has a tuple
-		/// containing the name of the mesh as well as an indicator of similarity
-		/// represented as double. The results are ordered (best match first).</returns>
-		public QueryResult CalculateResults(MeshEntry mesh)
-		{
-			FeatureVector queryVector = CreateVector(mesh);
-			queryVector = FeatureNormaliser.Instance.NormaliseVector(queryVector);
+		/// <returns>A <see cref="QueryResult"/> which contains the K-best similair
+		/// matches from the entire database for this entry.</returns>
+		public QueryResult CalculateResults(MeshEntry mesh) {
+			return CalculateResults(new MeshEntry[] { mesh })[0];
+		}
 
-			ANN HNSW = new ANN(features.Select(x => new NamedFeatureVector(x.Key, x.Value)));
-			QueryResult result = HNSW.RunANNQuery(new NamedFeatureVector(mesh.Name, queryVector), Settings.KBestResults);
+		/// <summary>
+		/// Compares the given meshes with all the saved meshes in this
+		/// <see cref="FeatureManager"/> and returns all the meshes ordered by the
+		/// similarity.
+		/// </summary>
+		/// <param name="meshes">The mesh that should be compared with all other meshes in the database.</param>
+		/// <returns>A <see cref="QueryResult"/> array which contains the K-best similair
+		/// matches from the entire database for these entries.</returns>
+		public QueryResult[] CalculateResults(params MeshEntry[] meshes) {
+			return CalculateResults((IEnumerable<MeshEntry>) meshes);
+		}
 
-			return result;
+		/// <summary>
+		/// Compares the given meshes with all the saved meshes in this
+		/// <see cref="FeatureManager"/> and returns all the meshes ordered by the
+		/// similarity.
+		/// </summary>
+		/// <param name="meshes">The mesh that should be compared with all other meshes in the database.</param>
+		/// <returns>A <see cref="QueryResult"/> array which contains the K-best similair
+		/// matches from the entire database for these entries.</returns>
+		public QueryResult[] CalculateResults(IEnumerable<MeshEntry> meshes) {
+			if (meshes == null)
+				throw new ArgumentNullException(nameof(meshes));
+
+			ANN HNSW = new ANN(features);
+
+			ConcurrentBag<QueryResult> results = new ConcurrentBag<QueryResult>();
+			Parallel.ForEach(meshes, entry => {
+				FeatureVector queryVector = CreateVector(entry);
+				queryVector = NormaliseVector(queryVector);
+				results.Add(HNSW.RunANNQuery(entry.Name,
+											 queryVector,
+											 Settings.KBestResults));
+			});
+
+			QueryResult[] array = results.ToArray();
+			Array.Sort(array);
+			return array;
 		}
 
 		#endregion

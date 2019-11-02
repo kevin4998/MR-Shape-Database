@@ -1,0 +1,14 @@
+mid: 223
+url: http://www.3dcafe.com/models/man9.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: obj 
+pid: 26906
+polygons: 20895
+connected_components: 3
+average_dihedral_angle: 0.236024
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.930491, ymax = 0.975, zmax = 0.19251
+avg_depth: 1.164054
+center: (0.477757,0.556763,0.120386)
+scale: 0.529565
+principle_axes: (0.000091,0.999206,0.039831), (-1.000000,0.000090,0.000022), (0.000018,-0.039831,0.999206)
+principle_values: (0.068526,0.016997,0.001205)

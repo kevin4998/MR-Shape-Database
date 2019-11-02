@@ -1,0 +1,14 @@
+mid: 109
+url: http://philliphansel.com/avatars/newbunny.wrl
+ref_url: http://philliphansel.com/mymiscvrml.htm
+format: wrl 
+pid: 3465
+polygons: 2568
+connected_components: 14
+average_dihedral_angle: 0.380987
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.83322, ymax = 0.975, zmax = 0.465593
+avg_depth: 1.909536
+center: (0.398378,0.320488,0.249789)
+scale: 0.548579
+principle_axes: (0.549955,-0.835194,-0.000157), (-0.835080,-0.549883,0.016408), (0.013790,0.008892,0.999865)
+principle_values: (0.041804,0.028720,0.014122)

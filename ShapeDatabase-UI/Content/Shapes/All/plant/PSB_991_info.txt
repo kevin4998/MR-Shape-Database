@@ -1,0 +1,14 @@
+mid: 991
+url: http://zombie.serv.com.au/vrml/studio/models/bonsaiNoTable.wrl
+ref_url: http://zombie.serv.com.au/vrml/studio/models/
+format: wrl 
+pid: 22027
+polygons: 6370
+connected_components: 344
+average_dihedral_angle: 0.95811
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.814367, zmax = 0.958696
+avg_depth: 1.331819
+center: (0.564713,0.348483,0.560153)
+scale: 0.596413
+principle_axes: (0.688065,-0.651584,-0.319380), (-0.632663,-0.754224,0.175738), (0.355393,-0.081141,0.931189)
+principle_values: (0.045428,0.030674,0.025433)

@@ -1,0 +1,14 @@
+mid: 1733
+url: http://www.3dcafe.com/models/stairway2.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: 3ds 
+pid: 27694
+polygons: 2988
+connected_components: 3
+average_dihedral_angle: 0.779417
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.550227, zmax = 0.496516
+avg_depth: 1.202323
+center: (0.496293,0.181606,0.236416)
+scale: 0.524897
+principle_axes: (0.998603,-0.020210,-0.048823), (-0.036768,0.397841,-0.916717), (0.037950,0.917232,0.396542)
+principle_values: (0.052136,0.015982,0.007895)

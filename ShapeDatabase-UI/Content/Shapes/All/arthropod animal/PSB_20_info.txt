@@ -1,0 +1,14 @@
+mid: 20
+url: http://fraktali.849pm.com/programs/wrl/object/Insects.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31702
+polygons: 3042
+connected_components: 41
+average_dihedral_angle: 0.473454
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.418756, zmax = 0.928792
+avg_depth: 1.394570
+center: (0.469861,0.264473,0.419010)
+scale: 0.474403
+principle_axes: (-0.298179,-0.098172,-0.949448), (0.954504,-0.034024,-0.296249), (0.003220,0.994588,-0.103851)
+principle_values: (0.034191,0.030103,0.007673)

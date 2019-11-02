@@ -1,0 +1,14 @@
+mid: 1255
+url: http://www.3dheaven.net/Modelle/aircraft/f142_2.zip
+ref_url: 
+format: xthreexds 
+pid: 46792
+polygons: 6441
+connected_components: 68
+average_dihedral_angle: 0.51147
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.246725, zmax = 0.50787
+avg_depth: 2.080052
+center: (0.646135,0.103258,0.266325)
+scale: 0.434422
+principle_axes: (0.999971,-0.007513,0.000989), (0.000992,0.000448,-0.999999), (-0.007513,-0.999972,-0.000455)
+principle_values: (0.052299,0.006031,0.000968)

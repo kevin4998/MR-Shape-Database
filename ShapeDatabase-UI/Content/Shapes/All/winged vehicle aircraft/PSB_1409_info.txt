@@ -1,0 +1,14 @@
+mid: 1409
+url: ftp://avalon.viewpoint.com/pub/objects/space/StarWars/xwing-2_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47764
+polygons: 1277
+connected_components: 137
+average_dihedral_angle: 0.695421
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.238562, zmax = 0.834622
+avg_depth: 2.674727
+center: (0.266284,0.134545,0.429040)
+scale: 0.399892
+principle_axes: (0.041909,-0.019213,-0.998937), (-0.999105,-0.006613,-0.041789), (-0.005803,0.999794,-0.019473)
+principle_values: (0.028570,0.024318,0.002546)

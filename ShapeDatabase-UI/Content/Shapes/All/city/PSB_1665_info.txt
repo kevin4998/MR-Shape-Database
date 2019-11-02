@@ -1,0 +1,14 @@
+mid: 1665
+url: http://www.intoronto.com/cities/ottawa.wrl
+ref_url: http://www.intoronto.com/inottawa.html
+format: wrl 
+pid: 95
+polygons: 13409
+connected_components: 367
+average_dihedral_angle: 1.45133
+bounding_box: xmin = 0.025, ymin = 0.0454205, zmin = 0.025, xmax = 0.801993, ymax = 0.131825, zmax = 0.975
+avg_depth: 3.032321
+center: (0.448874,0.053729,0.485066)
+scale: 0.650512
+principle_axes: (0.283152,0.005205,0.959061), (0.959015,0.009660,-0.283190), (0.010739,-0.999940,0.002256)
+principle_values: (0.073941,0.046266,0.000146)

@@ -1,0 +1,14 @@
+mid: 189
+url: http://www.geometrek.com/web3d/deepmatrix/world/avatars/avatar.wrl
+ref_url: http://www.geometrek.com/web3d/deepmatrix/world/avatars/
+format: wrl 
+pid: 17278
+polygons: 526
+connected_components: 35
+average_dihedral_angle: 1.1991
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.287813, ymax = 0.975, zmax = 0.173873
+avg_depth: 1.476840
+center: (0.156498,0.512753,0.087066)
+scale: 0.458117
+principle_axes: (-0.000597,0.999770,-0.021437), (-0.999999,-0.000564,0.001539), (0.001527,0.021438,0.999769)
+principle_values: (0.064796,0.003742,0.000688)

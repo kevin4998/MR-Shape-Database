@@ -1,0 +1,14 @@
+mid: 351
+url: http://www.facegen.com/download/john_obj_all.zip
+ref_url: http://www.facegen.com/downloads.htm
+format: obj 
+pid: 28001
+polygons: 1646
+connected_components: 6
+average_dihedral_angle: 0.304362
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.736533, ymax = 0.975, zmax = 0.842455
+avg_depth: 1.070232
+center: (0.379786,0.550360,0.438031)
+scale: 0.731265
+principle_axes: (-0.002777,0.779762,-0.626070), (0.029826,-0.625729,-0.779470), (0.999551,0.020838,0.021519)
+principle_values: (0.061766,0.041647,0.032509)

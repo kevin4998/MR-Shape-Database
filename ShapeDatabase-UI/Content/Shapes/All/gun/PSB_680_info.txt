@@ -1,0 +1,14 @@
+mid: 680
+url: http://cepcairo.bizland.com/free/Musket.zip
+ref_url: 
+format: xthreexds 
+pid: 48447
+polygons: 5500
+connected_components: 11
+average_dihedral_angle: 0.292792
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.0608607, ymax = 0.117672, zmax = 0.975
+avg_depth: 1.615215
+center: (0.041266,0.089787,0.449337)
+scale: 0.383454
+principle_axes: (0.006480,0.039844,0.999185), (-0.135122,0.990077,-0.038605), (-0.990808,-0.134762,0.011799)
+principle_values: (0.050587,0.000174,0.000042)

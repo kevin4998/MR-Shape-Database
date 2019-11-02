@@ -1,0 +1,14 @@
+mid: 268
+url: http://www.avatara.com/avatars2/t_rex.wrl
+ref_url: http://www.avatara.com/avatars2/avatars2_list.html
+format: wrl 
+pid: 17103
+polygons: 484
+connected_components: 5
+average_dihedral_angle: 0.674257
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.20265, ymax = 0.325992, zmax = 0.975
+avg_depth: 1.296756
+center: (0.113230,0.203009,0.600861)
+scale: 0.325274
+principle_axes: (0.000243,-0.073036,-0.997329), (-0.006051,0.997311,-0.073037), (-0.999982,-0.006053,0.000200)
+principle_values: (0.031000,0.003892,0.001401)

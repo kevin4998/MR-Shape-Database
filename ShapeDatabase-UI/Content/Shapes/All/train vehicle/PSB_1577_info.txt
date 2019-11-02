@@ -1,0 +1,14 @@
+mid: 1577
+url: http://world.std.com/~mharter/streetcar/files/type5.wrl
+ref_url: http://world.std.com/~mharter/streetcar/trains.htm
+format: wrl 
+pid: 10191
+polygons: 9918
+connected_components: 254
+average_dihedral_angle: 1.38457
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.209825, ymax = 0.339825, zmax = 0.975
+avg_depth: 2.631867
+center: (0.116565,0.152825,0.505621)
+scale: 0.517280
+principle_axes: (-0.007358,0.000011,0.999973), (0.999933,-0.008939,0.007358), (0.008939,0.999960,0.000055)
+principle_values: (0.070031,0.004998,0.004155)

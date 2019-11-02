@@ -1,0 +1,14 @@
+mid: 1715
+url: http://www.hammerve.com/NewHome/FreeStuff/Vrml/doorway.wrl.gz
+ref_url: 
+format: wrl 
+pid: 47851
+polygons: 1314
+connected_components: 8
+average_dihedral_angle: 0.376663
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.188867, ymax = 0.975, zmax = 0.503665
+avg_depth: 1.990470
+center: (0.090546,0.497001,0.260705)
+scale: 0.660055
+principle_axes: (0.001066,-0.999994,-0.003436), (0.002491,0.003439,-0.999991), (0.999996,0.001057,0.002495)
+principle_values: (0.091937,0.027544,0.002692)

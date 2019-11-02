@@ -1,0 +1,14 @@
+mid: 1612
+url: http://mowat.virtualave.net/queen.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26341
+polygons: 2600
+connected_components: 65
+average_dihedral_angle: 1.2896
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.42415, ymax = 0.975, zmax = 0.424153
+avg_depth: 1.384915
+center: (0.224575,0.366041,0.224576)
+scale: 0.594546
+principle_axes: (0.000000,-1.000000,-0.000000), (-0.960277,-0.000000,0.279047), (0.279047,0.000000,0.960277)
+principle_values: (0.083796,0.008778,0.008778)

@@ -1,0 +1,14 @@
+mid: 1058
+url: http://mowat.virtualave.net/crippled.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26834
+polygons: 1972
+connected_components: 166
+average_dihedral_angle: 0.575695
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.954665, ymax = 0.701217, zmax = 0.975
+avg_depth: 1.900826
+center: (0.576225,0.333037,0.472261)
+scale: 0.566057
+principle_axes: (0.763129,-0.071341,0.642296), (-0.581787,-0.508540,0.634752), (-0.281350,0.858078,0.429587)
+principle_values: (0.055764,0.024553,0.016087)

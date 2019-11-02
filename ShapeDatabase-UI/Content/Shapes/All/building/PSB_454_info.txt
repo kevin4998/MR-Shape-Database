@@ -1,0 +1,14 @@
+mid: 454
+url: http://content.schmoozer.net/Schmoozer/MitsuB/Things/Buildings/VRML/BldgHouseGarrB-O.wrl
+ref_url: http://content.schmoozer.net/Schmoozer/MitsuB/Things/Buildings/VRML/
+format: wrl 
+pid: 4795
+polygons: 216
+connected_components: 30
+average_dihedral_angle: 1.38772
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.3874, zmax = 0.55505
+avg_depth: 1.304759
+center: (0.378576,0.189689,0.268310)
+scale: 0.559395
+principle_axes: (-0.985895,0.122763,-0.113755), (-0.121430,-0.056932,0.990966), (-0.115178,-0.990802,-0.071036)
+principle_values: (0.063494,0.016843,0.008262)

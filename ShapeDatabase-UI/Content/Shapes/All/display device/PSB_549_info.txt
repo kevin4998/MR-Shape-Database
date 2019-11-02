@@ -1,0 +1,14 @@
+mid: 549
+url: http://www.ocnus.com/models/Machines/funnymonitor.wrl.gz
+ref_url: http://www.ocnus.com/models/Machines/
+format: wrl 
+pid: 17844
+polygons: 1543
+connected_components: 8
+average_dihedral_angle: 0.348125
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.932313, zmax = 0.698835
+avg_depth: 1.413393
+center: (0.501047,0.398107,0.435599)
+scale: 0.832482
+principle_axes: (0.001301,-0.974394,-0.224842), (0.999997,0.001711,-0.001627), (0.001970,-0.224839,0.974394)
+principle_values: (0.089193,0.061640,0.034640)

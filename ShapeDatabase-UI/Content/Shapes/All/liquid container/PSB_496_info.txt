@@ -1,0 +1,14 @@
+mid: 496
+url: http://mowat.virtualave.net/winegobl.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 25868
+polygons: 1000
+connected_components: 1
+average_dihedral_angle: 0.524804
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.639734, ymax = 0.975, zmax = 0.61202
+avg_depth: 1.349951
+center: (0.332367,0.547105,0.318510)
+scale: 0.750936
+principle_axes: (-0.000000,1.000000,0.000000), (1.000000,0.000000,0.000352), (-0.000352,-0.000000,1.000000)
+principle_values: (0.103216,0.028480,0.028003)

@@ -1,0 +1,14 @@
+mid: 17
+url: http://www.lucia.it/vrml/drsland/ragno/ragno.wrl
+ref_url: http://www.lucia.it/vrml/p_drsland_e.html
+format: wrl 
+pid: 19412
+polygons: 3000
+connected_components: 29
+average_dihedral_angle: 0.510123
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.293822, zmax = 0.654721
+avg_depth: 1.251507
+center: (0.500000,0.168466,0.357710)
+scale: 0.465441
+principle_axes: (1.000000,-0.000000,0.000001), (-0.000001,-0.055741,0.998445), (-0.000000,-0.998445,-0.055741)
+principle_values: (0.047844,0.017390,0.005098)

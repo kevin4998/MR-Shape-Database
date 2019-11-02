@@ -1,0 +1,14 @@
+mid: 1521
+url: http://mowat.virtualave.net/shelby.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26244
+polygons: 580
+connected_components: 10
+average_dihedral_angle: 1.23423
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.412061, ymax = 0.269465, zmax = 0.975
+avg_depth: 1.354248
+center: (0.219095,0.144053,0.515043)
+scale: 0.587539
+principle_axes: (-0.000125,0.043009,0.999075), (1.000000,0.000097,0.000121), (-0.000091,0.999075,-0.043009)
+principle_values: (0.075204,0.018291,0.004915)

@@ -1,0 +1,14 @@
+mid: 284
+url: http://www.3dcafe.com/models/brain02.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27214
+polygons: 36758
+connected_components: 3
+average_dihedral_angle: 0.477043
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.855971, zmax = 0.805833
+avg_depth: 2.526796
+center: (0.481049,0.477405,0.411327)
+scale: 0.634718
+principle_axes: (-0.910766,-0.412277,-0.023077), (-0.046529,0.046935,0.997814), (0.410292,-0.909849,0.061930)
+principle_values: (0.051358,0.033157,0.026215)

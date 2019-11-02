@@ -1,0 +1,14 @@
+mid: 1625
+url: http://philliphansel.com/avatars/ta2.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6109
+polygons: 1027
+connected_components: 41
+average_dihedral_angle: 0.865505
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.604236, zmax = 0.616858
+avg_depth: 1.241182
+center: (0.502896,0.363454,0.321783)
+scale: 0.512628
+principle_axes: (-0.999539,-0.030036,0.004399), (-0.028085,0.859988,-0.509541), (0.011522,-0.509430,-0.860435)
+principle_values: (0.054718,0.012838,0.009552)

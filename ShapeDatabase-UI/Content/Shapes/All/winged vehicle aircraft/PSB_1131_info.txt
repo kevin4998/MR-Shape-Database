@@ -1,0 +1,14 @@
+mid: 1131
+url: http://www.rccad.com/Gallery/Vrml/kishima.wrl
+ref_url: http://www.rccad.com/Gallery_BiPlanes1.htm
+format: wrl 
+pid: 33702
+polygons: 768
+connected_components: 7
+average_dihedral_angle: 0.232868
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.705618, ymax = 0.975, zmax = 0.196732
+avg_depth: 1.322750
+center: (0.301104,0.500014,0.097187)
+scale: 0.502262
+principle_axes: (-0.000060,1.000000,-0.000002), (-0.993213,-0.000059,0.116311), (0.116311,0.000009,0.993213)
+principle_values: (0.047685,0.025533,0.003986)

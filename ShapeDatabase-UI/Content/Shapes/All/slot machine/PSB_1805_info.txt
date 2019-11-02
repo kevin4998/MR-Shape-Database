@@ -1,0 +1,14 @@
+mid: 1805
+url: http://www.amazing3d.com/free/slotobjpc.zip
+ref_url: 
+format: obj 
+pid: 47567
+polygons: 2450
+connected_components: 46
+average_dihedral_angle: 0.550874
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.489939, ymax = 0.975, zmax = 0.600721
+avg_depth: 1.486156
+center: (0.244736,0.435626,0.318769)
+scale: 0.759991
+principle_axes: (0.002980,-0.990276,0.139084), (0.011301,0.139109,0.990213), (0.999932,0.001379,-0.011606)
+principle_values: (0.102324,0.030983,0.021962)

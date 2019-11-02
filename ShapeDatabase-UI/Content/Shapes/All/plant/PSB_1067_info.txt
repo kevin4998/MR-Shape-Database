@@ -1,0 +1,14 @@
+mid: 1067
+url: http://www.3dcafe.com/models/highcrwn.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 29007
+polygons: 1756
+connected_components: 87
+average_dihedral_angle: 0.578286
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.761366, ymax = 0.975, zmax = 0.626671
+avg_depth: 1.790524
+center: (0.359896,0.554995,0.291677)
+scale: 0.490561
+principle_axes: (0.179591,0.980066,-0.084954), (0.599176,-0.177468,-0.780701), (-0.780215,0.089305,-0.619104)
+principle_values: (0.057118,0.011467,0.006144)

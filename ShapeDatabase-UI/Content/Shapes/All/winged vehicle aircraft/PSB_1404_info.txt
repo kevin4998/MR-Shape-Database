@@ -1,0 +1,14 @@
+mid: 1404
+url: http://deep.sitenest.net/freemodels/starwars/3dm-tie-ad.zip
+ref_url: 
+format: xthreexds 
+pid: 48431
+polygons: 62933
+connected_components: 638
+average_dihedral_angle: 0.641523
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.615116, ymax = 0.440483, zmax = 0.975
+avg_depth: 3.490416
+center: (0.320159,0.234408,0.512260)
+scale: 0.514176
+principle_axes: (-1.000000,-0.000023,0.000297), (-0.000297,-0.001499,-0.999999), (-0.000024,0.999999,-0.001499)
+principle_values: (0.042527,0.026798,0.008549)

@@ -1,0 +1,14 @@
+mid: 1297
+url: http://www.rccad.com/Gallery/Vrml/B2.wrl
+ref_url: http://www.rccad.com/Gallery_DeltaJets2.htm
+format: wrl 
+pid: 38540
+polygons: 1044
+connected_components: 9
+average_dihedral_angle: 0.23492
+bounding_box: xmin = 0.0641477, ymin = 0.025, zmin = 0.0450668, xmax = 0.339672, ymax = 0.975, zmax = 0.0892144
+avg_depth: 1.117291
+center: (0.201821,0.500013,0.057701)
+scale: 0.385130
+principle_axes: (-0.000012,1.000000,0.000002), (0.999878,0.000012,-0.015596), (0.015596,-0.000002,0.999878)
+principle_values: (0.050686,0.003265,0.000064)

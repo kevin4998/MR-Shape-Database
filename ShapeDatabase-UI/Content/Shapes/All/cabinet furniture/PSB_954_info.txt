@@ -1,0 +1,14 @@
+mid: 954
+url: http://www.rdservice.de/German/produkte/VRCreator/library/Bathroom/Cabinet2.wrl
+ref_url: http://www.rdservice.de/German/produkte/VRCreator/library/Bathroom/bathroom.htm
+format: wrl 
+pid: 33987
+polygons: 254
+connected_components: 12
+average_dihedral_angle: 1.4174
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.793272, zmax = 0.549012
+avg_depth: 1.970575
+center: (0.499815,0.429465,0.288234)
+scale: 0.836856
+principle_axes: (-0.999999,-0.001006,0.000761), (-0.001149,0.975583,-0.219627), (0.000522,0.219628,0.975584)
+principle_values: (0.096378,0.048617,0.038757)

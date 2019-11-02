@@ -1,0 +1,14 @@
+mid: 314
+url: http://www.computing.dundee.ac.uk/staff/stephen/vrml/stephen.wrl
+ref_url: http://www.computing.dundee.ac.uk/staff/stephen/
+format: wrl 
+pid: 863
+polygons: 7055
+connected_components: 1
+average_dihedral_angle: 0.289425
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.975, zmax = 0.848313
+avg_depth: 1.145176
+center: (0.487978,0.428265,0.414650)
+scale: 0.696392
+principle_axes: (-0.850747,0.037097,-0.524265), (0.172594,-0.922467,-0.345349), (-0.496429,-0.384290,0.778383)
+principle_values: (0.071693,0.050913,0.009948)

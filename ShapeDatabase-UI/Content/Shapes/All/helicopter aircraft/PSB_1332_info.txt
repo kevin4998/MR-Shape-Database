@@ -1,0 +1,14 @@
+mid: 1332
+url: http://ciel.me.cmu.edu/soji/aircraft/ah64.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 868
+polygons: 923
+connected_components: 20
+average_dihedral_angle: 0.898327
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.729325, ymax = 0.320984, zmax = 0.975
+avg_depth: 1.234679
+center: (0.376496,0.141448,0.480621)
+scale: 0.423884
+principle_axes: (0.006164,-0.020793,-0.999765), (0.999720,-0.022718,0.006636), (-0.022850,-0.999526,0.020648)
+principle_values: (0.051772,0.005582,0.003080)

@@ -1,0 +1,14 @@
+mid: 377
+url: http://www.3dcafe.com/models/skull01.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27115
+polygons: 2294
+connected_components: 4
+average_dihedral_angle: 0.494821
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.731222, ymax = 0.975, zmax = 0.899358
+avg_depth: 1.252542
+center: (0.378167,0.533204,0.388625)
+scale: 0.751848
+principle_axes: (0.001222,-0.716734,-0.697345), (0.006663,-0.697325,0.716724), (0.999977,0.005522,-0.003924)
+principle_values: (0.072220,0.037977,0.037472)

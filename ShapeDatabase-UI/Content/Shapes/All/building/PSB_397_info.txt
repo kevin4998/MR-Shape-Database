@@ -1,0 +1,14 @@
+mid: 397
+url: http://www.3dcafe.com/models/headston.zip
+ref_url: http://www.3dcafe.com/asp/horo_pic.asp
+format: 3ds 
+pid: 28161
+polygons: 2680
+connected_components: 11
+average_dihedral_angle: 0.539683
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.927504, zmax = 0.974999
+avg_depth: 1.607743
+center: (0.501043,0.377934,0.498973)
+scale: 0.893958
+principle_axes: (-0.004938,0.999980,-0.003932), (-0.197778,0.002878,0.980243), (0.980234,0.005618,0.197759)
+principle_values: (0.090175,0.058134,0.057602)

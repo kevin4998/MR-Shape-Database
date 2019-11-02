@@ -1,0 +1,14 @@
+mid: 955
+url: http://www.rdservice.de/German/produkte/VRCreator/library/Cupboards/Base30.wrl
+ref_url: http://www.rdservice.de/German/produkte/VRCreator/library/Cupboards/cupboards.htm
+format: wrl 
+pid: 35126
+polygons: 206
+connected_components: 12
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.948562, zmax = 0.697876
+avg_depth: 2.275672
+center: (0.499995,0.567689,0.348801)
+scale: 0.977441
+principle_axes: (-1.000000,-0.000008,-0.000013), (-0.000008,0.999824,-0.018735), (-0.000013,0.018735,0.999824)
+principle_values: (0.105910,0.088118,0.053952)

@@ -1,0 +1,14 @@
+mid: 389
+url: http://www-personal.ksu.edu/~jeffhed/church3.wrl
+ref_url: http://www-personal.ksu.edu/~jeffhed/VRML.html
+format: wrl 
+pid: 11355
+polygons: 5170
+connected_components: 241
+average_dihedral_angle: 1.44145
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.74158, ymax = 0.975, zmax = 0.650205
+avg_depth: 4.568704
+center: (0.423818,0.245034,0.332198)
+scale: 0.672681
+principle_axes: (-0.728053,-0.668344,-0.152497), (0.028585,0.192662,-0.980849), (0.684924,-0.718469,-0.121163)
+principle_values: (0.053623,0.038482,0.029315)

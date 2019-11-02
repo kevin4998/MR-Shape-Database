@@ -1,0 +1,14 @@
+mid: 1568
+url: http://cepcairo.bizland.com/free/Wagon.zip
+ref_url: 
+format: xthreexds 
+pid: 47342
+polygons: 10000
+connected_components: 22
+average_dihedral_angle: 0.654173
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.328921, ymax = 0.542179, zmax = 0.975
+avg_depth: 1.828398
+center: (0.177016,0.284674,0.352375)
+scale: 0.455585
+principle_axes: (0.000076,-0.090443,0.995902), (0.001041,-0.995901,-0.090443), (-0.999999,-0.001044,-0.000019)
+principle_values: (0.032082,0.016732,0.008108)

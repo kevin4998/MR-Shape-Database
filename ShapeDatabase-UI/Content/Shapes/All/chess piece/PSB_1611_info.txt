@@ -1,0 +1,14 @@
+mid: 1611
+url: http://www.cs.unc.edu/~davemc/VRML/pawn.wrl
+ref_url: http://www.cs.unc.edu/~davemc/VRML
+format: wrl 
+pid: 9956
+polygons: 2944
+connected_components: 1
+average_dihedral_angle: 0.502085
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.512055, zmax = 0.512055
+avg_depth: 1.079250
+center: (0.612010,0.268527,0.268527)
+scale: 0.667576
+principle_axes: (1.000000,-0.000000,-0.000000), (0.000000,0.648185,-0.761483), (0.000000,0.761483,0.648185)
+principle_values: (0.099205,0.013644,0.013644)

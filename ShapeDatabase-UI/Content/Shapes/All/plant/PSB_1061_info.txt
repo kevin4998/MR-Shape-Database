@@ -1,0 +1,14 @@
+mid: 1061
+url: http://mowat.virtualave.net/short.3ds
+ref_url: http://mowat.virtualave.net/
+format: 3ds 
+pid: 26233
+polygons: 1956
+connected_components: 167
+average_dihedral_angle: 0.590338
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.93784, zmax = 0.884997
+avg_depth: 2.194688
+center: (0.513970,0.562131,0.454101)
+scale: 0.672780
+principle_axes: (0.760085,0.322250,0.564292), (-0.145913,0.930839,-0.335034), (-0.633230,0.172317,0.754537)
+principle_values: (0.059053,0.044860,0.019338)

@@ -1,0 +1,14 @@
+mid: 256
+url: http://cepcairo.bizland.com/free/Diver.zip
+ref_url: 
+format: xthreexds 
+pid: 47053
+polygons: 14424
+connected_components: 71
+average_dihedral_angle: 0.354282
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.55464, ymax = 0.975, zmax = 0.79986
+avg_depth: 1.390591
+center: (0.289691,0.443894,0.687550)
+scale: 0.455360
+principle_axes: (-0.000622,0.980718,-0.195427), (-0.031003,0.195314,0.980251), (0.999519,0.006668,0.030284)
+principle_values: (0.050257,0.009045,0.007581)

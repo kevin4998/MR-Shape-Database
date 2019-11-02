@@ -1,0 +1,14 @@
+mid: 191
+url: http://www.csci.csusb.edu/dick/me.wrl
+ref_url: http://www.csci.csusb.edu/dick/me.html
+format: wrl 
+pid: 2354
+polygons: 264
+connected_components: 17
+average_dihedral_angle: 1.27658
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.519, ymax = 0.975, zmax = 0.2151
+avg_depth: 1.497062
+center: (0.272000,0.512205,0.127866)
+scale: 0.561483
+principle_axes: (-0.000000,0.999865,0.016458), (1.000000,0.000000,-0.000000), (0.000000,-0.016458,0.999865)
+principle_values: (0.073408,0.014305,0.003763)

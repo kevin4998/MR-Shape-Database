@@ -1,0 +1,14 @@
+mid: 44
+url: http://www.avatara.com/avatars2/cliffraptor.wrl
+ref_url: http://www.avatara.com/avatars2/avatars2_list.html
+format: wrl 
+pid: 17082
+polygons: 798
+connected_components: 1
+average_dihedral_angle: 0.628034
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.458833, zmax = 0.2663
+avg_depth: 1.129054
+center: (0.499993,0.241975,0.133114)
+scale: 0.403018
+principle_axes: (1.000000,0.000009,0.000009), (0.000010,-0.998701,-0.050953), (0.000008,0.050953,-0.998701)
+principle_values: (0.041068,0.008999,0.001162)

@@ -1,0 +1,14 @@
+mid: 1801
+url: http://www.stonecarver.com/VRML/doorway.wrl
+ref_url: http://www.stonecarver.com/vrml.html
+format: wrl 
+pid: 2582
+polygons: 2046
+connected_components: 106
+average_dihedral_angle: 1.43293
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.780855, zmax = 0.838186
+avg_depth: 2.180031
+center: (0.494083,0.396319,0.397840)
+scale: 0.678202
+principle_axes: (-0.832946,0.050198,0.551073), (-0.092554,-0.994486,-0.049305), (0.545559,-0.092072,0.832999)
+principle_values: (0.060471,0.057308,0.006949)

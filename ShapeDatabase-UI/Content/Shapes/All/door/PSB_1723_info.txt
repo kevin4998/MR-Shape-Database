@@ -1,0 +1,14 @@
+mid: 1723
+url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/traindoor.wrl
+ref_url: http://www.cse.cuhk.edu.hk/~csc5460/task/prevWork/2001/NextStation/
+format: wrl 
+pid: 45772
+polygons: 252
+connected_components: 25
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.857435, ymax = 0.975, zmax = 0.104125
+avg_depth: 1.348813
+center: (0.437722,0.492200,0.077390)
+scale: 0.688249
+principle_axes: (-0.001533,0.998480,-0.055087), (-0.999999,-0.001531,0.000078), (-0.000007,0.055087,0.998482)
+principle_values: (0.080380,0.056919,0.000217)

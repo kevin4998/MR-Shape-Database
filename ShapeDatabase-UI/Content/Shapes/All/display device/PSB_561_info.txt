@@ -1,0 +1,14 @@
+mid: 561
+url: http://www.refraction.com/vrml/tv.wrl
+ref_url: http://www.refraction.com/vrml/gallery.shtml
+format: wrl 
+pid: 2593
+polygons: 272
+connected_components: 11
+average_dihedral_angle: 1.35853
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.629148, ymax = 0.975, zmax = 0.493218
+avg_depth: 3.025263
+center: (0.330532,0.236013,0.228705)
+scale: 0.536745
+principle_axes: (0.999809,0.000539,0.019524), (0.002060,-0.996955,-0.077946), (0.019423,0.077972,-0.996766)
+principle_values: (0.038758,0.023167,0.018618)

@@ -1,0 +1,14 @@
+mid: 307
+url: http://www.benjaminremembered.com/welcome/matrix/public/wrl/newhead/halfinish.WRL
+ref_url: http://www.benjaminremembered.com/welcome/matrix/public/oldindex.html
+format: wrl 
+pid: 6543
+polygons: 2955
+connected_components: 2
+average_dihedral_angle: 0.256079
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.639454, ymax = 0.975, zmax = 0.514008
+avg_depth: 1.031171
+center: (0.331364,0.480329,0.249312)
+scale: 0.684000
+principle_axes: (0.007672,-0.998214,0.059248), (0.999951,0.007292,-0.006629), (0.006185,0.059296,0.998221)
+principle_values: (0.076687,0.035745,0.013681)

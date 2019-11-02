@@ -1,0 +1,14 @@
+mid: 1559
+url: http://cepcairo.bizland.com/free/Model_t.zip
+ref_url: 
+format: xthreexds 
+pid: 48440
+polygons: 30000
+connected_components: 45
+average_dihedral_angle: 0.408423
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.416123, ymax = 0.541627, zmax = 0.975
+avg_depth: 2.283474
+center: (0.217170,0.251459,0.463177)
+scale: 0.574905
+principle_axes: (0.007114,0.070170,-0.997510), (-0.999946,0.008121,-0.006560), (-0.007641,-0.997502,-0.070224)
+principle_values: (0.071115,0.013391,0.009255)

@@ -1,0 +1,14 @@
+mid: 1262
+url: http://www.rccad.com/Gallery/Vrml/Hornet.wrl
+ref_url: 
+format: wrl 
+pid: 47967
+polygons: 1032
+connected_components: 14
+average_dihedral_angle: 0.466527
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.654949, zmax = 0.227855
+avg_depth: 1.573911
+center: (0.653037,0.340082,0.086232)
+scale: 0.406924
+principle_axes: (0.999829,-0.000879,0.018449), (0.000881,1.000000,-0.000105), (-0.018449,0.000121,0.999830)
+principle_values: (0.044157,0.008952,0.000826)

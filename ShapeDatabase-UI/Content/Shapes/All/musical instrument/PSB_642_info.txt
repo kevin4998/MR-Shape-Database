@@ -1,0 +1,14 @@
+mid: 642
+url: http://west.poly.edu/~bjones/dise97/piano.wrl
+ref_url: http://west.poly.edu/~bjones/dise97/beach.wrl
+format: wrl 
+pid: 16068
+polygons: 1104
+connected_components: 24
+average_dihedral_angle: 1.44978
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.690816, ymax = 0.806199, zmax = 0.975
+avg_depth: 1.629805
+center: (0.292770,0.336500,0.476727)
+scale: 0.647827
+principle_axes: (0.550891,-0.833237,-0.047284), (-0.815067,-0.549327,0.184134), (-0.179401,-0.062898,-0.981763)
+principle_values: (0.058746,0.028752,0.025878)

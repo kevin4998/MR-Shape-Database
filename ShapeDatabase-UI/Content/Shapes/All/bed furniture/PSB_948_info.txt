@@ -1,0 +1,14 @@
+mid: 948
+url: http://fraktali.849pm.com/programs/dxf/BED02.ZIP
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27472
+polygons: 9038
+connected_components: 44
+average_dihedral_angle: 0.625314
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.893382, zmax = 0.961408
+avg_depth: 1.545182
+center: (0.499570,0.223853,0.443016)
+scale: 0.926274
+principle_axes: (0.029961,0.091259,-0.995376), (-0.999551,0.003106,-0.029802), (0.000372,0.995822,0.091311)
+principle_values: (0.108262,0.101571,0.021170)

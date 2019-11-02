@@ -1,0 +1,14 @@
+mid: 319
+url: http://hiwaay.net/~crispen/worlds/avatar/bobhead.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7634
+polygons: 4374
+connected_components: 6
+average_dihedral_angle: 0.397814
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.839909, ymax = 0.975, zmax = 0.731995
+avg_depth: 1.069698
+center: (0.488929,0.528731,0.457119)
+scale: 0.711040
+principle_axes: (0.117543,-0.985792,0.119987), (-0.978301,-0.094189,0.184539), (0.170616,0.139075,0.975473)
+principle_values: (0.060430,0.057222,0.017758)

@@ -1,0 +1,14 @@
+mid: 1180
+url: http://mowat.virtualave.net/pmig29cl.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26378
+polygons: 1058
+connected_components: 1
+average_dihedral_angle: 0.565495
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.656849, ymax = 0.231708, zmax = 0.975
+avg_depth: 1.257925
+center: (0.340905,0.080737,0.355780)
+scale: 0.403995
+principle_axes: (-0.000085,-0.000025,-1.000000), (1.000000,0.000113,-0.000085), (0.000113,-1.000000,0.000025)
+principle_values: (0.036265,0.012439,0.000986)

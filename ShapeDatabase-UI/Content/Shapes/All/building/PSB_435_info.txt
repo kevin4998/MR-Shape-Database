@@ -1,0 +1,14 @@
+mid: 435
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1998/jgeiger/Hw2/house.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1998/jgeiger/Hw2/?D=D
+format: wrl 
+pid: 42585
+polygons: 251
+connected_components: 47
+average_dihedral_angle: 1.38958
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.345625, zmax = 0.5
+avg_depth: 3.381890
+center: (0.496769,0.108229,0.265910)
+scale: 0.530937
+principle_axes: (-0.999942,0.001758,0.010672), (0.010727,0.035554,0.999310), (-0.001377,-0.999366,0.035571)
+principle_values: (0.053628,0.013888,0.011666)

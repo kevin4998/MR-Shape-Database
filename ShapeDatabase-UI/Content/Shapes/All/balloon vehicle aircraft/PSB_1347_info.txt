@@ -1,0 +1,14 @@
+mid: 1347
+url: http://www.3dcafe.com/models/blimp.zip
+ref_url: http://www.3dcafe.com/asp/air_pic.asp
+format: 3ds 
+pid: 26448
+polygons: 6274
+connected_components: 24
+average_dihedral_angle: 0.308043
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.312086, ymax = 0.419881, zmax = 0.975
+avg_depth: 1.125447
+center: (0.169033,0.235864,0.483669)
+scale: 0.559872
+principle_axes: (-0.000584,-0.015665,0.999877), (0.001480,0.999876,0.015666), (-0.999999,0.001489,-0.000561)
+principle_values: (0.069341,0.010966,0.006784)

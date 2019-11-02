@@ -1,0 +1,14 @@
+mid: 971
+url: http://www.rcwalker.freeserve.co.uk/vrml_tree_exs/pink_roses.wrl
+ref_url: http://www.rcwalker.freeserve.co.uk/vrml_tree_exs/index.htm
+format: wrl 
+pid: 16664
+polygons: 3676
+connected_components: 510
+average_dihedral_angle: 0.388831
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.629853, zmax = 0.57088
+avg_depth: 2.206725
+center: (0.509323,0.430358,0.246171)
+scale: 0.575581
+principle_axes: (0.982500,0.042281,-0.181400), (-0.086227,-0.760010,-0.644166), (0.165101,-0.648534,0.743064)
+principle_values: (0.073727,0.012709,0.007899)

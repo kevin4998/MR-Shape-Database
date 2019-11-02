@@ -1,0 +1,14 @@
+mid: 434
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2001/vberezin/Hw1/hw1.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2001/vberezin/Hw1/?D=D
+format: wrl 
+pid: 35331
+polygons: 26
+connected_components: 3
+average_dihedral_angle: 1.38628
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.658333, ymax = 0.975, zmax = 0.975
+avg_depth: 1.064086
+center: (0.343984,0.417100,0.500463)
+scale: 0.955012
+principle_axes: (0.001706,0.019172,0.999815), (-0.018496,-0.999645,0.019200), (0.999827,-0.018525,-0.001351)
+principle_values: (0.098054,0.089691,0.046727)

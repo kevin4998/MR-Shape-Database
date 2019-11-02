@@ -1,0 +1,14 @@
+mid: 1458
+url: http://www.cg.tuwien.ac.at/research/vr/lodestar/results/galleon.wrl.gz
+ref_url: http://www.cg.tuwien.ac.at/research/vr/lodestar/results/
+format: wrl 
+pid: 6187
+polygons: 4698
+connected_components: 12
+average_dihedral_angle: 0.614956
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.89088, zmax = 0.554814
+avg_depth: 1.642958
+center: (0.528731,0.373157,0.287259)
+scale: 0.601861
+principle_axes: (-0.894070,0.447882,0.006331), (0.447610,0.893879,-0.025012), (0.016862,0.019529,0.999667)
+principle_values: (0.056211,0.033613,0.011190)

@@ -1,0 +1,14 @@
+mid: 525
+url: http://www.infoassets.com/vrml/models/v205v1.wrl
+ref_url: http://www.infoassets.com/vrml/models/
+format: wrl 
+pid: 4986
+polygons: 1285
+connected_components: 43
+average_dihedral_angle: 0.614182
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.302908, zmax = 0.291153
+avg_depth: 1.283262
+center: (0.502970,0.151282,0.146229)
+scale: 0.583264
+principle_axes: (0.999986,-0.002092,0.004768), (-0.001687,-0.996504,-0.083524), (-0.004927,-0.083515,0.996494)
+principle_values: (0.085422,0.006478,0.006139)

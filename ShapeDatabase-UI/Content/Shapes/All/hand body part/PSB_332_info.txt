@@ -1,0 +1,14 @@
+mid: 332
+url: http://fraktali.849pm.com/programs/wrl/object/Anatomy.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 32281
+polygons: 2392
+connected_components: 1
+average_dihedral_angle: 0.275635
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.858363, ymax = 0.783293, zmax = 0.975
+avg_depth: 1.121631
+center: (0.460368,0.431202,0.495956)
+scale: 0.749327
+principle_axes: (0.147023,-0.118949,0.981955), (0.950559,-0.257544,-0.173519), (-0.273537,-0.958917,-0.075203)
+principle_values: (0.069856,0.046854,0.029829)

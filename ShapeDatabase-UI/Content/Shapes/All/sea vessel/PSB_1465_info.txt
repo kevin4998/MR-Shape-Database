@@ -1,0 +1,14 @@
+mid: 1465
+url: http://www.3dcafe.com/models/sub2.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 28848
+polygons: 10583
+connected_components: 334
+average_dihedral_angle: 0.500028
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.227252, zmax = 0.151762
+avg_depth: 1.138119
+center: (0.496761,0.073275,0.081871)
+scale: 0.416306
+principle_axes: (0.996976,0.017706,0.075661), (0.015766,-0.999533,0.026164), (0.076089,-0.024892,-0.996790)
+principle_values: (0.057266,0.000732,0.000343)

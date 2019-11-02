@@ -1,0 +1,14 @@
+mid: 1562
+url: http://www.3dheaven.net/Modelle/cars/Anime_Monstertruck.zip
+ref_url: 
+format: xthreexds 
+pid: 46875
+polygons: 21840
+connected_components: 394
+average_dihedral_angle: 0.562761
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.661064, zmax = 0.654089
+avg_depth: 2.275801
+center: (0.495068,0.277745,0.339289)
+scale: 0.746823
+principle_axes: (-0.999199,0.038882,0.009477), (0.009347,-0.003541,0.999950), (-0.038914,-0.999238,-0.003175)
+principle_values: (0.083508,0.040256,0.023160)

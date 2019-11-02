@@ -1,0 +1,14 @@
+mid: 441
+url: http://www.ocnus.com/models/DXF/house1.wrl.gz
+ref_url: http://www.ocnus.com/models/DXF/
+format: wrl 
+pid: 17737
+polygons: 2283
+connected_components: 377
+average_dihedral_angle: 1.4711
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.677893, ymax = 0.437597, zmax = 0.975
+avg_depth: 3.089516
+center: (0.306647,0.208521,0.484606)
+scale: 0.587831
+principle_axes: (-0.152124,0.002727,0.988358), (-0.974342,0.167420,-0.150429), (0.165881,0.985882,0.022811)
+principle_values: (0.060529,0.026578,0.010741)

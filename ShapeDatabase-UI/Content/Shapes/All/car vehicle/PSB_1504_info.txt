@@ -1,0 +1,14 @@
+mid: 1504
+url: http://www.forwarddesign.com/objects/vehicles/Indycar3.zip
+ref_url: http://www.forwarddesign.com/3dobjects.htm
+format: xthreexds 
+pid: 25508
+polygons: 3269
+connected_components: 254
+average_dihedral_angle: 1.14945
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.450467, ymax = 0.212706, zmax = 0.975
+avg_depth: 2.388196
+center: (0.238141,0.091561,0.541099)
+scale: 0.441772
+principle_axes: (0.001387,-0.074146,0.997246), (-0.999999,-0.000371,0.001364), (0.000269,-0.997247,-0.074146)
+principle_values: (0.048970,0.011077,0.001423)

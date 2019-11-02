@@ -1,0 +1,14 @@
+mid: 1183
+url: http://www.robotgroup.org/lubbock/vrml/MiG-35M.wrl
+ref_url: http://www.robotgroup.org/lubbock/vrml/
+format: wrl 
+pid: 9062
+polygons: 780
+connected_components: 13
+average_dihedral_angle: 0.458465
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.826917, zmax = 0.222658
+avg_depth: 1.696254
+center: (0.676773,0.425945,0.094779)
+scale: 0.427017
+principle_axes: (0.999994,0.000054,-0.003358), (-0.000054,1.000000,-0.000107), (-0.003358,-0.000108,-0.999994)
+principle_values: (0.037846,0.018538,0.001089)

@@ -1,0 +1,14 @@
+mid: 387
+url: http://www.cs.ucf.edu/courses/ids5937/vrml/popup/tom_.wrl
+ref_url: http://www.cs.ucf.edu/courses/ids5937/vrml/popup/
+format: wrl 
+pid: 6364
+polygons: 1668
+connected_components: 9
+average_dihedral_angle: 1.69842
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.422906, zmax = 0.920334
+avg_depth: 1.915658
+center: (0.500026,0.212071,0.473632)
+scale: 0.917818
+principle_axes: (0.013331,-0.004136,0.999903), (-0.999911,-0.000079,0.013331), (-0.000024,0.999991,0.004137)
+principle_values: (0.104757,0.103643,0.012079)

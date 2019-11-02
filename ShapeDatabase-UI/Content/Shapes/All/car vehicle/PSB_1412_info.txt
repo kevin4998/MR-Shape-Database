@@ -1,0 +1,14 @@
+mid: 1412
+url: http://www.ocnus.com/models/Military/t62.wrl.gz
+ref_url: http://www.ocnus.com/models/Military/
+format: wrl 
+pid: 17866
+polygons: 6962
+connected_components: 259
+average_dihedral_angle: 0.920218
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.302123, zmax = 0.345591
+avg_depth: 2.369103
+center: (0.632463,0.118502,0.183426)
+scale: 0.418468
+principle_axes: (0.999994,0.001877,0.003012), (0.002973,0.020301,-0.999789), (0.001938,-0.999792,-0.020296)
+principle_values: (0.034399,0.011866,0.003070)

@@ -1,0 +1,14 @@
+mid: 1033
+url: http://tecfa.unige.ch/vrml/objects/acuris/Plant.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/acuris/?D=A
+format: wrl 
+pid: 46461
+polygons: 480
+connected_components: 16
+average_dihedral_angle: 3.07706
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.491013, ymax = 0.975, zmax = 0.541697
+avg_depth: 1.909623
+center: (0.272369,0.409270,0.296924)
+scale: 0.583010
+principle_axes: (0.075232,-0.995986,-0.048506), (-0.348197,0.019343,-0.937222), (-0.934398,-0.087399,0.345344)
+principle_values: (0.081685,0.009226,0.006523)

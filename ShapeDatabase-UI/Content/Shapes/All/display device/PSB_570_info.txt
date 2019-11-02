@@ -1,0 +1,14 @@
+mid: 570
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1998/maoki/Hw5/tv.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/1998/maoki/Hw5/?D=D
+format: wrl 
+pid: 42658
+polygons: 1014
+connected_components: 321
+average_dihedral_angle: 0.418519
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.831863, ymax = 0.975, zmax = 0.509118
+avg_depth: 1.780652
+center: (0.419310,0.507486,0.268677)
+scale: 0.855123
+principle_axes: (-0.990994,0.129637,0.033544), (-0.129767,-0.991543,-0.001731), (0.033036,-0.006069,0.999436)
+principle_values: (0.087658,0.075107,0.030902)

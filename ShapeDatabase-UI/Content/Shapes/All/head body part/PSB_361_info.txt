@@ -1,0 +1,14 @@
+mid: 361
+url: http://home.t-online.de/home/kiwano5/circe.wrl
+ref_url: http://www.imagos.fl.net.au/breeze/bdplug.htm
+format: wrl 
+pid: 41490
+polygons: 557
+connected_components: 3
+average_dihedral_angle: 0.478896
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.675685, ymax = 0.975, zmax = 0.740753
+avg_depth: 1.225052
+center: (0.350547,0.589800,0.389638)
+scale: 0.746813
+principle_axes: (0.004096,0.814672,-0.579907), (-0.999907,0.010873,0.008212), (0.012995,0.579820,0.814641)
+principle_values: (0.062066,0.042910,0.036785)

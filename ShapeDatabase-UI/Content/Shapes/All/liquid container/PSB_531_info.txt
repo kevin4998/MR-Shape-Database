@@ -1,0 +1,14 @@
+mid: 531
+url: http://mowat.virtualave.net/budvase.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26926
+polygons: 2592
+connected_components: 1
+average_dihedral_angle: 0.356826
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.495107, ymax = 0.975, zmax = 0.495135
+avg_depth: 1.746834
+center: (0.260045,0.356608,0.260068)
+scale: 0.624296
+principle_axes: (-0.000000,-1.000000,-0.000001), (-0.002508,0.000001,-0.999997), (-0.999997,0.000000,0.002508)
+principle_values: (0.095928,0.010438,0.010437)

@@ -1,0 +1,14 @@
+mid: 1028
+url: http://www.3dcafe.com/models/cactus.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: xthreexds 
+pid: 29071
+polygons: 12840
+connected_components: 1602
+average_dihedral_angle: 0.9071
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.862012, ymax = 0.975, zmax = 0.853213
+avg_depth: 1.682685
+center: (0.447394,0.526904,0.439673)
+scale: 0.671056
+principle_axes: (-0.012402,0.999913,-0.004461), (-0.996239,-0.011973,0.085813), (-0.085752,-0.005508,-0.996301)
+principle_values: (0.066015,0.027381,0.024934)

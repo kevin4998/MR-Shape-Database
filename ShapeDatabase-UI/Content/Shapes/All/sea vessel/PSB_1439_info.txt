@@ -1,0 +1,14 @@
+mid: 1439
+url: http://ece.uwaterloo.ca/~broehl/vrml/lnvj/cdrom/software/jdk/WIN_32/JAVA.ZIP
+ref_url: http://ece.uwaterloo.ca/~broehl/vrml/lnvj/cdrom/software/jdk/WIN_32/?D=A
+format: obj 
+pid: 30249
+polygons: 848
+connected_components: 1
+average_dihedral_angle: 0.617711
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.2687, zmax = 0.122699
+avg_depth: 1.112706
+center: (0.515542,0.097367,0.073719)
+scale: 0.409440
+principle_axes: (-0.999986,0.005081,-0.001089), (0.005082,0.999987,-0.000082), (0.001088,-0.000087,-0.999999)
+principle_values: (0.053306,0.001547,0.000909)

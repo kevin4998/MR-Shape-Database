@@ -1,0 +1,14 @@
+mid: 18
+url: http://fraktali.849pm.com/programs/dxf/spider2.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27500
+polygons: 8324
+connected_components: 44
+average_dihedral_angle: 0.396644
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.423912, zmax = 0.786683
+avg_depth: 1.486685
+center: (0.497689,0.238944,0.313128)
+scale: 0.447698
+principle_axes: (0.113920,-0.068448,-0.991129), (-0.993487,-0.010349,-0.113476), (0.002490,-0.997601,0.069181)
+principle_values: (0.033334,0.029237,0.005021)

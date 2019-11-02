@@ -1,0 +1,14 @@
+mid: 347
+url: http://www.3dcafe.com/models/angel.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: lwo 
+pid: 27075
+polygons: 2070
+connected_components: 392
+average_dihedral_angle: 1.36109
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.577333, ymax = 0.975, zmax = 0.761331
+avg_depth: 2.315026
+center: (0.300598,0.601592,0.373962)
+scale: 0.683118
+principle_axes: (-0.018839,0.997307,0.070874), (-0.044671,0.069976,-0.996548), (0.998824,0.021940,-0.043232)
+principle_values: (0.063316,0.032512,0.026076)

@@ -1,0 +1,14 @@
+mid: 405
+url: http://www.flair-twl.de/StA/moscheeSINAN.wrl
+ref_url: http://www.flair-twl.de/studienarbeit.htm
+format: wrl 
+pid: 41070
+polygons: 41835
+connected_components: 128
+average_dihedral_angle: 0.827982
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.869668, zmax = 0.944047
+avg_depth: 4.415574
+center: (0.498125,0.328743,0.488611)
+scale: 0.869155
+principle_axes: (-0.997558,0.003413,-0.069759), (-0.069628,0.029758,0.997129), (0.005480,0.999551,-0.029448)
+principle_values: (0.086854,0.079349,0.032850)

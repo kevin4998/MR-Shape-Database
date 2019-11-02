@@ -1,0 +1,14 @@
+mid: 1354
+url: http://www.angelfire.lycos.com/scifi/captainwuli/wuliprize.wrl
+ref_url: http://www.angelfire.com/scifi/captainwuli/playgrnd.wrl
+format: wrl 
+pid: 14798
+polygons: 11368
+connected_components: 23
+average_dihedral_angle: 0.273075
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.279811, zmax = 0.504878
+avg_depth: 2.104801
+center: (0.661380,0.191928,0.265785)
+scale: 0.349933
+principle_axes: (0.999869,0.001869,-0.016090), (-0.016120,0.017438,-0.999718), (-0.001588,0.999846,0.017465)
+principle_values: (0.028688,0.009966,0.003183)

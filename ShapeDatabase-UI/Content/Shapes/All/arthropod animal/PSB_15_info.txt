@@ -1,0 +1,14 @@
+mid: 15
+url: http://philliphansel.com/avatars/delicate.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6092
+polygons: 724
+connected_components: 3
+average_dihedral_angle: 0.743204
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.416924, zmax = 0.503842
+avg_depth: 1.047803
+center: (0.453888,0.210723,0.241446)
+scale: 0.471106
+principle_axes: (0.948499,-0.100672,-0.300359), (0.285270,0.683704,0.671692), (0.137736,-0.722782,0.677211)
+principle_values: (0.055596,0.013998,0.000031)

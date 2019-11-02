@@ -1,33 +1,38 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net48</TargetFramework>
-    <StartupObject>ShapeDatabase.Program</StartupObject>
+    <StartupObject></StartupObject>
+    <Authors>Kevin Westerbaan; Guus de Jonge</Authors>
+    <Company />
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Description>A content-based 3D shape retrieval system that, given a 3D shape, finds the most similar shapes in a given 3D shape database build for the University of Utrecht Multimedia Retrieval course.</Description>
+    <RepositoryUrl>https://github.com/kevin4998/MR-Shape-Database</RepositoryUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageTags>Multimedia Retrieval, 3D, Shapes</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/kevin4998/MR-Shape-Database</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <ApplicationIcon />
+    <AssemblyName>ShapeDatabase-Library</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE</DefineConstants>
-    <WarningLevel>2</WarningLevel>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>0</WarningLevel>
+    <Optimize>false</Optimize>
+    <OutputPath></OutputPath>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Content\Query\" />
-    <Folder Include="Content\Vectors\" />
-    <Folder Include="Content\Shapes\Final\" />
-    <Folder Include="Content\Shapes\Failed\" />
-    <Folder Include="Content\Shapes\Temp\" />
-    <Folder Include="UI\" />
-    <Folder Include="Content\Shapes\All\" />
-    <Folder Include="Content\Shapes\Small\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Accord.MachineLearning" Version="3.8.0" />
     <PackageReference Include="Accord.Statistics" Version="3.8.0" />
     <PackageReference Include="CommandLineParser" Version="2.6.0" />
-    <PackageReference Include="CsvHelper" Version="12.1.2" />
+    <PackageReference Include="CsvHelper" Version="12.1.3" />
     <PackageReference Include="geometry3Sharp" Version="1.0.324" />
+    <PackageReference Include="ini-parser" Version="2.5.2" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -36,33 +41,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Content\Shapes\Initial\61.off">
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Shapes\Initial\Chair\LDB_101.off">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\Shapes\Initial\Chair\LDB_102.off">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\Shapes\Initial\Sign\m1674.off">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\Shapes\Initial\Chair\PSB_Chair.off">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\Shapes\Initial\Chair\PSB_Green_Chair.off">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="OpenTK" Version="3.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="HNSW.Net">
-      <HintPath>HNSW.Net.dll</HintPath>
+      <HintPath>Libs\HNSW.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -83,24 +71,5 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
-  <ItemGroup>
-    <None Update="HNSW.Net.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="UI\shader.frag">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="UI\shader.vert">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-		<None Update="UI\lighting.frag">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
-  </ItemGroup>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="echo start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y&#xD;&#xA;start XCOPY &quot;$(ProjectDir)Content&quot; &quot;$(TargetDir)Content&quot; /s /e /k /r /y" />
-  </Target>
 
 </Project>

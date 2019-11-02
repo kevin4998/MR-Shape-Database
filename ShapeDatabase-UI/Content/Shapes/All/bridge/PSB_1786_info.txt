@@ -1,0 +1,14 @@
+mid: 1786
+url: http://64.198.60.83/baument/Models/ropebridge1.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 26297
+polygons: 21830
+connected_components: 89
+average_dihedral_angle: 0.541034
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.122615, zmax = 0.066524
+avg_depth: 1.982054
+center: (0.502252,0.059390,0.045406)
+scale: 0.392617
+principle_axes: (-0.999991,-0.004187,0.000071), (0.004187,-0.999990,-0.001281), (0.000076,-0.001281,0.999999)
+principle_values: (0.050284,0.000579,0.000231)

@@ -1,0 +1,14 @@
+mid: 409
+url: http://www.clr.utoronto.ca/VRML/CAMPUS/conhall/conhall.wrl
+ref_url: http://www.clr.utoronto.ca/PEOPLE/RUSS/C-98/c98-6.htm
+format: wrl 
+pid: 8210
+polygons: 2027
+connected_components: 90
+average_dihedral_angle: 0.602197
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.221457, zmax = 0.708173
+avg_depth: 1.425784
+center: (0.545852,0.099222,0.351523)
+scale: 0.607080
+principle_axes: (0.891243,0.024618,-0.452857), (0.453116,-0.005888,0.891432), (-0.019279,0.999680,0.016403)
+principle_values: (0.085135,0.021954,0.001937)

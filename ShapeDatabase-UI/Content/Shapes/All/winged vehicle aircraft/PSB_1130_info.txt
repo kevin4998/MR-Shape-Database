@@ -1,0 +1,14 @@
+mid: 1130
+url: http://www.3dcafe.com/models/bi_plane.zip
+ref_url: http://www.3dcafe.com/asp/air_pic.asp
+format: xthreexds 
+pid: 26280
+polygons: 4520
+connected_components: 25
+average_dihedral_angle: 0.495028
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.459182, zmax = 0.800606
+avg_depth: 1.314920
+center: (0.502664,0.310588,0.527010)
+scale: 0.563579
+principle_axes: (0.999999,-0.000376,0.001257), (-0.001176,0.167474,0.985876), (0.000582,0.985876,-0.167474)
+principle_values: (0.048500,0.033100,0.010780)

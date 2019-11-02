@@ -1,0 +1,14 @@
+mid: 26
+url: ftp://avalon.viewpoint.com/pub/objects/animals/blackwidow_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 48394
+polygons: 10274
+connected_components: 54
+average_dihedral_angle: 0.270973
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.845772, ymax = 0.424813, zmax = 0.975
+avg_depth: 1.320621
+center: (0.439791,0.217351,0.590264)
+scale: 0.468977
+principle_axes: (0.024592,-0.188665,0.981733), (0.995215,-0.088272,-0.041893), (-0.094564,-0.978066,-0.185592)
+principle_values: (0.042596,0.023566,0.005850)

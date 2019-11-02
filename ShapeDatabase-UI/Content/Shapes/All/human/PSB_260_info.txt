@@ -1,0 +1,14 @@
+mid: 260
+url: http://www.geocities.com/ResearchTriangle/2298/shanghai.wrl
+ref_url: http://www.geocities.com/ResearchTriangle/2298/download.htm
+format: wrl 
+pid: 10701
+polygons: 2102
+connected_components: 24
+average_dihedral_angle: 0.587133
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.442046, ymax = 0.975, zmax = 0.349292
+avg_depth: 1.911031
+center: (0.235120,0.572453,0.203040)
+scale: 0.472039
+principle_axes: (-0.015307,0.999001,0.041974), (-0.997190,-0.018331,0.072634), (-0.073331,0.040744,-0.996475)
+principle_values: (0.066381,0.004401,0.002419)

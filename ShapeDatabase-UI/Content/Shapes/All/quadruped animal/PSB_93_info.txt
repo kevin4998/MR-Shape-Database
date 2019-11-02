@@ -1,0 +1,14 @@
+mid: 93
+url: http://www.multimania.com/eclipse/mondes/monde02/objets/hyene/hyenen.wrl
+ref_url: http://www.multimania.com/eclipse/mondes/monde02/safari.wrl
+format: wrl 
+pid: 16867
+polygons: 464
+connected_components: 23
+average_dihedral_angle: 1.30166
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.657726, zmax = 0.29666
+avg_depth: 2.088161
+center: (0.555010,0.392663,0.158852)
+scale: 0.522305
+principle_axes: (-0.936902,0.349552,-0.005234), (0.349589,0.936844,-0.010552), (0.001215,-0.011716,-0.999931)
+principle_values: (0.061650,0.017480,0.004051)

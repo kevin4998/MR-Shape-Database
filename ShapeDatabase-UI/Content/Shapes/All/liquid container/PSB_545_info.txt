@@ -1,0 +1,14 @@
+mid: 545
+url: http://cepcairo.bizland.com/free/Pottery5.zip
+ref_url: 
+format: xthreexds 
+pid: 48163
+polygons: 800
+connected_components: 1
+average_dihedral_angle: 0.323483
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.409609, zmax = 0.975
+avg_depth: 1.208100
+center: (0.500003,0.244360,0.500000)
+scale: 0.697341
+principle_axes: (-0.707115,0.000012,0.707099), (-0.707099,0.000007,-0.707115), (0.000013,1.000000,-0.000003)
+principle_values: (0.057224,0.057224,0.013403)

@@ -1,0 +1,14 @@
+mid: 1599
+url: http://www.cs.technion.ac.il/~cs236606/vrml/bishop.wrl
+ref_url: http://www.cs.technion.ac.il/~cs236606/vrml/
+format: wrl 
+pid: 4742
+polygons: 496
+connected_components: 1
+average_dihedral_angle: 0.596649
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.449157, ymax = 0.975, zmax = 0.449157
+avg_depth: 1.090748
+center: (0.237078,0.343934,0.237078)
+scale: 0.584767
+principle_axes: (0.000000,-1.000000,0.000000), (0.705610,0.000000,0.708600), (-0.708600,0.000000,0.705610)
+principle_values: (0.085353,0.008150,0.008150)

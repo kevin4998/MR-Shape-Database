@@ -1,0 +1,14 @@
+mid: 1186
+url: http://www.anomalies.net/ident/vrml/fishbat_wrl.wrl
+ref_url: http://www.anomalies.net/ident/vrml/
+format: wrl 
+pid: 5855
+polygons: 1454
+connected_components: 2
+average_dihedral_angle: 0.504711
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.49452, ymax = 0.975, zmax = 0.245942
+avg_depth: 1.131498
+center: (0.259827,0.551946,0.100485)
+scale: 0.429036
+principle_axes: (-0.000037,0.999177,0.040562), (-1.000000,-0.000047,0.000234), (-0.000236,0.040562,-0.999177)
+principle_values: (0.053792,0.005296,0.001225)

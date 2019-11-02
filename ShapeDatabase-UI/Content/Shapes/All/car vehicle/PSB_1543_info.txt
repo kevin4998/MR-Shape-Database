@@ -1,0 +1,14 @@
+mid: 1543
+url: http://www.3dcafe.com/../models/silverlr.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: xthreexds 
+pid: 30522
+polygons: 548
+connected_components: 17
+average_dihedral_angle: 0.612849
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.28357, zmax = 0.457384
+avg_depth: 1.276255
+center: (0.470955,0.132678,0.241189)
+scale: 0.602451
+principle_axes: (0.999272,-0.038157,0.000027), (0.000027,0.000002,-1.000000), (-0.038157,-0.999272,-0.000003)
+principle_values: (0.078277,0.017853,0.004267)

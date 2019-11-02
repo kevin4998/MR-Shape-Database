@@ -1,0 +1,14 @@
+mid: 173
+url: http://www.cable.com/wrl/woman.wrl
+ref_url: http://www.cable.com/wrl/
+format: wrl 
+pid: 6226
+polygons: 1702
+connected_components: 45
+average_dihedral_angle: 0.543643
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.286928, ymax = 0.975, zmax = 0.177397
+avg_depth: 1.480282
+center: (0.156628,0.515569,0.087285)
+scale: 0.442614
+principle_axes: (-0.000577,0.999909,0.013477), (0.999999,0.000558,0.001455), (0.001448,0.013478,-0.999908)
+principle_values: (0.060590,0.003474,0.001098)

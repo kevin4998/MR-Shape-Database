@@ -1,0 +1,14 @@
+mid: 479
+url: http://bruno.postle.net/world_of_vrml_tent_architecture/worlds/tent_003.wrl
+ref_url: http://bruno.postle.net/world_of_vrml_tent_architecture/
+format: wrl 
+pid: 9388
+polygons: 1056
+connected_components: 20
+average_dihedral_angle: 0.30768
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.298318, zmax = 0.51947
+avg_depth: 1.023799
+center: (0.500000,0.140317,0.272225)
+scale: 0.528550
+principle_axes: (-1.000000,-0.000000,0.000256), (0.000256,0.000007,1.000000), (0.000000,-1.000000,0.000007)
+principle_values: (0.063435,0.015561,0.001718)

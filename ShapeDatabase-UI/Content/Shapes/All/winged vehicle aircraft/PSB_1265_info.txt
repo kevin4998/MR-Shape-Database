@@ -1,0 +1,14 @@
+mid: 1265
+url: ftp://avalon.viewpoint.com/pub/objects/military/planes/bomber_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 48531
+polygons: 680
+connected_components: 103
+average_dihedral_angle: 0.924391
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.149523, zmax = 0.383441
+avg_depth: 1.902940
+center: (0.708261,0.065486,0.206327)
+scale: 0.326135
+principle_axes: (0.999708,0.024168,-0.000850), (0.000936,-0.003523,0.999993), (0.024165,-0.999702,-0.003545)
+principle_values: (0.034773,0.003655,0.000604)

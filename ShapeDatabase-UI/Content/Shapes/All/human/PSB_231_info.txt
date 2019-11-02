@@ -1,0 +1,14 @@
+mid: 231
+url: http://www.geocities.com/Paris/Tower/5121/batman.zip
+ref_url: http://www.geocities.com/Paris/Tower/5121/3d.html
+format: lwo 
+pid: 30247
+polygons: 24959
+connected_components: 45
+average_dihedral_angle: 0.287587
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.90524, ymax = 0.975, zmax = 0.348658
+avg_depth: 1.773304
+center: (0.477077,0.420893,0.183098)
+scale: 0.545595
+principle_axes: (0.047424,-0.990613,-0.128210), (0.998726,0.049244,-0.011062), (-0.017272,0.127521,-0.991685)
+principle_values: (0.060122,0.021196,0.004166)

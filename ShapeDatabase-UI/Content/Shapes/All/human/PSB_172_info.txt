@@ -1,0 +1,14 @@
+mid: 172
+url: http://philliphansel.com/avatars/fembot.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6021
+polygons: 1413
+connected_components: 19
+average_dihedral_angle: 0.53911
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.316299, ymax = 0.975, zmax = 0.15938
+avg_depth: 1.397475
+center: (0.169848,0.522927,0.082344)
+scale: 0.452429
+principle_axes: (0.004817,0.999376,0.034985), (-0.999988,0.004805,0.000415), (-0.000247,0.034986,-0.999388)
+principle_values: (0.062450,0.004248,0.000785)

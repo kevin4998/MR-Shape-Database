@@ -1,0 +1,14 @@
+mid: 164
+url: http://www.avatara.com/avatars2/armyman.wrl
+ref_url: http://www.avatara.com/avatars2/avatars1_list.html
+format: wrl 
+pid: 4333
+polygons: 1396
+connected_components: 15
+average_dihedral_angle: 0.472306
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.326765, ymax = 0.975, zmax = 0.202706
+avg_depth: 1.582326
+center: (0.175873,0.483892,0.102484)
+scale: 0.473822
+principle_axes: (-0.000014,0.999592,0.028570), (1.000000,0.000019,-0.000146), (-0.000147,0.028570,-0.999592)
+principle_values: (0.064857,0.005587,0.001470)

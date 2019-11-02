@@ -1,0 +1,14 @@
+mid: 1674
+url: http://fraktali.849pm.com/programs/wrl/object/Outdoor.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31454
+polygons: 78
+connected_components: 5
+average_dihedral_angle: 1.34912
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.596402, ymax = 0.975, zmax = 0.0837782
+avg_depth: 1.103851
+center: (0.343395,0.651598,0.053947)
+scale: 0.487970
+principle_axes: (-0.288644,0.957435,0.001488), (0.957436,0.288643,0.000814), (-0.000350,-0.001660,0.999999)
+principle_values: (0.053850,0.019227,0.000339)

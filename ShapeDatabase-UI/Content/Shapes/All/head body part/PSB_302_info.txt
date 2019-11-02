@@ -1,0 +1,14 @@
+mid: 302
+url: http://www.accad.ohio-state.edu/~jgladden/GradCourses/ProductionCourse-SP01/Data/VRML/clone.wrl
+ref_url: http://www.accad.ohio-state.edu/~jgladden/Links/
+format: wrl 
+pid: 38773
+polygons: 3972
+connected_components: 1
+average_dihedral_angle: 0.177854
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.805413, ymax = 0.975, zmax = 0.630129
+avg_depth: 1.039097
+center: (0.414995,0.529108,0.423828)
+scale: 0.652414
+principle_axes: (-0.170590,0.977886,-0.120986), (0.984555,0.174071,0.018730), (-0.039376,0.115922,0.992478)
+principle_values: (0.063596,0.040395,0.011482)

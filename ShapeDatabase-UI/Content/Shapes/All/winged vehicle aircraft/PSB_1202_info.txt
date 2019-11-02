@@ -1,0 +1,14 @@
+mid: 1202
+url: http://mowat.virtualave.net/pyak141s.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26343
+polygons: 1332
+connected_components: 9
+average_dihedral_angle: 0.636681
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.566055, ymax = 0.23369, zmax = 0.975
+avg_depth: 1.583914
+center: (0.295374,0.087174,0.388228)
+scale: 0.392134
+principle_axes: (-0.000735,0.061701,-0.998094), (-1.000000,-0.000099,0.000730), (-0.000054,0.998095,0.061702)
+principle_values: (0.042961,0.006008,0.000964)

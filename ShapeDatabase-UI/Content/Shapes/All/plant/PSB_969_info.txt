@@ -1,0 +1,14 @@
+mid: 969
+url: http://w1.520.telia.com/~u52015187/downloads/bush.zip
+ref_url: 
+format: xthreexds 
+pid: 47846
+polygons: 4697
+connected_components: 2651
+average_dihedral_angle: 0.176668
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.739895, zmax = 0.876979
+avg_depth: 1.905421
+center: (0.566124,0.393708,0.387052)
+scale: 0.581882
+principle_axes: (0.978697,-0.165792,0.121103), (0.116947,-0.034643,-0.992534), (0.168749,0.985552,-0.014516)
+principle_values: (0.044674,0.035699,0.015305)

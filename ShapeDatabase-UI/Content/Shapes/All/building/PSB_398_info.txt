@@ -1,0 +1,14 @@
+mid: 398
+url: http://home.online.no/~bergfald/vrml/linux2.wrl
+ref_url: http://home.online.no/~bergfald/vrml.html
+format: wrl 
+pid: 10066
+polygons: 946
+connected_components: 15
+average_dihedral_angle: 0.69402
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.870248, ymax = 0.642704, zmax = 0.975
+avg_depth: 2.001755
+center: (0.446887,0.281291,0.500065)
+scale: 0.623210
+principle_axes: (0.004626,-0.091849,0.995762), (-0.999989,0.000161,0.004660), (0.000588,0.995773,0.091847)
+principle_values: (0.054459,0.036519,0.016352)

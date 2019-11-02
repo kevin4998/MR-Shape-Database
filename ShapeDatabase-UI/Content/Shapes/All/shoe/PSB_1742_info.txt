@@ -1,0 +1,14 @@
+mid: 1742
+url: http://www.eon3d.com/models/NarnBinTak.zip
+ref_url: http://www.eon3d.com/Archives/NBinTak.htm
+format: lwo 
+pid: 25316
+polygons: 21501
+connected_components: 545
+average_dihedral_angle: 0.843937
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.308344, zmax = 0.706851
+avg_depth: 2.850605
+center: (0.528233,0.167268,0.407876)
+scale: 0.532408
+principle_axes: (0.999323,0.001613,-0.036765), (0.036749,0.008897,0.999285), (0.001939,-0.999959,0.008831)
+principle_values: (0.050050,0.025912,0.003738)

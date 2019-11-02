@@ -1,0 +1,14 @@
+mid: 13
+url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/Hw/2001/dlu/Hw3/hw3.wrl
+ref_url: http://www.accad.ohio-state.edu/~mlewis/VRML/Class/hw01.html
+format: wrl 
+pid: 41777
+polygons: 1125
+connected_components: 44
+average_dihedral_angle: 0.761358
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.553288, ymax = 0.177515, zmax = 0.975
+avg_depth: 1.138518
+center: (0.315356,0.102171,0.504099)
+scale: 0.405247
+principle_axes: (-0.045184,0.008418,-0.998943), (0.961222,-0.271950,-0.045770), (0.272048,0.962274,-0.004196)
+principle_values: (0.038662,0.012287,0.000411)

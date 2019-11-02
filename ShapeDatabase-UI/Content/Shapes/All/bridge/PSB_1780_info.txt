@@ -1,0 +1,14 @@
+mid: 1780
+url: http://www.ocnus.com/models/DXF/harbor_bridge.wrl.gz
+ref_url: http://www.ocnus.com/models/DXF/
+format: wrl 
+pid: 17736
+polygons: 23394
+connected_components: 1037
+average_dihedral_angle: 0.778814
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.847008, ymax = 0.975, zmax = 0.228219
+avg_depth: 1.982054
+center: (0.436798,0.507578,0.129558)
+scale: 0.555290
+principle_axes: (0.580229,0.811360,0.070912), (0.814373,-0.576747,-0.064490), (-0.011426,0.095168,-0.995396)
+principle_values: (0.087195,0.004277,0.001534)

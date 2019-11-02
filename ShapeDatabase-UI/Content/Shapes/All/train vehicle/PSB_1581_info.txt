@@ -1,0 +1,14 @@
+mid: 1581
+url: http://cepcairo.bizland.com/free/Diesel.zip
+ref_url: 
+format: xthreexds 
+pid: 47050
+polygons: 22000
+connected_components: 136
+average_dihedral_angle: 0.779359
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.17244, ymax = 0.283002, zmax = 0.975
+avg_depth: 1.557851
+center: (0.098724,0.128379,0.478886)
+scale: 0.519426
+principle_axes: (-0.000139,0.018477,-0.999829), (-0.000818,-0.999829,-0.018477), (-1.000000,0.000815,0.000154)
+principle_values: (0.072026,0.005560,0.002734)

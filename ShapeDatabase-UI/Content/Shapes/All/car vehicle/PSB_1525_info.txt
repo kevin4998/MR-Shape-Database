@@ -1,0 +1,14 @@
+mid: 1525
+url: http://www.sdsu.edu/~boyns/vrml/demo/jeep3.wrl
+ref_url: http://www.sdsu.edu/~boyns/vrml/demo/
+format: wrl 
+pid: 3163
+polygons: 21450
+connected_components: 411
+average_dihedral_angle: 0.722608
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.450612, ymax = 0.975, zmax = 0.355389
+avg_depth: 2.387501
+center: (0.237816,0.514049,0.179925)
+scale: 0.623137
+principle_axes: (0.000655,0.998729,0.050389), (1.000000,-0.000639,-0.000343), (-0.000311,0.050389,-0.998730)
+principle_values: (0.080953,0.018179,0.007442)

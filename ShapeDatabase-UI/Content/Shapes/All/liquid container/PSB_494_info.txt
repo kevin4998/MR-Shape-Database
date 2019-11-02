@@ -1,0 +1,14 @@
+mid: 494
+url: http://ednet.gsfc.nasa.gov/Mathews/Objects/glass.wrl
+ref_url: http://ednet.gsfc.nasa.gov/Mathews/Objects/off2vrml.html
+format: wrl 
+pid: 1617
+polygons: 1536
+connected_components: 1
+average_dihedral_angle: 0.280027
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.3425, ymax = 0.3425, zmax = 0.975
+avg_depth: 1.480056
+center: (0.183750,0.183750,0.643775)
+scale: 0.552804
+principle_axes: (0.000000,0.000000,1.000000), (0.689716,0.724080,-0.000000), (-0.724080,0.689716,0.000000)
+principle_values: (0.087475,0.008692,0.008692)

@@ -1,0 +1,14 @@
+mid: 210
+url: http://curemode.com/cavemanclan/playcc.wrl
+ref_url: http://curemode.com/cavemanclan/quakecc.htm
+format: wrl 
+pid: 451
+polygons: 404
+connected_components: 4
+average_dihedral_angle: 0.746239
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.622535, ymax = 0.975, zmax = 0.598927
+avg_depth: 1.301234
+center: (0.319113,0.521418,0.194180)
+scale: 0.576855
+principle_axes: (0.067604,0.995612,-0.064696), (-0.902452,0.033369,-0.429496), (0.425452,-0.087420,-0.900749)
+principle_values: (0.061935,0.026314,0.007469)

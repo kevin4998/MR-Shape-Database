@@ -1,0 +1,14 @@
+mid: 1305
+url: http://www.ocnus.com/models/Vehicles/bell_ranger.wrl.gz
+ref_url: http://www.ocnus.com/models/Vehicles/
+format: wrl 
+pid: 17954
+polygons: 14168
+connected_components: 10
+average_dihedral_angle: 0.432017
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.271097, zmax = 0.166684
+avg_depth: 1.150850
+center: (0.543318,0.143481,0.095909)
+scale: 0.359598
+principle_axes: (0.992390,-0.123130,-0.000479), (-0.123131,-0.992378,-0.004959), (-0.000136,-0.004980,0.999988)
+principle_values: (0.041189,0.003613,0.000954)

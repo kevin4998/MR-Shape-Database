@@ -1,0 +1,14 @@
+mid: 1298
+url: http://www.geo-metricks.com/geo-shop/free-stuff/stealth/stealth.zip
+ref_url: http://www.geo-metricks.com/geo-shop/free-stuff/stealth/?D=D
+format: xthreexds 
+pid: 25025
+polygons: 542
+connected_components: 12
+average_dihedral_angle: 0.859839
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.726536, ymax = 0.315065, zmax = 0.975
+avg_depth: 1.084254
+center: (0.375683,0.137919,0.392274)
+scale: 0.489655
+principle_axes: (-0.000495,0.031069,-0.999517), (-1.000000,0.000327,0.000505), (-0.000343,-0.999517,-0.031069)
+principle_values: (0.047971,0.020460,0.001888)

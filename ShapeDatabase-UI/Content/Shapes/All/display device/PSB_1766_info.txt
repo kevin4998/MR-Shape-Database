@@ -1,0 +1,14 @@
+mid: 1766
+url: http://eureka.lucia.it/vrml/joust/terza/zip/phoenix.zip
+ref_url: http://eureka.lucia.it/vrml/joust/terza/gir2/gir2.html
+format: wrl 
+pid: 35168
+polygons: 43
+connected_components: 2
+average_dihedral_angle: 1.54735
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.806396, ymax = 0.806392, zmax = 0.975
+avg_depth: 1.982054
+center: (0.415698,0.506307,0.287758)
+scale: 0.863128
+principle_axes: (0.000003,-0.550455,-0.834865), (-1.000000,-0.000001,-0.000003), (-0.000001,-0.834865,0.550455)
+principle_values: (0.109904,0.069888,0.029051)

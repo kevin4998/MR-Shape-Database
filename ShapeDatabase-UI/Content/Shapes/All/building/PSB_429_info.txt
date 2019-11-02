@@ -1,0 +1,14 @@
+mid: 429
+url: http://fraktali.849pm.com/programs/dxf/logcabn3.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27143
+polygons: 27982
+connected_components: 135
+average_dihedral_angle: 0.667043
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.563535, zmax = 0.94639
+avg_depth: 3.179912
+center: (0.494190,0.223997,0.501175)
+scale: 0.819955
+principle_axes: (-0.128338,-0.015887,0.991603), (-0.991729,0.000042,-0.128353), (-0.001997,0.999874,0.015761)
+principle_values: (0.084437,0.072784,0.022721)

@@ -1,0 +1,14 @@
+mid: 733
+url: http://134.220.1.9/sebe/engineering/anemo-topplug_pr1.wrl
+ref_url: http://134.220.1.9/sebe/engineering/anemo-topplug_p.wrl
+format: wrl 
+pid: 16225
+polygons: 1296
+connected_components: 1
+average_dihedral_angle: 0.718546
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.970948, ymax = 0.975, zmax = 0.438043
+avg_depth: 1.634183
+center: (0.502656,0.500001,0.199320)
+scale: 0.639458
+principle_axes: (0.006157,-0.999981,-0.000038), (0.999962,0.006157,-0.006246), (-0.006246,-0.000000,-0.999980)
+principle_values: (0.053600,0.053251,0.007271)

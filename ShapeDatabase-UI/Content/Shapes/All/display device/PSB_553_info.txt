@@ -1,0 +1,14 @@
+mid: 553
+url: http://www.3dcafe.com/models/samsung.zip
+ref_url: http://bruno.postle.net/cgi-links/rate.cgi?ID=379
+format: xthreexds 
+pid: 27874
+polygons: 760
+connected_components: 9
+average_dihedral_angle: 1.1528
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.925064, zmax = 0.796875
+avg_depth: 2.632475
+center: (0.499937,0.461274,0.526242)
+scale: 0.841215
+principle_axes: (-0.026151,-0.962645,-0.269500), (0.999633,-0.027090,-0.000235), (-0.007074,-0.269407,0.963000)
+principle_values: (0.077414,0.073468,0.041932)

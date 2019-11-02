@@ -1,0 +1,14 @@
+mid: 865
+url: http://fraktali.849pm.com/programs/wrl/object/Furniture.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 31983
+polygons: 318
+connected_components: 10
+average_dihedral_angle: 1.0101
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.722957, ymax = 0.975, zmax = 0.257657
+avg_depth: 1.617458
+center: (0.373983,0.501093,0.142918)
+scale: 0.778743
+principle_axes: (-0.000017,0.999957,-0.009281), (1.000000,0.000017,0.000002), (-0.000002,0.009281,0.999957)
+principle_values: (0.094769,0.065489,0.005177)

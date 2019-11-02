@@ -1,0 +1,14 @@
+mid: 359
+url: http://ariadne.iz.net/~jeffs/vnet/src/vnet-client-1_1b1.zip
+ref_url: http://ariadne.iz.net/~jeffs/vnet/src/?D=D
+format: wrl 
+pid: 34923
+polygons: 615
+connected_components: 7
+average_dihedral_angle: 0.554377
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.848333, ymax = 0.959167, zmax = 0.975
+avg_depth: 1.056101
+center: (0.437105,0.537474,0.490080)
+scale: 0.884958
+principle_axes: (-0.010190,0.575818,-0.817514), (0.999700,-0.012341,-0.021152), (0.022269,0.817485,0.575520)
+principle_values: (0.098097,0.054738,0.046481)

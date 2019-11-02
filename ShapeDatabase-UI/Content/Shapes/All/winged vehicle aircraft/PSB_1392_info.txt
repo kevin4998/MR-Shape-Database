@@ -1,0 +1,14 @@
+mid: 1392
+url: ftp://avalon.viewpoint.com/pub/objects/space/navstar_obj.zip
+ref_url: 
+format: obj 
+pid: 48632
+polygons: 26014
+connected_components: 1373
+average_dihedral_angle: 1.05263
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.626717, zmax = 0.610029
+avg_depth: 2.354395
+center: (0.500576,0.325389,0.260930)
+scale: 0.527992
+principle_axes: (0.999987,-0.005052,0.000048), (0.005049,0.999724,0.022931), (-0.000164,-0.022931,0.999737)
+principle_values: (0.059337,0.018667,0.006343)

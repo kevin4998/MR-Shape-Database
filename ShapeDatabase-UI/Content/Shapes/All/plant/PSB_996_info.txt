@@ -1,0 +1,14 @@
+mid: 996
+url: http://www.3dcafe.com/models/plntind2.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: xthreexds 
+pid: 28948
+polygons: 1129
+connected_components: 31
+average_dihedral_angle: 0.890428
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.723587, ymax = 0.975, zmax = 0.657661
+avg_depth: 1.384076
+center: (0.376268,0.469917,0.317203)
+scale: 0.504384
+principle_axes: (0.040547,0.990304,-0.132867), (-0.980135,0.013583,-0.197867), (0.194144,-0.138250,-0.971182)
+principle_values: (0.051674,0.011444,0.008167)

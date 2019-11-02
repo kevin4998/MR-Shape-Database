@@ -1,0 +1,14 @@
+mid: 1144
+url: http://www.worldwar1.com/vrml/spad/spad.wrl.gz
+ref_url: http://www.worldwar1.com/vrml.htm
+format: wrl 
+pid: 1713
+polygons: 6736
+connected_components: 89
+average_dihedral_angle: 0.625836
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.716901, zmax = 0.291304
+avg_depth: 1.546281
+center: (0.499898,0.241699,0.197255)
+scale: 0.483684
+principle_axes: (0.999962,0.008684,-0.000581), (0.008646,-0.998825,-0.047682), (-0.000994,0.047675,-0.998862)
+principle_values: (0.047197,0.022997,0.003413)

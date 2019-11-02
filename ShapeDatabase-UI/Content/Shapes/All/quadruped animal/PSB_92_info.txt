@@ -1,0 +1,14 @@
+mid: 92
+url: http://cepcairo.bizland.com/free/Doberman.zip
+ref_url: 
+format: xthreexds 
+pid: 47055
+polygons: 3888
+connected_components: 3
+average_dihedral_angle: 0.398069
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.335514, ymax = 0.890256, zmax = 0.975
+avg_depth: 1.122527
+center: (0.180240,0.441147,0.449074)
+scale: 0.607208
+principle_axes: (0.000084,0.523217,0.852200), (-0.000084,0.852200,-0.523217), (-1.000000,-0.000028,0.000115)
+principle_values: (0.078575,0.023952,0.006822)

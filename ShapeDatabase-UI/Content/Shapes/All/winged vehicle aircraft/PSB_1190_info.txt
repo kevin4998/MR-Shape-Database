@@ -1,0 +1,14 @@
+mid: 1190
+url: http://ciel.me.cmu.edu/soji/aircraft/a4f.wrl
+ref_url: http://ciel.me.cmu.edu/soji/aircraft/aircrafte.html
+format: wrl 
+pid: 864
+polygons: 318
+connected_components: 29
+average_dihedral_angle: 0.777208
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.683603, ymax = 0.321924, zmax = 0.975
+avg_depth: 1.308369
+center: (0.354340,0.091521,0.627489)
+scale: 0.440544
+principle_axes: (0.000370,-0.181681,-0.983357), (1.000000,0.000603,0.000265), (0.000545,-0.983357,0.181681)
+principle_values: (0.047588,0.009703,0.003394)

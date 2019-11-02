@@ -1,0 +1,14 @@
+mid: 1317
+url: http://www.rccad.com/Gallery/Vrml/Nato-c1.wrl
+ref_url: http://www.rccad.com/Gallery_Helicopters1.htm
+format: wrl 
+pid: 34070
+polygons: 2060
+connected_components: 19
+average_dihedral_angle: 0.219725
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.669317, zmax = 0.224073
+avg_depth: 1.544865
+center: (0.438135,0.347058,0.096996)
+scale: 0.407328
+principle_axes: (-0.997943,-0.000103,-0.064106), (-0.000128,1.000000,0.000383), (0.064106,0.000390,-0.997943)
+principle_values: (0.041086,0.014242,0.001771)

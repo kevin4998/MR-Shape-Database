@@ -1,0 +1,14 @@
+mid: 98
+url: http://cepcairo.bizland.com/free/Panther.zip
+ref_url: 
+format: xthreexds 
+pid: 48053
+polygons: 8236
+connected_components: 19
+average_dihedral_angle: 0.290285
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.279628, ymax = 0.519559, zmax = 0.975
+avg_depth: 1.113461
+center: (0.152333,0.312308,0.503294)
+scale: 0.525724
+principle_axes: (-0.000085,0.226569,0.973995), (0.000047,0.973995,-0.226569), (-1.000000,0.000026,-0.000094)
+principle_values: (0.058279,0.015286,0.004757)

@@ -1,0 +1,14 @@
+mid: 1141
+url: http://cepcairo.bizland.com/free/Sopwith.zip
+ref_url: 
+format: xthreexds 
+pid: 47243
+polygons: 23138
+connected_components: 34
+average_dihedral_angle: 0.459714
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.310844, zmax = 0.62003
+avg_depth: 1.460415
+center: (0.500018,0.213914,0.438669)
+scale: 0.455661
+principle_axes: (-1.000000,0.000105,-0.000133), (-0.000128,0.041204,0.999151), (-0.000110,-0.999151,0.041204)
+principle_values: (0.045949,0.015565,0.005461)

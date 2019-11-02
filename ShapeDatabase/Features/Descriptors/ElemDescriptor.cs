@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ShapeDatabase.Util;
 
-namespace ShapeDatabase.Features.Descriptors
-{
+namespace ShapeDatabase.Features.Descriptors {
 	/// <summary>
 	/// A descriptor which can summarise the shape with a single value.
 	/// </summary>
+	[DebuggerDisplay("{Name}: {Value}")]
 	public class ElemDescriptor : BaseDescriptor<ElemDescriptor> {
 
 		#region --- Properties ---
@@ -18,11 +20,6 @@ namespace ShapeDatabase.Features.Descriptors
 		/// Value of the elementary descriptor
 		/// </summary>
 		public double Value { get; }
-
-		/// <summary>
-		/// Weight of the elementary descriptor
-		/// </summary>
-		public double Weight { get; } = 1;
 
 		#endregion
 
@@ -35,7 +32,7 @@ namespace ShapeDatabase.Features.Descriptors
 		/// <param name="value">Value of the descritor</param>
 		/// <exception cref="ArgumentNullException">If the name is <see langword="null"/>.
 		/// </exception>
-		public ElemDescriptor(string name, double value) 
+		public ElemDescriptor(string name, double value)
 			: base(name) {
 			Value = value;
 		}
@@ -76,7 +73,9 @@ namespace ShapeDatabase.Features.Descriptors
 			if (string.IsNullOrEmpty(serialised))
 				throw new ArgumentNullException(nameof(serialised));
 
-			if (double.TryParse(serialised, out double value)) {
+			IFormatProvider format = Settings.Culture;
+			NumberStyles style = NumberStyles.Any;
+			if (double.TryParse(serialised, style, format, out double value)) {
 				desc = new ElemDescriptor(name, value);
 				return true;
 			}

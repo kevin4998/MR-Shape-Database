@@ -1,0 +1,14 @@
+mid: 50
+url: http://www.rdservice.de/German/produkte/VRCreator/library/Miscellaneous/Duck2.wrl
+ref_url: http://www.rdservice.de/German/produkte/VRCreator/library/Miscellaneous/miscellaneous.htm
+format: wrl 
+pid: 33670
+polygons: 182
+connected_components: 1
+average_dihedral_angle: 0.512725
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.406048, ymax = 0.564283, zmax = 0.975
+avg_depth: 1.035725
+center: (0.215782,0.250511,0.496028)
+scale: 0.518372
+principle_axes: (-0.000856,-0.435248,-0.900310), (-0.006203,0.900296,-0.435235), (-0.999980,-0.005212,0.003471)
+principle_values: (0.051902,0.013720,0.008332)

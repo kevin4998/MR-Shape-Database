@@ -1,0 +1,14 @@
+mid: 1122
+url: http://fraktali.849pm.com/programs/dxf/Fokker.obj.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27631
+polygons: 11577
+connected_components: 108
+average_dihedral_angle: 0.257183
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.93572, ymax = 0.975, zmax = 0.304519
+avg_depth: 1.424357
+center: (0.390217,0.499114,0.138846)
+scale: 0.573053
+principle_axes: (0.016480,-0.999864,-0.000509), (-0.999822,-0.016484,0.009232), (0.009239,-0.000357,0.999957)
+principle_values: (0.050590,0.042993,0.004524)

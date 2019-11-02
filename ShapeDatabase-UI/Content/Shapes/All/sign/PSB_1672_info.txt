@@ -1,0 +1,14 @@
+mid: 1672
+url: http://maewest.itc.virginia.edu/~wmr5a/VRML/tomaz_amon_models/spikeDiag.wrl
+ref_url: http://maewest.itc.virginia.edu/cgi-bin/wrap/wmr5a/VRML/tomaz_amon_models/
+format: wrl 
+pid: 20891
+polygons: 299
+connected_components: 12
+average_dihedral_angle: 1.13894
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.670752, ymax = 0.975, zmax = 0.11303
+avg_depth: 1.119791
+center: (0.305144,0.313570,0.061038)
+scale: 0.571863
+principle_axes: (-0.217419,-0.975864,0.020436), (0.975955,-0.217676,-0.011340), (-0.015515,-0.017479,-0.999727)
+principle_values: (0.090696,0.009817,0.000462)

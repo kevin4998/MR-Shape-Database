@@ -1,0 +1,14 @@
+mid: 348
+url: http://www.3dcafe.com/models/she3ds.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27127
+polygons: 18008
+connected_components: 6
+average_dihedral_angle: 0.15617
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.601714, ymax = 0.975, zmax = 0.746015
+avg_depth: 1.147220
+center: (0.310817,0.544270,0.385037)
+scale: 0.692429
+principle_axes: (0.002587,0.999661,0.025927), (-0.003515,-0.025917,0.999658), (-0.999990,0.002677,-0.003447)
+principle_values: (0.060999,0.039314,0.025156)

@@ -1,0 +1,14 @@
+mid: 1209
+url: http://www.comp.lancs.ac.uk/computing/users/andy/ac3d/acjet.wrl
+ref_url: http://www.comp.lancs.ac.uk/computing/users/andy/ac3d.html
+format: wrl 
+pid: 2
+polygons: 480
+connected_components: 1
+average_dihedral_angle: 0.528013
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.93665, ymax = 0.275186, zmax = 0.975
+avg_depth: 1.142711
+center: (0.551337,0.100218,0.497725)
+scale: 0.528346
+principle_axes: (0.611536,0.022903,0.790885), (0.790241,0.031939,-0.611963), (0.039276,-0.999227,-0.001433)
+principle_values: (0.039601,0.039233,0.001452)

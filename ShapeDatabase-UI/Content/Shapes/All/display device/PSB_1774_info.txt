@@ -1,0 +1,14 @@
+mid: 1774
+url: http://zing.ncsl.nist.gov/~gseidman/vrml/ick.wrl
+ref_url: http://zing.ncsl.nist.gov/~gseidman/vrml/
+format: wrl 
+pid: 19100
+polygons: 754
+connected_components: 232
+average_dihedral_angle: 0.651578
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.907078, ymax = 0.853794, zmax = 0.975
+avg_depth: 1.982054
+center: (0.354474,0.425468,0.352087)
+scale: 0.675250
+principle_axes: (-0.046242,0.731200,-0.680594), (-0.684730,-0.519278,-0.511366), (0.727328,-0.442377,-0.524687)
+principle_values: (0.058829,0.035315,0.034986)

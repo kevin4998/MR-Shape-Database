@@ -61,38 +61,20 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to exit,quit,stop.
-        /// </summary>
-        internal static string A_ExitArgs {
-            get {
-                return ResourceManager.GetString("A_ExitArgs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ,.
-        /// </summary>
-        internal static string A_ExitSep {
-            get {
-                return ResourceManager.GetString("A_ExitSep", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Multimedia Retrieval - K. Westerbaan &amp; G. de Jonge.
-        /// </summary>
-        internal static string A_WindowName {
-            get {
-                return ResourceManager.GetString("A_WindowName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Content.
         /// </summary>
         internal static string D_ContentDir {
             get {
                 return ResourceManager.GetString("D_ContentDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to evaluations.csv.
+        /// </summary>
+        internal static string D_EvaluationFile {
+            get {
+                return ResourceManager.GetString("D_EvaluationFile", resourceCulture);
             }
         }
         
@@ -178,6 +160,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to settings.ini.
+        /// </summary>
+        internal static string D_SettingsFile {
+            get {
+                return ResourceManager.GetString("D_SettingsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shapes.
         /// </summary>
         internal static string D_ShapesDir {
@@ -196,6 +187,33 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The given array is empty, this method does not accept arrays without values..
+        /// </summary>
+        internal static string EX_Array_Empty {
+            get {
+                return ResourceManager.GetString("EX_Array_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid array size, expected length &apos;{0}&apos; but got one of length &apos;{1}&apos;..
+        /// </summary>
+        internal static string EX_Array_Size {
+            get {
+                return ResourceManager.GetString("EX_Array_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not cast an object of type {0} to type {1}..
+        /// </summary>
+        internal static string EX_Cast {
+            get {
+                return ResourceManager.GetString("EX_Cast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The provided directory does not exist &apos;{0}&apos;..
         /// </summary>
         internal static string EX_Directoy_NotExist {
@@ -210,15 +228,6 @@ namespace ShapeDatabase.Properties {
         internal static string EX_Dubble_Snapshot {
             get {
                 return ResourceManager.GetString("EX_Dubble_Snapshot", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The given array is empty, this method does not accept arrays without values..
-        /// </summary>
-        internal static string EX_Empty_Array {
-            get {
-                return ResourceManager.GetString("EX_Empty_Array", resourceCulture);
             }
         }
         
@@ -331,236 +340,11 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to yyyy-MM-dd-HH-mm-ss.
-        /// </summary>
-        internal static string F_DateFormat {
-            get {
-                return ResourceManager.GetString("F_DateFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0}_{1}.
-        /// </summary>
-        internal static string F_File_Measure {
-            get {
-                return ResourceManager.GetString("F_File_Measure", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to MeshName.
         /// </summary>
         internal static string F_MeshName {
             get {
                 return ResourceManager.GetString("F_MeshName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Finished cleaning directories!.
-        /// </summary>
-        internal static string I_EndClean {
-            get {
-                return ResourceManager.GetString("I_EndClean", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Done loading meshes..
-        /// </summary>
-        internal static string I_EndLoad_Mesh {
-            get {
-                return ResourceManager.GetString("I_EndLoad_Mesh", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Done measuring meshes..
-        /// </summary>
-        internal static string I_EndMeasure {
-            get {
-                return ResourceManager.GetString("I_EndMeasure", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Done extracting descriptors..
-        /// </summary>
-        internal static string I_EndProc_Feature {
-            get {
-                return ResourceManager.GetString("I_EndProc_Feature", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Done converting input!.
-        /// </summary>
-        internal static string I_EndProc_Input {
-            get {
-                return ResourceManager.GetString("I_EndProc_Input", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Done processing meshes..
-        /// </summary>
-        internal static string I_EndProc_Mesh {
-            get {
-                return ResourceManager.GetString("I_EndProc_Mesh", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Done with the query..
-        /// </summary>
-        internal static string I_EndProc_Query {
-            get {
-                return ResourceManager.GetString("I_EndProc_Query", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Press enter to exit the application..
-        /// </summary>
-        internal static string I_ExitPropmt {
-            get {
-                return ResourceManager.GetString("I_ExitPropmt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FeatureVectors exported to: {0}.
-        /// </summary>
-        internal static string I_Feature_Exp {
-            get {
-                return ResourceManager.GetString("I_Feature_Exp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FeatureVectors imported from: {0}.
-        /// </summary>
-        internal static string I_Feature_Imp {
-            get {
-                return ResourceManager.GetString("I_Feature_Imp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Statistics exported to: {0}.
-        /// </summary>
-        internal static string I_Measure_Exp {
-            get {
-                return ResourceManager.GetString("I_Measure_Exp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Exporting the query results..
-        /// </summary>
-        internal static string I_Query_Exp {
-            get {
-                return ResourceManager.GetString("I_Query_Exp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} Shapes are available:.
-        /// </summary>
-        internal static string I_ShapeCount {
-            get {
-                return ResourceManager.GetString("I_ShapeCount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please select a shape, or write down {0} to exit the program..
-        /// </summary>
-        internal static string I_ShapeSelect_Prompt {
-            get {
-                return ResourceManager.GetString("I_ShapeSelect_Prompt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cleaning directories!.
-        /// </summary>
-        internal static string I_StartClean {
-            get {
-                return ResourceManager.GetString("I_StartClean", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start loading meshes..
-        /// </summary>
-        internal static string I_StartLoad_Mesh {
-            get {
-                return ResourceManager.GetString("I_StartLoad_Mesh", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start measuring meshes..
-        /// </summary>
-        internal static string I_StartMeasure {
-            get {
-                return ResourceManager.GetString("I_StartMeasure", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start extracting descriptors..
-        /// </summary>
-        internal static string I_StartProc_Feature {
-            get {
-                return ResourceManager.GetString("I_StartProc_Feature", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Starting converting input!.
-        /// </summary>
-        internal static string I_StartProc_Input {
-            get {
-                return ResourceManager.GetString("I_StartProc_Input", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start processing meshes..
-        /// </summary>
-        internal static string I_StartProc_Mesh {
-            get {
-                return ResourceManager.GetString("I_StartProc_Mesh", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Starting the query..
-        /// </summary>
-        internal static string I_StartProc_Query {
-            get {
-                return ResourceManager.GetString("I_StartProc_Query", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Startin Up!.
-        /// </summary>
-        internal static string I_StartUp {
-            get {
-                return ResourceManager.GetString("I_StartUp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unknown command: {0}.
-        /// </summary>
-        internal static string I_UnknownCommand {
-            get {
-                return ResourceManager.GetString("I_UnknownCommand", resourceCulture);
             }
         }
     }

@@ -1,0 +1,14 @@
+mid: 215
+url: http://philliphansel.com/avatars/primativeman.wrl
+ref_url: http://philliphansel.com/avatars/avatar_list.htm
+format: wrl 
+pid: 6108
+polygons: 1341
+connected_components: 19
+average_dihedral_angle: 0.612946
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.294287, ymax = 0.975, zmax = 0.187245
+avg_depth: 1.547826
+center: (0.159608,0.540220,0.089464)
+scale: 0.433121
+principle_axes: (0.000320,0.999930,-0.011787), (-0.999999,0.000307,-0.001121), (-0.001117,0.011787,0.999930)
+principle_values: (0.058535,0.004001,0.000679)

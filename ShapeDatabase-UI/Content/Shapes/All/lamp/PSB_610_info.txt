@@ -1,0 +1,14 @@
+mid: 610
+url: http://www.3dcafe.com/models/lamp02.zip
+ref_url: http://www.3dcafe.com/asp/hou3_pic.asp
+format: xthreexds 
+pid: 28491
+polygons: 8478
+connected_components: 8
+average_dihedral_angle: 0.341567
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.63777, zmax = 0.551808
+avg_depth: 1.671263
+center: (0.488826,0.419272,0.390403)
+scale: 0.632784
+principle_axes: (-0.214130,0.892889,0.396104), (-0.976805,-0.196186,-0.085813), (-0.001089,0.405291,-0.914187)
+principle_values: (0.060557,0.045416,0.006004)

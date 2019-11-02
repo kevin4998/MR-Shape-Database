@@ -1,0 +1,14 @@
+mid: 382
+url: http://www.public.iastate.edu/~robw/castle.wrl
+ref_url: http://www.public.iastate.edu/~robw/vrml.html
+format: wrl 
+pid: 203
+polygons: 400
+connected_components: 20
+average_dihedral_angle: 1.33845
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.944817, ymax = 0.670641, zmax = 0.975
+avg_depth: 1.526237
+center: (0.484908,0.253128,0.468474)
+scale: 0.817963
+principle_axes: (-1.000000,-0.000000,-0.000001), (-0.000001,0.145099,0.989417), (-0.000000,-0.989417,0.145099)
+principle_values: (0.079393,0.070186,0.025848)

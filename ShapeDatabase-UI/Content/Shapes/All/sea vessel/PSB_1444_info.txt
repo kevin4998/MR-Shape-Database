@@ -1,0 +1,14 @@
+mid: 1444
+url: http://www.3dheaven.net/Modelle/watercraft/boot2.zip
+ref_url: 
+format: xthreexds 
+pid: 47407
+polygons: 11722
+connected_components: 109
+average_dihedral_angle: 0.418293
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.231519, ymax = 0.45932, zmax = 0.975
+avg_depth: 1.802392
+center: (0.130259,0.134015,0.513603)
+scale: 0.434712
+principle_axes: (0.001022,0.088725,0.996056), (0.000346,-0.996056,0.088725), (0.999999,0.000254,-0.001049)
+principle_values: (0.055245,0.003475,0.002585)

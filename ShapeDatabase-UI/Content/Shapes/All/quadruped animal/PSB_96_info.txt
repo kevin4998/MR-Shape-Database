@@ -1,0 +1,14 @@
+mid: 96
+url: http://cepcairo.bizland.com/free/Sabtooth.zip
+ref_url: 
+format: xthreexds 
+pid: 47200
+polygons: 10061
+connected_components: 31
+average_dihedral_angle: 0.298822
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.272288, ymax = 0.537454, zmax = 0.975
+avg_depth: 1.132527
+center: (0.148644,0.323214,0.508025)
+scale: 0.524056
+principle_axes: (0.000001,0.219751,0.975556), (0.000000,0.975556,-0.219751), (1.000000,-0.000000,-0.000001)
+principle_values: (0.059498,0.015322,0.004377)

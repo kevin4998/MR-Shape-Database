@@ -1,0 +1,14 @@
+mid: 1548
+url: http://www.3dcafe.com/models/3000gt.zip
+ref_url: 
+format: xthreexds 
+pid: 46750
+polygons: 14914
+connected_components: 252
+average_dihedral_angle: 0.523879
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.27926, zmax = 0.451815
+avg_depth: 2.260673
+center: (0.466386,0.125064,0.238763)
+scale: 0.525703
+principle_axes: (-0.998868,0.047556,0.000758), (0.000765,0.000128,1.000000), (-0.047556,-0.998869,0.000164)
+principle_values: (0.062003,0.014119,0.003822)

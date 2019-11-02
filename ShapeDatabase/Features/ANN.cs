@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
@@ -9,37 +10,69 @@ using System.Threading.Tasks;
 using HNSW.Net;
 using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.Query;
+using ShapeDatabase.Util;
 
-namespace ShapeDatabase.Features
-{
+namespace ShapeDatabase.Features {
+
 	/// <summary>
 	/// Class for performing Approximate Nearest Neighbour (ANN) searches
 	/// </summary>
-	public class ANN
-	{
+	public class ANN {
+
+		#region --- Properties ---
+
 		/// <summary>
 		/// The world to which a query vector will be compared.
 		/// </summary>
 		private readonly SmallWorld<NamedFeatureVector, double> world;
 
+		#endregion
+
+		#region --- Constructor Methods ---
+
 		/// <summary>
-		/// Initializes the ANN class, given all featuresvectors to which a query will be compared.
+		/// Initializes the ANN class, given all featuresvectors to which
+		/// a query will be compared.
+		/// </summary>
+		/// <param name="database">All featurevectors from the database.</param>
+		public ANN(IDictionary<string, FeatureVector> database)
+			:this(database.Select(x => new NamedFeatureVector(x.Key, x.Value))) { }
+
+		/// <summary>
+		/// Initializes the ANN class, given all featuresvectors to which
+		/// a query will be compared.
 		/// </summary>
 		/// <param name="database">All featurevectors of its world.</param>
-		public ANN(IEnumerable<NamedFeatureVector> database)
-		{
+		public ANN(IEnumerable<NamedFeatureVector> database) {
 			IReadOnlyList<NamedFeatureVector> vectors = database.ToList().AsReadOnly();
 			world = new SmallWorld<NamedFeatureVector, double>(ANNDistance);
 
-			SmallWorld<NamedFeatureVector, double>.Parameters parameters = new SmallWorld<NamedFeatureVector, double>.Parameters
+			SmallWorld<NamedFeatureVector, double>.Parameters parameters =
+				new SmallWorld<NamedFeatureVector, double>.Parameters
 			{
 				EnableDistanceCacheForConstruction = true
 			};
 
-			using (MetricsEventListener listener = new MetricsEventListener(EventSources.GraphBuildEventSource.Instance))
-			{
-				world.BuildGraph(vectors, new Random(), parameters);
+			using (MetricsEventListener listener =
+				new MetricsEventListener(EventSources.GraphBuildEventSource.Instance)) {
+				world.BuildGraph(vectors, RandomUtil.ThreadSafeRandom, parameters);
 			}
+		}
+
+		#endregion
+
+		#region --- Methods ---
+
+		/// <summary>
+		/// Perform ANN search on the class' world, given a vector, returning the (approximate) k-best results.
+		/// </summary>
+		/// <param name="name">The name of the querried object.</param>
+		/// <param name="vector">The featurevector for comparison between vectors.</param>
+		/// <param name="kBest">How many results should be returned.</param>
+		/// <returns>The best results for the specified item in a
+		/// <see cref="QueryResult"/> object.</returns>
+		public QueryResult RunANNQuery(string name, FeatureVector vector, int kBest) {
+			return RunANNQuery(new NamedFeatureVector(name, vector), kBest);
 		}
 
 		/// <summary>
@@ -54,8 +87,7 @@ namespace ShapeDatabase.Features
 
 			IList<SmallWorld<NamedFeatureVector, double>.KNNSearchResult> kBestResults = world.KNNSearch(queryVector, kBest);
 
-			foreach(SmallWorld<NamedFeatureVector, double>.KNNSearchResult queryitem in kBestResults)
-			{
+			foreach (SmallWorld<NamedFeatureVector, double>.KNNSearchResult queryitem in kBestResults) {
 				queryresult.AddItem(new QueryItem(queryitem.Item.Name, queryitem.Distance));
 			}
 
@@ -68,35 +100,31 @@ namespace ShapeDatabase.Features
 		/// <param name="vector1">The first vector.</param>
 		/// <param name="vector2">The second vector.</param>
 		/// <returns></returns>
-		private static double ANNDistance(NamedFeatureVector vector1, NamedFeatureVector vector2)
-		{
+		private static double ANNDistance(NamedFeatureVector vector1, NamedFeatureVector vector2) {
 			return vector1.FeatureVector.Compare(vector2.FeatureVector);
 		}
+
+		#endregion
 
 		/// <summary>
 		/// Eventlistener used for building the world.
 		/// </summary>
-		private class MetricsEventListener : EventListener
-		{
+		private class MetricsEventListener : EventListener {
 			private readonly EventSource eventSource;
 
-			public MetricsEventListener(EventSource eventSource)
-			{
+			public MetricsEventListener(EventSource eventSource) {
 				this.eventSource = eventSource;
 				EnableEvents(this.eventSource, EventLevel.LogAlways, EventKeywords.All, new Dictionary<string, string> { { "EventCounterIntervalSec", "1" } });
 			}
 
-			public override void Dispose()
-			{
+			public override void Dispose() {
 				DisableEvents(this.eventSource);
 				base.Dispose();
 			}
 
-			protected override void OnEventWritten(EventWrittenEventArgs eventData)
-			{
+			protected override void OnEventWritten(EventWrittenEventArgs eventData) {
 				IDictionary<string, object> counterData = eventData.Payload?.FirstOrDefault() as IDictionary<string, object>;
-				if (counterData?.Count == 0)
-				{
+				if (counterData?.Count == 0) {
 					return;
 				}
 			}

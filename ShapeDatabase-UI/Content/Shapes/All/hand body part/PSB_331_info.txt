@@ -1,0 +1,14 @@
+mid: 331
+url: http://ligwww.epfl.ch/~babski/StandardBody/body/baxter.tar.gz
+ref_url: http://ligwww.epfl.ch/~babski/StandardBody/
+format: wrl 
+pid: 31813
+polygons: 837
+connected_components: 1
+average_dihedral_angle: 0.430276
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.384709, ymax = 0.975, zmax = 0.563866
+avg_depth: 1.146990
+center: (0.164941,0.483272,0.288273)
+scale: 0.554348
+principle_axes: (0.016782,-0.999603,-0.022623), (-0.161425,0.019621,-0.986690), (0.986742,0.020210,-0.161031)
+principle_values: (0.058388,0.022123,0.006283)

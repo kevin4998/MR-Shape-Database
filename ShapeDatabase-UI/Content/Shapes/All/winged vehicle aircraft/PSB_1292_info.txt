@@ -1,0 +1,14 @@
+mid: 1292
+url: http://www.rccad.com/Gallery/Vrml/P-38k.wrl
+ref_url: 
+format: wrl 
+pid: 48256
+polygons: 5036
+connected_components: 24
+average_dihedral_angle: 0.237269
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.671475, ymax = 0.975, zmax = 0.210654
+avg_depth: 1.522269
+center: (0.338227,0.499503,0.122029)
+scale: 0.399046
+principle_axes: (-0.007359,-0.999973,0.000074), (-0.999969,0.007359,-0.002737), (-0.002736,0.000094,0.999996)
+principle_values: (0.029571,0.020068,0.000402)

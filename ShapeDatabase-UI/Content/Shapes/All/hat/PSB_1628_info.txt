@@ -1,0 +1,14 @@
+mid: 1628
+url: http://cepcairo.bizland.com/free/Tophat.zip
+ref_url: 
+format: xthreexds 
+pid: 47311
+polygons: 1500
+connected_components: 18
+average_dihedral_angle: 0.222892
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.790791, ymax = 0.555515, zmax = 0.975
+avg_depth: 1.622497
+center: (0.406905,0.262590,0.494078)
+scale: 0.668983
+principle_axes: (-0.003413,0.121457,0.992591), (0.024247,-0.992295,0.121505), (0.999700,0.024482,0.000442)
+principle_values: (0.044173,0.039184,0.033260)

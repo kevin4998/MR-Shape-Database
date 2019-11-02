@@ -1,0 +1,14 @@
+mid: 342
+url: http://www.research.att.com/projects/AnimatedHead/patrice1.wrl
+ref_url: http://www.research.att.com/projects/AnimatedHead/kat.html
+format: wrl 
+pid: 11705
+polygons: 2688
+connected_components: 45
+average_dihedral_angle: 0.411127
+bounding_box: xmin = 0.0355557, ymin = 0.025, zmin = 0.025, xmax = 0.703645, ymax = 0.975, zmax = 0.828088
+avg_depth: 1.732541
+center: (0.369397,0.582241,0.400768)
+scale: 0.733417
+principle_axes: (0.040457,0.999054,0.015949), (-0.100829,0.019963,-0.994704), (-0.994081,0.038634,0.101541)
+principle_values: (0.059171,0.043426,0.034921)

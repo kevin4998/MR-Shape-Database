@@ -1,0 +1,14 @@
+mid: 1418
+url: http://fraktali.849pm.com/programs/wrl/object/Weapons.zip
+ref_url: http://www.ams.sunysb.edu/%7Ejsbm/hotlist.htm
+format: wrl 
+pid: 30734
+polygons: 760
+connected_components: 21
+average_dihedral_angle: 1.08865
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.525185, ymax = 0.374382, zmax = 0.975
+avg_depth: 2.037098
+center: (0.273641,0.164623,0.403654)
+scale: 0.511572
+principle_axes: (-0.001637,0.023301,-0.999727), (-0.999989,0.004379,0.001739), (0.004419,0.999719,0.023293)
+principle_values: (0.043780,0.024094,0.004794)

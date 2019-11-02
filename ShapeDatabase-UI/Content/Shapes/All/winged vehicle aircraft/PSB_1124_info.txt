@@ -1,0 +1,14 @@
+mid: 1124
+url: http://www.rccad.com/Gallery/Vrml/Dbiplane.wrl
+ref_url: http://www.rccad.com/Gallery_BiPlanes1.htm
+format: wrl 
+pid: 33681
+polygons: 572
+connected_components: 10
+average_dihedral_angle: 0.580532
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.633082, ymax = 0.975, zmax = 0.240746
+avg_depth: 1.401337
+center: (0.250253,0.499481,0.164395)
+scale: 0.458909
+principle_axes: (0.001303,0.999999,-0.000132), (-0.996370,0.001310,0.085119), (-0.085119,-0.000021,-0.996371)
+principle_values: (0.049725,0.013795,0.003125)

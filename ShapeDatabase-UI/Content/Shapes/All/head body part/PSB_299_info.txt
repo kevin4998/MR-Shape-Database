@@ -1,0 +1,14 @@
+mid: 299
+url: http://www.faraday.gla.ac.uk/models/don-hires.wrl
+ref_url: http://www.faraday.gla.ac.uk/3dmodels.htm
+format: wrl 
+pid: 30645
+polygons: 87892
+connected_components: 1
+average_dihedral_angle: 0.200261
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.969456, zmax = 0.589454
+avg_depth: 1.091320
+center: (0.483410,0.486465,0.313652)
+scale: 0.761650
+principle_axes: (-0.915440,0.401848,-0.022097), (-0.400580,-0.915094,-0.046242), (0.038803,0.033480,-0.998686)
+principle_values: (0.072382,0.066737,0.017159)

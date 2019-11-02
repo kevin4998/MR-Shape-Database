@@ -1,0 +1,14 @@
+mid: 187
+url: http://www.geocities.com/ResearchTriangle/2298/batman.wrl
+ref_url: http://www.geocities.com/ResearchTriangle/2298/download.htm
+format: wrl 
+pid: 10702
+polygons: 3128
+connected_components: 27
+average_dihedral_angle: 0.504516
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.562915, ymax = 0.975, zmax = 0.476143
+avg_depth: 1.773877
+center: (0.284637,0.493336,0.214810)
+scale: 0.450052
+principle_axes: (-0.017877,0.998956,-0.042028), (0.987814,0.024146,0.153756), (0.154610,-0.038767,-0.987215)
+principle_values: (0.039913,0.013800,0.006957)

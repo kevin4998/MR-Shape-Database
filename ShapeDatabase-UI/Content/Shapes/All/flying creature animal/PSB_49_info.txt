@@ -1,0 +1,14 @@
+mid: 49
+url: http://www.web3d.org/TaskGroups/x3d/translation/examples/NURBS/nrbduck_ifs0.wrl
+ref_url: http://www.web3d.org/TaskGroups/x3d/translation/examples/NURBS/
+format: wrl 
+pid: 3211
+polygons: 4372
+connected_components: 3
+average_dihedral_angle: 0.138093
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.800992, zmax = 0.691101
+avg_depth: 1.079249
+center: (0.489513,0.350137,0.357845)
+scale: 0.725315
+principle_axes: (-0.960815,0.277175,-0.003015), (0.277181,0.960815,-0.002093), (0.002317,-0.002847,-0.999993)
+principle_values: (0.064788,0.042702,0.029539)

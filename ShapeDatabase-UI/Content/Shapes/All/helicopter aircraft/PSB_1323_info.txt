@@ -1,0 +1,14 @@
+mid: 1323
+url: http://deep.sitenest.net/freemodels/transport/3dm-helicopter2.zip
+ref_url: 
+format: xthreexds 
+pid: 48469
+polygons: 10670
+connected_components: 153
+average_dihedral_angle: 0.345199
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.802266, ymax = 0.474942, zmax = 0.975
+avg_depth: 1.269562
+center: (0.426155,0.308956,0.510013)
+scale: 0.356927
+principle_axes: (0.005068,-0.142199,0.989825), (0.874400,0.480885,0.064607), (0.485179,-0.865176,-0.126776)
+principle_values: (0.031626,0.006827,0.005676)

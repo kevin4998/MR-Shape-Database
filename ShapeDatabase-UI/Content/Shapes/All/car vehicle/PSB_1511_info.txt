@@ -1,0 +1,14 @@
+mid: 1511
+url: http://www.3dcafe.com/../models/f1.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: xthreexds 
+pid: 30548
+polygons: 20577
+connected_components: 40
+average_dihedral_angle: 0.676638
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.58091, ymax = 0.250914, zmax = 0.975
+avg_depth: 2.186971
+center: (0.305865,0.095562,0.585415)
+scale: 0.553190
+principle_axes: (-0.010909,0.063762,0.997905), (-0.999937,0.001823,-0.011047), (-0.002524,-0.997963,0.063739)
+principle_values: (0.065547,0.021576,0.001875)

@@ -1,0 +1,14 @@
+mid: 1812
+url: http://www.sa-matra.pwp.blueyonder.co.uk/models/EA_Platform_lw.zip
+ref_url: http://www.ultradrive.com/b5_3d_index.htm
+format: lwo 
+pid: 26618
+polygons: 1430
+connected_components: 6
+average_dihedral_angle: 0.748968
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.51789, ymax = 0.975, zmax = 0.232014
+avg_depth: 1.912540
+center: (0.271450,0.636946,0.133484)
+scale: 0.461151
+principle_axes: (-0.000046,0.998123,0.061239), (1.000000,0.000046,-0.000002), (0.000005,-0.061239,0.998123)
+principle_values: (0.059720,0.013219,0.000927)

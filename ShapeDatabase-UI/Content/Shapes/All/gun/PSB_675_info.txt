@@ -1,0 +1,14 @@
+mid: 675
+url: http://www.buckrogers.demon.co.uk/3d/bpbt2.zip
+ref_url: http://www.yahoo.com/Computers_and_Internet/Internet/World_Wide_Web/Virtual_Reality_Modeling_Language__VRML_/
+format: obj 
+pid: 25215
+polygons: 640
+connected_components: 12
+average_dihedral_angle: 0.606894
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.274906, zmax = 0.114237
+avg_depth: 1.142729
+center: (0.537884,0.223185,0.069700)
+scale: 0.487989
+principle_axes: (0.997038,0.076907,-0.000079), (-0.076907,0.997038,0.000118), (-0.000088,0.000112,-1.000000)
+principle_values: (0.077714,0.001560,0.000466)

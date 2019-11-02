@@ -1,0 +1,14 @@
+mid: 110
+url: http://ariadne.iz.net/~jeffs/vrmLab/Warehouse/creatures/ibunny2l.wrl
+ref_url: http://visinfo.zib.de/IRS_HTML/IRS_dqex.html
+format: wrl 
+pid: 35222
+polygons: 902
+connected_components: 1
+average_dihedral_angle: 0.495646
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.47055, ymax = 0.719399, zmax = 0.975
+avg_depth: 1.167193
+center: (0.246922,0.304447,0.473650)
+scale: 0.634424
+principle_axes: (0.004983,-0.355062,-0.934830), (-0.003483,-0.934842,0.355048), (0.999982,-0.001487,0.005895)
+principle_values: (0.065503,0.029674,0.012808)

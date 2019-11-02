@@ -1,0 +1,14 @@
+mid: 450
+url: http://www.flair-twl.de/download/TrulliHouses.wrl
+ref_url: http://www.flair-twl.de/GreatBuildings.htm
+format: wrl 
+pid: 40374
+polygons: 1879
+connected_components: 84
+average_dihedral_angle: 1.27535
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.264762, zmax = 0.296429
+avg_depth: 2.512064
+center: (0.496296,0.118921,0.163211)
+scale: 0.492005
+principle_axes: (0.999968,-0.003975,-0.006994), (0.007254,0.069711,0.997541), (0.003478,0.997559,-0.069738)
+principle_values: (0.063909,0.007916,0.003340)

@@ -1,0 +1,14 @@
+mid: 1052
+url: http://tecfa.unige.ch/vrml/objects/furniture/tree7.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/furniture/
+format: wrl 
+pid: 3654
+polygons: 186
+connected_components: 99
+average_dihedral_angle: 0.822785
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.928908, zmax = 0.915534
+avg_depth: 1.253732
+center: (0.542690,0.571874,0.522335)
+scale: 0.663930
+principle_axes: (-0.070233,0.808952,0.583664), (-0.975949,-0.176776,0.127573), (0.206378,-0.560666,0.801911)
+principle_values: (0.045628,0.040729,0.035035)

@@ -80,8 +80,8 @@ namespace ShapeDatabase.Util.Collections {
 		/// for sorting.</param>
 		/// <exception cref="ArgumentException">If the given capactiy is below 0.
 		/// You can't create an list with negative capacity.</exception>
-		public SortedList(int capacity, IComparer<T> comparer) { 
-			if (capacity< 0)
+		public SortedList(int capacity, IComparer<T> comparer) {
+			if (capacity < 0)
 				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(capacity));
 
 			array = new T[capacity];
@@ -152,12 +152,13 @@ namespace ShapeDatabase.Util.Collections {
 
 		public virtual void Add(T item) {
 			int position = Array.BinarySearch(array, item, comparer);
-			if (position < 0) position = ~position;
+			if (position < 0)
+				position = ~position;
 			Insert(position, item);
 		}
 
 		int IList.Add(object value) {
-			if (value is T item) { 
+			if (value is T item) {
 				Add(item);
 				return IndexOf(value);
 			}
@@ -186,7 +187,7 @@ namespace ShapeDatabase.Util.Collections {
 			for (int i = 0; i < Count; i++)
 				yield return array[i];
 		}
-		
+
 		IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
 
@@ -221,7 +222,8 @@ namespace ShapeDatabase.Util.Collections {
 		void IList<T>.Insert(int index, T item) => Add(item);
 
 		void IList.Insert(int index, object value) {
-			if (value is T item) Add(item);
+			if (value is T item)
+				Add(item);
 		}
 
 
@@ -235,7 +237,8 @@ namespace ShapeDatabase.Util.Collections {
 		}
 
 		public virtual void Remove(object value) {
-			if (value is T item) Remove(item);
+			if (value is T item)
+				Remove(item);
 		}
 
 		public virtual void RemoveAt(int index) {

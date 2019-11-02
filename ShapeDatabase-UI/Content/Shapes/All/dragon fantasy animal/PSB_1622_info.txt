@@ -1,0 +1,14 @@
+mid: 1622
+url: http://www.avatara.com/avatars2/griffin.wrl
+ref_url: http://www.avatara.com/avatars2/avatars2_list.html
+format: wrl 
+pid: 17094
+polygons: 2130
+connected_components: 1
+average_dihedral_angle: 0.646088
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.961232, ymax = 0.871739, zmax = 0.975
+avg_depth: 1.268445
+center: (0.488910,0.395518,0.507317)
+scale: 0.691422
+principle_axes: (0.022523,0.745953,-0.665617), (0.017040,-0.665976,-0.745779), (-0.999601,0.005455,-0.027711)
+principle_values: (0.080689,0.032026,0.023743)

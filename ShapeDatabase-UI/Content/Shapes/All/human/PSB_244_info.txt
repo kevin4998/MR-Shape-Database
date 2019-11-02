@@ -1,0 +1,14 @@
+mid: 244
+url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/dapper_male.wrl
+ref_url: http://www.accad.ohio-state.edu/~jwoodrin/vt/codebase/VirThModels/Actors/
+format: wrl 
+pid: 46692
+polygons: 842
+connected_components: 22
+average_dihedral_angle: 0.57398
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.873235, ymax = 0.975, zmax = 0.203622
+avg_depth: 1.355694
+center: (0.449558,0.555811,0.108555)
+scale: 0.480529
+principle_axes: (0.001448,0.999846,-0.017515), (0.999269,-0.002116,-0.038167), (0.038198,0.017447,0.999118)
+principle_values: (0.060863,0.014878,0.001364)

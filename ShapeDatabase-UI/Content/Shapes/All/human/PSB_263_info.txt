@@ -1,0 +1,14 @@
+mid: 263
+url: http://mowat.virtualave.net/manjoggr.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 26532
+polygons: 899
+connected_components: 5
+average_dihedral_angle: 0.560529
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.313418, ymax = 0.975, zmax = 0.528825
+avg_depth: 1.186545
+center: (0.170081,0.536797,0.304501)
+scale: 0.460972
+principle_axes: (-0.010174,0.994360,0.105568), (0.738024,-0.063767,0.671755), (-0.674698,-0.084746,0.733212)
+principle_values: (0.057536,0.005715,0.004189)

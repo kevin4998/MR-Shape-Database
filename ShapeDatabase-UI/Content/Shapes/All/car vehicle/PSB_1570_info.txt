@@ -1,0 +1,14 @@
+mid: 1570
+url: http://home.uchicago.edu/~msmclaug/otruck.wrl
+ref_url: http://home.uchicago.edu/~msmclaug/optimus.html
+format: wrl 
+pid: 11542
+polygons: 3479
+connected_components: 1148
+average_dihedral_angle: 0.612749
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.233035, ymax = 0.361782, zmax = 0.975
+avg_depth: 2.255241
+center: (0.128639,0.169462,0.657106)
+scale: 0.594924
+principle_axes: (0.003322,-0.071500,0.997435), (0.006960,-0.997415,-0.071522), (0.999970,0.007180,-0.002816)
+principle_values: (0.096008,0.007332,0.004349)

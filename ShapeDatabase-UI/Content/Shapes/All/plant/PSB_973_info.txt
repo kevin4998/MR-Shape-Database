@@ -1,0 +1,14 @@
+mid: 973
+url: http://www.3dcafe.com/models/pixi.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: 3ds 
+pid: 27014
+polygons: 24673
+connected_components: 1952
+average_dihedral_angle: 0.605677
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.679426, ymax = 0.975, zmax = 0.557929
+avg_depth: 1.553919
+center: (0.322852,0.544493,0.248435)
+scale: 0.483505
+principle_axes: (0.165978,0.967576,0.190388), (-0.954183,0.206323,-0.216715), (0.248970,0.145695,-0.957490)
+principle_values: (0.034054,0.021770,0.009444)

@@ -1,0 +1,14 @@
+mid: 444
+url: http://www.eclipse3d.com/images/house5w.wrl
+ref_url: http://www.eclipse3d.com/sample.htm
+format: wrl 
+pid: 2577
+polygons: 6208
+connected_components: 258
+average_dihedral_angle: 1.19038
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.323063, zmax = 0.782863
+avg_depth: 3.472082
+center: (0.495243,0.104466,0.394246)
+scale: 0.587214
+principle_axes: (-0.897950,-0.028509,0.439173), (0.439165,-0.122970,0.889951), (-0.028633,-0.992001,-0.122941)
+principle_values: (0.071395,0.022188,0.006539)

@@ -1,0 +1,14 @@
+mid: 67
+url: http://petersharpe.com/Downloads/salmon.zip
+ref_url: http://petersharpe.com/Downloads.htm
+format: obj 
+pid: 28463
+polygons: 27996
+connected_components: 1
+average_dihedral_angle: 0.111694
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.2497, zmax = 0.388988
+avg_depth: 1.023647
+center: (0.509329,0.131587,0.191500)
+scale: 0.447744
+principle_axes: (0.999967,0.000498,0.008123), (0.008122,0.002609,-0.999964), (-0.000519,0.999996,0.002605)
+principle_values: (0.055515,0.005769,0.001114)

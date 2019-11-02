@@ -1,17 +1,19 @@
-﻿using ShapeDatabase.Features.Descriptors;
-using ShapeDatabase.Util;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features {
 
 	/// <summary>
 	/// A class to represent a collection of descriptor values for a shape.
 	/// </summary>
+	[DebuggerDisplay("Count = {DescriptorCount}")]
 	public class FeatureVector : Util.IComparable<FeatureVector> {
 
 		#region --- Properties ---
@@ -69,10 +71,7 @@ namespace ShapeDatabase.Features {
 		/// </summary>
 		/// <param name="vector">The other vector</param>
 		/// <returns>The PTD</returns>
-		public double Compare(FeatureVector vector) 
-		{
-			return Compare(this, vector);
-		}
+		public double Compare(FeatureVector vector) => Compare(this, vector);
 
 		/// <summary>
 		/// A manner to compare two features and see how similar they are.
@@ -92,6 +91,7 @@ namespace ShapeDatabase.Features {
 			if (secondary == null)
 				throw new ArgumentNullException(nameof(secondary));
 
+			WeightManager weights = Settings.Weights;
 			DescriptorComparer comparer = DescriptorComparer.Instance;
 			IEnumerator<IDescriptor> pdescs = primary.Descriptors.GetEnumerator();
 			IEnumerator<IDescriptor> sdescs = secondary.Descriptors.GetEnumerator();
@@ -99,26 +99,24 @@ namespace ShapeDatabase.Features {
 			double sumCubedElem = 0;
 			double sumHist = 0;
 			int countHist = 0;
+
 			bool hasNext = true;
 			hasNext &= pdescs.MoveNext();
 			hasNext &= sdescs.MoveNext();
 
-			while (hasNext)
-			{
+			while (hasNext) {
 				IDescriptor pdesc = pdescs.Current;
 				IDescriptor sdesc = sdescs.Current;
 
 				int dif = comparer.Compare(pdesc, sdesc);
-				if (dif == 0)
-				{
-					if(pdesc is ElemDescriptor)
-					{
-						sumCubedElem += Math.Pow(pdesc.Compare(sdesc), 2);
-					}
-					else
-					{
-						sumHist += pdesc.Compare(sdesc);
-						countHist = 0;
+				if (dif == 0) {
+
+					if (pdesc is ElemDescriptor) { 
+						sumCubedElem += Math.Pow(pdesc.Compare(sdesc), 2)
+										* weights[pdesc.Name];
+					} else if (pdesc is HistDescriptor) { 
+						sumHist += pdesc.Compare(sdesc) * weights[pdesc.Name];
+						countHist++;
 					}
 
 					hasNext &= pdescs.MoveNext();
@@ -126,23 +124,19 @@ namespace ShapeDatabase.Features {
 					continue;
 
 					// The primary one is beind so increment that side.
-				}
-				else if (dif < 0)
-				{
+				} else if (dif < 0) {
 					hasNext &= pdescs.MoveNext();
 
 					// The secondary one is beind so increment that side.
-				}
-				else if (dif > 0)
-				{
+				} else if (dif > 0) {
 					hasNext &= sdescs.MoveNext();
 				}
 			}
 
 			double L2 = Math.Sqrt(sumCubedElem);
 			double distance = (sumHist + L2) / (countHist + 1);
-
 			return distance;
+
 		}
 
 		#endregion
@@ -151,8 +145,8 @@ namespace ShapeDatabase.Features {
 
 	public static class FeatureVectorEx {
 
-		public static IEnumerable<T> GetDescriptors<T>(this FeatureVector vector) 
-			where T : IDescriptor{
+		public static IEnumerable<T> GetDescriptors<T>(this FeatureVector vector)
+			where T : IDescriptor {
 			if (vector == null)
 				throw new ArgumentNullException(nameof(vector));
 

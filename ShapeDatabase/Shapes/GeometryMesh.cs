@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using g3;
 using OpenTK;
 using static ShapeDatabase.Util.Functions;
-using g3;
 
 namespace ShapeDatabase.Shapes {
 
@@ -24,7 +24,7 @@ namespace ShapeDatabase.Shapes {
 
 		public IEnumerable<Vector3> Vertices {
 			get {
-				for(int i = 0; i < VertexCount; i++)
+				for (int i = 0; i < VertexCount; i++)
 					yield return VectorConvert(Base.GetVertex(i));
 			}
 		}
@@ -62,8 +62,7 @@ namespace ShapeDatabase.Shapes {
 
 		#region -- Instance Methods --
 
-		private IBoundingBox InitializeBoundingBox()
-		{
+		private IBoundingBox InitializeBoundingBox() {
 			return AABB.FromMesh(this);
 		}
 
@@ -83,8 +82,7 @@ namespace ShapeDatabase.Shapes {
 			return VectorConvert(Base.GetVertexNormal(Convert.ToInt32(pos)));
 		}
 
-		public double GetTriArea(uint tID)
-		{
+		public double GetTriArea(uint tID) {
 			return Base.GetTriArea(Convert.ToInt32(tID));
 		}
 

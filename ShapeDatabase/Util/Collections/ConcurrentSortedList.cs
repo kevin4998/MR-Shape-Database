@@ -25,7 +25,7 @@ namespace ShapeDatabase.Util.Collections {
 
 		public override T this[int index] {
 			get {
-				lock (SyncRoot) { 
+				lock (SyncRoot) {
 					return base[index];
 				}
 			}
@@ -99,7 +99,7 @@ namespace ShapeDatabase.Util.Collections {
 		#region --- Instance Methods ---
 
 		public override void Add(T item) {
-			lock(SyncRoot) { 
+			lock (SyncRoot) {
 				base.Add(item);
 			}
 		}

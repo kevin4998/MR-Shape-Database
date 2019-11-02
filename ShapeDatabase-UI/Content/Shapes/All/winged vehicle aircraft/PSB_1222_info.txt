@@ -1,0 +1,14 @@
+mid: 1222
+url: http://fraktali.849pm.com/programs/dxf/SPACE.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27501
+polygons: 612
+connected_components: 30
+average_dihedral_angle: 0.793128
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.895296, zmax = 0.383768
+avg_depth: 1.648805
+center: (0.716061,0.459032,0.283318)
+scale: 0.428586
+principle_axes: (0.998526,-0.003722,-0.054152), (0.003236,0.999954,-0.009050), (-0.054183,-0.008862,-0.998492)
+principle_values: (0.037944,0.017972,0.003053)

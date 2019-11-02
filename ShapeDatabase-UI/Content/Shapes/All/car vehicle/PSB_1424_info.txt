@@ -1,0 +1,14 @@
+mid: 1424
+url: http://telias.free.fr/zipsz/models_low_poly/tank.zip
+ref_url: 
+format: xthreexds 
+pid: 47885
+polygons: 1244
+connected_components: 69
+average_dihedral_angle: 1.39623
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.299977, zmax = 0.612726
+avg_depth: 2.894221
+center: (0.422546,0.118201,0.317971)
+scale: 0.557091
+principle_axes: (0.998985,0.045040,-0.000458), (-0.000530,0.001571,-0.999999), (-0.045039,0.998984,0.001594)
+principle_values: (0.049673,0.032870,0.004503)

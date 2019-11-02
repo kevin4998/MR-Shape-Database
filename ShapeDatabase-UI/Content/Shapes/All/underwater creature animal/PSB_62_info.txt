@@ -1,0 +1,14 @@
+mid: 62
+url: http://tecfa.unige.ch/vrml/objects/acuris/angfish.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/acuris/?D=A
+format: wrl 
+pid: 46468
+polygons: 478
+connected_components: 1
+average_dihedral_angle: 0.41359
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.131276, ymax = 0.749178, zmax = 0.975
+avg_depth: 1.014101
+center: (0.078208,0.377357,0.579968)
+scale: 0.458939
+principle_axes: (0.001267,-0.199886,0.979818), (0.001364,-0.979818,-0.199888), (-0.999998,-0.001590,0.000968)
+principle_values: (0.041227,0.021166,0.000648)

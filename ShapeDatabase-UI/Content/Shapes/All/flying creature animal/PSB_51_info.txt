@@ -1,0 +1,14 @@
+mid: 51
+url: http://tecfa.unige.ch/vrml/objects/furniture/oiseau.wrl
+ref_url: http://tecfa.unige.ch/vrml/objects/furniture/
+format: wrl 
+pid: 3637
+polygons: 598
+connected_components: 5
+average_dihedral_angle: 0.286268
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.479684, zmax = 0.551688
+avg_depth: 1.088948
+center: (0.431791,0.230393,0.288256)
+scale: 0.528399
+principle_axes: (-0.958885,-0.283795,0.000839), (-0.001064,0.000637,-0.999999), (-0.283794,0.958885,0.000913)
+principle_values: (0.046415,0.016739,0.010967)

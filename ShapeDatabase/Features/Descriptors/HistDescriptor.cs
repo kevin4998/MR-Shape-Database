@@ -1,11 +1,11 @@
-﻿using Accord.Diagnostics;
-using ShapeDatabase.Properties;
-using ShapeDatabase.Util;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShapeDatabase.Properties;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Descriptors {
 
@@ -14,6 +14,7 @@ namespace ShapeDatabase.Features.Descriptors {
 	/// These values are stored by making use if histograms where the values
 	/// are grouped in buckets or bins.
 	/// </summary>
+	[DebuggerDisplay("{Name}: [{BinCount}]")]
 	public class HistDescriptor : BaseDescriptor<HistDescriptor> {
 
 		#region --- Properties ---
@@ -37,11 +38,6 @@ namespace ShapeDatabase.Features.Descriptors {
 
 		public int BinCount => BinValues.Length;
 
-		/// <summary>
-		/// Weight of the histogram descriptor
-		/// </summary>
-		public double Weight { get; } = 1;
-
 		#endregion
 
 		#region --- Constructor Methods ---
@@ -52,7 +48,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <param name="name">Name of the descriptor</param>
 		/// <param name="binsize">Bin width of the descriptor</param>
 		/// <param name="binvalues">Bin values of the descriptor</param>
-		public HistDescriptor(string name, double binsize, float[] binvalues) 
+		public HistDescriptor(string name, double binsize, float[] binvalues)
 			: base(name) {
 			BinSize = binsize;
 
@@ -94,7 +90,7 @@ namespace ShapeDatabase.Features.Descriptors {
 
 			for (int i = 1; i < BinValues.Length + 1; i++)
 				histValues[i] = BinValues[i - 1].ToString(format);
-			
+
 			return string.Join(HistSeperatorString, histValues);
 		}
 
@@ -127,10 +123,9 @@ namespace ShapeDatabase.Features.Descriptors {
 		}
 
 		public static HistDescriptor FromIntHistogram(string name, double binSize,
-													int[] histogram)
-		{
+													int[] histogram) {
 			return new HistDescriptor(name, binSize,
-								 Array.ConvertAll(histogram, x => (float)x));
+								 Array.ConvertAll(histogram, x => (float) x));
 		}
 
 #if DEBUG
@@ -139,7 +134,7 @@ namespace ShapeDatabase.Features.Descriptors {
 			if (histogram == null)
 				throw new ArgumentNullException(nameof(histogram));
 			if (histogram.Length == 0)
-				throw new ArgumentException(Resources.EX_Empty_Array, nameof(histogram));
+				throw new ArgumentException(Resources.EX_Array_Empty, nameof(histogram));
 			// Verify that the next value is always between 0 and 1
 			for (int i = 1; i < histogram.Length; i++)
 				if (histogram[i] < 0 || histogram[i] > 1)
@@ -149,7 +144,7 @@ namespace ShapeDatabase.Features.Descriptors {
 			return true;
 		}
 
-		#endif
+#endif
 
 		#endregion
 

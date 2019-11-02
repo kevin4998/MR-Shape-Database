@@ -1,0 +1,14 @@
+mid: 1254
+url: http://www.3dheaven.net/Modelle/aircraft/f14.zip
+ref_url: 
+format: xthreexds 
+pid: 46785
+polygons: 88241
+connected_components: 1235
+average_dihedral_angle: 0.836477
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.277748, ymax = 0.975, zmax = 0.914849
+avg_depth: 2.382819
+center: (0.130410,0.393776,0.470118)
+scale: 0.441243
+principle_axes: (-0.003486,-0.999990,-0.002742), (0.000019,0.002742,-0.999996), (0.999994,-0.003486,0.000010)
+principle_values: (0.039135,0.019883,0.001132)

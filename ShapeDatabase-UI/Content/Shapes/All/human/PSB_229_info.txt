@@ -1,0 +1,14 @@
+mid: 229
+url: http://www.philc.serveftp.net/files/freestuff/clothing_tutorial.zip
+ref_url: http://www.users.globalnet.co.uk/~pcooke/graphics/examples.htm
+format: obj 
+pid: 29297
+polygons: 35742
+connected_components: 25
+average_dihedral_angle: 0.228973
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.931192, ymax = 0.975, zmax = 0.211418
+avg_depth: 1.383093
+center: (0.476704,0.566531,0.115429)
+scale: 0.482337
+principle_axes: (-0.000548,0.999981,0.006175), (-1.000000,-0.000550,0.000366), (-0.000369,0.006174,-0.999981)
+principle_values: (0.057403,0.013677,0.001612)

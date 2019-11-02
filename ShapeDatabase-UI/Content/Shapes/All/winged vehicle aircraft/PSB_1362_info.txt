@@ -1,0 +1,14 @@
+mid: 1362
+url: http://fraktali.849pm.com/programs/dxf/ncc1701d.zip
+ref_url: ftp://aldebaran.ee.mcgill.ca/pub/dfir/dfir-V2R0.tar.Z
+format: dxf 
+pid: 27411
+polygons: 22929
+connected_components: 204
+average_dihedral_angle: 0.0995919
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.222805, zmax = 0.7189
+avg_depth: 1.502565
+center: (0.522286,0.144422,0.371872)
+scale: 0.571576
+principle_axes: (0.989193,0.146620,0.000183), (0.000159,0.000176,-1.000000), (0.146620,-0.989193,-0.000151)
+principle_values: (0.068049,0.025731,0.001274)

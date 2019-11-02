@@ -1,0 +1,14 @@
+mid: 1755
+url: http://www.3dcafe.com/models/snowman.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: 3ds 
+pid: 26639
+polygons: 185092
+connected_components: 10
+average_dihedral_angle: 0.120956
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.862258, ymax = 0.975, zmax = 0.576118
+avg_depth: 1.482477
+center: (0.444974,0.567994,0.318963)
+scale: 0.629439
+principle_axes: (0.092980,0.994857,0.040184), (-0.952792,0.100619,-0.286468), (-0.289038,-0.011651,0.957247)
+principle_values: (0.064318,0.029085,0.016299)

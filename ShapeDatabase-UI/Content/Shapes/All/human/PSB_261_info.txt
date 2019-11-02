@@ -1,0 +1,14 @@
+mid: 261
+url: http://mowat.virtualave.net/wmnjoggr.3ds
+ref_url: http://mowat.virtualave.net/
+format: xthreexds 
+pid: 25850
+polygons: 895
+connected_components: 5
+average_dihedral_angle: 0.551277
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.274933, ymax = 0.975, zmax = 0.347475
+avg_depth: 1.232894
+center: (0.147101,0.542085,0.215211)
+scale: 0.446761
+principle_axes: (-0.001802,0.997352,0.072710), (-0.984390,-0.014566,0.175399), (0.175994,-0.071259,0.981809)
+principle_values: (0.058161,0.003735,0.002119)

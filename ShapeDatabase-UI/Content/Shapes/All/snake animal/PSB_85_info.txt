@@ -1,0 +1,14 @@
+mid: 85
+url: http://phe.genes.nig.ac.jp/takawaba/snakeR.wrl
+ref_url: http://phe.genes.nig.ac.jp/takawaba/vrml.html
+format: wrl 
+pid: 8002
+polygons: 3907
+connected_components: 28
+average_dihedral_angle: 0.476953
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.542246, ymax = 0.499659, zmax = 0.975
+avg_depth: 1.331093
+center: (0.322790,0.287111,0.434997)
+scale: 0.571293
+principle_axes: (-0.133903,-0.051700,-0.989645), (0.808486,0.571801,-0.139262), (-0.573079,0.818762,0.034767)
+principle_values: (0.063290,0.015226,0.014284)

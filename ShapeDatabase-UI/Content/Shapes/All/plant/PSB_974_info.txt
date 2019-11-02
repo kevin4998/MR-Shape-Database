@@ -1,0 +1,14 @@
+mid: 974
+url: http://www.rcwalker.freeserve.co.uk/vrml_tree_exs/yellow_flower.wrl
+ref_url: http://www.rcwalker.freeserve.co.uk/vrml_tree_exs/index.htm
+format: wrl 
+pid: 16668
+polygons: 388
+connected_components: 53
+average_dihedral_angle: 0.655767
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.378277, ymax = 0.975, zmax = 0.215228
+avg_depth: 1.251889
+center: (0.223680,0.717416,0.112701)
+scale: 0.423079
+principle_axes: (-0.327774,0.944756,-0.000000), (0.944756,0.327774,-0.000001), (0.000001,0.000000,1.000000)
+principle_values: (0.061279,0.003201,0.001198)

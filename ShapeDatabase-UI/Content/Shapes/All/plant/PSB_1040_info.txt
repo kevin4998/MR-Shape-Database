@@ -1,0 +1,14 @@
+mid: 1040
+url: http://yll.hkcampus.net/~yll-vrml/v_com/tree2.wrl
+ref_url: http://yll.hkcampus.net/~yll-tcc/vrml/startup.htm
+format: wrl 
+pid: 2282
+polygons: 1872
+connected_components: 1845
+average_dihedral_angle: 2.74841
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.597369, ymax = 0.975, zmax = 0.621006
+avg_depth: 1.294270
+center: (0.334958,0.559010,0.341678)
+scale: 0.428500
+principle_axes: (-0.006581,0.999907,0.011980), (0.641770,-0.004965,0.766881), (-0.766869,-0.012735,0.641678)
+principle_values: (0.031553,0.010982,0.010892)

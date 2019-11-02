@@ -1,0 +1,14 @@
+mid: 1641
+url: http://cepcairo.bizland.com/free/Helm_vik.zip
+ref_url: 
+format: xthreexds 
+pid: 48374
+polygons: 2500
+connected_components: 3
+average_dihedral_angle: 0.401063
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.558568, ymax = 0.975, zmax = 0.771103
+avg_depth: 1.558638
+center: (0.289332,0.508370,0.344202)
+scale: 0.690838
+principle_axes: (0.001134,0.740834,0.671687), (0.023057,0.671489,-0.740656), (-0.999734,0.016327,-0.016320)
+principle_values: (0.066498,0.033096,0.025205)

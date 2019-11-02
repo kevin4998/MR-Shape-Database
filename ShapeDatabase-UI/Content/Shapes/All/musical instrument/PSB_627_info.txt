@@ -1,0 +1,14 @@
+mid: 627
+url: http://www.elfworks.com/objects/strat.zip
+ref_url: http://www.elfworks.com/html/body_free3d.htm
+format: lwo 
+pid: 28282
+polygons: 13529
+connected_components: 154
+average_dihedral_angle: 0.502496
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.356581, ymax = 0.975, zmax = 0.0912908
+avg_depth: 1.178995
+center: (0.186165,0.353085,0.061655)
+scale: 0.437689
+principle_axes: (0.012266,-0.999759,-0.018225), (0.999844,0.012031,0.012911), (-0.012689,-0.018381,0.999751)
+principle_values: (0.058705,0.006503,0.000609)

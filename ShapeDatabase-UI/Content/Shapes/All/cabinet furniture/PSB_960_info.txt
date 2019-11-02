@@ -1,0 +1,14 @@
+mid: 960
+url: http://deep.sitenest.net/freemodels/office/3dm-wallsys.zip
+ref_url: 
+format: xthreexds 
+pid: 48121
+polygons: 3528
+connected_components: 29
+average_dihedral_angle: 0.389863
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.477506, ymax = 0.975, zmax = 0.258064
+avg_depth: 3.052689
+center: (0.250612,0.459416,0.115013)
+scale: 0.639434
+principle_axes: (0.000963,-0.998763,0.049714), (0.999999,0.000930,-0.000689), (0.000642,0.049715,0.998763)
+principle_values: (0.091154,0.021610,0.004884)

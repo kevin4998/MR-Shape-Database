@@ -1,0 +1,14 @@
+mid: 1781
+url: http://www.3dcafe.com/models/bridge2.zip
+ref_url: http://www.3dcafe.com/asp/arch_pic.asp
+format: 3ds 
+pid: 27817
+polygons: 24713
+connected_components: 939
+average_dihedral_angle: 0.874089
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.398695, ymax = 0.190519, zmax = 0.975
+avg_depth: 1.982054
+center: (0.210026,0.084044,0.493782)
+scale: 0.576824
+principle_axes: (-0.004030,-0.001295,-0.999991), (0.999927,0.011367,-0.004044), (-0.011372,0.999935,-0.001249)
+principle_values: (0.095040,0.004526,0.001630)

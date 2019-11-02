@@ -1,0 +1,14 @@
+mid: 1349
+url: http://www.3dcafe.com/models/zepplin3.wrl
+ref_url: http://www.3dcafe.com/asp/aircraft.asp
+format: wrl 
+pid: 34523
+polygons: 640
+connected_components: 20
+average_dihedral_angle: 0.64504
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.385203, zmax = 0.273648
+avg_depth: 1.072012
+center: (0.480618,0.220698,0.149631)
+scale: 0.476356
+principle_axes: (0.999159,-0.040995,0.000107), (-0.040994,-0.999133,0.007323), (0.000193,0.007321,0.999973)
+principle_values: (0.056744,0.006040,0.004292)

@@ -1,0 +1,14 @@
+mid: 321
+url: ftp://avalon.viewpoint.com/pub/objects/characters/facemann_3ds.zip
+ref_url: 
+format: xthreexds 
+pid: 47244
+polygons: 13338
+connected_components: 5
+average_dihedral_angle: 0.179494
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.744957, ymax = 0.975, zmax = 0.478328
+avg_depth: 1.078310
+center: (0.386283,0.469998,0.256447)
+scale: 0.623673
+principle_axes: (-0.010924,0.999388,-0.033241), (-0.999838,-0.010442,0.014632), (0.014275,0.033396,0.999340)
+principle_values: (0.061044,0.034309,0.009842)

@@ -1,0 +1,14 @@
+mid: 1350
+url: http://www.rccad.com/Gallery/Vrml/blimpR.wrl
+ref_url: http://www.rccad.com/Gallery_NonFlying2.htm
+format: wrl 
+pid: 34585
+polygons: 1976
+connected_components: 7
+average_dihedral_angle: 0.335528
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.291317, zmax = 0.305022
+avg_depth: 1.086525
+center: (0.487249,0.158158,0.170918)
+scale: 0.524716
+principle_axes: (-0.999922,0.000000,-0.012487), (-0.012487,-0.001587,0.999921), (0.000020,-0.999999,-0.001587)
+principle_values: (0.070626,0.005651,0.005131)

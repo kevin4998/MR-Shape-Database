@@ -1,0 +1,14 @@
+mid: 956
+url: http://www.rdservice.de/German/produkte/VRCreator/library/Cupboards/Base24.wrl
+ref_url: http://www.rdservice.de/German/produkte/VRCreator/library/Cupboards/cupboards.htm
+format: wrl 
+pid: 35128
+polygons: 206
+connected_components: 12
+average_dihedral_angle: 1.5708
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.839331, ymax = 0.975, zmax = 0.717137
+avg_depth: 2.258759
+center: (0.432160,0.581655,0.358118)
+scale: 0.940801
+principle_axes: (0.000010,0.999884,-0.015202), (-1.000000,0.000010,-0.000025), (-0.000025,0.015202,0.999884)
+principle_values: (0.092063,0.080814,0.056018)

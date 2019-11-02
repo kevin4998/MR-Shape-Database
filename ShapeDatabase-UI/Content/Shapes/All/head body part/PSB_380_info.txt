@@ -1,0 +1,14 @@
+mid: 380
+url: ftp://avalon.viewpoint.com/pub/objects/anatomy/skill_dxf.zip
+ref_url: 
+format: dxf 
+pid: 48384
+polygons: 1243
+connected_components: 1
+average_dihedral_angle: 0.250491
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.924042, zmax = 0.938602
+avg_depth: 1.025766
+center: (0.451013,0.509853,0.580024)
+scale: 0.855763
+principle_axes: (-0.913082,0.004748,-0.407748), (-0.240718,-0.813391,0.529576), (-0.329144,0.581698,0.743836)
+principle_values: (0.080126,0.067032,0.042509)

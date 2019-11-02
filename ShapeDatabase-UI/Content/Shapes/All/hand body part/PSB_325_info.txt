@@ -1,0 +1,14 @@
+mid: 325
+url: http://www.3dcafe.com/models/wom_hand.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: xthreexds 
+pid: 27103
+polygons: 2878
+connected_components: 16
+average_dihedral_angle: 0.338905
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.465624, ymax = 0.975, zmax = 0.533065
+avg_depth: 1.310538
+center: (0.266322,0.469738,0.264727)
+scale: 0.539210
+principle_axes: (-0.255934,-0.962452,-0.090469), (0.464738,-0.040439,-0.884524), (-0.847653,0.268424,-0.457638)
+principle_values: (0.060161,0.017023,0.005711)

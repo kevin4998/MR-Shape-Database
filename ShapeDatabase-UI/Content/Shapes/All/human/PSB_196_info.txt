@@ -1,0 +1,14 @@
+mid: 196
+url: http://www.3dcafe.com/models/babes3d.zip
+ref_url: http://www.3dcafe.com/asp/anat_pic.asp
+format: 3ds 
+pid: 27072
+polygons: 7763
+connected_components: 30
+average_dihedral_angle: 0.394169
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.440896, ymax = 0.975, zmax = 0.194826
+avg_depth: 1.963867
+center: (0.232923,0.541779,0.101332)
+scale: 0.424141
+principle_axes: (0.000034,0.999404,0.034514), (-1.000000,0.000030,0.000100), (-0.000099,0.034514,-0.999404)
+principle_values: (0.050728,0.005715,0.001096)

@@ -1,0 +1,14 @@
+mid: 1746
+url: http://www.d-vw.com/examples/trainer/wavefront/trainer_wavefront.zip
+ref_url: http://ar.atwola.com/link/93146268/aol
+format: obj 
+pid: 25543
+polygons: 1000
+connected_components: 1
+average_dihedral_angle: 0.185815
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.461722, ymax = 0.902394, zmax = 0.975
+avg_depth: 1.009913
+center: (0.222843,0.470594,0.485114)
+scale: 0.672687
+principle_axes: (-0.115474,-0.627110,0.770324), (-0.479681,-0.643886,-0.596085), (-0.869812,0.438341,0.226461)
+principle_values: (0.096786,0.015805,0.014306)

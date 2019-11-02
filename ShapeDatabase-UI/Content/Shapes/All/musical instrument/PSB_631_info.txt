@@ -1,0 +1,14 @@
+mid: 631
+url: http://www.3dcafe.com/models/lespaul2.zip
+ref_url: http://www.electricfunstuff.com/jgdc/resources/terrain1.zip
+format: xthreexds 
+pid: 28924
+polygons: 93412
+connected_components: 339
+average_dihedral_angle: 0.586322
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.335657, zmax = 0.14798
+avg_depth: 2.256541
+center: (0.356120,0.177340,0.089930)
+scale: 0.437866
+principle_axes: (-0.998172,-0.020567,-0.056825), (0.021699,-0.999577,-0.019376), (-0.056402,-0.020574,0.998196)
+principle_values: (0.063814,0.004186,0.000512)

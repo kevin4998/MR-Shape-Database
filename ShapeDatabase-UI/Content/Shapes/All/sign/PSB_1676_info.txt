@@ -1,0 +1,14 @@
+mid: 1676
+url: http://64.198.60.83/baument/Models/Staff2.zip
+ref_url: http://64.198.60.83/baument/archives.htm
+format: 3ds 
+pid: 26351
+polygons: 8034
+connected_components: 7
+average_dihedral_angle: 0.424655
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.231959, ymax = 0.975, zmax = 0.0577454
+avg_depth: 1.135014
+center: (0.127919,0.716047,0.041280)
+scale: 0.283133
+principle_axes: (0.000316,0.999913,0.013222), (0.998309,0.000453,-0.058123), (0.058124,-0.013218,0.998222)
+principle_values: (0.032390,0.002336,0.000030)

@@ -1,0 +1,14 @@
+mid: 375
+url: ftp://avalon.viewpoint.com/pub/objects/characters/venus_dxf.zip
+ref_url: 
+format: dxf 
+pid: 47329
+polygons: 1417
+connected_components: 1
+average_dihedral_angle: 0.24548
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.490952, ymax = 0.975, zmax = 0.363381
+avg_depth: 1.042857
+center: (0.262302,0.471257,0.189707)
+scale: 0.601785
+principle_axes: (0.026463,-0.999208,0.029713), (-0.999306,-0.025662,0.027001), (0.026217,0.030407,0.999194)
+principle_values: (0.077732,0.014086,0.008866)

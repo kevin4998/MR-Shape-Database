@@ -1,0 +1,14 @@
+mid: 343
+url: http://ligwww.epfl.ch/~fua/faces/wrl/Yvan.init.wrl
+ref_url: http://ligwww.epfl.ch/~fua/faces/index.html
+format: wrl 
+pid: 13500
+polygons: 3747
+connected_components: 10
+average_dihedral_angle: 0.282175
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.691565, ymax = 0.975, zmax = 0.831068
+avg_depth: 1.236223
+center: (0.357361,0.528520,0.449172)
+scale: 0.724176
+principle_axes: (0.007201,-0.844448,0.535589), (0.025726,-0.535270,-0.844289), (0.999643,0.019858,0.017870)
+principle_values: (0.067725,0.038498,0.030729)

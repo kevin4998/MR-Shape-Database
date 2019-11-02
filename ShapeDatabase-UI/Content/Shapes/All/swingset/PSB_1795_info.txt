@@ -1,0 +1,14 @@
+mid: 1795
+url: http://www.3dcafe.com/models/swingset.zip
+ref_url: http://www.3dcafe.com/asp/toy_pics.asp
+format: 3ds 
+pid: 27673
+polygons: 1348
+connected_components: 8
+average_dihedral_angle: 0.995328
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.602573, zmax = 0.754763
+avg_depth: 1.175085
+center: (0.502025,0.338409,0.388469)
+scale: 0.843357
+principle_axes: (0.999970,0.007702,-0.000236), (0.007704,-0.999909,0.011099), (-0.000151,-0.011100,-0.999938)
+principle_values: (0.137775,0.034990,0.021453)

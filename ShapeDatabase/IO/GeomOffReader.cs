@@ -11,7 +11,7 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A specific reader which can convert files to the geomtry 3 mesh format.
 	/// </summary>
-	public class GeomOffReader : IReader<GeometryMesh> {
+	class GeomOffReader : IReader<GeometryMesh> {
 
 		#region --- Properties ---
 
@@ -36,7 +36,8 @@ namespace ShapeDatabase.IO {
 		#region --- Instance Methods ---
 
 		public GeometryMesh ConvertFile(StreamReader reader) {
-			if (reader == null) throw new ArgumentNullException(nameof(reader));
+			if (reader == null)
+				throw new ArgumentNullException(nameof(reader));
 
 			Thread.CurrentThread.CurrentCulture = Settings.Culture;
 			DMesh3 mesh = StandardMeshReader.ReadMesh(reader.BaseStream, "off");

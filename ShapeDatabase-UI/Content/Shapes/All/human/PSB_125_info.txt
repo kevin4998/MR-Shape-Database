@@ -1,0 +1,14 @@
+mid: 125
+url: http://www.d-vw.com/examples/femfigure/3ds/femfigure_3ds.zip
+ref_url: http://www.d-vw.com/dsculptor/about/about_d_sculptor.htm
+format: xthreexds 
+pid: 25506
+polygons: 2500
+connected_components: 1
+average_dihedral_angle: 0.324431
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.353075, ymax = 0.291865, zmax = 0.975
+avg_depth: 1.146449
+center: (0.168471,0.120641,0.485442)
+scale: 0.485029
+principle_axes: (-0.084308,-0.053568,-0.994999), (-0.984749,0.156989,0.074988), (-0.152187,-0.986146,0.065986)
+principle_values: (0.068072,0.004551,0.002052)

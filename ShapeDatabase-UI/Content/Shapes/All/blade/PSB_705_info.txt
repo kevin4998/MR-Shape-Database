@@ -1,0 +1,14 @@
+mid: 705
+url: http://www.3dcafe.com/models/dagger.zip
+ref_url: 
+format: xthreexds 
+pid: 47759
+polygons: 15768
+connected_components: 13
+average_dihedral_angle: 0.367957
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.466069, ymax = 0.975, zmax = 0.0946068
+avg_depth: 2.321847
+center: (0.245374,0.265549,0.059535)
+scale: 0.280993
+principle_axes: (-0.000688,0.999999,-0.000734), (-1.000000,-0.000688,0.000035), (-0.000035,-0.000734,-1.000000)
+principle_values: (0.021830,0.007460,0.000296)

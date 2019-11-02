@@ -1,0 +1,14 @@
+mid: 1441
+url: http://www.3dheaven.net/Modelle/watercraft/N-2.zip
+ref_url: 
+format: xthreexds 
+pid: 48096
+polygons: 4116
+connected_components: 310
+average_dihedral_angle: 0.926391
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.425436, zmax = 0.239859
+avg_depth: 1.470951
+center: (0.484219,0.133380,0.132407)
+scale: 0.419606
+principle_axes: (0.999881,0.015414,0.000142), (0.015414,-0.999880,0.001575), (-0.000166,0.001572,0.999999)
+principle_values: (0.048181,0.004630,0.002949)

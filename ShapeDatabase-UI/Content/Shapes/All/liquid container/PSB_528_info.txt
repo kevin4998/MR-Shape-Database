@@ -1,0 +1,14 @@
+mid: 528
+url: http://www.ffranceschi.com/3dobzip/objdxf19.zip
+ref_url: http://www.ffranceschi.com/3dobje04.html
+format: dxf 
+pid: 26311
+polygons: 6132
+connected_components: 1
+average_dihedral_angle: 0.217584
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.404299, ymax = 0.355883, zmax = 0.975
+avg_depth: 1.867451
+center: (0.214650,0.190441,0.504352)
+scale: 0.568785
+principle_axes: (0.000000,0.000000,1.000000), (-1.000000,0.000001,0.000000), (0.000001,1.000000,-0.000000)
+principle_values: (0.072833,0.009705,0.009615)

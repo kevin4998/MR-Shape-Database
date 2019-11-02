@@ -1,0 +1,14 @@
+mid: 80
+url: http://www.ipm.sci-nnov.ru/~demidov/VRML/Splines/Anim/SharkIFS.wrl
+ref_url: http://www.ipm.sci-nnov.ru/~demidov/VRML/Splines/Anim/?D=D
+format: wrl 
+pid: 35075
+polygons: 2104
+connected_components: 7
+average_dihedral_angle: 0.254169
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.308883, zmax = 0.416001
+avg_depth: 1.158968
+center: (0.446886,0.120438,0.197076)
+scale: 0.428282
+principle_axes: (-0.990822,-0.015592,0.134268), (-0.134620,0.024264,-0.990600), (0.012187,-0.999584,-0.026141)
+principle_values: (0.053352,0.003456,0.002092)

@@ -1,0 +1,14 @@
+mid: 286
+url: http://hendrix.ei.dtu.dk/vrml/threed/mriHeadD6.wrl.gz
+ref_url: http://hendrix.ei.dtu.dk/vrml/
+format: wrl 
+pid: 44824
+polygons: 8066
+connected_components: 3
+average_dihedral_angle: 0.432707
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.752175, ymax = 0.975, zmax = 0.721308
+avg_depth: 1.340478
+center: (0.394699,0.485749,0.375199)
+scale: 0.699592
+principle_axes: (-0.071593,-0.976792,-0.201869), (0.975906,-0.026776,-0.216542), (-0.206111,0.212508,-0.955175)
+principle_values: (0.061963,0.036264,0.031350)

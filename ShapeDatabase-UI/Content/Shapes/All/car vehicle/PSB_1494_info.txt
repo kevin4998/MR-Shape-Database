@@ -1,0 +1,14 @@
+mid: 1494
+url: http://www.avatara.com/avatars/truck2.wrl
+ref_url: http://www.avatara.com/avatars/avatars2_list.html
+format: wrl 
+pid: 17031
+polygons: 2016
+connected_components: 169
+average_dihedral_angle: 1.18163
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.501882, ymax = 0.372405, zmax = 0.975
+avg_depth: 1.579204
+center: (0.266102,0.188175,0.488266)
+scale: 0.624656
+principle_axes: (-0.014310,-0.019427,-0.999709), (0.999752,0.016779,-0.014636), (0.017058,-0.999670,0.019182)
+principle_values: (0.080415,0.022819,0.005095)

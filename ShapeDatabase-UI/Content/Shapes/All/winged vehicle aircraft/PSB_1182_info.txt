@@ -1,0 +1,14 @@
+mid: 1182
+url: http://hiwaay.net/~crispen/worlds/missile/mig25.wrl
+ref_url: http://hiwaay.net/~crispen/swish.11/sitemap.html
+format: wrl 
+pid: 7748
+polygons: 354
+connected_components: 1
+average_dihedral_angle: 0.707829
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.950143, ymax = 0.975, zmax = 0.248351
+avg_depth: 1.192412
+center: (0.522181,0.461262,0.102497)
+scale: 0.488481
+principle_axes: (0.694279,-0.717699,-0.053709), (0.716321,0.696316,-0.045030), (-0.069716,0.007210,-0.997541)
+principle_values: (0.055562,0.016650,0.001459)

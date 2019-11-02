@@ -1,0 +1,14 @@
+mid: 497
+url: http://www.strafe.com/2001/StationVlws.zip
+ref_url: http://www.strafe.com/2001/index.shtml
+format: lwo 
+pid: 26170
+polygons: 6012
+connected_components: 3
+average_dihedral_angle: 0.977418
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.415029, ymax = 0.415029, zmax = 0.975
+avg_depth: 1.127407
+center: (0.220015,0.220014,0.500000)
+scale: 0.612941
+principle_axes: (0.000001,0.000000,1.000000), (0.170871,-0.985293,-0.000000), (0.985293,0.170871,-0.000001)
+principle_values: (0.082165,0.013981,0.013981)

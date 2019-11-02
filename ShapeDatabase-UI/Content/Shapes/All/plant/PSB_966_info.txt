@@ -1,0 +1,14 @@
+mid: 966
+url: http://www.3dcafe.com/models/grass03_s.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: xthreexds 
+pid: 29045
+polygons: 5280
+connected_components: 1320
+average_dihedral_angle: 0.683268
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.446096, zmax = 0.896805
+avg_depth: 2.510700
+center: (0.519762,0.231442,0.447899)
+scale: 0.505973
+principle_axes: (0.988690,0.008594,-0.149725), (-0.149160,-0.047345,-0.987679), (0.015577,-0.998842,0.045527)
+principle_values: (0.035513,0.028666,0.009615)

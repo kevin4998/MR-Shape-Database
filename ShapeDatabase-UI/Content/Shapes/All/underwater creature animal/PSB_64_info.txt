@@ -1,0 +1,14 @@
+mid: 64
+url: http://www.rpi.edu/~citrit/Article/fish.deci.wrl
+ref_url: http://www.rpi.edu/~citrit/Article/results.html
+format: wrl 
+pid: 8146
+polygons: 444
+connected_components: 5
+average_dihedral_angle: 0.378025
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.545087, zmax = 0.1789
+avg_depth: 1.033314
+center: (0.431837,0.286693,0.101961)
+scale: 0.428414
+principle_axes: (-0.999767,0.021599,-0.000024), (-0.021599,-0.999767,0.000286), (-0.000017,0.000287,1.000000)
+principle_values: (0.046282,0.008419,0.001240)

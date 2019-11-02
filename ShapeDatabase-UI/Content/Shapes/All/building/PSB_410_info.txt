@@ -1,0 +1,14 @@
+mid: 410
+url: http://www.brokaw.simplenet.com/ussmustang/vrml/bridge/Bridg8.wrl
+ref_url: http://www.geocities.com/Area51/Vault/2147/holo.html
+format: wrl 
+pid: 950
+polygons: 2076
+connected_components: 90
+average_dihedral_angle: 1.15798
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.441981, zmax = 0.945721
+avg_depth: 3.328800
+center: (0.513545,0.128257,0.471207)
+scale: 0.734937
+principle_axes: (-0.976107,-0.009640,-0.217075), (0.217285,-0.036752,-0.975416), (0.001425,-0.999278,0.037969)
+principle_values: (0.069615,0.067168,0.010047)

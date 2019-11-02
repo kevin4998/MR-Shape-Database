@@ -1,0 +1,14 @@
+mid: 1466
+url: http://www.3dcafe.com/models/oscarsub.zip
+ref_url: http://www.3dcafe.com/asp/mil_pics.asp
+format: xthreexds 
+pid: 28857
+polygons: 18939
+connected_components: 133
+average_dihedral_angle: 0.488584
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.169516, ymax = 0.212589, zmax = 0.975
+avg_depth: 1.849317
+center: (0.097271,0.085583,0.445761)
+scale: 0.436367
+principle_axes: (0.000007,0.011987,-0.999928), (0.999999,0.001535,0.000025), (0.001535,-0.999927,-0.011987)
+principle_values: (0.063800,0.001682,0.001262)

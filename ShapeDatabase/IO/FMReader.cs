@@ -1,23 +1,24 @@
-﻿using CsvHelper;
-using ShapeDatabase.Features;
-using ShapeDatabase.Features.Descriptors;
-using ShapeDatabase.IO;
-using ShapeDatabase.Properties;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using ShapeDatabase.Features;
+using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.IO;
+using ShapeDatabase.Properties;
 
-namespace ShapeDatabase.IO
-{
+using static ShapeDatabase.IO.IOConventions;
+
+namespace ShapeDatabase.IO {
 	/// <summary>
 	/// Class for creating a featuremanager out of a csv with featurevectors.
 	/// </summary>
-	public class FMReader : IReader<FeatureManager>
-	{
+	class FMReader : IReader<FeatureManager> {
+
 		#region --- Properties ---
 
 		#region -- Static Properties --
@@ -34,7 +35,7 @@ namespace ShapeDatabase.IO
 
 		#region -- Instance Properties --
 
-		public ICollection<string> SupportedFormats => new string[] { ".csv" };
+		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
 
@@ -56,16 +57,14 @@ namespace ShapeDatabase.IO
 		/// </summary>
 		/// <param name="reader">The streamreader of the csv</param>
 		/// <returns>A featuremanager</returns>
-		public FeatureManager ConvertFile(StreamReader reader)
-		{
+		public FeatureManager ConvertFile(StreamReader reader) {
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
-			if (reader.EndOfStream)
-				throw new ArgumentException(Resources.EX_EndOfStream);
 
-			Dictionary<string, FeatureVector> featureVectors = GetFeatureVectors(reader);
-
-			return new FMBuilder(featureVectors).Build();
+			FMBuilder builder = new FMBuilder();
+			if (!reader.EndOfStream)
+				builder.AddFeatures(GetFeatureVectors(reader));
+			return builder.Build();
 		}
 
 		object IO.IReader.ConvertFile(StreamReader reader) => ConvertFile(reader);
@@ -79,28 +78,30 @@ namespace ShapeDatabase.IO
 		/// </summary>
 		/// <param name="reader">The streamreader of the csv</param>
 		/// <returns>Dictionary with featurevectors per meshname</returns>
-		private Dictionary<string, FeatureVector> GetFeatureVectors(StreamReader reader)
-		{
-			Dictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
+		private IDictionary<string, FeatureVector> GetFeatureVectors(StreamReader reader) {
+			IDictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
 
-			using (CsvReader csv = new CsvReader(reader)) {
+			using (CsvReader csv = CsvReader(reader)) {
+				// Csv syntax for reading headers.
+				csv.Read();
+				csv.ReadHeader();
 				// Read the header, to see which measures there are.
-				IEnumerable<string> names = csv.GetRecords<string>();
+				string[] descNames = FilterHeader(csv);
 				// Find the individual values.
-				do {
+				while (csv.Read()) {
 					// Check to see if there is an entry here.
-					if (!csv.TryGetField(IOConventions.MeshName, out string name))
+					if (!csv.TryGetField(MeshName, out string name))
 						break;
 					// Collect all the descriptors from the CSV.
 					IList<IDescriptor> descriptors = new List<IDescriptor>();
-					foreach(string descName in names)
+					foreach (string descName in descNames)
 						if (csv.TryGetField(descName, out string serialisedDesc))
 							if (TryDeserialise(descName, serialisedDesc, out IDescriptor desc))
 								descriptors.Add(desc);
 					// Combine them and save them as a vector.
 					FeatureVector vector = new FeatureVector(descriptors.ToArray());
 					featureVectors.Add(name, vector);
-				} while (csv.Read());
+				}
 			}
 
 			return featureVectors;
@@ -108,7 +109,7 @@ namespace ShapeDatabase.IO
 
 		private static bool TryDeserialise(string name, string serialised,
 											out IDescriptor desc) {
-			try { 
+			try {
 				desc = DeserialiseDescriptor(name, serialised);
 				return true;
 			} catch (NotImplementedException _) {

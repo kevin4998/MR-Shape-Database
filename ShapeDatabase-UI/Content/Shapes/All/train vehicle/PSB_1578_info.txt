@@ -1,0 +1,14 @@
+mid: 1578
+url: http://www.onr.com/user/nsongtan/train.wrl
+ref_url: http://www.onr.com/user/nsongtan/vrmlfiles.html
+format: wrl 
+pid: 11440
+polygons: 574
+connected_components: 23
+average_dihedral_angle: 1.33252
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.208732, ymax = 0.370015, zmax = 0.975
+avg_depth: 1.397045
+center: (0.115685,0.196029,0.508812)
+scale: 0.523242
+principle_axes: (0.008778,-0.087691,0.996109), (-0.008704,-0.996116,-0.087615), (-0.999924,0.007901,0.009507)
+principle_values: (0.073272,0.007735,0.003706)

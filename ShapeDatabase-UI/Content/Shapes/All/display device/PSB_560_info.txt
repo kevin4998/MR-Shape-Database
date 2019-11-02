@@ -1,0 +1,14 @@
+mid: 560
+url: http://deep.sitenest.net/freemodels/computers/3dm-samsung.zip
+ref_url: 
+format: xthreexds 
+pid: 48311
+polygons: 8224
+connected_components: 116
+average_dihedral_angle: 0.919008
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.920026, ymax = 0.907974, zmax = 0.975
+avg_depth: 10.752946
+center: (0.471597,0.435027,0.471528)
+scale: 0.678093
+principle_axes: (-0.002108,0.382313,-0.924031), (-0.010302,-0.923992,-0.382273), (0.999945,-0.008714,-0.005886)
+principle_values: (0.049360,0.041134,0.037190)

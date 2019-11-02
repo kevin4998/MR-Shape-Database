@@ -1,0 +1,14 @@
+mid: 1046
+url: http://www.3dcafe.com/models/tree10.zip
+ref_url: http://www.3dcafe.com/asp/plt_pics.asp
+format: 3ds 
+pid: 28934
+polygons: 23234
+connected_components: 2437
+average_dihedral_angle: 0.856603
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.975, ymax = 0.900319, zmax = 0.75232
+avg_depth: 2.234250
+center: (0.448804,0.521153,0.355872)
+scale: 0.580180
+principle_axes: (-0.886845,-0.258413,-0.383051), (-0.203379,0.962678,-0.178573), (0.414900,-0.080462,-0.906302)
+principle_values: (0.067821,0.016417,0.010264)

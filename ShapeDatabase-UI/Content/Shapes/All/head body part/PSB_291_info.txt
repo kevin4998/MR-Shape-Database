@@ -1,0 +1,14 @@
+mid: 291
+url: http://davis.wpi.edu/~spanky/avstest.wrl
+ref_url: http://davis.wpi.edu/~spanky/vrml.html
+format: wrl 
+pid: 11753
+polygons: 3540
+connected_components: 1
+average_dihedral_angle: 0.206334
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.645418, ymax = 0.975, zmax = 0.499589
+avg_depth: 1.079530
+center: (0.341398,0.426295,0.295105)
+scale: 0.648562
+principle_axes: (0.002078,-0.999669,-0.025624), (0.999992,0.001993,0.003358), (-0.003306,-0.025631,0.999666)
+principle_values: (0.067139,0.036419,0.010456)

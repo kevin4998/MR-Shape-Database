@@ -1,0 +1,14 @@
+mid: 1542
+url: http://www.3dcafe.com/../models/spcar.zip
+ref_url: http://www.3dcafe.com/../asp/vehicles.asp
+format: lwo 
+pid: 30521
+polygons: 7414
+connected_components: 34
+average_dihedral_angle: 0.487555
+bounding_box: xmin = 0.025, ymin = 0.025, zmin = 0.025, xmax = 0.475133, ymax = 0.345513, zmax = 0.975
+avg_depth: 1.870066
+center: (0.250690,0.165596,0.476068)
+scale: 0.619478
+principle_axes: (-0.001532,0.045093,-0.998982), (0.999998,0.001025,-0.001487), (0.000957,-0.998982,-0.045095)
+principle_values: (0.076308,0.023703,0.005672)

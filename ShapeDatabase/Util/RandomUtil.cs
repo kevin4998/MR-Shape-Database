@@ -104,7 +104,7 @@ namespace ShapeDatabase.Util {
 			uint range = maxValue - minValue;
 			if (range < int.MaxValue) {
 				return ((uint) random.Next((int) range)) + minValue;
-			} else { 
+			} else {
 				return (uint) (random.NextDouble() * range) + minValue;
 			}
 		}
