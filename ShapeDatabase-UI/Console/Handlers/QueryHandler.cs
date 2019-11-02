@@ -105,7 +105,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (!Directory.Exists(directory))
 				Directory.CreateDirectory(directory);
 			string location = Path.Combine(directory, filename);
-			Settings.FileManager.WriteObject(queries, location);
+			Settings.FileManager.Write(location, queries);
 			WriteLine(I_Query_Exp, location);
 		}
 

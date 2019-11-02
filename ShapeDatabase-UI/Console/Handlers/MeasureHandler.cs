@@ -67,7 +67,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			string location = Path.Combine(directory, filename);
 			// Export the generated file
 			Directory.CreateDirectory(directory);
-			Settings.FileManager.WriteObject(recordHolder, location);
+			Settings.FileManager.Write(location, recordHolder);
 			WriteLine(I_Measure_Exp, filename);
 		}
 

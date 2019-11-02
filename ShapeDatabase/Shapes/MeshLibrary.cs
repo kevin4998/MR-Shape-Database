@@ -8,21 +8,17 @@ namespace ShapeDatabase.Shapes {
 	/// <summary>
 	/// A collection of all the loaded meshes/shapes in the application.
 	/// </summary>
-	public class MeshLibrary : ICollection<MeshEntry> {
+	public class MeshLibrary : IMeshLibrary {
 
 		#region --- Properties ---
 
 		private readonly IDictionary<string, MeshEntry> library
 			= new Dictionary<string, MeshEntry>();
 
-		/// <summary>
-		/// All the different loaded meshes.
-		/// </summary>
+		public MeshEntry this[string name] => library[name];
 		public ICollection<MeshEntry> Meshes => library.Values;
-		/// <summary>
-		/// All the different unique names used for the meshes.
-		/// </summary>
 		public ICollection<string> Names => library.Keys;
+
 		/// <summary>
 		/// The amount of loaded Meshes.
 		/// </summary>
@@ -47,42 +43,13 @@ namespace ShapeDatabase.Shapes {
 
 		#region -- Library Methods --
 
-		/// <summary>
-		/// Adds a new mesh into the collection
-		/// if it is not present already.
-		/// </summary>
-		/// <param name="entry">A mesh with its information.</param>
-		/// <param name="replace">If an old value can be overriden.</param>
 		public void Add(MeshEntry entry, bool replace = false) {
 			if (replace || !library.ContainsKey(entry.Name))
 				library[entry.Name] = entry;
 		}
 
-		/// <summary>
-		/// Attempts to get an entry with the given name from the library of meshes.
-		/// </summary>
-		/// <param name="name">The name of the shape to retrieve.</param>
-		/// <param name="entry">The shape which was retrieved from the database.</param>
-		/// <returns><see langword="true"/> if the shape could be retrieved.</returns>
-		/// <exception cref="ArgumentNullException">If the name is <see langword="null"/>
-		/// or <see cref="string.Empty"/>.</exception>
 		public bool TryGetValue(string name, out MeshEntry entry) {
 			return library.TryGetValue(name, out entry);
-		}
-
-		/// <summary>
-		/// Gives an <see cref="MeshEntry"/> with the specified name in the library.
-		/// </summary>
-		/// <param name="name">The name of the shape to retrieve.</param>
-		/// <returns>A mesh entry with the specified name.</returns>
-		/// <exception cref="ArgumentNullException">If the given name is
-		/// <see langword="null"/>.</exception>
-		/// <exception cref="KeyNotFoundException">If there is no entry with the
-		/// provided name.</exception>
-		public MeshEntry this[string name] {
-			get {
-				return library[name];
-			}
 		}
 
 		#endregion
@@ -131,7 +98,7 @@ namespace ShapeDatabase.Shapes {
 	/// <summary>
 	/// A single loaded Mesh with extra information about its shape.
 	/// </summary>
-	public struct MeshEntry : IEquatable<MeshEntry> {
+	public struct MeshEntry : IMeshEntry {
 
 		#region --- Properties ---
 
@@ -140,19 +107,8 @@ namespace ShapeDatabase.Shapes {
 		/// </summary>
 		public const string DefaultClass = "Unspecified";
 
-		/// <summary>
-		/// The unique name for this mesh,
-		/// this will most likely be the file name.
-		/// </summary>
 		public string Name { get; }
-		/// <summary>
-		/// The class to which this item belongs,
-		/// this is determined based on its shape.
-		/// </summary>
 		public string Class { get; }
-		/// <summary>
-		/// The mesh containing the shape of this object.
-		/// </summary>
 		public IMesh Mesh { get; }
 
 		#endregion
@@ -185,10 +141,10 @@ namespace ShapeDatabase.Shapes {
 		#region --- Instance Methods ---
 
 		public override bool Equals(object obj) {
-			return obj is MeshEntry entry && Equals(entry);
+			return obj is IMeshEntry entry && Equals(entry);
 		}
 
-		public bool Equals(MeshEntry other) {
+		public bool Equals(IMeshEntry other) {
 			return this.Name.Equals(other.Name, StringComparison.InvariantCultureIgnoreCase);
 		}
 

@@ -84,7 +84,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		private static void SaveFeatures(FeatureManager manager) {
 			// Serialise it to a new file.
 			string location = FeatureFile;
-			Settings.FileManager.WriteObject(manager, location);
+			Settings.FileManager.Write(location, manager);
 			// Notify that it got exported.
 			WriteLine(I_Feature_Exp, location);
 		}

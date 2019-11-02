@@ -20,7 +20,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			string settingsFile = Settings.SettingsFile;
 			TempSettings settings = new TempSettings();
 			settings.Initialise();
-			Settings.FileManager.WriteObject(settings, settingsFile);
+			Settings.FileManager.Write(settingsFile, settings);
 		}
 
 	}

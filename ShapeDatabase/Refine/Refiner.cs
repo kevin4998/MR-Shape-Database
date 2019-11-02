@@ -86,7 +86,7 @@ namespace ShapeDatabase.Refine {
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(Settings.RefineVertexNumber);
 
-			Settings.FileManager.WriteObject(GeometryMesh.ToGeometryMesh(meshDMesh3), file.FullName);
+			Settings.FileManager.Write(file.FullName, GeometryMesh.ToGeometryMesh(meshDMesh3));
 		}
 
 		#endregion
@@ -156,7 +156,7 @@ namespace ShapeDatabase.Refine {
 			Reducer reducer = new Reducer(meshDMesh3);
 			reducer.ReduceToVertexCount(Settings.RefineVertexNumber);
 
-			Settings.FileManager.WriteObject(GeometryMesh.ToGeometryMesh(meshDMesh3), file.FullName);
+			Settings.FileManager.Write(file.FullName, GeometryMesh.ToGeometryMesh(meshDMesh3));
 		}
 
 		#endregion
@@ -236,7 +236,7 @@ namespace ShapeDatabase.Refine {
 					)
 				);
 			transformed.IsNormalised = true;
-			Settings.FileManager.WriteObject(transformed, file.FullName);
+			Settings.FileManager.Write(file.FullName, transformed);
 		}
 
 

@@ -23,46 +23,17 @@ namespace ShapeDatabase.IO {
 
 		#region --- Properties ---
 
-		#region -- Static Variables --
-
-		private static void PopulateRefiners(IList<IRefiner<IMesh>> refiners) {
-			refiners.Add(ExtendRefiner.Instance);
-			refiners.Add(SimplifyRefiner.Instance);
-			refiners.Add(NormalisationRefiner.Instance);
-		}
-		private static void PopulateReaders(IDictionary<Type, IReader> dic,
-											ISet<string> formats) {
-			dic.Add(typeof(GeometryMesh), GeomOffReader.Instance);
-			dic.Add(typeof(FeatureManager), FMReader.Instance);
-			dic.Add(typeof(TempSettings), SettingsReader.Instance);
-			dic.Add(typeof(QueryResult[]), QueryReader.Instance);
-
-			formats.UnionWith(GeomOffReader.Instance.SupportedFormats);
-			formats.UnionWith(FMReader.Instance.SupportedFormats);
-			formats.UnionWith(SettingsReader.Instance.SupportedFormats);
-			formats.UnionWith(QueryReader.Instance.SupportedFormats);
-		}
-		private static void PopulateWriters(IDictionary<Type, IWriter> dic) {
-			dic.Add(typeof(GeometryMesh), GeomOffWriter.Instance);
-			dic.Add(typeof(IMesh), OFFWriter.Instance);
-			dic.Add(typeof(IRecordHolder), RecordsWriter.Instance);
-			dic.Add(typeof(FeatureManager), FMWriter.Instance);
-			dic.Add(typeof(QueryResult[]), QueryWriter.Instance);
-			dic.Add(typeof(TempSettings), SettingsWriter.Instance);
-		}
-
-		#endregion
-
 		#region -- Instance Variables --
 
-		private readonly ISet<string> formats = new HashSet<string>();
+		/// <summary>
+		/// The one responsible for all refinement operations.
+		/// </summary>
+		private RefineManager Refiner { get; } = new RefineManager();
 
-		private readonly IDictionary<Type, IWriter> typeWriters
-			= new Dictionary<Type, IWriter>();
-		private readonly IDictionary<Type, IReader> typeReaders
-			= new Dictionary<Type, IReader>();
-		private readonly IList<IRefiner<IMesh>> refiners
-			= new List<IRefiner<IMesh>>();
+		/// <summary>
+		/// The one responsible for all the reading and writing with files.
+		/// </summary>
+		private IOManager IOManager { get; } = new IOManager();
 
 
 		/// <summary>
@@ -84,17 +55,15 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// Creates a new manager responsible for loading files.
 		/// </summary>
-		public FileManager() {
-			PopulateReaders(typeReaders, formats);
-			PopulateWriters(typeWriters);
-			PopulateRefiners(refiners);
-		}
+		public FileManager() { }
 
 		#endregion
 
 		#region --- Instance Methods ---
 
 		#region -- Public Operations --
+
+		#region - Add Functionality --
 
 		/// <summary>
 		/// Provides another reader which is able to convert files into meshes.
@@ -104,13 +73,8 @@ namespace ShapeDatabase.IO {
 		/// <param name="readers">The readers which can convert files into meshes.</param>
 		/// <exception cref="ArgumentException">If a given reader does not contain
 		/// any supported file extensions.</exception>
-		public void AddReader<T>(params IReader<T>[] readers) {
-			foreach (IReader<T> reader in readers)
-				if (reader != null) {
-					typeReaders.Add(typeof(T), reader);
-					formats.UnionWith(reader.SupportedFormats);
-				}
-		}
+		public void AddReader<T>(params IReader<T>[] readers) =>
+			IOManager.AddReaders<T>(readers);
 
 		/// <summary>
 		/// Provides another refiner which can normalise meshes for easier feature extraction.
@@ -118,11 +82,8 @@ namespace ShapeDatabase.IO {
 		/// It will not try to recover the extra filess from previous directories.
 		/// </summary>
 		/// <param name="refiners">The refiner which can normalise a shape in any way.</param>
-		public void AddRefiner(params IRefiner<IMesh>[] refiners) {
-			foreach (IRefiner<IMesh> refine in refiners)
-				if (refine != null && !this.refiners.Contains(refine))
-					this.refiners.Add(refine);
-		}
+		public void AddRefiner(params IRefiner<IMesh>[] refiners) =>
+			Refiner.AddRefiners(refiners);
 
 		/// <summary>
 		/// Provides another writer which can change the format in which certain
@@ -131,12 +92,12 @@ namespace ShapeDatabase.IO {
 		/// <typeparam name="T">The type of objects which can be serialised.</typeparam>
 		/// <param name="writers">The collection of writers which can now be used
 		/// for serialisation purposes.</param>
-		public void AddWriter<T>(params IWriter<T>[] writers) {
-			foreach (IWriter<T> writer in writers)
-				if (writer != null)
-					typeWriters.Add(typeof(T), writer);
-		}
+		public void AddWriter<T>(params IWriter<T>[] writers) =>
+			IOManager.AddWriters<T>(writers);
 
+		#endregion
+
+		#region - Directory Functionality -
 
 		/// <summary>
 		/// Secure the specified location as a directory containing new shapes
@@ -247,21 +208,11 @@ namespace ShapeDatabase.IO {
 
 			Parallel.For(0, QueryMeshes.Length, i => {
 				InfoMesh TempMesh = QueryMeshes[i];
-
-				bool RequiresRefinement = true;
 				int Attempt = 0;
 
-				while (RequiresRefinement && Attempt++ < Settings.RefinementThreshold) {
-					RequiresRefinement = false;
-
-					foreach (IRefiner<IMesh> refiner in refiners) {
-						if (refiner.RequireRefinement(TempMesh.Mesh)) {
-							refiner.RefineMesh(TempMesh.Mesh, TempMesh.Info);
-							TempMesh = ReadFile(TempMesh.Info);
-							RequiresRefinement = true;
-						}
-					}
-				}
+				while (Attempt++ < Settings.RefinementThreshold)
+					if (!Refiner.RefineFile(TempMesh.Info, TempMesh.Mesh))
+						TempMesh = ReadFile(TempMesh.Info);
 
 				RefinedQueryMeshes[i] = TempMesh;
 			});
@@ -276,119 +227,119 @@ namespace ShapeDatabase.IO {
 			}
 		}
 
+		#endregion
+
+		#region - Read and Writing -
 
 		/// <summary>
 		/// Serialises the given object to the specified path if possible.
 		/// </summary>
-		/// <param name="type">The type of object which to serialise.</param>
-		/// <param name="value">The value which should be in the path.</param>
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
-		public void WriteObject(Type type, object value, string path) {
-			if (type == null)
-				throw new ArgumentNullException(nameof(type));
-			if (value == null)
-				throw new ArgumentNullException(nameof(value));
-			if (string.IsNullOrEmpty(path))
-				throw new ArgumentNullException(nameof(path));
-
-			// Check if there is a direct implementation for this class.
-			if (typeWriters.TryGetValue(type, out IWriter writer)) {
-				writer.WriteFile(value, path);
-				return;
-				// Check if there is a more generic version for the class.
-			} else {
-				foreach (KeyValuePair<Type, IWriter> pair in typeWriters)
-					if (pair.Key.IsAssignableFrom(type)) {
-						pair.Value.WriteFile(value, path);
-						return;
-					}
-			}
-			// We don't have anything that can deserialise the class.
-			throw MissingFormatProvider(type.FullName);
-		}
+		/// <param name="value">The value which should be in the path.</param>
+		/// <param name="type">The type of object which to serialise.</param>
+		/// <returns>If the value was successfully writen to the specified file.</returns>
+		/// <exception cref="ArgumentNullException">If any of the given paramaters
+		/// is <see langword="null"/>.</exception>
+		/// <exception cref="NotSupportedException">If there is no writer
+		/// which can deserialise the given type to the specified file type.</exception>
+		public bool TryWrite(string path, object value, Type type) =>
+			IOManager.TryWrite(path, value, type);
 
 		/// <summary>
 		/// Serialises the given object to the specified path if possible.
 		/// </summary>
 		/// <typeparam name="T">The type of object which to serialise.</typeparam>
-		/// <param name="type">The value which should be in the path.</param>
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
-		public void WriteObject<T>(T type, string path) {
-			WriteObject(typeof(T), type, path);
-		}
-
+		/// <param name="value">The value which should be in the path.</param>
+		/// <returns>If the value was successfully writen to the specified file.</returns>
+		/// <exception cref="ArgumentNullException">If any of the given paramaters
+		/// is <see langword="null"/>.</exception>
+		/// <exception cref="NotSupportedException">If there is no writer
+		/// which can deserialise the given type to the specified file type.</exception>
+		public bool TryWrite<T>(string path, T value) =>
+			IOManager.TryWrite<T>(path, value);
 
 		/// <summary>
-		/// Deserialises the given file into the specified object type if possible.
+		/// Serialises the given object to the specified path if possible.
 		/// </summary>
-		/// <param name="type">The type of object which to deserialise.</param>
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
-		/// <returns>The value which should be in the path.</returns>
-		public object ReadObject(Type type, string path) {
-			if (type == null)
-				throw new ArgumentNullException(nameof(type));
-			if (string.IsNullOrEmpty(path))
-				throw new ArgumentNullException(nameof(path));
-
-			string extension = new FileInfo(path).Extension;
-			// Check if there is a direct implementation for this class.
-			if (typeReaders.TryGetValue(type, out IReader reader)
-				&& reader.Supports(extension))
-				return reader.ConvertFile(path);
-
-			// Check if there is a more generic version for the class.
-			foreach (KeyValuePair<Type, IReader> pair in typeReaders)
-				if (pair.Key.IsAssignableFrom(type)) {
-					reader = pair.Value;
-					if (reader.Supports(extension))
-						return reader.ConvertFile(path);
-				}
-			// We don't have anything that can deserialise the class.
-			throw MissingFormatProvider(type.FullName);
-		}
+		/// <param name="value">The value which should be in the path.</param>
+		/// <param name="type">The type of object which to serialise.</param>
+		/// <exception cref="ArgumentNullException">If any of the given paramaters
+		/// is <see langword="null"/>.</exception>
+		/// <exception cref="NotSupportedException">If there is no writer
+		/// which can deserialise the given type to the specified file type.</exception>
+		public void Write(string path, object value, Type type) =>
+			IOManager.Write(path, value, type);
 
 		/// <summary>
-		/// Deserialises the given file into the specified object type if possible.
+		/// Serialises the given object to the specified path if possible.
 		/// </summary>
-		/// <typeparam name="T">The type of object which to deserialise.</typeparam>
+		/// <typeparam name="T">The type of object which to serialise.</typeparam>
+		/// <param name="value">The value which should be in the path.</param>
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
-		/// <returns>The value which should be in the path.</returns>
-		public T ReadObject<T>(string path) {
-			object result = ReadObject(typeof(T), path);
-			if (result is T value)
-				return value;
-			else
-				return default;
-		}
+		/// <exception cref="ArgumentNullException">If any of the given paramaters
+		/// is <see langword="null"/>.</exception>
+		/// <exception cref="NotSupportedException">If there is no writer
+		/// which can deserialise the given type to the specified file type.</exception>
+		public void Write<T>(string path, T value) =>
+			IOManager.Write<T>(path, value);
+
+
 
 		/// <summary>
 		/// Deserialises the given file into the specified object type if possible.
 		/// </summary>
 		/// <typeparam name="T">The type of object which to deserialise.</typeparam>
 		/// <param name="path">The location of the file where everything should be
-		/// written to.</param>
-		/// <param name="result">The value which should be in the path.</param>
+		/// read from.</param>
+		/// <param name="value">The deserialised object where all information
+		/// comes from the specified file.</param>
 		/// <returns>If the value was successfully deserialised.</returns>
-		public bool TryRead<T>(string path, out T result) {
-			result = default;
-			if (string.IsNullOrEmpty(path) || !File.Exists(path))
-				return false;
+		/// <exception cref="ArgumentNullException">If the specified path does
+		/// not exist or is <see langword="null"/>.</exception>
+		public bool TryRead<T>(string path, out T value) =>
+			IOManager.TryRead<T>(path, out value);
 
-			try {
-				if (ReadObject(typeof(T), path) is T type) {
-					result = type;
-					return true;
-				}
-			} catch (NotSupportedException) {
-				// We don't care about the exception since it didn't work.
-				// So ignore and continue.
-			}
-			return false;
-		}
+		/// <summary>
+		/// Deserialises the given file into the specified object type if possible.
+		/// </summary>
+		/// <param name="path">The location of the file where everything should be
+		/// read from.</param>
+		/// <param name="type">The type of object which to deserialise.</param>
+		/// <param name="value">he deserialised object where all information
+		/// comes from the specified file.</param>
+		/// <returns>If the value was successfully deserialised.</returns>
+		/// <exception cref="ArgumentNullException">If the specified path does
+		/// not exist or is <see langword="null"/>.</exception>
+		public bool TryRead(string path, Type type, out object value) =>
+			IOManager.TryRead(path, type, out value);
+
+		/// <summary>
+		/// Deserialises the given file into the specified object type if possible.
+		/// </summary>
+		/// <param name="path">The location of the file where everything should be
+		/// written to.</param>
+		/// <param name="type">The type of object which to deserialise.</param>
+		/// <returns>The value which should be in the path.</returns>
+		/// <exception cref="ArgumentNullException">If any provided parameter
+		/// is <see langword="null"/>.</exception>
+		public object Read(string path, Type type) => IOManager.Read(path, type);
+
+		/// <summary>
+		/// Deserialises the given file into the specified object type if possible.
+		/// </summary>
+		/// <typeparam name="T">The type of object which to deserialise.</typeparam>
+		/// <param name="path">The location of the file where everything should be
+		/// written to.</param>
+		/// <returns>The value which should be in the path.</returns>
+		public T Read<T>(string path) => IOManager.Read<T>(path);
+
+		#endregion
 
 		#endregion
 
@@ -414,6 +365,7 @@ namespace ShapeDatabase.IO {
 					Resources.EX_Directoy_NotExist,
 					directory.FullName);
 
+			ISet<string> formats = IOManager.SupportedReaderFormats;
 			Queue<DirectoryInfo> pdirs  = new Queue<DirectoryInfo>();
 			Queue<FileInfo>      pfiles = new Queue<FileInfo>();
 
@@ -568,11 +520,12 @@ namespace ShapeDatabase.IO {
 		/// Refines the given mesh from the specified file if it does not follow
 		/// the refiners specifications. The file will be moved to the right
 		/// directory depending on the need for refinement.
-		/// 
+		/// <para>
 		/// Files which do not need to be refined will be moved to the specified
 		/// <see cref="Settings.ShapeFinalDir"/> directory, while files who have
 		/// just been refined will be moved to the <see cref="Settings.ShapeTempDir"/>
 		/// directory for further processing if needed.
+		/// </para>
 		/// </summary>
 		/// <param name="info">The file where the mesh was loaded from.</param>
 		/// <param name="mesh">The mesh which needs to be refined or checked.</param>
@@ -584,25 +537,20 @@ namespace ShapeDatabase.IO {
 			if (info == null || !info.Exists)
 				throw new ArgumentNullException(nameof(info));
 
-			bool isRefined = true;  // Holds if no refinement has been made.
-			foreach (IRefiner<IMesh> refiner in refiners) {
-				if (refiner.RequireRefinement(mesh)) {
-					refiner.RefineMesh(mesh, info);
-					isRefined = false;
-					break;
-				}
-			}
+			bool isRefined = Refiner.RefineFile(info, mesh);
 
 			// If it needs refinement then we put it in temp.
 			// If it does not need refinement then we put it in the final map.
 			string dir = isRefined ? Settings.ShapeFinalDir : Settings.ShapeTempDir;
-			dir = Path.Combine(dir, info.Directory.Name).Replace('\\', '/');
 			string name = info.Name;
-			//string ext = info.Extension;
 
-			string newDir = $"{dir}/{name}";
-			Directory.CreateDirectory(dir);
-			info.MoveAndOverwrite(newDir);
+			// Combine with the previous top directory to preserve class name.
+			dir = Path.Combine(dir, info.Directory.Name);//.Replace('\\', '/');
+			name = Path.Combine(dir, name);
+			// Move the file to its new home.
+			if (!Directory.Exists(dir))
+				Directory.CreateDirectory(dir);
+			info.MoveAndOverwrite(name);
 
 			return isRefined;
 		}

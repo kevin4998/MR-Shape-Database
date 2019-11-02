@@ -84,7 +84,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 				Directory.CreateDirectory((directory));
 
 			string path = Path.Combine(directory, filename);
-			Settings.FileManager.WriteObject(records, path);
+			Settings.FileManager.Write(path, records);
 			WriteLine(I_Evaluation_Exp, path);
 		}
 
