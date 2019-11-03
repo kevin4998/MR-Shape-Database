@@ -10,7 +10,7 @@ namespace ShapeDatabase.Shapes {
 		#region --- Properties ---
 
 		private readonly Lazy<IBoundingBox> lazyBB;
-		private readonly Lazy<IWeightedCollection<Vector3>> lazyVertices;
+		private readonly Lazy<IWeightedCollection<uint>> lazyVertices;
 
 		public abstract bool IsNormalised { get; set; }
 		public abstract uint VertexCount { get; }
@@ -28,7 +28,7 @@ namespace ShapeDatabase.Shapes {
 
 		public AbstractMesh() {
 			lazyBB = new Lazy<IBoundingBox>(InitializeBoundingBox);
-			lazyVertices = new Lazy<IWeightedCollection<Vector3>>(InitialiseWeights);
+			lazyVertices = new Lazy<IWeightedCollection<uint>>(InitialiseWeights);
 		}
 
 		#endregion
@@ -38,21 +38,20 @@ namespace ShapeDatabase.Shapes {
 		private IBoundingBox InitializeBoundingBox() => AABB.FromMesh(this);
 		public IBoundingBox GetBoundingBox() => lazyBB.Value;
 
-		private IWeightedCollection<Vector3> InitialiseWeights() {
-			IWeightedCollection<Vector3> col =
-						new WeightedCollection<Vector3>(Vertices);
+		private IWeightedCollection<uint> InitialiseWeights() {
+			IWeightedCollection<uint> col = new ArrayWC<uint>();
 
-			foreach (Vector3 face in Faces) {
-				Vector3[] vertices = this.GetVerticesFromFace(face);
-				double area = this.GetTriArea(vertices);
+			for (int faceID = ((int) FaceCount) - 1; faceID >= 0; faceID--) {
+				double area = this.GetTriArea((uint) faceID);
+				Vector3 vertexIDs = GetFace((uint) faceID);
 
-				foreach (Vector3 vertice in vertices)
-					col.AddWeight(vertice, area);
+				for (int i = 2; i >= 0; i--)
+					col.AddWeight((uint) vertexIDs[i], area);
 			}
 
 			return col;
 		}
-		public IWeightedCollection<Vector3> GetWeights() => lazyVertices.Value;
+		public IWeightedCollection<uint> GetWeights() => lazyVertices.Value;
 
 		public abstract Vector3 GetVertex(uint pos);
 		public abstract Vector3 GetFace(uint pos);

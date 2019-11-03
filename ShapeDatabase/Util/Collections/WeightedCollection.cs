@@ -10,7 +10,7 @@ namespace ShapeDatabase.Util.Collections {
 	/// an internal array and list to contain the weights and item respectively.
 	/// The array will always be exact size of the items in this collection and
 	/// therefor all <see cref="Add(T)"/> methos run in O(n) item. while the
-	/// <see cref="GetElement(Random)"/> method makes use of O(1) time to retrieve
+	/// <see cref="GetElement(Random)"/> method makes use of O(log(n)) time to retrieve
 	/// the elements from the array.
 	/// </summary>
 	/// <typeparam name="T">The type of elements which are stored in the collection.

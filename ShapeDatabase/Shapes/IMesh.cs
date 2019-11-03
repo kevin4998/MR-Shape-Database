@@ -23,7 +23,7 @@ namespace ShapeDatabase.Shapes {
 		IEnumerable<Vector3> Normals { get; }
 
 		IBoundingBox GetBoundingBox();
-		IWeightedCollection<Vector3> GetWeights();
+		IWeightedCollection<uint> GetWeights();
 
 		Vector3 GetVertex(uint pos);
 		Vector3 GetFace(uint pos);
@@ -141,7 +141,7 @@ namespace ShapeDatabase.Shapes {
 
 			Vector3[] vertices = new Vector3[count--];
 			while (count >= 0)
-				vertices[count--] = mesh.GetWeights().GetElement(rand);
+				vertices[count--] = mesh.GetVertex(mesh.GetWeights().GetElement(rand));
 			return vertices;
 		}
 
