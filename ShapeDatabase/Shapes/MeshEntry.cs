@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.Util;
@@ -10,6 +11,7 @@ namespace ShapeDatabase.Shapes {
 	/// <summary>
 	/// A single loaded Mesh with extra information about its shape.
 	/// </summary>
+	[DebuggerDisplay("{Class}/{Name}")]
 	public struct MeshEntry : IMeshEntry {
 
 		#region --- Properties ---
@@ -22,6 +24,8 @@ namespace ShapeDatabase.Shapes {
 		public string Name { get; }
 		public string Class { get; }
 		public IMesh Mesh { get; }
+
+		public bool IsNull => Name == null || Class == null;
 
 		#endregion
 

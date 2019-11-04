@@ -46,8 +46,10 @@ namespace ShapeDatabase.Shapes {
 		#region -- Library Methods --
 
 		public void Add(MeshEntry entry, bool replace = false) {
+			if (entry.IsNull)
+				throw new ArgumentNullException(nameof(entry));
 			if (replace || !library.ContainsKey(entry.Name))
-				library[entry.Name] = entry;
+				library.Add(entry.Name, entry);
 		}
 
 		public bool TryGetValue(string name, out MeshEntry entry) {
@@ -88,7 +90,9 @@ namespace ShapeDatabase.Shapes {
 		}
 
 		public IEnumerator<MeshEntry> GetEnumerator() {
-			return Meshes.GetEnumerator();
+			foreach (MeshEntry entry in library.Values)
+				if (!entry.IsNull)
+					yield return entry;
 		}
 
 		IEnumerator IEnumerable.GetEnumerator() {
