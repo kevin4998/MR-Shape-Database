@@ -91,14 +91,10 @@ namespace ShapeDatabase.IO {
 		/// <exception cref="NotSupportedException">If there is no writer
 		/// which can deserialise the given type to the specified file type.</exception>
 		public bool TryWrite(string path, object value, Type type) {
-			if (type == null)
-				throw new ArgumentNullException(nameof(type));
-			if (value == null)
-				throw new ArgumentNullException(nameof(value));
-			if (string.IsNullOrEmpty(path))
-				throw new ArgumentNullException(nameof(path));
+			if (type == null || value == null || string.IsNullOrEmpty(path))
+				return false;
 
-			string extension = new FileInfo(path).Extension;
+			string extension = new FileInfo(path).Extension.Substring(1);
 			// Check if we have a supported Writer.
 			if (!TryGetWriter(extension, type, out IWriter writer))
 				// We don't have anything that can deserialise the class.
@@ -107,6 +103,7 @@ namespace ShapeDatabase.IO {
 			// Safely exports the object to the specified file format.
 			try { writer.WriteFile(value, path); return true; }
 			catch (ArgumentException) { return false; }
+			catch (NotSupportedException) { return false; }
 		}
 
 		/// <summary>
@@ -189,13 +186,17 @@ namespace ShapeDatabase.IO {
 		/// <exception cref="ArgumentNullException">If the specified path does
 		/// not exist or is <see langword="null"/>.</exception>
 		public bool TryRead(string path, Type type, out object value) {
+			value = default;
 			if (string.IsNullOrEmpty(path) || !File.Exists(path))
-				throw new ArgumentNullException(nameof(path));
+				return false;
 
 			value = default;
 			try {
 				value = Read(path, type);
 				return true;
+			} catch (ArgumentException) {
+				// We don't care about the exception since it didn't work.
+				// So ignore and continue.
 			} catch (NotSupportedException) {
 				// We don't care about the exception since it didn't work.
 				// So ignore and continue.

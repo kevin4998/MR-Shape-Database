@@ -31,7 +31,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			string finalDir = Settings.ShapeFinalDir;
 			if (!Directory.Exists(finalDir))
 				Directory.CreateDirectory(finalDir);
-			Settings.FileManager.AddDirectoryDirect(Settings.ShapeFinalDir);
+			Settings.FileManager.AddDirectoryDirect(finalDir);
 		}
 
 	}
