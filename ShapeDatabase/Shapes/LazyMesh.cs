@@ -57,7 +57,7 @@ namespace ShapeDatabase.Shapes {
 
 			this.file = info;
 			this.meshProvider = () => Settings.FileManager.Read<IMesh>(file.FullName);
-			this.lazyMesh = new WeakReference<IMesh>(meshProvider());
+			this.lazyMesh = new WeakReference<IMesh>(meshProvider(), true);
 		}
 
 		#endregion
