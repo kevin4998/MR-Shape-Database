@@ -13,14 +13,14 @@ namespace ShapeDatabase.IO {
 	/// <summary>
 	/// A manager which is responsible for reading and writing values to files.
 	/// </summary>
-	public class IOManager {
+	class IOManager {
 
 		#region --- Properties ---
 
 		/// <summary>
 		/// The different file formats which can be read by the readers.
 		/// </summary>
-		public ISet<string> SupportedReaderFormats {
+		public ISet<string> AllReaderFormats {
 			get {
 				ISet<string> formats = new HashSet<string>();
 				foreach (IDictionary<string, IReader> readers in Readers.Values)
@@ -240,6 +240,48 @@ namespace ShapeDatabase.IO {
 
 		#endregion
 
+		#region -- Format Functionality --
+
+		/// <summary>
+		/// A collection of all the file extensions which can be read to provide
+		/// the given type of object.
+		/// </summary>
+		/// <typeparam name="T">The type of object to retrieve.</typeparam>
+		/// <returns>An <see cref="ISet{T}"/> containing all the file extensions
+		/// which can be read into the given type.</returns>
+		public ISet<string> SupportedReaderFormats<T>() =>
+			SupportedReaderFormats(typeof(T));
+		/// <summary>
+		/// A collection of all the file extensions which can be read to provide
+		/// the given type of object.
+		/// </summary>
+		/// <param name="type">The type of object to retrieve.</param>
+		/// <returns>An <see cref="ISet{T}"/> containing all the file extensions
+		/// which can be read into the given type.</returns>
+		public ISet<string> SupportedReaderFormats(Type type) =>
+			SupportedFormats(type, Readers);
+
+		/// <summary>
+		/// A collection of all the file extensions which can be used for serialising
+		/// the given type of object.
+		/// </summary>
+		/// <typeparam name="T">The type of object to serialise.</typeparam>
+		/// <returns>An <see cref="ISet{T}"/> containing all the file extensions
+		/// which can be used for the given type.</returns>
+		public ISet<string> SupportedWriterFormats<T>() =>
+			SupportedWriterFormats(typeof(T));
+		/// <summary>
+		/// A collection of all the file extensions which can be used for serialising
+		/// the given type of object.
+		/// </summary>
+		/// <param name="type">The type of object to serialise.</param>
+		/// <returns>An <see cref="ISet{T}"/> containing all the file extensions
+		/// which can be used for the given type.</returns>
+		public ISet<string> SupportedWriterFormats(Type type) =>
+			SupportedFormats(type, Writers);
+
+		#endregion
+
 		#region -- Helper Functionality --
 
 		/// <summary>
@@ -278,6 +320,26 @@ namespace ShapeDatabase.IO {
 					dic[type] = exDic;
 				}
 			}
+		}
+
+		/// <summary>
+		/// A collection of all the file extensions in a given dictionary which
+		/// use the provided type.
+		/// </summary>
+		/// <typeparam name="X">The item stored in the dictionary, irrelevant.</typeparam>
+		/// <param name="type">The type of object to retrieve/serialise.</param>
+		/// <param name="dic">The dictionary containing all the readers or writers.</param>
+		/// <returns>An <see cref="ISet{T}"/> containing all the file extensions
+		/// which can be used for the given type.</returns>
+		private ISet<string> SupportedFormats<X>(
+				Type type, IDictionary<Type, IDictionary<string, X>> dic) {
+			ISet<string> formats = new HashSet<string>();
+
+			foreach (KeyValuePair<Type, IDictionary<string, X>> pair in dic)
+				if (pair.Key.IsAssignableFrom(type))
+					formats.UnionWith(pair.Value.Keys);
+
+			return formats;
 		}
 
 		/// <summary>
