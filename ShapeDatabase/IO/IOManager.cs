@@ -337,7 +337,7 @@ namespace ShapeDatabase.IO {
 			ISet<string> formats = new HashSet<string>();
 
 			foreach (KeyValuePair<Type, IDictionary<string, X>> pair in dic)
-				if (pair.Key.IsAssignableFrom(type))
+				if (type.IsAssignableFrom(pair.Key))
 					formats.UnionWith(pair.Value.Keys);
 
 			return formats;
