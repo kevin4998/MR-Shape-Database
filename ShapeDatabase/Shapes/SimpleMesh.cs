@@ -9,7 +9,7 @@ namespace ShapeDatabase.Shapes {
 	/// A direct implementation of <see cref="IMesh"/> which keeps all
 	/// the vectors stored as arrays which get directly accessed and modified.
 	/// </summary>
-	public class SimpleMesh : IMesh {
+	public class SimpleMesh : AbstractMesh {
 
 		#region --- Properties ---
 
@@ -18,27 +18,27 @@ namespace ShapeDatabase.Shapes {
 		private Vector3[] edges;
 		private Vector3[] normals;
 
-		public bool IsNormalised { get; set; }
+		public override bool IsNormalised { get; set; }
 
-		public uint VertexCount => (uint) vertices.Length;
-		public uint FaceCount => (uint) faces.Length;
-		public uint EdgeCount => (uint) edges.Length;
-		public uint NormalCount => (uint) normals.Length;
+		public override uint VertexCount => (uint) vertices.Length;
+		public override uint FaceCount => (uint) faces.Length;
+		public override uint EdgeCount => (uint) edges.Length;
+		public override uint NormalCount => (uint) normals.Length;
 
 
-		public IEnumerable<Vector3> Vertices {
+		public override IEnumerable<Vector3> Vertices {
 			get { return vertices; }
 			set { vertices = AsArray(value, true); }
 		}
-		public IEnumerable<Vector3> Faces {
+		public override IEnumerable<Vector3> Faces {
 			get { return faces; }
 			set { faces = AsArray(value, true); }
 		}
-		public IEnumerable<Vector3> Edges {
+		public override IEnumerable<Vector3> Edges {
 			get { return edges; }
 			set { edges = AsArray(value, true); }
 		}
-		public IEnumerable<Vector3> Normals {
+		public override IEnumerable<Vector3> Normals {
 			get { return normals; }
 			set { normals = AsArray(value, true); }
 		}
@@ -56,7 +56,7 @@ namespace ShapeDatabase.Shapes {
 						  IEnumerable<Vector3> faces,
 						  IEnumerable<Vector3> edges = null,
 						  IEnumerable<Vector3> normals = null,
-						  bool normalised = false) {
+						  bool normalised = false) : base() {
 			this.vertices = AsArray(vertices, true);
 			this.faces = AsArray(faces, true);
 			this.edges = AsArray(edges, false);
@@ -70,30 +70,14 @@ namespace ShapeDatabase.Shapes {
 
 		#region -- Instance Methods --
 
-		public IBoundingBox GetBoundingBox() {
-			return AABB.FromMesh(this);
-		}
-
-		public Vector3 GetFace(uint pos) {
-			return faces[pos];
-		}
-		public Vector3 GetNormal(uint pos) {
-			return normals[pos];
-		}
-		public Vector3 GetVertex(uint pos) {
-			return vertices[pos];
-		}
+		public override Vector3 GetFace(uint pos) => faces[pos];
+		public override Vector3 GetNormal(uint pos) => normals[pos];
+		public override Vector3 GetVertex(uint pos) => vertices[pos];
 
 
-		public void SetFace(uint pos, Vector3 value) {
-			faces[pos] = value;
-		}
-		public void SetNormal(uint pos, Vector3 value) {
-			normals[pos] = value;
-		}
-		public void SetVertex(uint pos, Vector3 value) {
-			vertices[pos] = value;
-		}
+		public void SetFace(uint pos, Vector3 value) => faces[pos] = value;
+		public void SetNormal(uint pos, Vector3 value) => normals[pos] = value;
+		public void SetVertex(uint pos, Vector3 value) => vertices[pos] = value;
 
 		#endregion
 

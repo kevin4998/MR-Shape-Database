@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenTK;
 using ShapeDatabase.IO;
+using ShapeDatabase.Util.Collections;
 
 namespace ShapeDatabase.Shapes {
 
@@ -69,6 +70,8 @@ namespace ShapeDatabase.Shapes {
 		public Vector3 GetVertex(uint pos) => this.Mesh.GetVertex(pos);
 
 		public Vector3 GetRandomVertex(Random rand) => this.Mesh.GetRandomVertex(rand);
+
+		public IWeightedCollection<uint> GetWeights() => this.Mesh.GetWeights();
 
 		#endregion
 
