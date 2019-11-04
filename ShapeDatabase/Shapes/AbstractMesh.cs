@@ -28,7 +28,7 @@ namespace ShapeDatabase.Shapes {
 
 		public AbstractMesh() {
 			lazyBB = new Lazy<IBoundingBox>(InitializeBoundingBox);
-			lazyVertices = new Lazy<IWeightedCollection<uint>>(InitialiseWeights);
+			lazyVertices = new Lazy<IWeightedCollection<uint>>(InitialiseWeights, true);
 		}
 
 		#endregion

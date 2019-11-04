@@ -26,6 +26,8 @@ namespace ShapeDatabase.Util.Collections {
 
 		private T[] array = null;
 		private List<T> list = new List<T>(Settings.RefineVertexNumber);
+		//private (T, double)[] list;
+		//private double totalArea;
 		private bool readMode = false;
 
 		public int Count => readMode ? list.Count : array.Length;
@@ -94,17 +96,23 @@ namespace ShapeDatabase.Util.Collections {
 		[MethodImplAttribute(MethodImplOptions.AggressiveInlining)]
 		private void AllowModifications() {
 			if (!readMode) return;
-			list = new List<T>(array);
-			array = null;
-			readMode = false;
+			lock (SyncRoot) {
+				if (!readMode) return;
+				list = new List<T>(array);
+				array = null;
+				readMode = false;
+			}
 		}
 
 		[MethodImplAttribute(MethodImplOptions.AggressiveInlining)]
 		private void AllowRetrieval() {
 			if (readMode) return;
-			array = list.ToArray();
-			list = null;
-			readMode = true;
+			lock(SyncRoot) {
+				if (readMode) return;
+				array = list.ToArray();
+				list = null;
+				readMode = true;
+			}
 		}
 
 
