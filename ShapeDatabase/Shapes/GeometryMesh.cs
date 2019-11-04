@@ -20,6 +20,7 @@ namespace ShapeDatabase.Shapes {
 		public uint NormalCount => (uint) Base.VertexCount;
 
 		private readonly Lazy<IBoundingBox> lazy;
+		private readonly uint[] weightedvertexarray;
 
 		public IEnumerable<Vector3> Vertices {
 			get {
@@ -52,6 +53,7 @@ namespace ShapeDatabase.Shapes {
 			IsNormalised = normalised;
 
 			lazy = new Lazy<IBoundingBox>(InitializeBoundingBox);
+			weightedvertexarray = this.SetWeightedVertexArray();
 		}
 
 		#endregion
@@ -82,6 +84,11 @@ namespace ShapeDatabase.Shapes {
 
 		public double GetTriArea(uint tID) {
 			return Base.GetTriArea(Convert.ToInt32(tID));
+		}
+
+		public Vector3 GetRandomVertex(Random rand)
+		{
+			return MeshEx.GetRandomVertex(this, rand, weightedvertexarray);
 		}
 
 		public static GeometryMesh Create(g3.DMesh3 mesh) {

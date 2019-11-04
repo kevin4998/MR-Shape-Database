@@ -71,17 +71,7 @@ namespace ShapeDatabase.Features {
 		/// </summary>
 		/// <param name="vector">The other vector</param>
 		/// <returns>The PTD</returns>
-		public double Compare(FeatureVector vector) {
-			/*if (vector == null)
-				throw new ArgumentNullException(nameof(vector));
-
-			(double[] X_values, double[] X_weights) = CreatePTDArray(Descriptors);
-			(double[] Y_values, double[] Y_weights) = CreatePTDArray(vector.Descriptors);
-
-			return Functions.CalculatePTD(X_values, X_weights, Y_values, Y_weights);*/
-
-			return Compare(this, vector);
-		}
+		public double Compare(FeatureVector vector) => Compare(this, vector);
 
 		/// <summary>
 		/// A manner to compare two features and see how similar they are.
@@ -106,8 +96,10 @@ namespace ShapeDatabase.Features {
 			IEnumerator<IDescriptor> pdescs = primary.Descriptors.GetEnumerator();
 			IEnumerator<IDescriptor> sdescs = secondary.Descriptors.GetEnumerator();
 
-			double sum = 0;
-			int count = 0;
+			double sumCubedElem = 0;
+			double sumHist = 0;
+			int countHist = 0;
+
 			bool hasNext = true;
 			hasNext &= pdescs.MoveNext();
 			hasNext &= sdescs.MoveNext();
@@ -118,8 +110,14 @@ namespace ShapeDatabase.Features {
 
 				int dif = comparer.Compare(pdesc, sdesc);
 				if (dif == 0) {
-					sum += pdesc.Compare(sdesc) * weights[pdesc.Name];
-					count++;
+
+					if (pdesc is ElemDescriptor) { 
+						sumCubedElem += Math.Pow(pdesc.Compare(sdesc), 2)
+										* weights[pdesc.Name];
+					} else if (pdesc is HistDescriptor) { 
+						sumHist += pdesc.Compare(sdesc) * weights[pdesc.Name];
+						countHist++;
+					}
 
 					hasNext &= pdescs.MoveNext();
 					hasNext &= sdescs.MoveNext();
@@ -134,8 +132,10 @@ namespace ShapeDatabase.Features {
 					hasNext &= sdescs.MoveNext();
 				}
 			}
-			// Equals weight function.
-			return (count == 0) ? 0 : sum / count;
+
+			double L2 = Math.Sqrt(sumCubedElem);
+			double distance = (sumHist + L2) / (countHist + 1);
+			return distance;
 
 		}
 
