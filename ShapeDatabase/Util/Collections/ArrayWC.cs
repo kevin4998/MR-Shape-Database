@@ -25,7 +25,7 @@ namespace ShapeDatabase.Util.Collections {
 		#region --- Properties ---
 
 		private T[] array = null;
-		private List<T> list = new List<T>();
+		private List<T> list = new List<T>(Settings.RefineVertexNumber);
 		private bool readMode = false;
 
 		public int Count => readMode ? list.Count : array.Length;
