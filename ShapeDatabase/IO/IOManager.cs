@@ -197,10 +197,10 @@ namespace ShapeDatabase.IO {
 			} catch (ArgumentException) {
 				// We don't care about the exception since it didn't work.
 				// So ignore and continue.
-			} catch (NotSupportedException) {
+			} /*catch (NotSupportedException) {
 				// We don't care about the exception since it didn't work.
 				// So ignore and continue.
-			}
+			}*/
 			return false;
 		}
 
@@ -219,7 +219,7 @@ namespace ShapeDatabase.IO {
 			if (string.IsNullOrEmpty(path))
 				throw new ArgumentNullException(nameof(path));
 
-			string extension = new FileInfo(path).Extension;
+			string extension = new FileInfo(path).Extension.Substring(1);
 			// Check if we have a supported Reader.
 			if (TryGetReader(extension, type, out IReader reader))
 				return reader.ConvertFile(path);
@@ -368,8 +368,10 @@ namespace ShapeDatabase.IO {
 			if (!dic.TryGetValue(type, out exDic)) {
 				// Phase 2: Search for inherited types. 
 				foreach (Type rType in dic.Keys) {
-					if (rType.IsAssignableFrom(type)) {
+					if (type.IsAssignableFrom(rType)
+						|| rType.IsAssignableFrom(type)) {
 						exDic = dic[rType];
+						break;
 					}
 				}
 			}
