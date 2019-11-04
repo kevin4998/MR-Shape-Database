@@ -50,22 +50,32 @@ namespace ShapeDatabase.Shapes {
 		#region -- Normal Meshes --
 
 		public void AddAndRefine(string file) => AddAndRefine(new FileInfo(file));
-		public void AddAndRefine(FileInfo file) =>
+		public void AddAndRefine(FileInfo file) {
+			if (ProcessedMeshes.Contains(file.Name)) return;
 			AddDirect(Refine(file, Settings.ShapeFinalDir, Settings.ShapeFailedDir));
+		}
 
 		public void AddDirect(string file) => AddDirect(new FileInfo(file));
-		public void AddDirect(FileInfo file) => Add(file, ProcessedMeshes);
+		public void AddDirect(FileInfo file) {
+			if (ProcessedMeshes.Contains(file.Name)) return;
+			Add(file, ProcessedMeshes);
+		}
 
 		#endregion
 
 		#region -- Query Meshes --
 
 		public void AddQueryAndRefine(string file) => AddQueryAndRefine(new FileInfo(file));
-		public void AddQueryAndRefine(FileInfo file) =>
+		public void AddQueryAndRefine(FileInfo file) {
+			if (QueryMeshes.Contains(file.Name)) return;
 			AddQueryDirect(Refine(file, null, Settings.ShapeFailedDir));
+		}
 
 		public void AddQueryDirect(string file) => AddQueryDirect(new FileInfo(file));
-		public void AddQueryDirect(FileInfo file) => Add(file, QueryMeshes);
+		public void AddQueryDirect(FileInfo file) {
+			if (QueryMeshes.Contains(file.Name)) return;
+			Add(file, QueryMeshes);
+		}
 
 		#endregion
 
@@ -89,7 +99,7 @@ namespace ShapeDatabase.Shapes {
 				throw new ArgumentNullException();
 
 			// Remember the original map for later.
-			string originalMap = file.DirectoryName;
+			string originalMap = file.Directory.Parent.FullName;
 			// All modifications happen in the temp map.
 			MoveFile(ref file, Settings.ShapeTempDir);
 
