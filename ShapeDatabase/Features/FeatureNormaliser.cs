@@ -70,19 +70,30 @@ namespace ShapeDatabase.Features {
 						(double min, double max) = MinMaxValues[desc.Name];
 						double range = max - min;
 
-						if (range != 0) {
-							elemValue = Math.Max(min, elemValue);
-							elemValue = Math.Min(max, elemValue);
-							elemValue = (elemValue - min) / range;
-						} else {
-							elemValue = Math.Max(0, elemValue);
-							elemValue = Math.Min(1, elemValue);
+						if(elemValue == double.PositiveInfinity)
+						{
+							normalisedDescriptors[descCount] = new ElemDescriptor(
+							elemName, 1);
 						}
+						else
+						{
+							if (range != 0)
+							{
+								elemValue = Math.Max(min, elemValue);
+								elemValue = Math.Min(max, elemValue);
+								elemValue = (elemValue - min) / range;
+							}
+							else
+							{
+								elemValue = Math.Max(0, elemValue);
+								elemValue = Math.Min(1, elemValue);
+							}
 
-						normalisedDescriptors[descCount] = new ElemDescriptor(
-							elemName,
-							elemValue
-						);
+							normalisedDescriptors[descCount] = new ElemDescriptor(
+								elemName,
+								elemValue
+							);
+						}
 
 						//Normalisation for Histogram Descriptor.
 					} else if (desc is HistDescriptor histDesc)
@@ -119,8 +130,8 @@ namespace ShapeDatabase.Features {
 			// Iterate over all vectors and update the min and max of each descriptor.
 			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
 				foreach (ElemDescriptor desc in vector.Value.GetDescriptors<ElemDescriptor>()) {
-					double Min = (desc.Value < MinMaxValues[desc.Name].Item1) ? desc.Value : MinMaxValues[desc.Name].Item1;
-					double Max = (desc.Value > MinMaxValues[desc.Name].Item2) ? desc.Value : MinMaxValues[desc.Name].Item2;
+					double Min = (desc.Value != double.PositiveInfinity && desc.Value < MinMaxValues[desc.Name].Item1) ? desc.Value : MinMaxValues[desc.Name].Item1;
+					double Max = (desc.Value != double.PositiveInfinity && desc.Value > MinMaxValues[desc.Name].Item2) ? desc.Value : MinMaxValues[desc.Name].Item2;
 					MinMaxValues[desc.Name] = (Min, Max);
 				}
 		}
