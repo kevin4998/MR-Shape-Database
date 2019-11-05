@@ -114,9 +114,12 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			QueryResult[] queryResults = new QueryResult[queryItems];
 			int nextElement = 0;
 			QuerySizeMode mode = options.QuerySizeMode;
+			QueryInputMode input = options.QueryInputMode;
 			Enum.TryParse(mode.ToString(), out QuerySize size);
 
-			if (Settings.MeshLibrary.Count == 0)
+			if (input == QueryInputMode.Internal)
+				queryResults = manager.InternalCompare(size);
+			else if (Settings.MeshLibrary.Count == 0)
 				foreach (MeshEntry entry in Settings.QueryLibrary.Meshes)
 					queryResults[nextElement++] = new QueryResult(entry.Name);
 			else

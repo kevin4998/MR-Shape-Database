@@ -257,9 +257,8 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <see cref="FeatureManager"/> and returns all the meshes ordered by the
 		/// similarity.
 		/// </summary>
-		/// <param name="count">The number of elements to return in the result.
-		/// -1 identifies that all the results should be returned.</param>
-		/// <param name="meshes">The mesh that should be compared with all other meshes in the database.</param>
+		/// <param name="meshes">The mesh that should be compared with all other meshes
+		/// in the database.</param>
 		/// <returns>A <see cref="QueryResult"/> array which contains the K-best similair
 		/// matches from the entire database for these entries.</returns>
 		public QueryResult[] CalculateResults(QuerySize size, IEnumerable<MeshEntry> meshes) {
@@ -272,20 +271,7 @@ namespace ShapeDatabase.Features.Descriptors {
 			Parallel.ForEach(meshes, entry => {
 				FeatureVector queryVector = CreateVector(entry);
 				queryVector = NormaliseVector(queryVector);
-				int count = 0;
-				switch (size) {
-				case QuerySize.KBest:
-					count = Math.Min(Settings.KBestResults, FeatureCount);
-					break;
-				case QuerySize.Class:
-					count = Settings.FileManager.ShapesInClass(entry.Class);
-					break;
-				case QuerySize.All:
-					count = FeatureCount;
-					break;
-				}
-				if (count == 0)
-					count = Math.Min(Settings.KBestResults, FeatureCount);
+				int count = QuerySizeToInt(size, entry.Class);
 				results.Add(HNSW.RunANNQuery(entry.Name,
 											 queryVector,
 											 count));
@@ -294,6 +280,51 @@ namespace ShapeDatabase.Features.Descriptors {
 			QueryResult[] array = results.ToArray();
 			Array.Sort(array);
 			return array;
+		}
+
+
+		/// <summary>
+		/// Compares all the featurevectors in the database with each other.
+		/// </summary>
+		/// <param name="size">The size of best number of elements.</param>
+		/// <returns>A <see cref="QueryResult"/> array which contains the K-best similair
+		/// matches from the entire database for these entries.</returns>
+		public QueryResult[] InternalCompare(QuerySize size) {
+
+			ANN HNSW = new ANN(features);
+
+			ConcurrentBag<QueryResult> results = new ConcurrentBag<QueryResult>();
+			Parallel.ForEach(VectorDictionary, pair => {
+				string name = pair.Key;
+				FeatureVector vector = pair.Value;
+				string clazz = Settings.FileManager.ClassByShapeName(name);
+				int count = QuerySizeToInt(size, clazz);
+
+				results.Add(HNSW.RunANNQuery(name, vector, count));
+			});
+
+			return results.ToArray();
+		}
+
+		private int QuerySizeToInt(QuerySize size, string clazz) {
+			int count = 0;
+			// Calculate the size based on the given enum.
+			switch (size) {
+			case QuerySize.KBest:
+				count = Math.Min(Settings.KBestResults, FeatureCount);
+				break;
+			case QuerySize.Class:
+				count = Settings.FileManager.ShapesInClass(clazz);
+				break;
+			case QuerySize.All:
+				count = FeatureCount;
+				break;
+			}
+			// Edge case: The value is still 0 for whatever reason.
+			if (count == 0)
+				count = Math.Min(Settings.KBestResults, FeatureCount);
+
+			return count;
 		}
 
 		#endregion
