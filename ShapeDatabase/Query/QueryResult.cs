@@ -35,10 +35,12 @@ namespace ShapeDatabase.Query {
 		/// of the most accurate one first.
 		/// </summary>
 		public IEnumerable<QueryItem> Results => results;
+
 		/// <summary>
 		/// The number of elements which have been compared to the reference one.
 		/// </summary>
 		public int Count => results.Count;
+
 		/// <summary>
 		/// Shows if no items have been compared yet to the reference item.
 		/// </summary>
@@ -67,16 +69,14 @@ namespace ShapeDatabase.Query {
 		#region --- Instance Methods ---
 
 		/// <summary>
-		/// Resets the current collection of results to compare again with the
-		/// database.
+		/// Resets the current collection of results.
 		/// </summary>
 		public void Clear() {
 			results.Clear();
 		}
 
-
 		/// <summary>
-		/// A new compared item to add to the collection.
+		/// Adds a new compared item to the collection.
 		/// </summary>
 		/// <param name="item">The querried database item with their distance.</param>
 		public void AddItem(QueryItem item) {
@@ -96,11 +96,10 @@ namespace ShapeDatabase.Query {
 		/// A new compared item to add to the collection.
 		/// </summary>
 		/// <param name="name">The name of the item from the database.</param>
-		/// <param name="distance">The distance between the reference and database
+		/// <param name="distance">The distance between the reference item and database
 		/// item. The larger the distance the further it is from the reference item.
 		/// </param>
 		public void AddItem(string name, double distance) => AddItem(new QueryItem(name, distance));
-
 
 		/// <summary>
 		/// Gives the best results from the query object as an array.
@@ -108,8 +107,7 @@ namespace ShapeDatabase.Query {
 		/// amount of queried objects in this class.
 		/// </summary>
 		/// <param name="resultCount">The number of elements to retrieve.</param>
-		/// <returns>An array containing the best querried items from the
-		/// solution.</returns>
+		/// <returns>An array containing the best querried items from the solution.</returns>
 		public QueryItem[] GetBestResults(int resultCount) {
 			if (resultCount < 0)
 				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(resultCount));
@@ -131,7 +129,6 @@ namespace ShapeDatabase.Query {
 			return result;
 		}
 
-
 		public override string ToString() {
 			return string.Format(
 				Settings.Culture,
@@ -141,6 +138,11 @@ namespace ShapeDatabase.Query {
 			);
 		}
 
+		/// <summary>
+		/// Compares the name of one QueryResult to the name of another QueryResult (for alphabetic sorting).
+		/// </summary>
+		/// <param name="other">The other QueryResult.</param>
+		/// <returns>Returns an int < 0 if lower, = 0 if equal, and > 0 if higher (alphabetically).</returns>
 		public int CompareTo(QueryResult other) {
 			if (other == null)
 				throw new ArgumentNullException(nameof(other));
@@ -148,7 +150,5 @@ namespace ShapeDatabase.Query {
 		}
 
 		#endregion
-
 	}
-
 }
