@@ -16,7 +16,19 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Properties ---
 
+		/// <summary>
+		/// A function to give a class to the specified record.
+		/// All records with the same class will be combined into one record.
+		/// </summary>
+		/// <param name="record">The record whose class to retrieve.</param>
+		/// <returns>A string to identify the new class for this record.</returns>
 		public delegate string MergeClass(Record record);
+		/// <summary>
+		/// A function to combine a collection of values into one specific property.
+		/// </summary>
+		/// <param name="record">The collection of values which represent all the
+		/// individual characteristics or the Records.</param>
+		/// <returns>An aggregated value of the specified records.</returns>
 		public delegate object MergeMeasures(ICollection<object> record);
 
 		private MergeClass mergeClass;
@@ -37,19 +49,50 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Provides a new way to combine data for the specified class values.
+		/// </summary>
+		/// <param name="className">The name of the class where this value is applicable.
+		/// </param>
+		/// <param name="func">The function to combine all the values into one
+		/// property.</param>
+		/// <returns>The current <see cref="RecordMerger"/> for chaining.</returns>
 		public RecordMerger AddMeasure(string className, MergeMeasures func) {
 			classMeasures.Add(className, func);
 			return this;
 		}
+		/// <summary>
+		/// Provides a new way to combine data for the specified class values.
+		/// </summary>
+		/// <param name="type">The type of objects for which this formula is
+		/// applicable.</param>
+		/// <param name="func">The function to combine all the values into one
+		/// property.</param>
+		/// <returns>The current <see cref="RecordMerger"/> for chaining.</returns>
 		public RecordMerger AddMeasure(Type type, MergeMeasures func) {
 			typeMeasures.Add(type, func);
 			return this;
 		}
+		/// <summary>
+		/// Provides a new way to combine data for the specified class values.
+		/// </summary>
+		/// <typeparam name="T">The type of objects for which this formula is
+		/// applicable.</typeparam>
+		/// <param name="func">The function to combine all the values into one
+		/// property.</param>
+		/// <returns>The current <see cref="RecordMerger"/> for chaining.</returns>
 		public RecordMerger AddMeasure<T>(MergeMeasures func) =>
 			AddMeasure(typeof(T), func);
 
-
-		public IRecordHolder Merge<T>(IRecordHolder<T> holder) {
+		/// <summary>
+		/// Combines all the records in the specified Record Holder with
+		/// the current combination formulas in this object.
+		/// </summary>
+		/// <param name="holder">The collection of records which hsould be merged.</param>
+		/// <returns>A new <see cref="IRecordHolder"/> which contains the aggregated
+		/// data of all the previous records.</returns>
+		public IRecordHolder Merge(IEnumerable<Record> holder) {
+			// Combines all the records in a merge record.
 			foreach(Record record in holder) {
 				string group = mergeClass(record);
 				MergeRecord merge = GetOrCreate(group);
@@ -58,7 +101,7 @@ namespace ShapeDatabase.Features.Statistics {
 			}
 
 			DirectRecordHolder recordHolder = new DirectRecordHolder();
-
+			// Aggregates all the data in a merge record into a single value.
 			foreach(KeyValuePair<string, MergeRecord> recordPair in records) {
 				string name = recordPair.Key;
 				MergeRecord merge = recordPair.Value;

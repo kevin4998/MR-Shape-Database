@@ -71,8 +71,19 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			IRecordHolder<QueryResult> records = EvaluationCalculator;
 			QueryResult[] results = QueryHandler.LoadQueryResults(options.ShouldImport);
 			records.TakeSnapShot(results);
+
+			IRecordHolder holder = null;
+			switch (options.EvaluationMode) {
+			case EvaluationMode.Individual:
+				holder = records;
+				break;
+			case EvaluationMode.Aggregated:
+				holder = RecordMerger.Merge(records);
+				break;
+			}
+
 			if (options.ShouldExport)
-				SaveEvaluation(records);
+				SaveEvaluation(holder);
 
 			WriteLine(I_EndProc_Evaluate);
 		}
@@ -82,7 +93,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// Serialises the results of the evaluation to its own file.
 		/// </summary>
 		/// <param name="records">The holder of the evaluation information.</param>
-		private static void SaveEvaluation(IRecordHolder<QueryResult> records) {
+		private static void SaveEvaluation(IRecordHolder records) {
 			string directory = Settings.QueryDir;
 			string filename = Settings.EvaluationFile;
 
