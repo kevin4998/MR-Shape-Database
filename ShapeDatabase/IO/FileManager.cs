@@ -76,14 +76,14 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		/// <param name="readers">The readers which can convert files into meshes.</param>
 		/// <exception cref="ArgumentException">If a given reader does not contain
-		/// any supported file extensions.</exception>
+		/// any supported file extension.</exception>
 		public void AddReader<T>(params IReader<T>[] readers) =>
 			IOManager.AddReaders<T>(readers);
 
 		/// <summary>
 		/// Provides another refiner which can normalise meshes for easier feature extraction.
 		/// This will have effect on the next provided directories.
-		/// It will not try to recover the extra filess from previous directories.
+		/// It will not try to recover the extra files from previous directories.
 		/// </summary>
 		/// <param name="refiners">The refiner which can normalise a shape in any way.</param>
 		public void AddRefiner(params IRefiner<IMesh>[] refiners) =>
@@ -128,10 +128,8 @@ namespace ShapeDatabase.IO {
 		/// for shapes in this database.</param>
 		/// <param name="async">>If the given method may make use of asynchronous
 		/// operations.</param>
-		/// <exception cref="ArgumentNullException">If the given directory is
-		/// <see langword="null"/>.</exception>
-		/// <exception cref="ArgumentException">If the given directory does not exist.
-		/// </exception>
+		/// <exception cref="ArgumentNullException">If the given directory is <see langword="null"/>.</exception>
+		/// <exception cref="ArgumentException">If the given directory does not exist.</exception>
 		public void AddDirectoryDirect(string filedir, bool async = true) =>
 			AddDir(filedir, Library.AddDirect, async);
 
@@ -144,10 +142,8 @@ namespace ShapeDatabase.IO {
 		/// for shapes in this database.</param>
 		/// <param name="async">If the given method may make use of asynchronous
 		/// operations.</param>
-		/// <exception cref="ArgumentNullException">If the given directory is
-		/// <see langword="null"/>.</exception>
-		/// <exception cref="ArgumentException">If the given directory does not exist.
-		/// </exception>
+		/// <exception cref="ArgumentNullException">If the given directory is<see langword="null"/>.</exception>
+		/// <exception cref="ArgumentException">If the given directory does not exist.</exception>
 		public void AddQueryDirectory(string filedir, bool async = false) =>
 			AddDir(filedir, Library.AddQueryAndRefine, async);
 
@@ -160,10 +156,8 @@ namespace ShapeDatabase.IO {
 		/// for shapes in this database.</param>
 		/// <param name="async">If the given method may make use of asynchronous
 		/// operations.</param>
-		/// <exception cref="ArgumentNullException">If the given directory is
-		/// <see langword="null"/>.</exception>
-		/// <exception cref="ArgumentException">If the given directory does not exist.
-		/// </exception>
+		/// <exception cref="ArgumentNullException">If the given directory is<see langword="null"/>.</exception>
+		/// <exception cref="ArgumentException">If the given directory does not exist.</exception>
 		public void AddQueryDirectoryDirect(string filedir, bool async = false) =>
 			AddDir(filedir, Library.AddQueryDirect, async);
 
@@ -237,8 +231,6 @@ namespace ShapeDatabase.IO {
 		public void Write<T>(string path, T value) =>
 			IOManager.Write<T>(path, value);
 
-
-
 		/// <summary>
 		/// Deserialises the given file into the specified object type if possible.
 		/// </summary>
@@ -297,14 +289,10 @@ namespace ShapeDatabase.IO {
 		/// Looks through the specified directory and subdirectories for all
 		/// the different files which can be loaded by the current FileManager.
 		/// </summary>
-		/// <param name="directory">The main directory to search for files to convert.
-		/// </param>
-		/// <returns>An array of all the files in the directory which can be read.
-		/// </returns>
-		/// <exception cref="ArgumentNullException">if the given directory is
-		/// <see langword="null"/>.</exception>
-		/// <exception cref="ArgumentException">if the given directry does not exist.
-		/// </exception>
+		/// <param name="directory">The main directory to search for files to convert.</param>
+		/// <returns>An array of all the files in the directory which can be read.</returns>
+		/// <exception cref="ArgumentNullException">If the given directory is <see langword="null"/>.</exception>
+		/// <exception cref="ArgumentException">If the given directory does not exist.</exception>
 		private FileInfo[] DiscoverFiles(DirectoryInfo directory) {
 			if (directory == null)
 				throw new ArgumentNullException(nameof(directory));

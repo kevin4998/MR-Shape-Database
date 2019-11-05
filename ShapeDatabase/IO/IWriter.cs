@@ -28,7 +28,7 @@ namespace ShapeDatabase.IO {
 	}
 
 	/// <summary>
-	/// Describes a single writer which can export certain types of object
+	/// Describes a single writer which can export certain types of an object
 	/// to a file to be read back later.
 	/// </summary>
 	/// <typeparam name="T">The type of object which can be exported.</typeparam>
@@ -124,7 +124,6 @@ namespace ShapeDatabase.IO {
 			return Task.Run(() => writer.WriteFile(type, stream));
 		}
 
-
 		/// <summary>
 		/// Transforms the given object and exports it to a file at the specified location.
 		/// </summary>
@@ -198,7 +197,5 @@ namespace ShapeDatabase.IO {
 
 			return Task.Run(() => writer.WriteFile(type, stream));
 		}
-
 	}
-
 }

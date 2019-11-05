@@ -7,6 +7,7 @@ using OpenTK;
 using ShapeDatabase.Shapes;
 
 namespace ShapeDatabase.IO {
+
 	/// <summary>
 	/// Class for writing a mesh to an off file.
 	/// </summary>
@@ -21,7 +22,9 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		public static OFFWriter Instance { get { return lazy.Value; } }
 
-
+		/// <summary>
+		/// Collection of all supported formats.
+		/// </summary>
 		public ICollection<string> SupportedFormats { get; } = new string[] { "off" };
 
 		#endregion
@@ -35,10 +38,10 @@ namespace ShapeDatabase.IO {
 		#region --- Instance Methods ---
 
 		/// <summary>
-		/// Writes an unstructured mesh to an off file with a given streamwriter
+		/// Writes an unstructured mesh to an off file with a given streamwriter.
 		/// </summary>
-		/// <param name="type">The unstructured mesh that needs to be written to an off file</param>
-		/// <param name="writer">The streamwriter that needs to be used</param>
+		/// <param name="type">The unstructured mesh that needs to be written to an off file.</param>
+		/// <param name="writer">The streamwriter that needs to be used.</param>
 		public void WriteFile(IMesh type, StreamWriter writer) {
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));

@@ -20,8 +20,11 @@ namespace ShapeDatabase.IO {
 
 		#region --- Properties ---
 
-		// Serialisation names for SerializationInfo.
+		/// <summary>
+		/// Serialisation names for SerializationInfo.
+		/// </summary>
 		private const string serCode = "Code";
+
 		/// <summary>
 		/// The message returned from the writer to inform the user of what
 		/// went wrong in the deserialisation process.
@@ -34,7 +37,7 @@ namespace ShapeDatabase.IO {
 
 		/// <summary>
 		/// Initialises a new instance of the <see cref="G3WriterException"/> class,
-		/// which specified that a problem occured in an external writer.
+		/// which specifies that a problem occured in an external writer.
 		/// </summary>
 		protected G3WriterException()
 			: base() {
@@ -43,7 +46,7 @@ namespace ShapeDatabase.IO {
 
 		/// <summary>
 		/// Initialises a new instance of the <see cref="G3WriterException"/> class,
-		/// which specified that a problem occured in an external writer.
+		/// which specifies that a problem occured in an external writer.
 		/// </summary>
 		/// <param name="message">The error message to show to the user.</param>
 		protected G3WriterException(string message)
@@ -51,17 +54,16 @@ namespace ShapeDatabase.IO {
 
 		/// <summary>
 		/// Initialises a new instance of the <see cref="G3WriterException"/> class,
-		/// which specified that a problem occured in an external writer.
+		/// which specifies that a problem occured in an external writer.
 		/// </summary>
 		/// <param name="message">The error message to show to the user.</param>
 		/// <param name="innerException">The previous exception which caused this one.</param>
 		protected G3WriterException(string message, Exception innerException)
 			: base(message, innerException) { }
 
-
 		/// <summary>
 		/// Initialises a new instance of the <see cref="G3WriterException"/> class,
-		/// which specified that a problem occured in an external writer.
+		/// which specifies that a problem occured in an external writer.
 		/// </summary>
 		/// <param name="result">The error message provided by the other writer.</param>
 		public G3WriterException(IOWriteResult result)
@@ -69,7 +71,7 @@ namespace ShapeDatabase.IO {
 
 		/// <summary>
 		/// Initialises a new instance of the <see cref="G3WriterException"/> class,
-		/// which specified that a problem occured in an external writer.
+		/// which specifies that a problem occured in an external writer.
 		/// </summary>
 		/// <param name="result">The error message provided by the other writer.</param>
 		/// <param name="innerException">
@@ -82,10 +84,9 @@ namespace ShapeDatabase.IO {
 			Result = result;
 		}
 
-
 		/// <summary>
 		/// Initialises a new instance of the <see cref="G3WriterException"/> class,
-		/// which specified that a problem occured in an external writer.
+		/// which specifies that a problem occured in an external writer.
 		/// </summary>
 		/// <param name="info">The data for serializing or deserializing the object.</param>
 		/// <param name="context">The source and destination for the object.</param>
@@ -111,5 +112,4 @@ namespace ShapeDatabase.IO {
 		#endregion
 
 	}
-
 }

@@ -7,7 +7,7 @@ using IniParser.Model;
 namespace ShapeDatabase.IO {
 
 	/// <summary>
-	/// A reader to serialise Settings for this application.
+	/// A reader for serialised settings for this application.
 	/// </summary>
 	class SettingsReader : IReader<TempSettings> {
 
@@ -22,7 +22,9 @@ namespace ShapeDatabase.IO {
 		private static readonly Lazy<SettingsReader> lazy
 			= new Lazy<SettingsReader>(() => new SettingsReader());
 
-
+		/// <summary>
+		/// A collection containing the supported formats.
+		/// </summary>
 		public ICollection<string> SupportedFormats => new string[] { "ini" };
 
 		#endregion
@@ -35,6 +37,11 @@ namespace ShapeDatabase.IO {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Reads the settings file given a streamreader.
+		/// </summary>
+		/// <param name="reader">The streamreader.</param>
+		/// <returns>The settings.</returns>
 		public TempSettings ConvertFile(StreamReader reader) {
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
@@ -63,7 +70,5 @@ namespace ShapeDatabase.IO {
 		object IReader.ConvertFile(StreamReader reader) => ConvertFile(reader);
 
 		#endregion
-
 	}
-
 }

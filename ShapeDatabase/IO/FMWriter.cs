@@ -10,6 +10,7 @@ using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 
 namespace ShapeDatabase.IO {
+
 	/// <summary>
 	/// Class for writing the featurevectors of the featuremanager to a csv file.
 	/// </summary>
@@ -24,6 +25,10 @@ namespace ShapeDatabase.IO {
 		/// Provides a writer to convert <see cref="FeatureManager"/>s into csv.
 		/// </summary>
 		public static FMWriter Instance => lazy.Value;
+
+		/// <summary>
+		/// Collection containing all supported formats.
+		/// </summary>
 		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
@@ -39,6 +44,11 @@ namespace ShapeDatabase.IO {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Writes a featuremanager to a csv file.
+		/// </summary>
+		/// <param name="type">The featuremanager.</param>
+		/// <param name="writer">The streamwriter to be used.</param>
 		public void WriteFile(FeatureManager type, StreamWriter writer) {
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
