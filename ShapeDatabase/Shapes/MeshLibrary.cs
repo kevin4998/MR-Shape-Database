@@ -14,11 +14,29 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Properties ---
 
-		private readonly IDictionary<string, MeshEntry> library
-			= new Dictionary<string, MeshEntry>();
+		private readonly IDictionary<string, MeshEntry?> library
+			= new Dictionary<string, MeshEntry?>();
 
-		public MeshEntry this[string name] => library[name];
-		public ICollection<MeshEntry> Meshes => library.Values;
+		public MeshEntry this[string name] {
+			get {
+				MeshEntry? mesh = library[name];
+				if (mesh.HasValue)
+					return mesh.Value;
+				throw new KeyNotFoundException();
+			}
+		}
+
+		public ICollection<MeshEntry> Meshes {
+			get {
+				ICollection<MeshEntry?> meshes = library.Values;
+				IList<MeshEntry> results = new List<MeshEntry>();
+				foreach(MeshEntry? mesh in meshes)
+					if (mesh.HasValue)
+						results.Add(mesh.Value);
+				return results;
+			}
+		}
+
 		public ICollection<string> Names => library.Keys;
 
 		/// <summary>
@@ -53,7 +71,11 @@ namespace ShapeDatabase.Shapes {
 		}
 
 		public bool TryGetValue(string name, out MeshEntry entry) {
-			return library.TryGetValue(name, out entry);
+			entry = default;
+			if (library.TryGetValue(name, out MeshEntry? result)
+				&& result.HasValue)
+				entry = result.Value;
+			return entry.IsNull;
 		}
 
 		#endregion
@@ -90,9 +112,9 @@ namespace ShapeDatabase.Shapes {
 		}
 
 		public IEnumerator<MeshEntry> GetEnumerator() {
-			foreach (MeshEntry entry in library.Values)
-				if (!entry.IsNull)
-					yield return entry;
+			foreach (MeshEntry? entry in library.Values)
+				if (entry.HasValue && !entry.Value.IsNull)
+					yield return entry.Value;
 		}
 
 		IEnumerator IEnumerable.GetEnumerator() {

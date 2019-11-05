@@ -284,6 +284,8 @@ namespace ShapeDatabase.Features.Descriptors {
 					count = FeatureCount;
 					break;
 				}
+				if (count == 0)
+					count = Math.Min(Settings.KBestResults, FeatureCount);
 				results.Add(HNSW.RunANNQuery(entry.Name,
 											 queryVector,
 											 count));
