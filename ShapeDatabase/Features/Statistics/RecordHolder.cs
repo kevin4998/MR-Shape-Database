@@ -17,12 +17,26 @@ namespace ShapeDatabase.Features.Statistics {
 			new Dictionary<string, Func<T, object>>();
 		protected Func<T, string> NameProvider { get; }
 
-
+		/// <summary>
+		/// Whether the recordholder is still empty.
+		/// </summary>
 		public virtual bool IsEmpty => SnapshotTime == DateTime.MinValue;
+
+		/// <summary>
+		/// Whether a snapshot is (currently) being taken.
+		/// </summary>
 		public virtual bool IsActive { get; protected set; } = false;
 
+		/// <summary>
+		/// The last time a snapshot was being taken.
+		/// </summary>
 		public virtual DateTime SnapshotTime { get; protected set; } = DateTime.MinValue;
+
+		/// <summary>
+		/// The collection of records which was made during the last snapshot.
+		/// </summary>
 		public virtual ICollection<Record> Records { get; private set; } = new List<Record>();
+		
 		/// <summary>
 		/// A collection of measures which will be taken of all the objects in
 		/// a provided database during the next snapshot.
@@ -33,6 +47,12 @@ namespace ShapeDatabase.Features.Statistics {
 					yield return (pair.Key, pair.Value);
 			}
 		}
+
+		/// <summary>
+		/// A collection of names for each measure which will be taken.
+		/// These names are unique and ordered in the way that they will be taken
+		/// for each object.
+		/// </summary>
 		public virtual IEnumerable<string> MeasureNames {
 			get {
 				// Using the KeyValuePairs instead of the Name Set to guarantee ordering.
@@ -66,8 +86,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <param name="measures">A collection of measurements which should be
 		/// taken for each object in the database.</param>
 		/// <exception cref="ArgumentNullException">If a measurement is
-		/// <see langword="null"/> or any of its properties is <see langword="null"/>.
-		/// </exception>
+		/// <see langword="null"/> or any of its properties is <see langword="null"/>.</exception>
 		public RecordHolder(Func<T, string> nameProvider,
 							params (string, Func<T, object>)[] measures)
 			: this(nameProvider) {
@@ -78,6 +97,14 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Methods ---
 
+		/// <summary>
+		/// Provides a new measurement to be taken for the objects in the database.
+		/// </summary>
+		/// <param name="measureName">The unique name of the measurement.</param>
+		/// <param name="provider">The function to retrieve this measure.</param>
+		/// <param name="overwrite">If a previous measure should be overwritten with
+		/// the same name.</param>
+		/// <returns>The current object for chaining.</returns>
 		public virtual IRecordHolder<T> AddMeasure(string measureName, Func<T, object> provider,
 										bool overwrite = false) {
 			if (measureName == null)
@@ -91,13 +118,26 @@ namespace ShapeDatabase.Features.Statistics {
 			return this;
 		}
 
-
+		/// <summary>
+		/// Deletes all previous snapshot values so a new one can be taken.
+		/// This should always be performed before taking a new snapshot.
+		/// </summary>
+		/// <returns>The current object for chaining.</returns>
 		public virtual IRecordHolder<T> Reset() {
 			SnapshotTime = DateTime.MinValue;
 			Records = new List<Record>();
 			return this;
 		}
+
 		IRecordHolder IRecordHolder.Reset() => Reset();
+
+		/// <summary>
+		/// Takes a snapshot of the provided database and calculates statistics
+		/// for each item present in it.
+		/// </summary>
+		/// <param name="library">The database containing values to get measurements
+		/// for.</param>
+		/// <returns>The current object for chaining.</returns>
 		public virtual IRecordHolder<T> TakeSnapShot(IEnumerable<T> library) {
 			if (!IsEmpty || IsActive)
 				throw new SnapShotException();
@@ -129,11 +169,14 @@ namespace ShapeDatabase.Features.Statistics {
 			return record;
 		}
 
-
-
+		/// <summary>
+		/// Gets an enumerator for the records. 
+		/// </summary>
+		/// <returns>The enumerator</returns>
 		public IEnumerator<Record> GetEnumerator() {
 			return Records.GetEnumerator();
 		}
+
 		IEnumerator IEnumerable.GetEnumerator() {
 			return GetEnumerator();
 		}

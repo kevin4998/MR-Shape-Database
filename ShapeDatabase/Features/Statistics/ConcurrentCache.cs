@@ -23,6 +23,7 @@ namespace ShapeDatabase.Features.Statistics {
 			= new ConcurrentDictionary<string, Func<T, ICache<T>, object>>();
 		protected override IDictionary<string, object> CacheValues { get; }
 			= new ConcurrentDictionary<string, object>();
+
 		/// <summary>
 		/// A <see cref="IDictionary{TKey, TValue}"/> containing the locks for each
 		/// property to ensure that it works in a multi-threaded environment.
@@ -31,6 +32,10 @@ namespace ShapeDatabase.Features.Statistics {
 			= new ConcurrentDictionary<string, object>();
 
 		public override int Count => CacheLocks.Count;
+
+		/// <summary>
+		/// Current version of the cache.
+		/// </summary>
 		public virtual long Version => version;
 
 
@@ -42,18 +47,21 @@ namespace ShapeDatabase.Features.Statistics {
 		/// Initialises a new cache with no stored values or provider methods.
 		/// </summary>
 		public ConcurrentCache() { }
+
 		/// <summary>
 		/// Initialises a new cache with the given saved methods.
 		/// </summary>
 		/// <param name="values">The collection of values to add to the cache.</param>
 		public ConcurrentCache(params (string, object)[] values)
 			: base(values) { }
+
 		/// <summary>
 		/// Initialises a new cache with the given functions to calculate values.
 		/// </summary>
 		/// <param name="providers">The collection of methods to add to the cache.</param>
 		public ConcurrentCache(params (string, Func<object>)[] providers)
 			: base(providers) { }
+
 		/// <summary>
 		/// Initialises a new cache with the given functions to calculate values.
 		/// The provided functions may use the cache for help.
@@ -70,8 +78,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// Safely retrieves a lock which can be used to access values from
 		/// the given property.
 		/// </summary>
-		/// <param name="lockName">The name of the property on which you will perform
-		/// operations.</param>
+		/// <param name="lockName">The name of the property on which you will perform operations.</param>
 		/// <returns>The lock which can be used to safely modify the given property.
 		/// </returns>
 		protected object GetLock(string lockName) {
@@ -102,7 +109,6 @@ namespace ShapeDatabase.Features.Statistics {
 			}
 		}
 
-
 		public override ICache<T> AddLazyValue(string name, Func<T, ICache<T>, object> provider) {
 			lock (GetLock(name)) {
 				base.AddLazyValue(name, provider);
@@ -127,7 +133,6 @@ namespace ShapeDatabase.Features.Statistics {
 				return result;
 			}
 		}
-
 
 		public override void Clear() {
 			lock (CacheLocks) {

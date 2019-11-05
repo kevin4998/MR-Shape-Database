@@ -18,6 +18,9 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Properties ---
 
+		/// <summary>
+		/// The cached values of the recordholder.
+		/// </summary>
 		public ICache<T> Cache { get; } = new Cache<T>();
 
 		private readonly IDictionary<string, Func<T, ICache<T>, object>> measures
@@ -33,6 +36,10 @@ namespace ShapeDatabase.Features.Statistics {
 					yield return (pair.Key, pair.Value);
 			}
 		}
+
+		/// <summary>
+		/// The names of collected measures.
+		/// </summary>
 		public override IEnumerable<string> MeasureNames {
 			get {
 				foreach (KeyValuePair<string, Func<T, ICache<T>, object>> pair in measures)
@@ -72,6 +79,13 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Adds a measure to the cached recordholder.
+		/// </summary>
+		/// <param name="measureName">Name of the measure.</param>
+		/// <param name="provider">Function to calculate the measure.</param>
+		/// <param name="overwrite">Whether the provider should be overwritten in case it is already present.</param>
+		/// <returns>Cached recordholder containing the measure and provider.</returns>
 		public ICachedRecordHolder<T> AddMeasure(
 				string measureName,
 				Func<T, ICache<T>, object> provider,

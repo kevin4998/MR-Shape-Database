@@ -17,6 +17,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// The time when this record was created.
 		/// </summary>
 		public DateTime Time { get; }
+
 		/// <summary>
 		/// The unique name of the object to who this <see cref="Record"/> belongs.
 		/// </summary>
@@ -37,10 +38,8 @@ namespace ShapeDatabase.Features.Statistics {
 		/// a certain object.
 		/// </summary>
 		/// <param name="time">The moment in time when this record was created.</param>
-		/// <param name="name">The unique name of the object to who this record belongs.
-		/// </param>
-		/// <exception cref="ArgumentNullException">If the provided name is
-		/// <see langword="null"/>.</exception>
+		/// <param name="name">The unique name of the object to who this record belongs.</param>
+		/// <exception cref="ArgumentNullException">If the provided name is <see langword="null"/>.</exception>
 		public Record(DateTime time, string name) {
 			Time = time;
 			Name = name ?? throw new ArgumentNullException(nameof(name));
@@ -57,7 +56,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// </summary>
 		/// <param name="name">The name of the measurement which has been taken.</param>
 		/// <param name="value">The result of the measurement.</param>
-		/// <returns></returns>
+		/// <returns>The record.</returns>
 		public Record AddMeasure(string name, object value) {
 			if (name == null)
 				throw new ArgumentNullException(nameof(name));
@@ -76,7 +75,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <returns><see langword="true"/> if the value was successfully retrieved
 		/// and could be converted.</returns>
 		/// <exception cref="InvalidCastException">If a value was retrieved for this name
-		/// but it could not be cast to the specified type.</exception>
+		/// but it could not be casted to the specified type.</exception>
 		public bool TryGetValue<T>(string name, out T value) {
 			value = default;
 			if (TryGetValue(name, out object result)) {
@@ -101,7 +100,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <param name="name">The name of the measurement to recover.</param>
 		/// <param name="value">The returned value of the object if it is present
 		/// in the <see cref="Record"/>.</param>
-		/// <returns><see langword="true"/> if the value was successfully retrieved.
+		/// <returns><see langword="true"/> If the value was successfully retrieved.
 		/// </returns>
 		public bool TryGetValue(string name, out object value) {
 			value = default;
@@ -149,6 +148,11 @@ namespace ShapeDatabase.Features.Statistics {
 			return obj is Record && Equals((Record) obj);
 		}
 
+		/// <summary>
+		/// Whether this record is equal to another record.
+		/// </summary>
+		/// <param name="other">The other record.</param>
+		/// <returns>Bool stating whether they are equal.</returns>
 		public bool Equals(Record other) {
 			return other != null
 				&& Time == other.Time
