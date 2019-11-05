@@ -32,9 +32,12 @@ namespace ShapeDatabase.Features.Statistics {
 		public delegate object MergeMeasures(ICollection<object> record);
 
 		private MergeClass mergeClass;
-		private IDictionary<string, MergeRecord> records;
-		private IDictionary<string, MergeMeasures> classMeasures;
-		private IDictionary<Type,	MergeMeasures> typeMeasures;
+		private IDictionary<string, MergeRecord> records
+			= new Dictionary<string, MergeRecord>();
+		private IDictionary<string, MergeMeasures> classMeasures
+			= new Dictionary<string, MergeMeasures>();
+		private IDictionary<Type,	MergeMeasures> typeMeasures
+			= new Dictionary<Type, MergeMeasures>();
 
 		#endregion
 
