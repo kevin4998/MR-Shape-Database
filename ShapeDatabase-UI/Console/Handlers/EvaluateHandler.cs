@@ -47,7 +47,8 @@ namespace ShapeDatabase.UI.Console.Handlers {
 					("Precision",	(result, cache) => Precision	(result, cache)),
 					("Recall",		(result, cache) => Recall		(result, cache)),
 					("Specificity", (result, cache) => Specificity	(result, cache)),
-					("Sensitivity", (result, cache) => Sensitivity	(result, cache))
+					("Sensitivity", (result, cache) => Sensitivity	(result, cache)),
+					("F1",			(result, cache) => F1			(result, cache))
 				);
 				// Return the Record Holder.
 				return recordHolder;
@@ -207,6 +208,12 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		private static double Sensitivity<T>(T result, ICache<T> cache) =>
 			((double) cache.GetValue<int, T>("TP", result))
 			/ cache.GetValue<int, T>("Irrelevant", result);
+		private static double F1<T>(T result, ICache<T> cache) {
+			double precision = Precision(result, cache);
+			double recall = Recall(result, cache);
+
+			return (2 * precision * recall) / (precision + recall);
+		}
 
 		#endregion
 
