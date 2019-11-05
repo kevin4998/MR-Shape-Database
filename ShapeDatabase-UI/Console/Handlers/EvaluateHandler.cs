@@ -115,21 +115,13 @@ namespace ShapeDatabase.UI.Console.Handlers {
 				return entry;
 			throw new ArgumentException(EX_NoMesh);
 		}
-		private static int ClassCount(string className) {
-			int count = 0;
-			foreach (MeshEntry entry in StoredMeshes)
-				if (string.Equals(entry.Class, className,
-					StringComparison.InvariantCultureIgnoreCase))
-					count++;
-			return count;
-		}
 
 
 		private static string NameProvider(QueryResult result) => result.QueryName;
 		private static string ClassProvider(QueryResult result) =>
 			Settings.FileManager.ClassByShapeName(result.QueryName);
 		private static string ClassRecord(Record record) =>
-			Settings.FileManager.ClassByShapeName(record.Name);
+			Settings.FileManager.ClassByShapeName(record.Name, false);
 		private static int Average(ICollection<object> collection) {
 			if (collection.Count == 0) return 0;
 			int sum = 0;
@@ -142,9 +134,10 @@ namespace ShapeDatabase.UI.Console.Handlers {
 
 		private static int CacheTotal() => StoredMeshes.Count;
 		private static int CacheRelevant(QueryResult result) {
+			FileManager manager = Settings.FileManager;
 			string queryName = result.QueryName;
-			MeshEntry queryEntry = GetMesh(queryName);
-			return ClassCount(queryEntry.Class);
+			string clazz = manager.ClassByShapeName(queryName, true);
+			return manager.ShapesInClass(clazz);
 		}
 		private static int CacheIrrelevant<T>(T result, ICache<T> cache) =>
 			cache.GetValue<int, T>("Total", result)
