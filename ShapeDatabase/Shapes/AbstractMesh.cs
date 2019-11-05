@@ -43,10 +43,7 @@ namespace ShapeDatabase.Shapes {
 
 			for (int faceID = ((int) FaceCount) - 1; faceID >= 0; faceID--) {
 				double area = this.GetTriArea((uint) faceID);
-				Vector3 vertexIDs = GetFace((uint) faceID);
-
-				for (int i = 2; i >= 0; i--)
-					col.AddWeight((uint) vertexIDs[i], area);
+				col.AddWeight((uint) faceID, area);
 			}
 
 			return col;

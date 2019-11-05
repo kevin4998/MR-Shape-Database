@@ -159,6 +159,11 @@ namespace ShapeDatabase {
 		public static WeightManager Weights => WeightManager.Instance;
 
 		/// <summary>
+		/// Specify the size of the weighted vertex arrays.
+		/// </summary>
+		public static int WeightedVertexArraySize { get; set; } = 100000;
+
+		/// <summary>
 		/// Refine shapes to this number of vertices.
 		/// </summary>
 		public static int RefineVertexNumber { get; set; } = 5250;
