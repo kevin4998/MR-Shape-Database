@@ -212,7 +212,12 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			double precision = Precision(result, cache);
 			double recall = Recall(result, cache);
 
+			if (IsZero(precision) || IsZero(recall)) return 0;
 			return (2 * precision * recall) / (precision + recall);
+		}
+
+		private static bool IsZero(double value) {
+			return value > -double.Epsilon && value < double.Epsilon;
 		}
 
 		#endregion
