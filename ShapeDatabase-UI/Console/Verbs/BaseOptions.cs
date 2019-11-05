@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using CommandLine;
+using ShapeDatabase.UI.Properties;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.UI.Console.Verbs {
 
@@ -13,6 +16,25 @@ namespace ShapeDatabase.UI.Console.Verbs {
 		/// If the culture for this application is specified.
 		/// </summary>
 		public bool HasCulture => Culture != null;
+
+		/// <summary>
+		/// Converts the given string input into an enum of the specified type.
+		/// If a shape could not be retrieved then it shows a debug message
+		/// to the developer that the name was incorrect but the application
+		/// will continue with the default setting.
+		/// </summary>
+		/// <typeparam name="T">The type of enum to retrieve.</typeparam>
+		/// <param name="input">The string input given by the user.</param>
+		/// <param name="def">The default value to use for the enum.</param>
+		/// <returns>The enum value loaded from the specified string or the default
+		/// one of no property could be found with that name.</returns>
+		protected T GetMode<T>(string input, T def = default) where T : struct, Enum {
+			if (!Enum.TryParse(input, true, out T mode)) {
+				mode = def;
+				Logger.Debug(Resources.EX_UknownMode, input);
+			}
+			return mode;
+		}
 
 		/// <summary>
 		/// The culture in which the files were written.

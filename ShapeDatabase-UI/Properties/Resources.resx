@@ -234,7 +234,7 @@
     <comment>Notify the user that the descriptors for all shapes are being calculated.</comment>
   </data>
   <data name="I_StartProc_Input" xml:space="preserve">
-    <value>Starting converting input!</value>
+    <value>Start converting input!</value>
     <comment>Notify that the conversion of input arguments is in process.</comment>
   </data>
   <data name="I_StartProc_Measure" xml:space="preserve">
@@ -250,7 +250,7 @@
     <comment>Notify that the meshes are now being processed.</comment>
   </data>
   <data name="I_StartUp" xml:space="preserve">
-    <value>Startin Up!</value>
+    <value>Starting Up!</value>
     <comment>Notify that the application has started up.</comment>
   </data>
   <data name="I_UnknownCommand" xml:space="preserve">

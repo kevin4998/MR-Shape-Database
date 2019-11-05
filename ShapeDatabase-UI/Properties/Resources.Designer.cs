@@ -322,7 +322,7 @@ namespace ShapeDatabase.UI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Starting converting input!.
+        ///   Looks up a localized string similar to Start converting input!.
         /// </summary>
         internal static string I_StartProc_Input {
             get {
@@ -358,7 +358,7 @@ namespace ShapeDatabase.UI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Startin Up!.
+        ///   Looks up a localized string similar to Starting Up!.
         /// </summary>
         internal static string I_StartUp {
             get {
