@@ -78,6 +78,7 @@
     <Compile Include="Console\Handlers\ViewHandler.cs" />
     <Compile Include="Console\Verbs\BaseOptions.cs" />
     <Compile Include="Console\Verbs\ModeOptions.cs" />
+    <Compile Include="Console\Verbs\QueryModes.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using CommandLine;
+using ShapeDatabase.UI.Properties;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.UI.Console.Verbs {
 
@@ -48,7 +51,81 @@ namespace ShapeDatabase.UI.Console.Verbs {
 	/// The options to compare shapes for similarity.
 	/// </summary>
 	[Verb("query", HelpText = "Compare existing shapes with query shapes to find the most similar.")]
-	public class QueryOptions : CalculateOptions { }
+	public class QueryOptions : CalculateOptions {
+
+		/// <summary>
+		/// If any directories with shapes has been specified.
+		/// </summary>
+		public bool HasDirectories {
+			get {
+				IEnumerable<string> dirs = QueryDirectories;
+				if (dirs == null)
+					return false;
+				foreach (string _ in dirs)
+					return true;
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// A collection of different directories on the computer to find query shapes.
+		/// </summary>
+		[Option('d', "directory",
+			Required = false,
+			Default = new string[0],
+			HelpText = "The directories containing all the Shapes.")]
+		public IEnumerable<string> QueryDirectories { get; set; }
+
+
+		/// <summary>
+		/// The mode which is used to determine which shapes to query with.
+		/// </summary>
+		public QueryInputMode QueryInputMode => GetMode<QueryInputMode>(QueryInput);
+		/// <summary>
+		/// The mode which is used to determine which shapes to query with.
+		/// </summary>
+		public QuerySizeMode QuerySizeMode => GetMode<QuerySizeMode>(QuerySize);
+		/// <summary>
+		/// The mode which is used to determine which shapes to query with.
+		/// </summary>
+		public QueryResultMode QueryResultMode => GetMode<QueryResultMode>(QueryResult);
+
+		private T GetMode<T>(string input, T def = default) where T : struct, Enum {
+			if (!Enum.TryParse(input, true, out T mode)) { 
+				mode = def;
+				Logger.Debug(Resources.EX_UknownMode, input);
+			}
+			return mode;
+		}
+
+		/// <summary>
+		/// The mode which is used to determine which shapes to query with.
+		/// </summary>
+		[Option("queryinput",
+			Required = false,
+			Default = "Refine",
+			HelpText = "The mode which is used to determine which shapes to query with.")]
+		public string QueryInput { get; set; }
+
+		/// <summary>
+		/// The mode which is used to determine the query size.
+		/// </summary>
+		[Option("querysize",
+			Required = false,
+			Default = "KBest",
+			HelpText = "The mode which is used to determine the query size.")]
+		public string QuerySize { get; set; }
+
+		/// <summary>
+		/// The mode which is used to determine the query results.
+		/// </summary>
+		[Option("queryresult",
+			Required = false,
+			Default = "Individual",
+			HelpText = "The mode which is used to determine the query results.")]
+		public string QueryResult { get; set; }
+
+	}
 
 	/// <summary>
 	/// The options to evaluate the last made query for different metrics.

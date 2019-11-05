@@ -231,34 +231,38 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <see cref="FeatureManager"/> and returns all the meshes ordered by the
 		/// similarity.
 		/// </summary>
+		/// <param name="size">The size of the return value for the query specified
+		/// by an enum constant.</param>
 		/// <param name="mesh">The mesh that should be compared with all other meshes in the database.</param>
 		/// <returns>A <see cref="QueryResult"/> which contains the K-best similair
 		/// matches from the entire database for this entry.</returns>
-		public QueryResult CalculateResults(MeshEntry mesh) {
-			return CalculateResults(new MeshEntry[] { mesh })[0];
-		}
+		public QueryResult CalculateResults(QuerySize size, MeshEntry mesh) =>
+			CalculateResults(size, new MeshEntry[] { mesh })[0];
 
 		/// <summary>
 		/// Compares the given meshes with all the saved meshes in this
 		/// <see cref="FeatureManager"/> and returns all the meshes ordered by the
 		/// similarity.
 		/// </summary>
+		/// <param name="count">The number of elements to return in the result.
+		/// -1 identifies that all the results should be returned.</param>
 		/// <param name="meshes">The mesh that should be compared with all other meshes in the database.</param>
 		/// <returns>A <see cref="QueryResult"/> array which contains the K-best similair
 		/// matches from the entire database for these entries.</returns>
-		public QueryResult[] CalculateResults(params MeshEntry[] meshes) {
-			return CalculateResults((IEnumerable<MeshEntry>) meshes);
-		}
+		public QueryResult[] CalculateResults(QuerySize size, params MeshEntry[] meshes) =>
+			CalculateResults(size, (IEnumerable<MeshEntry>) meshes);
 
 		/// <summary>
 		/// Compares the given meshes with all the saved meshes in this
 		/// <see cref="FeatureManager"/> and returns all the meshes ordered by the
 		/// similarity.
 		/// </summary>
+		/// <param name="count">The number of elements to return in the result.
+		/// -1 identifies that all the results should be returned.</param>
 		/// <param name="meshes">The mesh that should be compared with all other meshes in the database.</param>
 		/// <returns>A <see cref="QueryResult"/> array which contains the K-best similair
 		/// matches from the entire database for these entries.</returns>
-		public QueryResult[] CalculateResults(IEnumerable<MeshEntry> meshes) {
+		public QueryResult[] CalculateResults(QuerySize size, IEnumerable<MeshEntry> meshes) {
 			if (meshes == null)
 				throw new ArgumentNullException(nameof(meshes));
 
@@ -268,9 +272,21 @@ namespace ShapeDatabase.Features.Descriptors {
 			Parallel.ForEach(meshes, entry => {
 				FeatureVector queryVector = CreateVector(entry);
 				queryVector = NormaliseVector(queryVector);
+				int count = 0;
+				switch (size) {
+				case QuerySize.KBest:
+					count = Settings.KBestResults;
+					break;
+				case QuerySize.Class:
+					count = Settings.FileManager.ShapesInClass(entry.Class);
+					break;
+				case QuerySize.All:
+					count = FeatureCount;
+					break;
+				}
 				results.Add(HNSW.RunANNQuery(entry.Name,
 											 queryVector,
-											 Settings.KBestResults));
+											 count));
 			});
 
 			QueryResult[] array = results.ToArray();

@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using ShapeDatabase.Features;
 using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
@@ -29,9 +32,9 @@ namespace ShapeDatabase.UI.Console.Handlers {
 
 			WriteLine(I_StartProc_Query);
 
-			LoadQueryFiles();
+			LoadQueryFiles(options);
 			FeatureManager manager = FeatureHandler.LoadFeatures(options.ShouldImport);
-			QueryResult[]  results = LoadQueryResults(false, manager);
+			QueryResult[]  results = LoadQueryResults(false, manager, options);
 			if (options.ShouldExport)
 				SaveQueries(results);
 			ShowQueryResults(results);
@@ -43,9 +46,35 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// <summary>
 		/// Processes the query shapes (and loads them in memory).
 		/// </summary>
-		private static void LoadQueryFiles() {
-			Directory.CreateDirectory(Settings.QueryDir);
-			Settings.FileManager.AddQueryDirectory(Settings.QueryDir);
+		private static void LoadQueryFiles(QueryOptions options) {
+			QueryInputMode input = options.QueryInputMode;
+			IEnumerable<string> dirs = new string[] {Settings.QueryDir};
+			if (options.HasDirectories)
+				dirs = options.QueryDirectories;
+			FileManager fileManager = Settings.FileManager;
+
+			if (input == QueryInputMode.Internal) {
+
+				fileManager.QueryMeshes = fileManager.ProcessedMeshes;
+
+			} else {
+				foreach (string dir in dirs) {
+					// Create the directory if it does not exist.
+					if (!Directory.Exists(dir))
+						Directory.CreateDirectory(dir);
+					// Add the new shapes to the query directory.
+					switch (input) {
+					case QueryInputMode.Refine:
+						fileManager.AddQueryDirectory(dir);
+						break;
+					case QueryInputMode.Direct:
+						fileManager.AddQueryDirectoryDirect(dir);
+						break;
+					}
+				}
+			}
+
+			
 		}
 
 		/// <summary>
@@ -56,7 +85,8 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// <returns>An array containing the results of different querry operations.
 		/// </returns>
 		public static QueryResult[] LoadQueryResults(bool import,
-													 FeatureManager manager = null) {
+													 FeatureManager manager = null,
+													 QueryOptions options = null) {
 			string filename = Settings.QueryResultsFile;
 			string directory = Settings.QueryDir;
 
@@ -70,7 +100,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 				return results;
 			}
 			// Load new data.
-			return ProcessQuery(manager ?? FeatureHandler.LoadFeatures(import));
+			return ProcessQuery(manager ?? FeatureHandler.LoadFeatures(import), options);
 		}
 
 		/// <summary>
@@ -78,16 +108,21 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="manager">The holder of all the feature vectors.</param>
 		/// <returns>A collection of results of the comparison.</returns>
-		private static QueryResult[] ProcessQuery(FeatureManager manager) {
+		private static QueryResult[] ProcessQuery(FeatureManager manager,
+												  QueryOptions options) {
 			int queryItems = Settings.QueryLibrary.Meshes.Count;
 			QueryResult[] queryResults = new QueryResult[queryItems];
 			int nextElement = 0;
+			QuerySizeMode mode = options.QuerySizeMode;
+			Enum.TryParse(mode.ToString(), out QuerySize size);
 
 			if (Settings.MeshLibrary.Count == 0)
 				foreach (MeshEntry entry in Settings.QueryLibrary.Meshes)
 					queryResults[nextElement++] = new QueryResult(entry.Name);
 			else
-				queryResults = manager.CalculateResults(Settings.QueryLibrary.Meshes);
+				queryResults = manager.CalculateResults(
+					size,
+					Settings.QueryLibrary.Meshes);
 
 			return queryResults;
 		}

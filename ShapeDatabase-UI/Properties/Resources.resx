@@ -133,6 +133,10 @@
     <value>Mesh not found!</value>
     <comment>The exception which is given when a mesh is being retrieved which is not stored in our library.</comment>
   </data>
+  <data name="EX_UknownMode" xml:space="preserve">
+    <value>The specified mode '{0}', is not known, using the default mode for execution.</value>
+    <comment>TThe exception which is given when the string could not be correctly converted to the enum value.</comment>
+  </data>
   <data name="F_DateFormat" xml:space="preserve">
     <value>yyyy-MM-dd-HH-mm-ss</value>
     <comment>The format which is being used to visualise dates on exported files.</comment>

@@ -40,12 +40,12 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// A collection of all the loaded meshes structured inside a library.
 		/// </summary>
-		public MeshLibrary ProcessedMeshes => Library.ProcessedMeshes;
+		public MeshLibrary ProcessedMeshes { get; set; }
 
 		/// <summary>
 		/// A collection of all the query meshes structured inside a library.
 		/// </summary>
-		public MeshLibrary QueryMeshes => Library.QueryMeshes;
+		public MeshLibrary QueryMeshes { get; set; }
 
 		#endregion
 
@@ -56,7 +56,10 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// Creates a new manager responsible for loading files.
 		/// </summary>
-		public FileManager() { }
+		public FileManager() {
+			ProcessedMeshes = Library.ProcessedMeshes;
+			QueryMeshes = Library.QueryMeshes;
+		}
 
 		#endregion
 
@@ -113,19 +116,8 @@ namespace ShapeDatabase.IO {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given directory does not exist.
 		/// </exception>
-		public void AddDirectory(string filedir, bool async = false) {
-			if (string.IsNullOrEmpty(filedir))
-				throw new ArgumentNullException(nameof(filedir));
-
-			// Discover files.
-			FileInfo[] files = DiscoverFiles(new DirectoryInfo(filedir));
-			// Add files into the library (+ refinement).
-			if (async)
-				Parallel.ForEach(files, file => Library.AddAndRefine(file) );
-			else
-				foreach (FileInfo file in files)
-					Library.AddAndRefine(file);
-		}
+		public void AddDirectory(string filedir, bool async = false) =>
+			AddDir(filedir, Library.AddAndRefine, async);
 
 		/// <summary>
 		/// Secure the specified location as a directory containing already
@@ -140,19 +132,8 @@ namespace ShapeDatabase.IO {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given directory does not exist.
 		/// </exception>
-		public void AddDirectoryDirect(string filedir, bool async = true) {
-			if (string.IsNullOrEmpty(filedir))
-				throw new ArgumentNullException(nameof(filedir));
-
-			// Discover files.
-			FileInfo[] files = DiscoverFiles(new DirectoryInfo(filedir));
-			// Add files into the library (+ refinement).
-			if (async)
-				Parallel.ForEach(files, file => Library.AddDirect(file));
-			else
-				foreach (FileInfo file in files)
-					Library.AddDirect(file);
-		}
+		public void AddDirectoryDirect(string filedir, bool async = true) =>
+			AddDir(filedir, Library.AddDirect, async);
 
 		/// <summary>
 		/// Secure the specified location as a directory containing query shapes
@@ -167,19 +148,32 @@ namespace ShapeDatabase.IO {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given directory does not exist.
 		/// </exception>
-		public void AddQueryDirectory(string filedir, bool async = false) {
-			if (string.IsNullOrEmpty(filedir))
-				throw new ArgumentNullException(nameof(filedir));
+		public void AddQueryDirectory(string filedir, bool async = false) =>
+			AddDir(filedir, Library.AddQueryAndRefine, async);
 
-			// Discover files.
-			FileInfo[] files = DiscoverFiles(new DirectoryInfo(filedir));
-			// Add files into the library (+ refinement).
-			if (async)
-				Parallel.ForEach(files, file => Library.AddQueryAndRefine(file));
-			else
-				foreach (FileInfo file in files)
-					Library.AddQueryAndRefine(file);
-		}
+		/// <summary>
+		/// Secure the specified location as a directory containing query shapes
+		/// for this application. The program will not refine the shapes but
+		/// rather load them in directly.
+		/// </summary>
+		/// <param name="filedir">The location on your device which will be used
+		/// for shapes in this database.</param>
+		/// <param name="async">If the given method may make use of asynchronous
+		/// operations.</param>
+		/// <exception cref="ArgumentNullException">If the given directory is
+		/// <see langword="null"/>.</exception>
+		/// <exception cref="ArgumentException">If the given directory does not exist.
+		/// </exception>
+		public void AddQueryDirectoryDirect(string filedir, bool async = false) =>
+			AddDir(filedir, Library.AddQueryDirect, async);
+
+		/// <summary>
+		/// Checks how many shapes there are with the specified class name.
+		/// </summary>
+		/// <param name="className"></param>
+		/// <returns></returns>
+		public int ShapesInClass(string className) =>
+			Library.ShapesInClass(className);
 
 		#endregion
 
@@ -297,7 +291,7 @@ namespace ShapeDatabase.IO {
 
 		#endregion
 
-		#region -- Private Phases --
+		#region -- Private Helpers --
 
 		/// <summary>
 		/// Looks through the specified directory and subdirectories for all
@@ -343,6 +337,28 @@ namespace ShapeDatabase.IO {
 			}
 
 			return pfiles.ToArray();
+		}
+
+		/// <summary>
+		/// Adds all the files from a provided directory.
+		/// </summary>
+		/// <param name="filedir">The directory to look for new shapes.</param>
+		/// <param name="add">The action to add the shapes to specific library.</param>
+		/// <param name="async">If the operation should happen asynchronously.</param>
+		private void AddDir(string filedir, Action<FileInfo> add, bool async = false) {
+			if (string.IsNullOrEmpty(filedir))
+				throw new ArgumentNullException(nameof(filedir));
+			if (add == null)
+				throw new ArgumentNullException(nameof(add));
+
+			// Discover files.
+			FileInfo[] files = DiscoverFiles(new DirectoryInfo(filedir));
+			// Add files into the library (+ refinement).
+			if (async)
+				Parallel.ForEach(files, file => add(file));
+			else
+				foreach (FileInfo file in files)
+					add(file);
 		}
 
 		#endregion

@@ -97,6 +97,15 @@ namespace ShapeDatabase.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The specified mode &apos;{0}&apos;, is not known, using the default mode for execution..
+        /// </summary>
+        internal static string EX_UknownMode {
+            get {
+                return ResourceManager.GetString("EX_UknownMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to yyyy-MM-dd-HH-mm-ss.
         /// </summary>
         internal static string F_DateFormat {

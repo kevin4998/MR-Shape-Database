@@ -79,6 +79,22 @@ namespace ShapeDatabase.Shapes {
 
 		#endregion
 
+		#region -- Retrieval Operations --
+
+		public int ShapesInClass(string className) {
+			if (string.IsNullOrEmpty(className))
+				throw new ArgumentNullException(nameof(className));
+
+			return ProcessedMeshes.Count(
+				mesh => className.Equals(
+					mesh.Class,
+					StringComparison.InvariantCultureIgnoreCase
+				)
+			);
+		}
+
+		#endregion
+
 		#region -- Mesh Operations --
 
 		private void Add(FileInfo file, MeshLibrary library) =>

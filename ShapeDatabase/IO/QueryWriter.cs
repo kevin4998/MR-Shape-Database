@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -48,12 +47,16 @@ namespace ShapeDatabase.IO {
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
 
+			int maxEntries = 0;
+			foreach(QueryResult result in type)
+				maxEntries = Math.Max(maxEntries, result.Count);
+
 			using (CsvWriter csv = new CsvWriter(writer)) {
 				//csv.Configuration.Delimiter = ";";
 
 				// Header of the CSV file.
 				csv.WriteField(IOConventions.MeshName);
-				for (int i = 1; i <= Settings.KBestResults; i++)
+				for (int i = 1; i <= maxEntries; i++)
 					csv.WriteField($"K = {i}");
 				csv.NextRecord();
 				// Each item in the CSV file.

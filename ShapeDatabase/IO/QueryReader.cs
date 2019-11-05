@@ -65,6 +65,7 @@ namespace ShapeDatabase.IO {
 						if (csv.TryGetField(kName, out string serialised)
 							&& QueryItem.TryParse(serialised, out QueryItem item))
 							query.AddItem(item);
+						//else break;
 					results.Add(query);
 				}
 			}
