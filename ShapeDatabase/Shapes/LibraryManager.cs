@@ -26,12 +26,12 @@ namespace ShapeDatabase.Shapes {
 		/// <summary>
 		/// A collection of all the loaded meshes structured inside a library.
 		/// </summary>
-		public MeshLibrary ProcessedMeshes { get; } = new MeshLibrary();
+		public MeshLibrary ProcessedMeshes { get; set; } = new MeshLibrary();
 
 		/// <summary>
 		/// A collection of all the query meshes structured inside a library.
 		/// </summary>
-		public MeshLibrary QueryMeshes { get; } = new MeshLibrary();
+		public MeshLibrary QueryMeshes { get; set; } = new MeshLibrary();
 
 		#endregion
 

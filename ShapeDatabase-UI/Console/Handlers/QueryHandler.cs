@@ -113,8 +113,10 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			int queryItems = Settings.QueryLibrary.Meshes.Count;
 			QueryResult[] queryResults = new QueryResult[queryItems];
 			int nextElement = 0;
-			QuerySizeMode mode = options.QuerySizeMode;
-			QueryInputMode input = options.QueryInputMode;
+			QuerySizeMode  mode  = (options == null) ? QuerySizeMode.KBest
+													 : options.QuerySizeMode;
+			QueryInputMode input = (options == null) ? QueryInputMode.Refine
+													 : options.QueryInputMode;
 			Enum.TryParse(mode.ToString(), out QuerySize size);
 
 			if (input == QueryInputMode.Internal)

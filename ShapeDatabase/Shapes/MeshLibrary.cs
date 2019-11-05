@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using ShapeDatabase.Features.Descriptors;
@@ -15,7 +16,7 @@ namespace ShapeDatabase.Shapes {
 		#region --- Properties ---
 
 		private readonly IDictionary<string, MeshEntry?> library
-			= new Dictionary<string, MeshEntry?>();
+			= new ConcurrentDictionary<string, MeshEntry?>();
 
 		public MeshEntry this[string name] {
 			get {

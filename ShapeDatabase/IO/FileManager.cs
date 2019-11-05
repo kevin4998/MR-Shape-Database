@@ -40,12 +40,18 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// A collection of all the loaded meshes structured inside a library.
 		/// </summary>
-		public MeshLibrary ProcessedMeshes { get; set; }
+		public MeshLibrary ProcessedMeshes {
+			get => Library.ProcessedMeshes;
+			set => Library.ProcessedMeshes = value;
+		}
 
 		/// <summary>
 		/// A collection of all the query meshes structured inside a library.
 		/// </summary>
-		public MeshLibrary QueryMeshes { get; set; }
+		public MeshLibrary QueryMeshes {
+			get => Library.QueryMeshes;
+			set => Library.QueryMeshes = value;
+		}
 
 		#endregion
 
@@ -175,8 +181,8 @@ namespace ShapeDatabase.IO {
 		public int ShapesInClass(string className) =>
 			Library.ShapesInClass(className);
 
-		public string ClassByShapeName(string shapeName) =>
-			Library.ClassByShapeName(shapeName);
+		public string ClassByShapeName(string shapeName, bool queryShape = true) =>
+			Library.ClassByShapeName(shapeName, queryShape);
 
 		#endregion
 

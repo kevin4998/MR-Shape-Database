@@ -62,7 +62,7 @@ namespace ShapeDatabase.IO {
 				// Each item in the CSV file.
 				foreach (QueryResult result in type) {
 					csv.WriteField(result.QueryName);
-					foreach (QueryItem item in result.GetBestResults(Settings.KBestResults))
+					foreach (QueryItem item in result.Results)
 						csv.WriteField(item);
 					csv.NextRecord();
 				}
