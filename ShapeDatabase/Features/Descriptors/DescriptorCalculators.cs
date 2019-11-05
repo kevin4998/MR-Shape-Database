@@ -146,7 +146,7 @@ namespace ShapeDatabase.Features {
 			// Find the collection of eigenVectors.
 			double[] eigenvalues = pca.Eigenvalues;
 
-			return new ElemDescriptor("Eccentricity", eigenvalues[0] / eigenvalues[2]);
+			return new ElemDescriptor("Eccentricity", eigenvalues[2] == 0 ? double.PositiveInfinity : eigenvalues[0] / eigenvalues[2]);
 		}
 
 		/// <summary>
@@ -184,10 +184,7 @@ namespace ShapeDatabase.Features {
 
 			double volume = mass_integral * (1.0 / 6.0);
 
-			// Formule c = (A^3)/(V^2)
-			double compactness = Math.Pow(area_sum, 3) / Math.Pow(volume, 2);
-			compactness *= COMPACTNESS_CONS;
-			return new ElemDescriptor("Compactness", compactness);
+			return new ElemDescriptor("Compactness", volume == 0 ? double.PositiveInfinity : (Math.Pow(area_sum, 3) / Math.Pow(volume, 2)) * COMPACTNESS_CONS);
 		}
 
 		#endregion
