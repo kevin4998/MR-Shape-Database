@@ -4,6 +4,8 @@ using System.IO;
 using CsvHelper;
 using ShapeDatabase.Features.Statistics;
 
+using static ShapeDatabase.IO.IOConventions;
+
 namespace ShapeDatabase.IO {
 
 	/// <summary>
@@ -43,7 +45,7 @@ namespace ShapeDatabase.IO {
 			if (writer == null)
 				throw new ArgumentNullException(nameof(writer));
 
-			using (CsvWriter csv = new CsvWriter(writer)) {
+			using (CsvWriter csv = CsvWriter(writer)) {
 				// First line specify our Measurement Names.
 				csv.WriteField(IOConventions.MeshName);
 				foreach (string name in records.MeasureNames)
