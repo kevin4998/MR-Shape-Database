@@ -85,18 +85,6 @@ namespace ShapeDatabase.UI.Console.Verbs {
 		/// The mode which is used to determine which shapes to query with.
 		/// </summary>
 		public QuerySizeMode QuerySizeMode => GetMode<QuerySizeMode>(QuerySize);
-		/// <summary>
-		/// The mode which is used to determine which shapes to query with.
-		/// </summary>
-		public QueryResultMode QueryResultMode => GetMode<QueryResultMode>(QueryResult);
-
-		private T GetMode<T>(string input, T def = default) where T : struct, Enum {
-			if (!Enum.TryParse(input, true, out T mode)) { 
-				mode = def;
-				Logger.Debug(Resources.EX_UknownMode, input);
-			}
-			return mode;
-		}
 
 		/// <summary>
 		/// The mode which is used to determine which shapes to query with.

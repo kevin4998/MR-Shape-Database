@@ -275,7 +275,7 @@ namespace ShapeDatabase.Features.Descriptors {
 				int count = 0;
 				switch (size) {
 				case QuerySize.KBest:
-					count = Settings.KBestResults;
+					count = Math.Min(Settings.KBestResults, FeatureCount);
 					break;
 				case QuerySize.Class:
 					count = Settings.FileManager.ShapesInClass(entry.Class);
