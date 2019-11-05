@@ -111,15 +111,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 
 		#region --- Evaluation Methods ---
 
-		private static MeshEntry GetMesh(string name) {
-			if (StoredMeshes.TryGetValue(name, out MeshEntry entry))
-				return entry;
-			if (QueryMeshes.TryGetValue(name, out entry))
-				return entry;
-			throw new ArgumentException(EX_NoMesh);
-		}
-
-
 		private static string NameProvider(QueryResult result) => result.QueryName;
 		private static string ClassProvider(QueryResult result) =>
 			Settings.FileManager.ClassByShapeName(result.QueryName);
@@ -149,6 +140,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			return null;
 		}
 
+
 		private static int CacheTotal() => StoredMeshes.Count;
 		private static int CacheRelevant(QueryResult result) {
 			FileManager manager = Settings.FileManager;
@@ -156,23 +148,26 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			string clazz = manager.ClassByShapeName(queryName, false);
 			return manager.ShapesInClass(clazz);
 		}
-		private static int CacheIrrelevant<T>(T result, ICache<T> cache) =>
-			cache.GetValue<int, T>("Total", result)
-			- cache.GetValue<int, T>("Relevant", result);
+		private static int CacheIrrelevant<T>(T result, ICache<T> cache) {
+			int TT = cache.GetValue<int, T>("Total", result);
+			int RV = cache.GetValue<int, T>("Relevant", result);
+
+			return TT - RV;
+		}
+
 		private static int CacheIncorrect<T>(T result, ICache<T> cache) =>
 			cache.GetValue<int, T>("Total", result)
 			- cache.GetValue<int, T>("Correct", result);
 
 
 		private static int CacheTP(QueryResult result) {
-			string queryName = result.QueryName;
-			MeshEntry queryEntry = GetMesh(queryName);
-			string clazz = queryEntry.Class;
+			string clazz = ClassProvider(result);
 			int TPCount = 0;
 
 			foreach (QueryItem item in result.Results) {
-				MeshEntry itemEntry = GetMesh(item.MeshName);
-				if (string.Equals(itemEntry.Class, clazz,
+				string itemClazz = Settings.FileManager
+										   .ClassByShapeName(item.MeshName, false);
+				if (string.Equals(itemClazz, clazz,
 					StringComparison.OrdinalIgnoreCase))
 					TPCount++;
 			}
@@ -185,15 +180,21 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		private static int CacheFN<T>(T result, ICache<T> cache) =>
 			cache.GetValue<int, T>("Relevant", result)
 			- cache.GetValue<int, T>("TP", result);
-		private static int CacheTN<T>(T result, ICache<T> cache) =>
-			cache.GetValue<int, T>("Irrelevant", result)
-			- cache.GetValue<int, T>("FP", result);
+		private static int CacheTN<T>(T result, ICache<T> cache) {
+			int IR = cache.GetValue<int, T>("Irrelevant", result);
+			int FP = cache.GetValue<int, T>("FP", result);
 
+			return IR - FP;
+		}
 
-		private static double Accuracy<T>(T result, ICache<T> cache) =>
-			((double) (cache.GetValue<int, T>("TP", result)
-				+ cache.GetValue<int, T>("TN", result))
-			) / cache.GetValue<int, T>("Total", result);
+		private static double Accuracy<T>(T result, ICache<T> cache) {
+			double TP = cache.GetValue<int, T>("TP", result);
+			double TN = cache.GetValue<int, T>("TN", result);
+			double TT = cache.GetValue<int, T>("Total", result);
+
+			return (TP + TN) / TT;
+		}
+
 		private static double Precision<T>(T result, ICache<T> cache) =>
 			((double) cache.GetValue<int, T>("TP", result))
 			/ cache.GetValue<int, T>("Correct", result);
