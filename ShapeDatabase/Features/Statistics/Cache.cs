@@ -152,11 +152,10 @@ namespace ShapeDatabase.Features.Statistics {
 		}
 
 		/// <summary>
-		/// Clears the cache.
+		/// Clears the cache (values).
 		/// </summary>
 		public virtual void Clear() {
 			CacheValues.Clear();
-			//CacheProvider.Clear();
 		}
 
 		#endregion

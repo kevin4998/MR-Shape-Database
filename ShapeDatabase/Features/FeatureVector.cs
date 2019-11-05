@@ -18,12 +18,13 @@ namespace ShapeDatabase.Features {
 
 		#region --- Properties ---
 
-		// A sorted array containing all the descriptors.
+		/// <summary>
+		/// A sorted array containing all the descriptors.
+		/// </summary>
 		private readonly IDescriptor[] descriptors;
 
 		/// <summary>
-		/// A collection of descriptors which have been saved in this
-		/// <see cref="FeatureVector"/>.
+		/// A collection of descriptors which have been saved in this <see cref="FeatureVector"/>.
 		/// </summary>
 		public IEnumerable<IDescriptor> Descriptors => descriptors;
 
@@ -50,10 +51,8 @@ namespace ShapeDatabase.Features {
 		/// <summary>
 		/// Constructor for the featurevector, given all of its descriptors
 		/// </summary>
-		/// <param name="descriptors">A collection of specifications for a specific shape.
-		/// </param>
-		/// <exception cref="ArgumentNullException">if the given descriptors are
-		/// <see langword="null"/>.</exception>
+		/// <param name="descriptors">A collection of specifications for a specific shape.</param>
+		/// <exception cref="ArgumentNullException">If the given descriptors are <see langword="null"/>.</exception>
 		public FeatureVector(IDescriptor[] descriptors) {
 			if (descriptors == null)
 				throw new ArgumentNullException(nameof(descriptors));
@@ -67,10 +66,10 @@ namespace ShapeDatabase.Features {
 		#region --- Instance Methods ---
 
 		/// <summary>
-		/// Compare with another using the Proportional Transportation Distance.
+		/// Compare the featurevector with another featurevector.
 		/// </summary>
 		/// <param name="vector">The other vector</param>
-		/// <returns>The PTD</returns>
+		/// <returns>Double representing the similarity (0 = not similar at all, 1 = equal).</returns>
 		public double Compare(FeatureVector vector) => Compare(this, vector);
 
 		/// <summary>
@@ -82,7 +81,7 @@ namespace ShapeDatabase.Features {
 		/// All descriptors will be compared with the other vector.</param>
 		/// <param name="secondary">The comparison item, only descriptors which
 		/// it shares with the reference vector will be compared.</param>
-		/// <returns>A weighted average between [0,1] which shows the similarity.
+		/// <returns>A weighted average between [0, 1] which shows the similarity.
 		/// A value of 1 means that they are the exact same and 0 means that they
 		/// are nothing alike.</returns>
 		public static double Compare(FeatureVector primary, FeatureVector secondary) {
@@ -143,6 +142,9 @@ namespace ShapeDatabase.Features {
 
 	}
 
+	/// <summary>
+	/// Extension class for <see cref="FeatureVector"/>.
+	/// </summary>
 	public static class FeatureVectorEx {
 
 		public static IEnumerable<T> GetDescriptors<T>(this FeatureVector vector)
@@ -154,7 +156,5 @@ namespace ShapeDatabase.Features {
 				if (descriptor is T)
 					yield return (T) descriptor;
 		}
-
 	}
-
 }

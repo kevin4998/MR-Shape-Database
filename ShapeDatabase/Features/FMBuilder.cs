@@ -8,19 +8,19 @@ using ShapeDatabase.Features.Descriptors;
 namespace ShapeDatabase.Features {
 
 	/// <summary>
-	/// Class for building the featuremanager
+	/// Class for building the <see cref="FeatureManager"/>.
 	/// </summary>
 	public class FMBuilder {
 
 		#region --- Properties ---
 
 		/// <summary>
-		/// The featurevectors that will be stored in the featuremanager.
+		/// The <see cref="FeatureVector"/>s that will be stored in the <see cref="FeatureManager"/>.
 		/// </summary>
 		private IDictionary<string, FeatureVector> Values { get; }
 
 		/// <summary>
-		/// The descriptor calculator delegates that will be stored in the featuremanager.
+		/// The descriptor calculator delegates that will be stored in the <see cref="FeatureManager"/>.
 		/// </summary>
 		private IList<FeatureManager.DescriptorCalculator> Calculators { get; }
 
@@ -31,15 +31,15 @@ namespace ShapeDatabase.Features {
 		/// <summary>
 		/// Constructor of the FMBuilder, given only descriptor calculator delegates.
 		/// </summary>
-		/// <param name="calculators">The descriptor calculator delegates to be added to the FMBuilder</param>
+		/// <param name="calculators">The descriptor calculator delegates to be added to the FMBuilder.</param>
 		public FMBuilder(params FeatureManager.DescriptorCalculator[] calculators)
 			: this(new Dictionary<string, FeatureVector>(), calculators) { }
 
 		/// <summary>
 		/// Constructor of the FMBuilder, given both featurevectors and descriptor calculator delegates.
 		/// </summary>
-		/// <param name="vectors">The featurevectors to be added to the FMBuilder</param>
-		/// <param name="calculators">The descriptor calculator delegates to be added to the FMBuilder</param>
+		/// <param name="vectors">The featurevectors to be added to the FMBuilder.</param>
+		/// <param name="calculators">The descriptor calculator delegates to be added to the FMBuilder.</param>
 		public FMBuilder(IDictionary<string, FeatureVector> vectors,
 						 params FeatureManager.DescriptorCalculator[] calculators) {
 			Values = vectors ?? throw new ArgumentNullException(nameof(vectors));
@@ -53,8 +53,10 @@ namespace ShapeDatabase.Features {
 
 		#region --- Instance Methods ---
 
-		// Add the calculators which are already defined here so it should not be
-		// repeated in all the builder constructors.
+		/// <summary>
+		/// Adds calculators which are already defined (so it should not be
+		/// repeated in all the builder constructors).
+		/// </summary>
 		private void AddLocalCalculators() {
 			foreach (FeatureManager.DescriptorCalculator calculator
 					in DescriptorCalculators.Descriptors)
@@ -63,9 +65,9 @@ namespace ShapeDatabase.Features {
 
 
 		/// <summary>
-		/// Method for adding more descriptor calculator delegates
+		/// Method for adding more descriptor calculator delegates.
 		/// </summary>
-		/// <param name="calculators">The descriptor calculators to be added</param>
+		/// <param name="calculators">The descriptor calculators to be added.</param>
 		public void AddCalculators(params FeatureManager.DescriptorCalculator[] calculators) {
 			if (calculators != null)
 				foreach (FeatureManager.DescriptorCalculator calculator in calculators)
@@ -74,9 +76,9 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Method for adding more featurevectors
+		/// Method for adding more featurevectors.
 		/// </summary>
-		/// <param name="vectors">The featurevectors to be added</param>
+		/// <param name="vectors">The featurevectors to be added.</param>
 		public void AddFeatures(IDictionary<string, FeatureVector> vectors) {
 			if (vectors == null)
 				throw new ArgumentNullException(nameof(vectors));
@@ -86,9 +88,9 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Method for adding more featurevectors
+		/// Method for adding more featurevectors.
 		/// </summary>
-		/// <param name="vectors">The featurevectors to be added</param>
+		/// <param name="vectors">The featurevectors to be added.</param>
 		public void AddFeatures(params (string, FeatureVector)[] vectors) {
 			if (vectors == null || vectors.Length == 0)
 				return;
