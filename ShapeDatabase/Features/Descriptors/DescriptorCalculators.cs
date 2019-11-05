@@ -15,6 +15,7 @@ using ShapeDatabase.Shapes;
 using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features {
+
 	/// <summary>
 	/// Class for defining all descriptor calculator methods
 	/// </summary>

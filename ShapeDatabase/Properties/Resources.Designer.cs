@@ -304,6 +304,24 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot merge the values for property {0} because no function is provided to combine all the objects for this type..
+        /// </summary>
+        internal static string EX_Merge_MissingFunc {
+            get {
+                return ResourceManager.GetString("EX_Merge_MissingFunc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot perform this operation in a MergeRecord before the record is merged. Try calling record.Merge() before accessing variables..
+        /// </summary>
+        internal static string EX_Merge_State {
+            get {
+                return ResourceManager.GetString("EX_Merge_State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The provided maximum value is below the minimum bound. The maximum value should always be larger than this minimum bound..
         /// </summary>
         internal static string EX_MinMax_Switch {

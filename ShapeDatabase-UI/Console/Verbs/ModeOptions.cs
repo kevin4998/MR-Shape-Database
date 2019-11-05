@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CommandLine;
-using ShapeDatabase.UI.Properties;
-using ShapeDatabase.Util;
 
 namespace ShapeDatabase.UI.Console.Verbs {
 
@@ -104,14 +101,6 @@ namespace ShapeDatabase.UI.Console.Verbs {
 			HelpText = "The mode which is used to determine the query size.")]
 		public string QuerySize { get; set; }
 
-		/// <summary>
-		/// The mode which is used to determine the query results.
-		/// </summary>
-		[Option("queryresult",
-			Required = false,
-			Default = "Individual",
-			HelpText = "The mode which is used to determine the query results.")]
-		public string QueryResult { get; set; }
 
 	}
 
@@ -119,6 +108,22 @@ namespace ShapeDatabase.UI.Console.Verbs {
 	/// The options to evaluate the last made query for different metrics.
 	/// </summary>
 	[Verb("evaluate", HelpText = "Evaluate the precision of querried results.")]
-	public class EvaluateOptions : CalculateOptions { }
+	public class EvaluateOptions : CalculateOptions {
+
+		/// <summary>
+		/// The mode which is used to determine the outputed query results.
+		/// </summary>
+		public EvaluationMode EvaluationMode => GetMode<EvaluationMode>(Evaluation);
+
+		/// <summary>
+		/// The mode which is used to determine the outputed query results.
+		/// </summary>
+		[Option("evalmode",
+			Required = false,
+			Default = "Individual",
+			HelpText = "The mode which is used to determine the outputed query results.")]
+		public string Evaluation { get; set; }
+
+	}
 
 }

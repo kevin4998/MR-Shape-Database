@@ -57,8 +57,8 @@ namespace ShapeDatabase.Features.Statistics {
 		/// </summary>
 		/// <param name="name">The name of the measurement which has been taken.</param>
 		/// <param name="value">The result of the measurement.</param>
-		/// <returns></returns>
-		public Record AddMeasure(string name, object value) {
+		/// <returns>The current <see cref="Record"/> for chaining purposes.</returns>
+		public virtual Record AddMeasure(string name, object value) {
 			if (name == null)
 				throw new ArgumentNullException(nameof(name));
 			Measures.Add((name, value));
@@ -77,7 +77,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// and could be converted.</returns>
 		/// <exception cref="InvalidCastException">If a value was retrieved for this name
 		/// but it could not be cast to the specified type.</exception>
-		public bool TryGetValue<T>(string name, out T value) {
+		public virtual bool TryGetValue<T>(string name, out T value) {
 			value = default;
 			if (TryGetValue(name, out object result)) {
 				if (result is T) {
@@ -103,7 +103,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// in the <see cref="Record"/>.</param>
 		/// <returns><see langword="true"/> if the value was successfully retrieved.
 		/// </returns>
-		public bool TryGetValue(string name, out object value) {
+		public virtual bool TryGetValue(string name, out object value) {
 			value = default;
 			foreach ((string title, object measure) in Measures)
 				if (name.Equals(title, StringComparison.OrdinalIgnoreCase)) {
@@ -120,7 +120,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <returns>The value of the measurement for this attribute.</returns>
 		/// <exception cref="KeyNotFoundException">If the specified attribute has not
 		/// been measured in this <see cref="Record"/>.</exception>
-		public object this[string name] {
+		public virtual object this[string name] {
 			get {
 				if (TryGetValue(name, out object result))
 					return result;
@@ -132,7 +132,7 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region -- Interface Methods --
 
-		public IEnumerator<object> GetEnumerator() {
+		public virtual IEnumerator<object> GetEnumerator() {
 			return Enumerators.FromConvert(Measures.GetEnumerator(),
 										   tuple => tuple.Item2);
 		}
@@ -149,7 +149,7 @@ namespace ShapeDatabase.Features.Statistics {
 			return obj is Record && Equals((Record) obj);
 		}
 
-		public bool Equals(Record other) {
+		public virtual bool Equals(Record other) {
 			return other != null
 				&& Time == other.Time
 				&& Name.Equals(other.Name, StringComparison.OrdinalIgnoreCase);

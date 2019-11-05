@@ -175,6 +175,9 @@ namespace ShapeDatabase.IO {
 		public int ShapesInClass(string className) =>
 			Library.ShapesInClass(className);
 
+		public string ClassByShapeName(string shapeName) =>
+			Library.ClassByShapeName(shapeName);
+
 		#endregion
 
 		#region - Read and Writing -

@@ -93,6 +93,18 @@ namespace ShapeDatabase.Shapes {
 			);
 		}
 
+		public string ClassByShapeName(string shapeName, bool queryShape = true) {
+			if (string.IsNullOrEmpty(shapeName))
+				throw new ArgumentNullException(nameof(shapeName));
+
+			MeshLibrary library = queryShape ? QueryMeshes : ProcessedMeshes;
+			foreach (MeshEntry mesh in library)
+				if (string.Equals(mesh.Name, shapeName,
+									StringComparison.InvariantCultureIgnoreCase))
+					return mesh.Class;
+			return null;
+		}
+
 		#endregion
 
 		#region -- Mesh Operations --

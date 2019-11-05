@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using ShapeDatabase.Features.Statistics;
+using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
@@ -39,16 +42,19 @@ namespace ShapeDatabase.UI.Console.Handlers {
 					);
 				// Calculate the Metrics.
 				recordHolder.AddMeasure(
-					("Accuracy", (result, cache) => Accuracy(result, cache)),
-					("Precision", (result, cache) => Precision(result, cache)),
-					("Recall", (result, cache) => Recall(result, cache)),
-					("Specificity", (result, cache) => Specificity(result, cache)),
-					("Sensitivity", (result, cache) => Sensitivity(result, cache))
+					("Class",		(result, _)		=> ClassProvider(result)),
+					("Accuracy",	(result, cache) => Accuracy		(result, cache)),
+					("Precision",	(result, cache) => Precision	(result, cache)),
+					("Recall",		(result, cache) => Recall		(result, cache)),
+					("Specificity", (result, cache) => Specificity	(result, cache)),
+					("Sensitivity", (result, cache) => Sensitivity	(result, cache))
 				);
 				// Return the Record Holder.
 				return recordHolder;
 			}
 		}
+		private static RecordMerger RecordMerger =>
+			new RecordMerger().AddMeasure<int>(c => Average(c));
 
 
 		/// <summary>
@@ -109,6 +115,17 @@ namespace ShapeDatabase.UI.Console.Handlers {
 
 
 		private static string NameProvider(QueryResult result) => result.QueryName;
+		private static string ClassProvider(QueryResult result) =>
+			Settings.FileManager.ClassByShapeName(result.QueryName);
+		private static int Average(ICollection<object> collection) {
+			if (collection.Count == 0) return 0;
+			int sum = 0;
+			foreach(object value in collection)
+				if (value is int number)
+					sum = checked(sum + number);
+			return sum / collection.Count;
+		}
+
 
 		private static int CacheTotal() => StoredMeshes.Count;
 		private static int CacheRelevant(QueryResult result) {
