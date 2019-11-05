@@ -9,6 +9,8 @@ using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 
+using static ShapeDatabase.IO.IOConventions;
+
 namespace ShapeDatabase.IO {
 	/// <summary>
 	/// Class for writing the query results to a csv file.
@@ -51,7 +53,7 @@ namespace ShapeDatabase.IO {
 			foreach(QueryResult result in type)
 				maxEntries = Math.Max(maxEntries, result.Count);
 
-			using (CsvWriter csv = new CsvWriter(writer)) {
+			using (CsvWriter csv = CsvWriter(writer)) {
 				//csv.Configuration.Delimiter = ";";
 
 				// Header of the CSV file.
