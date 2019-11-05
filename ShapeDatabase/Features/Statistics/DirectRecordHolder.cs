@@ -17,6 +17,7 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Properties ---
 
+		private ConcurrentBag<string> measureNames = new ConcurrentBag<string>();
 		private ConcurrentBag<Record> records = new ConcurrentBag<Record>();
 
 		public bool IsActive => true;
@@ -29,12 +30,7 @@ namespace ShapeDatabase.Features.Statistics {
 				return DateTime.MinValue;
 			}
 		}
-		public IEnumerable<string> MeasureNames {
-			get {
-				foreach(Record record in Records)
-					yield return record.Name;
-			}
-		}
+		public IEnumerable<string> MeasureNames => measureNames;
 		public ICollection<Record> Records => records.ToArray();
 
 		#endregion
@@ -51,6 +47,10 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Instance Methods ---
 
+		public DirectRecordHolder AddMeasureName(string measureName) {
+			this.measureNames.Add(measureName);
+			return this;
+		}
 		public DirectRecordHolder AddRecord(Record record) {
 			records.Add(record);
 			return this;

@@ -47,7 +47,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// Initialises a new merger which can combine records.
 		/// </summary>
 		public RecordMerger(MergeClass mergeClass) {
-			mergeClass = mergeClass ?? throw new ArgumentNullException(nameof(mergeClass));
+			this.mergeClass = mergeClass ?? throw new ArgumentNullException(nameof(mergeClass));
 		}
 
 		#endregion
@@ -96,7 +96,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <param name="holder">The collection of records which hsould be merged.</param>
 		/// <returns>A new <see cref="IRecordHolder"/> which contains the aggregated
 		/// data of all the previous records.</returns>
-		public IRecordHolder Merge(IEnumerable<Record> holder) {
+		public IRecordHolder Merge(IRecordHolder holder) {
 			// Combines all the records in a merge record.
 			foreach(Record record in holder) {
 				string group = mergeClass(record);
@@ -107,7 +107,9 @@ namespace ShapeDatabase.Features.Statistics {
 
 			DirectRecordHolder recordHolder = new DirectRecordHolder();
 			// Aggregates all the data in a merge record into a single value.
-			foreach(KeyValuePair<string, MergeRecord> recordPair in records) {
+			foreach(string measureName in holder.MeasureNames)
+				recordHolder.AddMeasureName(measureName);
+			Parallel.ForEach(records, recordPair => {
 				string name = recordPair.Key;
 				MergeRecord merge = recordPair.Value;
 
@@ -118,7 +120,7 @@ namespace ShapeDatabase.Features.Statistics {
 
 				merge.Merge();
 				recordHolder.AddRecord(merge);
-			}
+			});
 
 			return recordHolder;
 		}
@@ -267,7 +269,9 @@ namespace ShapeDatabase.Features.Statistics {
 		private void RemoveFunction(Type type) {
 			(Type, RecordMerger.MergeMeasures) goal = default;
 			foreach ((Type fType, RecordMerger.MergeMeasures func) in functionList)
-				if (fType == type || fType.IsAssignableFrom(type)) {
+				if (fType == type
+					|| fType.IsAssignableFrom(type)
+					|| type.IsAssignableFrom(fType)) {
 					goal = (fType, func);
 					break;
 				}

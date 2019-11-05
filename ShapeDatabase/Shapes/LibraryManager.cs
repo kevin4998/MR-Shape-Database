@@ -102,6 +102,11 @@ namespace ShapeDatabase.Shapes {
 				if (string.Equals(mesh.Name, shapeName,
 									StringComparison.InvariantCultureIgnoreCase))
 					return mesh.Class;
+			MeshLibrary other = queryShape ? ProcessedMeshes : QueryMeshes;
+			foreach (MeshEntry mesh in other)
+				if (string.Equals(mesh.Name, shapeName,
+									StringComparison.InvariantCultureIgnoreCase))
+					return mesh.Class;
 			return null;
 		}
 

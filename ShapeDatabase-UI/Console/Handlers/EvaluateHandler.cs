@@ -54,7 +54,10 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			}
 		}
 		private static RecordMerger RecordMerger =>
-			new RecordMerger(ClassRecord).AddMeasure<int>(c => Average(c));
+			new RecordMerger(ClassRecord)
+					.AddMeasure<int>(c => Average(c))
+					.AddMeasure<double>(c => AverageDouble(c))
+					.AddMeasure("Class", c => ClassChoice(c));
 
 
 		/// <summary>
@@ -130,13 +133,27 @@ namespace ShapeDatabase.UI.Console.Handlers {
 					sum = checked(sum + number);
 			return sum / collection.Count;
 		}
-
+		private static double AverageDouble(ICollection<object> collection) {
+			if (collection.Count == 0)
+				return 0;
+			double sum = 0;
+			foreach (object value in collection)
+				if (value is double number)
+					sum = checked(sum + number);
+			return sum / collection.Count;
+		}
+		private static string ClassChoice(ICollection<object> collection) {
+			foreach(object obj in collection)
+				if (obj is string name)
+					return name;
+			return null;
+		}
 
 		private static int CacheTotal() => StoredMeshes.Count;
 		private static int CacheRelevant(QueryResult result) {
 			FileManager manager = Settings.FileManager;
 			string queryName = result.QueryName;
-			string clazz = manager.ClassByShapeName(queryName, true);
+			string clazz = manager.ClassByShapeName(queryName, false);
 			return manager.ShapesInClass(clazz);
 		}
 		private static int CacheIrrelevant<T>(T result, ICache<T> cache) =>

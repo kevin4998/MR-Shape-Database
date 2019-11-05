@@ -32,7 +32,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 
 			WriteLine(I_StartProc_Query);
 
-			LoadQueryFiles(options);
 			FeatureManager manager = FeatureHandler.LoadFeatures(options.ShouldImport);
 			QueryResult[]  results = LoadQueryResults(false, manager, options);
 			if (options.ShouldExport)
@@ -47,9 +46,10 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// Processes the query shapes (and loads them in memory).
 		/// </summary>
 		private static void LoadQueryFiles(QueryOptions options) {
-			QueryInputMode input = options.QueryInputMode;
+			QueryInputMode input = (options == null) ? QueryInputMode.Refine
+													 : options.QueryInputMode;
 			IEnumerable<string> dirs = new string[] {Settings.QueryDir};
-			if (options.HasDirectories)
+			if (options != null && options.HasDirectories)
 				dirs = options.QueryDirectories;
 			FileManager fileManager = Settings.FileManager;
 
@@ -87,6 +87,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		public static QueryResult[] LoadQueryResults(bool import,
 													 FeatureManager manager = null,
 													 QueryOptions options = null) {
+			LoadQueryFiles(options);
 			string filename = Settings.QueryResultsFile;
 			string directory = Settings.QueryDir;
 
