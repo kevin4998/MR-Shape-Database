@@ -30,7 +30,13 @@ namespace ShapeDatabase.Features.Statistics {
 				return DateTime.MinValue;
 			}
 		}
-		public IEnumerable<string> MeasureNames => measureNames;
+		public IEnumerable<string> MeasureNames {
+			get {
+				string[] names = measureNames.ToArray();
+				Array.Reverse(names);
+				return names;
+			}
+		}
 		public ICollection<Record> Records => records.ToArray();
 
 		#endregion
