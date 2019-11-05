@@ -46,7 +46,9 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <summary>
 		/// Initialises a new merger which can combine records.
 		/// </summary>
-		public RecordMerger() { }
+		public RecordMerger(MergeClass mergeClass) {
+			mergeClass = mergeClass ?? throw new ArgumentNullException(nameof(mergeClass));
+		}
 
 		#endregion
 

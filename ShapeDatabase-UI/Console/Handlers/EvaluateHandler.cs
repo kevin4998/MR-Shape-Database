@@ -54,7 +54,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			}
 		}
 		private static RecordMerger RecordMerger =>
-			new RecordMerger().AddMeasure<int>(c => Average(c));
+			new RecordMerger(ClassRecord).AddMeasure<int>(c => Average(c));
 
 
 		/// <summary>
@@ -128,6 +128,8 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		private static string NameProvider(QueryResult result) => result.QueryName;
 		private static string ClassProvider(QueryResult result) =>
 			Settings.FileManager.ClassByShapeName(result.QueryName);
+		private static string ClassRecord(Record record) =>
+			Settings.FileManager.ClassByShapeName(record.Name);
 		private static int Average(ICollection<object> collection) {
 			if (collection.Count == 0) return 0;
 			int sum = 0;
