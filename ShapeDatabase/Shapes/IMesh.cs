@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.NetworkInformation;
 using OpenTK;
 using ShapeDatabase.Properties;
@@ -139,9 +140,20 @@ namespace ShapeDatabase.Shapes {
 					nameof(count)
 				);
 
-			Vector3[] vertices = new Vector3[count--];
+			Vector3[] vertices = new Vector3[count];
+			uint[] vertexIndices = new uint[count--];
 			while (count >= 0)
-				vertices[count--] = mesh.GetVertex(mesh.GetWeights().GetElement(rand));
+			{
+				int vertexIndex = rand.Next(0, 3);
+				uint randomVertex = (uint)mesh.GetFace(mesh.GetWeights().GetElement(rand))[vertexIndex];
+				while(vertexIndices.Contains(randomVertex))
+				{
+					randomVertex = (uint)mesh.GetFace(mesh.GetWeights().GetElement(rand))[vertexIndex];
+				}
+				vertices[count] = mesh.GetVertex((uint)mesh.GetFace(mesh.GetWeights().GetElement(rand))[vertexIndex]);
+				vertexIndices[count--] = randomVertex;
+			}
+
 			return vertices;
 		}
 

@@ -25,14 +25,13 @@ namespace ShapeDatabase.Util.Collections {
 		#region --- Properties ---
 
 		private T[] array = null;
-		private List<T> list = new List<T>(Settings.RefineVertexNumber);
-		//private (T, double)[] list;
-		//private double totalArea;
+		private List<(T, double)> list = new List<(T, double)>(Settings.RefineVertexNumber);
 		private bool readMode = false;
 
 		public int Count => readMode ? list.Count : array.Length;
 		public bool IsReadOnly => false;
-		public double TotalWeight => Count;
+		public double TotalWeight { get; private set; }
+
 		public bool IsSynchronized => false;
 		public object SyncRoot { get; } = new object();
 
@@ -96,12 +95,7 @@ namespace ShapeDatabase.Util.Collections {
 		[MethodImplAttribute(MethodImplOptions.AggressiveInlining)]
 		private void AllowModifications() {
 			if (!readMode) return;
-			lock (SyncRoot) {
-				if (!readMode) return;
-				list = new List<T>(array);
-				array = null;
-				readMode = false;
-			}
+			throw new InvalidOperationException();
 		}
 
 		[MethodImplAttribute(MethodImplOptions.AggressiveInlining)]
@@ -109,12 +103,24 @@ namespace ShapeDatabase.Util.Collections {
 			if (readMode) return;
 			lock(SyncRoot) {
 				if (readMode) return;
-				array = list.ToArray();
+
+				array = new T[Settings.WeightedVertexArraySize];
+
+				double currentTotal = 0;
+				foreach((T, double) item in list)
+				{
+					double endTotal = currentTotal + item.Item2 / TotalWeight * (Settings.WeightedVertexArraySize - 1);
+					for (int j = (int)Math.Ceiling(currentTotal); j < endTotal; j++)
+					{
+						array[j] = item.Item1;
+					}
+					currentTotal = endTotal;
+				}
+
 				list = null;
 				readMode = true;
 			}
 		}
-
 
 		public void Add(T item, double weight) {
 			if (weight < 0)
@@ -125,14 +131,11 @@ namespace ShapeDatabase.Util.Collections {
 						weight
 					), nameof(weight)
 				);
-			int rounded = (int) Math.Ceiling(weight);
-			// 0 means no position so exit.
-			if (rounded == 0) return;
 
 			AllowModifications();
 
-			while (--rounded >= 0)
-				list.Add(item);
+			TotalWeight += weight;
+			list.Add((item, weight));
 		}
 		public void Add(T item) => Add(item, 0);
 		public bool AddWeight(T item, double weight) {
@@ -146,7 +149,7 @@ namespace ShapeDatabase.Util.Collections {
 		}
 		public bool Contains(T item) {
 			if (readMode) return Array.FindIndex(array, x => Equals(x, item)) != -1;
-			else		  return list.Contains(item);
+			else		  return list.Find(x => x.Item1.Equals(item)).Equals(default);
 		}
 
 		public void CopyTo(T[] array, int index) => CopyTo((Array) array, index);
