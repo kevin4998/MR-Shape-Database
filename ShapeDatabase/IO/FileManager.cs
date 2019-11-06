@@ -362,12 +362,21 @@ namespace ShapeDatabase.IO {
 
 			// Discover files.
 			FileInfo[] files = DiscoverFiles(new DirectoryInfo(filedir));
-			// Add files into the library (+ refinement).
-			if (async)
-				Parallel.ForEach(files, file => add(file));
-			else
-				foreach (FileInfo file in files)
-					add(file);
+
+			using (ProgressBar progress = new ProgressBar(files.Length)) { 
+				// Add files into the library (+ refinement).
+				if (async) { 
+					Parallel.ForEach(files, file => {
+						add(file);
+						progress.IncrementCompletedTasks();
+					});
+				} else { 
+					foreach (FileInfo file in files) { 
+						add(file);
+						progress.IncrementCompletedTasks();
+					}
+				}
+			}
 		}
 
 		#endregion
