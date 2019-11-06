@@ -110,7 +110,7 @@ namespace ShapeDatabase.Features.Statistics {
 			return this;
 		}
 
-		ICachedRecordHolder<T> ICachedRecordHolder<T>.TakeSnapShot(IEnumerable<T> library) {
+		ICachedRecordHolder<T> ICachedRecordHolder<T>.TakeSnapShot(ICollection<T> library) {
 			TakeSnapShot(library);
 			return this;
 		}

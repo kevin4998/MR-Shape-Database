@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Statistics {
 
@@ -98,7 +99,7 @@ namespace ShapeDatabase.Features.Statistics {
 			return this;
 		}
 		IRecordHolder IRecordHolder.Reset() => Reset();
-		public virtual IRecordHolder<T> TakeSnapShot(IEnumerable<T> library) {
+		public virtual IRecordHolder<T> TakeSnapShot(ICollection<T> library) {
 			if (!IsEmpty || IsActive)
 				throw new SnapShotException();
 			if (library == null)
@@ -106,11 +107,15 @@ namespace ShapeDatabase.Features.Statistics {
 
 			IsActive = true;
 			SnapshotTime = DateTime.Now;
-			IList<Record> localRecords = new List<Record>();
-			foreach (T entry in library)
-				localRecords.Add(EntrySnapShot(NameProvider(entry), entry));
+			using (ProgressBar progress = new ProgressBar(library.Count)) { 
+				IList<Record> localRecords = new List<Record>();
+				foreach (T entry in library) { 
+					localRecords.Add(EntrySnapShot(NameProvider(entry), entry));
+					progress.CompleteTask();
+				}
 
-			Records = localRecords;
+				Records = localRecords;
+			}
 			IsActive = false;
 			return this;
 		}

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Accord.Math;
 using ShapeDatabase.Features.Descriptors;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features {
 	/// <summary>
@@ -56,57 +57,60 @@ namespace ShapeDatabase.Features {
 			if (MinMaxValues.Count == 0)
 				UpdateMinMaxDictionary(vectors);
 
-			foreach (KeyValuePair<string, FeatureVector> pair in vectors.ToArray()) {
-				string name = pair.Key;
-				FeatureVector vector = pair.Value;
-				IDescriptor[] normalisedDescriptors = new IDescriptor[vector.DescriptorCount];
+			using (ProgressBar progress = new ProgressBar(vectors.Count)) {
+				foreach (KeyValuePair<string, FeatureVector> pair in vectors.ToArray()) {
+					string name = pair.Key;
+					FeatureVector vector = pair.Value;
+					IDescriptor[] normalisedDescriptors = new IDescriptor[vector.DescriptorCount];
 
-				int descCount = 0;
-				foreach (IDescriptor desc in vector.Descriptors) {
-					//Normalisation for Elementary Descriptor.
-					if (desc is ElemDescriptor elemDesc) {
-						string elemName = elemDesc.Name;
-						double elemValue = elemDesc.Value;
-						(double min, double max) = MinMaxValues[desc.Name];
-						double range = max - min;
+					int descCount = 0;
+					foreach (IDescriptor desc in vector.Descriptors) {
+						//Normalisation for Elementary Descriptor.
+						if (desc is ElemDescriptor elemDesc) {
+							string elemName = elemDesc.Name;
+							double elemValue = elemDesc.Value;
+							(double min, double max) = MinMaxValues[desc.Name];
+							double range = max - min;
 
-						if(elemValue == double.PositiveInfinity)
-						{
-							normalisedDescriptors[descCount] = new ElemDescriptor(
-							elemName, 1);
-						}
-						else
-						{
-							if (range != 0)
+							if(elemValue == double.PositiveInfinity)
 							{
-								elemValue = Math.Max(min, elemValue);
-								elemValue = Math.Min(max, elemValue);
-								elemValue = (elemValue - min) / range;
+								normalisedDescriptors[descCount] = new ElemDescriptor(
+								elemName, 1);
 							}
 							else
 							{
-								elemValue = Math.Max(0, elemValue);
-								elemValue = Math.Min(1, elemValue);
+								if (range != 0)
+								{
+									elemValue = Math.Max(min, elemValue);
+									elemValue = Math.Min(max, elemValue);
+									elemValue = (elemValue - min) / range;
+								}
+								else
+								{
+									elemValue = Math.Max(0, elemValue);
+									elemValue = Math.Min(1, elemValue);
+								}
+
+								normalisedDescriptors[descCount] = new ElemDescriptor(
+									elemName,
+									elemValue
+								);
 							}
 
-							normalisedDescriptors[descCount] = new ElemDescriptor(
-								elemName,
-								elemValue
-							);
-						}
+							//Normalisation for Histogram Descriptor.
+						} else if (desc is HistDescriptor histDesc)
+							normalisedDescriptors[descCount] = histDesc;
 
-						//Normalisation for Histogram Descriptor.
-					} else if (desc is HistDescriptor histDesc)
-						normalisedDescriptors[descCount] = histDesc;
+						//Normalisation for unsupported Descriptors.
+						else
+							throw new NotImplementedException();
 
-					//Normalisation for unsupported Descriptors.
-					else
-						throw new NotImplementedException();
+						descCount++;
+					}
 
-					descCount++;
+					vectors[name] = new FeatureVector(normalisedDescriptors);
+					progress.CompleteTask();
 				}
-
-				vectors[name] = new FeatureVector(normalisedDescriptors);
 			}
 		}
 

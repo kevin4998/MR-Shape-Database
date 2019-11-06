@@ -9,6 +9,7 @@ using Accord.Diagnostics;
 using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Descriptors {
 	/// <summary>
@@ -111,19 +112,29 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// </summary>
 		/// <param name="library">The library of which the featurevectors should be calculated</param>
 		public void CalculateVectors(params MeshEntry[] library) {
-			CalculateVectors((IEnumerable<MeshEntry>) library);
+			CalculateVectors((ICollection<MeshEntry>) library);
 		}
 
 		/// <summary>
 		/// Calculate the featurevectores of all meshes in a library using all descriptor calculators of the featuremanager
 		/// </summary>
 		/// <param name="library">The library of which the featurevectors should be calculated</param>
-		public void CalculateVectors(IEnumerable<MeshEntry> library) {
+		public void CalculateVectors(ICollection<MeshEntry> library, bool async = true) {
 			if (library == null)
 				throw new ArgumentNullException(nameof(library));
 
-			foreach (MeshEntry entry in library)
-				CalculateVector(entry);
+			using (ProgressBar progress = new ProgressBar(library.Count)) { 
+				if (async)
+					Parallel.ForEach(library, mesh => {
+						CalculateVector(mesh);
+						progress.CompleteTask();
+					});
+				else
+					foreach (MeshEntry entry in library) { 
+						CalculateVector(entry);
+						progress.CompleteTask();
+					}
+			}
 
 			NormaliseVectors();
 		}

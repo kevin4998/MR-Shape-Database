@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using ShapeDatabase.UI.Console.Verbs;
-
+using ShapeDatabase.Util;
 using static System.Console;
 using static ShapeDatabase.UI.Properties.Resources;
 
@@ -16,24 +16,26 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// <summary>
 		/// All cached directories made by the application.
 		/// </summary>
-		public static IEnumerable<string> CachedDirs {
+		public static ICollection<string> CachedDirs {
 			get {
-				yield return Settings.ShapeTempDir;
-				yield return Settings.ShapeFailedDir;
-				yield return Settings.ShapeFinalDir;
+				return new string[] {
+					Settings.ShapeTempDir,
+					Settings.ShapeFailedDir,
+					Settings.ShapeFinalDir,
 
-				yield return Settings.FeatureVectorDir;
-				yield return Settings.MeasurementsDir;
-				yield return Settings.QueryDir;
+					Settings.FeatureVectorDir,
+					Settings.MeasurementsDir,
+					Settings.QueryDir
+				};
 			}
 		}
 
 		/// <summary>
 		/// All cached files made by the application.
 		/// </summary>
-		public static IEnumerable<string> CachedFiles {
+		public static ICollection<string> CachedFiles {
 			get {
-				yield return Settings.SettingsFile;
+				return new string[] { Settings.SettingsFile };
 			}
 		}
 
@@ -57,18 +59,26 @@ namespace ShapeDatabase.UI.Console.Handlers {
 
 
 		private static void CleanDirectories() {
-			foreach (string dir in CachedDirs) {
-				DirectoryInfo info = new DirectoryInfo(dir);
-				if (info.Exists)
-					info.Delete(true);
+			ICollection<string> dirs = CachedDirs;
+			using (ProgressBar progress = new ProgressBar(dirs.Count)) { 
+				foreach (string dir in dirs) {
+					DirectoryInfo info = new DirectoryInfo(dir);
+					if (info.Exists)
+						info.Delete(true);
+					progress.CompleteTask();
+				}
 			}
 		}
 
 		private static void CleanFiles() {
-			foreach (string file in CachedFiles) {
-				FileInfo info = new FileInfo(file);
-				if (info.Exists)
-					info.Delete();
+			ICollection<string> dirs = CachedFiles;
+			using (ProgressBar progress = new ProgressBar(dirs.Count)) {
+				foreach (string file in dirs) {
+					FileInfo info = new FileInfo(file);
+					if (info.Exists)
+						info.Delete();
+					progress.CompleteTask();
+				}
 			}
 		}
 

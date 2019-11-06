@@ -56,7 +56,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <returns>The current object for chaining.</returns>
 		/// <exception cref="ArgumentNullException">If the given library
 		/// is <see langword="null"/>.</exception>
-		new ICachedRecordHolder<T> TakeSnapShot(IEnumerable<T> library);
+		new ICachedRecordHolder<T> TakeSnapShot(ICollection<T> library);
 
 		/// <summary>
 		/// Deletes all previous snapshot values so a new one can be taken.

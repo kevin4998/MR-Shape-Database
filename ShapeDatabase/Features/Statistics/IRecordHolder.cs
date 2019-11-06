@@ -70,7 +70,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <param name="library">The database containing values to get measurements
 		/// for.</param>
 		/// <returns>The current object for chaining.</returns>
-		IRecordHolder<T> TakeSnapShot(IEnumerable<T> library);
+		IRecordHolder<T> TakeSnapShot(ICollection<T> library);
 
 		/// <summary>
 		/// Deletes all previous snapshot values so a new one can be taken.

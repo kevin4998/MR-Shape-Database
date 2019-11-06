@@ -368,12 +368,12 @@ namespace ShapeDatabase.IO {
 				if (async) { 
 					Parallel.ForEach(files, file => {
 						add(file);
-						progress.IncrementCompletedTasks();
+						progress.CompleteTask();
 					});
 				} else { 
 					foreach (FileInfo file in files) { 
 						add(file);
-						progress.IncrementCompletedTasks();
+						progress.CompleteTask();
 					}
 				}
 			}

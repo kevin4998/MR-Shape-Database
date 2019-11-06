@@ -100,7 +100,7 @@ namespace ShapeDatabase.Util {
 
 		#region --- Instance Methods ---
 
-		public void IncrementCompletedTasks() {
+		public void CompleteTask() {
 			int newValue = Interlocked.Increment(ref completedTasks);
 			Report(newValue / totalTasks);
 		}
