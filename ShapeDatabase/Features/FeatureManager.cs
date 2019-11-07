@@ -124,16 +124,10 @@ namespace ShapeDatabase.Features.Descriptors {
 				throw new ArgumentNullException(nameof(library));
 
 			using (ProgressBar progress = new ProgressBar(library.Count)) { 
-				if (async)
-					Parallel.ForEach(library, mesh => {
-						CalculateVector(mesh);
-						progress.CompleteTask();
-					});
-				else
-					foreach (MeshEntry entry in library) { 
-						CalculateVector(entry);
-						progress.CompleteTask();
-					}
+				foreach (MeshEntry entry in library) { 
+					CalculateVector(entry);
+					progress.CompleteTask();
+				}
 			}
 
 			NormaliseVectors();
