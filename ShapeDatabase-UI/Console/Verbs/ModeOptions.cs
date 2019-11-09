@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CommandLine;
+using CommandLine.Text;
 
 namespace ShapeDatabase.UI.Console.Verbs {
 
@@ -18,31 +19,99 @@ namespace ShapeDatabase.UI.Console.Verbs {
 			HelpText = "If the settings file should be cleaned.")]
 		public bool CleanSettings { get; set; }
 
+		/// <summary>
+		/// Display help information on how to use this verb.
+		/// </summary>
+		[Usage]
+		public static IEnumerable<Example> Examples {
+			get {
+				yield return new Example("Clean the application including settings files.", new CleanOptions() { CleanSettings = true });
+				yield return new Example("Clean the application excluding settings files.", new CleanOptions() { CleanSettings = false });
+				yield return new Example("Clean the application and continue.", new CleanOptions() { CleanSettings = false, AutoExit = true, DebugMessages = true });
+			}
+		}
+
 	}
 
 	/// <summary>
 	/// The options to display a collection of shapes to the user.
 	/// </summary>
 	[Verb("view", HelpText = "View the different Shapes in the system.")]
-	public class ViewOptions : ShapeOptions { }
+	public class ViewOptions : ShapeOptions {
+
+		/// <summary>
+		/// Display help information on how to use this verb.
+		/// </summary>
+		[Usage]
+		public static IEnumerable<Example> Examples {
+			get {
+				yield return new Example("View the unrefined demo files.", new ViewOptions() { ShapeDirectories = new string[] { "Content/Shapes/Demo" } });
+				yield return new Example("View the unrefined small files.", new ViewOptions() { ShapeDirectories = new string[] { "Content/Shapes/Small" } });
+				yield return new Example("View the previously refined files.", new ViewOptions() { });
+			}
+		}
+
+	}
 
 	/// <summary>
 	/// The options to refine a collection of shapes for the user.
 	/// </summary>
 	[Verb("refine", HelpText = "Refine provided shapes and stores them in the system.")]
-	public class RefineOptions : ShapeOptions { }
+	public class RefineOptions : ShapeOptions {
+
+		/// <summary>
+		/// Display help information on how to use this verb.
+		/// </summary>
+		[Usage]
+		public static IEnumerable<Example> Examples {
+			get {
+				yield return new Example("Refine all the files in the demo map, overwriting existing ones.",
+										new RefineOptions() { ShapeDirectories = new string[] { "Content/Shapes/Demo" }, Overwrite = true });
+				yield return new Example("Refine all the files in the all map.", new RefineOptions() { ShapeDirectories = new string[] { "Content/Shapes/All" } });
+			}
+		}
+
+	}
 
 	/// <summary>
 	/// The options to calculate metrics for the current shapes.
 	/// </summary>
 	[Verb("measure", HelpText = "Calculate metrics for all the current shapes.")]
-	public class MeasureOptions : ShapeOptions { }
+	public class MeasureOptions : ShapeOptions {
+
+		/// <summary>
+		/// Display help information on how to use this verb.
+		/// </summary>
+		[Usage]
+		public static IEnumerable<Example> Examples {
+			get {
+				yield return new Example("Measure the unrefined files in the Demo directory, overwriting refined variants.",
+										new MeasureOptions() { ShapeDirectories = new string[] { "Content/Shapes/Demo" }, Overwrite = true });
+				yield return new Example("Measure all the refined files.", new MeasureOptions() { });
+			}
+		}
+
+	}
 
 	/// <summary>
 	/// The options to calculate features for the current shapes for comparison.
 	/// </summary>
 	[Verb("feature", HelpText = "Calculate features for all the current shapes.")]
-	public class FeatureOptions : CalculateOptions { }
+	public class FeatureOptions : CalculateOptions {
+
+		/// <summary>
+		/// Display help information on how to use this verb.
+		/// </summary>
+		[Usage]
+		public static IEnumerable<Example> Examples {
+			get {
+				yield return new Example("Calculate the features from the refined files and exit the application.",
+										new FeatureOptions() { AutoExit = true });
+				yield return new Example("Calculate the features from the refined files but do not save it.", new FeatureOptions() { Export = false });
+			}
+		}
+
+	}
 
 	/// <summary>
 	/// The options to compare shapes for similarity.
@@ -101,6 +170,18 @@ namespace ShapeDatabase.UI.Console.Verbs {
 			HelpText = "The mode which is used to determine the query size.")]
 		public string QuerySize { get; set; }
 
+		/// <summary>
+		/// Display help information on how to use this verb.
+		/// </summary>
+		[Usage]
+		public static IEnumerable<Example> Examples {
+			get {
+				yield return new Example("Compare all the items in the database with each other with the query size being the size of the class.",
+										new QueryOptions() { AutoExit = true, QueryInput = "internal", QuerySize = "class" });
+				yield return new Example("Compare with items from the query folder returning the amount of items as specified in the settings.ini file.",
+										new QueryOptions() { AutoExit = true, QueryInput = "refine", QuerySize = "kbest" });
+			}
+		}
 
 	}
 
@@ -123,6 +204,19 @@ namespace ShapeDatabase.UI.Console.Verbs {
 			Default = "Individual",
 			HelpText = "The mode which is used to determine the outputed query results.")]
 		public string Evaluation { get; set; }
+
+		/// <summary>
+		/// Display help information on how to use this verb.
+		/// </summary>
+		[Usage]
+		public static IEnumerable<Example> Examples {
+			get {
+				yield return new Example("Evaluate the last query results showing the metrics for each individual file.",
+										new EvaluateOptions() { AutoExit = true, Evaluation = "individual" });
+				yield return new Example("Evaluate the last query results showing the metrics per class.",
+										new EvaluateOptions() { AutoExit = true, Evaluation = "aggregated" });
+			}
+		}
 
 	}
 
