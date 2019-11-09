@@ -42,7 +42,7 @@ namespace ShapeDatabase.Refine {
 		#region --- Instance Methods ---
 
 		/// <summary>
-		/// Checkes whether mesh has too few faces or vertices.
+		/// Checkes whether a mesh has too few faces or vertices.
 		/// </summary>
 		/// <param name="mesh">The mesh to check for refinement.</param>
 		/// <returns><see langword="true"/> if a refinement operation is needed
@@ -52,9 +52,9 @@ namespace ShapeDatabase.Refine {
 				throw new ArgumentNullException(nameof(mesh));
 			return mesh.VertexCount != Settings.RefineVertexNumber;
 		}
+
 		/// <summary>
-		/// Extends mesh by applying one iteration of the Doo-Sabin algorithm.
-		/// Overwrites the specified file.
+		/// Class for normalising and refining a given mesh.
 		/// </summary>
 		/// <param name="mesh">The mesh that needs to be refined.</param>
 		/// <param name="file">The file containing the shape to refine.</param>
@@ -94,7 +94,7 @@ namespace ShapeDatabase.Refine {
 	}
 
 	/// <summary>
-	/// Class for simplifying meshes with too few faces or vertices.
+	/// Class for simplifying meshes with too few vertices.
 	/// </summary>
 	public class SimplifyRefiner : IRefiner<Shapes.IMesh> {
 
@@ -113,7 +113,7 @@ namespace ShapeDatabase.Refine {
 		#region --- Constructor Methods ---
 
 		/// <summary>
-		/// Initialises a new refiner to reduce the amount of faces in a shape.
+		/// Initialises a new refiner to reduce the amount of vertices in a shape.
 		/// </summary>
 		private SimplifyRefiner() { }
 
@@ -122,10 +122,10 @@ namespace ShapeDatabase.Refine {
 		#region --- Instance Methods ---
 
 		/// <summary>
-		/// Checks whether mesh has too many faces or vertices.
+		/// Checks whether mesh has too few or too many vertices.
 		/// </summary>
 		/// <param name="mesh">The mesh to check for refinement.</param>
-		/// <returns><see langword="true"/> if the given mesh has too many faces.
+		/// <returns><see langword="true"/> if the given mesh has too few ortoo many vertices.
 		/// </returns>
 		public bool RequireRefinement(Shapes.IMesh mesh) {
 			if (mesh == null)
@@ -134,7 +134,7 @@ namespace ShapeDatabase.Refine {
 		}
 
 		/// <summary>
-		/// Simplifies mesh by reducing number of faces and triangles. Overwrites the .off file.
+		/// Simplifies mesh by reducing number of vertices. Overwrites the .off file.
 		/// </summary>
 		/// /// <param name="mesh">The mesh that needs to be refined.</param>
 		/// <param name="file">The file containing the shape to refine.</param>
@@ -160,7 +160,6 @@ namespace ShapeDatabase.Refine {
 		}
 
 		#endregion
-
 	}
 
 	/// <summary>
@@ -170,7 +169,7 @@ namespace ShapeDatabase.Refine {
 	/// The 4 steps of the normalisation process consists of:
 	/// <list type="number">
 	///		<item>
-	///			<description>Centering to the shape to the bary center.</description>
+	///			<description>Centering the shape to the bary center.</description>
 	///		</item>
 	///		<item>
 	///			<description>Aligning the shape using the eigenvectors.</description>
@@ -214,12 +213,22 @@ namespace ShapeDatabase.Refine {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// States whether a mesh requires refinement.
+		/// </summary>
+		/// <param name="mesh">The mesh.</param>
+		/// <returns>Bool indicating whether it needs refinement.</returns>
 		public bool RequireRefinement(Shapes.IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
 			return !mesh.IsNormalised;
 		}
 
+		/// <summary>
+		/// Refines a mesh and overwrites its file.
+		/// </summary>
+		/// <param name="mesh">The mesh.</param>
+		/// <param name="file">The fileinfo.</param>
 		public void RefineMesh(Shapes.IMesh mesh, FileInfo file) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
@@ -238,7 +247,6 @@ namespace ShapeDatabase.Refine {
 			transformed.IsNormalised = true;
 			Settings.FileManager.Write(file.FullName, transformed);
 		}
-
 
 		/// <summary>
 		/// Attempts to find the centroid or barycenter point of a mesh
@@ -280,7 +288,6 @@ namespace ShapeDatabase.Refine {
 			return result / 3;
 		}
 
-
 		private static Shapes.SimpleMesh CenterShape(Shapes.IMesh mesh) {
 			uint vertices = mesh.VertexCount;
 			Vector3 center = FindBaryCenter(mesh);
@@ -306,19 +313,6 @@ namespace ShapeDatabase.Refine {
 			MultivariateLinearRegression regression = pca.Learn(matrix);
 			double[][] transformed = regression.Transform(matrix);
 			Vector3[] vectors = transformed.Vectorize();
-
-			/*
-			// Find the collection of eigenVectors.
-			double[][] eigenvectors = pca.ComponentVectors;
-			// Convert the coordinate system to the eigenvector one.
-			Vector3[] vectors = new Vector3[mesh.VertexCount];
-			for (int i = (int) mesh.VertexCount - 1; i >= 0; i--) {
-				double[] currentVector = matrix[i];
-				double[] newVector = Accord.Math.Matrix.Dot(eigenvectors,
-															currentVector);
-				vectors[i] = newVector.AsVector();
-			}*/
-
 
 			// Provide the new positions into the mesh.
 			Shapes.SimpleMesh simple = Shapes.SimpleMesh.CreateFrom(mesh);
@@ -370,9 +364,6 @@ namespace ShapeDatabase.Refine {
 			return modifiedMesh;
 		}
 
-
 		#endregion
-
 	}
-
 }

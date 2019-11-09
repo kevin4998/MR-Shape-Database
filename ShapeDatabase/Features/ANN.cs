@@ -15,7 +15,7 @@ using ShapeDatabase.Util;
 namespace ShapeDatabase.Features {
 
 	/// <summary>
-	/// Class for performing Approximate Nearest Neighbour (ANN) searches
+	/// Class for performing Approximate Nearest Neighbour (ANN) searches.
 	/// </summary>
 	public class ANN {
 
@@ -68,19 +68,18 @@ namespace ShapeDatabase.Features {
 		/// </summary>
 		/// <param name="name">The name of the querried object.</param>
 		/// <param name="vector">The featurevector for comparison between vectors.</param>
-		/// <param name="kBest">How many results should be returned.</param>
-		/// <returns>The best results for the specified item in a
-		/// <see cref="QueryResult"/> object.</returns>
+		/// <param name="kBest">How many results should be returned (K-Value).</param>
+		/// <returns>A <see cref="QueryResult"/> object containing the K best results.</returns>
 		public QueryResult RunANNQuery(string name, FeatureVector vector, int kBest) {
 			return RunANNQuery(new NamedFeatureVector(name, vector), kBest);
 		}
 
 		/// <summary>
-		/// Perform ANN search on the class' world, given a vector, returning the (approximate) k-best results.
+		/// Perform an ANN search on the class' world, given a vector, returning the (approximate) k-best results.
 		/// </summary>
-		/// <param name="queryVector">The query vector</param>
-		/// <param name="kBest">The K Value</param>
-		/// <returns>The k-best result</returns>
+		/// <param name="queryVector">The query vector.</param>
+		/// <param name="kBest">How many results should be returned (K-Value).</param>
+		/// <returns>A <see cref="QueryResult"/> object containing the K best results.</returns>
 		public QueryResult RunANNQuery(NamedFeatureVector queryVector, int kBest) {
 
 			QueryResult queryresult = new QueryResult(queryVector.Name);
@@ -112,6 +111,10 @@ namespace ShapeDatabase.Features {
 		private class MetricsEventListener : EventListener {
 			private readonly EventSource eventSource;
 
+			/// <summary>
+			/// Initialization of the eventlistener, given its source.
+			/// </summary>
+			/// <param name="eventSource"></param>
 			public MetricsEventListener(EventSource eventSource) {
 				this.eventSource = eventSource;
 				EnableEvents(this.eventSource, EventLevel.LogAlways, EventKeywords.All, new Dictionary<string, string> { { "EventCounterIntervalSec", "1" } });

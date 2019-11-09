@@ -51,6 +51,5 @@ namespace ShapeDatabase.Features.Statistics {
 		[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
 		protected SnapShotException(SerializationInfo info, StreamingContext context)
 			: base(info, context) { }
-
 	}
 }

@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Descriptors {
+
 	/// <summary>
-	/// A descriptor which can summarise the shape with a single value.
+	/// A descriptor that describes a property of the shape with one single value.
 	/// </summary>
 	[DebuggerDisplay("{Name}: {Value}")]
 	public class ElemDescriptor : BaseDescriptor<ElemDescriptor> {
@@ -17,7 +18,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		#region --- Properties ---
 
 		/// <summary>
-		/// Value of the elementary descriptor
+		/// Value of the elementary descriptor.
 		/// </summary>
 		public double Value { get; }
 
@@ -26,10 +27,10 @@ namespace ShapeDatabase.Features.Descriptors {
 		#region --- Constructor Methods ---
 
 		/// <summary>
-		/// Constructor of the elementary descriptor
+		/// Constructor of the elementary descriptor.
 		/// </summary>
-		/// <param name="name">Name of the descriptor</param>
-		/// <param name="value">Value of the descritor</param>
+		/// <param name="name">Name of the descriptor.</param>
+		/// <param name="value">Value of the descritor.</param>
 		/// <exception cref="ArgumentNullException">If the name is <see langword="null"/>.
 		/// </exception>
 		public ElemDescriptor(string name, double value)
@@ -46,8 +47,8 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <summary>
 		/// Returns the distance with another elemtary descriptor.
 		/// </summary>
-		/// <param name="desc">The other elementary descriptor</param>
-		/// <returns>The distance (0 = Equal Descriptors, 1 = Completely Different)</returns>
+		/// <param name="desc">The other elementary descriptor.</param>
+		/// <returns>The distance (0 = Equal Descriptors, 1 = Completely Different).</returns>
 		public override double Compare(ElemDescriptor desc) {
 			if (desc == null)
 				throw new ArgumentNullException(nameof(desc));
@@ -56,7 +57,7 @@ namespace ShapeDatabase.Features.Descriptors {
 
 		/// Serializes the elementary descriptor.
 		/// </summary>
-		/// <returns>Serialized elementary descriptor</returns>
+		/// <returns>The serialized elementary descriptor.</returns>
 		public override string Serialize() {
 			IFormatProvider format = Settings.Culture;
 			return Value.ToString(format);
@@ -66,6 +67,13 @@ namespace ShapeDatabase.Features.Descriptors {
 
 		#region -- Static Methods --
 
+		/// <summary>
+		/// (Tries to) deserialize a serialization string into an elementary descriptor.
+		/// </summary>
+		/// <param name="name">The name of the elementary descriptor.</param>
+		/// <param name="serialised">The serialization string.</param>
+		/// <param name="desc">The elementary descriptor (null if not successful).</param>
+		/// <returns>Bool indicating whether the serialization was successful.</returns>
 		public static bool TryParse(string name, string serialised,
 									out ElemDescriptor desc) {
 			if (string.IsNullOrEmpty(name))

@@ -23,7 +23,9 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		public static RecordsWriter Instance => lazy.Value;
 
-
+		/// <summary>
+		/// A collection containing the supported formats.
+		/// </summary>
 		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
@@ -39,6 +41,11 @@ namespace ShapeDatabase.IO {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Writes a recordholder to a file, given a streamwriter.
+		/// </summary>
+		/// <param name="records">The recordholder.</param>
+		/// <param name="writer">The streamwriter.</param>
 		public void WriteFile(IRecordHolder records, StreamWriter writer) {
 			if (records == null)
 				throw new ArgumentNullException(nameof(records));
@@ -67,6 +74,5 @@ namespace ShapeDatabase.IO {
 			=> WriteFile(type as IRecordHolder, writer);
 
 		#endregion
-
 	}
 }

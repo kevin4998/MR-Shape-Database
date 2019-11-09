@@ -7,7 +7,7 @@ using IniParser.Model;
 namespace ShapeDatabase.IO {
 
 	/// <summary>
-	/// A writer to serialise Settings from this application to an ini file.
+	/// Class for writing settings from this application to an ini file.
 	/// </summary>
 	class SettingsWriter : IWriter<TempSettings> {
 
@@ -21,7 +21,9 @@ namespace ShapeDatabase.IO {
 		private static readonly Lazy<SettingsWriter> lazy
 			= new Lazy<SettingsWriter>(() => new SettingsWriter());
 
-
+		/// <summary>
+		/// Collection containing the supported formats.
+		/// </summary>
 		public ICollection<string> SupportedFormats => new string[] { "ini" };
 
 		#endregion
@@ -34,6 +36,11 @@ namespace ShapeDatabase.IO {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Writes settings to a file, given a streamwriter.
+		/// </summary>
+		/// <param name="type">The settings.</param>
+		/// <param name="writer">The streamwriter.</param>
 		public void WriteFile(TempSettings type, StreamWriter writer) {
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
@@ -56,10 +63,14 @@ namespace ShapeDatabase.IO {
 			parser.WriteData(writer, data);
 		}
 
+		/// <summary>
+		/// Writes settings to a file, given a streamwriter.
+		/// </summary>
+		/// <param name="type">The settings.</param>
+		/// <param name="writer">The streamwriter.</param>
 		public void WriteFile(object type, StreamWriter writer)
 			=> WriteFile(type as TempSettings, writer);
 
 		#endregion
-
 	}
 }

@@ -7,7 +7,7 @@ using ShapeDatabase.Util;
 namespace ShapeDatabase.Refine {
 
 	/// <summary>
-	/// The class responsible with refining all the meshes
+	/// The class responsible for refining meshes.
 	/// </summary>
 	public class RefineManager {
 
@@ -31,18 +31,18 @@ namespace ShapeDatabase.Refine {
 		#region --- Instance Methods ---
 
 		/// <summary>
-		/// Provides another refiner which can normalise meshes for easier feature extraction.
+		/// Adds refiners which can normalise meshes for easier feature extraction.
 		/// This will have effect on the next provided directories.
 		/// It will not try to recover the extra files from previous directories.
 		/// </summary>
-		/// <param name="refiners">The refiner which can normalise a shape in any way.</param>
+		/// <param name="refiners">The refiners which can normalise a shape in any way.</param>
 		public void AddRefiners(params IRefiner<IMesh>[] refiners) {
 			foreach (IRefiner<IMesh> refine in refiners)
 				AddRefiner(refine);
 		}
 
 		/// <summary>
-		/// Provides another refiner which can normalise meshes for easier feature extraction.
+		/// Adds a refiner which can normalise meshes for easier feature extraction.
 		/// This will have effect on the next provided directories.
 		/// It will not try to recover the extra files from previous directories.
 		/// </summary>
@@ -51,7 +51,6 @@ namespace ShapeDatabase.Refine {
 			if (refiner != null && !refiners.Contains(refiner))
 				refiners.Add(refiner);
 		}
-
 
 		/// <summary>
 		/// Removes the specified refiners from the refine manager.
@@ -78,7 +77,6 @@ namespace ShapeDatabase.Refine {
 		public bool RemoveRefiner(IRefiner<IMesh> refiner) {
 			return refiners.Remove(refiner);
 		}
-
 
 		/// <summary>
 		/// Refines the given mesh from the specified file if it does not follow
@@ -143,7 +141,5 @@ namespace ShapeDatabase.Refine {
 		}
 
 		#endregion
-
 	}
-
 }

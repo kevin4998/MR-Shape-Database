@@ -29,7 +29,6 @@ namespace ShapeDatabase.IO {
 			}
 		}
 
-
 		private IDictionary<Type, IDictionary<string, IWriter>> Writers { get; }
 			= new Dictionary<Type, IDictionary<string, IWriter>>();
 		private IDictionary<Type, IDictionary<string, IReader>> Readers { get; }
@@ -84,8 +83,8 @@ namespace ShapeDatabase.IO {
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
 		/// <param name="value">The value which should be in the path.</param>
-		/// <param name="type">The type of object which to serialise.</param>
-		/// <returns>If the value was successfully writen to the specified file.</returns>
+		/// <param name="type">The type of object to serialise.</param>
+		/// <returns>If the value was successfully written to the specified file.</returns>
 		/// <exception cref="ArgumentNullException">If any of the given paramaters
 		/// is <see langword="null"/>.</exception>
 		/// <exception cref="NotSupportedException">If there is no writer
@@ -109,11 +108,11 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// Serialises the given object to the specified path if possible.
 		/// </summary>
-		/// <typeparam name="T">The type of object which to serialise.</typeparam>
+		/// <typeparam name="T">The type of object to serialise.</typeparam>
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
 		/// <param name="value">The value which should be in the path.</param>
-		/// <returns>If the value was successfully writen to the specified file.</returns>
+		/// <returns>If the value was successfully written to the specified file.</returns>
 		/// <exception cref="ArgumentNullException">If any of the given paramaters
 		/// is <see langword="null"/>.</exception>
 		/// <exception cref="NotSupportedException">If there is no writer
@@ -127,7 +126,7 @@ namespace ShapeDatabase.IO {
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
 		/// <param name="value">The value which should be in the path.</param>
-		/// <param name="type">The type of object which to serialise.</param>
+		/// <param name="type">The type of object to serialise.</param>
 		/// <exception cref="ArgumentNullException">If any of the given paramaters
 		/// is <see langword="null"/>.</exception>
 		/// <exception cref="NotSupportedException">If there is no writer
@@ -138,7 +137,7 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// Serialises the given object to the specified path if possible.
 		/// </summary>
-		/// <typeparam name="T">The type of object which to serialise.</typeparam>
+		/// <typeparam name="T">The type of object to serialise.</typeparam>
 		/// <param name="value">The value which should be in the path.</param>
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
@@ -156,7 +155,7 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// Deserialises the given file into the specified object type if possible.
 		/// </summary>
-		/// <typeparam name="T">The type of object which to deserialise.</typeparam>
+		/// <typeparam name="T">The type of object to deserialise.</typeparam>
 		/// <param name="path">The location of the file where everything should be
 		/// read from.</param>
 		/// <param name="value">The deserialised object where all information
@@ -179,7 +178,7 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		/// <param name="path">The location of the file where everything should be
 		/// read from.</param>
-		/// <param name="type">The type of object which to deserialise.</param>
+		/// <param name="type">The type of object to deserialise.</param>
 		/// <param name="value">he deserialised object where all information
 		/// comes from the specified file.</param>
 		/// <returns>If the value was successfully deserialised.</returns>
@@ -209,7 +208,7 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
-		/// <param name="type">The type of object which to deserialise.</param>
+		/// <param name="type">The type of object to deserialise.</param>
 		/// <returns>The value which should be in the path.</returns>
 		/// <exception cref="ArgumentNullException">If any provided parameter
 		/// is <see langword="null"/>.</exception>
@@ -230,7 +229,7 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// Deserialises the given file into the specified object type if possible.
 		/// </summary>
-		/// <typeparam name="T">The type of object which to deserialise.</typeparam>
+		/// <typeparam name="T">The type of object to deserialise.</typeparam>
 		/// <param name="path">The location of the file where everything should be
 		/// written to.</param>
 		/// <returns>The value which should be in the path.</returns>
@@ -252,6 +251,7 @@ namespace ShapeDatabase.IO {
 		/// which can be read into the given type.</returns>
 		public ISet<string> SupportedReaderFormats<T>() =>
 			SupportedReaderFormats(typeof(T));
+
 		/// <summary>
 		/// A collection of all the file extensions which can be read to provide
 		/// the given type of object.
@@ -271,6 +271,7 @@ namespace ShapeDatabase.IO {
 		/// which can be used for the given type.</returns>
 		public ISet<string> SupportedWriterFormats<T>() =>
 			SupportedWriterFormats(typeof(T));
+
 		/// <summary>
 		/// A collection of all the file extensions which can be used for serialising
 		/// the given type of object.

@@ -11,6 +11,9 @@ namespace ShapeDatabase.Features.Descriptors {
 
 		#region --- Properties ---
 
+		/// <summary>
+		/// The name of the descriptor.
+		/// </summary>
 		public string Name { get; }
 
 		#endregion
@@ -34,8 +37,18 @@ namespace ShapeDatabase.Features.Descriptors {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Compares the descriptor with another descriptor.
+		/// </summary>
+		/// <param name="desc">The other descriptor.</param>
+		/// <returns>Value between 0(no resemblance) to 1(equal).</returns>
 		public double Compare(IDescriptor desc) => Compare(desc as T);
 		public abstract double Compare(T desc);
+
+		/// <summary>
+		/// Serializes the descriptor.
+		/// </summary>
+		/// <returns>The serialization string.</returns>
 		public abstract string Serialize();
 
 		#endregion

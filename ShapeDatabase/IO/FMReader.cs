@@ -14,6 +14,7 @@ using ShapeDatabase.Properties;
 using static ShapeDatabase.IO.IOConventions;
 
 namespace ShapeDatabase.IO {
+
 	/// <summary>
 	/// Class for creating a featuremanager out of a csv with featurevectors.
 	/// </summary>
@@ -35,6 +36,9 @@ namespace ShapeDatabase.IO {
 
 		#region -- Instance Properties --
 
+		/// <summary>
+		/// Collection containing all supported formats.
+		/// </summary>
 		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
@@ -53,10 +57,10 @@ namespace ShapeDatabase.IO {
 		#region --- Instance Methods ---
 
 		/// <summary>
-		/// Converts a streamreader of a csv file to a featuremanager
+		/// Converts a streamreader of a csv file to a featuremanager.
 		/// </summary>
-		/// <param name="reader">The streamreader of the csv</param>
-		/// <returns>A featuremanager</returns>
+		/// <param name="reader">The streamreader of the csv.</param>
+		/// <returns>A featuremanager.</returns>
 		public FeatureManager ConvertFile(StreamReader reader) {
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
@@ -74,10 +78,10 @@ namespace ShapeDatabase.IO {
 		#region -- Private Methods --
 
 		/// <summary>
-		/// Extracts the featurevectors out of a csv file
+		/// Extracts the featurevectors out of a csv file.
 		/// </summary>
-		/// <param name="reader">The streamreader of the csv</param>
-		/// <returns>Dictionary with featurevectors per meshname</returns>
+		/// <param name="reader">The streamreader of the csv.</param>
+		/// <returns>Dictionary with featurevectors per meshname.</returns>
 		private IDictionary<string, FeatureVector> GetFeatureVectors(StreamReader reader) {
 			IDictionary<string, FeatureVector> featureVectors = new Dictionary<string, FeatureVector>();
 

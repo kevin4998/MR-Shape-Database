@@ -17,21 +17,23 @@ namespace ShapeDatabase.IO {
 	[Serializable]
 	public class InvalidFormatException : IOException {
 
-		// Serialisation names for SerializationInfo.
+		/// <summary>
+		/// Serialisation names for SerializationInfo.
+		/// </summary>
 		private const string serFalse = "Actual";
 		private const string serTrue = "Expected";
-		// File formats from the exception.
+
 		/// <summary>
 		/// The format which was provided to the reader
 		/// and couldn't be converted.
 		/// </summary>
-		public string ActulFormat { get; }
+		public string ActualFormat { get; }
+
 		/// <summary>
 		/// The different format(s) which could be converted
 		/// by this reader/class.
 		/// </summary>
 		public string ExpectedFormat { get; }
-
 
 		/// <summary>
 		/// Initialises a new instance of of the <see cref="InvalidFormatException"/> class,
@@ -44,7 +46,7 @@ namespace ShapeDatabase.IO {
 		/// Initialises a new instance of of the <see cref="InvalidFormatException"/> class,
 		/// which specified that an invalid file format is used in its reader.
 		/// </summary>
-		/// <param name="message"> The message to display to the user about the exception.</param>
+		/// <param name="message">The message to display to the user about the exception.</param>
 		public InvalidFormatException(string message)
 			: base(message) { }
 
@@ -70,10 +72,9 @@ namespace ShapeDatabase.IO {
 		[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
 		protected InvalidFormatException(SerializationInfo info, StreamingContext context)
 			: base(info, context) {
-			ActulFormat = info.GetValue<string>(serFalse);
+			ActualFormat = info.GetValue<string>(serFalse);
 			ExpectedFormat = info.GetValue<string>(serTrue);
 		}
-
 
 		/// <summary>
 		/// Initialises a new instance of of the <see cref="InvalidFormatException"/> class,
@@ -83,7 +84,7 @@ namespace ShapeDatabase.IO {
 		/// <param name="expectedFormat">The format which this class or reader supports.</param>
 		public InvalidFormatException(string actulFormat, string expectedFormat)
 			: this(string.Format(Settings.Culture, EX_Invalid_Format, actulFormat, expectedFormat)) {
-			this.ActulFormat = actulFormat;
+			this.ActualFormat = actulFormat;
 			this.ExpectedFormat = expectedFormat;
 		}
 
@@ -100,17 +101,16 @@ namespace ShapeDatabase.IO {
 		/// </param>
 		public InvalidFormatException(string actulFormat, string expectedFormat, Exception innerException)
 			: this(string.Format(Settings.Culture, EX_Invalid_Format, actulFormat, expectedFormat), innerException) {
-			this.ActulFormat = actulFormat;
+			this.ActualFormat = actulFormat;
 			this.ExpectedFormat = expectedFormat;
 		}
-
 
 		[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
 		public override void GetObjectData(SerializationInfo info, StreamingContext context) {
 			if (info == null)
 				throw new ArgumentNullException(nameof(info));
 
-			info.AddValue(serFalse, ActulFormat);
+			info.AddValue(serFalse, ActualFormat);
 			info.AddValue(serTrue, ExpectedFormat);
 			base.GetObjectData(info, context);
 		}

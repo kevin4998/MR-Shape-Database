@@ -25,14 +25,30 @@ namespace ShapeDatabase.Query {
 		private static readonly StringComparer comparer =
 			StringComparer.InvariantCultureIgnoreCase;
 
+		/// <summary>
+		/// States whether the mesh name is null.
+		/// </summary>
 		public bool IsNull => string.IsNullOrEmpty(MeshName);
+
+		/// <summary>
+		/// The name of the query mesh.
+		/// </summary>
 		public string MeshName { get; }
+
+		/// <summary>
+		/// The distance with the compared mesh.
+		/// </summary>
 		public double MeshDistance { get; }
 
 		#endregion
 
 		#region --- Constructor Methods ---
 
+		/// <summary>
+		/// Constructor method of <see cref="QueryItem"/>.
+		/// </summary>
+		/// <param name="meshName">The mesh name.</param>
+		/// <param name="meshDistance">The distance with the compared mesh.</param>
 		public QueryItem(string meshName, double meshDistance) {
 			if (meshDistance < 0)
 				throw new ArgumentException(Resources.EX_ExpPosValue, nameof(meshDistance));
@@ -47,6 +63,11 @@ namespace ShapeDatabase.Query {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Compares the mesh distance to the mesh distance of another QueryItem.
+		/// </summary>
+		/// <param name="other">The other QueryItem.</param>
+		/// <returns>An integer, which is below 0 when smaller, 0 when equal and above 0 when bigger.</returns>
 		public int CompareTo(QueryItem other) {
 			if (other == null)
 				throw new ArgumentNullException(nameof(other));
@@ -60,6 +81,11 @@ namespace ShapeDatabase.Query {
 				&& Equals((QueryItem) obj);
 		}
 
+		/// <summary>
+		/// States whether this QueryItem is equal to another queryitem (same name).
+		/// </summary>
+		/// <param name="other">The other QueryItem.</param>
+		/// <returns>Bool indication whether they are equal.</returns>
 		public bool Equals(QueryItem other) {
 			return other != null && comparer.Equals(MeshName, other.MeshName);
 		}
@@ -82,8 +108,8 @@ namespace ShapeDatabase.Query {
 		#region --- Static Methods ---
 
 		/// <summary>
-		/// Converts the string representation into QueryItem with the distance
-		/// from its original reference item. And returns a boolean to identify
+		/// Converts the string representation into a QueryItem with the distance
+		/// from its original reference item and returns a boolean to identify
 		/// if this conversion process has succeeded.
 		/// </summary>
 		/// <param name="serialised">The string representation of this item.</param>
@@ -94,8 +120,8 @@ namespace ShapeDatabase.Query {
 			=> TryParse(serialised, NumberStyles.Any, Settings.Culture, out item);
 
 		/// <summary>
-		/// Converts the string representation into QueryItem with the distance
-		/// from its original reference item. And returns a boolean to identify
+		/// Converts the string representation into a QueryItem with the distance
+		/// from its original reference item and returns a boolean to identify
 		/// if this conversion process has succeeded.
 		/// </summary>
 		/// <param name="serialised">The string representation of this item.</param>
@@ -115,9 +141,8 @@ namespace ShapeDatabase.Query {
 			}
 		}
 
-
 		/// <summary>
-		/// Converts the string representation into QueryItem with the distance
+		/// Converts the string representation into a QueryItem with the distance
 		/// from its original reference item.
 		/// </summary>
 		/// <param name="serialised">The string representation of this item.</param>
@@ -126,7 +151,7 @@ namespace ShapeDatabase.Query {
 			=> FromString(serialised, NumberStyles.Any, Settings.Culture);
 
 		/// <summary>
-		/// Converts the string representation into QueryItem with the distance
+		/// Converts the string representation into a QueryItem with the distance
 		/// from its original reference item.
 		/// </summary>
 		/// <param name="serialised">The string representation of this item.</param>
@@ -164,36 +189,81 @@ namespace ShapeDatabase.Query {
 		#endregion
 
 		#region --- Operators ---
-
+		
+		/// <summary>
+		/// States whether two QueryItems are equal.
+		/// </summary>
+		/// <param name="left">The first QueryItem.</param>
+		/// <param name="right">The second QueryItem.</param>
+		/// <returns>True in case the QueryItems are equal.</returns>
 		public static bool operator ==(QueryItem left, QueryItem right) {
 			return Equals(left, right);
 		}
 
+		/// <summary>
+		/// States whether two QueryItems are not equal.
+		/// </summary>
+		/// <param name="left">The first QueryItem.</param>
+		/// <param name="right">The second QueryItem.</param>
+		/// <returns>True in case the QueryItems are not equal.</returns>
 		public static bool operator !=(QueryItem left, QueryItem right) {
 			return !(left == right);
 		}
 
+		/// <summary>
+		/// States whether one QueryItem is smaller then another QueryItem.
+		/// </summary>
+		/// <param name="left">The first QueryItem.</param>
+		/// <param name="right">The second QueryItem.</param>
+		/// <returns>True in case first QueryItem is smaller.</returns>
 		public static bool operator <(QueryItem left, QueryItem right) {
 			return left.CompareTo(right) < 0;
 		}
 
+		/// <summary>
+		/// States whether one QueryItem is smaller then or equal to another QueryItem.
+		/// </summary>
+		/// <param name="left">The first QueryItem.</param>
+		/// <param name="right">The second QueryItem.</param>
+		/// <returns>True in case first QueryItem is smaller or equal.</returns>
 		public static bool operator <=(QueryItem left, QueryItem right) {
 			return left.CompareTo(right) <= 0;
 		}
 
+		/// <summary>
+		/// States whether one QueryItem is bigger then another QueryItem.
+		/// </summary>
+		/// <param name="left">The first QueryItem.</param>
+		/// <param name="right">The second QueryItem.</param>
+		/// <returns>True in case first QueryItem is bigger.</returns>
 		public static bool operator >(QueryItem left, QueryItem right) {
 			return left.CompareTo(right) > 0;
 		}
 
+		/// <summary>
+		/// States whether one QueryItem is bigger then or equal toanother QueryItem.
+		/// </summary>
+		/// <param name="left">The first QueryItem.</param>
+		/// <param name="right">The second QueryItem.</param>
+		/// <returns>True in case first QueryItem is bigger or equal.</returns>
 		public static bool operator >=(QueryItem left, QueryItem right) {
 			return left.CompareTo(right) >= 0;
 		}
 
 		#endregion
-
 	}
 
+	/// <summary>
+	/// Class for comparing QueryItems.
+	/// </summary>
 	public class QueryItemComparer : IComparer<QueryItem> {
+
+		/// <summary>
+		/// Defines a comparison between two QueryItems.
+		/// </summary>
+		/// <param name="x">First QueryItem.</param>
+		/// <param name="y">Second QueryItem.</param>
+		/// <returns>Returns 0 when equal, < 0 when first QueryItem is smaller, > 0 when first QueryItem is bigger.</returns>
 		public int Compare(QueryItem x, QueryItem y) {
 			if (x == y)
 				return 0;
@@ -204,7 +274,5 @@ namespace ShapeDatabase.Query {
 			else
 				return x.CompareTo(y);
 		}
-
 	}
-
 }

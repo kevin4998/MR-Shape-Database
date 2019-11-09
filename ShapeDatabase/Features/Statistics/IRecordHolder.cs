@@ -14,10 +14,12 @@ namespace ShapeDatabase.Features.Statistics {
 		/// Specifies if no snapshot has been taken yet by this <see cref="RecordHolder"/>.
 		/// </summary>
 		bool IsActive { get; }
+
 		/// <summary>
 		/// Specifies if the <see cref="IRecordHolder"/> is currently taking a snapshot.
 		/// </summary>
 		bool IsEmpty { get; }
+
 		/// <summary>
 		/// The last moment in time when a snapshot was taken by this
 		/// <see cref="IRecordHolder"/>.
@@ -30,6 +32,7 @@ namespace ShapeDatabase.Features.Statistics {
 		/// for each object.
 		/// </summary>
 		IEnumerable<string> MeasureNames { get; }
+
 		/// <summary>
 		/// The collection of <see cref="Record"/>s which was made during the last
 		/// snapshot.
@@ -149,7 +152,5 @@ namespace ShapeDatabase.Features.Statistics {
 
 			return holder;
 		}
-
 	}
-
 }

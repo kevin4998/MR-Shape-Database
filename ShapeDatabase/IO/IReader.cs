@@ -76,7 +76,6 @@ namespace ShapeDatabase.IO {
 			return false;
 		}
 
-
 		/// <summary>
 		/// Transforms the given file into an object on the current thread.
 		/// </summary>
@@ -110,7 +109,7 @@ namespace ShapeDatabase.IO {
 		/// does not exist.</exception>
 		/// <exception cref="InvalidFormatException">If a file was provided
 		/// which does not use one of the <see cref="SupportedFormats"/>-formats.
-		/// <returns></returns>
+		/// </exception>
 		public static Task<object> ConvertFileAsync(this IReader reader, string location) {
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
@@ -143,7 +142,6 @@ namespace ShapeDatabase.IO {
 
 			return Task.Run(() => reader.ConvertFile(stream));
 		}
-
 
 		/// <summary>
 		/// Transforms the given file into an object on the current thread.
@@ -215,7 +213,5 @@ namespace ShapeDatabase.IO {
 
 			return Task.Run(() => reader.ConvertFile(stream));
 		}
-
 	}
-
 }

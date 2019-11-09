@@ -17,7 +17,7 @@ using ShapeDatabase.Util;
 namespace ShapeDatabase.Features {
 
 	/// <summary>
-	/// Class for defining all descriptor calculator methods
+	/// Class for defining all descriptor calculator methods.
 	/// </summary>
 	public static class DescriptorCalculators {
 
@@ -45,6 +45,7 @@ namespace ShapeDatabase.Features {
 				yield return AngleVertices;
 			}
 		}
+
 		/// <summary>
 		/// A collection of all the names of each descriptor.
 		/// </summary>
@@ -68,10 +69,10 @@ namespace ShapeDatabase.Features {
 		#region --- Elementary Descriptors ---
 
 		/// <summary>
-		/// Elementary descriptor for calculating the surface area of a mesh
+		/// Elementary descriptor for calculating the surface area of a mesh.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The elementary descriptor with the calculated value</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The elementary descriptor with the calculated value.</returns>
 		public static ElemDescriptor SurfaceArea(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
@@ -85,10 +86,10 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Elementary descriptor for calculating the volume of the axis-aligned bouding box
+		/// Elementary descriptor for calculating the volume of the axis-aligned bouding box.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The elementary descriptor with the calculated value</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The elementary descriptor with the calculated value.</returns>
 		public static ElemDescriptor BoundingBoxVolume(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
@@ -97,10 +98,10 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Elementary descriptor for calculating the largest distance between any two contour points
+		/// Elementary descriptor for calculating the largest distance between any two contour points.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The elementary descriptor with the calculated value</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The elementary descriptor with the calculated value.</returns>
 		public static ElemDescriptor Diameter(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
@@ -127,10 +128,10 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Elementary descriptor for calculating the ratio between largest and smallest eigenvalues
+		/// Elementary descriptor for calculating the ratio between largest and smallest eigenvalues.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The elementary descriptor with the calculated value</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The elementary descriptor with the calculated value.</returns>
 		public static ElemDescriptor Eccentricity(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
@@ -152,12 +153,10 @@ namespace ShapeDatabase.Features {
 
 		/// <summary>
 		/// Elementary descript for calculation how similar a shape is with respect
-		/// to a sphere.
-		/// 
-		/// <seealso cref="https://github.com/gradientspace/geometry3Sharp/blob/master/mesh/MeshMeasurements.cs"/>
+		/// to a sphere. <seealso cref="https://github.com/gradientspace/geometry3Sharp/blob/master/mesh/MeshMeasurements.cs"/>
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The elementary descriptor with the calculated value</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The elementary descriptor with the calculated value.</returns>
 		public static ElemDescriptor Compactness(IMesh mesh) {
 			if (mesh == null)
 				throw new ArgumentNullException(nameof(mesh));
@@ -193,10 +192,10 @@ namespace ShapeDatabase.Features {
 		#region --- Histogram Descriptors ---
 
 		/// <summary>
-		/// Histogram descriptor for calculating the distance to the barycenter of a random vertex
+		/// Histogram descriptor for calculating the distance to the barycenter of a random vertex.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The histogram descriptor with the calculated histogram.</returns>
 		public static HistDescriptor DistanceBarycenter(IMesh mesh) {
 			double binSize = 0.15;
 			int[] binValues = new int[Settings.BinsPerHistogram];
@@ -213,10 +212,10 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Histogram descriptor for calculating the distance between two random vertices
+		/// Histogram descriptor for calculating the distance between two random vertices.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The histogram descriptor with the calculated histogram.</returns>
 		public static HistDescriptor DistanceVertices(IMesh mesh) {
 			double binSize = 0.25;
 			int[] binValues = new int[Settings.BinsPerHistogram];
@@ -233,10 +232,10 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Histogram descriptor for calculating the square root of an triangle given by three random vertices
+		/// Histogram descriptor for calculating the square root of an triangle given by three random vertices.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The histogram descriptor with the calculated histogram.</returns>
 		public static HistDescriptor SquareRootTriangles(IMesh mesh) {
 			double binSize = 0.125;
 			int[] binValues = new int[Settings.BinsPerHistogram];
@@ -253,10 +252,10 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Histogram descriptor for calculating the cube root of a tetrahedron given by four random vertices
+		/// Histogram descriptor for calculating the cube root of a tetrahedron given by four random vertices.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The histogram descriptor with the calculated histogram.</returns>
 		public static HistDescriptor CubeRootTetrahedron(IMesh mesh) {
 			double binSize = 0.075;
 			int[] binValues = new int[Settings.BinsPerHistogram];
@@ -273,10 +272,10 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Histogram descriptor for calculating the angle between three random vertices
+		/// Histogram descriptor for calculating the angle between three random vertices.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the descriptor value is calculated</param>
-		/// <returns>The histogram descriptor with the calculated histogram</returns>
+		/// <param name="mesh">The mesh of which the descriptor value is calculated.</param>
+		/// <returns>The histogram descriptor with the calculated histogram.</returns>
 		public static HistDescriptor AngleVertices(IMesh mesh) {
 			double binSize = 18;
 			int[] binValues = new int[Settings.BinsPerHistogram];
@@ -297,21 +296,21 @@ namespace ShapeDatabase.Features {
 		#region --- Helper Functions ---
 
 		/// <summary>
-		/// Method for getting a random vertex out of a mesh.
+		/// Method for getting a random vertex of a mesh.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the random vertices will be taken</param>
-		/// <param name="random">The (threadsafe) random generator</param>
-		/// <returns>A Single Vector3 which is a random vertex position.</returns>
+		/// <param name="mesh">The mesh of which the random vertices will be taken.</param>
+		/// <param name="random">The (threadsafe) random generator.</param>
+		/// <returns>The random vertex.</returns>
 		private static Vector3 GetRandomVertex(IMesh mesh, Random random)
 			=> GetRandomVertices(mesh, random, 1)[0];
 
 		/// <summary>
-		/// Method for getting a certain number of random vertices from a mesh
+		/// Method for getting a certain number of random vertices from a mesh.
 		/// </summary>
-		/// <param name="mesh">The mesh of which the random vertices will be taken</param>
-		/// <param name="random">The (threadsafe) random generator</param>
-		/// <param name="numberOfVertices">The number of random vertices</param>
-		/// <returns>An array containing the random vertices</returns>
+		/// <param name="mesh">The mesh of which the random vertices will be taken.</param>
+		/// <param name="random">The (threadsafe) random generator.</param>
+		/// <param name="numberOfVertices">The number of random vertices.</param>
+		/// <returns>An array containing the random vertices.</returns>
 		private static Vector3[] GetRandomVertices(IMesh mesh, Random random, int numberOfVertices) {
 			return mesh.GetRandomVertices(numberOfVertices, random);
 		}

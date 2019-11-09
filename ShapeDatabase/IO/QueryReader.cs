@@ -9,6 +9,7 @@ using ShapeDatabase.Query;
 using static ShapeDatabase.IO.IOConventions;
 
 namespace ShapeDatabase.IO {
+
 	/// <summary>
 	/// Class for reading previous query results from a csv file.
 	/// </summary>
@@ -30,6 +31,9 @@ namespace ShapeDatabase.IO {
 
 		#region -- Instance Properties --
 
+		/// <summary>
+		/// Collection containing the supported formats.
+		/// </summary>
 		public ICollection<string> SupportedFormats => new string[] { "csv" };
 
 		#endregion
@@ -44,6 +48,11 @@ namespace ShapeDatabase.IO {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Reads a queryresult file, given a streamreader.
+		/// </summary>
+		/// <param name="reader">The streamreader.</param>
+		/// <returns>The array with queryresult.</returns>
 		public QueryResult[] ConvertFile(StreamReader reader) {
 			if (reader == null)
 				throw new ArgumentNullException(nameof(reader));
@@ -75,7 +84,5 @@ namespace ShapeDatabase.IO {
 		object IReader.ConvertFile(StreamReader reader) => ConvertFile(reader);
 
 		#endregion
-
 	}
-
 }

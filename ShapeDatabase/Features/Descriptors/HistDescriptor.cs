@@ -10,9 +10,8 @@ using ShapeDatabase.Util;
 namespace ShapeDatabase.Features.Descriptors {
 
 	/// <summary>
-	/// A class for complex descriptors which hold multiple values.
-	/// These values are stored by making use if histograms where the values
-	/// are grouped in buckets or bins.
+	/// A class for descriptors which hold multiple values.
+	/// These values are stored by making use histograms where the values are grouped in bins.
 	/// </summary>
 	[DebuggerDisplay("{Name}: [{BinCount}]")]
 	public class HistDescriptor : BaseDescriptor<HistDescriptor> {
@@ -20,22 +19,28 @@ namespace ShapeDatabase.Features.Descriptors {
 		#region --- Properties ---
 
 		/// <summary>
-		/// The character which is used to seperate values of
-		/// a single histogram descriptor.
+		/// The character used to seperate values of a single histogram descriptor.
 		/// </summary>
 		public static char HistSeperator => ';';
 
+		/// <summary>
+		/// A string containing the HistSeperator character.
+		/// </summary>
 		public static string HistSeperatorString => HistSeperator.ToString(Settings.Culture);
 
 		/// <summary>
-		/// The width of one bin
+		/// The width of one bin.
 		/// </summary>
 		private double BinSize { get; }
+
 		/// <summary>
 		/// The number of values in each of the bins.
 		/// </summary>
 		private float[] BinValues { get; }
 
+		/// <summary>
+		/// The number of bins.
+		/// </summary>
 		public int BinCount => BinValues.Length;
 
 		#endregion
@@ -43,11 +48,11 @@ namespace ShapeDatabase.Features.Descriptors {
 		#region --- Constructor Methods ---
 
 		/// <summary>
-		/// Constructor of the histogram descriptor
+		/// Constructor of the histogram descriptor.
 		/// </summary>
-		/// <param name="name">Name of the descriptor</param>
-		/// <param name="binsize">Bin width of the descriptor</param>
-		/// <param name="binvalues">Bin values of the descriptor</param>
+		/// <param name="name">Name of the descriptor.</param>
+		/// <param name="binsize">Bin width of the descriptor.</param>
+		/// <param name="binvalues">Bin values of the descriptor.</param>
 		public HistDescriptor(string name, double binsize, float[] binvalues)
 			: base(name) {
 			BinSize = binsize;
@@ -67,8 +72,8 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <summary>
 		/// Calculates the EMD distance with another histogram descriptor.
 		/// </summary>
-		/// <param name="desc">The other histogram descriptor</param>
-		/// <returns>The distance (0 = Equal Descriptors, 1 = Completely Different)</returns>
+		/// <param name="desc">The other histogram descriptor.</param>
+		/// <returns>The distance (0 = Equal Descriptors, 1 = Completely Different).</returns>
 		public override double Compare(HistDescriptor desc) {
 			if (desc == null)
 				throw new ArgumentNullException(nameof(desc));
@@ -81,7 +86,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// <summary>
 		/// Serializes the histogram descriptor.
 		/// </summary>
-		/// <returns>Serialized histogram descriptor</returns>
+		/// <returns>The serialized histogram descriptor.</returns>
 		public override string Serialize() {
 			IFormatProvider format = Settings.Culture;
 
@@ -98,6 +103,13 @@ namespace ShapeDatabase.Features.Descriptors {
 
 		#region -- Static Methods --
 
+		/// <summary>
+		/// (Tries to) deserialize a serialization string into a histogram descriptor.
+		/// </summary>
+		/// <param name="name">The name of the histogram descriptor.</param>
+		/// <param name="serialised">The serialization string.</param>
+		/// <param name="desc">The histogram descriptor (null if not successful).</param>
+		/// <returns>Bool indicating whether the serialization was successful.</returns>
 		public static bool TryParse(string name, string serialised,
 									out HistDescriptor desc) {
 			if (string.IsNullOrEmpty(name))
@@ -122,6 +134,13 @@ namespace ShapeDatabase.Features.Descriptors {
 			return true;
 		}
 
+		/// <summary>
+		/// Converts a histogram descriptor containing float values to one containing int values.
+		/// </summary>
+		/// <param name="name">The name of the histogram descriptor.</param>
+		/// <param name="binSize">The size of the bins.</param>
+		/// <param name="histogram">The histogram descriptor containing float values.</param>
+		/// <returns>The histogram descriptor containing int values.</returns>
 		public static HistDescriptor FromIntHistogram(string name, double binSize,
 													int[] histogram) {
 			return new HistDescriptor(name, binSize,

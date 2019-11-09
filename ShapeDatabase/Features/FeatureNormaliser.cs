@@ -9,6 +9,7 @@ using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features {
+	
 	/// <summary>
 	/// Class for normalising featurevectors
 	/// </summary>
@@ -23,7 +24,7 @@ namespace ShapeDatabase.Features {
 		public static FeatureNormaliser Instance => lazy.Value;
 
 		/// <summary>
-		/// The MinMaxValues, calculates so far.
+		/// The minimum and maximum values of all descriptors <descriptorname, (min, max)>.
 		/// </summary>
 		private readonly IDictionary<string, (double, double)> MinMaxValues;
 
@@ -37,8 +38,8 @@ namespace ShapeDatabase.Features {
 		/// <summary>
 		/// Class used to normalise one single featurevector.
 		/// </summary>
-		/// <param name="vector">The featurevector</param>
-		/// <returns>The normalised featurevector</returns>
+		/// <param name="vector">The featurevector.</param>
+		/// <returns>The normalised featurevector.</returns>
 		public FeatureVector NormaliseVector(FeatureVector vector) {
 			IDictionary<string, FeatureVector> singleDic = new Dictionary<string, FeatureVector>() { { "singleVec", vector} };
 			NormaliseVectors(ref singleDic);

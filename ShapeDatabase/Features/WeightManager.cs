@@ -11,7 +11,7 @@ using ShapeDatabase.Util;
 namespace ShapeDatabase.Features {
 
 	/// <summary>
-	/// A single class containing all the weights for the provided Descriptors.
+	/// A single class containing all the weights for the provided descriptors.
 	/// </summary>
 	public class WeightManager {
 
@@ -36,14 +36,11 @@ namespace ShapeDatabase.Features {
 			= new ConcurrentDictionary<string, double>();
 		protected virtual LockManager Locks { get; } = new LockManager();
 
-
 		/// <summary>
-		/// An interface to access or change weight values
-		/// of descriptors.
+		/// An interface to access or change weight values of descriptors.
 		/// </summary>
 		/// <param name="name">The name of the descriptor whose value to change.</param>
-		/// <returns>A double representing the weight of the value in a feature vector.
-		/// </returns>
+		/// <returns>A double representing the weight of the value in a feature vector.</returns>
 		public double this[string name] {
 			get => GetWeight(name);
 			set => SetWeight(name, value);
@@ -90,7 +87,7 @@ namespace ShapeDatabase.Features {
 		}
 
 		/// <summary>
-		/// Specifiest he weight of the given descriptor in the manager.
+		/// Specifiest the weight of the given descriptor in the manager.
 		/// </summary>
 		/// <param name="descriptorName">The name of the descriptor to specify
 		/// the value of.</param>

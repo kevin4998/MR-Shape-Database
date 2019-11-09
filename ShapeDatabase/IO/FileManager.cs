@@ -89,7 +89,7 @@ namespace ShapeDatabase.IO {
 		/// <summary>
 		/// Provides another refiner which can normalise meshes for easier feature extraction.
 		/// This will have effect on the next provided directories.
-		/// It will not try to recover the extra filess from previous directories.
+		/// It will not try to recover the extra files from previous directories.
 		/// </summary>
 		/// <param name="refiners">The refiner which can normalise a shape in any way.</param>
 		public void AddRefiner(params IRefiner<IMesh>[] refiners) =>
@@ -173,14 +173,29 @@ namespace ShapeDatabase.IO {
 		public void AddQueryDirectoryDirect(string filedir, bool async = true) =>
 			AddDir(filedir, Library.AddQueryDirect, async);
 
+
 		/// <summary>
 		/// Checks how many shapes there are with the specified class name.
+		/// This will only check internal shapes and not query items.
 		/// </summary>
-		/// <param name="className"></param>
-		/// <returns></returns>
+		/// <param name="className">The name of the class whose shapes to retrieve.
+		/// </param>
+		/// <returns>The amount of shapes which are present in the specified class.
+		/// If the class is not in the database then this will return 0.</returns>
 		public int ShapesInClass(string className) =>
 			Library.ShapesInClass(className);
 
+		/// <summary>
+		/// Attempts to retrieve the class of a specified shape.
+		/// The shape will be searched in both internal and query directories
+		/// starting in the specified directory for speed.
+		/// </summary>
+		/// <param name="shapeName">The name of the shape which needs to be retrieved.
+		/// </param>
+		/// <param name="queryShape">If the shape is present in the query directory.
+		/// This is used to speed up retrieval by using extra knowledge.</param>
+		/// <returns>The name of the class of the specified shape if it could be found,
+		/// otherwise it returns <see langword="null"/>.</returns>
 		public string ClassByShapeName(string shapeName, bool queryShape = true) =>
 			Library.ClassByShapeName(shapeName, queryShape);
 

@@ -21,7 +21,6 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		public static string MeshName => Resources.F_MeshName;
 
-
 		/// <summary>
 		/// Check if at the end of a given stream it is mentioned that
 		/// this stream is normalised. The shape should be read before
@@ -53,7 +52,6 @@ namespace ShapeDatabase.IO {
 			}
 
 			return found;
-
 		}
 
 		/// <summary>
@@ -62,7 +60,7 @@ namespace ShapeDatabase.IO {
 		/// </summary>
 		/// <param name="normalised">If the shape which is saved was normalised.</param>
 		/// <param name="writer">The <see cref="StreamWriter"/> where the figure
-		/// has been serialised o.</param>
+		/// has been serialised.</param>
 		public static void WriteIfNormalised(bool normalised, StreamWriter writer) {
 			if (writer == null)
 				return;
@@ -71,7 +69,6 @@ namespace ShapeDatabase.IO {
 				writer.WriteLine($"# {NORMALISED_DATA}");
 			}
 		}
-
 
 		/// <summary>
 		/// A constructor which will create CSV readers all having the same format
@@ -112,11 +109,10 @@ namespace ShapeDatabase.IO {
 			return csv;
 		}
 
-
 		/// <summary>
 		/// Filters a CSV header by removing the name of the entry from the collection.
 		/// </summary>
-		/// <param name="reader">The csv reader containing the header.</param>
+		/// <param name="reader">The CSV reader containing the header.</param>
 		/// <returns>A new array of headers without the name header.</returns>
 		public static string[] FilterHeader(CsvReader reader) {
 			if (reader == null)
@@ -136,6 +132,5 @@ namespace ShapeDatabase.IO {
 				descNames[i++] = header[i];
 			return descNames;
 		}
-
 	}
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Descriptors {
+
 	/// <summary>
 	/// An interface to specify descriptions or features of shapes.
 	/// </summary>
@@ -20,19 +21,15 @@ namespace ShapeDatabase.Features.Descriptors {
 	}
 
 	/// <summary>
-	/// n interface to specify descriptions or features of shapes.
+	/// An interface to specify descriptors or features of shapes.
 	/// </summary>
 	/// <typeparam name="T">Type of descriptor</typeparam>
 	public interface IDescriptor<T> : IDescriptor where T : IDescriptor<T> {
 
 		/// <summary>
 		/// Method for comparison with another object of the same type.
-		/// This will evaluate the similarity between two objects,
-		/// where a value of 1 represents 100% similarity, or it being the same one,
-		/// and a similarity of 0 meaning that they are nothing alike.
 		/// </summary>
-		/// <param name="desc">The object to 
-		/// against for similarity.</param>
+		/// <param name="desc">The object to check for similarity.</param>
 		/// <returns>A double which represent the similarity between the objects.
 		/// 1 means that two values are the same and 0 means that they are nothing alike.
 		/// The returned value will always be within the range of [0,1].</returns>
@@ -40,8 +37,7 @@ namespace ShapeDatabase.Features.Descriptors {
 	}
 
 	/// <summary>
-	/// A class which can be used to compare existing <see cref="IDescriptor"/>s
-	/// by using their <see cref="IDescriptor.Name"/>.
+	/// A class which can be used to compare existing <see cref="IDescriptor"/>s by using their <see cref="IDescriptor.Name"/>.
 	/// </summary>
 	public class DescriptorComparer : IEqualityComparer<IDescriptor>,
 									  IComparer<IDescriptor> {
