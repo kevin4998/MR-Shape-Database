@@ -253,4 +253,7 @@
     <value>Cannot merge the values for property {0} because no function is provided to combine all the objects for this type.</value>
     <comment>The exception which is given when a MergeRecord cannot merge 2 properties because there is no function to combine the 2.</comment>
   </data>
+  <data name="EX_Merge_State_post" xml:space="preserve">
+    <value>Cannot perform this operation since the MergeRecord has already been merged. Try performing this operation before calling record.Merge().</value>
+  </data>
 </root>

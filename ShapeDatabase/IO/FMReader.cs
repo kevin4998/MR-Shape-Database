@@ -116,7 +116,7 @@ namespace ShapeDatabase.IO {
 			try {
 				desc = DeserialiseDescriptor(name, serialised);
 				return true;
-			} catch (NotImplementedException _) {
+			} catch (NotImplementedException) {
 				desc = null;
 				return false;
 			}

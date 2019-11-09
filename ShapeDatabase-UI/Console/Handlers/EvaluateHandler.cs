@@ -17,7 +17,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 	public static class EvaluateHandler {
 
 		private static MeshLibrary StoredMeshes => Settings.MeshLibrary;
-		private static MeshLibrary QueryMeshes => Settings.QueryLibrary;
 		private static IRecordHolder<QueryResult> EvaluationCalculator {
 			get {
 				ICachedRecordHolder<QueryResult> recordHolder =

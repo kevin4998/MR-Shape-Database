@@ -306,9 +306,8 @@ namespace ShapeDatabase.IO {
 				if (value == null)
 					continue;
 
-				IDictionary<string, X> exDic;
 				// When we already have existing values for this type.
-				if (dic.TryGetValue(type, out exDic)) {
+				if (dic.TryGetValue(type, out IDictionary<string, X> exDic)) {
 					// Submit the new value for the specified formats.
 					foreach (string extension in formatsFunc(value))
 						exDic[extension] = value;
@@ -363,10 +362,9 @@ namespace ShapeDatabase.IO {
 								IDictionary<Type, IDictionary<string, T>> dic,
 								out T value) {
 			value = default;
-			IDictionary<string, T> exDic = null;
 
 			// Phase 1: Search for direct implementations.
-			if (!dic.TryGetValue(type, out exDic)) {
+			if (!dic.TryGetValue(type, out IDictionary<string, T> exDic)) {
 				// Phase 2: Search for inherited types. 
 				foreach (Type rType in dic.Keys) {
 					if (type.IsAssignableFrom(rType)

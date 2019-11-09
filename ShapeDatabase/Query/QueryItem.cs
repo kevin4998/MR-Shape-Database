@@ -135,7 +135,7 @@ namespace ShapeDatabase.Query {
 			try {
 				item = FromString(serialised, style, format);
 				return true;
-			} catch (ArgumentException ex) {
+			} catch (ArgumentException) {
 				item = default;
 				return false;
 			}

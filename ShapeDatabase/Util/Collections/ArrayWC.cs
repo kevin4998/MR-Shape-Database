@@ -159,6 +159,7 @@ namespace ShapeDatabase.Util.Collections {
 		}
 
 		public T GetElement(Random random) {
+			if (random == null) throw new ArgumentNullException(nameof(random));
 			AllowRetrieval();
 			return array[random.Next(array.Length)];
 		}

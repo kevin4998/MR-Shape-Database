@@ -176,7 +176,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// </summary>
 		/// <param name="vector">The featurevector.</param>
 		/// <returns>The normalised featurevector.</returns>
-		public FeatureVector NormaliseVector(FeatureVector vector) {
+		public static FeatureVector NormaliseVector(FeatureVector vector) {
 			return FeatureNormaliser.Instance.NormaliseVector(vector);
 		}
 

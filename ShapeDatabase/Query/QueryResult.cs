@@ -18,7 +18,7 @@ namespace ShapeDatabase.Query {
 	/// database items.
 	/// </summary>
 	[DebuggerDisplay("{QueryName}: {Count} comparisons")]
-	public class QueryResult : System.IComparable<QueryResult> {
+	public class QueryResult : System.IComparable<QueryResult>, IEquatable<QueryResult> {
 
 		#region --- Properties ---
 
@@ -67,6 +67,8 @@ namespace ShapeDatabase.Query {
 		#endregion
 
 		#region --- Instance Methods ---
+
+		#region -- Query Methods --
 
 		/// <summary>
 		/// Resets the current collection of results.
@@ -129,6 +131,10 @@ namespace ShapeDatabase.Query {
 			return result;
 		}
 
+		#endregion
+
+		#region -- Object Methods --
+
 		public override string ToString() {
 			return string.Format(
 				Settings.Culture,
@@ -146,11 +152,49 @@ namespace ShapeDatabase.Query {
 		public int CompareTo(QueryResult other) {
 			if (other == null)
 				throw new ArgumentNullException(nameof(other));
-			return QueryName.CompareTo(other.QueryName);
+			return string.Compare(QueryName, other.QueryName,
+					StringComparison.InvariantCultureIgnoreCase);
 		}
 
+		public override bool Equals(object obj) =>
+			!(obj is null) && obj is QueryResult result && Equals(result);
+
+		public bool Equals(QueryResult other) {
+			return !(other is null) && QueryName.Equals(other.QueryName,
+					StringComparison.InvariantCultureIgnoreCase);
+		}
+
+		public override int GetHashCode() {
+			return QueryName.GetHashCode();
+		}
+
+
 		#endregion
-	
+
+		#region -- Operators --
+
+		public static bool operator ==(QueryResult left, QueryResult right) =>
+			left is null ? right is null : left.Equals(right);
+
+		public static bool operator !=(QueryResult left, QueryResult right) =>
+			!(left == right);
+
+		public static bool operator <(QueryResult left, QueryResult right) =>
+			left is null ? right is object : left.CompareTo(right) < 0;
+
+		public static bool operator <=(QueryResult left, QueryResult right) =>
+			left is null || left.CompareTo(right) <= 0;
+
+		public static bool operator >(QueryResult left, QueryResult right) =>
+			left is object && left.CompareTo(right) > 0;
+
+		public static bool operator >=(QueryResult left, QueryResult right) =>
+			left is null ? right is null : left.CompareTo(right) >= 0;
+
+		#endregion
+
+		#endregion
+
 	}
 
 }

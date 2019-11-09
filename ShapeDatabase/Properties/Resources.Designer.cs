@@ -322,6 +322,15 @@ namespace ShapeDatabase.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot perform this operation since the MergeRecord has already been merged. Try performing this operation before calling record.Merge()..
+        /// </summary>
+        internal static string EX_Merge_State_post {
+            get {
+                return ResourceManager.GetString("EX_Merge_State_post", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The provided maximum value is below the minimum bound. The maximum value should always be larger than this minimum bound..
         /// </summary>
         internal static string EX_MinMax_Switch {

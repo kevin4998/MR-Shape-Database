@@ -12,7 +12,7 @@ namespace ShapeDatabase.Shapes {
 	/// A single loaded Mesh with extra information about its shape.
 	/// </summary>
 	[DebuggerDisplay("{Class}/{Name}")]
-	public struct MeshEntry : IMeshEntry {
+	public struct MeshEntry : IMeshEntry, IEquatable<MeshEntry> {
 
 		#region --- Properties ---
 
@@ -65,13 +65,14 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Instance Methods ---
 
-		public override bool Equals(object obj) {
-			return obj is IMeshEntry entry && Equals(entry);
-		}
+		public override bool Equals(object obj) =>
+			obj is IMeshEntry entry && Equals(entry);
 
-		public bool Equals(IMeshEntry other) {
-			return this.Name.Equals(other.Name, StringComparison.InvariantCultureIgnoreCase);
-		}
+		public bool Equals(IMeshEntry other) =>
+			other != null &&
+			string.Equals(Name, other.Name, StringComparison.InvariantCultureIgnoreCase);
+
+		public bool Equals(MeshEntry other) => Equals((IMeshEntry) other);
 
 		public override int GetHashCode() {
 			return this.Name.GetHashCode();
@@ -85,6 +86,7 @@ namespace ShapeDatabase.Shapes {
 		public static bool operator !=(MeshEntry left, MeshEntry right) {
 			return !(left == right);
 		}
+
 
 		#endregion
 

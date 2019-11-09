@@ -20,7 +20,7 @@ namespace ShapeDatabase.Shapes {
 		/// The G3 variant of meshes using their unique internal structure.
 		/// </summary>
 		public g3.DMesh3 Base { get; }
-		private bool normalised;
+		private readonly bool normalised;
 
 		public override bool IsNormalised {
 			get => normalised;

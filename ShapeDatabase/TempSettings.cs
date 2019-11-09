@@ -97,7 +97,7 @@ namespace ShapeDatabase {
 														   property.GetSetMethod());
 					if (del is Action<T> action)
 						variables.Add((property.Name, action));
-				} catch (ArgumentException ex) {
+				} catch (ArgumentException) {
 					// It appears that our property is not of the right type, somehow.
 					// So let's ignore it in this case and continue with the safe ones.
 				}
@@ -135,7 +135,7 @@ namespace ShapeDatabase {
 														   property.GetGetMethod());
 					if (del is Func<T> action)
 						variables.Add((property.Name, action));
-				} catch (ArgumentException ex) {
+				} catch (ArgumentException) {
 					// It appears that our property is not of the right type, somehow.
 					// So let's ignore it in this case and continue with the safe ones.
 				}

@@ -57,14 +57,14 @@ namespace ShapeDatabase.Util {
 		private readonly TimeSpan animationInterval = TimeSpan.FromSeconds(1.0 / 8);
 		private const string animation = @"|/-\";
 
+		private readonly object timerLock = new object();
 		private readonly Timer timer;
 
 		private double currentProgress = 0;
 		private string currentText = string.Empty;
-		private bool disposed = false;
 		private int animationIndex = -1;
 
-		private double totalTasks;
+		private readonly double totalTasks;
 		private int completedTasks = 0;
 
 		#endregion
@@ -119,17 +119,9 @@ namespace ShapeDatabase.Util {
 			} while (Interlocked.Exchange(ref currentProgress, value) != currentValue);
 		}
 
-		public void Dispose() {
-			lock (timer) {
-				disposed = true;
-				UpdateText(string.Empty);
-			}
-		}
-
-
 		private void TimerHandler(object state) {
-			lock (timer) {
-				if (disposed) return;
+			lock (timerLock) {
+				if (disposedValue) return;
 
 				double progress = currentProgress;
 				int progressBlockCount = (int) (progress * blockCount);
@@ -180,6 +172,40 @@ namespace ShapeDatabase.Util {
 		private void ResetTimer() {
 			timer.Change(animationInterval, TimeSpan.FromMilliseconds(-1));
 		}
+
+		#region IDisposable Support
+
+		private bool disposedValue = false; // To detect redundant calls
+
+		protected virtual void Dispose(bool disposing) {
+			if (!disposedValue) {
+				lock (timerLock) { 
+					if (disposedValue) return;
+
+					if (disposing) {
+						timer.Dispose();
+						UpdateText(string.Empty);
+					}
+
+					disposedValue = true;
+				}
+			}
+		}
+
+		// Finalizer for subclasses.
+		~ProgressBar()
+		{
+			// Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+			Dispose(false);
+		}
+
+		// This code added to correctly implement the disposable pattern.
+		public void Dispose() {
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
+
+		#endregion
 
 		#endregion
 

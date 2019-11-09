@@ -63,6 +63,7 @@ namespace ShapeDatabase.Shapes {
 		/// <param name="file">The path on the current device to the file containing
 		/// the shape which needs to be present in the library.</param>	
 		public void AddAndRefine(FileInfo file) {
+			if (file == null) throw new ArgumentNullException(nameof(file));
 			if (ProcessedMeshes.Contains(file.Name)) return;
 			AddDirect(Refine(file, Settings.ShapeFinalDir, Settings.ShapeFailedDir));
 		}
@@ -81,6 +82,7 @@ namespace ShapeDatabase.Shapes {
 		/// <param name="file">The path on the current device to the file containing
 		/// the shape which needs to be present in the library.</param>
 		public void AddDirect(FileInfo file) {
+			if (file == null) throw new ArgumentNullException(nameof(file));
 			if (ProcessedMeshes.Contains(file.Name)) return;
 			Add(file, ProcessedMeshes);
 		}
@@ -103,6 +105,7 @@ namespace ShapeDatabase.Shapes {
 		/// <param name="file">The path on the current device to the file containing
 		/// the shape which needs to be present in the query library.</param>
 		public void AddQueryAndRefine(FileInfo file) {
+			if (file == null) throw new ArgumentNullException(nameof(file));
 			if (QueryMeshes.Contains(file.Name)) return;
 			AddQueryDirect(Refine(file, null, Settings.ShapeFailedDir));
 		}
@@ -121,6 +124,7 @@ namespace ShapeDatabase.Shapes {
 		/// <param name="file">The path on the current device to the file containing
 		/// the shape which needs to be present in the query library.</param>
 		public void AddQueryDirect(FileInfo file) {
+			if (file == null) throw new ArgumentNullException(nameof(file));
 			if (QueryMeshes.Contains(file.Name)) return;
 			Add(file, QueryMeshes);
 		}
@@ -189,7 +193,7 @@ namespace ShapeDatabase.Shapes {
 		/// will contain the shape to add to the library.</param>
 		/// <param name="library">The collection of shapes which will get a new
 		/// shape present in the previous file.</param>
-		private void Add(FileInfo file, MeshLibrary library) =>
+		private static void Add(FileInfo file, MeshLibrary library) =>
 			library.Add(new MeshEntry(file));
 
 
@@ -278,7 +282,7 @@ namespace ShapeDatabase.Shapes {
 							string successMap = null,
 							string failureMap = null) {
 			if (file == null || !file.Exists)
-				throw new ArgumentNullException();
+				throw new ArgumentNullException(nameof(file));
 
 			// Remember the original map for later.
 			string originalMap = file.Directory.Parent.FullName;
@@ -308,7 +312,7 @@ namespace ShapeDatabase.Shapes {
 		/// <param name="directory">The directory where the file will end up in,
 		/// if the file has a class name then it will be placed in this directory
 		/// into a folder with the class name.</param>
-		private void MoveFile(ref FileInfo file, string directory) {
+		private static void MoveFile(ref FileInfo file, string directory) {
 			// Combine with the previous top directory to preserve class name.
 			string newDir = Path.Combine(directory, file.Directory.Name);
 			string newPath = Path.Combine(newDir, file.Name);

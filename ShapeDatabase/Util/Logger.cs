@@ -19,7 +19,7 @@ namespace ShapeDatabase.Util {
 		private static Lazy<Logger> lazy = new Lazy<Logger>();
 
 
-		private TextWriter output;
+		private readonly TextWriter output;
 
 		#endregion
 

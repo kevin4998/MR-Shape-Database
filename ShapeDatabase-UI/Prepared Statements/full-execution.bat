@@ -7,7 +7,7 @@ ShapeDatabase.exe measure --exit --directory "Content/Shapes/All"
 :: Refine the shapes in the All map to be used in the process.
 ShapeDatabase.exe refine --exit --directory "Content/Shapes/All" --overwrite
 :: Measure all the shapes after execution of refinement.
-ShapeDatabase.exe measure --exit --directory "Content/Shapes/All"
+ShapeDatabase.exe measure --exit
 :: Calculate the feature vectors and safe them using caching.
 ShapeDatabase.exe feature --exit
 :: Compare all the items in the database with each other.

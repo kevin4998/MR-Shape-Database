@@ -31,12 +31,12 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <returns>An aggregated value of the specified records.</returns>
 		public delegate object MergeMeasures(ICollection<object> record);
 
-		private MergeClass mergeClass;
-		private IDictionary<string, MergeRecord> records
+		private readonly MergeClass mergeClass;
+		private readonly IDictionary<string, MergeRecord> records
 			= new Dictionary<string, MergeRecord>();
-		private IDictionary<string, MergeMeasures> classMeasures
+		private readonly IDictionary<string, MergeMeasures> classMeasures
 			= new Dictionary<string, MergeMeasures>();
-		private IDictionary<Type,	MergeMeasures> typeMeasures
+		private readonly IDictionary<Type,	MergeMeasures> typeMeasures
 			= new Dictionary<Type, MergeMeasures>();
 
 		#endregion
@@ -97,6 +97,9 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <returns>A new <see cref="IRecordHolder"/> which contains the aggregated
 		/// data of all the previous records.</returns>
 		public IRecordHolder Merge(IRecordHolder holder) {
+			if (holder == null)
+				throw new ArgumentNullException(nameof(holder));
+
 			// Combines all the records in a merge record.
 			foreach(Record record in holder) {
 				string group = mergeClass(record);
@@ -147,17 +150,17 @@ namespace ShapeDatabase.Features.Statistics {
 		/// <summary>
 		/// Functions which can combine a specific type.
 		/// </summary>
-		private IList<(Type, RecordMerger.MergeMeasures)> functionList
+		private readonly IList<(Type, RecordMerger.MergeMeasures)> functionList
 			= new List<(Type, RecordMerger.MergeMeasures)>();
 		/// <summary>
 		/// Functions which can combine all values for a specific measure.
 		/// </summary>
-		private IDictionary<string, RecordMerger.MergeMeasures> mergeFunction
+		private readonly IDictionary<string, RecordMerger.MergeMeasures> mergeFunction
 			= new Dictionary<string, RecordMerger.MergeMeasures>();
 		/// <summary>
 		/// Collection of all measures by different objects to merge.
 		/// </summary>
-		private IDictionary<string, IList<object>> mergeMeasures
+		private readonly IDictionary<string, IList<object>> mergeMeasures
 			= new Dictionary<string, IList<object>>();
 		/// <summary>
 		/// If this record is merged yet and ready to use.
@@ -255,6 +258,7 @@ namespace ShapeDatabase.Features.Statistics {
 					);
 				}
 			}
+			merged = true;
 			return this;
 		}
 
@@ -295,6 +299,9 @@ namespace ShapeDatabase.Features.Statistics {
 		#region -- Record Methods --
 
 		public override Record AddMeasure(string name, object value) {
+			if (merged)
+				throw new InvalidOperationException(Resources.EX_Merge_State_post);
+
 			if (mergeMeasures.TryGetValue(name, out IList<object> values))
 				values.Add(value);
 			else
@@ -311,13 +318,18 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region -- Object Methods --
 
+		public override bool Equals(object obj) {
+			return Equals(obj as MergeRecord);
+		}
 		public override bool Equals(Record other) {
 			return other is MergeRecord && Equals((MergeRecord) other);
 		}
-
-		public bool Equals(MergeRecord other) {
+		public virtual bool Equals(MergeRecord other) {
 			return base.Equals(other) && merged == other.merged;
 		}
+
+		public override int GetHashCode() => base.GetHashCode();
+
 
 		#endregion
 

@@ -13,11 +13,11 @@ namespace ShapeDatabase.Features.Statistics {
 	/// <remarks>
 	/// Threadsafe implementation.
 	/// </remarks>
-	public class DirectRecordHolder : IRecordHolder {
+	public sealed class DirectRecordHolder : IRecordHolder {
 
 		#region --- Properties ---
 
-		private ConcurrentBag<string> measureNames = new ConcurrentBag<string>();
+		private readonly ConcurrentBag<string> measureNames = new ConcurrentBag<string>();
 		private ConcurrentBag<Record> records = new ConcurrentBag<Record>();
 
 		public bool IsActive => true;

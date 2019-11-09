@@ -19,9 +19,9 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Properties ---
 
-		private FileInfo file;
+		private readonly FileInfo file;
 		private readonly Func<IMesh> meshProvider;
-		private WeakReference<IMesh> lazyMesh;
+		private readonly WeakReference<IMesh> lazyMesh;
 
 		private IMesh Mesh {
 			get {

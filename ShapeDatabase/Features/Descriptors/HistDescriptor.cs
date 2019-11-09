@@ -60,8 +60,9 @@ namespace ShapeDatabase.Features.Descriptors {
 			float inverseLargest = 1 / binvalues.Sum();
 			float[] normalisedBinValues = Array.ConvertAll(binvalues, value => value * inverseLargest);
 
-			Debug.Assert(VerifyHistogram(normalisedBinValues));
-
+			#if DEBUG
+			VerifyHistogram(normalisedBinValues);
+			#endif
 			BinValues = normalisedBinValues;
 		}
 
