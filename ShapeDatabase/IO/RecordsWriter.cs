@@ -54,7 +54,7 @@ namespace ShapeDatabase.IO {
 
 			using (CsvWriter csv = CsvWriter(writer)) {
 				// First line specify our Measurement Names.
-				csv.WriteField(IOConventions.MeshName);
+				csv.WriteField(MeshName);
 				foreach (string name in records.MeasureNames)
 					csv.WriteField(name);
 				csv.NextRecord();
@@ -62,7 +62,12 @@ namespace ShapeDatabase.IO {
 				foreach (Record record in records) {
 					csv.WriteField(record.Name);
 					foreach ((string _, object value) in record.Measures)
-						csv.WriteField(value);
+						if (value is string sValue)
+							csv.WriteField(sValue);
+						else if (value is IConvertible cValue)
+							csv.WriteField(cValue.ToString(Settings.Culture));
+						else
+							csv.WriteField(value.ToString());
 					csv.NextRecord();
 				}
 				// Finally make sure that all the data is written.

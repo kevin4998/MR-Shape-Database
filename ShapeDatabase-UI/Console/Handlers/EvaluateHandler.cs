@@ -4,7 +4,6 @@ using System.IO;
 using ShapeDatabase.Features.Statistics;
 using ShapeDatabase.IO;
 using ShapeDatabase.Query;
-using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
 using ShapeDatabase.Util;
 using static ShapeDatabase.UI.Properties.Resources;
@@ -16,7 +15,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 	/// </summary>
 	public static class EvaluateHandler {
 
-		private static MeshLibrary StoredMeshes => Settings.MeshLibrary;
 		private static IRecordHolder<QueryResult> EvaluationCalculator {
 			get {
 				ICachedRecordHolder<QueryResult> recordHolder =
@@ -139,7 +137,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		}
 
 
-		private static int CacheTotal() => StoredMeshes.Count;
+		private static int CacheTotal() => Settings.MeshLibrary.Count;
 		private static int CacheRelevant(QueryResult result) {
 			FileManager manager = Settings.FileManager;
 			string queryName = result.QueryName;
