@@ -162,9 +162,6 @@ namespace ShapeDatabase.Query {
 											IFormatProvider format) {
 			if (string.IsNullOrEmpty(serialised))
 				throw new ArgumentNullException(nameof(serialised));
-			const string formatRegex = "^\\w+ \\((0|([1-9][0-9]*))((\\.|\\,)[0-9]+)?\\)$";
-			//if (!Regex.IsMatch(serialised, formatRegex))
-				//throw new InvalidFormatException(serialised, formatRegex);
 
 			string[] args = serialised.Split(' ');
 			if (args.Length != 2)
