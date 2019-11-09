@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using ShapeDatabase.Features.Statistics;
@@ -7,8 +6,7 @@ using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
-
-using static System.Console;
+using ShapeDatabase.Util;
 using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
@@ -70,7 +68,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
-			WriteLine(I_StartProc_Evaluate);
+			Logger.Log(I_StartProc_Evaluate);
 
 			IRecordHolder<QueryResult> records = EvaluationCalculator;
 			QueryResult[] results = QueryHandler.LoadQueryResults(options.ShouldImport);
@@ -89,7 +87,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options.ShouldExport)
 				SaveEvaluation(holder);
 
-			WriteLine(I_EndProc_Evaluate);
+			Logger.Log(I_EndProc_Evaluate);
 		}
 
 
@@ -106,7 +104,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 
 			string path = Path.Combine(directory, filename);
 			Settings.FileManager.Write(path, records);
-			WriteLine(I_Evaluation_Exp, path);
+			Logger.Log(I_Evaluation_Exp, path);
 		}
 
 

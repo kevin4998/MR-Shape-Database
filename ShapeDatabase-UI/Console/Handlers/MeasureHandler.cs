@@ -4,8 +4,7 @@ using System.IO;
 using ShapeDatabase.Features.Statistics;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
-
-using static System.Console;
+using ShapeDatabase.Util;
 using static ShapeDatabase.UI.Properties.Resources;
 
 
@@ -26,7 +25,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
-			WriteLine(I_StartProc_Measure);
+			Logger.Log(I_StartProc_Measure);
 			// Load in new shapes to measure.
 			if (options.HasDirectories)
 				foreach (string dir in options.ShapeDirectories)
@@ -37,8 +36,8 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			// Save results to external file.
 			SaveMetrics(recordHolder);
 			// Notify the user of the refined shapes.
-			WriteLine(I_ShapeCount, Settings.MeshLibrary.Count);
-			WriteLine(I_EndProc_Measure);
+			Logger.Log(I_ShapeCount, Settings.MeshLibrary.Count);
+			Logger.Log(I_EndProc_Measure);
 		}
 
 
@@ -68,7 +67,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			// Export the generated file
 			Directory.CreateDirectory(directory);
 			Settings.FileManager.Write(location, recordHolder);
-			WriteLine(I_Measure_Exp, filename);
+			Logger.Log(I_Measure_Exp, filename);
 		}
 
 		/// <summary>

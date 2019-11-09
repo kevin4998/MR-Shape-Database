@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using ShapeDatabase.UI.Console.Verbs;
 using ShapeDatabase.Util;
-using static System.Console;
+
 using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
@@ -50,11 +50,11 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
-			WriteLine(I_StartProc_Clean);
+			Logger.Log(I_StartProc_Clean);
 			if (options.CleanSettings)
 				CleanFiles();
 			CleanDirectories();
-			WriteLine(I_EndProc_Clean);
+			Logger.Log(I_EndProc_Clean);
 		}
 
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using ShapeDatabase.UI.Console.Verbs;
-
-using static System.Console;
+using ShapeDatabase.Util;
 using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
@@ -21,14 +20,14 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
-			WriteLine(I_StartProc_Refine);
+			Logger.Log(I_StartProc_Refine);
 			// Refine newly provided shapes.
 			if (options.HasDirectories)
 				foreach (string dir in options.ShapeDirectories)
 					Settings.FileManager.AddDirectory(dir);
 			// Notify the user of the refined shapes.
-			WriteLine(I_ShapeCount, Settings.MeshLibrary.Count);
-			WriteLine(I_EndProc_Refine);
+			Logger.Log(I_ShapeCount, Settings.MeshLibrary.Count);
+			Logger.Log(I_EndProc_Refine);
 		}
 
 	}

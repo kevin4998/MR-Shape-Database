@@ -3,8 +3,8 @@ using System.IO;
 using ShapeDatabase.Features;
 using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.UI.Console.Verbs;
+using ShapeDatabase.Util;
 
-using static System.Console;
 using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
@@ -37,11 +37,11 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
-			WriteLine(I_StartProc_Feature);
+			Logger.Log(I_StartProc_Feature);
 			FeatureManager manager = LoadFeatures(false);
 			if (options.ShouldExport)
 				SaveFeatures(manager);
-			WriteLine(I_EndProc_Feature);
+			Logger.Log(I_EndProc_Feature);
 		}
 
 
@@ -60,7 +60,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (import
 				&& Settings.FileManager.TryRead(location, out FeatureManager manager)
 				&& manager.FeatureCount != 0) {
-				WriteLine(I_Feature_Imp, location);
+				Logger.Log(I_Feature_Imp, location);
 				return manager;
 			}
 			// Load new data.
@@ -86,7 +86,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			string location = FeatureFile;
 			Settings.FileManager.Write(location, manager);
 			// Notify that it got exported.
-			WriteLine(I_Feature_Exp, location);
+			Logger.Log(I_Feature_Exp, location);
 		}
 
 	}

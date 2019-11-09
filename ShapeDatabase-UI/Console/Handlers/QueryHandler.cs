@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
 using ShapeDatabase.Features;
 using ShapeDatabase.Features.Descriptors;
 using ShapeDatabase.IO;
 using ShapeDatabase.Query;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
-
-using static System.Console;
+using ShapeDatabase.Util;
 using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
@@ -30,7 +27,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (options == null)
 				throw new ArgumentNullException(nameof(options));
 
-			WriteLine(I_StartProc_Query);
+			Logger.Log(I_StartProc_Query);
 
 			FeatureManager manager = FeatureHandler.LoadFeatures(options.ShouldImport);
 			QueryResult[]  results = LoadQueryResults(false, manager, options);
@@ -38,7 +35,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 				SaveQueries(results);
 			ShowQueryResults(results);
 
-			WriteLine(I_EndProc_Query);
+			Logger.Log(I_EndProc_Query);
 		}
 
 
@@ -97,7 +94,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			if (import
 				&& Settings.FileManager.TryRead(location, out QueryResult[] results)
 				&& results.Length != 0) {
-				WriteLine(I_Query_Imp, location);
+				Logger.Log(I_Query_Imp, location);
 				return results;
 			}
 			// Load new data.
@@ -139,7 +136,7 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="queries">The differen querries which were performed.</param>
 		private static void SaveQueries(params QueryResult[] queries) {
-			WriteLine(I_Query_Exp);
+			Logger.Log(I_Query_Exp);
 
 			string directory = Settings.QueryDir;
 			string filename = Settings.QueryResultsFile;
@@ -147,16 +144,16 @@ namespace ShapeDatabase.UI.Console.Handlers {
 				Directory.CreateDirectory(directory);
 			string location = Path.Combine(directory, filename);
 			Settings.FileManager.Write(location, queries);
-			WriteLine(I_Query_Exp, location);
+			Logger.Log(I_Query_Exp, location);
 		}
 
 		/// <summary>
 		/// Shows the user the results of the queries.
 		/// </summary>
 		static void ShowQueryResults(params QueryResult[] queries) {
-			WriteLine(I_QueryCount, queries.Length);
+			Logger.Log(I_QueryCount, queries.Length);
 			foreach (QueryResult queryResult in queries)
-				WriteLine($"\t- {queryResult}");
+				Logger.Log($"\t- {queryResult}");
 		}
 
 	}

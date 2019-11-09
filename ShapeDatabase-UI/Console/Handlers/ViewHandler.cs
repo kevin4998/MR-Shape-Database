@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ShapeDatabase.Shapes;
 using ShapeDatabase.UI.Console.Verbs;
-
-using static System.Console;
+using ShapeDatabase.Util;
 using static ShapeDatabase.UI.Properties.Resources;
 
 namespace ShapeDatabase.UI.Console.Handlers {
@@ -56,9 +55,9 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		private static void ShowShapeCount() {
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
-			WriteLine(I_ShapeCount, meshes.Count);
+			Logger.Log(I_ShapeCount, meshes.Count);
 			foreach (string name in meshes.Names)
-				WriteLine($"\t- {name}");
+				Logger.Log($"\t- {name}");
 		}
 
 		/// <summary>
@@ -70,16 +69,16 @@ namespace ShapeDatabase.UI.Console.Handlers {
 			MeshLibrary meshes = Settings.FileManager.ProcessedMeshes;
 			Settings.DirectShutDown = false;
 			do {
-				WriteLine();    // Empty line for clearance.
-				WriteLine(I_ShapeSelect_Prompt, ExitArguments.FirstOrDefault());
+				Logger.Log(string.Empty);    // Empty line for clearance.
+				Logger.Log(I_ShapeSelect_Prompt, ExitArguments.FirstOrDefault());
 
-				string input = ReadLine();
+				string input = System.Console.ReadLine();
 				if (IsExitArgument(input))
 					Settings.DirectShutDown = true;
 				else if (meshes.Names.Contains(input))
 					RunWindow(meshes[input].Mesh);
 				else
-					WriteLine(I_UnknownCommand, input);
+					Logger.Log(I_UnknownCommand, input);
 			} while (!Settings.DirectShutDown);
 		}
 
