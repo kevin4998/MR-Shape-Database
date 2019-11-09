@@ -127,18 +127,26 @@ namespace ShapeDatabase.Features {
 
 			// Initialise descriptors if they had not been added before.
 			FeatureVector exampleVector = vectors.First().Value;
-			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>()) {
+			foreach (ElemDescriptor desc in exampleVector.GetDescriptors<ElemDescriptor>())
 				if (!MinMaxValues.ContainsKey(desc.Name))
-					MinMaxValues[desc.Name] = (desc.Value, desc.Value);
-			}
+					MinMaxValues.Add(desc.Name, (double.MaxValue, double.MinValue));
 
 			// Iterate over all vectors and update the min and max of each descriptor.
 			foreach (KeyValuePair<string, FeatureVector> vector in vectors)
 				foreach (ElemDescriptor desc in vector.Value.GetDescriptors<ElemDescriptor>()) {
-					double Min = (desc.Value != double.PositiveInfinity && desc.Value < MinMaxValues[desc.Name].Item1) ? desc.Value : MinMaxValues[desc.Name].Item1;
-					double Max = (desc.Value != double.PositiveInfinity && desc.Value > MinMaxValues[desc.Name].Item2) ? desc.Value : MinMaxValues[desc.Name].Item2;
-					MinMaxValues[desc.Name] = (Min, Max);
+					double value = desc.Value;
+					// Special case: Infinity values or not a number values.
+					if (double.IsInfinity(value) || double.IsNaN(value)) continue;
+
+					(double min, double max) = MinMaxValues[desc.Name];
+
+					min = Math.Min(min, value);
+					max = Math.Max(max, value);
+
+					MinMaxValues[desc.Name] = (min, max);
 				}
 		}
+
 	}
+
 }
