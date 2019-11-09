@@ -25,6 +25,11 @@ namespace ShapeDatabase.Features {
 
 		/// <summary>
 		/// The multiplier needed for calculating compactness.
+		/// This calculater is based on the fact that a sphere,
+		/// which is the perfect compact shape will have a
+		/// compactness value of 36 pi. To solve this the total
+		/// compactness will be divided by the value to acquire our
+		/// value of 1 for a perfect sphere.
 		/// </summary>
 		private const double COMPACTNESS_CONS = 1 / (36 * Math.PI);
 

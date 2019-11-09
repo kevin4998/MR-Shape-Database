@@ -147,6 +147,16 @@ namespace ShapeDatabase.Features {
 	/// </summary>
 	public static class FeatureVectorEx {
 
+		/// <summary>
+		/// Retrieves all the descriptors of the specified type from the
+		/// feature vector.
+		/// </summary>
+		/// <typeparam name="T">The type of descriptors which are present
+		/// in the feature vector.</typeparam>
+		/// <param name="vector">The vector containing many different calculated
+		/// vectors.</param>
+		/// <returns>A collection of all the descriptors in order as saved in the vector
+		/// of the specified type.</returns>
 		public static IEnumerable<T> GetDescriptors<T>(this FeatureVector vector)
 			where T : IDescriptor {
 			if (vector == null)
@@ -156,5 +166,6 @@ namespace ShapeDatabase.Features {
 				if (descriptor is T)
 					yield return (T) descriptor;
 		}
+
 	}
 }

@@ -12,6 +12,7 @@ using ShapeDatabase.Shapes;
 using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Descriptors {
+
 	/// <summary>
 	/// Class for calculating and/or importing featurevectors.
 	/// </summary>

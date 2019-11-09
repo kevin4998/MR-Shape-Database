@@ -19,6 +19,11 @@ namespace ShapeDatabase.Util {
 			= new ConcurrentDictionary<string, object>();
 
 		/// <summary>
+		/// The total number of locks which are being managed.
+		/// </summary>
+		public int Count => Locks.Count;
+
+		/// <summary>
 		/// Safely retrieves a lock which can be used to access values from
 		/// the given property.
 		/// </summary>

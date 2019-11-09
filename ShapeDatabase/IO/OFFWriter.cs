@@ -12,6 +12,7 @@ namespace ShapeDatabase.IO {
 	/// Class for writing a mesh to an off file.
 	/// </summary>
 	class OFFWriter : IWriter<IMesh> {
+
 		#region --- Properties ---
 
 		private static readonly Lazy<OFFWriter> lazy =

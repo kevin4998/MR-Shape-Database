@@ -15,7 +15,7 @@ namespace ShapeDatabase.Shapes {
 
 		private Vector3[] vertices;
 		private Vector3[] faces;
-		private Vector3[] edges;
+		private Vector2[] edges;
 		private Vector3[] normals;
 
 		public override bool IsNormalised { get; set; }
@@ -34,7 +34,7 @@ namespace ShapeDatabase.Shapes {
 			get { return faces; }
 			set { faces = AsArray(value, true); }
 		}
-		public override IEnumerable<Vector3> Edges {
+		public override IEnumerable<Vector2> Edges {
 			get { return edges; }
 			set { edges = AsArray(value, true); }
 		}
@@ -47,14 +47,27 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Constructor Methods ---
 
+		/// <summary>
+		/// Initialises a new mesh which can be edited using the specified interface.
+		/// </summary>
+		/// <param name="mesh">An implementation of a mesh which values need
+		/// to be modified.</param>
 		public SimpleMesh(IMesh mesh)
 			: this(mesh?.Vertices, mesh.Faces,
 				   mesh?.Edges, mesh.Normals,
 				   (mesh == null) ? false : mesh.IsNormalised) { }
 
+		/// <summary>
+		/// Initialises a new mesh which can be edited using the specified default values.
+		/// </summary>
+		/// <param name="vertices">The vertices which make up the 3D shape.</param>
+		/// <param name="faces">The faces which make up the 3D shapes.</param>
+		/// <param name="edges">An optional collection of edges.</param>
+		/// <param name="normals">An optional collection of normals.</param>
+		/// <param name="normalised">If the current mesh is normalised.</param>
 		public SimpleMesh(IEnumerable<Vector3> vertices,
 						  IEnumerable<Vector3> faces,
-						  IEnumerable<Vector3> edges = null,
+						  IEnumerable<Vector2> edges = null,
 						  IEnumerable<Vector3> normals = null,
 						  bool normalised = false) : base() {
 			this.vertices = AsArray(vertices, true);
@@ -83,21 +96,29 @@ namespace ShapeDatabase.Shapes {
 
 		#region -- Static Methods --
 
-		private static Vector3[] AsArray(IEnumerable<Vector3> vectors,
+		private static T[] AsArray<T>(IEnumerable<T> vectors,
 										 bool error = true) {
 			if (vectors == null) {
 				if (error)
 					throw new ArgumentNullException(nameof(vectors));
 				else
-					return Array.Empty<Vector3>();
+					return Array.Empty<T>();
 			}
 
-			if (vectors is Vector3[] array)
+			if (vectors is T[] array)
 				return array;
 
 			return vectors.ToArray();
 		}
 
+		/// <summary>
+		/// Converts the specified interface object into a <see cref="SimpleMesh"/>
+		/// safely.
+		/// </summary>
+		/// <param name="mesh">The mesh which needs to be converted.</param>
+		/// <returns>A <see cref="SimpleMesh"/> which either is the same object
+		/// if it could be cast or otherwise a mesh made from the data of the interface.
+		/// </returns>
 		public static SimpleMesh CreateFrom(IMesh mesh) {
 			return (mesh is SimpleMesh simple) ? simple : new SimpleMesh(mesh);
 		}

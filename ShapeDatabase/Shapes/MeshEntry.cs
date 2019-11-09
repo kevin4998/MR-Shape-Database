@@ -25,6 +25,9 @@ namespace ShapeDatabase.Shapes {
 		public string Class { get; }
 		public IMesh Mesh { get; }
 
+		/// <summary>
+		/// If the current meshentry has been initalised a null or default value.
+		/// </summary>
 		public bool IsNull => Name == null || Class == null;
 
 		#endregion

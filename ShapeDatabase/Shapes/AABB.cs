@@ -3,6 +3,7 @@ using System.Diagnostics;
 using OpenTK;
 
 namespace ShapeDatabase.Shapes {
+
 	/// <summary>
 	/// The axis aligned bounding box of the shape.
 	/// This is a box which perfectly surrounds the whole shape.

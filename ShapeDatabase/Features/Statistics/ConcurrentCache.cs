@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ShapeDatabase.Util;
 
 namespace ShapeDatabase.Features.Statistics {
 
@@ -25,11 +26,13 @@ namespace ShapeDatabase.Features.Statistics {
 			= new ConcurrentDictionary<string, object>();
 
 		/// <summary>
-		/// A <see cref="IDictionary{TKey, TValue}"/> containing the locks for each
-		/// property to ensure that it works in a multi-threaded environment.
+		/// An object to handle multiple locks on a single object, this is done
+		/// by dividing it into multiple individual parts, such as the name of
+		/// a cache value, ensuring that only 1 object modified this position in
+		/// the dictionary at the same time.
 		/// </summary>
-		protected virtual IDictionary<string, object> CacheLocks { get; }
-			= new ConcurrentDictionary<string, object>();
+		protected virtual LockManager CacheLocks { get; }
+			= new LockManager();
 
 		public override int Count => CacheLocks.Count;
 
@@ -74,43 +77,8 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Instance Methods ---
 
-		/// <summary>
-		/// Safely retrieves a lock which can be used to access values from
-		/// the given property.
-		/// </summary>
-		/// <param name="lockName">The name of the property on which you will perform operations.</param>
-		/// <returns>The lock which can be used to safely modify the given property.
-		/// </returns>
-		protected object GetLock(string lockName) {
-			if (lockName == null)
-				throw new ArgumentNullException(nameof(lockName));
-
-			if (!CacheLocks.TryGetValue(lockName, out object _lock))
-				lock (CacheLocks) {
-					if (!CacheLocks.TryGetValue(lockName, out _lock)) {
-						_lock = new object();
-						CacheLocks.Add(lockName, _lock);
-					}
-				}
-			return _lock;
-		}
-
-		/// <summary>
-		/// Frees up locks from properties which are not stored in the current cache.
-		/// This operation should be performed inside the lock of the same object.
-		/// </summary>
-		/// <param name="lockName">The name of the property which didn't exist.</param>
-		protected void FreeLock(string lockName) {
-			if (lockName == null)
-				throw new ArgumentNullException(nameof(lockName));
-
-			lock (CacheLocks) {
-				CacheLocks.Remove(lockName);
-			}
-		}
-
 		public override ICache<T> AddLazyValue(string name, Func<T, ICache<T>, object> provider) {
-			lock (GetLock(name)) {
+			lock (CacheLocks[name]) {
 				base.AddLazyValue(name, provider);
 				Interlocked.Increment(ref version);
 				return this;
@@ -118,7 +86,7 @@ namespace ShapeDatabase.Features.Statistics {
 		}
 
 		public override ICache<T> AddValue(string name, object value) {
-			lock (GetLock(name)) {
+			lock (CacheLocks[name]) {
 				base.AddValue(name, value);
 				Interlocked.Increment(ref version);
 				return this;
@@ -126,10 +94,10 @@ namespace ShapeDatabase.Features.Statistics {
 		}
 
 		public override bool TryGetValue(string name, T helper, out object value) {
-			lock (GetLock(name)) {
+			lock (CacheLocks[name]) {
 				bool result = base.TryGetValue(name, helper, out value);
 				if (!result)
-					FreeLock(name);
+					CacheLocks.FreeLock(name);
 				return result;
 			}
 		}
@@ -137,6 +105,7 @@ namespace ShapeDatabase.Features.Statistics {
 		public override void Clear() {
 			lock (CacheLocks) {
 				base.Clear();
+				Interlocked.Increment(ref version);
 			}
 		}
 

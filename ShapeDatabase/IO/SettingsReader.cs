@@ -70,5 +70,7 @@ namespace ShapeDatabase.IO {
 		object IReader.ConvertFile(StreamReader reader) => ConvertFile(reader);
 
 		#endregion
-	}
+	
+ }
+
 }

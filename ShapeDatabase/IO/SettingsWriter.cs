@@ -72,5 +72,7 @@ namespace ShapeDatabase.IO {
 			=> WriteFile(type as TempSettings, writer);
 
 		#endregion
+	
 	}
+
 }

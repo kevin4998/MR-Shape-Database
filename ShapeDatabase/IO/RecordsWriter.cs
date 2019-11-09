@@ -74,5 +74,7 @@ namespace ShapeDatabase.IO {
 			=> WriteFile(type as IRecordHolder, writer);
 
 		#endregion
+
 	}
+
 }

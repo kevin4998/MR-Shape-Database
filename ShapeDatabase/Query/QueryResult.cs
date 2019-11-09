@@ -150,5 +150,7 @@ namespace ShapeDatabase.Query {
 		}
 
 		#endregion
+	
 	}
+
 }

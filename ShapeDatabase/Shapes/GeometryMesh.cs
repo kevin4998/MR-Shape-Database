@@ -8,10 +8,17 @@ using static ShapeDatabase.Util.Functions;
 
 namespace ShapeDatabase.Shapes {
 
+	/// <summary>
+	/// A mesh which makes use of an internal <see cref="g3.DMesh3"/> from geomtry3.
+	/// This is mainly a wrapper/adapter from their implementation to fit our interfaces.
+	/// </summary>
 	public class GeometryMesh : AbstractMesh {
 
 		#region --- Properties ---
 
+		/// <summary>
+		/// The G3 variant of meshes using their unique internal structure.
+		/// </summary>
 		public g3.DMesh3 Base { get; }
 		private bool normalised;
 
@@ -39,8 +46,8 @@ namespace ShapeDatabase.Shapes {
 			}
 			set => throw new InvalidOperationException();
 		}
-		public override IEnumerable<Vector3> Edges {
-			get => System.Linq.Enumerable.Empty<Vector3>();
+		public override IEnumerable<Vector2> Edges {
+			get => System.Linq.Enumerable.Empty<Vector2>();
 			set => throw new InvalidOperationException();
 		}
 		public override IEnumerable<Vector3> Normals {
@@ -57,6 +64,12 @@ namespace ShapeDatabase.Shapes {
 
 		#region --- Constructor Methods ---
 
+		/// <summary>
+		/// Creates a new mesh which uses the Geomtry3 internal structure.
+		/// </summary>
+		/// <param name="mesh">The mesh from <see cref="g3"/> to wrap around
+		/// in our interface.</param>
+		/// <param name="normalised">If the current mesh is normalised.</param>
 		public GeometryMesh(g3.DMesh3 mesh, bool normalised = false) 
 			: base() {
 			Base = mesh ?? throw new ArgumentNullException(nameof(mesh));
@@ -83,10 +96,6 @@ namespace ShapeDatabase.Shapes {
 
 		public double GetTriArea(uint tID) {
 			return Base.GetTriArea(Convert.ToInt32(tID));
-		}
-
-		public static GeometryMesh Create(g3.DMesh3 mesh) {
-			return mesh == null ? null : new GeometryMesh(mesh);
 		}
 
 		#endregion

@@ -53,10 +53,24 @@ namespace ShapeDatabase.Features.Statistics {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Provides a new measurement which all the records share together.
+		/// Adding names is order dependent.
+		/// </summary>
+		/// <param name="measureName">The name of the measurement which will be
+		/// contained in the records.</param>
+		/// <returns>The current <see cref="DirectRecordHolder"/> for chaining
+		/// purposes.</returns>
 		public DirectRecordHolder AddMeasureName(string measureName) {
 			this.measureNames.Add(measureName);
 			return this;
 		}
+		/// <summary>
+		/// Provides a new record which should be held by this record holder.
+		/// </summary>
+		/// <param name="record">The record with its calculated metrics.</param>
+		/// <returns>The current <see cref="DirectRecordHolder"/> for chaining
+		/// purposes.</returns>
 		public DirectRecordHolder AddRecord(Record record) {
 			records.Add(record);
 			return this;

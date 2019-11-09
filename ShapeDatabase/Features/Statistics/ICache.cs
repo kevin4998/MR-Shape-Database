@@ -220,6 +220,21 @@ namespace ShapeDatabase.Features.Statistics {
 			return cache.GetValue(name, default);
 		}
 
+		/// <summary>
+		/// Retrieves a value from the cache and convert it to
+		/// the specified object. A helper variable can be given to calcuate
+		/// the value in the cash, but this is optional.
+		/// </summary>
+		/// <typeparam name="TV">The type of values stored in the cache for retrieval.
+		/// </typeparam>
+		/// <typeparam name="TC">The type of returned value. The exact value from
+		/// the cache will be converted to this.</typeparam>
+		/// <param name="cache">The cache to retrieve the saved property from.</param>
+		/// <param name="name">The name of property in the cache.</param>
+		/// <param name="helper">The object to calculate the initial value of the
+		/// cache property with the provided name.</param>
+		/// <returns>The property from the cache with the specified name, if it is not
+		/// in the cache then it will be computed with the helper property.</returns>
 		public static TV GetValue<TV, TC>(this ICache<TC> cache, string name, TC helper) {
 			if (cache == null)
 				throw new ArgumentNullException(nameof(cache));
@@ -231,6 +246,17 @@ namespace ShapeDatabase.Features.Statistics {
 				throw CastException<TV>(value);
 		}
 
+		/// <summary>
+		/// Retrieves a value from the cache and convert it to
+		/// the specified object.
+		/// </summary>
+		/// <typeparam name="TV">The type of values stored in the cache for retrieval.
+		/// </typeparam>
+		/// <typeparam name="TC">The type of returned value. The exact value from
+		/// the cache will be converted to this.</typeparam>
+		/// <param name="cache">The cache to retrieve the saved property from.</param>
+		/// <param name="name">The name of property in the cache.</param>
+		/// <returns>The property from the cache with the specified name.</returns>
 		public static TV GetValue<TV, TC>(this ICache<TC> cache, string name) {
 			if (cache == null)
 				throw new ArgumentNullException(nameof(cache));
@@ -238,6 +264,19 @@ namespace ShapeDatabase.Features.Statistics {
 			return cache.GetValue<TV, TC>(name, default);
 		}
 
+		/// <summary>
+		/// Attempts to retrieve a value from the cache.
+		/// </summary>
+		/// <typeparam name="T">The type of objects used for a calculating cache
+		///  values.</typeparam>
+		/// <param name="cache">The cache to retrieve values from.</param>
+		/// <param name="name">The name of the property to retrieve from the cache.</param>
+		/// <param name="value">The variable which will contain the value after
+		/// the execution. This value is only usabable when this method succeeded,
+		/// no guarantee can be made on the quality of the object otherwise.</param>
+		/// <returns><see langword="true"/> if the cache value could be found, otherwise
+		/// <see langword="false"/> and no gurantee on the output property can be made.
+		/// </returns>
 		public static bool TryGetValue<T>(this ICache<T> cache,
 										  string name, out object value) {
 			if (cache == null)
@@ -246,7 +285,22 @@ namespace ShapeDatabase.Features.Statistics {
 			return cache.TryGetValue(name, default, out value);
 		}
 
-		public static bool TryGetValue<TV, TC>(this ICache<TC> cache, string name, out TV value) {
+		/// <summary>
+		/// Attempts to retrieve a value from the cache.
+		/// </summary>
+		/// <typeparam name="TV">The return type value from the cache.</typeparam>
+		/// <typeparam name="TC">The type of objects used for a calculating cache
+		///  values.</typeparam>
+		/// <param name="cache">The cache to retrieve values from.</param>
+		/// <param name="name">The name of the property to retrieve from the cache.</param>
+		/// <param name="value">The variable which will contain the value after
+		/// the execution. This value is only usabable when this method succeeded,
+		/// no guarantee can be made on the quality of the object otherwise.</param>
+		/// <returns><see langword="true"/> if the cache value could be found, otherwise
+		/// <see langword="false"/> and no gurantee on the output property can be made.
+		/// </returns>
+		public static bool TryGetValue<TV, TC>(this ICache<TC> cache,
+												string name, out TV value) {
 			if (cache == null)
 				throw new ArgumentNullException(nameof(cache));
 

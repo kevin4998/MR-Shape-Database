@@ -42,15 +42,24 @@ namespace ShapeDatabase.Shapes {
 
 		public IEnumerable<Vector3> Vertices => this.Mesh.Vertices;
 		public IEnumerable<Vector3> Faces => this.Mesh.Faces;
-		public IEnumerable<Vector3> Edges => this.Mesh.Edges;
+		public IEnumerable<Vector2> Edges => this.Mesh.Edges;
 		public IEnumerable<Vector3> Normals => this.Mesh.Normals;
 
 		#endregion
 
 		#region --- Constructor Methods ---
 
+		/// <summary>
+		/// Initialises a new mesh whose shape is located the given path.
+		/// </summary>
+		/// <param name="filePath">The path on the current device to find
+		/// and read theshape from.</param>
 		public LazyMesh(string filePath) : this(new FileInfo(filePath)) { }
 
+		/// <summary>
+		/// Initialises a new mesh whose shape is located the given path.
+		/// </summary>
+		/// <param name="info">The information of the file containing the shape.</param>
 		public LazyMesh(FileInfo info) {
 			if (info == null || !info.Exists)
 				throw new ArgumentNullException(nameof(info));

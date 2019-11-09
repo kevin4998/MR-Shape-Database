@@ -5,6 +5,10 @@ using ShapeDatabase.Util.Collections;
 
 namespace ShapeDatabase.Shapes {
 
+	/// <summary>
+	/// A base implementation for meshes to handle lazy calculation
+	/// of common variables.
+	/// </summary>
 	public abstract class AbstractMesh : IMesh {
 
 		#region --- Properties ---
@@ -19,7 +23,7 @@ namespace ShapeDatabase.Shapes {
 		public abstract uint NormalCount { get; }
 		public abstract IEnumerable<Vector3> Vertices { get; set; }
 		public abstract IEnumerable<Vector3> Faces { get; set; }
-		public abstract IEnumerable<Vector3> Edges { get; set; }
+		public abstract IEnumerable<Vector2> Edges { get; set; }
 		public abstract IEnumerable<Vector3> Normals { get; set; }
 
 		#endregion

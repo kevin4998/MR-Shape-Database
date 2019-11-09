@@ -100,6 +100,9 @@ namespace ShapeDatabase.Util {
 
 		#region --- Instance Methods ---
 
+		/// <summary>
+		/// Notify the progress bar that single task has finished operation.
+		/// </summary>
 		public void CompleteTask() {
 			int newValue = Interlocked.Increment(ref completedTasks);
 			Report(newValue / totalTasks);
