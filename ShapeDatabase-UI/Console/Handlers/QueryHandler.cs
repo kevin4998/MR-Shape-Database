@@ -136,8 +136,6 @@ namespace ShapeDatabase.UI.Console.Handlers {
 		/// </summary>
 		/// <param name="queries">The differen querries which were performed.</param>
 		private static void SaveQueries(params QueryResult[] queries) {
-			Logger.Log(I_Query_Exp);
-
 			string directory = Settings.QueryDir;
 			string filename = Settings.QueryResultsFile;
 			if (!Directory.Exists(directory))
