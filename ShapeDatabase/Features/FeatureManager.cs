@@ -119,7 +119,7 @@ namespace ShapeDatabase.Features.Descriptors {
 		/// Calculate the featurevectores of all meshes in a library using all descriptor calculators of the featuremanager
 		/// </summary>
 		/// <param name="library">The library of which the featurevectors should be calculated</param>
-		public void CalculateVectors(ICollection<MeshEntry> library, bool async = true) {
+		public void CalculateVectors(ICollection<MeshEntry> library) {
 			if (library == null)
 				throw new ArgumentNullException(nameof(library));
 
@@ -206,8 +206,9 @@ namespace ShapeDatabase.Features.Descriptors {
 		private FeatureVector CreateVector(MeshEntry entry) {
 			IList<IDescriptor> descriptors = new List<IDescriptor>();
 
+			IMesh mesh = entry.Mesh;	// Cach the mesh hear to help LazyMesh a bit.
 			foreach (DescriptorCalculator calculator in DescriptorCalculators)
-				descriptors.Add(calculator(entry.Mesh));
+				descriptors.Add(calculator(mesh));
 
 			return new FeatureVector(descriptors.ToArray());
 		}

@@ -122,7 +122,7 @@ namespace ShapeDatabase.IO {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given directory does not exist.
 		/// </exception>
-		public void AddDirectory(string filedir, bool async = false) =>
+		public void AddDirectory(string filedir, bool async = true) =>
 			AddDir(filedir, Library.AddAndRefine, async);
 
 		/// <summary>
@@ -154,7 +154,7 @@ namespace ShapeDatabase.IO {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given directory does not exist.
 		/// </exception>
-		public void AddQueryDirectory(string filedir, bool async = false) =>
+		public void AddQueryDirectory(string filedir, bool async = true) =>
 			AddDir(filedir, Library.AddQueryAndRefine, async);
 
 		/// <summary>
@@ -170,7 +170,7 @@ namespace ShapeDatabase.IO {
 		/// <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentException">If the given directory does not exist.
 		/// </exception>
-		public void AddQueryDirectoryDirect(string filedir, bool async = false) =>
+		public void AddQueryDirectoryDirect(string filedir, bool async = true) =>
 			AddDir(filedir, Library.AddQueryDirect, async);
 
 		/// <summary>
@@ -354,7 +354,7 @@ namespace ShapeDatabase.IO {
 		/// <param name="filedir">The directory to look for new shapes.</param>
 		/// <param name="add">The action to add the shapes to specific library.</param>
 		/// <param name="async">If the operation should happen asynchronously.</param>
-		private void AddDir(string filedir, Action<FileInfo> add, bool async = false) {
+		private void AddDir(string filedir, Action<FileInfo> add, bool async = true) {
 			if (string.IsNullOrEmpty(filedir))
 				throw new ArgumentNullException(nameof(filedir));
 			if (add == null)
