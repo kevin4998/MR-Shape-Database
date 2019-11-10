@@ -18,9 +18,23 @@ For more details on the inner workins of this program we would like to redirect 
 
 The program has all its interaction with the console, it is advised to call the application's .exe file through a console or batch file as well for easier usage. Some premade batch files are present in the application "Prepared Statements" folder and these also show insights in how you can configure your personal call to the program. If this is not clear than you can call the application with the help verb to get more information on how it can be used. "ShapeDatabase.exe help"
 
+If you would like to query shapes which are not in the database then you would need to put these Shapes (with possibly their class if you want evaluations) into the Content/Query folder. You can define a class of a Shape by putting it into a folder with that name.
+
+### Commands
+
+- Clean: Delete all cached data for a clean restart.
+- View: View the different shapes in the system.
+- Refine: Refine the provided shapes and store them in the system.
+- Measure: Calculate shape metrics, such as the vertex & face count for all the current shapes.
+- Feature: Calculate feature vectors for all the current shapes.
+- Query: Compare existing shapes with query shapes to find the most similar.
+- Evaluate: Evaluate the precision of queried results.
+- Help: Display informative text about different commands and their usage.
+
 ### Prerequisites
 
 A good understanding of C# and Visual Studio is required to code for this program.
+This program has been written with Visual Studio 2019 and no guarantee can be made with how well it works on previous versions.
 
 ### Installing
 
@@ -29,13 +43,13 @@ There are 2 ways to use the application: One is to go to the releases section an
 ## Build With
 
 This program wasn't possible without the following public packages from authors around Github.
-- *Accord.Net:* for their statistical data processing, in particular their PCA system.
-- *Geometry3Sharp:* for their 3D mesh computational algorithms.
-- *HNSW.Net:* for their approximate neirest neighbour search program.
-- *OpenTK:* for their visualisation code in C#.
-- *CommandLineParser:* for easier console usage.
-- *CsvHelper:* for their Csv reader and writers.
-- *IniParser:* for their ini readers and writers.
+- *[Accord.Net]* for their statistical data processing, in particular their PCA system.
+- *[Geometry3Sharp]* for their 3D mesh computational algorithms.
+- *[HNSW.Net]* for their approximate neirest neighbour search program.
+- *[OpenTK]* for their visualisation code in C#.
+- *[CommandLineParser]* for easier console usage.
+- *[CsvHelper]* for their Csv reader and writers.
+- *[IniParser]* for their ini readers and writers.
 
 ## Contributors / Authors
 
@@ -46,3 +60,12 @@ The people who made this original repository and brought this code to the world 
 ## Acknolwedgements
 
 And finally we would like to thank all the public library authors who made it possible for us to construct this program, the C# team for this programming language and our professor prof. dr. Alexandru C. Telea for teaching us how to design such an extensive system.
+
+
+[Accord.Net]:http://accord-framework.net/
+[Geometry3Sharp]:https://github.com/gradientspace/geometry3Sharp
+[HNSW.Net]:https://github.com/microsoft/HNSW.Net
+[OpenTK]:https://github.com/opentk/opentk
+[CommandLineParser]:https://github.com/commandlineparser/commandline
+[CsvHelper]:https://github.com/JoshClose/CsvHelper
+[IniParser]:https://github.com/rickyah/ini-parser
